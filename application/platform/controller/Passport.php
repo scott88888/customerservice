@@ -78,7 +78,7 @@ class Passport extends Controller
                 return ['code'=>1,'msg'=>$validate->getError()];
             }
             if ($this->auth->login($username, $password)) {
-                return ['code'=>0,'msg'=>'登录成功'];
+                return ['code'=>0,'msg'=>'登入成功'];
             } else {
                 return ['code'=>1,'msg'=>$this->auth->getError()];
             }

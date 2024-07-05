@@ -313,7 +313,7 @@ class Auth
 
             $this->_logined = TRUE;
 
-            //登录成功的事件
+            //登入成功
             Hook::listen("user_login_successed", $this->_user);
             return TRUE;
         }

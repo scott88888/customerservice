@@ -108,11 +108,11 @@ class Login extends Controller
         $service_token = $common->cpEncode($login['user_name'], AIKF_SALT, $expire);
         Cookie::set('service_token', $service_token, $expire);
         $ismoblie = $common->isMobile();
-        $this->record_log('登录成功');
+        $this->record_log('登入成功');
         if ($ismoblie) {
-            $this->success('登录成功', url("mobile/admin/index"));
+            $this->success('登入成功', url("mobile/admin/index"));
         } else {
-            $this->success('登录成功', url("service/Index/index"));
+            $this->success('登入成功', url("service/Index/index"));
         }
     }
 

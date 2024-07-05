@@ -115,7 +115,7 @@ class Mapp extends Mbase
         $service_token = $common->cpEncode($login['user_name'],AIKF_SALT,$expire);
         Cookie::set('service_token', $service_token, $expire);
 
-        $this->success('登录成功', url("mobile/mapp/index"));
+        $this->success('登入成功', url("mobile/mapp/index"));
 
     }
     /**

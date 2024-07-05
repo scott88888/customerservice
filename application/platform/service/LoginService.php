@@ -37,7 +37,7 @@ class LoginService
 
         return [
             'code' => 0,
-            'msg' => '登录成功',
+            'msg' => '登入成功',
         ];
     }
 

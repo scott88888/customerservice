@@ -46,7 +46,7 @@ class Login extends Controller
             // 设置session标识状态
             session('admin_user_name', $login['username']);
             session('admin_user_id', $login['id']);
-            $this->success('登录成功', url("/backend/index/index"));
+            $this->success('登入成功', url("/backend/index/index"));
         }
     }
 

@@ -146,10 +146,10 @@ class Login extends Controller
 
         if($ismoblie){
           
-          $this->success('登录成功', url("mobile/admin/index"));
+          $this->success('登入成功', url("mobile/admin/index"));
         }else{
 
-          $this->success('登录成功', url("service/Index/index"));
+          $this->success('登入成功', url("service/Index/index"));
         }
         
     }

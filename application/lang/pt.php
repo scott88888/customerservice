@@ -1,0 +1,82 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2021/9/16
+ * Time: 17:17
+ */
+
+return [
+
+    "hello" => "Olá!",
+    "service_offline" => "O atendimento ao cliente está offline",
+    "service_online" => "O atendimento ao cliente está online",
+    "say_is_off" => "Esta sessão foi encerrada",
+    "data_error" => "Os dados estão incompletos",
+    "service_ban" => "O serviço de atendimento ao cliente do comerciante foi proibido de acessar",
+    "service_leave" => "Este serviço ao cliente saiu temporariamente, por favor, deixe uma mensagem! Você também pode transferir para outro serviço ao cliente",
+    "service_empty" => "O serviço de atendimento ao cliente dedicado não existe",
+    "group_service_offline" => "O atendimento ao cliente desta categoria não está online",
+    "session_close" => "A sessão foi encerrada",
+    "save_file_error" => "Verifique as informações de configuração da mídia de armazenamento",
+    "offline" => "A outra parte não está online",
+    "question_delete" => "A pergunta foi excluída",
+    "ext_error" => "O formato do arquivo não é compatível",
+    "illegal_img_error" => "arquivo de imagem ilegal",
+    "evaluate_error" => "A avaliação falhou, tente novamente",
+    "evaluate_thk" => "Obrigado por sua avaliação",
+    "evaluate_score" => "Avalie",
+    "mobile_error" => "O formato do telefone móvel está incorreto",
+    "name_error" => "Por favor, preencha seu nome",
+    "save_ok" => "O envio foi bem-sucedido, aguarde a resposta do atendimento ao cliente",
+    "save_error" => "Falha no envio",
+
+    "robot_error" => [
+        "Não entendi bem o que queres dizer, podes tentar outra pergunta",
+        "Não entendi sua pergunta, mas estou estudando muito",
+         "Esta questão é muito interessante",
+         "Escrevi sua pergunta em um pequeno caderno",
+         "Eu não entendo o que você quer dizer, por favor, descreva",
+         "Você perguntou muito rápido, por favor, pergunte após uma breve entrevista",
+     ],
+
+    "send" => "Enviar",
+    "please_enter" => "Por favor, insira o conteúdo",
+    "ai_service" => "AI Intelligent Customer Service",
+    "cancel" => "Cancelar",
+    "submit" => "Enviar",
+    "evaluate_service" => "avalie o atendimento ao cliente",
+    "transfer_service" => "Você foi transferido para outro serviço ao cliente",
+    "off_line" => "[offline]",
+    "name" => "Nome",
+    "please_enter_name" => "Por favor, digite seu nome",
+    "contact" => "Informações de contato",
+    "please_enter_contact" => "Por favor, insira suas informações de contato",
+    "close_wav" => "Fechar o tom de prompt",
+    "open_wav" => "Ligue o tom de prompt",
+    "paste_images_tip" => "Cole sua imagem recortada na caixa de entrada",
+    "message_tip" => "Você tem uma mensagem",
+    "how_to_send_screenshot" => "Como enviar uma captura de tela?",
+    "ctrl_enter" => "Pressione Enter para enviar uma mensagem, Ctrl + Enter para embrulhar",
+    "enter_ctrl" => "Pressione Ctrl + Enter para enviar uma mensagem, Enter para embrulhar",
+    "disappointment" => "Decepção",
+    "dissatisfaction" => "Insatisfação",
+    "commonly" => "comumente",
+    "satisfied" => "satisfeito",
+    "surprised" => "surpresa",
+
+    "please_select_images" => "Selecione as imagens",
+    "not_supported" => "Arquivos neste formato não são suportados",
+    "no_data" => "Não há mais dados",
+    "tip_waiting" => "Notificação: Esperando na fila ...",
+    "tip" => "caixa de dicas",
+    "is_transfer_service" => "Este serviço ao cliente está offline, deseja transferir para outro serviço ao cliente?",
+    "yes" => "Sim",
+    "no" => "Não",
+    "transferring" => "Transferindo ...",
+    "guess_ask" => "Acho que você quer perguntar:",
+    "please_enter_message" => "Por favor, insira uma mensagem",
+    "choose_lang" => "Selecione o idioma",
+    "service_title" => "Atendimento ao cliente online",
+    "banword_tip" => "Falha ao enviar, o conteúdo contém palavras proibidas",
+];

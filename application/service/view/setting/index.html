@@ -13,12 +13,12 @@
 <form class="layui-row layui-col-space10 layui-form">
     <div class="layui-col-md12">
         <div class="layui-card" style="margin-left: 20px;margin-top: 20px;">
-            <div class="layui-card-header">商户设置</div>
+            <div class="layui-card-header">商家設定</div>
             <div class="layui-form-item" style="margin-top: 20px">
-                <label class="layui-form-label">默认语言</label>
+                <label class="layui-form-label">預設語言</label>
                 <div class="layui-input-inline">
                     <select name="lang" lay-verify="required">
-                        <option value="">请选择默认语言</option>
+                        <option value="">請選擇預設語言</option>
                         {foreach name=":config('lang')" item="vo"}
                         <option value="{$key}" {if $business.lang == $key}selected{/if}>{$vo}</option>
                         {/foreach}
@@ -26,124 +26,123 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">翻译接口</label>
+                <label class="layui-form-label">翻譯介面</label>
                 <div class="layui-input-inline">
                     <select name="trans_type" lay-verify="required" >
-                        <option value="0" {if $business.trans_type == 0}selected{/if}>百度翻译</option>
-                        <option value="1" {if $business.trans_type == 1}selected{/if}>谷歌翻译</option>
+                        <option value="0" {if $business.trans_type == 0}selected{/if}>百度翻譯</option>
+                        <option value="1" {if $business.trans_type == 1}selected{/if}>Google翻譯</option>
                     </select>
                 </div>
             </div>
             <div class="layui-form-item" style="margin-top: 20px">
-                <label class="layui-form-label" style="width: 100px">百度翻译APPID</label>
+                <label class="layui-form-label" style="width: 100px">百度翻譯APPID</label>
                 <div class="layui-input-block">
                     <input name="bd_trans_appid" value="{$business.bd_trans_appid}" class="layui-input" style="width: 250px;display: inline-block;margin-right: 10px"/>
-                    <span>百度翻译API【<a href="https://api.fanyi.baidu.com/" target="_blank">点击申请</a>】</span>
+                    <span>百度翻譯API【<a href="https://api.fanyi.baidu.com/" target="_blank">點擊申請</a>】</span>
                 </div>
             </div>
             <div class="layui-form-item" style="margin-top: 20px">
-                <label class="layui-form-label" style="width: 100px">百度翻译密钥</label>
+                <label class="layui-form-label" style="width: 100px">百度翻譯金鑰</label>
                 <div class="layui-input-block">
                     <input name="bd_trans_secret" value="{$business.bd_trans_secret}" class="layui-input" style="width: 250px;display: inline-block;margin-right: 10px"/>
-                    <span>百度翻译API【<a href="https://api.fanyi.baidu.com/doc/21" target="_blank">查看文档</a>】</span>
+                    <span>百度翻譯API【<a href="https://api.fanyi.baidu.com/doc/21" target="_blank">查看文件</a>】</span>
                 </div>
             </div>
             <div class="layui-form-item" style="margin-top: 20px">
-                <label class="layui-form-label" style="width: 100px">谷歌翻译KEY</label>
+                <label class="layui-form-label" style="width: 100px">Google翻譯KEY</label>
                 <div class="layui-input-block">
                     <input name="google_trans_key" value="{$business.google_trans_key}" class="layui-input" style="width: 250px;display: inline-block;margin-right: 10px"/>
-                    <span>谷歌翻译API【<a href="https://cloud.google.com/" target="_blank">点击申请</a>】</span>
+                    <span>Google翻譯API【<a href="https://cloud.google.com/" target="_blank">點擊申請</a>】</span>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">消息对话实时翻译</label>
+                <label class="layui-form-label" style="width: 220px">訊息對話即時翻譯</label>
                 <div class="layui-input-inline">
                     <select name="auto_trans" lay-verify="required" >
-                        <option value="1" {if $business.auto_trans == 1}selected{/if}>启用</option>
-                        <option value="0" {if $business.auto_trans == 0}selected{/if}>禁用</option>
+                        <option value="1" {if $business.auto_trans == 1}selected{/if}>啟用</option>
+                        <option value="0" {if $business.auto_trans == 0}selected{/if}>停用</option>
                     </select>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">根据用户IP自动设置语言</label>
+                <label class="layui-form-label" style="width: 220px">根據使用者IP自動設定語言</label>
                 <div class="layui-input-inline">
                     <select name="auto_ip" lay-verify="required" >
-                        <option value="1" {if $business.auto_ip == 1}selected{/if}>启用</option>
-                        <option value="0" {if $business.auto_ip == 0}selected{/if}>禁用</option>
+                        <option value="1" {if $business.auto_ip == 1}selected{/if}>啟用</option>
+                        <option value="0" {if $business.auto_ip == 0}selected{/if}>停用</option>
                     </select>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">是否开启公众号模板消息</label>
+                <label class="layui-form-label" style="width: 220px">是否開啟公眾號碼範本訊息</label>
                 <div class="layui-input-inline">
                     <select name="template_state" lay-verify="required" >
-                        <option value="open" {if $business.template_state == 'open'}selected{/if}>启用</option>
-                        <option value="close" {if $business.template_state == 'close'}selected{/if}>禁用</option>
+                        <option value="open" {if $business.template_state == 'open'}selected{/if}>啟用</option>
+                        <option value="close" {if $business.template_state == 'close'}selected{/if}>停用</option>
                     </select>
                 </div>
             </div>
 
             <div class="layui-form-item" style="margin: 15px">
-                <h3>服务器地址(URL)</h3>
+                <h3>伺服器位址(URL)</h3>
                 <div class="layui-code">
                     {:url('weixin/index/index',['business_id'=>$_SESSION['Msg']['business_id']],false,true)}
                 </div>
-                <div style="color: #636c72;">此地址填写到公众号后台服务器地址(URL)中</div>
+                <div style="color: #636c72;">此位址填入公眾號碼後台伺服器位址(URL)中</div>
             </div>
-
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">公众号原始id</label>
+                <label class="layui-form-label" style="width: 220px">公眾號原始id</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="wx_id" placeholder="请输入公众号原始id" autocomplete="off" class="layui-input" value="{$template['wx_id']}" style="width: 250px;display: inline-block;margin-right: 10px">
+                    <input type="text" name="wx_id" placeholder="請輸入公眾號碼原始id" autocomplete="off" class="layui-input" value="{$template['wx_id']}" style=" width: 250px;display: inline-block;margin-right: 10px">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">公众号AppId</label>
+                <label class="layui-form-label" style="width: 220px">公眾號AppId</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="app_id" placeholder="请输入公众号AppId" autocomplete="off" class="layui-input" value="{$template['app_id']}" style="width: 250px;display: inline-block;margin-right: 10px">
+                    <input type="text" name="app_id" placeholder="請輸入公眾號碼AppId" autocomplete="off" class="layui-input" value="{$template['app_id']}" style="width : 250px;display: inline-block;margin-right: 10px">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">公众号AppSecret</label>
+                <label class="layui-form-label" style="width: 220px">公眾號AppSecret</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="app_secret" placeholder="请输入公众号AppSecret" autocomplete="off" class="layui-input" value="{$template['app_secret']}" style="width: 250px;display: inline-block;margin-right: 10px">
+                    <input type="text" name="app_secret" placeholder="請輸入公眾號碼AppSecret" autocomplete="off" class="layui-input" value="{$template['app_secret']}" style="width : 250px;display: inline-block;margin-right: 10px">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">公众号token</label>
+                <label class="layui-form-label" style="width: 220px">公眾號token</label>
                 <div class="layui-input-inline" style="display: flex;flex-wrap: nowrap;">
-                    <input type="text" name="wx_token" id="wx_token" placeholder="请输入公众号token" autocomplete="off" class="layui-input" value="{$template['wx_token']}" style="width: 250px;display: inline-block;margin-right: 10px"> <button class="layui-btn layui-btn-normal" onclick="creattoken('#wx_token')" type="button">生成token</button>
+                    <input type="text" name="wx_token" id="wx_token" placeholder="請輸入公眾號token" autocomplete="off" class="layui-input" value="{$template['wx_token']} " style="width: 250px;display: inline-block;margin-right: 10px"> <button class="layui-btn layui-btn-normal" onclick="creattoken('#wx_token')" type="button ">生成token</button>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label" style="width: 220px">AESKey</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="wx_aeskey" placeholder="消息加解密密钥(EncodingAESKey),明文格式请留空" autocomplete="off" class="layui-input" value="{$template['wx_aeskey']}" style="width: 350px;display: inline-block;margin-right: 10px">
+                    <input type="text" name="wx_aeskey" placeholder="訊息加解密金鑰(EncodingAESKey),明文格式請留空" autocomplete="off" class="layui-input" value="{$template[' wx_aeskey']}" style="width: 350px;display: inline-block;margin-right: 10px">
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">新访客提醒模板消息ID</label>
+                <label class="layui-form-label" style="width: 220px">新訪客提醒範本訊息ID</label>
                 <div class="layui-input-block">
-                    <input type="text" name="visitor_tpl" placeholder="新访客提醒模板消息ID" autocomplete="off" class="layui-input" value="{$template['visitor_tpl']}" style="width: 250px;display: inline-block;margin-right: 10px">
-                    <span style="color: #636c72;">模板编号: OPENTM416331462 <a onclick="tpl('visitor_tpl')" href="#" style="color: #0275d8;">查看模板消息格式</a></span>
+                    <input type="text" name="visitor_tpl" placeholder="新訪客提醒範本訊息ID" autocomplete="off" class="layui-input" value="{$template['visitor_tpl']}" style=" width: 250px;display: inline-block;margin-right: 10px">
+                    <span style="color: #636c72;">範本編號: OPENTM416331462 <a onclick="tpl('visitor_tpl')" href="#" style="color: #0275d8;">查看範本訊息格式</a ></span>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">新消息提醒模板消息ID</label>
+                <label class="layui-form-label" style="width: 220px">新訊息提醒範本訊息ID</label>
                 <div class="layui-input-block">
-                    <input type="text" name="msg_tpl"  placeholder="新消息提醒模板消息ID" autocomplete="off" class="layui-input" value="{$template['msg_tpl']}" style="width: 250px;display: inline-block;margin-right: 10px">
-                    <span style="color: #636c72;">模板编号: OPENTM411628723 <a onclick="tpl('msg_tpl')" href="#" style="color: #0275d8;">查看模板消息格式</a>
+                    <input type="text" name="msg_tpl" placeholder="新訊息提醒範本訊息ID" autocomplete="off" class="layui-input" value="{$template['msg_tpl']}" style=" width: 250px;display: inline-block;margin-right: 10px">
+                    <span style="color: #636c72;">範本編號: OPENTM411628723 <a onclick="tpl('msg_tpl')" href="#" style="color: #0275d8;">查看範本訊息格式</a >
                 </span>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label" style="width: 220px">客服回复模板消息ID</label>
+                <label class="layui-form-label" style="width: 220px">客服回覆範本訊息ID</label>
                 <div class="layui-input-block">
-                    <input type="text" name="customer_tpl"  placeholder="客服回复提醒模板消息ID" autocomplete="off" class="layui-input" value="{$template['customer_tpl']}" style="width: 250px;display: inline-block;margin-right: 10px">
-                    <span style="color: #636c72;">模板编号: OPENTM415064191 <a onclick="tpl('customer_tpl')" href="#" style="color: #0275d8;">查看模板消息格式</a>
+                    <input type="text" name="customer_tpl" placeholder="客服回覆提醒範本訊息ID" autocomplete="off" class="layui-input" value="{$template['customer_tpl']}" style=" width: 250px;display: inline-block;margin-right: 10px">
+                    <span style="color: #636c72;">範本編號: OPENTM415064191 <a onclick="tpl('customer_tpl')" href="#" style="color: #0275d8;">檢視範本訊息格式</a >
                 </span>
                 </div>
             </div>

@@ -980,7 +980,7 @@ class Set extends Base
     }
 
     /**
-     * 获取当前对话信息
+     * 取得當前對話訊息
      *
      */
     public function getchatnow()

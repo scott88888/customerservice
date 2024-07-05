@@ -77,7 +77,7 @@
 
         channelme.bind("on_chat", function (data) {
             $.cookie("cu_com",'');
-            layer.msg('该访客被删除');
+            layer.msg('該訪客被刪除');
             getchat();
         });
 
@@ -114,11 +114,11 @@
             var username =data.username;
             layer.open({
                 type: 1,
-                title: '申请框',
+                title: '申請框',
                 area: ['260px', '160px'],
                 shade: 0.01,
                 fixed: true,
-                btn: ['接受', '拒绝'],
+                btn: ['接受', '拒絕'],
                 content: "<div style='position: absolute;left:20px;top:15px;'><img src='"+avatar+"' width='40px' height='40px' style='border-radius:40px;position:absolute;left:5px;top:5px;'><span style='width:100px;position:absolute;left:70px;top:5px;font-size:13px;overflow-x: hidden;'>"+username+"</span><div style='width:90px;height:20px;position:absolute;left:70px;top:26px;'>"+msg+"</div></div>",
                 yes: function () {
                     layer.closeAll('page');
@@ -130,7 +130,7 @@
 
                     layer.open({
                         type:1
-                        ,title: '视频'
+                        ,title: '影片'
                         ,shade:0
                         ,closeBtn:1
                         ,area: ['440px', '378px']
@@ -168,7 +168,7 @@
         channel.bind('bind-wechat',function(data){
             layer.open({
                 content: data.message
-                ,btn: ['确定']
+                ,btn: ['確定']
                 ,yes: function(index, layero){
                     location.reload();
                 }
@@ -230,9 +230,9 @@
                 msg += "<pre>" + data.message.content + "</pre>";
             }else{
                 if(data.message.content_trans !=''){
-                    msg += "<pre>" + data.message.content + "<p class='trans-data'>译文："+data.message.content_trans+"</p></pre>";
+                    msg += "<pre>" + data.message.content + "<p class='trans-data'>譯文："+data.message.content_trans+"</p></pre>";
                 }else{
-                    msg += "<pre>" + data.message.content + "<span class='trans' data-cid='"+data.message.cid+"'>翻 译</span></pre>";
+                    msg += "<pre>" + data.message.content + "<span class='trans' data-cid='"+data.message.cid+"'>翻 譯</span></pre>";
                 }
             }
             msg += "</div></div>";
@@ -248,12 +248,12 @@
                     if (value.indexOf("emo") == 0) {
                         str = data.message.content;
                     } else {
-                        str = '[图片]';
+                        str = '[圖片]';
                     }
                 });
-                str = str.replace(/<div><a[^<>]+><i>.+?<\/i>.+?<\/a><\/div>/,'[文件]');
-                str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超链接]');
-                str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[图片]');
+                str = str.replace(/<div><a[^<>]+><i>.+?<\/i>.+?<\/a><\/div>/,'[文件]' );
+                str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超連結]');
+                str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[圖片]');
                 $("#msg" + data.message.channel).html(str);
                 console.log(data);
                 var div = document.getElementById("wrap");
@@ -263,7 +263,7 @@
                 div.scrollTop = div.scrollHeight;
             }
             $("#notices-icon").removeClass('hide');
-            notify(data.message.visiter_name || '新访客', {
+            notify(data.message.visiter_name || '新訪客', {
                 body: str,
                 icon: data.message.avatar
             }, function(notification) {
@@ -289,7 +289,7 @@
 
             if (chas == data.message.chas) {
                 //头像变灰
-                $("#v_state").text("离线");
+                $("#v_state").text("離線");
             }
 
             $("#img" + data.message.chas).addClass("icon_gray");
@@ -308,7 +308,7 @@
             if (chas == data.message.chas) {
                 //头像变亮
                 $("#img" + data.message.chas).removeClass("icon_gray");
-                $("#v_state").text("在线");
+                $("#v_state").text("線上");
             }
             $("#img" + data.message.chas).removeClass("icon_gray");
             getchat();
@@ -328,12 +328,12 @@
                         wolive_connect();
                     },1000);
                 }
-                $(".profile").text('离线');
+                $(".profile").text('離線');
             }
         });
 
         pusher.connection.bind('connected', function() {
-            $(".profile").text('在线');
+            $(".profile").text('線上');
         });
     };
 
@@ -360,8 +360,8 @@
             <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief"
                  style="margin:0px;position: absolute;top:0px;width: 100%;height: 100%">
                 <ul class="layui-tab-title" style="height: 50px;border: 0;">
-                    <li class="layui-this" style="width: 50%;color: #555555;height: 50px;line-height: 55px;">当前对话<span class="line"></span></li>
-                    <li style="width: 50%;color: #555555;height: 50px;line-height: 55px;">排队列表 <div id="waitnum" class="notice-icon hide" style="position: absolute;top:0px;line-height: 18px;font-size: 8px;" ></div><span class="line"></span></li>
+                    <li class="layui-this" style="width: 50%;color: #555555;height: 50px;line-height: 55px;">目前對話<span class="line"></span></li>
+                    <li style="width: 50%;color: #555555;height: 50px;line-height: 55px;">排隊列表 <div id="waitnum" class="notice-icon hide" style="position: absolute;top:0px;line-height: 18px;font-size: 8px;" ></div><span class="line"></span></li>
                 </ul>
                 <div class="layui-tab-content" style="padding: 0px;height: 100%;">
                     <div class="layui-tab-item  layui-show" id="chat_list" style="width: 100%;overflow-y: auto;">
@@ -405,7 +405,7 @@
                         }
                     };
                     function info(){
-                        layer.tips("将您剪切好的图片粘贴到输入框即可", "#paste", {tips: [1, '#9EC6EA']});
+                        layer.tips("將您剪下好的圖片貼到輸入框即可", "#paste", {tips: [1, '#9EC6EA']});
                     }
                 </script>
                 <div class="footer">
@@ -486,7 +486,7 @@
                         </div>
                         <div class="msg-toolbar-footer grey12" >
                             <a onclick="send()" class="layui-btn msg-send-btn">
-                                发送
+                                傳送
                             </a>
                             <a id="showinfo" class="showinfo">
                                 <div style="height: 24px;border-left: 1px solid #FFF;margin-top: 8px;padding: 7px 15px">
@@ -520,12 +520,12 @@
                         {if $atype == 'open'}
                         <a onclick="getaudio()"><i class="layui-icon" style="font-size: 22px;cursor: pointer;">&#xe688;</i></a>
                         {/if}
-                        <a href="javascript:getblack()"><img src="__image__/admin/B/blacklist.png" alt="移入黑名单" title="移入黑名单"></a>
-                        <a onclick="getswitch()"><img src="__image__/admin/B/transfer.png" alt="客服转接" title="客服转接"></a>
-                        <a onclick="gethistory()"><img src="__image__/admin/B/record.png" alt="历史记录" title="历史记录"></a>
-                        <a onclick="toEvaluate()"><img src="__image__/admin/B/toEvaluate.png" alt="推送评价" title="推送评价"></a>
-                        <a onclick="toTrans()"><img src="__image__/admin/B/fanyi.png" alt="翻译" title="翻译"></a>
-                        <a onmouseover="info()" id="paste" style="position:absolute; right:134px;bottom:30px;width: 120px;font-size: 12px;"><img src="__image__/admin/B/screen.png" alt=""> 怎样发截图？</a>
+                        <a href="javascript:getblack()"><img src="__image__/admin/B/blacklist.png" alt="移入黑名單" title="移入黑名單"></a>
+                        <a onclick="getswitch()"><img src="__image__/admin/B/transfer.png" alt="客服轉接" title="客服轉接"></a>
+                        <a onclick="gethistory()"><img src="__image__/admin/B/record.png" alt="歷史記錄" title="歷史記錄"></a>
+                        <a onclick="toEvaluate()"><img src="__image__/admin/B/toEvaluate.png" alt="推播評價" title="推播評價"></a>
+                        <a onclick="toTrans()"><img src="__image__/admin/B/fanyi.png" alt="翻譯" title="翻譯"></a>
+                        <a onmouseover="info()" id="paste" style="position:absolute; right:134px;bottom:30px;width: 120px;font-size: 12px;"><img src="__image__/admin/ B/screen.png" alt=""> 怎麼發截圖？ </a>
                     </div>
                 </div>
             </div>
@@ -533,8 +533,8 @@
             <!-- 浮层 -->
             <div id='fuceng' class="hide" style="background: #f7f7f7;height: 68px;position: absolute;bottom: 70px;right: 20px;z-index: 9999;border-radius: 8px;padding: 8px 0">
                 <ul style="width: 100%;height: 60px;">
-                    <li class="fuceng-li" onclick="choosetype(this)" name='1'><img id='type1' class="layui-icon selecte-icon" src="__image__/admin/B/selected.png" alt=""><span>按Enter键发送消息，Ctrl+Enter换行</span></li>
-                    <li class="fuceng-li selected-li" onclick="choosetype(this)" name='2'><img id='type2' class="layui-icon selecte-icon" src="__image__/admin/B/selected.png" alt=""><span>按Ctrl+Enter键发送消息，Enter换行</span></li>
+                    <li class="fuceng-li" onclick="choosetype(this)" name='1'><img id='type1' class="layui-icon selecte-icon" src="__image__/admin/B/selected.png" alt=""><span>按Enter鍵發送訊息，Ctrl+Enter換行</span></li>
+                    <li class="fuceng-li selected-li" onclick="choosetype(this)" name='2'><img id='type2' class="layui-icon selecte-icon" src="__image__/admin/B/selected.png" alt=""><span>按Ctrl+Enter鍵發送訊息，Enter換行</span></li>
                 </ul>
             </div>
         </section>
@@ -542,57 +542,57 @@
 
             <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="margin: 0px;height: 100%;background-color: #fff;position: relative;">
                 <ul class="layui-tab-title" style="height: 50px;border-bottom: 0;background-color: #f7f7f7">
-                    <li class="layui-this" style="width: 33%;height: 50px;line-height: 50px;color: #555555">访客信息<span class="line"></span></li>
-                    <li style="width: 33%;height: 50px;line-height: 50px;color: #555555">黑名单<span class="line"></span></li>
-                    <li style="width: 34%;height: 50px;line-height: 50px;color: #555555">快捷回复<span class="line"></span></li>
+                    <li class="layui-this" style="width: 33%;height: 50px;line-height: 50px;color: #555555">訪客資訊<span class="line"></span></li>
+                    <li style="width: 33%;height: 50px;line-height: 50px;color: #555555">黑名單<span class="line"></span></li>
+                    <li style="width: 34%;height: 50px;line-height: 50px;color: #555555">快速回覆<span class="line"></span></li>
                 </ul>
 
                 <div class="layui-tab-content" style="padding: 16px;height: 100%;overflow-y: auto;padding-bottom: 20vh">
                     <div class="layui-tab-item layui-show">
                         <div class="" style="color: #555555;">
 
-                            <div style="font-size: 14px;border-left: 5px solid #1E9FFF;height: 40px;line-height: 40px;background: #f2f2f2;    padding-left: 10px;">访问信息</div>
+                            <div style="font-size: 14px;border-left: 5px solid #1E9FFF;height: 40px;line-height: 40px;background: #f2f2f2; padding-left: 10px;">存取資訊</div>
 
                             <div style="margin-top: 12px;">
-                                来源：<span class="record"></span>
+                                來源：<span class="record"></span>
                             </div>
                             <div style="margin-top: 14px;">
-                                地区：<span class="ipdizhi" style="font-size: 10px;"></span> 【<span class="iparea" style="font-size: 10px;"></span>】
-                            </div>
-
-                            <div style="margin-top: 14px;">
-                                语言：<span class="lang-name"></span><span id="lang" style="display: none"></span>
+                                地區：<span class="ipdizhi" style="font-size: 10px;"></span> 【<span class="iparea" style="font-size: 10px;"></span>】
                             </div>
 
                             <div style="margin-top: 14px;">
-                                状态：<span id="v_state" style="font-size: 10px;"></span>
+                                語言：<span class="lang-name"></span><span id="lang" style="display: none"></span>
                             </div>
 
                             <div style="margin-top: 14px;">
-                                上次登录时间：<span
+                                狀態：<span id="v_state" style="font-size: 10px;"></span>
+                            </div>
+
+                            <div style="margin-top: 14px;">
+                                上次登入時間：<span
                                     id="last_login_time" style="font-size: 10px;"></span>
                             </div>
 
                             <div style="margin-top: 14px;">
-                                登录次数：<span
+                                登入次數：<span
                                     id="login_times" style="font-size: 10px;"></span>
                             </div>
                             <div style="margin-top: 14px;">
-                                登录设备：<span
+                                登入設備：<span
                                     id="login_device" style="font-size: 10px;"></span>
                             </div>
 
-                            <div style="font-size: 14px;border-left: 5px solid #1E9FFF;height: 40px;line-height: 40px;background: #f2f2f2;    padding-left: 10px;margin-top: 14px;">备注信息</div>
+                            <div style="font-size: 14px;border-left: 5px solid #1E9FFF;height: 40px;line-height: 40px;background: #f2f2f2; padding-left: 10px;margin-top: 14px;資訊</div>
 
                             <div style="margin-top: 14px;">
-                                姓名：<input type="text" id="name" placeholder="姓名填写后自动保存" class="layui-input" onblur="saveinfo()" />
+                                姓名：<input type="text" id="name" placeholder="姓名填寫後自動儲存" class="layui-input" onblur="saveinfo()" />
                             </div>
 
                             <div style="margin-top: 14px;">
-                                电话：<input type="text" id="tel" placeholder="电话填写后自动保存" class="layui-input" onblur="saveinfo()" />
+                                電話：<input type="text" id="tel" placeholder="電話填寫後自動儲存" class="layui-input" onblur="saveinfo()" />
                             </div>
                             <div style="margin-top: 14px;">
-                                备注：<textarea  id="comment" placeholder="备注信息，填写后自动保存" class="layui-input"  onblur="saveinfo()" style="height: 50px;"></textarea>
+                                備註：<textarea id="comment" placeholder="備註訊息，填寫後自動儲存" class="layui-input" onblur="saveinfo()" style="height: 50px;"></textarea>
                             </div>
 
 
@@ -687,10 +687,10 @@
 
     function show(){
         let text = $('.manager-reply').text();
-        if(text == '管理快捷回复') {
+        if(text == '管理快速回覆') {
             $('.manager-reply').text('退出管理')
         }else {
-            $('.manager-reply').text('管理快捷回复')
+            $('.manager-reply').text('管理快速回覆')
         }
         $('.del-reply').toggle();
     }
@@ -700,8 +700,8 @@
             type: 1,
             area: ['360px', '180'],
             title:'',
-            content: '<div style="text-align:center;margin: 50px 0 30px;font-size:14px;">确认清空当前会话列表？</div>',
-            btn: ['确定', '取消'],
+            content: '<div style="text-align:center;margin: 50px 0 30px;font-size:14px;">確認清空目前會話清單？ </div>',
+            btn: ['確定', '取消'],
             yes:function(res){
                 $.ajax({
                     url:"/admin/set/clear",
@@ -725,17 +725,17 @@
 
     function addreply(){
         $('.del-reply').hide();
-        $('.manager-reply').text('管理快捷回复');
+        $('.manager-reply').text('管理快速回覆');
         var html='<form class="layui-form reply-form" style="margin-top:20px;">';
         html+='<div class="layui-form-item"><label class="layui-form-label" for="tag">标签</label>';
         html+='<div class="layui-input-block"><input id="tag" type="text" class="layui-input" style="width:552px" /></div></div>';
-        html+='<div class="layui-form-item layui-form-text"><label class="layui-form-label" for="word">快捷用语</label>';
+        html+='<div class="layui-form-item layui-form-text"><label class="layui-form-label" for="word">快速用語</label>';
         html+='<div class="layui-input-block"><textarea id="word" name="content" class="layui-textarea" style="height:160px;width:552px"></textarea></div></div>'
         html+='</form>';
 
         layer.open({
             type:1,
-            title:'添加快捷回复',
+            title:'新增快捷回覆',
             area: ['600px', '415px'],
             content: html,
             btn: ['保存', '取消'],
@@ -983,7 +983,7 @@
 
                     layer.open({
                         type:1
-                        ,title: '视频'
+                        ,title: '影片'
                         ,shade:0
                         ,closeBtn:1
                         ,area: ['440px', '378px']

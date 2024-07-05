@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <title>对话框</title>
+    <title>對話框</title>
     <link href="__libs__/layui/css/layui.css?v=__lkversion__" rel="stylesheet">
     <script type="text/javascript" src="__libs__/jquery/jquery.min.js?v=__lkversion__"></script>
     <script src="__libs__/layui/layui.js?v=__lkversion__" type="text/javascript"></script>
@@ -66,7 +66,7 @@
                         if (value.indexOf("emo") == 0) {
                             str = '[表情]';
                         } else {
-                            str = '[图片]';
+                            str = '[圖片]';
                         }
                     });
 
@@ -260,7 +260,7 @@
 <section>
 
     <header class="" style="width: 100%;height: 50px;color: #FFFFFF;">
-        <span class="list onclick"  title="chat" onclick="choose(this)">当前对话</span><span class="list" title="wait" onclick="choose(this)">排队列表<div id="waitnum" class="hide" ></div></span>
+        <span class="list onclick"  title="chat" onclick="choose(this)">目前對話</span><span class="list" title="wait" onclick="choose(this)">排隊列表<div id="waitnum" class="hide" ></div></span>
     </header>
     <setion id="chatlist" style="overflow-y: auto;">
 
@@ -310,7 +310,7 @@ function get(id) {
         type: "post",
         data: {visiter_id: id},
         success: function (res) {
-            layer.msg("认领成功", {offset: "20px"});
+            layer.msg("認領成功", {offset: "20px"});
             getwait();
             getchat();
         }
@@ -361,15 +361,14 @@ function get(id) {
                 var a = "";
                 $.each(res.data, function (k, v) {
 
-
                     if(v.state == "online"){
                         a += '<div class="waiter">';
-                        a += '<img id="img'+v.visiter_id+'" class="am-radius w-avatar" src="' + v.avatar + '" width="50px" height="50px"><span class="wait_name">' + v.visiter_name + '</span>';
-                        a += '<i class="mygeticon " title="认领" onclick="get(' + "'" + v.visiter_id + "'" + ')"></i></div>';
+                        a += '<img id="img'+v.visiter_id+'" class="am-radius w-avatar" src="' + v.avatar + '" width="50px" height="50px">< span class="wait_name">' + v.visiter_name + '</span>';
+                        a += '<i class="mygeticon " title="認領" onclick="get(' + "'" + v.visiter_id + "'" + ')"></i></div>';
                     }else{
                         a += '<div class="waiter">';
-                        a += '<img id="img'+v.visiter_id+'"  class="am-radius w-avatar icon_gray"  src="' + v.avatar + '" width="50px" height="50px"><span class="wait_name">' + v.visiter_name + '</span>';
-                        a += '<i class="mygeticon " title="认领" onclick="get(' + "'" + v.visiter_id + "'" + ')"></i></div>';
+                        a += '<img id="img'+v.visiter_id+'" class="am-radius w-avatar icon_gray" src="' + v.avatar + '" width="50px" height="50px"> <span class="wait_name">' + v.visiter_name + '</span>';
+                        a += '<i class="mygeticon " title="認領" onclick="get(' + "'" + v.visiter_id + "'" + ')"></i></div>';
                     }
 
                 });
@@ -415,15 +414,14 @@ function get(id) {
 
                            if(v.count == 0){
                                 a+='<div class="visiter">';
-                                a+='<i class="layui-icon " title="删除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v.visiter_id+"'"+')">&#x1006;</i>';
+                                    a+='<i class="layui-icon " title="刪除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v. visiter_id+"'"+')">&#x1006;</i>';
                                 a+='<a class="visit_content" href="/weixin/chat/talk?channel='+v.channel+'&avatar='+v.avatar+'">';
                                 a+='<img class="v-avatar" src="'+v.avatar+'" width="60px" height="60px">';
-                                a+='<span class="c_name">'+v.visiter_name+'</span><div id="msg'+v.visiter_id+'" class="newmsg">'+v.content+'</div></a>';
+                                a+='<span class="c_name">'+v.visiter_name+'</span><div id="msg'+v.visiter_id+'" class="newmsg">'+v.content+'</div> </a>';
                                 a+='<span id="c'+v.visiter_id+'" class="notice-icon" style="display: none;"></span></div>';
                            }else{
                                a+='<div class="visiter">';
-                                a+='<i class="layui-icon " title="删除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v.visiter_id+"'"+')">&#x1006;</i>';
-                                a+='<a class="visit_content" href="/weixin/chat/talk?channel='+v.channel+'&avatar='+v.avatar+'">';
+                                a+='<i class="layui-icon " title="刪除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v. visiter_id+"'"+')">&#x1006;</i>'; a+='<a class="visit_content" href="/weixin/chat/talk?channel='+v.channel+'&avatar='+v.avatar+'">';
                                 a+='<img class="v-avatar" src="'+v.avatar+'" width="60px" height="60px">';
                                 a+='<span class="c_name">'+v.visiter_name+'</span><div id="msg'+v.visiter_id+'" class="newmsg"></div></a>';
                                 a+='<span id="c'+v.visiter_id+'" class="notice-icon">'+v.count+'</span></div>';
@@ -433,14 +431,14 @@ function get(id) {
 
                            if(v.count == 0){
                                 a+='<div class="visiter">';
-                                a+='<i class="layui-icon " title="删除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v.visiter_id+"'"+')">&#x1006;</i>';
+                                    a+='<i class="layui-icon " title="刪除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v. visiter_id+"'"+')">&#x1006;</i>';
                                 a+='<a class="visit_content" href="/weixin/chat/talk?channel='+v.channel+'&avatar='+v.avatar+'">';
                                 a+='<img class="v-avatar icon_gray" src="'+v.avatar+'" width="60px" height="60px">';
-                                a+='<span class="c_name">'+v.visiter_name+'</span><div id="msg'+v.visiter_id+'" class="newmsg">'+v.content+'</div></a>';
+                                a+='<span class="c_name">'+v.visiter_name+'</span><div id="msg'+v.visiter_id+'" class="newmsg">'+v.content+'</div> </a>';
                                 a+='<span id="c'+v.visiter_id+'" class="notice-icon" style="display: none;"></span></div>';
                            }else{
                                 a+='<div class="visiter">';
-                                a+='<i class="layui-icon " title="删除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v.visiter_id+"'"+')">&#x1006;</i>';
+                                a+='<i class="layui-icon " title="刪除" style="font_weight:blod;position: absolute;right: 5px;top:6px;" onclick="cut('+"'"+v. visiter_id+"'"+')">&#x1006;</i>';
                                 a+='<a class="visit_content" href="/weixin/chat/talk?channel='+v.channel+'&avatar='+v.avatar+'">';
                                 a+='<img class="v-avatar icon_gray" src="'+v.avatar+'" width="60px" height="60px">';
                                  a+='<span class="c_name">'+v.visiter_name+'</span><div id="msg'+v.visiter_id+'" class="newmsg">'+v.content+'</div></a>';

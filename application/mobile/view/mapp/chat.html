@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico"/>
-    <title>对话平台</title>
+    <title>對話平台</title>
     <script>
         ROOT_URL = "{$baseroot?$baseroot:''}";
     </script>
@@ -168,22 +168,22 @@
         </div>
 
         <div style="position: absolute;left: 80px;top: 10px;font-size: 20px;">
-            <a href="https://www.dianqilai.com">点企来 客服系统</a>
+            <a href="https://www.dianqilai.com">點企來 客服系統</a>
         </div>
 
         <div class="layui-nav-item" style="position: absolute;right: 5px;top: 5px;">
             <a href="javascript:show();" style="color: #b2b2b2;"><i class="layui-icon" style="font-size: 40px;">
                 &#xe60f;</i></a>
             <dl class="layui-nav-child" style="left:-65px;min-width: 100px;">
-                <dd style="text-align: center;"><a href="/mobile/admin/index">主页</a></dd>
-                <dd style="text-align: center;"><a href="/mobile/admin/message">留言列表</a></dd>
+                <dd style="text-align: center;"><a href="/mobile/admin/index">首頁</a></dd>
+                <dd style="text-align: center;"><a href="/mobile/admin/message">留言表</a></dd>
             </dl>
         </div>
     </header>
 
     <div class="" style="width: 100%;height: 50px;color: #FFFFFF;">
-        <span class="list onclick" title="chat" onclick="choose(this)">当前对话</span><span class="list" title="wait"
-                                                                                        onclick="choose(this)">排队列表<div
+        <span class="list onclick" title="chat" onclick="choose(this)">當前對話</span><span class="list" title="wait"
+                                                                                        onclick="choose(this)">排隊名單<div
             id="waitnum" class="hide"></div></span>
     </div>
     <section id="chatlist" style="overflow-y: auto;">
@@ -272,13 +272,13 @@
                 if (value.indexOf("emo") == 0) {
                     str = '[表情]';
                 } else {
-                    str = '[图片]';
+                    str = '[圖片]';
                 }
             });
 
             str = str.replace(/<div><a[^<>]+>.+?<\/a><\/div>/, '[文件]');
 
-            str = str.replace(/<img src=['"]([^'"]+)[^>]*>/gi, '[图片]');
+            str = str.replace(/<img src=['"]([^'"]+)[^>]*>/gi, '[圖片]');
 
             $.cookie(data.message.channel, str);
             $("#msg" + data.message.channel).html(str);

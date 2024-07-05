@@ -15,7 +15,7 @@ use app\index\model\User;
 class Message extends Controller
 {
     /**
-     * 留言首页.
+     * 留言首頁.
      *
      * @return mixed
      */

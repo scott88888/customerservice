@@ -75,7 +75,7 @@ class Index extends Controller
 
     /**
      *
-     * 手机端首页.
+     * 手机端首頁.
      *
      * @return mixed
      */

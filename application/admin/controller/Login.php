@@ -32,7 +32,7 @@ class Login extends Controller
     }
 
     /**
-     * 登陆首页.
+     * 登陆首頁.
      *
      * @return string
      */

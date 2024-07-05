@@ -17,7 +17,7 @@ class Index extends Base
 {
 
     /**
-     * 后台首页.
+     * 后台首頁.
      *
      * @return mixed
      */

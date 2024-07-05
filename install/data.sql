@@ -527,7 +527,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------
 -- Records of wolive_admin_menu
 -- ----------------------------
-INSERT INTO `wolive_admin_menu` VALUES (1, 0, '首页', '/backend/index/home', 'layui-icon layui-icon-home', 1, 1, 1);
+INSERT INTO `wolive_admin_menu` VALUES (1, 0, '首頁', '/backend/index/home', 'layui-icon layui-icon-home', 1, 1, 1);
 INSERT INTO `wolive_admin_menu` VALUES (2, 0, '登录日志', '/backend/log/index', 'layui-icon layui-icon-layouts', 2, 1, 1);
 INSERT INTO `wolive_admin_menu` VALUES (3, 0, '商户管理', '', 'layui-icon layui-icon-username', 1, 0, 1);
 INSERT INTO `wolive_admin_menu` VALUES (4, 3, '商户列表', '/backend/busines/index', NULL, 99, 1, 1);
@@ -536,7 +536,7 @@ INSERT INTO `wolive_admin_menu` VALUES (5, 3, '客服列表', '/backend/services
 -- ----------------------------
 -- Records of wolive_admin_permission
 -- ----------------------------
-INSERT INTO `wolive_admin_permission` VALUES (1, 0, '首页', '/service/index/home', 'layui-icon layui-icon-home', 1, 1, 1, 0);
+INSERT INTO `wolive_admin_permission` VALUES (1, 0, '首頁', '/service/index/home', 'layui-icon layui-icon-home', 1, 1, 1, 0);
 INSERT INTO `wolive_admin_permission` VALUES (2, 0, '客服管理', '', 'layui-icon layui-icon-username', 2, 0, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (3, 2, '客服列表', '/service/services/index', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (4, 2, '客服分组', '/service/groups/index', NULL, 99, 1, 1, 1);

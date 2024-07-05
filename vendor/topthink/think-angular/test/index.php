@@ -4,7 +4,7 @@ require './common.php';
 
 // 模拟用户列表
 $data = [
-    'title' => '首页',
+    'title' => '首頁',
     'list'  => [
         ['id' => 1, 'name' => 'user_1', 'email' => 'email_1@qq.com', 'status' => 1],
         ['id' => 2, 'name' => 'user_2', 'email' => 'email_2@qq.com', 'status' => 0],

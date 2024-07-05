@@ -2,7 +2,7 @@
 // 导航数据
 return [
     [
-        'title' => '首页',
+        'title' => '首頁',
         'url'   => 'index.php',
     ],
     [

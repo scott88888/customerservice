@@ -20,7 +20,7 @@ class Index extends Base
 {
 
     /**
-     * 后台首页.
+     * 后台首頁.
      *
      * @return mixed
      */
@@ -53,7 +53,7 @@ class Index extends Base
         $services = Admins::table("wolive_service")->where($where)->where(['state' => 'online'])->count();
         // 今日会话量
         $nowchats = Admins::table("wolive_chats")->where($where)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();
-        //今日评价人数
+        //今日評價人數
         $nowcomments = Admins::table("wolive_comment")->where($where)->where('add_time', '>', "{$time}")->where('add_time', '<=', $times)->count();
         //评价总数
         $allcomments = Admins::table("wolive_comment")->where($where)->count();
@@ -76,8 +76,8 @@ class Index extends Base
         $this->assign('talking', $talking);
         $this->assign('services', $services);
         $this->assign('nowchats', $nowchats);
-        $this->assign("part", "首页");
-        $this->assign('title', '首页');
+        $this->assign("part", "首頁");
+        $this->assign('title', '首頁');
         return $this->fetch();
     }
 

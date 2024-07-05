@@ -92,7 +92,7 @@
             <?php if ($pagecount > 1) { ?><nav>
     <ul class="pagination">
         <?php if ($p > 1) { ?><li>
-            <a href="<?php echo $page(1); ?>">首页</a>
+            <a href="<?php echo $page(1); ?>">首頁</a>
         </li><?php }  if ($p > 1) { ?><li>
             <a href="<?php echo $page($p - 1); ?>">上一页</a>
         </li><?php }  if ($p - 4 > 2) { ?><li>

@@ -14,7 +14,7 @@ use think\Paginator;
 class Mapp extends Mbase
 {
     /**
-     * 登陆首页.
+     * 登陆首頁.
      *
      * @return string
      */

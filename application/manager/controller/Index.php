@@ -44,7 +44,7 @@ Class Index extends Base
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$v)->count();
           // 今日会话量
           $nowchat = Admins::table("wolive_chats")->where('business_id',$v)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();
-          // 会话总量
+          // 對話總數
           $totalchat =Admins::table('wolive_chats')->where('business_id',$v)->count();
           // 今日留言量
           $nowmsg = Admins::table('wolive_message')->where('business_id',$v)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();
@@ -93,7 +93,7 @@ Class Index extends Base
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$login['business_id'])->count();
           // 今日会话量
           $nowchat = Admins::table("wolive_chats")->where('business_id',$login['business_id'])->where('timestamp','like',"{$time}%")->count();    
-          // 会话总量
+          // 對話總數
           $totalchat =Admins::table('wolive_chats')->where('business_id',$v)->count();
           // 今日留言量
           $nowmsg = Admins::table('wolive_message')->where('business_id',$login['business_id'])->where('timestamp','like',"{time}%")->count();
@@ -132,7 +132,7 @@ Class Index extends Base
 
      }
       
-    $this->assign('title','首页');
+    $this->assign('title','首頁');
 
      
 	  return $this->fetch();

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>首页三</title>
+		<title>首頁三</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,7 +27,7 @@
 			<div class="layui-row layui-col-space10">
 				<div class="layui-col-xs6 layui-col-md3">
 					<div class="layui-card ">
-						<div class="layui-card-header">当前咨询用户数</div>
+						<div class="layui-card-header">目前諮詢用戶數</div>
 						<div class="layui-card-body">
 							<div class="layui-row layui-col-space5">
 								<div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value1">
@@ -55,13 +55,13 @@
 							</div>
 						</div>
 						<div class="layui-card-footer">
-							当前在线客服数：{$services}
+							目前線上客服數：{$services}
 						</div>
 					</div>
 				</div>
 				<div class="layui-col-xs6 layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">当前排队用户数</div>
+						<div class="layui-card-header">目前排隊用戶數</div>
 						<div class="layui-card-body">
 							<div class="layui-row layui-col-space5">
 								<div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value2">
@@ -96,13 +96,13 @@
 							</div>
 						</div>
 						<div class="layui-card-footer">
-							接待总用户数：{$getinall}
+							接待總用戶數：{$getinall}
 						</div>
 					</div>
 				</div>
 				<div class="layui-col-xs6 layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">今日聊天消息数</div>
+						<div class="layui-card-header">今日聊天訊息數</div>
 						<div class="layui-card-body">
 							<div class="layui-row layui-col-space5">
 								<div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value3">
@@ -129,13 +129,13 @@
 							</div>
 						</div>
 						<div class="layui-card-footer">
-							聊天消息总数：{$chatsall}
+							聊天訊息總數：{$chatsall}
 						</div>
 					</div>
 				</div>
 				<div class="layui-col-xs6 layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">今日评价用户数</div>
+						<div class="layui-card-header">今日評價用戶數</div>
 						<div class="layui-card-body">
 							<div class="layui-row layui-col-space5">
 								<div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value4">
@@ -165,7 +165,7 @@
 							</div>
 						</div>
 						<div class="layui-card-footer">
-							总评价数：{$allcomments}
+							總評價數：{$allcomments}
 						</div>
 					</div>
 				</div>
@@ -191,7 +191,7 @@
                 option = {
                     backgroundColor: '#fff',
                     title: {
-                        text: '最近15天接待情况',
+                        text: '最近15天接待狀況',
                         textStyle: {
                             fontSize: 12,
                             fontWeight: 400
@@ -331,7 +331,7 @@
                         }
                     }],
                     series: [{
-                        name: '会话总量',
+                        name: '對話總數',
                         type: 'line',
                         data: {:json_encode(array_column($chatsdata,'chat'))},
                         symbolSize: 1,
@@ -361,7 +361,7 @@
                             }
                         }
                     }, {
-                        name: '接入会话总量',
+                        name: '接入對話總數',
                         type: 'line',
                         data: {:json_encode(array_column($chatsdata,'line'))},
                         symbolSize: 1,
@@ -392,7 +392,7 @@
                         }
                     },
                         {
-                            name: '评价人数',
+                            name: '評價人數',
                             type: 'line',
                             data: {:json_encode(array_column($chatsdata,'comment'))},
                             symbolSize: 1,

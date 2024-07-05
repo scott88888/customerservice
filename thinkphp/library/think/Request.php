@@ -1593,7 +1593,7 @@ class Request
             // 标记请求缓存检查
             $this->isCheckCache = true;
             if (false === $expire) {
-                // 关闭当前缓存
+                // 關閉當前缓存
                 return;
             }
             if ($key instanceof \Closure) {

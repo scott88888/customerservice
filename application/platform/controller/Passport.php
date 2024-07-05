@@ -130,7 +130,7 @@ class Passport extends Controller
         if ($this->auth->changepwd($data['new_password'],$data['old_password'])) {
             return [
                 'code' => 0,
-                'msg' => '修改密码成功',
+                'msg' => '修改密碼成功',
             ];
         } else {
             return [

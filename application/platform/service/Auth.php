@@ -245,7 +245,7 @@ class Auth
     }
 
     /**
-     * 修改密码
+     * 修改密碼
      * @param string    $newpassword        新密码
      * @param string    $oldpassword        旧密码
      * @param bool      $ignoreoldpassword  忽略旧密码
@@ -266,7 +266,7 @@ class Auth
             $this->_user->save(['password' => $newpassword]);
 
             $ignoreoldpassword?:Token::delete($this->_token);
-            //修改密码成功的事件
+            //修改密碼成功的事件
             Hook::listen("user_changepwd_successed", $this->_user);
             return true;
         }

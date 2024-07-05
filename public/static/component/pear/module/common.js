@@ -57,7 +57,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 			    success:callback !=null?callback(result):function(result){
 			        if(result.success){
 			            layer.msg(result.msg,{icon:1,time:1000},function(){
-			                parent.layer.close(parent.layer.getFrameIndex(window.name));//关闭当前页
+			                parent.layer.close(parent.layer.getFrameIndex(window.name));//關閉當前页
 			                parent.layui.table.reload(table);
 			            });
 			        }else{

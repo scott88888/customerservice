@@ -65,7 +65,7 @@ $(function () {
     });
     $("body").on("click", ".safe-exit", function () {
         var _this = this;
-        $.AMUI.message.confirm("您确认要退出登录吗?", "安全退出", function (ok) {
+        $.AMUI.message.confirm("您确认要退出登入吗?", "安全退出", function (ok) {
             if (ok) {
                 location.href = _this.href
             }

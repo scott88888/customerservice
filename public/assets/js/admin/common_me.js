@@ -134,7 +134,7 @@ var modify =function(id){
 
     layer.open({
         type:1,
-        title:'修改密码',
+        title:'修改密碼',
         area:['600px','316px'],
         content:str,
         btn:['保存','取消'],

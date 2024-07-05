@@ -196,7 +196,7 @@ class Menu
                         'is_admin' => true,
                     ],
                     [
-                        'name' => '清理缓存',
+                        'name' => '清理快取',
                         'route' => 'platform/cache/index',
                         'icon' => 'icon-qinglihuancun',
                         'is_admin' => false,

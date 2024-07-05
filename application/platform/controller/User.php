@@ -217,12 +217,12 @@ class User extends Base
             if ($this->auth->changepwd($paswword,'',true)) {
                 return [
                     'code' => 0,
-                    'msg' => '修改密码成功',
+                    'msg' => '修改密碼成功',
                 ];
             } else {
                 return [
                     'code' => 1,
-                    'msg' => '修改密码失败',
+                    'msg' => '修改密碼失败',
                 ];
             }
         } else {

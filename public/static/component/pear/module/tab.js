@@ -74,8 +74,8 @@ layui.define(['jquery', 'element'], function(exports) {
 
 			var currentId = $(this).attr("lay-id");
 
-			var menu = "<ul><li class='item' id='" + option.elem + "closeThis'>关闭当前</li><li class='item' id='" + option.elem +
-				"closeOther'>关闭其他</li><li class='item' id='" + option.elem + "closeAll'>关闭所有</li></ul>";
+			var menu = "<ul><li class='item' id='" + option.elem + "closeThis'>關閉當前</li><li class='item' id='" + option.elem +
+				"closeOther'>關閉其他</li><li class='item' id='" + option.elem + "closeAll'>關閉全部</li></ul>";
 
 			// 初始化
 			layer.open({

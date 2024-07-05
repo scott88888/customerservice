@@ -476,7 +476,7 @@ class Manager extends Base
         }
     }
     /**
-     * 修改密码
+     * 修改密碼
      * [modify description]
      * @return [type] [description]
      */

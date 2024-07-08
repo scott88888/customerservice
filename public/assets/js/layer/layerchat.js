@@ -426,7 +426,7 @@ var init = function () {
                 layer.open({
                     title:'提示框',
                     area: ['300px', '180px'],
-                    content:'该客服离线中，是否转接其他客服？',
+                    content:'该客服離線中，是否转接其他客服？',
                     btn:['是','否'],
                     yes:function(){
                         $.ajax({

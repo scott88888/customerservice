@@ -68,7 +68,7 @@ function getstatus(cha) {
                     if(res.data.state == 'online'){
                         $("#v_state").text("線上");
                     }else{
-                        $("#v_state").text("离线");
+                        $("#v_state").text("離線");
                     }
                 }
             }

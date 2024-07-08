@@ -65,7 +65,7 @@ class Event extends Controller
     }
 
     /**
-     * 离线，線上监控类.
+     * 離線，線上监控类.
      *
      * @returngetanswer void
      */
@@ -106,9 +106,9 @@ class Event extends Controller
 
             $payload = json_decode($body, true);
             foreach ($payload['events'] as $event) {
-                // 通知离线
+                // 通知離線
                 if ($event['name'] == 'channel_removed') {
-                    // 客服 离线
+                    // 客服 離線
                     if (strpos($event['channel'], 'kefu') === 0) {
                         $channel = str_replace('kefu', 'se', $event['channel']);
                         $id = str_replace('kefu', '', $event['channel']);
@@ -116,7 +116,7 @@ class Event extends Controller
                         $res = Admins::table('wolive_service')->where('service_id', $id)->update(['state' => 'offline']);
 
                     } elseif (strpos($event['channel'], 'cu') === 0) {
-                        // 访客 离线
+                        // 访客 離線
                         $channel = str_replace('cu', '', $event['channel']);
 
                         $newstr = pack("H*", $channel);
@@ -429,7 +429,7 @@ class Event extends Controller
             $service_data = Service::get($service_id);
             $business = Business::get($arr['business_id']);
             $sended = $service['remind_tpl'];
-            //改成离线状态接收通知
+            //改成離線状态接收通知
             if (empty($sended) && $business['template_state']=='open') {
                 TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
                     "first"  => "你有一条新的客户信息!",

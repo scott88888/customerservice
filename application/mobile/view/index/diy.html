@@ -146,9 +146,9 @@
                    function getlisten(chas){
                         var channels = pusher.subscribe("se"+chas);
 
-                        //通知遊客 客服离线
+                        //通知遊客 客服離線
                         channels.bind('logout', function (data) {
-                            $("#status").text("[离线]");
+                            $("#status").text("[離線]");
                         });
                         //表示客服線上
                         channels.bind("geton", function (data) {

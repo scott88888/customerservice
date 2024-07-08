@@ -241,9 +241,9 @@
           });
 
 
-          // 通知 遊客离线
+          // 通知 遊客離線
           channel.bind("logout", function (data) {
-              //表示访客离线
+              //表示访客離線
               var cdata = $.cookie("cu_com");
               var chas;
               if (cdata) {
@@ -252,7 +252,7 @@
               }
               if (chas == data.message.chas) {
                   //头像变灰
-                  $("#v_state").text("离线");
+                  $("#v_state").text("離線");
               }
               $("#img" + data.message.chas).addClass("icon_gray");
               getchat();
@@ -288,7 +288,7 @@
                           wolive_connect();
                       },1000);
                   }
-                  $(".profile").text('离线');
+                  $(".profile").text('離線');
               }
           });
 
@@ -345,7 +345,7 @@
           <!--{if $arr['state'] == 'online'}
           <span class="layui-font-green">[線上]</span>
           {else}
-          <span class="layui-font-gray">[离线]</span>
+          <span class="layui-font-gray">[離線]</span>
           {/if}-->
         </a>
         <!-- 功 能 菜 单 -->

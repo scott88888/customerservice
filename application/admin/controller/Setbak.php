@@ -783,7 +783,7 @@ class Set extends Base
     }
 
     /**
-     * 设置客服离线优先
+     * 设置客服離線优先
      *
      * @return array
      */
@@ -2083,7 +2083,7 @@ class Set extends Base
         if ($visiter['state'] == 'offline') {
             return json([
                 'code' => 1,
-                'msg' => '访客已离线,无法推送评价'
+                'msg' => '访客已離線,无法推送评价'
             ]);
         }
 

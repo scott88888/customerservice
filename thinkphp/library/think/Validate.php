@@ -134,7 +134,7 @@ class Validate
     }
 
     /**
-     * 添加字段验证规则
+     * 新增字段验证规则
      * @access protected
      * @param string|array  $name  字段名称或者规则数组
      * @param mixed         $rule  验证规则
@@ -1235,7 +1235,7 @@ class Validate
     }
 
     /**
-     * 验证表单令牌
+     * 验证表單令牌
      * @access protected
      * @param mixed     $value  字段值
      * @param mixed     $rule  验证规则
@@ -1252,7 +1252,7 @@ class Validate
 
         // 令牌验证
         if (isset($data[$rule]) && Session::get($rule) === $data[$rule]) {
-            // 防止重复提交
+            // 防止重复送出
             Session::delete($rule); // 验证完成销毁session
             return true;
         }

@@ -222,7 +222,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 复制object
+         * 複製object
          */
         $to_bucket = $this->bucket;
         $to_object = $object . '.copy';
@@ -239,7 +239,7 @@ class OssClientObjectTest extends TestOssClientBase
         } 
 
         /**
-         * 检查复制的是否相同
+         * 检查複製的是否相同
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $to_object);
@@ -391,7 +391,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 检查复制的是否相同
+         * 检查複製的是否相同
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $object);
@@ -474,7 +474,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查复制的是否相同
+    	 * 检查複製的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);
@@ -493,7 +493,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查复制的是否相同
+    	 * 检查複製的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);
@@ -561,7 +561,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查复制的是否相同
+    	 * 检查複製的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);

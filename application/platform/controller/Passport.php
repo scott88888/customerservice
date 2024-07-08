@@ -229,7 +229,7 @@ class Passport extends Controller
             if (empty($account)) {
                 return [
                     'code' => 1,
-                    'msg' => '该手机号未绑定任何账户。',
+                    'msg' => '该手機號碼未绑定任何账户。',
                 ];
             }
 

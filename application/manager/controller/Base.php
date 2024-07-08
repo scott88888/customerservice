@@ -72,7 +72,7 @@ class Base extends Controller
         $admin = Admin::count();
 
         if(empty($_SESSION['Super']['level']) || $_SESSION['Super']['level'] != 'super_manager'){
-            $this->error('您不是超级用户!');
+            $this->error('您不是超级使用者!');
         }
         $res = Business::get($_SESSION['Super']['business_id']);
         if (empty($admin) && $res['admin_id'] == 1) {
@@ -81,7 +81,7 @@ class Base extends Controller
             $is_we7 = 0;
         }
         if (!$is_we7) {
-            $this->error('您不是微擎超级用户!');
+            $this->error('您不是微擎超级使用者!');
         }
         $login = $_SESSION['Msg'];
         $result = Admins::table("wolive_service")->where('service_id', $login['service_id'])->find();

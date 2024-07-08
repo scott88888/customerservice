@@ -19,7 +19,7 @@
 if (!function_exists('queue')) {
 
     /**
-     * 添加到队列
+     * 新增到队列
      * @param        $job
      * @param string $data
      * @param int    $delay

@@ -10,10 +10,10 @@
         <div class="mainBox">
             <div class="main-container">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">所属分组</label>
+                    <label class="layui-form-label">所屬分組</label>
                     <div class="layui-input-block">
                         <select name="groupid" lay-verify="required">
-                            <option value="">请选择客服分组</option>
+                            <option value="">請選擇客服分組</option>
                             {foreach $group as $v}
                             {if isset($queue.groupid) and $queue.groupid eq $v.id}
                             <option selected value="{$v.id}">{$v.group_name|default=''}</option>
@@ -30,7 +30,7 @@
         <div class="button-container">
             <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="" lay-filter="save">
                 <i class="layui-icon layui-icon-ok"></i>
-                提交
+                送出
             </button>
             <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">
                 <i class="layui-icon layui-icon-refresh"></i>

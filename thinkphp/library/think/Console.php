@@ -81,7 +81,7 @@ class Console
      * @access public
      * @param  string     $name    名称
      * @param  string     $version 版本
-     * @param null|string $user    执行用户
+     * @param null|string $user    执行使用者
      */
     public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN', $user = null)
     {
@@ -101,7 +101,7 @@ class Console
     }
 
     /**
-     * 设置执行用户
+     * 设置执行使用者
      * @param $user
      */
     public function setUser($user)
@@ -377,7 +377,7 @@ class Console
     }
 
     /**
-     * 批量添加指令
+     * 批量新增指令
      * @access public
      * @param  Command[] $commands 指令实例
      * @return $this
@@ -390,7 +390,7 @@ class Console
     }
 
     /**
-     * 添加一个指令
+     * 新增一个指令
      * @access public
      * @param  Command $command 命令实例
      * @return Command|bool
@@ -629,7 +629,7 @@ class Console
     }
 
     /**
-     * 配置基于用户的参数和选项的输入和输出实例
+     * 配置基于使用者的参数和选项的输入和输出实例
      * @access protected
      * @param  Input  $input  输入实例
      * @param  Output $output 输出实例
@@ -723,7 +723,7 @@ class Console
     }
 
     /**
-     * 添加默认指令
+     * 新增默认指令
      * @access public
      * @param  array $classes 指令
      * @return void

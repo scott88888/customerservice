@@ -55,8 +55,8 @@ class Vgroups extends Base
             $group = Vgroup::get(['group_name'=>$post['group_name']]);
             if ($group) $this->error('该组名称已存在');
             $res = Vgroup::insert($post);
-            if ($res) $this->success('添加成功');
-            $this->error('添加失败！');
+            if ($res) $this->success('新增成功');
+            $this->error('新增失败！');
         }
         return $this->fetch();
     }
@@ -65,7 +65,7 @@ class Vgroups extends Base
     {
         $id = $this->request->get('id');
         $check = Db::name('wolive_queue')->where(['groupid'=>$id])->find();
-        if($check) $this->error('该分组下有用户，不能删除');
+        if($check) $this->error('该分组下有使用者，不能删除');
         if (Vgroup::destroy(['id' => $id])) $this->success('操作成功！');
         $this->error('操作失败！');
     }

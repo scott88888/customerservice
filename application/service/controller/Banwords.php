@@ -47,8 +47,8 @@ class Banwords extends Base
             $status = $this->request->post('status/d',0);
             if (!is_int($status)) $this->error('匹配方式字段非法！');
             $res =Banword::insert($post);
-            if ($res) $this->success('添加成功');
-            $this->error('添加失败！');
+            if ($res) $this->success('新增成功');
+            $this->error('新增失败！');
         }
         return $this->fetch();
     }

@@ -32,7 +32,7 @@
 							<label class="layui-form-label">客服分组</label>
 							<div class="layui-input-inline">
 								<select name="group">
-									<option value="">请选择客服分组</option>
+									<option value="">請選擇客服分組</option>
 									{foreach $group as $v}
 									<option value="{$v.id}">{$v.groupname|default=''}</option>
 									{/foreach}
@@ -118,7 +118,7 @@
                             	templet: '#service-handle'
                             },{
                                 field: 'group',
-                                title: '所属分组',
+                                title: '所屬分組',
                                 unresize: true,
                             	width: 120,
                                 align: 'left',

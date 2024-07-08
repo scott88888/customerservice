@@ -58,7 +58,7 @@ class Service {
                 /**
                 创建存储桶（Bucket）的方法.
 
-                在开始使用 COS 时，需要在指定的账号下先创建一个 Bucket 以便于对象的使用和管理. 并指定 Bucket 所属的地域.创建 Bucket 的用户默认成为 Bucket 的持有者.若创建 Bucket 时没有指定访问权限，则默认 为私有读写（private）权限.
+                在开始使用 COS 时，需要在指定的账号下先创建一个 Bucket 以便于对象的使用和管理. 并指定 Bucket 所属的地域.创建 Bucket 的使用者默认成为 Bucket 的持有者.若创建 Bucket 时没有指定访问权限，则默认 为私有读写（private）权限.
 
                 可用地域，可以查看https://cloud.tencent.com/document/product/436/6224.
 
@@ -744,11 +744,11 @@ class Service {
                     ),
                 ),
                 /**
-                删除跨区域复制配置的方法.
+                删除跨区域複製配置的方法.
 
-                当不需要进行跨区域复制时，可以删除 Bucket 的跨区域复制配置. 跨区域复制，可以查阅putBucketReplication(PutBucketReplicationRequest)
+                当不需要进行跨区域複製时，可以删除 Bucket 的跨区域複製配置. 跨区域複製，可以查阅putBucketReplication(PutBucketReplicationRequest)
 
-                cos php SDK 中删除跨区域复制配置的方法具体步骤如下：
+                cos php SDK 中删除跨区域複製配置的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 
@@ -920,7 +920,7 @@ class Service {
                 /**
                 获取存储桶（Bucket) 的访问权限信息（Access Control List, ACL）的方法.
 
-                ACL 权限包括读、写、读写权限. COS 中 Bucket 是有访问权限控制的.可以通过获取 Bucket 的 ACL 表(putBucketACL(PutBucketACLRequest))，来查看那些用户拥有 Bucket 访 问权限.
+                ACL 权限包括读、写、读写权限. COS 中 Bucket 是有访问权限控制的.可以通过获取 Bucket 的 ACL 表(putBucketACL(PutBucketACLRequest))，来查看那些使用者拥有 Bucket 访 问权限.
 
                 关于获取 Bucket 的 ACL 接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/7733.
 
@@ -1033,7 +1033,7 @@ class Service {
                 /**
                 获取存储桶（Bucket）版本控制信息的方法.
 
-                通过查询版本控制信息，可以得知该 Bucket 的版本控制功能是处于禁用状态还是启用状态（Enabled 或者 Suspended）, 开启版本控制功能，可参考putBucketVersioning(PutBucketVersioningRequest).
+                通过查询版本控制信息，可以得知该 Bucket 的版本控制功能是处于禁用狀態还是启用狀態（Enabled 或者 Suspended）, 开启版本控制功能，可参考putBucketVersioning(PutBucketVersioningRequest).
 
                 cos php SDK 中获取 Bucket 版本控制信息的方法具体步骤如下：
 
@@ -1066,11 +1066,11 @@ class Service {
                     ),
                 ),
                 /**
-                获取跨区域复制配置信息的方法.
+                获取跨区域複製配置信息的方法.
 
-                跨区域复制是支持不同区域 Bucket 自动复制对象, 请查阅putBucketReplication(PutBucketReplicationRequest).
+                跨区域複製是支持不同区域 Bucket 自动複製对象, 请查阅putBucketReplication(PutBucketReplicationRequest).
 
-                cos php SDK 中获取跨区域复制配置信息的方法具体步骤如下：
+                cos php SDK 中获取跨区域複製配置信息的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 
@@ -1337,7 +1337,7 @@ class Service {
                 /**
                 设置 COS 对象的访问权限信息（Access Control List, ACL）的方法.
 
-                ACL权限包括读、写、读写权限. COS 对象的 ACL 可以通过 header头部："x-cos-acl"，"x-cos-grant-read"，"x-cos-grant-write"， "x-cos-grant-full-control" 传入 ACL 信息，或者通过 Body 以 XML 格式传入 ACL 信息.这两种方式只 能选择其中一种，否则引起冲突. 传入新的 ACL 将覆盖原有 ACL信息.ACL策略数上限1000，建议用户不要每个上传文件都设置 ACL.
+                ACL权限包括读、写、读写权限. COS 对象的 ACL 可以通过 header头部："x-cos-acl"，"x-cos-grant-read"，"x-cos-grant-write"， "x-cos-grant-full-control" 传入 ACL 信息，或者通过 Body 以 XML 格式传入 ACL 信息.这两种方式只 能选择其中一种，否则引起冲突. 传入新的 ACL 将覆盖原有 ACL信息.ACL策略数上限1000，建议使用者不要每个上传文件都设置 ACL.
 
                 关于设置 COS 对象的ACL接口的具体描述，请查看https://cloud.tencent.com/document/product/436/7748.
 
@@ -1628,7 +1628,7 @@ class Service {
 
                 跨域访问配置的预请求是指在发送跨域请求之前会发送一个 OPTIONS 请求并带上特定的来源域，HTTP 方 法和 header 信息等给 COS，以决定是否可以发送真正的跨域请求. 当跨域访问配置不存在时，请求返回403 Forbidden.
 
-                默认情况下，Bucket的持有者可以直接配置 Bucket的跨域信息 ，Bucket 持有者也可以将配置权限授予其他用户.新的配置是覆盖当前的所有配置信 息，而不是新增一条配置.可以通过传入 XML 格式的配置文件来实现配置，文件大小限制为64 KB.
+                默认情况下，Bucket的持有者可以直接配置 Bucket的跨域信息 ，Bucket 持有者也可以将配置权限授予其他使用者.新的配置是覆盖当前的所有配置信 息，而不是新增一条配置.可以通过传入 XML 格式的配置文件来实现配置，文件大小限制为64 KB.
 
                 关于设置 Bucket 的跨域配置信息接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/8279.
 
@@ -1752,7 +1752,7 @@ class Service {
 
                 转换操作,定义对象转换为另一个存储类的时间(例如，您可以选择在对象创建 30 天后将其转换为低频存储类别，同 时也支持将数据沉降到归档存储类别.
 
-                过期操作，指定 Object 的过期时间，COS 将会自动为用户删除过期的 Object.
+                过期操作，指定 Object 的过期时间，COS 将会自动为使用者删除过期的 Object.
 
                 关于Bucket 生命周期配置接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/8280
 
@@ -1918,7 +1918,7 @@ class Service {
                 /**
                 存储桶（Bucket）版本控制的方法.
 
-                版本管理功能一经打开，只能暂停，不能关闭. 通过版本控制，可以在一个 Bucket 中保留一个对象的多个版本. 版本控制可以防止意外覆盖和删除对象，以便检索早期版本的对象. 默认情况下，版本控制功能处于禁用状态，需要主动去启用或者暂停（Enabled 或者 Suspended）.
+                版本管理功能一经打开，只能暂停，不能关闭. 通过版本控制，可以在一个 Bucket 中保留一个对象的多个版本. 版本控制可以防止意外覆盖和删除对象，以便检索早期版本的对象. 默认情况下，版本控制功能处于禁用狀態，需要主动去启用或者暂停（Enabled 或者 Suspended）.
 
                 cos php SDK 中 Bucket 版本控制启用或者暂停的方法具体步骤如下：
 
@@ -1967,11 +1967,11 @@ class Service {
                     ),
                 ),
                 /**
-                配置跨区域复制的方法.
+                配置跨区域複製的方法.
 
-                跨区域复制是支持不同区域 Bucket 自动异步复制对象.注意，不能是同区域的 Bucket, 且源 Bucket 和目 标 Bucket 必须已启用版本控制putBucketVersioning(PutBucketVersioningRequest).
+                跨区域複製是支持不同区域 Bucket 自动异步複製对象.注意，不能是同区域的 Bucket, 且源 Bucket 和目 标 Bucket 必须已启用版本控制putBucketVersioning(PutBucketVersioningRequest).
 
-                cos php SDK 中配置跨区域复制的方法具体步骤如下：
+                cos php SDK 中配置跨区域複製的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 

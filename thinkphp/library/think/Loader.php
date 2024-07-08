@@ -194,11 +194,11 @@ class Loader
     }
 
     /**
-     * 添加 PSR-0 命名空间
+     * 新增 PSR-0 命名空间
      * @access private
      * @param  array|string $prefix  空间前缀
      * @param  array        $paths   路径
-     * @param  bool         $prepend 预先设置的优先级更高
+     * @param  bool         $prepend 预先设置的優先级更高
      * @return void
      */
     private static function addPsr0($prefix, $paths, $prepend = false)
@@ -221,11 +221,11 @@ class Loader
     }
 
     /**
-     * 添加 PSR-4 空间
+     * 新增 PSR-4 空间
      * @access private
      * @param  array|string $prefix  空间前缀
      * @param  string       $paths   路径
-     * @param  bool         $prepend 预先设置的优先级更高
+     * @param  bool         $prepend 预先设置的優先级更高
      * @return void
      */
     private static function addPsr4($prefix, $paths, $prepend = false)
@@ -431,7 +431,7 @@ class Loader
      * @access public
      * @param  string $name         Model名称
      * @param  string $layer        业务层名称
-     * @param  bool   $appendSuffix 是否添加类名后缀
+     * @param  bool   $appendSuffix 是否新增类名后缀
      * @param  string $common       公共模块名
      * @return object
      * @throws ClassNotFoundException
@@ -466,7 +466,7 @@ class Loader
      * @access public
      * @param  string $name         资源地址
      * @param  string $layer        控制层名称
-     * @param  bool   $appendSuffix 是否添加类名后缀
+     * @param  bool   $appendSuffix 是否新增类名后缀
      * @param  string $empty        空控制器名称
      * @return object
      * @throws ClassNotFoundException
@@ -495,7 +495,7 @@ class Loader
      * @access public
      * @param  string $name         资源地址
      * @param  string $layer        验证层名称
-     * @param  bool   $appendSuffix 是否添加类名后缀
+     * @param  bool   $appendSuffix 是否新增类名后缀
      * @param  string $common       公共模块名
      * @return object|false
      * @throws ClassNotFoundException
@@ -535,7 +535,7 @@ class Loader
      * @access protected
      * @param  string $name         资源地址
      * @param  string $layer        验证层名称
-     * @param  bool   $appendSuffix 是否添加类名后缀
+     * @param  bool   $appendSuffix 是否新增类名后缀
      * @return array
      */
     protected static function getModuleAndClass($name, $layer, $appendSuffix)
@@ -574,7 +574,7 @@ class Loader
      * @param  string       $url          调用地址
      * @param  string|array $vars         调用参数 支持字符串和数组
      * @param  string       $layer        要调用的控制层名称
-     * @param  bool         $appendSuffix 是否添加类名后缀
+     * @param  bool         $appendSuffix 是否新增类名后缀
      * @return mixed
      */
     public static function action($url, $vars = [], $layer = 'controller', $appendSuffix = false)
@@ -627,7 +627,7 @@ class Loader
      * @param  string $module       模块名
      * @param  string $layer        层名 controller model ...
      * @param  string $name         类名
-     * @param  bool   $appendSuffix 是否添加类名后缀
+     * @param  bool   $appendSuffix 是否新增类名后缀
      * @return string
      */
     public static function parseClass($module, $layer, $name, $appendSuffix = false)

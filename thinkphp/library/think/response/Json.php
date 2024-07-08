@@ -32,7 +32,7 @@ class Json extends Response
     protected function output($data)
     {
         try {
-            // 返回JSON数据格式到客户端 包含状态信息
+            // 返回JSON数据格式到客户端 包含狀態信息
             $data = json_encode($data, $this->options['json_encode_param']);
 
             if ($data === false) {

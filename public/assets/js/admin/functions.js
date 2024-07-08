@@ -77,7 +77,7 @@ function notify(title, options, callback) {
         return;
     }
     var notification;
-    // 检查用户曾经是否同意接受通知
+    // 检查使用者曾经是否同意接受通知
     if (Notification.permission === 'granted') {
         notification = new Notification(title, options); // 显示通知
 

@@ -5,7 +5,7 @@ namespace OSS\Core;
 /**
  * Class OssUtil
  *
- * Oss工具类，主要供OssClient使用，用户也可以使用本类进行返回结果的格式化
+ * Oss工具类，主要供OssClient使用，使用者也可以使用本类进行返回结果的格式化
  *
  * @package OSS
  */
@@ -342,7 +342,7 @@ BBB;
     }
 
     /**
-     * 判断用户输入的endpoint是否是 xxx.xxx.xxx.xxx:port 或者 xxx.xxx.xxx.xxx的ip格式
+     * 判断使用者输入的endpoint是否是 xxx.xxx.xxx.xxx:port 或者 xxx.xxx.xxx.xxx的ip格式
      *
      * @param string $endpoint 需要做判断的endpoint
      * @return boolean

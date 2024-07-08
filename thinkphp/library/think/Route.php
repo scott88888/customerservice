@@ -275,7 +275,7 @@ class Route
      * @param string       $type    请求类型
      * @param array        $option  路由参数
      * @param array        $pattern 变量规则
-     * @param string       $group   所属分组
+     * @param string       $group   所屬分組
      * @return void
      */
     protected static function setRule($rule, $route, $type = '*', $option = [], $pattern = [], $group = '')
@@ -926,7 +926,7 @@ class Route
             }
 
             if (isset($option['ext'])) {
-                // 路由ext参数 优先于系统配置的URL伪静态后缀参数
+                // 路由ext参数 優先于系统配置的URL伪静态后缀参数
                 $url = preg_replace('/\.' . $request->ext() . '$/i', '', $url);
             }
 

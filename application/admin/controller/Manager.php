@@ -60,11 +60,11 @@ class Manager extends Base
 
           $data=Admins::table('wolive_reply')->where('id',$res)->find();
 
-          $arr=['code'=>0,'msg'=>'添加成功','data'=>$data];
+          $arr=['code'=>0,'msg'=>'新增成功','data'=>$data];
 
           return $arr;
        }else{
-          $arr=['code'=>1,'msg'=>'添加失败','data'=>""];
+          $arr=['code'=>1,'msg'=>'新增失败','data'=>""];
 
           return $arr;
        }
@@ -266,7 +266,7 @@ class Manager extends Base
 
         // 获取 注册信息 数据
         $post = $this->request->post();
-        // 验证 表单信息
+        // 验证 表單信息
         $result = $this->validate($post, 'Services');
         if ($result !== true) {
             
@@ -290,7 +290,7 @@ class Manager extends Base
 
         if ($maxnum!= 0 && $num >= $maxnum) {
 
-            $data =['code'=>2,'msg'=>'新增客服已经达到限制,不能再添加!'];
+            $data =['code'=>2,'msg'=>'新增客服已经达到限制,不能再新增!'];
             return $data;
         }
         
@@ -305,10 +305,10 @@ class Manager extends Base
         }
 
         unset($post['password2']);
-        // 子添加 数据
+        // 子新增 数据
         $post['parent_id'] = $_SESSION['Msg']['service_id'];
 
-        // 添加字段
+        // 新增字段
         $post["business_id"] = $_SESSION['Msg']['business_id'];
 
         $pass = md5($post['user_name'] . "hjkj" . $post["password"]);
@@ -323,7 +323,7 @@ class Manager extends Base
     }
      
      /**
-      * 添加客服分类
+      * 新增客服分类
       * [addclass description]
       * @return [type] [description]
       */
@@ -336,7 +336,7 @@ class Manager extends Base
 
         $data =Admins::table('wolive_group')->insert($post);
 
-        $sdata =['code'=>0,'msg'=>'添加成功','data'=>$data];
+        $sdata =['code'=>0,'msg'=>'新增成功','data'=>$data];
 
         return $sdata;
     }
@@ -430,13 +430,13 @@ class Manager extends Base
 
         if($admin && $admin['service_id'] != $post['id']){
 
-            $data =['code'=>1,'msg'=>'该昵称已经存在'];
+            $data =['code'=>1,'msg'=>'该暱稱已经存在'];
             return $data;
         }
 
         $nick =$post['nickname'];
         if(mb_strlen($nick,'UTF8') > 20){
-            $data =['code'=>1,'msg'=>'昵称不能大于20个字符！'];
+            $data =['code'=>1,'msg'=>'暱稱不能大于20个字符！'];
             return $data;
         }
 
@@ -446,7 +446,7 @@ class Manager extends Base
         } else {
 
             $newpath = ROOT_PATH . "/public/upload/images/{$_SESSION['Msg']['business_id']}/";
-            // 可以添加 验证 规则
+            // 可以新增 验证 规则
             $info = $file->validate(['ext' => 'jpg,png,gif,jpeg'])->move($newpath, time());
 
             if ($info ==false) {
@@ -545,7 +545,7 @@ class Manager extends Base
     }
 
     /**
-     * 添加常用语.
+     * 新增常用语.
      *
      * @return string
      */
@@ -563,7 +563,7 @@ class Manager extends Base
 
         if ($result) {
 
-            $data =['code'=>0,'msg'=>'添加成功'];
+            $data =['code'=>0,'msg'=>'新增成功'];
             return $data;
         }
     }
@@ -599,7 +599,7 @@ class Manager extends Base
         }else{
             $res =Admins::table('wolive_question')->insert($post);
             if($res){
-                $arr=['code'=>0,'msg'=>'添加成功'];
+                $arr=['code'=>0,'msg'=>'新增成功'];
                 return $arr;
             }
         }

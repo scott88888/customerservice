@@ -43,7 +43,7 @@
 主要更新：
 
 - 设计并更换了 Logo；
-- 新增添加图片、链接、锚点链接、代码块、预格式文本等操作弹出对话框层及示例；
+- 新增新增图片、链接、锚点链接、代码块、预格式文本等操作弹出对话框层及示例；
 - 新增支持图片(跨域)上传；
 - 改用 `<textarea>` 来存放 Markdown 源文档；
 - 新增支持自定义工具栏；
@@ -62,7 +62,7 @@
 
 - 改用 `<textarea>` 来存放 Markdown 源文档；
     - 原先使用 `<script type="text/markdown"></script>` 来存放 Markdown 源文档；
-    - 创建 Editor.md 只需要写一个 `<div id="xxxx"></div>` ，如果没有添加 `class="editormd"` 属性会自动添加，另外如果不存在 `<textarea>` 标签，则也会自动添加 `<textarea>` ；
+    - 创建 Editor.md 只需要写一个 `<div id="xxxx"></div>` ，如果没有新增 `class="editormd"` 属性会自动新增，另外如果不存在 `<textarea>` 标签，则也会自动新增 `<textarea>` ；
 
 - 新增支持智能识别和解析 HTML 标签，增强了 Markdown 语法的扩展性，几乎无限，例如：插入视频等等；
     - 新增配置项 `htmlDecode` ，表示是否开启 HTML 标签识别和解析，但是为了安全性，默认不开启；
@@ -74,8 +74,8 @@
     - 新增静态属性 `editormd.codeLanguages` ，用于存放代码语言列表；
 
 - 开始支持图片上传；
-    - 新增添加图片（上传）弹出对话框层；
-    - 支持基于 iframe 的跨域上传，并添加相应的示例（ PHP 版）；
+    - 新增新增图片（上传）弹出对话框层；
+    - 支持基于 iframe 的跨域上传，并新增相应的示例（ PHP 版）；
     
 - 开始支持自定义工具栏图标及操作处理；
     - 配置项 `toolbarIcons` 类型由数组更改为函数，返回一个图标按钮列表数组；
@@ -83,7 +83,7 @@
     - 新增方法 `getToolbarHandles()` ，用于可在外部使用默认的操作方法；
     - 新增成员属性 `activeIcon` ，可获取当前或上次点击的工具栏图标的 jQuery 实例对象；
     
-- 新增表单取值、自定义工具栏、图片上传、多个 Editor.md 并存和动态加载 Editor.md 等多个示例；
+- 新增表單取值、自定义工具栏、图片上传、多个 Editor.md 并存和动态加载 Editor.md 等多个示例；
 
 - 新增插入锚点按钮和操作处理；
 
@@ -123,7 +123,7 @@
 
 - 新增方法 `focus()` 、 `setCursor()` 、 `getCursor()` 、`setSelection()` 、`getSelection()` 、 `replaceSelection()` 和 `insertValue()` 方法，并增加对应的示例；
 
-- 新增配置项 `saveHTMLToTextarea` ，用于将解析后的 HTML 保存到 Textarea，以供提交到后台程序；
+- 新增配置项 `saveHTMLToTextarea` ，用于将解析后的 HTML 保存到 Textarea，以供送出到后台程序；
     - `getHTML()` 方法必须在 `saveHTMLToTextarea == true` 的情况下才能使用；
     - 新增 `getHTML()` 方法的别名 `getTextareaSavedHTML()` 方法；
     - 新增方法 `getPreviewedHTML()` ，用于获取预览窗口的 HTML ；
@@ -210,7 +210,7 @@
     - 新增了 `editormd.trim()` ，用于清除字符串两边的空格；
     - 修改了所有相关的示例文件和测试用例 `marked-heading-link-test.html` ；
     
-- 修改了 `README.md` ，添加了 `Shields.io` 图标；
+- 修改了 `README.md` ，新增了 `Shields.io` 图标；
 
 ### v1.2
 
@@ -333,7 +333,7 @@ v1.2.0 主要更新：
     - 新增配置项 `settings.autoHeight` ；
     - 新增配置项 `settings.toolbarAutoFixed` ；
     - 新增方法 `setToolbarAutoFixed(true|false)` ；
-- 新增信箱地址自动添加链接功能；
+- 新增信箱地址自动新增链接功能；
     - 新增配置项 `emailLink` ，默认为 `true` ; 
 - 改进表格插入对话框；
 - 工具栏新增三个按钮，分别是将所选文本首字母转成大写、转成小写、转成大写；
@@ -477,7 +477,7 @@ v1.2.0 主要更新：
 
 - 新增：编辑器黑色主题 Dark，改进自定义主题功能（即工具栏、编辑区、预览区可分别设置主题样式）；
 - 新增：多行公式支持；
-- 新增：支持非编辑状态下的 ToC 自定义容器；
+- 新增：支持非编辑狀態下的 ToC 自定义容器；
 - 新增：支持设置为单向同步滚动；
 - 改进：编辑器样式美化，更换了滚动条样式; 
 - 改进：提高同步滚动定位的精确度；
@@ -504,10 +504,10 @@ v1.2.0 主要更新：
     - 新增方法 `setPreviewTheme()`；
     - 修改了方法 `setTheme()` ；
     - 更换了滚动条样式，Only Webkit；
-    - 改进全屏状态下的样式显示，去掉 JS 操作的部分，改为通过 CSS 样式类 `.editormd-fullscreen` 控制；
+    - 改进全屏狀態下的样式显示，去掉 JS 操作的部分，改为通过 CSS 样式类 `.editormd-fullscreen` 控制；
     - 修改和增加相关的方法、SCSS 文件及示例文件 `themes.html`；
 
-- 新增：非编辑状态下 ToC 自定义容器支持；
+- 新增：非编辑狀態下 ToC 自定义容器支持；
     - 新增配置项 `markdownSourceCode`，即解析后是否保留源码，默认为不保留 `false`；
     - 新增配置项 `tocContainer`，值为自定义 ToC 容器的 ID 选择器 `#xxxxx`，默认为空；
     - 新增和修改了相关示例文件；
@@ -530,5 +530,5 @@ v1.2.0 主要更新：
     - 修复 Bug [#105](https://github.com/pandao/editor.md/issues/105)；
 - 改进：当不显示行号时 `settings.lineNumbers == false`，CodeMirror 行号层去掉右边框； 
 - 改进：根据指针在当前行的位置更合理插入标题和水平线 [#104](https://github.com/pandao/editor.md/pull/104)；
-- 改进：调整了字体，优先显示 `"YaHei Consolas Hybrid", Consolas`；
+- 改进：调整了字体，優先显示 `"YaHei Consolas Hybrid", Consolas`；
 - 改进：修复在 Bootstrap 下的兼容性问题，即因为 box-sizing 写错位置导致的弹出层宽度等错位问题 [#107](https://github.com/pandao/editor.md/issues/107)；

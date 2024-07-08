@@ -41,8 +41,8 @@ class Groups extends Base
             $post['sort'] = $post['sort'] + 0;
             $post['create_time'] = time();
             $res = Group::insert($post);
-            if ($res) $this->success('添加成功');
-            $this->error('添加失败！');
+            if ($res) $this->success('新增成功');
+            $this->error('新增失败！');
         }
         return $this->fetch();
     }

@@ -175,7 +175,7 @@ class Input
     }
 
     /**
-     * 添加一个短选项的值
+     * 新增一个短选项的值
      * @param string $shortcut 短名称
      * @param mixed  $value    值
      * @throws \RuntimeException
@@ -190,7 +190,7 @@ class Input
     }
 
     /**
-     * 添加一个完整选项的值
+     * 新增一个完整选项的值
      * @param string $name  选项名
      * @param mixed  $value 值
      * @throws \RuntimeException

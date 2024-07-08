@@ -88,7 +88,7 @@ abstract class Rest
      * @access protected
      * @param mixed     $data 要返回的数据
      * @param String    $type 返回类型 JSON XML
-     * @param integer   $code HTTP状态码
+     * @param integer   $code HTTP狀態码
      * @return Response
      */
     protected function response($data, $type = 'json', $code = 200)

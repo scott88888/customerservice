@@ -28,9 +28,9 @@ use EasyWeChat\Core\AbstractAPI;
  */
 class Stats extends AbstractAPI
 {
-    // 获取用户增减数据
+    // 获取使用者增减数据
     const  API_USER_SUMMARY = 'https://api.weixin.qq.com/datacube/getusersummary';
-    // 获取累计用户数据
+    // 获取累计使用者数据
     const  API_USER_CUMULATE = 'https://api.weixin.qq.com/datacube/getusercumulate';
     // 获取图文群发每日数据
     const  API_ARTICLE_SUMMARY = 'https://api.weixin.qq.com/datacube/getarticlesummary';
@@ -70,7 +70,7 @@ class Stats extends AbstractAPI
     const  API_MEMBER_CARD_SUMMARY = 'https://api.weixin.qq.com/datacube/getcardmembercardinfo';
 
     /**
-     * 获取用户增减数据.
+     * 获取使用者增减数据.
      *
      * @param string $from
      * @param string $to
@@ -83,7 +83,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 获取累计用户数据.
+     * 获取累计使用者数据.
      *
      * @param string $from
      * @param string $to

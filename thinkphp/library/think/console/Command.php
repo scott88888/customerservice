@@ -117,7 +117,7 @@ class Command
     }
 
     /**
-     * 用户验证
+     * 使用者验证
      * @param Input  $input
      * @param Output $output
      */
@@ -269,7 +269,7 @@ class Command
     }
 
     /**
-     * 添加参数
+     * 新增参数
      * @param string $name        名称
      * @param int    $mode        类型
      * @param string $description 描述
@@ -284,7 +284,7 @@ class Command
     }
 
     /**
-     * 添加选项
+     * 新增选项
      * @param string $name        选项名称
      * @param string $shortcut    别名
      * @param int    $mode        类型
@@ -432,7 +432,7 @@ class Command
     }
 
     /**
-     * 添加用法介绍
+     * 新增用法介绍
      * @param string $usage
      * @return $this
      */

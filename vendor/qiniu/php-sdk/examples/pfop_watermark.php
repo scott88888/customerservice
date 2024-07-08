@@ -26,7 +26,7 @@ $config = new \Qiniu\Config();
 //$config->useHTTPS=true;
 $pfop = new PersistentFop($auth, $config);
 
-//需要添加水印的图片UrlSafeBase64
+//需要新增水印的图片UrlSafeBase64
 //可以参考http://developer.qiniu.com/code/v6/api/dora-api/av/video-watermark.html
 $base64URL = Qiniu\base64_urlSafeEncode('http://devtools.qiniu.com/qiniu.png');
 
@@ -42,7 +42,7 @@ if ($err != null) {
     echo "PersistentFop Id: $id\n";
 }
 
-//查询转码的进度和状态
+//查询转码的进度和狀態
 list($ret, $err) = $pfop->status($id);
 echo "\n====> pfop avthumb status: \n";
 if ($err != null) {

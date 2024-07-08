@@ -385,7 +385,7 @@
         /**
          * 将source对象中的属性扩展到target对象上
          * @method extend
-         * @remind 该方法将强制把source对象上的属性复制到target对象上
+         * @remind 该方法将强制把source对象上的属性複製到target对象上
          * @see UE.utils.extend(Object,Object,Boolean)
          * @param { Object } target 目标对象， 新的属性将附加到该对象上
          * @param { Object } source 源对象， 该对象的属性会被附加到target对象上
@@ -437,10 +437,10 @@
         },
 
         /**
-         * 将给定的多个对象的属性复制到目标对象target上
+         * 将给定的多个对象的属性複製到目标对象target上
          * @method extend2
-         * @remind 该方法将强制把源对象上的属性复制到target对象上
-         * @remind 该方法支持两个及以上的参数， 从第二个参数开始， 其属性都会被复制到第一个参数上。 如果遇到同名的属性，
+         * @remind 该方法将强制把源对象上的属性複製到target对象上
+         * @remind 该方法支持两个及以上的参数， 从第二个参数开始， 其属性都会被複製到第一个参数上。 如果遇到同名的属性，
          *          将会覆盖掉之前的值。
          * @param { Object } target 目标对象， 新的属性将附加到该对象上
          * @param { Object... } source 源对象， 支持多个对象， 该对象的属性会被附加到target对象上
@@ -1188,11 +1188,11 @@
         }(),
 
         /**
-         * 动态添加css样式
+         * 动态新增css样式
          * @method cssRule
          * @param { String } 节点名称
-         * @grammar UE.utils.cssRule('添加的样式的节点名称',['样式'，'放到哪个document上'])
-         * @grammar UE.utils.cssRule('body','body{background:#ccc}') => null  //给body添加背景颜色
+         * @grammar UE.utils.cssRule('新增的样式的节点名称',['样式'，'放到哪个document上'])
+         * @grammar UE.utils.cssRule('body','body{background:#ccc}') => null  //给body新增背景颜色
          * @grammar UE.utils.cssRule('body') =>样式的字符串  //取得key值为body的样式的内容,如果没有找到key值先关的样式将返回空，例如刚才那个背景颜色，将返回 body{background:#ccc}
          * @grammar UE.utils.cssRule('body',document) => 返回指定key的样式，并且指定是哪个document
          * @grammar UE.utils.cssRule('body','') =>null //清空给定的key值的背景颜色
@@ -1222,7 +1222,7 @@
                 return false;
             }
 
-            //添加样式
+            //新增样式
             if(index!== undefined){
                 sheetStyle =  doc.styleSheets[index];
             }else{
@@ -1250,7 +1250,7 @@
                 return false;
             }
 
-            //添加样式
+            //新增样式
             if(node){
                 node.innerHTML = style;
             }else{
@@ -1278,7 +1278,7 @@
             for (var i in json) {
                 //忽略默认的几个参数
                 if(i=="method" || i=="timeout" || i=="async") continue;
-                //传递过来的对象和函数不在提交之列
+                //传递过来的对象和函数不在送出之列
                 if (!((typeof json[i]).toLowerCase() == "function" || (typeof json[i]).toLowerCase() == "object")) {
                     strArr.push( encodeURIComponent(i) + "="+encodeURIComponent(json[i]) );
                 } else if (utils.isArray(json[i])) {
@@ -3291,7 +3291,7 @@
             return domUtils.setAttributes(doc.createElement(tag), attrs)
         },
         /**
-         * 为节点node添加属性attrs，attrs为属性键值对
+         * 为节点node新增属性attrs，attrs为属性键值对
          * @method setAttributes
          * @param { Element } node 需要设置属性的元素对象
          * @param { Object } attrs 需要设置的属性名-值对
@@ -3448,11 +3448,11 @@
             }
         },
         /**
-         * 给元素element添加className
+         * 给元素element新增className
          * @method addClass
          * @param { Node } ele 需要增加className的元素
-         * @param { String } classNames 需要添加的className， 多个className之间以空格分割
-         * @remind 相同的类名不会被重复添加
+         * @param { String } classNames 需要新增的className， 多个className之间以空格分割
+         * @remind 相同的类名不会被重复新增
          * @example
          * ```html
          * <span id="test" class="cls1 cls2"></span>
@@ -3470,11 +3470,11 @@
          */
 
         /**
-         * 给元素element添加className
+         * 给元素element新增className
          * @method addClass
          * @param { Node } ele 需要增加className的元素
-         * @param { Array } classNames 需要添加的className的数组
-         * @remind 相同的类名不会被重复添加
+         * @param { Array } classNames 需要新增的className的数组
+         * @remind 相同的类名不会被重复新增
          * @example
          * ```html
          * <span id="test" class="cls1 cls2"></span>
@@ -4121,7 +4121,7 @@
          * @method isCustomeNode
          * @private
          * @param { Node } node 需要检测的节点
-         * @remind 辅助节点是指编辑器要完成工作临时添加的节点， 在输出的时候将会从编辑器内移除， 不会影响最终的结果。
+         * @remind 辅助节点是指编辑器要完成工作临时新增的节点， 在输出的时候将会从编辑器内移除， 不会影响最终的结果。
          * @return { Boolean } 给定的节点是否是一个辅助节点
          */
         isCustomeNode:function (node) {
@@ -4297,7 +4297,7 @@
             fillData;
 
         /**
-         * 更新range的collapse状态
+         * 更新range的collapse狀態
          * @param  {Range}   range    range对象
          */
         function updateCollapse(range) {
@@ -4549,7 +4549,7 @@
             /**
              * 删除当前选区范围中的所有内容
              * @method deleteContents
-             * @remind 执行完该操作后， 当前Range对象变成了闭合状态
+             * @remind 执行完该操作后， 当前Range对象变成了闭合狀態
              * @return { UE.dom.Range } 当前操作的Range对象
              * @example
              * ```html
@@ -4599,7 +4599,7 @@
             /**
              * 将当前选区的内容提取到一个DocumentFragment里
              * @method extractContents
-             * @remind 执行该操作后， 选区将变成闭合状态
+             * @remind 执行该操作后， 选区将变成闭合狀態
              * @warning 执行该操作后， 原来选区所选中的内容将从dom树上剥离出来
              * @return { DocumentFragment } 返回包含所提取内容的DocumentFragment对象
              * @example
@@ -4936,7 +4936,7 @@
              * 如果toStart的值为true，则向开始位置闭合， 反之，向结束位置闭合。
              * @method  collapse
              * @param { Boolean } toStart 是否向选区开始处闭合
-             * @return { UE.dom.Range } 当前range对象，此时range对象处于闭合状态
+             * @return { UE.dom.Range } 当前range对象，此时range对象处于闭合狀態
              * @see UE.dom.Range:collapse()
              * @example
              * ```html
@@ -5225,7 +5225,7 @@
              * 如果选区在文本的边界上，就扩展选区到文本的父节点上, 如果当前选区是闭合的， 则根据参数项
              * ignoreCollapsed 的值决定是否执行该调整
              * @method txtToElmBoundary
-             * @param { Boolean } ignoreCollapsed 是否忽略选区的闭合状态， 如果该参数取值为true， 则
+             * @param { Boolean } ignoreCollapsed 是否忽略选区的闭合狀態， 如果该参数取值为true， 则
              *                      不论选区是否闭合， 都会执行该操作， 反之， 则不会对闭合的选区执行该操作
              * @return { UE.dom.Range } 当前range对象
              */
@@ -5482,9 +5482,9 @@
             },
 
             /**
-             * 给range选区中的内容添加给定的inline标签
+             * 给range选区中的内容新增给定的inline标签
              * @method applyInlineStyle
-             * @param { String } tagName 需要添加的标签名
+             * @param { String } tagName 需要新增的标签名
              * @example
              * ```html
              * <p>xxxx[xxxx]x</p>  ==>  range.applyInlineStyle("strong")  ==>  <p>xxxx[<strong>xxxx</strong>]x</p>
@@ -5492,10 +5492,10 @@
              */
 
             /**
-             * 给range选区中的内容添加给定的inline标签， 并且为标签附加上一些初始化属性。
+             * 给range选区中的内容新增给定的inline标签， 并且为标签附加上一些初始化属性。
              * @method applyInlineStyle
-             * @param { String } tagName 需要添加的标签名
-             * @param { Object } attrs 跟随新添加的标签的属性
+             * @param { String } tagName 需要新增的标签名
+             * @param { Object } attrs 跟随新新增的标签的属性
              * @return { UE.dom.Range } 当前选区
              * @example
              * ```html
@@ -5724,7 +5724,7 @@
                 }
                 this.moveToBookmark(bookmark);
                 tmp && domUtils.remove(tmp);
-                //IE在隐藏状态下不支持range操作，catch一下
+                //IE在隐藏狀態下不支持range操作，catch一下
                 try {
                     nativeRange.select();
                 } catch (e) {
@@ -6425,7 +6425,7 @@
             },
 
             /**
-             * 获取开始元素，用于状态反射
+             * 获取开始元素，用于狀態反射
              * @method getStart
              * @return { Element } 获得开始元素
              * @example
@@ -6522,7 +6522,7 @@
      */
 
     /**
-     * UEditor的核心类，为用户提供与编辑器交互的接口。
+     * UEditor的核心类，为使用者提供与编辑器交互的接口。
      * @unfile
      * @module UE
      * @class Editor
@@ -6532,7 +6532,7 @@
         var uid = 0, _selectionChangeTimer;
 
         /**
-         * 获取编辑器的html内容，赋值到编辑器所在表单的textarea文本域里面
+         * 获取编辑器的html内容，赋值到编辑器所在表單的textarea文本域里面
          * @private
          * @method setValue
          * @param { UE.Editor } editor 编辑器事例
@@ -6797,7 +6797,7 @@
             /**
              * 该方法是提供给插件里面使用，设置配置项默认值
              * @method setOpt
-             * @warning 三处设置配置项的优先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
+             * @warning 三处设置配置项的優先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
              * @warning 该方法仅供编辑器插件内部和编辑器初始化时调用，其他地方不能调用。
              * @param { String } key 编辑器的可接受的选项名称
              * @param { * } val  该选项可接受的值
@@ -6810,7 +6810,7 @@
             /**
              * 该方法是提供给插件里面使用，以{key:value}集合的方式设置插件内用到的配置项默认值
              * @method setOpt
-             * @warning 三处设置配置项的优先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
+             * @warning 三处设置配置项的優先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
              * @warning 该方法仅供编辑器插件内部和编辑器初始化时调用，其他地方不能调用。
              * @param { Object } options 将要设置的选项的键值对对象
              * @example
@@ -6983,7 +6983,7 @@
                     geckoSel.removeAllRanges();
                 }
                 this._initEvents();
-                //为form提交提供一个隐藏的textarea
+                //为form送出提供一个隐藏的textarea
                 for (var form = this.iframe.parentNode; !domUtils.isBody(form); form = form.parentNode) {
                     if (form.tagName == 'FORM') {
                         me.form = form;
@@ -7087,7 +7087,7 @@
 
             /**
              * 同步数据到编辑器所在的form
-             * 从编辑器的容器节点向上查找form元素，若找到，就同步编辑内容到找到的form里，为提交数据做准备，主要用于是手动提交的情况
+             * 从编辑器的容器节点向上查找form元素，若找到，就同步编辑内容到找到的form里，为送出数据做准备，主要用于是手动送出的情况
              * 后台取得数据的键值，使用你容器上的name属性，如果没有就使用参数里的textarea项
              * @method sync
              * @example
@@ -7098,7 +7098,7 @@
              */
 
             /**
-             * 根据传入的formId，在页面上查找要同步数据的表单，若找到，就同步编辑内容到找到的form里，为提交数据做准备
+             * 根据传入的formId，在页面上查找要同步数据的表單，若找到，就同步编辑内容到找到的form里，为送出数据做准备
              * 后台取得数据的键值，该键值默认使用给定的编辑器容器的name属性，如果没有name属性则使用参数项里给定的“textarea”项
              * @method sync
              * @param { String } formID 指定一个要同步数据的form的id,编辑器的数据会同步到你指定form下
@@ -7133,7 +7133,7 @@
 
             /**
              * 为编辑器的编辑命令提供快捷键
-             * 这个接口是为插件扩展提供的接口,主要是为新添加的插件，如果需要添加快捷键，所提供的接口
+             * 这个接口是为插件扩展提供的接口,主要是为新新增的插件，如果需要新增快捷键，所提供的接口
              * @method addshortcutkey
              * @param { Object } keyset 命令名和快捷键键值对对象，多个按钮的快捷键用“＋”分隔
              * @example
@@ -7145,7 +7145,7 @@
              * ```
              */
             /**
-             * 这个接口是为插件扩展提供的接口,主要是为新添加的插件，如果需要添加快捷键，所提供的接口
+             * 这个接口是为插件扩展提供的接口,主要是为新新增的插件，如果需要新增快捷键，所提供的接口
              * @method addshortcutkey
              * @param { String } cmd 触发快捷键时，响应的命令
              * @param { String } keys 快捷键的字符串，多个按钮用“＋”分隔
@@ -7513,7 +7513,7 @@
              */
             _selectionChange: function (delay, evt) {
                 var me = this;
-                //有光标才做selectionchange 为了解决未focus时点击source不能触发更改工具栏状态的问题（source命令notNeedUndo=1）
+                //有光标才做selectionchange 为了解决未focus时点击source不能触发更改工具栏狀態的问题（source命令notNeedUndo=1）
 //            if ( !me.selection.isFocus() ){
 //                return;
 //            }
@@ -7535,7 +7535,7 @@
                         return;
                     }
                     //修复一个IE下的bug: 鼠标点击一段已选择的文本中间时，可能在mouseup后的一段时间内取到的range是在selection的type为None下的错误值.
-                    //IE下如果用户是拖拽一段已选择文本，则不会触发mouseup事件，所以这里的特殊处理不会对其有影响
+                    //IE下如果使用者是拖拽一段已选择文本，则不会触发mouseup事件，所以这里的特殊处理不会对其有影响
                     var ieRange;
                     if (hackForMouseUp && me.selection.getNative().type == 'None') {
                         ieRange = me.document.body.createTextRange();
@@ -7558,7 +7558,7 @@
                     }
                     if (me.selection._cachedRange && me.selection._cachedStartElement) {
                         me.fireEvent('beforeselectionchange');
-                        // 第二个参数causeByUi为true代表由用户交互造成的selectionchange.
+                        // 第二个参数causeByUi为true代表由使用者交互造成的selectionchange.
                         me.fireEvent('selectionchange', !!evt);
                         me.fireEvent('afterselectionchange');
                         me.selection.clear();
@@ -7627,11 +7627,11 @@
             },
 
             /**
-             * 根据传入的command命令，查选编辑器当前的选区，返回命令的状态
+             * 根据传入的command命令，查选编辑器当前的选区，返回命令的狀態
              * @method  queryCommandState
              * @param { String } cmdName 需要查询的命令名称
              * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
-             * @return { Number } number 返回放前命令的状态，返回值三种情况：(-1|0|1)
+             * @return { Number } number 返回放前命令的狀態，返回值三种情况：(-1|0|1)
              * @example
              * ```javascript
              * editor.queryCommandState(cmdName)  => (-1|0|1)
@@ -7648,7 +7648,7 @@
              * @param { String } cmdName 需要查询的命令名称
              * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
              * @remind 只有部分插件有此方法
-             * @return { * } 返回每个命令特定的当前状态值
+             * @return { * } 返回每个命令特定的当前狀態值
              * @grammar editor.queryCommandValue(cmdName)  =>  {*}
              * @see COMMAND.LIST
              */
@@ -7689,7 +7689,7 @@
                 if (!domUtils.isEmptyBlock(this.body)) {
                     return true
                 }
-                //随时添加,定义的特殊标签如果存在，不能认为是空
+                //随时新增,定义的特殊标签如果存在，不能认为是空
                 tags = ['div'];
                 for (i = 0; ci = tags[i++];) {
                     var nodes = domUtils.getElementsByTagName(this.document, ci);
@@ -7937,7 +7937,7 @@
             /**
              * 注册输入过滤规则
              * @method  addInputRule
-             * @param { Function } rule 要添加的过滤规则
+             * @param { Function } rule 要新增的过滤规则
              * @example
              * ```javascript
              * editor.addInputRule(function(root){
@@ -7971,7 +7971,7 @@
             /**
              * 注册输出过滤规则
              * @method  addOutputRule
-             * @param { Function } rule 要添加的过滤规则
+             * @param { Function } rule 要新增的过滤规则
              * @example
              * ```javascript
              * editor.addOutputRule(function(root){
@@ -8167,7 +8167,7 @@
 
 
         /**
-         * 将json参数转化成适合ajax提交的参数列表
+         * 将json参数转化成适合ajax送出的参数列表
          * @param json
          */
         function json2str(json) {
@@ -8177,7 +8177,7 @@
                 if(i=="method" || i=="timeout" || i=="async" || i=="dataType" || i=="callback") continue;
                 //忽略控制
                 if(json[i] == undefined || json[i] == null) continue;
-                //传递过来的对象和函数不在提交之列
+                //传递过来的对象和函数不在送出之列
                 if (!((typeof json[i]).toLowerCase() == "function" || (typeof json[i]).toLowerCase() == "object")) {
                     strArr.push( encodeURIComponent(i) + "="+encodeURIComponent(json[i]) );
                 } else if (utils.isArray(json[i])) {
@@ -8214,7 +8214,7 @@
             var ajaxOpts = ajaxOptions ? utils.extend(defaultAjaxOptions,ajaxOptions) : defaultAjaxOptions;
 
             var submitStr = json2str(ajaxOpts);  // { name:"Jim",city:"Beijing" } --> "name=Jim&city=Beijing"
-            //如果用户直接通过data参数传递json对象过来，则也要将此json对象转化为字符串
+            //如果使用者直接通过data参数传递json对象过来，则也要将此json对象转化为字符串
             if (!utils.isEmptyObject(ajaxOpts.data)){
                 submitStr += (submitStr? "&":"") + json2str(ajaxOpts.data);
             }
@@ -8278,7 +8278,7 @@
             }
 
             var queryStr = json2str(opts);  // { name:"Jim",city:"Beijing" } --> "name=Jim&city=Beijing"
-            //如果用户直接通过data参数传递json对象过来，则也要将此json对象转化为字符串
+            //如果使用者直接通过data参数传递json对象过来，则也要将此json对象转化为字符串
             if (!utils.isEmptyObject(opts.data)){
                 queryStr += (queryStr? "&":"") + json2str(opts.data);
             }
@@ -8463,7 +8463,7 @@
                         return '';
                     }
                 })
-                //针对wps添加的多余标签处理
+                //针对wps新增的多余标签处理
                 .replace(/<\/?div[^>]*>/g,'')
                 //去掉多余的属性
                 .replace( /v:\w+=(["']?)[^'"]+\1/g, '' )
@@ -10203,14 +10203,14 @@
      * @method execCommand
      * @param { String } cmd 命令字符串
      * @param { String } html 插入的html字符串
-     * @remaind 插入的标签内容是在当前的选区位置上插入，如果当前是闭合状态，那直接插入内容， 如果当前是选中状态，将先清除当前选中内容后，再做插入
+     * @remaind 插入的标签内容是在当前的选区位置上插入，如果当前是闭合狀態，那直接插入内容， 如果当前是选中狀態，将先清除当前选中内容后，再做插入
      * @warning 注意:该命令会对当前选区的位置，对插入的内容进行过滤转换处理。 过滤的规则遵循html语意化的原则。
      * @example
      * ```javascript
      * //xxx[BB]xxx 当前选区为非闭合选区，选中BB这两个文本
      * //执行命令，插入<b>CC</b>
      * //插入后的效果 xxx<b>CC</b>xxx
-     * //<p>xx|xxx</p> 当前选区为闭合状态
+     * //<p>xx|xxx</p> 当前选区为闭合狀態
      * //插入<p>CC</p>
      * //结果 <p>xx</p><p>CC</p><p>xxx</p>
      * //<p>xxxx</p>|</p>xxx</p> 当前选区在两个p标签之间
@@ -10303,7 +10303,7 @@
                     range.collapsed && range.collapse(true)
                 }
             }
-            //列表单独处理
+            //列表單独处理
             var li = domUtils.findParentByTagName(range.startContainer,'li',true);
             if(li){
                 var next,last;
@@ -10383,7 +10383,7 @@
                             if(!pre.childNodes.length){
                                 domUtils.remove(pre);
                             }
-                            //trace:2012,在非ie的情况，切开后剩下的节点有可能不能点入光标添加br占位
+                            //trace:2012,在非ie的情况，切开后剩下的节点有可能不能点入光标新增br占位
 
                             if(!browser.ie &&
                                 (next = child.nextSibling) &&
@@ -10774,13 +10774,13 @@
 
 // plugins/autosubmit.js
     /**
-     * 快捷键提交
+     * 快捷键送出
      * @file
      * @since 1.2.6.1
      */
 
     /**
-     * 提交表单
+     * 送出表單
      * @command autosubmit
      * @method execCommand
      * @param { String } cmd 命令字符串
@@ -10793,7 +10793,7 @@
     UE.plugin.register('autosubmit',function(){
         return {
             shortcutkey:{
-                "autosubmit":"ctrl+13" //手动提交
+                "autosubmit":"ctrl+13" //手动送出
             },
             commands:{
                 'autosubmit':{
@@ -11082,7 +11082,7 @@
      * @command insertimage
      * @method execCommand
      * @param { String } cmd 命令字符串
-     * @param { Object } opt 属性键值对，这些属性都将被复制到当前插入图片
+     * @param { Object } opt 属性键值对，这些属性都将被複製到当前插入图片
      * @remind 该命令第二个参数可接受一个图片配置项对象的数组，可以插入多张图片，
      * 此时数组的每一个元素都是一个Object类型的图片属性集合。
      * @example
@@ -12241,13 +12241,13 @@
 
 // plugins/blockquote.js
     /**
-     * 添加引用
+     * 新增引用
      * @file
      * @since 1.2.6.1
      */
 
     /**
-     * 添加引用
+     * 新增引用
      * @command blockquote
      * @method execCommand
      * @param { String } cmd 命令字符串
@@ -12258,7 +12258,7 @@
      */
 
     /**
-     * 添加引用
+     * 新增引用
      * @command blockquote
      * @method execCommand
      * @param { String } cmd 命令字符串
@@ -12581,7 +12581,7 @@
         var me = this;
         me.commands['selectall'] = {
             execCommand : function(){
-                //去掉了原生的selectAll,因为会出现报错和当内容为空时，不能出现闭合状态的光标
+                //去掉了原生的selectAll,因为会出现报错和当内容为空时，不能出现闭合狀態的光标
                 var me = this,body = me.body,
                     range = me.selection.getRange();
                 range.selectNodeContents(body);
@@ -12836,7 +12836,7 @@
                             common.setAttribute( 'dir', forward );
                             current = common;
                         } else {
-                            //没有遍历到，添加一个block节点
+                            //没有遍历到，新增一个block节点
                             var p = range.document.createElement( 'p' );
                             p.setAttribute( 'dir', forward );
                             var frag = tmpRange.extractContents();
@@ -13894,7 +13894,7 @@
                 domUtils.fillNode(me.document,tmpNode);
             }
         }
-        //分页符样式添加
+        //分页符样式新增
 
         me.ready(function(){
             utils.cssRule('pagebreak','.pagebreak{display:block;clear:both !important;cursor:default !important;width: 100% !important;margin:0;}',me.document);
@@ -13929,7 +13929,7 @@
          * @param { String } cmd 命令字符串
          * @remind 在表格中插入分页符会把表格切分成两部分
          * @remind 获取编辑器内的数据时， 编辑器会把分页符转换成“_ueditor_page_break_tag_”字符串，
-         *          以便于提交数据到服务器端后处理分页。
+         *          以便于送出数据到服务器端后处理分页。
          * @example
          * ```javascript
          * editor.execCommand( 'pagebreak'); //插入一个hr标签，带有样式类名pagebreak
@@ -14311,7 +14311,7 @@
                 }
                 this.index = this.list.length - 1;
                 this.clearKey();
-                //跟新undo/redo状态
+                //跟新undo/redo狀態
                 this.update();
 
             };
@@ -14369,7 +14369,7 @@
             },
             keycont = 0,
             lastKeyCode;
-        //输入法状态下不计算字符数
+        //输入法狀態下不计算字符数
         var inputType = false;
         me.addListener('ready', function () {
             domUtils.on(this.body, 'compositionstart', function () {
@@ -14438,7 +14438,7 @@
                 }
             }
         });
-        //扩展实例，添加关闭和开启命令undo
+        //扩展实例，新增关闭和开启命令undo
         me.stopCmdUndo = function(){
             me.__hasEnterExecCommand = true;
         };
@@ -14462,7 +14462,7 @@
 
             var client = me.zeroclipboard = new ZeroClipboard();
 
-            // 复制内容
+            // 複製内容
             client.on('copy', function (e) {
                 var client = e.client,
                     rng = me.selection.getRange(),
@@ -14614,7 +14614,7 @@
         function filter(div) {
             var html;
             if (div.firstChild) {
-                //去掉cut中添加的边界值
+                //去掉cut中新增的边界值
                 var nodes = domUtils.getElementsByTagName(div, 'span');
                 for (var i = 0, ni; ni = nodes[i++];) {
                     if (ni.id == '_baidu_cut_start' || ni.id == '_baidu_cut_end') {
@@ -14993,7 +14993,7 @@
         };
         var liiconpath = me.options.listiconpath;
 
-        //根据用户配置，调整customStyle
+        //根据使用者配置，调整customStyle
         for(var s in customStyle){
             if(!me.options.insertorderedlist.hasOwnProperty(s) && !me.options.insertunorderedlist.hasOwnProperty(s)){
                 delete customStyle[s];
@@ -16293,7 +16293,7 @@
              */
 
             /**
-             * 查询当前编辑区域的状态是源码模式还是可视化模式
+             * 查询当前编辑区域的狀態是源码模式还是可视化模式
              * @command source
              * @method queryCommandState
              * @param { String } cmd 命令字符串
@@ -17192,11 +17192,11 @@
 
 // plugins/autolink.js
 ///import core
-///commands 为非ie浏览器自动添加a标签
+///commands 为非ie浏览器自动新增a标签
 ///commandsName  AutoLink
 ///commandsTitle  自动增加链接
     /**
-     * @description 为非ie浏览器自动添加a标签
+     * @description 为非ie浏览器自动新增a标签
      * @author zhanyi
      */
 
@@ -17642,7 +17642,7 @@
          * @param height 视频高度
          * @param align 视频对齐
          * @param toEmbed 是否以flash代替显示
-         * @param addParagraph  是否需要添加P 标签
+         * @param addParagraph  是否需要新增P 标签
          */
         function creatInsertStr(url,width,height,id,align,classname,type){
 
@@ -17841,8 +17841,8 @@
         };
 
         /**
-         * 获取单元格或者单元格组的“对齐”状态。 如果当前的检测对象是一个单元格组， 只有在满足所有单元格的 水平和竖直 对齐属性都相同的
-         * 条件时才会返回其状态值，否则将返回null； 如果当前只检测了一个单元格， 则直接返回当前单元格的对齐状态；
+         * 获取单元格或者单元格组的“对齐”狀態。 如果当前的检测对象是一个单元格组， 只有在满足所有单元格的 水平和竖直 对齐属性都相同的
+         * 条件时才会返回其狀態值，否则将返回null； 如果当前只检测了一个单元格， 则直接返回当前单元格的对齐狀態；
          * @param table cell or table cells , 支持单个单元格dom对象 或者 单元格dom对象数组
          * @return { align: 'left' || 'right' || 'center', valign: 'top' || 'middle' || 'bottom' } 或者 null
          */
@@ -17853,7 +17853,7 @@
             var result = {},
                 status = ['align', 'valign'],
                 tempStatus = null,
-                isSame = true;//状态是否相同
+                isSame = true;//狀態是否相同
 
             utils.each( cells, function( cellNode ){
 
@@ -19682,7 +19682,7 @@
                 }
             },
             /**
-             * 查询当前点击的单元格的对齐状态， 如果当前已经选择了多个单元格， 则会返回所有单元格经过统一协调过后的状态
+             * 查询当前点击的单元格的对齐狀態， 如果当前已经选择了多个单元格， 则会返回所有单元格经过统一协调过后的狀態
              * @see UE.UETable.getTableCellAlignState
              */
             queryCommandValue: function (cmd) {
@@ -19893,7 +19893,7 @@
             cellBorderWidth = 5,
             //鼠标偏移距离
             offsetOfTableCell = 10,
-            //记录在有限时间内的点击状态， 共有3个取值， 0, 1, 2。 0代表未初始化， 1代表单击了1次，2代表2次
+            //记录在有限时间内的点击狀態， 共有3个取值， 0, 1, 2。 0代表未初始化， 1代表單击了1次，2代表2次
             singleClickState = 0,
             userActionStatus = null,
             //双击允许的时间范围
@@ -19936,7 +19936,7 @@
         //处理拖动及框选相关方法
         var startTd = null, //鼠标按下时的锚点td
             currentTd = null, //当前鼠标经过时的td
-            onDrag = "", //指示当前拖动状态，其值可为"","h","v" ,分别表示未拖动状态，横向拖动状态，纵向拖动状态，用于鼠标移动过程中的判断
+            onDrag = "", //指示当前拖动狀態，其值可为"","h","v" ,分别表示未拖动狀態，横向拖动狀態，纵向拖动狀態，用于鼠标移动过程中的判断
             onBorder = false, //检测鼠标按下时是否处在单元格边缘位置
             dragButton = null,
             dragOver = false,
@@ -20513,7 +20513,7 @@
             me.addListener("getAllHtml", function () {
                 removeSelectedClass(me.document.getElementsByTagName("td"));
             });
-            //修正全屏状态下插入的表格宽度在非全屏状态下撑开编辑器的情况
+            //修正全屏狀態下插入的表格宽度在非全屏狀態下撑开编辑器的情况
             me.addListener("fullscreenchanged", function (type, fullscreen) {
                 if (!fullscreen) {
                     var ratio = this.body.offsetWidth / document.body.offsetWidth,
@@ -20642,11 +20642,11 @@
 
             try {
 
-                //普通状态下鼠标移动
+                //普通狀態下鼠标移动
                 var target = getParentTdOrTh(evt.target || evt.srcElement),
                     pos;
 
-                //区分用户的行为是拖动还是双击
+                //区分使用者的行为是拖动还是双击
                 if( isInResizeBuffer  ) {
 
                     me.body.style.webkitUserSelect = 'none';
@@ -20674,7 +20674,7 @@
                     }
                     return;
                 }
-                //当鼠标处于table上时，修改移动过程中的光标状态
+                //当鼠标处于table上时，修改移动过程中的光标狀態
                 if (target) {
                     //针对使用table作为容器的组件不触发拖拽效果
                     if (me.fireEvent('excludetable', target) === true)
@@ -20829,7 +20829,7 @@
         }
 
         /**
-         * 移动状态切换
+         * 移动狀態切换
          */
         function toggleDraggableState(editor, draggable, dir, mousePos, cell) {
             try {
@@ -20872,7 +20872,7 @@
                     display: 'none'
                 };
 
-                //切换状态
+                //切换狀態
                 line.onmouseout = function(){
                     this.style.display = 'none';
                 };
@@ -21092,7 +21092,7 @@
             ut = getUETable(table);
             ut && ut.clearSelected();
 
-            //判断当前鼠标状态
+            //判断当前鼠标狀態
             if (!onBorder) {
                 me.document.body.style.webkitUserSelect = '';
                 mousedown = true;
@@ -21239,7 +21239,7 @@
             }
             mousedown = false;
             me.document.body.style.webkitUserSelect = '';
-            //拖拽状态下的mouseUP
+            //拖拽狀態下的mouseUP
             if ( onDrag && dragTd ) {
 
                 me.selection.getNative()[browser.ie9below ? 'empty' : 'removeAllRanges']();
@@ -21269,7 +21269,7 @@
                     return;
                 }
             }
-            //正常状态下的mouseup
+            //正常狀態下的mouseup
             if (!startTd) {
                 var target = domUtils.findParentByTagName(evt.target || evt.srcElement, "td", true);
                 if (!target) target = domUtils.findParentByTagName(evt.target || evt.srcElement, "th", true);
@@ -21675,7 +21675,7 @@
         }
 
         /**
-         * 当表格边框颜色为白色时设置为虚线,true为添加虚线
+         * 当表格边框颜色为白色时设置为虚线,true为新增虚线
          * @param editor
          * @param flag
          */
@@ -21850,7 +21850,7 @@
 
 
         me.ready(function () {
-            //添加表格可排序的样式
+            //新增表格可排序的样式
             utils.cssRule('tablesort',
                 'table.sortEnabled tr.firstRow th,table.sortEnabled tr.firstRow td{padding-right:20px;background-repeat: no-repeat;background-position: center right;' +
                 '   background-image:url(' + me.options.themePath + me.options.theme + '/images/sortable.png);}',
@@ -22356,7 +22356,7 @@
                         }
 
                     } else {
-                        //有可能commmand没有加载右键不能出来，或者没有command也想能展示出来添加query方法
+                        //有可能commmand没有加载右键不能出来，或者没有command也想能展示出来新增query方法
                         if ( (me.commands[item.cmdName] || UE.commands[item.cmdName] || item.query) &&
                             (item.query ? item.query.call(me) : me.queryCommandState( item.cmdName )) > -1 ) {
 
@@ -22404,7 +22404,7 @@
             }
         });
 
-        // 添加复制的flash按钮
+        // 新增複製的flash按钮
         me.addListener('aftershowcontextmenu', function(type, menu) {
             if (me.zeroclipboard) {
                 var items = menu.items;
@@ -22592,7 +22592,7 @@
                 return domUtils.filterNodeList(editor.selection.getStartElementPath(),tagNames);
             },
             me = this;
-        //添加快捷键
+        //新增快捷键
         me.addshortcutkey({
             "Bold" : "ctrl+66",//^B
             "Italic" : "ctrl+73", //^I
@@ -22709,7 +22709,7 @@
      * 格式刷
      * @command formatmatch
      * @method execCommand
-     * @remind 该操作不能复制段落格式
+     * @remind 该操作不能複製段落格式
      * @param { String } cmd 命令字符串
      * @example
      * ```javascript
@@ -23278,7 +23278,7 @@
                     opt = {
                         'method': 'POST',
                         'dataType': isJsonp ? 'jsonp':'',
-                        'timeout': 60000, //单位：毫秒，回调请求超时设置。目标用户如果网速不是很快的话此处建议设置一个较大的数值
+                        'timeout': 60000, //单位：毫秒，回调请求超时设置。目标使用者如果网速不是很快的话此处建议设置一个较大的数值
                         'onsuccess': callbacks["success"],
                         'onerror': callbacks["error"]
                     };
@@ -23820,7 +23820,7 @@
                 return;
             }
 
-            /* 创建Ajax并提交 */
+            /* 创建Ajax并送出 */
             var xhr = new XMLHttpRequest(),
                 fd = new FormData(),
                 params = utils.serializeParam(me.queryCommandValue('serverparam')) || '',
@@ -24641,7 +24641,7 @@
 
 // plugins/serverparam.js
     /**
-     * 服务器提交的额外参数列表设置插件
+     * 服务器送出的额外参数列表设置插件
      * @file
      * @since 1.2.6.1
      */
@@ -24653,7 +24653,7 @@
         return {
             commands:{
                 /**
-                 * 修改服务器提交的额外参数列表,清除所有项
+                 * 修改服务器送出的额外参数列表,清除所有项
                  * @command serverparam
                  * @method execCommand
                  * @param { String } cmd 命令字符串
@@ -24664,7 +24664,7 @@
                  * ```
                  */
                 /**
-                 * 修改服务器提交的额外参数列表,删除指定项
+                 * 修改服务器送出的额外参数列表,删除指定项
                  * @command serverparam
                  * @method execCommand
                  * @param { String } cmd 命令字符串
@@ -24675,12 +24675,12 @@
                  * ```
                  */
                 /**
-                 * 修改服务器提交的额外参数列表,使用键值添加项
+                 * 修改服务器送出的额外参数列表,使用键值新增项
                  * @command serverparam
                  * @method execCommand
                  * @param { String } cmd 命令字符串
-                 * @param { String } key 要添加的属性
-                 * @param { String } value 要添加属性的值
+                 * @param { String } key 要新增的属性
+                 * @param { String } value 要新增属性的值
                  * @example
                  * ```javascript
                  * editor.execCommand('serverparam', 'name', 'hello');
@@ -24688,7 +24688,7 @@
                  * ```
                  */
                 /**
-                 * 修改服务器提交的额外参数列表,传入键值对对象添加多项
+                 * 修改服务器送出的额外参数列表,传入键值对对象新增多项
                  * @command serverparam
                  * @method execCommand
                  * @param { String } cmd 命令字符串
@@ -24700,7 +24700,7 @@
                  * ```
                  */
                 /**
-                 * 修改服务器提交的额外参数列表,使用自定义函数添加多项
+                 * 修改服务器送出的额外参数列表,使用自定义函数新增多项
                  * @command serverparam
                  * @method execCommand
                  * @param { String } cmd 命令字符串
@@ -24715,7 +24715,7 @@
                  */
 
                 /**
-                 * 获取服务器提交的额外参数列表
+                 * 获取服务器送出的额外参数列表
                  * @command serverparam
                  * @method queryCommandValue
                  * @param { String } cmd 命令字符串
@@ -24736,7 +24736,7 @@
                             }
                         } else if (utils.isObject(key)) { //传入对象,覆盖列表项
                             utils.extend(serverParam, key, true);
-                        } else if (utils.isFunction(key)){ //传入函数,添加列表项
+                        } else if (utils.isFunction(key)){ //传入函数,新增列表项
                             utils.extend(serverParam, key(), true);
                         }
                     },
@@ -24852,7 +24852,7 @@
             });
         }
 
-        // 添加inserthtml\paste等操作用的过滤规则
+        // 新增inserthtml\paste等操作用的过滤规则
         if (whitList && config.xssFilterRules) {
             this.options.filterRules = function () {
 
@@ -24874,7 +24874,7 @@
             tagList.push(key);
         });
 
-        // 添加input过滤规则
+        // 新增input过滤规则
         //
         if (whitList && config.inputXssFilter) {
             this.addInputRule(function (root) {
@@ -24887,7 +24887,7 @@
                 });
             });
         }
-        // 添加output过滤规则
+        // 新增output过滤规则
         //
         if (whitList && config.outputXssFilter) {
             this.addOutputRule(function (root) {
@@ -25194,7 +25194,7 @@
                 var html = this.renderHtml();
                 var el = uiUtils.createElementByHtml(html);
 
-                //by xuheng 给每个node添加class
+                //by xuheng 给每个node新增class
                 var list = domUtils.getElementsByTagName(el, "*");
                 var theme = "edui-" + (this.theme || this.editor.options.theme);
                 var layer = document.getElementById('edui_fixedlayer');
@@ -25428,7 +25428,7 @@
                     //同步更改iframe高度
                     ifr && ( ifr.style.height = _height + 'px' );
 
-                    //阻止在combox上的鼠标滚轮事件, 防止用户的正常操作被误解
+                    //阻止在combox上的鼠标滚轮事件, 防止使用者的正常操作被误解
                     if( window.XMLHttpRequest ) {
 
                         domUtils.on( content, ( 'onmousewheel' in document.body ) ? 'mousewheel' :'DOMMouseScroll' , function(e){
@@ -26353,7 +26353,7 @@
 
         /**
          * 该参数将新增一个参数： selected， 参数类型为一个Object， 形如{ 'align': 'center', 'valign': 'top' }， 表示单元格的初始
-         * 对齐状态为： 竖直居上，水平居中; 其中 align的取值为：'center', 'left', 'right'; valign的取值为: 'top', 'middle', 'bottom'
+         * 对齐狀態为： 竖直居上，水平居中; 其中 align的取值为：'center', 'left', 'right'; valign的取值为: 'top', 'middle', 'bottom'
          * @update 2013/4/2 hancong03@baidu.com
          */
         var CellAlignPicker = baidu.editor.ui.CellAlignPicker = function (options) {
@@ -26362,7 +26362,7 @@
             this.initCellAlignPicker();
         };
         CellAlignPicker.prototype = {
-            //初始化选中状态， 该方法将根据传递进来的参数获取到应该选中的对齐方式图标的索引
+            //初始化选中狀態， 该方法将根据传递进来的参数获取到应该选中的对齐方式图标的索引
             initSelected: function(){
 
                 var status = {
@@ -26697,7 +26697,7 @@
                 if (options.className && options.className.indexOf("aligntd") != -1) {
                     var me = this;
 
-                    //获取单元格对齐初始状态
+                    //获取单元格对齐初始狀態
                     this.subMenu.selected = this.editor.queryCommandValue( 'cellalignment' );
 
                     this.subMenu = new Popup({
@@ -27839,7 +27839,7 @@
             'background':'~/dialogs/background/background.html',
             'charts': '~/dialogs/charts/charts.html'
         };
-        //为工具栏添加按钮，以下都是统一的按钮触发命令，所以写在一起
+        //为工具栏新增按钮，以下都是统一的按钮触发命令，所以写在一起
         var btnCmds = ['undo', 'redo', 'formatmatch',
             'bold', 'italic', 'underline', 'fontborder', 'touppercase', 'tolowercase',
             'strikethrough', 'subscript', 'superscript', 'source', 'indent', 'outdent',
@@ -28046,7 +28046,7 @@
                             });
                             editorui.buttons[cmd] = ui;
                             editor.addListener('selectionchange', function () {
-                                //只存在于右键菜单而无工具栏按钮的ui不需要检测状态
+                                //只存在于右键菜单而无工具栏按钮的ui不需要检测狀態
                                 var unNeedCheckState = {'edittable':1};
                                 if (cmd in unNeedCheckState)return;
 
@@ -29409,7 +29409,7 @@
                         domUtils.addClass(holder, "edui-" + editor.options.theme);
                         editor.ui.render(holder);
                         var opt = editor.options;
-                        //给实例添加一个编辑器的容器引用
+                        //给实例新增一个编辑器的容器引用
                         editor.container = editor.ui.getDom();
                         var parents = domUtils.findParents(holder,true);
                         var displays = [];

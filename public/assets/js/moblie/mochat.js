@@ -293,7 +293,7 @@ function getdata() {
         beforeSend:function(){
         },
         success: function (res) {
-            //添加 最近的 聊天 记录
+            //新增 最近的 聊天 记录
             var str = '';
             var vaule = visiter;
 

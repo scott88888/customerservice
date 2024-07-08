@@ -375,7 +375,7 @@ class Image
     }
 
     /**
-     * 添加水印
+     * 新增水印
      *
      * @param  string $source 水印图片路径
      * @param int     $locate 水印位置
@@ -452,7 +452,7 @@ class Image
                 }
         }
         do {
-            //添加水印
+            //新增水印
             $src = imagecreatetruecolor($info[0], $info[1]);
             // 调整默认颜色
             $color = imagecolorallocate($src, 255, 255, 255);
@@ -469,9 +469,9 @@ class Image
     }
 
     /**
-     * 图像添加文字
+     * 图像新增文字
      *
-     * @param  string  $text   添加的文字
+     * @param  string  $text   新增的文字
      * @param  string  $font   字体路径
      * @param  integer $size   字号
      * @param  string  $color  文字颜色

@@ -5575,7 +5575,7 @@ _p[44] = {
  */
 _p[45] = {
     value: function(require) {
-        var kity = _p.r(34), cbList = [], RES_CONF = _p.r(47).resource, FontInstall = _p.r(24), Formula = _p.r(31), // 资源管理器就绪状态
+        var kity = _p.r(34), cbList = [], RES_CONF = _p.r(47).resource, FontInstall = _p.r(24), Formula = _p.r(31), // 资源管理器就绪狀態
         __readyState = false, // 资源管理器是否已启动
         inited = false;
         return {

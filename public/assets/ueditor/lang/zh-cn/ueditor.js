@@ -188,7 +188,7 @@ UE.I18N['zh-cn'] = {
         'unsetbackground':'取消选区背景',
         'redandblue':'红蓝相间',
         'threecolorgradient':'三色渐变',
-        'copy':"复制(Ctrl + c)",
+        'copy':"複製(Ctrl + c)",
         'copymsg': "浏览器不支持,请使用 'Ctrl + c'",
         'paste':"粘贴(Ctrl + v)",
          'pastemsg': "浏览器不支持,请使用 'Ctrl + v'"
@@ -250,7 +250,7 @@ UE.I18N['zh-cn'] = {
 
         },
         'noUploadImage':"当前未上传过任何图片！",
-        'toggleSelect':"单击可切换选中状态\n原图尺寸: "
+        'toggleSelect':"单击可切换选中狀態\n原图尺寸: "
     },
     //===============dialog i18N=======================
     'insertimage':{
@@ -280,7 +280,7 @@ UE.I18N['zh-cn'] = {
             'centerAlign':{'title':'居中独占一行'}
         },
         'uploadSelectFile':'点击选择图片',
-        'uploadAddFile':'继续添加',
+        'uploadAddFile':'继续新增',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
         'uploadContinue':'继续上传',
@@ -305,7 +305,7 @@ UE.I18N['zh-cn'] = {
         'remoteLockError':"宽高不正确,不能所定比例",
         'numError':"請輸入正确的长度或者宽度值！例如：123，400",
         'imageUrlError':"不允许的图片格式或者图片域！",
-        'imageLoadError':"图片加载失败！请检查链接地址或网络状态！",
+        'imageLoadError':"图片加载失败！请检查链接地址或网络狀態！",
         'searchRemind':"請輸入搜索关键词",
         'searchLoading':"图片加载中，请稍后……",
         'searchRetry':" :( ，抱歉，没有找到图片！请重试一次！"
@@ -318,7 +318,7 @@ UE.I18N['zh-cn'] = {
             'lang_drop_remind':"可以将文件拖到这里，单次最多可选100个文件"
         },
         'uploadSelectFile':'点击选择文件',
-        'uploadAddFile':'继续添加',
+        'uploadAddFile':'继续新增',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
         'uploadContinue':'继续上传',
@@ -382,7 +382,7 @@ UE.I18N['zh-cn'] = {
         'delFailSaveFile':'移除保存失败文件',
         'statusPrompt':' 个文件已上传！ ',
         'flashVersionError':'当前Flash版本过低，请更新FlashPlayer后重试！',
-        'flashLoadingError':'Flash加载失败!请检查路径或网络状态',
+        'flashLoadingError':'Flash加载失败!请检查路径或网络狀態',
         'fileUploadReady':'等待上传……',
         'delUploadQueue':'从上传队列中移除',
         'limitPrompt1':'单次不能选择超过',
@@ -404,7 +404,7 @@ UE.I18N['zh-cn'] = {
         'stopUploading':'上传已停止……',
 
         'uploadSelectFile':'点击选择文件',
-        'uploadAddFile':'继续添加',
+        'uploadAddFile':'继续新增',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
         'uploadContinue':'继续上传',
@@ -451,10 +451,10 @@ UE.I18N['zh-cn'] = {
             'lang_input_previousStep':"上一步",
             'lang_input_nextsStep':"下一步",
             'lang_input_clear':'清空',
-            'lang_input_addPic':'添加背景',
+            'lang_input_addPic':'新增背景',
             'lang_input_ScalePic':'缩放背景',
             'lang_input_removePic':'删除背景',
-            'J_imgTxt':{title:'添加背景图片'}
+            'J_imgTxt':{title:'新增背景图片'}
         },
         'noScarwl':"尚未作画，白纸一张~",
         'scrawlUpLoading':"涂鸦上传中,别急哦~",
@@ -524,11 +524,11 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_input_about':'关于UEditor',
             'lang_input_shortcuts':'快捷键',
-            'lang_input_introduction':'UEditor是由百度web前端研发部开发的所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点。开源基于BSD协议，允许自由使用和修改代码。',
+            'lang_input_introduction':'UEditor是由百度web前端研发部开发的所见即所得富文本web编辑器，具有轻量，可定制，注重使用者体验等特点。开源基于BSD协议，允许自由使用和修改代码。',
             'lang_Txt_shortcuts':'快捷键',
             'lang_Txt_func':'功能',
             'lang_Txt_bold':'给选中字设置为加粗',
-            'lang_Txt_copy':'复制选中内容',
+            'lang_Txt_copy':'複製选中内容',
             'lang_Txt_cut':'剪切选中内容',
             'lang_Txt_Paste':'粘贴',
             'lang_Txt_undo':'重新执行上次操作',
@@ -560,7 +560,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_target':'是否在新窗口打开：'
         },
         'validLink':'只支持选中一个链接时生效',
-        'httpPrompt':'您输入的超链接中不包含http等协议名称，默认将为您添加http://前缀'
+        'httpPrompt':'您输入的超链接中不包含http等协议名称，默认将为您新增http://前缀'
     },
     'map':{
         'static':{
@@ -580,8 +580,8 @@ UE.I18N['zh-cn'] = {
             lang_search1:"查找",
             lang_search2:"查找",
             lang_replace:"替换",
-            lang_searchReg:'支持正则表达式，添加前后斜杠标示为正则表达式，例如“/表达式/”',
-            lang_searchReg1:'支持正则表达式，添加前后斜杠标示为正则表达式，例如“/表达式/”',
+            lang_searchReg:'支持正则表达式，新增前后斜杠标示为正则表达式，例如“/表达式/”',
+            lang_searchReg1:'支持正则表达式，新增前后斜杠标示为正则表达式，例如“/表达式/”',
             lang_case_sensitive1:"区分大小写",
             lang_case_sensitive2:"区分大小写",
             nextFindBtn:{value:"下一个"},
@@ -618,9 +618,9 @@ UE.I18N['zh-cn'] = {
     'edittable':{
         'static':{
             'lang_tableStyle':'表格样式',
-            'lang_insertCaption':'添加表格名称行',
-            'lang_insertTitle':'添加表格标题行',
-            'lang_insertTitleCol':'添加表格标题列',
+            'lang_insertCaption':'新增表格名称行',
+            'lang_insertTitle':'新增表格标题行',
+            'lang_insertTitleCol':'新增表格标题列',
             'lang_orderbycontent':"使表格内容可排序",
             'lang_tableSize':'自动调整表格尺寸',
             'lang_autoSizeContent':'按表格文字自适应',
@@ -654,12 +654,12 @@ UE.I18N['zh-cn'] = {
             lang_resave:"转存步骤",
             uploadBtn:{src:"upload.png",alt:"上传"},
             clipboard:{style:"background: url(copy.png) -153px -1px no-repeat;"},
-            lang_step:"1、点击顶部复制按钮，将地址复制到剪贴板；2、点击添加照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后选择图片上传流程。"
+            lang_step:"1、点击顶部複製按钮，将地址複製到剪贴板；2、点击新增照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后选择图片上传流程。"
         },
         'fileType':"图片",
         'flashError':"FLASH初始化失败，请检查FLASH插件是否正确安装！",
         'netError':"网络连接错误，请重试！",
-        'copySuccess':"图片地址已经复制！",
+        'copySuccess':"图片地址已经複製！",
         'flashI18n':{} //留空默认中文
     },
     'autosave': {

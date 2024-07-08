@@ -43,9 +43,9 @@ class Message extends Controller
         if ($result === true) {
             $res = User::table('wolive_message')->insert($post);
             if ($res) {
-                return "提交成功";
+                return "送出成功";
             } else {
-                return "提交失败";
+                return "送出失败";
             }
 
         } else {

@@ -28,7 +28,7 @@ class Response
     // 字符集
     protected $charset = 'utf-8';
 
-    //状态
+    //狀態
     protected $code = 200;
 
     // 输出参数
@@ -109,7 +109,7 @@ class Response
         }
 
         if (!headers_sent() && !empty($this->header)) {
-            // 发送状态码
+            // 发送狀態码
             http_response_code($this->code);
             // 发送头部信息
             foreach ($this->header as $name => $val) {
@@ -210,8 +210,8 @@ class Response
     }
 
     /**
-     * 发送HTTP状态
-     * @param integer $code 状态码
+     * 发送HTTP狀態
+     * @param integer $code 狀態码
      * @return $this
      */
     public function code($code)
@@ -255,7 +255,7 @@ class Response
 
     /**
      * 页面缓存控制
-     * @param string $cache 状态码
+     * @param string $cache 狀態码
      * @return $this
      */
     public function cacheControl($cache)
@@ -322,7 +322,7 @@ class Response
     }
 
     /**
-     * 获取状态码
+     * 获取狀態码
      * @return integer
      */
     public function getCode()

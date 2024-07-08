@@ -193,7 +193,7 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 添加关联数据
+     * 新增关联数据
      * @access public
      * @param Model $model       关联模型对象
      * @return Model

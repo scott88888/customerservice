@@ -41,7 +41,7 @@ listBuckets($ossClient);
 /**
  * 创建一个存储空间
  * acl 指的是bucket的访问控制权限，有三种，私有读写，公共读私有写，公共读写。
- * 私有读写就是只有bucket的拥有者或授权用户才有权限操作
+ * 私有读写就是只有bucket的拥有者或授权使用者才有权限操作
  * 三种权限分别对应 (OssClient::OSS_ACL_TYPE_PRIVATE，OssClient::OSS_ACL_TYPE_PUBLIC_READ, OssClient::OSS_ACL_TYPE_PUBLIC_READ_WRITE)
  *
  * @param OssClient $ossClient OssClient实例
@@ -144,7 +144,7 @@ function getBucketAcl($ossClient, $bucket)
 
 
 /**
- * 列出用户所有的Bucket
+ * 列出使用者所有的Bucket
  *
  * @param OssClient $ossClient OssClient实例
  * @return null

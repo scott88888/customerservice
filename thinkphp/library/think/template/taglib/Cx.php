@@ -585,7 +585,7 @@ class Cx extends Taglib
         $step       = 1;
         $comparison = 'lt';
         $name       = 'i';
-        $rand       = rand(); //添加随机数，防止嵌套变量冲突
+        $rand       = rand(); //新增随机数，防止嵌套变量冲突
         //获取属性
         foreach ($tag as $key => $value) {
             $value = trim($value);

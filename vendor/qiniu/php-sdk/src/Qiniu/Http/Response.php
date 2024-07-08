@@ -77,7 +77,7 @@ final class Response
     );
 
     /**
-     * @param int $code 状态码
+     * @param int $code 狀態码
      * @param double $duration 请求时长
      * @param array $headers 响应头部
      * @param string $body 响应内容

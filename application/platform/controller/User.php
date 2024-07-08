@@ -165,7 +165,7 @@ class User extends Base
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '用户不存在，请刷新页面后重试',
+                'msg' => '使用者不存在，请刷新页面后重试',
             ];
         }
 
@@ -173,13 +173,13 @@ class User extends Base
         if ($admin->save()) {
             return [
                 'code' => 0,
-                'msg' => '删除用户成功',
+                'msg' => '删除使用者成功',
             ];
         }
 
         return [
             'code' => 1,
-            'msg' => '删除用户失败',
+            'msg' => '删除使用者失败',
         ];
     }
 
@@ -194,7 +194,7 @@ class User extends Base
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '用户不存在，请刷新页面后重试',
+                'msg' => '使用者不存在，请刷新页面后重试',
             ];
         }
         $post =  $this->request->post();

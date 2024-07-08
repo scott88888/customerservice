@@ -112,7 +112,7 @@ class Custom extends Base
                     return json(['code'=>1,'msg'=>'该组名称已存在']);
                 }
                 $data = Vgroup::create($post);
-                $sdata = ['code'=>0,'msg'=>'添加成功','data'=>$data->getData()];
+                $sdata = ['code'=>0,'msg'=>'新增成功','data'=>$data->getData()];
                 return json($sdata);
             }
         }

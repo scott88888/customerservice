@@ -1,7 +1,7 @@
 ThinkPHP 5.0 SAE扩展
 ===============
 
-添加下面的配置参数即可
+新增下面的配置参数即可
 
 ~~~
 'log'=>[
@@ -26,7 +26,7 @@ ThinkPHP 5.0 SAE扩展
 'hostname'    => SAE_MYSQL_HOST_M . ',' . SAE_MYSQL_HOST_S,
 // 数据库名
 'database'    => SAE_MYSQL_DB,
-// 用户名
+// 使用者名稱
 'username'    => SAE_MYSQL_USER,
 // 密码
 'password'    => SAE_MYSQL_PASS,

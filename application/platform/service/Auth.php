@@ -124,26 +124,26 @@ class Auth
     }
 
     /**
-     * 注册用户
+     * 注册使用者
      *
-     * @param string $username  用户名
+     * @param string $username  使用者名稱
      * @param string $password  密码
      * @param string $email     信箱
-     * @param string $mobile    手机号
+     * @param string $mobile    手機號碼
      * @param array $extend    扩展参数
      * @return boolean
      */
     public function register($username, $password, $mobile = '', $extend = [])
     {
-        // 检测用户名或信箱、手机号是否存在
+        // 检测使用者名稱或信箱、手機號碼是否存在
         if (Admin::getByUsername($username))
         {
-            $this->setError('用户名已存在');
+            $this->setError('使用者名稱已存在');
             return FALSE;
         }
         if ($mobile && Admin::getByMobile($mobile))
         {
-            $this->setError('手机号已存在');
+            $this->setError('手機號碼已存在');
             return FALSE;
         }
 
@@ -187,9 +187,9 @@ class Auth
     }
 
     /**
-     * 用户登录
+     * 使用者登录
      *
-     * @param string    $account    账号,用户名、信箱、手机号
+     * @param string    $account    账号,使用者名稱、信箱、手機號碼
      * @param string    $password   密码
      * @return boolean
      */
@@ -284,10 +284,10 @@ class Auth
             $this->setError('你没有登录');
             return false;
         }
-        // 检测用户名或信箱、手机号是否存在
+        // 检测使用者名稱或信箱、手機號碼是否存在
         if (Admin::getByUsername($username))
         {
-            $this->setError('用户名已存在');
+            $this->setError('使用者名稱已存在');
             return FALSE;
         }
         $salt = $username;
@@ -468,7 +468,7 @@ class Auth
     }
 
     /**
-     * 渲染用户数据
+     * 渲染使用者数据
      * @param array     $datalist   二维数组
      * @param mixed     $fields     加载的字段列表
      * @param string    $fieldkey   渲染的字段

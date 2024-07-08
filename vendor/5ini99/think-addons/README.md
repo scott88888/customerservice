@@ -63,7 +63,7 @@ class Test extends Addons	// 需继承think\addons\Addons类
         'name' => 'test',	// 插件标识
         'title' => '插件测试',	// 插件名称
         'description' => 'thinkph5插件测试',	// 插件简介
-        'status' => 0,	// 状态
+        'status' => 0,	// 狀態
         'author' => 'byron sampson',
         'version' => '0.1'
     ];
@@ -127,7 +127,7 @@ return [
 ```
 <h1>hello tpl</h1>
 
-如果插件中需要有链接或提交数据的业务，可以在插件中创建controller业务文件，
+如果插件中需要有链接或送出数据的业务，可以在插件中创建controller业务文件，
 要访问插件中的controller时使用addon_url生成url链接。
 如下：
 <a href="{:addon_url('test://Action/link')}">link test</a>

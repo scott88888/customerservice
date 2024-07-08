@@ -10,7 +10,7 @@ return [
     'app_debug'              => false,
     // 应用Trace
     'app_trace'              => false,
-    // 应用模式状态
+    // 应用模式狀態
     'app_status'             => '',
     // 是否支持多模块
     'app_multi_module'       => true,
@@ -98,11 +98,11 @@ return [
     'url_convert'            => true,
     // 默认的访问控制器层
     'url_controller_layer'   => 'controller',
-    // 表单请求类型伪装变量
+    // 表單请求类型伪装变量
     'var_method'             => '_method',
-    // 表单ajax伪装变量
+    // 表單ajax伪装变量
     'var_ajax'               => '_ajax',
-    // 表单pjax伪装变量
+    // 表單pjax伪装变量
     'var_pjax'               => '_pjax',
     // 是否开启请求缓存 true自动缓存 支持设置请求缓存规则
     'request_cache'          => false,
@@ -202,7 +202,7 @@ return [
 
     'session'                => [
         'id'             => '',
-        // SESSION_ID的提交变量,解决flash上传跨域
+        // SESSION_ID的送出变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
         'prefix'         => 'think',
@@ -247,7 +247,7 @@ return [
         'hostname'        => '127.0.0.1',
         // 数据库名
         'database'        => '',
-        // 数据库用户名
+        // 数据库使用者名稱
         'username'        => 'root',
         // 数据库密码
         'password'        => '',

@@ -61,7 +61,7 @@ class Base extends Controller
             $this->assign('admin',$this->admin);
             $this->assign('menu',$menu);
         } else {
-            // 如果有传递token才验证是否登录状态
+            // 如果有传递token才验证是否登录狀態
             if ($token) {
                 $this->auth->init($token);
             }

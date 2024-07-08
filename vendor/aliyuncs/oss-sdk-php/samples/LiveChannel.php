@@ -58,7 +58,7 @@ $play_url = $ossClient->signRtmpUrl($bucket, "test_rtmp_live", 3600);
 Common::println("bucket $bucket rtmp url: \n" . $play_url);
 
 /**
-   创建好直播频道，如果想把这个频道禁用掉（断掉正在推的流或者不再允许向一个地址推流），应该使用putLiveChannelStatus接口，将频道的status改成“Disabled”，如果要将一个禁用状态的频道启用，那么也是调用这个接口，将status改成“Enabled”
+   创建好直播频道，如果想把这个频道禁用掉（断掉正在推的流或者不再允许向一个地址推流），应该使用putLiveChannelStatus接口，将频道的status改成“Disabled”，如果要将一个禁用狀態的频道启用，那么也是调用这个接口，将status改成“Enabled”
  */
 $resp = $ossClient->putLiveChannelStatus($bucket, "test_rtmp_live", "enabled");
 
@@ -90,9 +90,9 @@ if (count($history->getLiveRecordList()) != 0)
 }
 
 /**
-    对于正在推流的频道调用get_live_channel_stat可以获得流的状态信息。
+    对于正在推流的频道调用get_live_channel_stat可以获得流的狀態信息。
     如果频道正在推流，那么stat_result中的所有字段都有意义。
-    如果频道闲置或者处于“Disabled”状态，那么status为“Idle”或“Disabled”，其他字段无意义。
+    如果频道闲置或者处于“Disabled”狀態，那么status为“Idle”或“Disabled”，其他字段无意义。
  */
 $status = $ossClient->getLiveChannelStatus($bucket, "test_rtmp_live");
 Common::println("bucket $bucket listLiveChannel:\n" . 

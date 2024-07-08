@@ -23,7 +23,7 @@ var group = new Vue({
     },
 
     methods: {
-        // 请求用户数据
+        // 请求使用者数据
         getList(page) {
             let that = this;
             $.ajax({
@@ -372,7 +372,7 @@ function getdata() {
         type: "post",
         data: { visiter_id: visiter_id, hid: cid },
         success: function(res) {
-            //添加 最近的 聊天 记录
+            //新增 最近的 聊天 记录
             if (res.code == 0) {
                 var str = '';
                 if (!res.data.length) {

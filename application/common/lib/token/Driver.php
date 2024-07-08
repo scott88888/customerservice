@@ -51,7 +51,7 @@ abstract class Driver
     abstract function delete($token);
 
     /**
-     * 删除指定用户的所有Token
+     * 删除指定使用者的所有Token
      * @param   int $user_id
      * @return  boolean
      */

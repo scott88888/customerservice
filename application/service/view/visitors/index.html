@@ -11,20 +11,20 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">用户状态</label>
+							<label class="layui-form-label">使用者狀態</label>
 							<div class="layui-input-inline">
 								<select name="state">
-									<option value="">请选择用户状态</option>
+									<option value="">请选择使用者狀態</option>
 									<option value="normal">正常</option>
 									<option value="in_black_list">黑名单</option>
 								</select>
 							</div>
 						</div>
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">用户分组</label>
+							<label class="layui-form-label">使用者分组</label>
 							<div class="layui-input-inline">
 								<select name="groupid">
-									<option value="">请选择用户分组</option>
+									<option value="">请选择使用者分组</option>
 									{foreach $group as $v}
 									<option value="{$v.id}">{$v.group_name|default=''}</option>
 									{/foreach}
@@ -89,7 +89,7 @@
                 let cols = [
                         [{
                                 field: 'visiter_name',
-                                title: '用户名',
+                                title: '使用者名稱',
                                 unresize: true,
                                 align: 'left',
                             },{
@@ -121,7 +121,7 @@
 							},
                             {
                                 field: 'state',
-                                title: '線上状态',
+                                title: '線上狀態',
                                 unresize: true,
                                 align: 'left',
                                 templet: '#user-status',
@@ -181,7 +181,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '用户分组',
+                        title: '使用者分组',
                         shade: 0.1,
                         area: ['500px', '300px'],
                         content: MODULE_PATH + 'visitors/edit?id='+obj.data.visiter_id
@@ -191,7 +191,7 @@
                 window.lang = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '用户语言',
+                        title: '使用者语言',
                         shade: 0.1,
                         area: ['500px', '300px'],
                         content: MODULE_PATH + 'visitors/lang?id='+obj.data.visiter_id
@@ -199,7 +199,7 @@
                 };
 
                 window.blacklist = function(obj) {
-                    layer.confirm('确定要拉黑该用户', {
+                    layer.confirm('确定要拉黑该使用者', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {
@@ -230,7 +230,7 @@
                 };
 
                 window.white = function(obj) {
-                    layer.confirm('确定要取消拉黑该用户吗', {
+                    layer.confirm('确定要取消拉黑该使用者吗', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

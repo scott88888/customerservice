@@ -161,7 +161,7 @@ if (!function_exists('model')) {
      * 实例化Model
      * @param string    $name Model名称
      * @param string    $layer 业务层名称
-     * @param bool      $appendSuffix 是否添加类名后缀
+     * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Model
      */
     function model($name = '', $layer = 'model', $appendSuffix = false)
@@ -175,7 +175,7 @@ if (!function_exists('validate')) {
      * 实例化验证器
      * @param string    $name 验证器名称
      * @param string    $layer 业务层名称
-     * @param bool      $appendSuffix 是否添加类名后缀
+     * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Validate
      */
     function validate($name = '', $layer = 'validate', $appendSuffix = false)
@@ -203,7 +203,7 @@ if (!function_exists('controller')) {
      * 实例化控制器 格式：[模块/]控制器
      * @param string    $name 资源地址
      * @param string    $layer 控制层名称
-     * @param bool      $appendSuffix 是否添加类名后缀
+     * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Controller
      */
     function controller($name, $layer = 'controller', $appendSuffix = false)
@@ -218,7 +218,7 @@ if (!function_exists('action')) {
      * @param string        $url 调用地址
      * @param string|array  $vars 调用参数 支持字符串和数组
      * @param string        $layer 要调用的控制层名称
-     * @param bool          $appendSuffix 是否添加类名后缀
+     * @param bool          $appendSuffix 是否新增类名后缀
      * @return mixed
      */
     function action($url, $vars = [], $layer = 'controller', $appendSuffix = false)
@@ -421,7 +421,7 @@ if (!function_exists('response')) {
     /**
      * 创建普通 Response 对象实例
      * @param mixed      $data   输出数据
-     * @param int|string $code   状态码
+     * @param int|string $code   狀態码
      * @param array      $header 头信息
      * @param string     $type
      * @return Response
@@ -438,7 +438,7 @@ if (!function_exists('view')) {
      * @param string    $template 模板文件
      * @param array     $vars 模板变量
      * @param array     $replace 模板替换
-     * @param integer   $code 状态码
+     * @param integer   $code 狀態码
      * @return \think\response\View
      */
     function view($template = '', $vars = [], $replace = [], $code = 200)
@@ -451,7 +451,7 @@ if (!function_exists('json')) {
     /**
      * 获取\think\response\Json对象实例
      * @param mixed   $data 返回的数据
-     * @param integer $code 状态码
+     * @param integer $code 狀態码
      * @param array   $header 头部
      * @param array   $options 参数
      * @return \think\response\Json
@@ -466,7 +466,7 @@ if (!function_exists('jsonp')) {
     /**
      * 获取\think\response\Jsonp对象实例
      * @param mixed   $data    返回的数据
-     * @param integer $code    状态码
+     * @param integer $code    狀態码
      * @param array   $header 头部
      * @param array   $options 参数
      * @return \think\response\Jsonp
@@ -481,7 +481,7 @@ if (!function_exists('xml')) {
     /**
      * 获取\think\response\Xml对象实例
      * @param mixed   $data    返回的数据
-     * @param integer $code    状态码
+     * @param integer $code    狀態码
      * @param array   $header  头部
      * @param array   $options 参数
      * @return \think\response\Xml
@@ -497,7 +497,7 @@ if (!function_exists('redirect')) {
      * 获取\think\response\Redirect对象实例
      * @param mixed         $url 重定向地址 支持Url::build方法的地址
      * @param array|integer $params 额外参数
-     * @param integer       $code 状态码
+     * @param integer       $code 狀態码
      * @param array         $with 隐式传参
      * @return \think\response\Redirect
      */
@@ -514,7 +514,7 @@ if (!function_exists('redirect')) {
 if (!function_exists('abort')) {
     /**
      * 抛出HTTP异常
-     * @param integer|Response      $code 状态码 或者 Response对象实例
+     * @param integer|Response      $code 狀態码 或者 Response对象实例
      * @param string                $message 错误信息
      * @param array                 $header 参数
      */
@@ -542,7 +542,7 @@ if (!function_exists('halt')) {
 
 if (!function_exists('token')) {
     /**
-     * 生成表单令牌
+     * 生成表單令牌
      * @param string $name 令牌名称
      * @param mixed  $type 令牌生成方法
      * @return string

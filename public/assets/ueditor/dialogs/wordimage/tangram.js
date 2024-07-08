@@ -161,7 +161,7 @@ baidu.browser = baidu.browser || {};
 
 /**
  * opera 从10开始不是用opera后面的字符串进行版本的判断
- * 在Browser identification最后添加Version + 数字进行版本标识
+ * 在Browser identification最后新增Version + 数字进行版本标识
  * opera后面的数字保持在9.80不变
  */
 baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.test(navigator.userAgent) ?  + ( RegExp["\x246"] || RegExp["\x242"] ) : undefined;
@@ -303,7 +303,7 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.allowscriptaccess 	设置flash与页面的通信权限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使用户能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
  * @param {boolean} options.devicefont 			设置静态文本对象是否以设备字体呈现。允许值：true/false
  * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object} 	options.vars 				要传递给flash的参数，支持JSON或string类型。
@@ -446,7 +446,7 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.allowscriptaccess 	设置flash与页面的通信权限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使用户能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
  * @param {boolean} options.devicefont 			设置静态文本对象是否以设备字体呈现。允许值：true/false
  * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object} 	options.vars 				要传递给flash的参数，支持JSON或string类型。
@@ -579,7 +579,7 @@ baidu.flash._Base = (function(){
     };
    
     /**
-     * 检查flash状态
+     * 检查flash狀態
      * @private
      * @param {Object} target flash对象
      * @return {Boolean}
@@ -676,7 +676,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * 返回flash状态
+         * 返回flash狀態
          * @return {Boolean}
          */
         me.isReady = function(){
@@ -917,7 +917,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     /**
      * 执行上传操作
      * @param {String} url 上传的url
-     * @param {String} fieldName 上传的表单字段名
+     * @param {String} fieldName 上传的表單字段名
      * @param {Object} postData 键值对，上传的POST数据
      * @param {Number|Array|null|-1} [index]上传的文件序列
      *                            Int值上传该文件
@@ -970,7 +970,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 添加文件类型，支持macType
+     * 新增文件类型，支持macType
      * @public
      * @param {Object|Array[Object]} type {description:String, extention:String}
      * @return {Null};
@@ -1280,7 +1280,7 @@ baidu.json = baidu.json || {};
  * @returns {JSON} 解析结果json对象
  */
 baidu.json.parse = function (data) {
-    //2010/12/09：更新至不使用原生parse，不检测用户输入是否正确
+    //2010/12/09：更新至不使用原生parse，不检测使用者输入是否正确
     return (new Function("return (" + data + ")"))();
 };
 /*

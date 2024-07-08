@@ -60,7 +60,7 @@ class Config extends Command
             $filename = CONF_PATH . $module . 'database' . CONF_EXT;
             ThinkConfig::load($filename, 'database');
 
-            // 加载应用状态配置
+            // 加载应用狀態配置
             if ($config['app_status']) {
                 $config = ThinkConfig::load(CONF_PATH . $module . $config['app_status'] . CONF_EXT);
             }

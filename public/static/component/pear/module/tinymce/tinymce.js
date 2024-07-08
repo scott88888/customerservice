@@ -13,10 +13,10 @@ layui.define(['jquery'],function (exports) {
 
     var settings = {
         base_url: modPath
-        , images_upload_url: ''//图片上传接口，可在option传入，也可在这里修改，option的值优先
-        , language: 'zh_CN'//语言，可在option传入，也可在这里修改，option的值优先
+        , images_upload_url: ''//图片上传接口，可在option传入，也可在这里修改，option的值優先
+        , language: 'zh_CN'//语言，可在option传入，也可在这里修改，option的值優先
         , response: {//后台返回数据格式设置
-            statusName: response.statusName || 'code'//返回状态字段
+            statusName: response.statusName || 'code'//返回狀態字段
             , msgName: response.msgName || 'msg'//返回消息字段
             , dataName: response.dataName || 'data'//返回的数据
             , statusCode: response.statusCode || {
@@ -100,7 +100,7 @@ layui.define(['jquery'],function (exports) {
 
         var file_field = form.name || 'edit' //文件字段名
 
-        var form_data = form.data || {} //其他表单数据 {key:value, ...}
+        var form_data = form.data || {} //其他表單数据 {key:value, ...}
 
         option.suffix= isset(option.suffix) ? option.suffix : (plugin_filename.indexOf('.min')>-1 ? '.min' : '')
 

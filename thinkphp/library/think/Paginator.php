@@ -225,7 +225,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 添加URL参数
+     * 新增URL参数
      *
      * @param  array|string $key
      * @param  string|null  $value

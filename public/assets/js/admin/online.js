@@ -44,7 +44,7 @@ var getonline = function () {
 
 window.onload = getonline();
 
-// 获取访客状态
+// 获取访客狀態
 function getstatus(cha) {
     $.ajax({
         url:'/admin/set/getstatus',

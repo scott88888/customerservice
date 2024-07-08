@@ -312,7 +312,7 @@ class Query
     }
 
     /**
-     * 用于非自动提交状态下面的查询提交
+     * 用于非自动送出狀態下面的查询送出
      * @access public
      * @return void
      * @throws PDOException
@@ -849,7 +849,7 @@ class Query
             $field  = $fields ? array_diff($fields, $field) : $field;
         }
         if ($tableName) {
-            // 添加统一的前缀
+            // 新增统一的前缀
             $prefix = $prefix ?: $tableName;
             foreach ($field as $key => $val) {
                 if (is_numeric($key)) {
@@ -2169,7 +2169,7 @@ class Query
     }
 
     /**
-     * 设置当前字段添加的表别名
+     * 设置当前字段新增的表别名
      * @access public
      * @param string $via
      * @return $this

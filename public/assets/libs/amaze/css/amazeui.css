@@ -8996,7 +8996,7 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 /*
 TODO:
   1. 动画应该放在 dialog 上，不再是整个 modal，涉及 JS 逻辑，需要统筹修改
-  2. modal 滚动条处理，是否需要添加一个滚动条宽度的水平 padding？
+  2. modal 滚动条处理，是否需要新增一个滚动条宽度的水平 padding？
 */
 /* ==========================================================================
    Component: Modal Plugin

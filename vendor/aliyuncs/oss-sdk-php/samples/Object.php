@@ -30,7 +30,7 @@ Common::println($result['body']);
 $content = $ossClient->getObject($bucket, "b.file");
 Common::println("b.file is fetched, the content is: " . $content);
 
-// 给object添加symlink
+// 给object新增symlink
 $content = $ossClient->putSymlink($bucket, "test-symlink", "b.file");
 Common::println("test-symlink is created");
 Common::println($result['x-oss-request-id']);
@@ -160,7 +160,7 @@ function uploadFile($ossClient, $bucket)
 }
 
 /**
- * 列出Bucket内所有目录和文件, 注意如果符合条件的文件数目超过设置的max-keys， 用户需要使用返回的nextMarker作为入参，通过
+ * 列出Bucket内所有目录和文件, 注意如果符合条件的文件数目超过设置的max-keys， 使用者需要使用返回的nextMarker作为入参，通过
  * 循环调用ListObjects得到所有的文件，具体操作见下面的 listAllObjects 示例
  *
  * @param OssClient $ossClient OssClient实例

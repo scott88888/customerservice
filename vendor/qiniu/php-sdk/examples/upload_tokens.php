@@ -7,7 +7,7 @@ $accessKey = getenv('QINIU_ACCESS_KEY');
 $secretKey = getenv('QINIU_SECRET_KEY');
 $bucket = getenv('QINIU_TEST_BUCKET');
 
-// 初始化Auth状态
+// 初始化Auth狀態
 $auth = new Auth($accessKey, $secretKey);
 
 // 简单上传凭证

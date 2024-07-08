@@ -55,8 +55,8 @@ class Questions extends Base
             $status = $this->request->post('status/d',0);
             if (!is_int($status)) $this->error('是否显示字段非法！');
             $res =Question::insert($post);
-            if ($res) $this->success('添加成功');
-            $this->error('添加失败！');
+            if ($res) $this->success('新增成功');
+            $this->error('新增失败！');
         }
         return $this->fetch();
     }

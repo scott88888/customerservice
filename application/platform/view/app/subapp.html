@@ -195,7 +195,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title" id="myModalLabel"><b>添加客服系统</b></div>
+                <div class="modal-title" id="myModalLabel"><b>新增客服系统</b></div>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="add-modal-body modal-body"></div>
@@ -209,14 +209,14 @@
         <th>ID</th>
         <th>账户</th>
         <th>名称</th>
-        <th>状态</th>
+        <th>狀態</th>
         <th>操作</th>
     </tr>
     </thead>
     {if condition="count($list) == 0"}
     <tr>
         <td colspan="5" class="text-center p-5">
-            <!--<a href="javascript:" class="add-app">添加客服系统商城</a>-->
+            <!--<a href="javascript:" class="add-app">新增客服系统商城</a>-->
             <span class="text-muted">暂无相关客服系统</>
         </td>
     </tr>
@@ -283,7 +283,7 @@
             content: "确认将客服系统删除？请谨慎操作",
             confirm: function () {
                 $.myLoading({
-                    title: "正在提交",
+                    title: "正在送出",
                 });
                 $.ajax({
                     url: href,
@@ -311,7 +311,7 @@
             content: desc,
             confirm: function () {
                 $.myLoading({
-                    title: "正在提交",
+                    title: "正在送出",
                 });
                 $.ajax({
                     url: href,

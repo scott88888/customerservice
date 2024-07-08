@@ -462,7 +462,7 @@ class Builder
     }
 
     /**
-     * 查询数据表的状态信息
+     * 查询数据表的狀態信息
      * @access public
      * @return Command
      */

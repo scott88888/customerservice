@@ -89,7 +89,7 @@
             }
             if({$arr['groupid']} != data.message.groupid){
 
-                layer.msg('该用户向其他分组咨询！', {offset: "20px"});
+                layer.msg('该使用者向其他分组咨询！', {offset: "20px"});
             }
 
             getwait();
@@ -929,7 +929,7 @@
             reader.readAsDataURL(blob);
         };
         document.getElementById('text_in').addEventListener('paste', function (e) {
-            // 添加到事件对象中的访问系统剪贴板的接口
+            // 新增到事件对象中的访问系统剪贴板的接口
             var clipboardData = e.clipboardData,
                 i = 0,
                 items, item, types;
@@ -1025,7 +1025,7 @@
         var vid =jsondata.visiter_id;
         layer.open({
             type: 2,
-            title: '该用户所有历史消息',
+            title: '该使用者所有历史消息',
             area: ['600px', '500px'],
             content: '/admin/index/history?visiter_id='+vid
         });

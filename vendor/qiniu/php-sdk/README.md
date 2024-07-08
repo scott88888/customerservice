@@ -46,12 +46,12 @@ $ ./vendor/bin/phpunit tests/Qiniu/Tests/
 
 ## 常见问题
 
-- $error保留了请求响应的信息，失败情况下ret 为none, 将$error可以打印出来，提交给我们。
+- $error保留了请求响应的信息，失败情况下ret 为none, 将$error可以打印出来，送出给我们。
 - API 的使用 demo 可以参考 [单元测试](https://github.com/qiniu/php-sdk/blob/master/tests)。
 
 ## 代码贡献
 
-详情参考[代码提交指南](https://github.com/qiniu/php-sdk/blob/master/CONTRIBUTING.md)。
+详情参考[代码送出指南](https://github.com/qiniu/php-sdk/blob/master/CONTRIBUTING.md)。
 
 ## 贡献记录
 
@@ -59,12 +59,12 @@ $ ./vendor/bin/phpunit tests/Qiniu/Tests/
 
 ## 联系我们
 
-- 如果需要帮助，请提交工单（在portal右侧点击咨询和建议提交工单，或者直接向 support@qiniu.com 发送邮件）
+- 如果需要帮助，请送出工单（在portal右侧点击咨询和建议送出工单，或者直接向 support@qiniu.com 发送邮件）
 - 如果有什么问题，可以到问答社区提问，[问答社区](http://qiniu.segmentfault.com/)
 - 更详细的文档，见[官方文档站](http://developer.qiniu.com/)
-- 如果发现了bug， 欢迎提交 [issue](https://github.com/qiniu/php-sdk/issues)
-- 如果有功能需求，欢迎提交 [issue](https://github.com/qiniu/php-sdk/issues)
-- 如果要提交代码，欢迎提交 pull request
+- 如果发现了bug， 欢迎送出 [issue](https://github.com/qiniu/php-sdk/issues)
+- 如果有功能需求，欢迎送出 [issue](https://github.com/qiniu/php-sdk/issues)
+- 如果要送出代码，欢迎送出 pull request
 - 欢迎关注我们的[微信](http://www.qiniu.com/#weixin) [微博](http://weibo.com/qiniutek)，及时获取动态信息。
 
 ## 代码许可

@@ -19,7 +19,7 @@ $notifyUrl = 'http://375dec79.ngrok.com/notify.php';
 $pfop = new PersistentFop($auth, $bucket, $pipeline, $notifyUrl);
 
 $id = "z2.5955c739e3d0041bf80c9baa";
-//查询持久化处理的进度和状态
+//查询持久化处理的进度和狀態
 list($ret, $err) = $pfop->status($id);
 echo "\n====> pfop avthumb status: \n";
 if ($err != null) {

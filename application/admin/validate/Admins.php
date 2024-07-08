@@ -32,13 +32,13 @@ class Admins extends Validate
      * @var array
      */
     protected $message = [
-        "username.require" => "请填写用户名称",
-        "username.unique"  => "该用户名存在",
-        "username.alphaNum" => "用户名只能是字母和数字",
-        "username.length" => "用户名长度为1~16个字符",
-        "nickname.length" => "昵称长度为2~20个字符",
-        "password.requireIf" => "请填写登录密码",
-        "password.length" => "登录密码长度为6~16个字符",
+        "username.require" => "请填写使用者名稱称",
+        "username.unique"  => "该使用者名稱存在",
+        "username.alphaNum" => "使用者名稱只能是字母和数字",
+        "username.length" => "使用者名稱长度为1~16个字符",
+        "nickname.length" => "暱稱长度为2~20个字符",
+        "password.requireIf" => "请填写登入密碼",
+        "password.length" => "登入密碼长度为6~16个字符",
         "password2.confirm" => "密码不一致",
         "password2.require" => "请再次输入密码",
         'captcha.require' => '请填写验证码',

@@ -33,7 +33,7 @@ class Captcha
         'useCurve' => true,
         // 是否画混淆曲线
         'useNoise' => true,
-        // 是否添加杂点
+        // 是否新增杂点
         'imageH'   => 0,
         // 验证码图片高度
         'imageW'   => 0,
@@ -100,9 +100,9 @@ class Captcha
     /**
      * 验证验证码是否正确
      * @access public
-     * @param string $code 用户验证码
+     * @param string $code 使用者验证码
      * @param string $id   验证码标识
-     * @return bool 用户验证码是否正确
+     * @return bool 使用者验证码是否正确
      */
     public function check($code, $id = '')
     {

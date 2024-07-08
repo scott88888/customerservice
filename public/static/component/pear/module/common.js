@@ -41,9 +41,9 @@ layui.define(['jquery', 'element','table'], function(exports) {
 		
 		
 		/**
-		 * 提交 json 数据
-		 * @param data 提交数据
-		 * @param href 提交接口
+		 * 送出 json 数据
+		 * @param data 送出数据
+		 * @param href 送出接口
 		 * @param table 刷新父级表
 		 * 
 		 * */

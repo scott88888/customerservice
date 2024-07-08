@@ -333,7 +333,7 @@ $.select_file = function (args) {
 };
 /*---- 文件选择 end ----*/
 
-/*---- 表单自动提交 start ----*/
+/*---- 表單自动送出 start ----*/
 $(document).ready(function () {
     $(document).on('submit', '.auto-form', function () {
         submit(this);
@@ -401,7 +401,7 @@ $(document).ready(function () {
         }
     });
 });
-/*---- 表单自动提交 end ----*/
+/*---- 表單自动送出 end ----*/
 
 /*---- 快速上传组件 start ----*/
 $(document).on('click', '.upload-group .upload-file', function () {

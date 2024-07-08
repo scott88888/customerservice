@@ -60,7 +60,7 @@ function initChartsTypeView () {
 
 }
 
-//渲染table， 以便用户修改数据
+//渲染table， 以便使用者修改数据
 function renderTable ( table ) {
 
     var tableHtml = [];
@@ -278,7 +278,7 @@ function collectData () {
 }
 
 /**
- * 获取用户配置信息
+ * 获取使用者配置信息
  */
 function getUserConfig () {
 
@@ -488,7 +488,7 @@ dialog.onok = function () {
     var form = document.forms[ 'data-form' ],
         info = getUserConfig();
 
-    //添加图表类型
+    //新增图表类型
     info.chartType = currentChartType;
 
     //同步表格数据到编辑器

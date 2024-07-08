@@ -195,7 +195,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 通过使用用户自定义函数，以字符串返回数组
+     * 通过使用使用者自定义函数，以字符串返回数组
      * @access public
      * @param  callable $callback 回调函数
      * @param  mixed    $initial  初始值

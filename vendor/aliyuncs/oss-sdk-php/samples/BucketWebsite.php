@@ -16,7 +16,7 @@ $websiteConfig = new WebsiteConfig("index.html", "error.html");
 $ossClient->putBucketWebsite($bucket, $websiteConfig);
 Common::println("bucket $bucket websiteConfig created:" . $websiteConfig->serializeToXml());
 
-// 查看Bucket的静态网站托管状态
+// 查看Bucket的静态网站托管狀態
 $websiteConfig = $ossClient->getBucketWebsite($bucket);
 Common::println("bucket $bucket websiteConfig fetched:" . $websiteConfig->serializeToXml());
 
@@ -52,7 +52,7 @@ function putBucketWebsite($ossClient, $bucket)
 }
 
 /**
- * 获取bucket的静态网站托管状态
+ * 获取bucket的静态网站托管狀態
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称

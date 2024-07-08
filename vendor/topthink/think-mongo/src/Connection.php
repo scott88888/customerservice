@@ -70,7 +70,7 @@ class Connection
         'hostname'       => '',
         // 数据库名
         'database'       => '',
-        // 用户名
+        // 使用者名稱
         'username'       => '',
         // 密码
         'password'       => '',

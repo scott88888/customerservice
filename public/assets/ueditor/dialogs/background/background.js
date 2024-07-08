@@ -294,7 +294,7 @@
                 });
             }
         },
-        /* 添加图片到列表界面上 */
+        /* 新增图片到列表界面上 */
         pushData: function (list) {
             var i, item, img, icon, _this = this,
                 urlPrefix = editor.getOpt('imageManagerUrlPrefix');

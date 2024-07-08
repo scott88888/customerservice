@@ -23,7 +23,7 @@
 				},
 				dialog : {
 					table : {
-						title      : "添加表格",
+						title      : "新增表格",
 						cellsLabel : "单元格数",
 						alignLabel : "对齐方式",
 						rows       : "行数",
@@ -34,11 +34,11 @@
 			},
 			"zh-tw" : {
 				toolbar : {
-					table : "添加表格"
+					table : "新增表格"
 				},
 				dialog : {
 					table : {
-						title      : "添加表格",
+						title      : "新增表格",
 						cellsLabel : "單元格數",
 						alignLabel : "對齊方式",
 						rows       : "行數",

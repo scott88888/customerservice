@@ -26,7 +26,7 @@ layui.define('jquery', function(exports){
     return that;
   };
   
-  //表单事件监听
+  //表單事件监听
   tag.prototype.on = function(events, callback){
     return layui.onevent.call(this, MOD_NAME, events, callback);
   };

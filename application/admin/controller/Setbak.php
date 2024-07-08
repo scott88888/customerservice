@@ -605,7 +605,7 @@ class Set extends Base
     }
 
     /**
-     * 获取所有该用户的聊天记录。
+     * 获取所有该使用者的聊天记录。
      * [history description]
      * @return [type] [description]
      */
@@ -783,7 +783,7 @@ class Set extends Base
     }
 
     /**
-     * 设置客服離線优先
+     * 设置客服離線優先
      *
      * @return array
      */
@@ -964,7 +964,7 @@ class Set extends Base
     }
 
     /**
-     * 获取访客的状态
+     * 获取访客的狀態
      *
      * @return array|false|\PDOStatement|string|\think\Model
      */
@@ -1273,7 +1273,7 @@ class Set extends Base
     }
 
     /**
-     * 添加或修改tab面版内容
+     * 新增或修改tab面版内容
      * [gettab description]
      * @return [type] [description]
      */
@@ -1295,7 +1295,7 @@ class Set extends Base
                 return ['code'=>1,'msg'=>'tab已达到上限'];
             }
             $res = Admins::table('wolive_tablist')->insert($post);
-            $flag = '添加';
+            $flag = '新增';
         }
 
         $arr = ['code' => 0, 'msg' => $flag.'成功'];
@@ -1321,10 +1321,10 @@ class Set extends Base
             );
             if ($result) {
 
-                $data =['code'=>0,'msg'=>'添加成功'];
+                $data =['code'=>0,'msg'=>'新增成功'];
                 return $data;
             }else{
-                $arr = ['code' => 1, 'msg' => '添加失败'];
+                $arr = ['code' => 1, 'msg' => '新增失败'];
                 return $arr;
             }
 

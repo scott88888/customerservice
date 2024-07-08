@@ -429,7 +429,7 @@ class Event extends Controller
             $service_data = Service::get($service_id);
             $business = Business::get($arr['business_id']);
             $sended = $service['remind_tpl'];
-            //改成離線状态接收通知
+            //改成離線狀態接收通知
             if (empty($sended) && $business['template_state']=='open') {
                 TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
                     "first"  => "你有一条新的客户信息!",
@@ -574,7 +574,7 @@ class Event extends Controller
             $visiter = Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->find();
 
             if ($visiter) {
-                //老用户
+                //老使用者
                 $service = Admins::table('wolive_queue')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->where('state', 'normal')->find();
 
                 if (!$service) {
@@ -666,7 +666,7 @@ class Event extends Controller
                 }
 
             } else {
-                // 新用户
+                // 新使用者
                 $arr['state'] = 'offline';
                 $data = ['visiter_id' => $visiter_id, 'service_id' => 0, 'business_id' => $business_id, 'groupid' => $arr['groupid']];
                 $class = Admins::table('wolive_group')->where('id', $arr['groupid'])->find();
@@ -699,7 +699,7 @@ class Event extends Controller
             if ($visiter) {
                 // 替换成最新头像 'login_times'=> ['exp','login_times+1']
                 Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->update(array_filter(['avatar' => $arr['avatar'],'login_times'=>Db::raw('login_times+1'),'visiter_name' => $arr['visiter_name']]));
-                // 老用户
+                // 老使用者
                 $service = Admins::table('wolive_queue')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->find();
                 //最后服务id
                 $service_id = $service['service_id'];
@@ -798,7 +798,7 @@ class Event extends Controller
                 }
 
             } else {
-                // 新用户
+                // 新使用者
                 $arr['state'] = 'offline';
                 $gid = $arr['groupid'];
                 unset($arr['groupid']);

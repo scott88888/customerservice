@@ -14,15 +14,15 @@ if (is_null($ossClient)) exit(1);
 
 $ossClient->uploadFile($bucket, "a.file", __FILE__);
 
-// 生成GetObject的签名url，用户可以使用这个url直接在浏览器下载
+// 生成GetObject的签名url，使用者可以使用这个url直接在浏览器下载
 $signedUrl = $ossClient->signUrl($bucket, "a.file", 3600);
 Common::println($signedUrl);
 
-// 生成用于putObject的签名URL，用户可以直接用put方法使用这个url上传文件到 "a.file"
+// 生成用于putObject的签名URL，使用者可以直接用put方法使用这个url上传文件到 "a.file"
 $signedUrl = $ossClient->signUrl($bucket, "a.file", "3600", "PUT");
 Common::println($signedUrl);
 
-// 生成从本地文件上传PutObject的签名url, 用户可以直接使用这个url把本地文件上传到　"a.file"
+// 生成从本地文件上传PutObject的签名url, 使用者可以直接使用这个url把本地文件上传到　"a.file"
 $signedUrl = $ossClient->signUrl($bucket, "a.file", 3600, "PUT", array('Content-Type' => 'txt'));
 Common::println($signedUrl);
 
@@ -105,7 +105,7 @@ function getSignedUrlForPuttingObject($ossClient, $bucket)
 }
 
 /**
- * 生成PutObject的签名url,主要用于私有权限下的写访问控制， 用户可以利用生成的signedUrl
+ * 生成PutObject的签名url,主要用于私有权限下的写访问控制， 使用者可以利用生成的signedUrl
  * 从文件上传文件
  *
  * @param OssClient $ossClient OssClient实例

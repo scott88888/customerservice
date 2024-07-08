@@ -9477,7 +9477,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Popover;
 
-	// TODO: 允许用户定义位置
+	// TODO: 允许使用者定义位置
 
 
 /***/ },
@@ -11228,7 +11228,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // title:”,     分享的文字内容(可选，默认为所在页面的title)
 	  // appkey:”,    您申请的应用appkey,显示分享来源(可选)
 	  // pic:”,       分享图片的路径(可选)
-	  // ralateUid:”, 关联用户的UID，分享微博会@该用户(可选)
+	  // ralateUid:”, 关联使用者的UID，分享微博会@该使用者(可选)
 	  // NOTE: 会自动抓取图片，不用指定 pic
 
 	  qq: {
@@ -11241,8 +11241,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // pics:'',     分享图片的路径(可选)
 	  // summary:'',  分享摘要(可选)
 	  // site:'',     分享来源 如：腾讯网(可选)
-	  // desc: ''     发送给用户的消息
-	  // NOTE: 经过测试，最终发给用户的只有 url 和 desc
+	  // desc: ''     发送给使用者的消息
+	  // NOTE: 经过测试，最终发给使用者的只有 url 和 desc
 
 	  qzone: {
 	    title: 'QQ 空间',
@@ -11274,7 +11274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    url: '[qrcode]',
 	    icon: 'wechat'
 	  },
-	  // 生成一个二维码 供用户扫描
+	  // 生成一个二维码 供使用者扫描
 	  // 相关接口 https://github.com/zxlie/WeixinApi
 
 	  renren: {
@@ -11988,7 +11988,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  createData: function() {
 	    var buffer = new QRBitBuffer();
 	    var lengthBits = this.typeNumber > 9 ? 16 : 8;
-	    buffer.put(4, 4); //添加模式
+	    buffer.put(4, 4); //新增模式
 	    buffer.put(this.utf8bytes.length, lengthBits);
 	    for (var i = 0, l = this.utf8bytes.length; i < l; i++) {
 	      buffer.put(this.utf8bytes[i], 8);
@@ -13146,7 +13146,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  createData: function() {
 	    var buffer = new QRBitBuffer();
 	    var lengthBits = this.typeNumber > 9 ? 16 : 8;
-	    buffer.put(4, 4); //添加模式
+	    buffer.put(4, 4); //新增模式
 	    buffer.put(this.utf8bytes.length, lengthBits);
 	    for (var i = 0, l = this.utf8bytes.length; i < l; i++) {
 	      buffer.put(this.utf8bytes[i], 8);
@@ -14623,7 +14623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UCheck;
 
-	// TODO: 与表单验证结合使用的情况
+	// TODO: 与表單验证结合使用的情况
 
 
 /***/ },
@@ -14762,7 +14762,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  tooLong: 'maxlength'
 	};
 
-	// TODO: 考虑表单元素不是 form 子元素的情形
+	// TODO: 考虑表單元素不是 form 子元素的情形
 	// TODO: change/click/focusout 同时触发时处理重复
 	// TODO: 显示提示信息
 
@@ -16063,12 +16063,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // 设初始化地图, options: 3-18
 	  map.centerAndZoom(point, setZoom);
 
-	  // 添加地图缩放控件
+	  // 新增地图缩放控件
 	  if (content.getAttribute('data-zoomControl')) {
 	    map.addControl(new BMap.ZoomControl());
 	  }
 
-	  // 添加比例尺控件
+	  // 新增比例尺控件
 	  if (content.getAttribute('data-scaleControl')) {
 	    map.addControl(new BMap.ScaleControl());
 	  }

@@ -110,7 +110,7 @@ class AppClient
     * 踢出玩家
     * appId: app 的唯一标识，创建的时候由系统生成。
     * roomName: 连麦房间
-    * userId: 请求加入房间的用户ID
+    * userId: 请求加入房间的使用者ID
     */
     public function kickUser($appId, $roomName, $userId)
     {
@@ -151,11 +151,11 @@ class AppClient
     /*
      * appId: app 的唯一标识，创建的时候由系统生成。
      * roomName: 房间名称，需满足规格 ^[a-zA-Z0-9_-]{3,64}$
-     * userId: 请求加入房间的用户 ID，需满足规格 ^[a-zA-Z0-9_-]{3,50}$
+     * userId: 请求加入房间的使用者 ID，需满足规格 ^[a-zA-Z0-9_-]{3,50}$
      * expireAt: int64 类型，鉴权的有效时间，传入以秒为单位的64位Unix
        绝对时间，token 将在该时间后失效。
-     * permission: 该用户的房间管理权限，"admin" 或 "user"，默认为 "user" 。
-       当权限角色为 "admin" 时，拥有将其他用户移除出房间等特权.
+     * permission: 该使用者的房间管理权限，"admin" 或 "user"，默认为 "user" 。
+       当权限角色为 "admin" 时，拥有将其他使用者移除出房间等特权.
      */
     public function appToken($appId, $roomName, $userId, $expireAt, $permission)
     {

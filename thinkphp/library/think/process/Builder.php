@@ -45,7 +45,7 @@ class Builder
     }
 
     /**
-     * 添加一个参数
+     * 新增一个参数
      * @param string $argument 参数
      * @return self
      */
@@ -57,7 +57,7 @@ class Builder
     }
 
     /**
-     * 添加一个前缀
+     * 新增一个前缀
      * @param string|array $prefix
      * @return self
      */
@@ -118,7 +118,7 @@ class Builder
     }
 
     /**
-     *  添加环境变量
+     *  新增环境变量
      * @param array $variables
      * @return self
      */

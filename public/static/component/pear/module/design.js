@@ -149,7 +149,7 @@ layui.define(['layer', 'form'], function(exports) {
 	function submits(size) {
 		var html = '  <div class="layui-form-item">\n' +
 			'    <div class="layui-input-' + size + '">\n' +
-			'      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>\n' +
+			'      <button class="layui-btn" lay-submit lay-filter="formDemo">立即送出</button>\n' +
 			'      <button type="reset" class="layui-btn layui-btn-primary">重置</button>\n' +
 			'    </div>\n' +
 			'  </div>\n';

@@ -389,7 +389,7 @@
 		let ajaxConfig = ajaxs[id] ? ajaxs[id] : ajax;
 		let ajaxData = $.extend(true, {}, ajaxConfig.data);
 		ajaxData[ajaxConfig.searchName] = inputValue;
-		//是否需要对ajax添加随机时间
+		//是否需要对ajax新增随机时间
 		//ajaxData['_'] = Date.now();
 		$.ajax({
 			type: ajaxConfig.type,
@@ -808,7 +808,7 @@
 			if(othis.is(`i[fsw="${NAME}"]`)){
 				let val = this.getItem(id, othis),
 				dd = dl.find(`dd[lay-value='${val.value}']`);
-				if(dd.hasClass(DISABLED)){//如果是disabled状态, 不可选, 不可删
+				if(dd.hasClass(DISABLED)){//如果是disabled狀態, 不可选, 不可删
 					return false;
 				}
 				this.handlerLabel(id, dd, false, val);
@@ -1055,7 +1055,7 @@
 		//计算高度
 		this.retop(label.parents(`.${FORM_SELECT}`));
 		this.calcLabelLeft(label, 0, true);
-		//表单默认值
+		//表單默认值
 		this.setHidnVal(key, label);
 		//title值
 		label.parents(`.${FORM_TITLE} .${NAME}`).attr('title', data[key].values.map((val) => {
@@ -1142,7 +1142,7 @@
 		if(fs.config.radio){
 			this.changeShow(div, false);
 		}
-		//移除表单验证的红色边框
+		//移除表單验证的红色边框
 		div.parents(`.${FORM_TITLE}`).prev().removeClass('layui-form-danger');
 		
 		//清空搜索值

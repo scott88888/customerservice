@@ -30,7 +30,7 @@ class Login extends Validate
     ];
 
     protected $field = [
-        'username'  => '用户名',
+        'username'  => '使用者名稱',
         'password'   => '密码',
         'captcha' => '验证码',
     ];
@@ -42,7 +42,7 @@ class Login extends Validate
      */
     protected $message = [
         'username.require' => '请填写登录帐号',
-        'password.require' => '请填写登录密码',
+        'password.require' => '请填写登入密碼',
         'captcha.require'  => '请填写验证码',
         'captcha.captcha'  => '验证码不正确'
     ];

@@ -31,13 +31,13 @@ class Services extends Validate
      * @var array
      */
     protected $message = [
-        "user_name.require"   => "请填写用户名称",
-        "user_name.unique"    => "该用户名存在",
-        "user_name.alphaNum"  => "用户名只能是字母和数字",
-        "user_name.length"    => "用户名长度为1~16个字符",
-        "nick_name.length"    => "昵称长度为2~20个字符",
-        "password.requireIf" => "请填写登录密码",
-        "password.length"    => "登录密码长度为6~16个字符",
+        "user_name.require"   => "请填写使用者名稱称",
+        "user_name.unique"    => "该使用者名稱存在",
+        "user_name.alphaNum"  => "使用者名稱只能是字母和数字",
+        "user_name.length"    => "使用者名稱长度为1~16个字符",
+        "nick_name.length"    => "暱稱长度为2~20个字符",
+        "password.requireIf" => "请填写登入密碼",
+        "password.length"    => "登入密碼长度为6~16个字符",
         "password2.confirm"  => "密码不一致",
         "password2.require"  => "请再次输入密码",
         "email.email"        => "格式不符合要求",

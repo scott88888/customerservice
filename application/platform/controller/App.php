@@ -141,7 +141,7 @@ class App extends Base
                     ->where('user_name',$post['user_name'])
                     ->find();
                 if($service){
-                    $data =['code'=>1,'msg'=>'新增管理员用户名已存在！'];
+                    $data =['code'=>1,'msg'=>'新增管理员使用者名稱已存在！'];
                     return $data;
                 }
                 $res = Business::addBusiness($post);

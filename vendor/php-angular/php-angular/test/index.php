@@ -1,7 +1,7 @@
 <?php
 require './common.php';
 
-// 模拟用户列表
+// 模拟使用者列表
 $data = [
     'title' => '首頁',
     'list'  => [

@@ -427,7 +427,7 @@ foreach ($dirarray as $key => $dir) {
         if (empty($dbHost) || empty($dbUser) || empty($dbName) || empty($dbPass) || empty($adminUser) || empty($adminPass) || empty($secret) || empty($app_key) || empty($app_id) || empty($whost) || empty($wport) || empty($ahost) || empty($aport) || empty($registToken)
         ): ?>
 
-            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 请把表单数据填完</div>
+            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 请把表單数据填完</div>
 
             <center style="margin-bottom: 20px;">
                 <a href="javascript:history.go(-1)" style="display: inline-block;width: 90px;" class="btn btn-default">返回上一步</a>
@@ -543,7 +543,7 @@ return [
     'hostname'       => '{$dbHost}',
     // 数据库名
     'database'       => '{$dbName}',
-    // 用户名
+    // 使用者名稱
     'username'       => '{$dbUser}',
     // 密码
     'password'       => '{$dbPass}',

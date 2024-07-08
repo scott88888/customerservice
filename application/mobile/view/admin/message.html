@@ -102,7 +102,7 @@
             <div class="wolive-content" >
               {$msg.content}
             </div>
-          	<a onclick="showinfo({$msg.mid})" style="position: absolute;right: 10px;top: 10px;color: red;">用户详细</a> 
+          	<a onclick="showinfo({$msg.mid})" style="position: absolute;right: 10px;top: 10px;color: red;">使用者详细</a> 
              
           </div>
 
@@ -143,12 +143,12 @@ var showinfo =function(id){
        if(res.code == 0){
         
         var str='';
-            str+='<div><span>用户名:</span>'+res.data.name+'</div>';
+            str+='<div><span>使用者名稱:</span>'+res.data.name+'</div>';
             str+='<div><span>手机:</span>'+res.data.moblie+'</div>';
             str+='<div><span>信箱:</span>'+res.data.email+'</div>';
 
         layer.open({
-            title: '用户详情'
+            title: '使用者详情'
             ,content:str
           });     
 

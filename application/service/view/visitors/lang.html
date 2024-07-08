@@ -10,10 +10,10 @@
 	<div class="mainBox">
 		<div class="main-container">
 			<div class="layui-form-item">
-				<label class="layui-form-label">用户语言</label>
+				<label class="layui-form-label">使用者语言</label>
 				<div class="layui-input-inline">
 					<select name="lang" lay-verify="required">
-						<option value="">请选择用户语言</option>
+						<option value="">请选择使用者语言</option>
 						{foreach name=":config('lang')" item="vo"}
 						<option value="{$key}" {if $visiter.lang == $key}selected{/if}>{$vo}</option>
 						{/foreach}
@@ -26,7 +26,7 @@
 		<div class="button-container">
 			<button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="" lay-filter="save">
 				<i class="layui-icon layui-icon-ok"></i>
-				提交
+				送出
 			</button>
 			<button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">
 				<i class="layui-icon layui-icon-refresh"></i>

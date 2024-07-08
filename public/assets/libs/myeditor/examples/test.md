@@ -341,7 +341,7 @@ f(x) = \int_{-\infty}^\infty
 ### 绘制流程图 Flowchart
 
 ```flow
-st=>start: 用户登陆
+st=>start: 使用者登陆
 op=>operation: 登陆操作
 cond=>condition: 登陆成功 Yes or No?
 e=>end: 进入后台

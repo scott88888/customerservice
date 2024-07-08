@@ -15,7 +15,7 @@
 		"checkArr": "0"
 	}, {
 		"powerId": "2",
-		"powerName": "用户管理",
+		"powerName": "使用者管理",
 		"powerType": "1",
 		"powerCode": "sys:user:main",
 		"powerUrl": "/system/user/main",

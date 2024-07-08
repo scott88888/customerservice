@@ -1115,7 +1115,7 @@ class Request
     }
 
     /**
-     * 过滤表单中的表达式
+     * 过滤表單中的表达式
      * @param string $value
      * @return void
      */

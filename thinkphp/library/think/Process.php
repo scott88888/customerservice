@@ -601,7 +601,7 @@ class Process
     }
 
     /**
-     * 获取当前的状态
+     * 获取当前的狀態
      * @return string
      */
     public function getStatus()
@@ -641,7 +641,7 @@ class Process
     }
 
     /**
-     * 添加一行输出
+     * 新增一行输出
      * @param string $line
      */
     public function addOutput($line)
@@ -651,7 +651,7 @@ class Process
     }
 
     /**
-     * 添加一行错误输出
+     * 新增一行错误输出
      * @param string $line
      */
     public function addErrorOutput($line)
@@ -1012,7 +1012,7 @@ class Process
     }
 
     /**
-     * 更新状态
+     * 更新狀態
      * @param bool $blocking
      */
     protected function updateStatus($blocking)

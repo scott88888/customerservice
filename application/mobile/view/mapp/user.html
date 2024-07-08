@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户列表</title>
+    <title>使用者列表</title>
     <meta charset="UTF-8" />
     <title>{$seo.business_name}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -228,7 +228,7 @@
                 }
             },
 
-            // 请求用户数据
+            // 请求使用者数据
             getList(group_id,page){
                 let that  = this;
                 that.keyword = '';
@@ -309,7 +309,7 @@
             	that.choose_mode = !that.choose_mode;
 	        	that.title = '{$group['group_name']}';
 	        	if(that.id == 0) {
-	        		that.title = '全部用户'
+	        		that.title = '全部使用者'
 	        	}else if(that.id == -1) {
 	        		that.title = '黑名单'
 	        	}
@@ -381,7 +381,7 @@
                 that.id = {$id};
                 that.title = '{$group['group_name']}';
                 if(that.id == 0) {
-                    that.title = '全部用户'
+                    that.title = '全部使用者'
                 }else if(that.id == -1) {
                     that.title = '黑名单'
                 }

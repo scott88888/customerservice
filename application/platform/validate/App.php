@@ -38,7 +38,7 @@ class App extends Validate
         'user_name.require' => '请填写帐号',
         'user_name.length' => '管理员账号为3~16个字符',
         'user_name.alphaDash' => '管理员账号只能是字母、数字、下划线 _ ',
-        'password.require' => '请填写登录密码',
+        'password.require' => '请填写登入密碼',
         'password.length' => '密码长度为1~16个字符',
         'max_count.require' =>'请填写数量',
         'max_count.number' =>'客服数量只能是数字',

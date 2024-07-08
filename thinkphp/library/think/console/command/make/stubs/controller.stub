@@ -18,7 +18,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 显示创建资源表单页.
+     * 显示创建资源表單页.
      *
      * @return \think\Response
      */
@@ -50,7 +50,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 显示编辑资源表单页.
+     * 显示编辑资源表單页.
      *
      * @param  int  $id
      * @return \think\Response

@@ -99,7 +99,7 @@ class Mysql extends Driver
     }
 
     /**
-     * 删除指定用户的所有Token
+     * 删除指定使用者的所有Token
      * @param   int $user_id
      * @return  boolean
      */

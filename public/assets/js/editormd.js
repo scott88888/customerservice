@@ -251,11 +251,11 @@
                 hr               : "横线",
                 link             : "链接",
                 "reference-link" : "引用链接",
-                image            : "添加图片",
+                image            : "新增图片",
                 code             : "行内代码",
                 "preformatted-text" : "预格式文本 / 代码块（缩进风格）",
                 "code-block"     : "代码块（多语言风格）",
-                table            : "添加表格",
+                table            : "新增表格",
                 datetime         : "日期时间",
                 emoji            : "Emoji表情",
                 "html-entities"  : "HTML实体字符",
@@ -277,13 +277,13 @@
             },
             dialog : {
                 link : {
-                    title    : "添加链接",
+                    title    : "新增链接",
                     url      : "链接地址",
                     urlTitle : "链接标题",
                     urlEmpty : "错误：请填写链接地址。"
                 },
                 referenceLink : {
-                    title    : "添加引用链接",
+                    title    : "新增引用链接",
                     name     : "引用名称",
                     url      : "链接地址",
                     urlId    : "链接ID",
@@ -293,7 +293,7 @@
                     urlEmpty : "错误：请填写引用链接的URL地址。"
                 },
                 image : {
-                    title    : "添加图片",
+                    title    : "新增图片",
                     url      : "图片地址",
                     link     : "图片链接",
                     alt      : "图片描述",
@@ -303,11 +303,11 @@
                     formatNotAllowed : "错误：只允许上传图片文件，允许上传的图片文件格式有："
                 },
                 preformattedText : {
-                    title             : "添加预格式文本或代码块", 
+                    title             : "新增预格式文本或代码块", 
                     emptyAlert        : "错误：请填写预格式文本或代码的内容。"
                 },
                 codeBlock : {
-                    title             : "添加代码块",                    
+                    title             : "新增代码块",                    
                     selectLabel       : "代码语言：",
                     selectDefaultText : "请选择代码语言",
                     otherLanguage     : "其他语言",
@@ -770,7 +770,7 @@
         },
         
         /**
-         * 添加 CodeMirror 键盘快捷键
+         * 新增 CodeMirror 键盘快捷键
          * Add CodeMirror keyboard shortcuts key map
          * 
          * @returns {editormd}  返回editormd的实例对象

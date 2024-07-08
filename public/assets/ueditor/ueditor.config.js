@@ -41,7 +41,7 @@
 
         //,imagePopup:true      //图片操作的浮层开关，默认打开
 
-        //,autoSyncData:true //自动同步编辑器要提交的数据
+        //,autoSyncData:true //自动同步编辑器要送出的数据
         //,emotionLocalization:false //是否开启表情本地化，默认关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
 
         //粘贴只保留标签，去除标签所有属性
@@ -76,7 +76,7 @@
         //    }
         //}()
 
-        //,allHtmlEnabled:false //提交到后台的数据是否包含整个html字符串
+        //,allHtmlEnabled:false //送出到后台的数据是否包含整个html字符串
 
         //insertorderedlist
         //有序列表的下拉配置,值留空时支持多语言自动识别，若配置值，则以此值为准
@@ -154,7 +154,7 @@
         //参数说明
         //tag 使用的标签名字
         //label 显示的名字也是用来标识不同类型的标识符，注意这个值每个要不同，
-        //style 添加的样式
+        //style 新增的样式
         //每一个对象就是一个自定义的样式
         //,'customstyle':[
         //    {tag:'h1', name:'tc', label:'', style:'border-bottom:#ccc 2px solid;padding:0 4px 0 0;text-align:center;margin:0 0 20px 0;'},
@@ -170,7 +170,7 @@
         //    {
         //        label:'',       //显示的名称
         //        cmdName:'selectall',//执行的command命令，当点击这个右键菜单时
-        //        //exec可选，有了exec就会在点击时执行这个function，优先级高于cmdName
+        //        //exec可选，有了exec就会在点击时执行这个function，優先级高于cmdName
         //        exec:function () {
         //            //this是当前编辑器的实例
         //            //this.ui._dialogs['inserttableDialog'].open();
@@ -269,7 +269,7 @@
         //    'anchor':'~/dialogs/anchor/anchor.html',
         //}
 
-        //allowLinkProtocol 允许的链接地址，有这些前缀的链接地址不会自动添加http
+        //allowLinkProtocol 允许的链接地址，有这些前缀的链接地址不会自动新增http
         //, allowLinkProtocols: ['http:', 'https:', '#', '/', 'ftp:', 'mailto:', 'tel:', 'git:', 'svn:']
 
         //webAppKey 百度应用的APIkey，每个站长必须首先去百度官网注册一个key后方能正常使用app功能，注册介绍，http://app.baidu.com/static/cms/getapikey.html

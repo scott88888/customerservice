@@ -49,7 +49,7 @@ class Mapp extends Mbase
         Cookie::delete('service_token');
         if(isset($_SESSION['Msg'])){
             $login = $_SESSION['Msg'];
-            // 更改状态
+            // 更改狀態
 
             Cookie::delete('service_token');
             setCookie("cu_com", "", time() - 60);
@@ -93,14 +93,14 @@ class Mapp extends Mbase
 
         if (!$admin) {
 
-            $this->error('登录用户名或密码错误');
+            $this->error('登录使用者名稱或密码错误');
         }
 
         // 获取登陆数据
 
         $login = $admin->getData();
 
-        // 删掉登录用户的敏感信息
+        // 删掉登录使用者的敏感信息
         unset($login['password']);
 
         $res = Admins::table('wolive_service')->where('service_id', $login['service_id'])->update(['state' => 'online']);

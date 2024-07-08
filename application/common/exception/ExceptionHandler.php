@@ -32,7 +32,7 @@ class ExceptionHandler extends Handle
             $this->errorCode = $e->errorCode;
         } else {
             if (config('app_debug')) {
-                // 调试状态下需要显示TP默认的异常页面，因为TP的默认页面
+                // 调试狀態下需要显示TP默认的异常页面，因为TP的默认页面
                 // 很容易看出问题
                 return parent::render($e);
             }

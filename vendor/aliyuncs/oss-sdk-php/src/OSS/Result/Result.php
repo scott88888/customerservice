@@ -135,7 +135,7 @@ abstract class Result
     }
 
     /**
-     * 根据返回http状态码判断，[200-299]即认为是OK
+     * 根据返回http狀態码判断，[200-299]即认为是OK
      *
      * @return bool
      */

@@ -20,7 +20,7 @@ class AdminLog extends Model
             $ip_area = Ip::find($item['ip']);
             $item['ip'] = $item['ip']."【{$ip_area[0]}{$ip_area[1]}{$ip_area[2]}】";
             $service = self::table('wolive_service')->where(['service_id'=>$item['uid']])->find();
-            $item['user_name'] = $service['user_name']?:'未知用户';
+            $item['user_name'] = $service['user_name']?:'未知使用者';
             return $item;
         });
         return ['code'=>0,'data'=>$list->items(),'count' => $list->total(), 'limit' => $limit];

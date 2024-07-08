@@ -14,10 +14,10 @@ try {
     //创建app
     $resp = $client->createApp($hub, $title, $maxUsers);
     print_r($resp);
-    // 获取app状态
+    // 获取app狀態
     $resp = $client->getApp('dgdl5ge8y');
     print_r($resp);
-    //修改app状态
+    //修改app狀態
     $mergePublishRtmp = null;
     $mergePublishRtmp['enable'] = true;
     $resp = $client->updateApp('dgdl5ge8y', $hub, $title, $maxUsers, $mergePublishRtmp);

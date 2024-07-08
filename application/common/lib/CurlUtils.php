@@ -30,7 +30,7 @@ class CurlUtils {
     }
 
     /**
-     * 添加请求头
+     * 新增请求头
      * @param array $value 请求头
      */
     public function addHeader($value){

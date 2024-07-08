@@ -304,7 +304,7 @@ class Session
     }
 
     /**
-     * 添加数据到一个session数组
+     * 新增数据到一个session数组
      * @param  string  $key
      * @param  mixed   $value
      * @return void

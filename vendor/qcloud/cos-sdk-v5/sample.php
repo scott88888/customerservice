@@ -554,8 +554,8 @@ try {
     echo($e);
 }
 
-# 跨区域复制相关
-## PutBucketReplication(设置bucket跨区域复制)
+# 跨区域複製相关
+## PutBucketReplication(设置bucket跨区域複製)
 ### 注意：目标bucket和源bucket都需要开启多版本
 try {
     $result = $cosClient->putBucketReplication(array(
@@ -579,7 +579,7 @@ try {
     echo($e);
 }
 
-## GetBucketReplication(获取bucket跨区域复制信息)
+## GetBucketReplication(获取bucket跨区域複製信息)
 try {
     $result = $cosClient->getBucketReplication(array(
         'Bucket' => $bucket
@@ -589,7 +589,7 @@ try {
     echo($e);
 }
 
-## DeleteBucketReplication(删除bucket跨区域复制信息)
+## DeleteBucketReplication(删除bucket跨区域複製信息)
 try {
     $result = $cosClient->deleteBucketReplication(array(
         'Bucket' => $bucket
@@ -664,10 +664,10 @@ try {
     echo($e);
 }
 
-# 复制
-## copyobject(简单复制)
+# 複製
+## copyobject(简单複製)
 /*
- * 将{bucket},{region},{cos_path},{versionId}替换成复制源的真实信息
+ * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实信息
  */
 try {
     $result = $cosClient->copyObject(array(
@@ -680,9 +680,9 @@ try {
     echo($e);
 }
 
-## Copy(分块并发复制)
+## Copy(分块并发複製)
 /*
- * 将{bucket},{region},{cos_path},{versionId}替换成复制源的真实信息
+ * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实信息
  */
 try {
     $result = $cosClient->copy(

@@ -19,7 +19,7 @@ class Hook
     private static $tags = [];
 
     /**
-     * 动态添加行为扩展到某个标签
+     * 动态新增行为扩展到某个标签
      * @access public
      * @param  string $tag      标签名称
      * @param  mixed  $behavior 行为名称

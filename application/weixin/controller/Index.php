@@ -35,7 +35,7 @@ class  Index extends Controller
        // 消息回复
        $server->setMessageHandler(function ($message) use($business_id) {
            Log::info($message);
-           // $message->FromUserName // 用户的 openid
+           // $message->FromUserName // 使用者的 openid
            // $message->MsgType // 消息类型：event, text....
 //           file_put_contents(PUBLIC_PATH.'/wxmessage.txt',var_export($message,true),FILE_APPEND);
 //           FromUserName
@@ -51,7 +51,7 @@ class  Index extends Controller
                            return '取消关注';
                            break;
                        case 'SCAN':
-//                           return '用户通过扫描带参二维码'.$message->EventKey;
+//                           return '使用者通过扫描带参二维码'.$message->EventKey;
                            /*Weixin::create([
                                'open_id' => $message->FromUserName,
                                'service_id' => $message->EventKey,

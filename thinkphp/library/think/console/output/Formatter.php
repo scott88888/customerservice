@@ -64,7 +64,7 @@ class Formatter
     }
 
     /**
-     * 添加一个新样式
+     * 新增一个新样式
      * @param string $name  样式名
      * @param Style  $style 样式实例
      */

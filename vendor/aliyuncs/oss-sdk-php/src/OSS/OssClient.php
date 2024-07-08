@@ -54,8 +54,8 @@ use OSS\Result\SymlinkResult;
 /**
  * Class OssClient
  *
- * Object Storage Service(OSS) 的客户端类，封装了用户通过OSS API对OSS服务的各种操作，
- * 用户通过OssClient实例可以进行Bucket，Object，MultipartUpload, ACL等操作，具体
+ * Object Storage Service(OSS) 的客户端类，封装了使用者通过OSS API对OSS服务的各种操作，
+ * 使用者通过OssClient实例可以进行Bucket，Object，MultipartUpload, ACL等操作，具体
  * 的接口规则可以参考官方OSS API文档
  */
 class OssClient
@@ -69,7 +69,7 @@ class OssClient
      * 初始化使用 $ossClient = new OssClient($id, $key, $endpoint, true)
      * 3. 如果使用了阿里云SecurityTokenService(STS)，获得了AccessKeyID, AccessKeySecret, Token
      * 初始化使用  $ossClient = new OssClient($id, $key, $endpoint, false, $token)
-     * 4. 如果用户使用的endpoint是ip
+     * 4. 如果使用者使用的endpoint是ip
      * 初始化使用 $ossClient = new OssClient($id, $key, “1.2.3.4:8900”)
      *
      * @param string $accessKeyId 从OSS获得的AccessKeyId
@@ -77,7 +77,7 @@ class OssClient
      * @param string $endpoint 您选定的OSS数据中心访问域名，例如oss-cn-hangzhou.aliyuncs.com
      * @param boolean $isCName 是否对Bucket做了域名绑定，并且Endpoint参数填写的是自己的域名
      * @param string $securityToken
-     * @param string $requestProxy 添加代理支持
+     * @param string $requestProxy 新增代理支持
      * @throws OssException
      */
     public function __construct($accessKeyId, $accessKeySecret, $endpoint, $isCName = false, $securityToken = NULL, $requestProxy = NULL)
@@ -105,7 +105,7 @@ class OssClient
     }
 
     /**
-     * 列举用户所有的Bucket[GetService], Endpoint类型为cname不能进行此操作
+     * 列举使用者所有的Bucket[GetService], Endpoint类型为cname不能进行此操作
      *
      * @param array $options
      * @throws OssException
@@ -404,7 +404,7 @@ class OssClient
     }
 
     /**
-     * 获取bucket的静态网站托管状态
+     * 获取bucket的静态网站托管狀態
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -656,7 +656,7 @@ class OssClient
     }
 
     /**
-     * 获取LiveChannel状态信息
+     * 获取LiveChannel狀態信息
      *
      * @param string $bucket bucket名称
      * @param string channelName $channelName
@@ -1007,7 +1007,7 @@ class OssClient
      *      'max-keys'  => max-keys用于限定此次返回object的最大数，如果不设定，默认为100，max-keys取值不能大于1000。
      *      'prefix'    => 限定返回的object key必须以prefix作为前缀。注意使用prefix查询时，返回的key中仍会包含prefix。
      *      'delimiter' => 是一个用于对Object名字进行分组的字符。所有名字包含指定的前缀且第一次出现delimiter字符之间的object作为一组元素
-     *      'marker'    => 用户设定结果从marker之后按字母排序的第一个开始返回。
+     *      'marker'    => 使用者设定结果从marker之后按字母排序的第一个开始返回。
      *)
      * 其中 prefix，marker用来实现分页显示效果，参数的长度必须小于256字节。
      * @throws OssException
@@ -1400,7 +1400,7 @@ class OssClient
 
     /**
      * 检测Object是否存在
-     * 通过获取Object的Meta信息来判断Object是否存在， 用户需要自行解析ResponseCore判断object是否存在
+     * 通过获取Object的Meta信息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
      *
      * @param string $bucket bucket名称
      * @param string $object object名称
@@ -1440,7 +1440,7 @@ class OssClient
     }
 
     /**
-     * 获取分片大小，根据用户提供的part_size，重新计算一个更合理的partsize
+     * 获取分片大小，根据使用者提供的part_size，重新计算一个更合理的partsize
      *
      * @param int $partSize
      * @return int
@@ -1840,7 +1840,7 @@ class OssClient
     }
 
     /**
-     * 支持生成get和put签名, 用户可以生成一个具有一定有效期的
+     * 支持生成get和put签名, 使用者可以生成一个具有一定有效期的
      * 签名过的url
      *
      * @param string $bucket
@@ -2230,7 +2230,7 @@ class OssClient
     }
 
     /**
-     * 打开sts enable标志，使用户构造函数中传入的$sts生效
+     * 打开sts enable标志，使使用者构造函数中传入的$sts生效
      *
      * @param boolean $enable
      */
@@ -2500,7 +2500,7 @@ class OssClient
             $headers[self::OSS_CONTENT_MD5] = $options[self::OSS_CONTENT_MD5];
         }
 
-        //添加stsSecurityToken
+        //新增stsSecurityToken
         if ((!is_null($this->securityToken)) && (!$this->enableStsInUrl)) {
             $headers[self::OSS_SECURITY_TOKEN] = $this->securityToken;
         }
@@ -2725,7 +2725,7 @@ class OssClient
     private $maxRetries = 3;
     private $redirects = 0;
 
-    // 用户提供的域名类型，有四种 OSS_HOST_TYPE_NORMAL, OSS_HOST_TYPE_IP, OSS_HOST_TYPE_SPECIAL, OSS_HOST_TYPE_CNAME
+    // 使用者提供的域名类型，有四种 OSS_HOST_TYPE_NORMAL, OSS_HOST_TYPE_IP, OSS_HOST_TYPE_SPECIAL, OSS_HOST_TYPE_CNAME
     private $hostType = self::OSS_HOST_TYPE_NORMAL;
     private $requestUrl;
     private $accessKeyId;

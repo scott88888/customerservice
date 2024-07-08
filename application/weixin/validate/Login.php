@@ -18,6 +18,6 @@ class Login extends Validate
 
     protected $messege = [
         'username.require' => '请填写登录帐号',
-        'password.require' => '请填写登录密码'
+        'password.require' => '请填写登入密碼'
     ];
 }

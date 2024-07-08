@@ -29,12 +29,12 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     
     //自定义响应字段
     ,response: {
-      statusName: 'code' //数据状态的字段名称
+      statusName: 'code' //数据狀態的字段名称
       ,statusCode: {
-        ok: 0 //数据状态一切正常的状态码
-        ,logout: 1001 //登录状态失效的状态码
+        ok: 0 //数据狀態一切正常的狀態码
+        ,logout: 1001 //登录狀態失效的狀態码
       }
-      ,msgName: 'msg' //状态信息的字段名称
+      ,msgName: 'msg' //狀態信息的字段名称
       ,dataName: 'data' //数据详情的字段名称
     }
     
@@ -122,7 +122,7 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
       }]
       
       //初始的颜色索引，对应上面的配色方案数组索引
-      //如果本地已经有主题色记录，则以本地记录为优先，除非请求本地数据（localStorage）
+      //如果本地已经有主题色记录，则以本地记录为優先，除非请求本地数据（localStorage）
       ,initColorIndex: 0
     }
   });

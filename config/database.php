@@ -25,7 +25,7 @@ return [
     'hostname'       => '127.0.0.1',
     // 数据库名
     'database'       => 'scott',
-    // 用户名
+    // 使用者名稱
     'username'       => 'scott',
     // 密码
     'password'       => '123456',

@@ -207,7 +207,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 生成 js添加到卡包 需要的 card_list 项.
+     * 生成 js新增到卡包 需要的 card_list 项.
      *
      * @param string $cardId
      * @param array  $extension
@@ -441,7 +441,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 获取用户已领取卡券接口.
+     * 获取使用者已领取卡券接口.
      *
      * @param string $openid
      * @param string $cardId
@@ -714,7 +714,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 添加子商户.
+     * 新增子商户.
      *
      * @param array $info
      *

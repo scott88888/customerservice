@@ -37,7 +37,7 @@ if ($err != null) {
     echo "PersistentFop Id: $id\n";
 }
 
-//查询转码的进度和状态
+//查询转码的进度和狀態
 list($ret, $err) = $pfop->status($id);
 echo "\n====> pfop avthumb status: \n";
 if ($err != null) {

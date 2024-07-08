@@ -5,8 +5,8 @@ function add(data,group) {
     var value = '';
     value += '<form id="info_form"><table>';
     value += '<tr class="sp_line"><td>头像:</td><td class="am-form-group am-form-file"><img id="imgs" class="am-circle" src=' + '"' + data.avatar + '"' + ' width="50" height="50"><button type="button" class="am-btn am-btn-default am-btn-sm">选择图片</button><input type="file" name="img_head" id="img_head" multiple></td></tr>'
-    value += '<tr><td>用户名:</td><td><span>'+data.user_name+'</span></td></tr>';
-    value += '<tr><td>昵称:</td><td><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></td></tr>';
+    value += '<tr><td>使用者名稱:</td><td><span>'+data.user_name+'</span></td></tr>';
+    value += '<tr><td>暱稱:</td><td><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></td></tr>';
     value += '<tr><td>手机:</td><td><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></td></tr>';
     value += '<tr><td>信箱:</td><td><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></td></tr>';
     value += '<tr><td>网站id:</td><td><span> '+data.business_id+' </span><input type="text" name="id" class="hide" value=' + '"' + data.service_id + '"' + '></td></tr>';
@@ -69,10 +69,10 @@ function showinfo(data,group) {
 
     var value = '';
     value += '<form id="info_form"><table>';
-    value += '<div class="sp_line info_form_item"><label>头像</label><div class="am-form-group am-form-file"><img id="imgs" class="am-circle" src=' + '"' + data.avatar + '"' + ' width="50" height="50"><button type="button" class="am-btn am-btn-default choose-img am-btn-sm">重新上传</button><input type="file" name="img_head" id="img_head" multiple></div></div>'
-    value += '<div class="info_form_item"><label>用户名</label><span><span>'+data.user_name+'</span></span></div>';
+    value += '<div class="sp_line info_form_item"><label>头像</label><div class="am-form-group am-form-file"><img id="imgs" class="am-circle" src=' + '"' + data.avatar + '"' + ' width="50" height="50"><button type="button" class="am-btn am-btn-default choose-img am-btn-sm">重新上傳</button><input type="file" name="img_head" id="img_head" multiple></div></div>'
+    value += '<div class="info_form_item"><label>使用者名稱</label><span><span>'+data.user_name+'</span></span></div>';
     value += '<div class="info_form_item"><label>OpenId</label><span><input type="text" id="open_id" name="open_id" class="am-form-field"  value=' + '"' + data.open_id + '"' + '></span></div>';
-    value += '<div class="info_form_item"><label>昵称</label><span><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></span></div>';
+    value += '<div class="info_form_item"><label>暱稱</label><span><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>手机</label><span><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>信箱</label><span><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>网站id</label><span><span> '+data.business_id+' </span><input type="text" name="id" class="hide" value=' + '"' + data.service_id + '"' + '></span></div>';

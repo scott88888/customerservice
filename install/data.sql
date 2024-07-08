@@ -31,7 +31,7 @@ CREATE TABLE `wolive_admin`  (
   `permission` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `expire_time` int(11) NOT NULL DEFAULT 0 COMMENT '账户有效期至，0表示永久',
-  `mobile` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '手机号',
+  `mobile` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '手機號碼',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
 
@@ -61,7 +61,7 @@ CREATE TABLE `wolive_admin_menu`  (
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `sort` tinyint(4) NOT NULL DEFAULT 99 COMMENT '排序',
   `type` tinyint(1) NULL DEFAULT 1 COMMENT '菜单',
-  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '状态',
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '狀態',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '权限表' ROW_FORMAT = DYNAMIC;
@@ -78,7 +78,7 @@ CREATE TABLE `wolive_admin_permission`  (
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `sort` tinyint(4) NOT NULL DEFAULT 99 COMMENT '排序',
   `type` tinyint(1) NULL DEFAULT 1 COMMENT '菜单',
-  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '状态',
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '狀態',
   `is_admin` tinyint(1) NOT NULL DEFAULT 1 COMMENT '是否管理员',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
@@ -366,8 +366,8 @@ CREATE TABLE `wolive_sentence`  (
 DROP TABLE IF EXISTS `wolive_service`;
 CREATE TABLE `wolive_service`  (
   `service_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
-  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '昵称',
+  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '使用者名稱',
+  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '暱稱',
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密码',
   `groupid` varchar(225) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '客服分类id',
   `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '手机',
@@ -434,10 +434,10 @@ CREATE TABLE `wolive_visiter`  (
   `vid` int(11) NOT NULL AUTO_INCREMENT,
   `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客id',
   `visiter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客名称',
-  `channel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户遊客频道',
+  `channel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '使用者遊客频道',
   `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '头像',
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '用户自己填写的姓名',
-  `tel` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '用户自己填写的電話',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的姓名',
+  `tel` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的電話',
   `login_times` int(11) NOT NULL DEFAULT 1 COMMENT '登录次数',
   `connect` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '联系方式',
   `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '备注',
@@ -500,7 +500,7 @@ CREATE TABLE `wolive_weixin`  (
   `wid` int(11) NOT NULL AUTO_INCREMENT,
   `business_id` int(11) NOT NULL COMMENT '商户ID',
   `app_id` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '公众号appid',
-  `open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '微信用户id',
+  `open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '微信使用者id',
   `subscribe` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否关注微信0未关注1已关注',
   `subscribe_time` int(11) NOT NULL DEFAULT 0 COMMENT '关注时间',
   PRIMARY KEY (`wid`) USING BTREE,

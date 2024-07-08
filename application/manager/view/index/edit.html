@@ -138,17 +138,17 @@
                     {if condition="isset($model['id'])"}
                     <input type="number" class="form-control "
                            value="{$model->max_count}"  name="max_count" class="form-control-plaintext ">
-                    <div class="fs-sm text-muted">此客服系统站点可以创建客服的数量，填写0则表示不限制用户创建客服的数量</div>
+                    <div class="fs-sm text-muted">此客服系统站点可以创建客服的数量，填写0则表示不限制使用者创建客服的数量</div>
                     {else/}
                     <input type="number"class="form-control " name="max_count"
                            value="">
-                    <div class="fs-sm text-muted">此客服系统站点可以创建客服的数量，填写0则表示不限制用户创建客服的数量</div>
+                    <div class="fs-sm text-muted">此客服系统站点可以创建客服的数量，填写0则表示不限制使用者创建客服的数量</div>
                     {/if}
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label required">管理员用户名</label>
+                <label class="col-sm-2 col-form-label required">管理员使用者名稱</label>
                 <div class="col-sm-6">
                     {if condition="isset($model->id)"}
                     <input class="form-control "
@@ -163,7 +163,7 @@
 
             {if condition="!isset($model['id'])"}
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label required">登录密码</label>
+                <label class="col-sm-2 col-form-label required">登入密碼</label>
                 <div class="col-sm-6">
                     <input type="password" class="form-control " value="" name="password">
                 </div>

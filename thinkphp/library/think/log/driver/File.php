@@ -160,7 +160,7 @@ class File
         if (PHP_SAPI == 'cli') {
             $message = $this->parseCliLog($info);
         } else {
-            // 添加调试日志
+            // 新增调试日志
             $this->getDebugLog($info, $append, $apart);
 
             $message = $this->parseLog($info);

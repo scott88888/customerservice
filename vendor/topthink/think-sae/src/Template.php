@@ -43,7 +43,7 @@ class Template
      */
     public function write($cacheFile, $content)
     {
-        // 添加写入时间
+        // 新增写入时间
         $content = $_SERVER['REQUEST_TIME'] . $content;
         if (!$this->mc->set($cacheFile, $content, 0)) {
             throw new Exception('sae mc write error:' . $cacheFile);

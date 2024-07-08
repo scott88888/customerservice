@@ -299,7 +299,7 @@ function getdata(){
         data: {hid:cid,vid:visiter_id,business_id:business_id,service_id:se},
         dataType:'json',
         success: function (res) {
-            //添加 最近的 聊天 记录
+            //新增 最近的 聊天 记录
             if(res.code == 0){
                 var str = '';
                 var mindata = null

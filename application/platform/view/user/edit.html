@@ -116,7 +116,7 @@
     </div>
     <div class="card-body" style="padding-left: 15%;">
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label account-label required"><span>用户名</span></label>
+            <label class="col-sm-3 col-form-label account-label required"><span>使用者名稱</span></label>
             <div class="form-input">
                 {if condition="isset($model->id)"}
                 <input class="form-control "
@@ -130,7 +130,7 @@
 
         {if condition="!isset($model['id'])"}
         <div id="login-input"  class="form-group row">
-            <label class="col-sm-3 col-form-label account-label required"><span>登录密码</span></label>
+            <label class="col-sm-3 col-form-label account-label required"><span>登入密碼</span></label>
             <div class="form-input">
                 <input type="password" id="password" class="form-control " value="" name="password">
             </div>
@@ -141,7 +141,7 @@
         {/if}
 
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label account-label"><span>手机号</span></label>
+            <label class="col-sm-3 col-form-label account-label"><span>手機號碼</span></label>
             <div class="form-input">
                 {if condition="isset($model['id'])"}
                 <input class="form-control " value="{$model['mobile']}" name="mobile">
@@ -167,11 +167,11 @@
                 {if condition="isset($model['id'])"}
                 <input class="form-control " type="number" step="1" min="0"
                        value="{$model['app_max_count']}" name="app_max_count">
-                <div class="fs-sm text-muted">此用户可以创建的客服系统的数量，填写0则表示不限制用户创建客服系统的数量</div>
+                <div class="fs-sm text-muted">此使用者可以创建的客服系统的数量，填写0则表示不限制使用者创建客服系统的数量</div>
                 {else/}
                 <input class="form-control " type="number" step="1" min="0"
                        value="" name="app_max_count">
-                <div class="fs-sm text-muted">此用户可以创建的客服系统的数量，填写0则表示不限制用户创建客服系统的数量</div>
+                <div class="fs-sm text-muted">此使用者可以创建的客服系统的数量，填写0则表示不限制使用者创建客服系统的数量</div>
                 {/if}
 
 

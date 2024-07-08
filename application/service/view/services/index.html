@@ -11,16 +11,16 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">用户名</label>
+							<label class="layui-form-label">使用者名稱</label>
 							<div class="layui-input-inline">
-								<input type="text" name="user_name" placeholder="請輸入客服用户名" class="layui-input">
+								<input type="text" name="user_name" placeholder="請輸入客服使用者名稱" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item layui-inline">
 							<label class="layui-form-label">客服分组</label>
 							<div class="layui-input-inline">
 								<select name="groupid">
-									<option value="">请选择客服分组</option>
+									<option value="">請選擇客服分組</option>
 									{foreach $group as $v}
 									<option value="{$v.id}">{$v.groupname|default=''}</option>
 									{/foreach}
@@ -50,7 +50,7 @@
 		<script type="text/html" id="toolbar">
 		    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
 		        <i class="layui-icon layui-icon-addition"></i>
-		        添加客服
+		        新增客服
 			</button>
 		</script>
 
@@ -70,7 +70,7 @@
 			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</button>
 			<button class="pear-btn pear-btn-success pear-btn-xs" lay-event="pass"><i class="layui-icon layui-icon-password"></i>密码</button>
 			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>删除</button>
-			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personal}}"><i class="layui-icon layui-icon-link"></i>复制链接</button>
+			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personal}}"><i class="layui-icon layui-icon-link"></i>複製链接</button>
 			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personalwechat}}"><i class="layui-icon layui-icon-link"></i>微信链接</button>
 		</script>
 
@@ -95,12 +95,12 @@
                                 width: 80
                             },{
                                 field: 'user_name',
-                                title: '用户名',
+                                title: '使用者名稱',
                                 unresize: true,
                                 align: 'left'
                             }, {
                                 field: 'nick_name',
-                                title: '昵称',
+                                title: '暱稱',
                                 unresize: true,
                                 align: 'left',
                             },  {
@@ -110,14 +110,14 @@
                                 align: 'left',
                             },
 							{
-                                title: '離線优先',
+                                title: '離線優先',
                                 field: 'offline_first',
                                 align: 'left',
                                 templet: '#user-enable'
 							},
                             {
                                 field: 'state',
-                                title: '線上状态',
+                                title: '線上狀態',
                                 unresize: true,
                                 align: 'left',
                                 templet: '#user-status'
@@ -194,7 +194,7 @@
 				window.add = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '添加客服',
+                        title: '新增客服',
                         shade: 0.1,
                         area: ['500px', '500px'],
                         content: MODULE_PATH + 'services/add'
@@ -224,16 +224,16 @@
                 window.copy = function(obj) {
                     var clipboard = new ClipboardJS('.copy');
                     clipboard.on('success', function(e) {
-                        layer.msg('复制成功', {icon: 1});
+                        layer.msg('複製成功', {icon: 1});
                         e.clearSelection();
                     });
                     clipboard.on('error', function(e) {
-                        layer.msg('复制成功，请关闭兼容模式或者升级浏览器');
+                        layer.msg('複製成功，請關閉相容模式或升級瀏覽器');
                     });
 				};
 
                 window.remove = function(obj) {
-                    layer.confirm('确定要删除该用户', {
+                    layer.confirm('確定要刪除該用戶', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

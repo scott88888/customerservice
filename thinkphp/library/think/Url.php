@@ -133,7 +133,7 @@ class Url
         $anchor = !empty($anchor) ? '#' . $anchor : '';
         // 参数组装
         if (!empty($vars)) {
-            // 添加参数
+            // 新增参数
             if (Config::get('url_common_param')) {
                 $vars = http_build_query($vars);
                 $url .= $suffix . '?' . $vars . $anchor;

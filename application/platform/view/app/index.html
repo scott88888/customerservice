@@ -206,7 +206,7 @@
 </style>
 
 <div class="my-app">
-    <a href="javascript:" class="btn btn-sm btn-primary mr-3 add-app" data-toggle="modal" data-target="#add-modal">添加客服系统</a>
+    <a href="javascript:" class="btn btn-sm btn-primary mr-3 add-app" data-toggle="modal" data-target="#add-modal">新增客服系统</a>
     <div class="search">
         <form method="get" class="form-inline">
             <input type="hidden" name="r" value="">
@@ -236,7 +236,7 @@
     {if condition="empty(count($list))"}
     <tr>
         <td colspan="5" class="text-center p-5">
-            <!--<a href="javascript:" class="add-app">添加客服系统商城</a>-->
+            <!--<a href="javascript:" class="add-app">新增客服系统商城</a>-->
             <span class="text-muted">暂无相关客服系统</>
         </td>
     </tr>
@@ -259,8 +259,8 @@
                 <input class="business" style="line-height:normal;" id="copy_{$vo['id']}" value="{:url('admin/login/index',['business_id'=>$vo['id']],true,true)}">
                 <!-- Trigger -->
                 <button href="#" class="copybtn btn" data-clipboard-target="#copy_{$vo['id']}">
-                    <!-- <img class="clippy " src="__image__/platform/clippy.svg" width="13" alt="复制到剪贴板"> -->
-                    复制
+                    <!-- <img class="clippy " src="__image__/platform/clippy.svg" width="13" alt="複製到剪贴板"> -->
+                    複製
                 </button>
             </div>            
         </td>
@@ -283,7 +283,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title" id="myModalLabel"><b>添加客服系统</b></div>
+                <div class="modal-title" id="myModalLabel"><b>新增客服系统</b></div>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="add-modal-body modal-body"></div>
@@ -312,13 +312,13 @@
     var clipboard = new ClipboardJS('.copybtn');
     clipboard.on('success', function(e) {
         $.alert({
-            content:'复制成功'
+            content:'複製成功'
         });
         e.clearSelection();
     });
     clipboard.on('error', function(e) {
         $.alert({
-            content:'复制失败,请手动复制'
+            content:'複製失败,请手动複製'
         });
     });
 
@@ -335,7 +335,7 @@
                     return;
                 }
                 $.myLoading({
-                    title: "正在提交",
+                    title: "正在送出",
                 });
                 $.ajax({
                     url: href,
@@ -396,7 +396,7 @@
             content: "确认将客服系统放进回收站？可以从回收站恢复。",
             confirm: function () {
                 $.myLoading({
-                    title: "正在提交",
+                    title: "正在送出",
                 });
                 $.ajax({
                     url: href,
@@ -425,7 +425,7 @@
             content: "确认将客服系统" + aText + "?",
             confirm: function () {
                 $.myLoading({
-                    title: "正在提交",
+                    title: "正在送出",
                 });
                 $.ajax({
                     url: href,

@@ -8,7 +8,7 @@ return [
     /* 上传图片配置项 */
     "imageAltValue" => "name", /*图片alt属性和title属性填充值：title为内容标题字段值、name为图片名称*/
     "imageActionName" => "uploadimage", /* 执行上传图片的action名称 */
-    "imageFieldName" => "upfile", /* 提交的图片表单名称 */
+    "imageFieldName" => "upfile", /* 送出的图片表單名称 */
     "imageMaxSize" => 2048000, /* 上传大小限制，单位B */
     "imageAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 上传图片格式显示 */
     "imageCompressEnable" => true, /* 是否压缩图片,默认是true */
@@ -31,7 +31,7 @@ return [
 
     /* 涂鸦图片上传配置项 */
     "scrawlActionName" => "uploadscrawl", /* 执行上传涂鸦的action名称 */
-    "scrawlFieldName" => "upfile", /* 提交的图片表单名称 */
+    "scrawlFieldName" => "upfile", /* 送出的图片表單名称 */
     "scrawlPathFormat" => "/ueditor/image/{yyyy}{mm}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
     "scrawlMaxSize" => 2048000, /* 上传大小限制，单位B */
     "scrawlUrlPrefix" => "", /* 图片访问路径前缀 */
@@ -45,7 +45,7 @@ return [
 
     /* 上传视频配置 */
     "videoActionName" => "uploadvideo", /* 执行上传视频的action名称 */
-    "videoFieldName" => "upfile", /* 提交的视频表单名称 */
+    "videoFieldName" => "upfile", /* 送出的视频表單名称 */
     "videoPathFormat" => "/ueditor/video/{yyyy}{mm}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
     "videoUrlPrefix" => "", /* 视频访问路径前缀 */
     "videoMaxSize" => 102400000, /* 上传大小限制，单位B，默认100MB */
@@ -55,7 +55,7 @@ return [
 
     /* 上传文件配置 */
     "fileActionName" => "uploadfile", /* controller里,执行上传视频的action名称 */
-    "fileFieldName" => "upfile", /* 提交的文件表单名称 */
+    "fileFieldName" => "upfile", /* 送出的文件表單名称 */
     "filePathFormat" => "/ueditor/file/{yyyy}{mm}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
     "fileUrlPrefix" => "", /* 文件访问路径前缀 */
     "fileMaxSize" => 51200000, /* 上传大小限制，单位B，默认50MB */

@@ -100,7 +100,7 @@ if (jsAjaxBtn.length) {
         });
     });
 }
-//重新刷新页面，使用location.reload()有可能导致重新提交
+//重新刷新页面，使用location.reload()有可能导致重新送出
 function reloadPage(win) {
     var location  = win.location;
     location.href = location.pathname + location.search;

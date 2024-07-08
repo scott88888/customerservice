@@ -579,7 +579,7 @@ class Angular
             // 如果是数组, 就合并规则
             self::$extends = array_merge(self::$extends, $extends);
         } else {
-            // 添加单个规则
+            // 新增单个规则
             self::$extends[$extends] = $callback;
         }
     }

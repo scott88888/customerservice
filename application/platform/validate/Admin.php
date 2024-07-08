@@ -31,7 +31,7 @@ class Admin extends Validate
     ];
 
     protected $field = [
-        'mobile2'  => '手机号',
+        'mobile2'  => '手機號碼',
         'captcha_code' => '验证码',
     ];
     /**
@@ -40,14 +40,14 @@ class Admin extends Validate
      * @var array
      */
     protected $message = [
-        "username.require" => "请填写用户名",
-        "username.alphaDash" => "用户名只能是字母、数字和下划线_及破折号-",
-        "username.length" => "用户名长度为3~16个字符",
+        "username.require" => "请填写使用者名稱",
+        "username.alphaDash" => "使用者名稱只能是字母、数字和下划线_及破折号-",
+        "username.length" => "使用者名稱长度为3~16个字符",
         "password.require" => "密码不能为空",
         "password.length" => "密码长度为6~16个字符",
         "mobile.isMobile" => "手机格式不符合要求",
         "mobile2.isMobile" => "手机格式不符合要求",
-        "mobile.unique" => "该手机号已存在",
+        "mobile.unique" => "该手機號碼已存在",
         'expire_time.isDate' => '有效期格式不正确',
         'expire_time.afterTime' => '无法创建一个过期的应用',
         "app_max_count.require" => "请填写数量",

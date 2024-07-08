@@ -227,7 +227,7 @@ $.formSubmit = function (args) {
     else
         data["complete"] = args.complete;
 
-    btn.btnLoading("正在提交");
+    btn.btnLoading("正在送出");
     $.ajax(data);
 
 };
@@ -335,7 +335,7 @@ $.fn.extend({
 
 $(document).ready(function () {
 
-    //Yii2 POST表单添加_csrf
+    //Yii2 POST表單新增_csrf
     $("form[method=post]").each(function () {
         if (typeof this._csrf== undefined)
             $(this).append('<input name="_csrf" value="' + _csrf + '" type="hidden">');
@@ -363,7 +363,7 @@ $(document).ready(function () {
         };
     })();
 
-    //表单自动提交
+    //表單自动送出
     (function () {
         $(document).on("click", ".auto-submit-form .submit-btn", "click", function () {
             var form = $(this).parents("form");

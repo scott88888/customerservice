@@ -8,7 +8,7 @@
 
 ## 概述
 
-阿里云对象存储（Object Storage Service，简称OSS），是阿里云对外提供的海量、安全、低成本、高可靠的云存储服务。用户可以通过调用API，在任何应用、任何时间、任何地点上传和下载数据，也可以通过用户Web控制台对数据进行简单的管理。OSS适合存放任意文件类型，适合各种网站、开发企业及开发者使用。
+阿里云对象存储（Object Storage Service，简称OSS），是阿里云对外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通过调用API，在任何应用、任何时间、任何地点上传和下载数据，也可以通过使用者Web控制台对数据进行简单的管理。OSS适合存放任意文件类型，适合各种网站、开发企业及开发者使用。
 
 
 ## 运行环境
@@ -50,8 +50,8 @@
 
 | 类名 | 解释 |
 |:------------------|:------------------------------------|
-|OSS\OssClient | OSS客户端类，用户通过OssClient的实例调用接口 |
-|OSS\Core\OssException | OSS异常类，用户在使用的过程中，只需要注意这个异常|
+|OSS\OssClient | OSS客户端类，使用者通过OssClient的实例调用接口 |
+|OSS\Core\OssException | OSS异常类，使用者在使用的过程中，只需要注意这个异常|
 
 ### OssClient初始化
 
@@ -87,7 +87,7 @@ try {
 
 ### 存储空间操作
 
-存储空间(又称Bucket)是一个用户用来管理所存储Object的存储空间,对于用户来说是一个管理Object的单元，所有的Object都必须隶属于某个Bucket。您可以按照下面的代码新建一个Bucket：
+存储空间(又称Bucket)是一个使用者用来管理所存储Object的存储空间,对于使用者来说是一个管理Object的单元，所有的Object都必须隶属于某个Bucket。您可以按照下面的代码新建一个Bucket：
 
 ```php
 <?php
@@ -143,7 +143,7 @@ foreach($bucketList as $bucket) {
 - [阿里云OSS官方网站](http://oss.aliyun.com)
 - [阿里云OSS官方论坛](http://bbs.aliyun.com)
 - [阿里云OSS官方文档中心](http://www.aliyun.com/product/oss#Docs)
-- 阿里云官方技术支持：[提交工单](https://workorder.console.aliyun.com/#/ticket/createIndex)
+- 阿里云官方技术支持：[送出工单](https://workorder.console.aliyun.com/#/ticket/createIndex)
 
 [releases-page]: https://github.com/aliyun/aliyun-oss-php-sdk/releases
 [phar-composer]: https://github.com/clue/phar-composer

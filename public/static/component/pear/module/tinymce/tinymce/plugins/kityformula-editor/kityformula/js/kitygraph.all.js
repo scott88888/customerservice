@@ -531,9 +531,9 @@ _p[2] = {
         // 等待执行的帧动作的集合，这些帧的方法将在下个原生动画帧同步执行
         var pendingFrames = [];
         /**
-     * 添加一个帧到等待集合中
+     * 新增一个帧到等待集合中
      *
-     * 如果添加的帧是序列的第一个，至少有一个帧需要被执行，则会请求一个原生动画帧来执行
+     * 如果新增的帧是序列的第一个，至少有一个帧需要被执行，则会请求一个原生动画帧来执行
      */
         function pushFrame(frame) {
             if (pendingFrames.push(frame) === 1) {
@@ -1226,7 +1226,7 @@ _p[8] = {
              * @description 在时间线播放后触发
              *
              * @param {String} event.lastStatus
-             *        表示播放前的上一个状态，可能取值为 'ready'、'finished'、'stoped'、'paused'
+             *        表示播放前的上一个狀態，可能取值为 'ready'、'finished'、'stoped'、'paused'
              */
                 this.fire("play", new TimelineEvent(this, "play", {
                     lastStatus: lastStatus
@@ -2064,7 +2064,7 @@ _p[12] = {
          * @method clone()
          * @for kity.Utils
          * @grammar clone(obj) => {object}
-         * @description 返回一个对象的克隆副本（非深度复制）
+         * @description 返回一个对象的克隆副本（非深度複製）
          * @param  {object} obj 要克隆的对象
          *
          * @example
@@ -2097,7 +2097,7 @@ _p[12] = {
          * @method copy()
          * @for kity.Utils
          * @grammar copy(obj) => {object}
-         * @description 返回一个对象的拷贝副本（深度复制）
+         * @description 返回一个对象的拷贝副本（深度複製）
          * @param  {object} obj 要拷贝的对象
          *
          * @example
@@ -3873,7 +3873,7 @@ _p[28] = {
         Utils.extend(ColorUtils, {
             parseToValue: function(valStr) {
                 var rgbaValue = {};
-                /* 优先检测在调色板中是否有对应的颜色 */
+                /* 優先检测在调色板中是否有对应的颜色 */
                 valStr = StandardColor.EXTEND_STANDARD[valStr] || StandardColor.COLOR_STANDARD[valStr] || valStr;
                 /* 颜色转换 */
                 //hex格式
@@ -4330,13 +4330,13 @@ _p[30] = {
                     if (this.closeState || i != len - 1) {
                         curControlPoint = withControlPoints[i].points[0];
                     } else {
-                        //非闭合状态下最后一个点的处理
+                        //非闭合狀態下最后一个点的处理
                         curControlPoint = withControlPoints[i].center;
                     }
                     if (this.closeState || i != 1) {
                         prevControlPoint = withControlPoints[i - 1].points[1];
                     } else {
-                        //非闭合状态下第一个点的处理
+                        //非闭合狀態下第一个点的处理
                         prevControlPoint = withControlPoints[i - 1].center;
                     }
                     drawer.bezierTo(prevControlPoint.x, prevControlPoint.y, curControlPoint.x, curControlPoint.y, curPoint.x, curPoint.y);
@@ -4489,9 +4489,9 @@ _p[33] = {
         })();
         var Utils = _p.r(12), ShapeEvent = _p.r(62);
         // 内部处理器缓存
-        var INNER_HANDLER_CACHE = {}, // 用户处理器缓存
+        var INNER_HANDLER_CACHE = {}, // 使用者处理器缓存
         USER_HANDLER_CACHE = {}, guid = 0;
-        // 添加事件统一入口
+        // 新增事件统一入口
         function _addEvent(type, handler, isOnce) {
             isOnce = !!isOnce;
             if (Utils.isString(type)) {
@@ -4546,12 +4546,12 @@ _p[33] = {
                                 targetObject.off(type, fn);
                             }
                         }
-                        // 如果用户handler里return了false， 则该节点上的此后的同类型事件将不再执行
+                        // 如果使用者handler里return了false， 则该节点上的此后的同类型事件将不再执行
                         return result;
                     }, targetObject);
                 };
             }
-            // 初始化用户监听器列表
+            // 初始化使用者监听器列表
             if (!USER_HANDLER_CACHE[eid]) {
                 USER_HANDLER_CACHE[eid] = {};
             }
@@ -6154,10 +6154,10 @@ _p[44] = {
                 return this.color[name] || StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
             },
             /*
-         * 向调色板实例添加自己独有的颜色名称，对已存在的颜色名称， 将会覆盖掉
-         * @param name 新添加的颜色名称
-         * @param value 新添加的颜色名称所对应的值， 可以是一个合法的颜色字符串或者是一个color对象
-         * @return 新添加的颜色的值
+         * 向调色板实例新增自己独有的颜色名称，对已存在的颜色名称， 将会覆盖掉
+         * @param name 新新增的颜色名称
+         * @param value 新新增的颜色名称所对应的值， 可以是一个合法的颜色字符串或者是一个color对象
+         * @return 新新增的颜色的值
          */
             add: function(name, value) {
                 if (typeof value === "string") {
@@ -6168,7 +6168,7 @@ _p[44] = {
                 return value;
             },
             /*
-         * 删除调色板实例上用户自己添加的颜色， 该方法不能删除内置的颜色
+         * 删除调色板实例上使用者自己新增的颜色， 该方法不能删除内置的颜色
          * @param name 需要删除的颜色名称
          * @return 删除是否成功的bool值
          */
@@ -6197,11 +6197,11 @@ _p[44] = {
                 return StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
             },
             /*
-         * 向调色板添加颜色名称，新添加的颜色对所有的调色板对象都可见
+         * 向调色板新增颜色名称，新新增的颜色对所有的调色板对象都可见
          * 对已存在的颜色名称， 将会覆盖掉
-         * @param name 新添加的颜色名称
-         * @param value 新添加的颜色名称所对于的值， 应该是一个hex格式的颜色字符串， 如： ”#ff0000“
-         * @return 新添加的颜色的值
+         * @param name 新新增的颜色名称
+         * @param value 新新增的颜色名称所对于的值， 应该是一个hex格式的颜色字符串， 如： ”#ff0000“
+         * @return 新新增的颜色的值
          */
             addColor: function(name, value) {
                 if (typeof value === "string") {
@@ -6212,7 +6212,7 @@ _p[44] = {
                 return value;
             },
             /*
-         * 删除用户自己添加的颜色， 该方法不能删除内置的颜色， 该方法不会影响调色板实例自由的颜色
+         * 删除使用者自己新增的颜色， 该方法不能删除内置的颜色， 该方法不会影响调色板实例自由的颜色
          * @param name 需要删除的颜色名称
          * @return 删除是否成功的bool值
          */
@@ -7608,7 +7608,7 @@ _p[62] = {
                     return true;
                 }
             },
-            //当前鼠标事件在用户坐标系中点击的点的坐标位置
+            //当前鼠标事件在使用者坐标系中点击的点的坐标位置
             getPosition: function(refer, touchIndex) {
                 if (!this.originEvent) {
                     return null;

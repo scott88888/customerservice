@@ -134,7 +134,7 @@ class Menu
                         'is_admin' => false,
                         'sub' => [
                             [
-                                'name' => '添加应用',
+                                'name' => '新增应用',
                                 'route' => 'platform/app/edit',
                                 'is_admin' => false,
                             ],

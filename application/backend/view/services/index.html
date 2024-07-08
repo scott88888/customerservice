@@ -11,9 +11,9 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">用户名</label>
+							<label class="layui-form-label">使用者名稱</label>
 							<div class="layui-input-inline">
-								<input type="text" name="user_name" placeholder="請輸入客服用户名" class="layui-input">
+								<input type="text" name="user_name" placeholder="請輸入客服使用者名稱" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item layui-inline">
@@ -50,7 +50,7 @@
 
 		<script type="text/html" id="tool-bar">
 			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>删除</button>
-			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personal}}"><i class="layui-icon layui-icon-link"></i>复制</button>
+			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personal}}"><i class="layui-icon layui-icon-link"></i>複製</button>
 			<button class="pear-btn pear-btn-warming pear-btn-xs" lay-event="clear"><i class="layui-icon layui-icon-fonts-clear"></i>清空记录</button>
 		</script>
 
@@ -75,12 +75,12 @@
                                 width: 80
                             },{
                                 field: 'user_name',
-                                title: '用户名',
+                                title: '使用者名稱',
                                 unresize: true,
                                 align: 'left'
                             }, {
                                 field: 'nick_name',
-                                title: '昵称',
+                                title: '暱稱',
                                 unresize: true,
                                 align: 'left',
                             },  {
@@ -91,7 +91,7 @@
                             },
                             {
                                 field: 'state',
-                                title: '線上状态',
+                                title: '線上狀態',
                                 unresize: true,
                                 align: 'left',
                                 templet: '#user-status'
@@ -147,16 +147,16 @@
                 window.copy = function(obj) {
                     var clipboard = new ClipboardJS('.copy');
                     clipboard.on('success', function(e) {
-                        layer.msg('复制客服链接成功', {icon: 1});
+                        layer.msg('複製客服链接成功', {icon: 1});
                         e.clearSelection();
                     });
                     clipboard.on('error', function(e) {
-                        layer.msg('复制成功，请关闭兼容模式或者升级浏览器');
+                        layer.msg('複製成功，請關閉相容模式或升級瀏覽器');
                     });
 				};
 
                 window.remove = function(obj) {
-                    layer.confirm('确定要删除该用户', {
+                    layer.confirm('確定要刪除該用戶', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

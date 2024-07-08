@@ -179,7 +179,7 @@ class Socket
         if (!$tabid && !$this->config['force_client_ids']) {
             return false;
         }
-        //用户认证
+        //使用者认证
         $allow_client_ids = $this->config['allow_client_ids'];
         if (!empty($allow_client_ids)) {
             //通过数组交集得出授权强制推送的client_id

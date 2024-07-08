@@ -50,7 +50,7 @@ class LifecycleRule
     }
 
     /**
-     * Lifecycle规则的状态
+     * Lifecycle规则的狀態
      *
      * @return string
      */
@@ -60,7 +60,7 @@ class LifecycleRule
     }
 
     /**
-     * 设置Lifecycle规则状态
+     * 设置Lifecycle规则狀態
      *
      * @param string $status
      */
@@ -92,7 +92,7 @@ class LifecycleRule
      *
      * @param string $id 规则ID
      * @param string $prefix 文件前缀
-     * @param string $status 规则状态，可选[self::LIFECYCLE_STATUS_ENABLED, self::LIFECYCLE_STATUS_DISABLED]
+     * @param string $status 规则狀態，可选[self::LIFECYCLE_STATUS_ENABLED, self::LIFECYCLE_STATUS_DISABLED]
      * @param LifecycleAction[] $actions
      */
     public function __construct($id, $prefix, $status, $actions)

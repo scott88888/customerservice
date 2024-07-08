@@ -31,7 +31,7 @@
     <div class="layui-form-item" >
 
         <div class="layui-input-block" style="margin-left: 0px;">
-            <input type="text" id="name" placeholder="請輸入用户名" autocomplete="off" class="layui-input">
+            <input type="text" id="name" placeholder="請輸入使用者名稱" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
@@ -55,7 +55,7 @@
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block" style="margin-left: 0px;">
-            <button class="layui-btn" lay-submit onclick="push()">立即提交</button>
+            <button class="layui-btn" lay-submit onclick="push()">立即送出</button>
         </div>
     </div>
 
@@ -99,7 +99,7 @@
             data: {name: name, business_id: web_id, moblie: moblie, email: email, content: content},
             success: function (res) {
 
-                if (res == '提交成功') {
+                if (res == '送出成功') {
                     layer.msg(res, {icon: 1,end:function () {
                         location.reload();
                     }});

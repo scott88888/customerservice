@@ -77,7 +77,7 @@
 .wc__explore-list ul li .item .notice{position: relative;}
 .wc__explore-list ul li .item .notice img{vertical-align: middle; height: .5rem; width: .5rem;}
 .wc__explore-list ul li .item .notice .wc__badge{position: absolute; top: -5px; left: 17px;}
-/* 页面4：我的(用户中心) */
+/* 页面4：我的(使用者中心) */
 .wc__ucenter-list{padding-bottom: .35rem;}
 .wc__ucenter-list ul li{margin-top: .35rem;}
 .wc__ucenter-list ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .25rem .3rem; position: relative;}
@@ -272,7 +272,7 @@
 .wc__btns-panel{padding: 0 .3rem .3rem;}
 .wc__btns-panel a{display: block; margin-bottom: .3rem;}
 
-/* __ 添加朋友 */
+/* __ 新增朋友 */
 .wc__ucinfo-addFriends ul li{margin-top: .35rem;}
 .wc__ucinfo-addFriends ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .2rem .3rem; min-height: 1rem; position: relative;}
 .wc__ucinfo-addFriends ul li .item:after{content: ''; border-bottom: 1px solid #d9d9d9; color: #d9d9d9; height: 1px; width: auto; position: absolute; left: .3rem; right: .3rem; bottom: 0; transform: scaleY(0.5); -webkit-transform: scaleY(0.5);}

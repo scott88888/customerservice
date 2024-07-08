@@ -34,7 +34,7 @@ class Services extends Base
             if ($post['nick_name'] == "") $post['nick_name'] = "客服" . $post['user_name'];
             $num = Service::where('business_id', $_SESSION['Msg']['business_id'])->count();
             $max = Business::where('id', $_SESSION['Msg']['business_id'])->value('max_count');
-            if ($max != 0 && $num >= $max) $this->error('新增客服已经达到限制,不能再添加!');
+            if ($max != 0 && $num >= $max) $this->error('新增客服已经达到限制,不能再新增!');
             $service = Service::where('user_name', $post['user_name'])->find();
             if ($service) $this->error('该客服名已经存在!');
             unset($post['password2']);
@@ -43,8 +43,8 @@ class Services extends Base
             $pass = md5($post['user_name'] . "hjkj" . $post["password"]);
             $post['password'] = $pass;
             $res = Service::field(true)->insert($post);
-            if ($res) $this->success('添加成功');
-            $this->error('添加失败！');
+            if ($res) $this->success('新增成功');
+            $this->error('新增失败！');
         }
         $group = Db::name("wolive_group")->where(['business_id'=>$_SESSION['Msg']['business_id']])->select();
         $this->assign('group', $group);

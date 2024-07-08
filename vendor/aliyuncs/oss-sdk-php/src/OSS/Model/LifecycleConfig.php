@@ -65,7 +65,7 @@ class LifecycleConfig implements XmlConfig
 
     /**
      *
-     * 添加LifecycleRule
+     * 新增LifecycleRule
      *
      * @param LifecycleRule $lifecycleRule
      * @throws OssException
@@ -79,7 +79,7 @@ class LifecycleConfig implements XmlConfig
     }
 
     /**
-     *  将配置转换成字符串，便于用户查看
+     *  将配置转换成字符串，便于使用者查看
      *
      * @return string
      */

@@ -73,7 +73,7 @@ class Definition
     }
 
     /**
-     * 添加参数
+     * 新增参数
      * @param Argument[] $arguments 参数数组
      * @api
      */
@@ -87,7 +87,7 @@ class Definition
     }
 
     /**
-     * 添加一个参数
+     * 新增一个参数
      * @param Argument $argument 参数
      * @throws \LogicException
      */
@@ -201,7 +201,7 @@ class Definition
     }
 
     /**
-     * 添加选项
+     * 新增选项
      * @param Option[] $options 选项数组
      * @api
      */
@@ -213,7 +213,7 @@ class Definition
     }
 
     /**
-     * 添加一个选项
+     * 新增一个选项
      * @param Option $option 选项
      * @throws \LogicException
      * @api

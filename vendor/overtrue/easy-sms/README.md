@@ -207,7 +207,7 @@ $e->getLastException();         // 获取最后一个失败的异常对象
 
 ## 自定义网关
 
-本拓展已经支持用户自定义网关，你可以很方便的配置即可当成与其它拓展一样的使用：
+本拓展已经支持使用者自定义网关，你可以很方便的配置即可当成与其它拓展一样的使用：
 
 ```php
 $config = [
@@ -458,7 +458,7 @@ $easySms->send(13188888888, $message);
         // \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_PROMOTION_CODE => 会员营销通道
         'channel'  => \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_VALIDATE_CODE, 
 
-        // 会员营销通道 特定参数。创蓝规定：api提交营销短信的时候，需要自己加短信的签名及退订信息
+        // 会员营销通道 特定参数。创蓝规定：api送出营销短信的时候，需要自己加短信的签名及退订信息
         'sign' => '【通讯云】',
         'unsubscribe' => '回TD退订', 
     ],
@@ -481,7 +481,7 @@ $easySms->send(13188888888, $message);
 
 ```php
     'tianyiwuxian' => [
-        'username' => '', //用户名
+        'username' => '', //使用者名稱
         'password' => '', //密码
         'gwid' => '', //网关ID
     ]
@@ -490,7 +490,7 @@ $easySms->send(13188888888, $message);
 ### [twilio](https://www.twilio.com)
 
 短信使用 `content`  
-发送对象需要 使用`+`添加区号
+发送对象需要 使用`+`新增区号
 
 ```php
     'twilio' => [
@@ -537,7 +537,7 @@ $easySms->send(13188888888, $message);
             'abc' => 'csms67890', // 其他签名通道号
             ...
         ],
-        'callback' => '' // 短信状态回调地址
+        'callback' => '' // 短信狀態回调地址
     ],
 ```
 

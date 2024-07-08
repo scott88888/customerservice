@@ -342,7 +342,7 @@ class Template
         // 模板过滤输出
         $replace = $this->config['tpl_replace_string'];
         $content = str_replace(array_keys($replace), array_values($replace), $content);
-        // 添加安全代码及模板引用记录
+        // 新增安全代码及模板引用记录
         $content = '<?php if (!defined(\'THINK_PATH\')) exit(); /*' . serialize($this->includeFile) . '*/ ?>' . "\n" . $content;
         // 编译存储
         $this->storage->write($cacheFile, $content);

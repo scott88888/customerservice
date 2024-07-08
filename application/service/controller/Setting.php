@@ -58,8 +58,8 @@ class Setting extends Base
             $post['service_id'] = $_SESSION['Msg']['service_id'];
             $post['content'] = $this->request->post('content', '', '\app\Common::clearXSS');
             $res = Sentence::insert($post);
-            if ($res) $this->success('添加成功');
-            $this->error('添加失败！');
+            if ($res) $this->success('新增成功');
+            $this->error('新增失败！');
         }
         return $this->fetch();
     }

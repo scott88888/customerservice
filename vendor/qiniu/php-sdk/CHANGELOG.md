@@ -1,13 +1,13 @@
 # Changelog
 
 ## 7.2.7 (2018-11-06)
-* 添加 QVM 内网上传到 KODO 的 zone 设置
+* 新增 QVM 内网上传到 KODO 的 zone 设置
 
 ## 7.2.6 (2018-05-18)
 * 修复rs，rsf在不同机房默认的https域名
 
 ## 7.2.5 (2018-05-10)
-* 修复表单上传中多余的参数checkCrc导致的fname错位问题
+* 修复表單上传中多余的参数checkCrc导致的fname错位问题
 
 ## 7.2.4 (2018-05-09)
 ### 增加
@@ -53,7 +53,7 @@
 * demo
 * https url 支持
 * deleteAfterDays 策略
-* 添加图片处理链接统一拼接方法 by @SherlockRen
+* 新增图片处理链接统一拼接方法 by @SherlockRen
 
 ## 7.0.7 (2016-01-12)
 ### 修正

@@ -66,7 +66,7 @@ abstract class Connection
         'hostname'        => '',
         // 数据库名
         'database'        => '',
-        // 用户名
+        // 使用者名稱
         'username'        => '',
         // 密码
         'password'        => '',
@@ -668,7 +668,7 @@ abstract class Connection
     }
 
     /**
-     * 用于非自动提交状态下面的查询提交
+     * 用于非自动送出狀態下面的查询送出
      * @access public
      * @return void
      * @throws PDOException
@@ -752,7 +752,7 @@ abstract class Connection
             foreach ($sqlArray as $sql) {
                 $this->execute($sql, $bind, $query);
             }
-            // 提交事务
+            // 送出事务
             $this->commit();
         } catch (\Exception $e) {
             $this->rollback();

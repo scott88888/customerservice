@@ -264,7 +264,7 @@ class App
                 }
             }
 
-            // 加载应用状态配置
+            // 加载应用狀態配置
             if ($config['app_status']) {
                 Config::load(CONF_PATH . $module . $config['app_status'] . CONF_EXT);
             }

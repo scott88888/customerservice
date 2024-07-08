@@ -55,7 +55,7 @@
 				"href": "view/document/button.html"
 			}, {
 				"id": 2014,
-				"title": "表单集合",
+				"title": "表單集合",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -96,7 +96,7 @@
 				"href": "view/document/table.html"
 			}, {
 				"id": 2032,
-				"title": "分布表单",
+				"title": "分布表單",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -298,7 +298,7 @@
 		"href": "",
 		"children": [{
 				"id": 601,
-				"title": "用户管理",
+				"title": "使用者管理",
 				"icon": "layui-icon layui-icon-face-smile",
 				"type": 1,
 				"openType": "_iframe",
@@ -399,7 +399,7 @@
 		"href": "",
 		"children": [{
 			"id": 801,
-			"title": "表单构建",
+			"title": "表單构建",
 			"icon": "layui-icon layui-icon-util",
 			"type": 1,
 			"openType": "_iframe",

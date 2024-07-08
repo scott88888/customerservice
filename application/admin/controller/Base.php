@@ -15,7 +15,7 @@ use think\Session;
 use app\admin\model\Admins;
 
 /**
- * 基础验证是否登录.
+ * 基础驗證是否登入.
  */
 class Base extends Controller
 {
@@ -24,7 +24,7 @@ class Base extends Controller
     public $wechat_platform=null;
     public $open_id='';
     /**
-     * 验证session.
+     * 驗證session.
      *
      * @return void
      */

@@ -104,7 +104,7 @@ layui.use(['form','jquery','upload'],function(){
             }
         }
         ,error: function(){
-            layer.msg('上传失败',{icon:2,time:1500})
+            layer.msg('上传失敗',{icon:2,time:1500})
         }
     });
 
@@ -120,7 +120,7 @@ layui.use(['form','jquery','upload'],function(){
                         icon: 1
                     });
                     setTimeout(function() {
-                        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                        var index = parent.layer.getFrameIndex(window.name); //取得窗口索引
                         parent.layer.close(index);
                         parent.layui.table.reload("dataTable");
                     }, 2000)

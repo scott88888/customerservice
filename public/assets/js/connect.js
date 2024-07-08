@@ -35,7 +35,7 @@
 
         channelme.bind("on_chat", function (data) {
             $.cookie("cu_com",'');
-            layer.msg('该访客被删除');
+            layer.msg('该访客被刪除');
         });
 
     // 公共频道

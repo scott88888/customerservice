@@ -7,7 +7,7 @@ use think\Validate;
 class Message extends Validate{
 
     /**
-    * 验证规则
+    * 驗證规则
     * [$rule description]
     * @var [type]
     */
@@ -18,7 +18,7 @@ class Message extends Validate{
 
 
 	 /**
-    * 验证失败 信息
+    * 驗證失敗 信息
     * [$message description]
     * @var array
     */

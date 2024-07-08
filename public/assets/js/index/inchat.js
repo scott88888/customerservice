@@ -445,7 +445,7 @@ function getdata(){
 }
 
 
-//获取tab
+//取得tab
 function gettab(business_id){
 
     $.ajax({
@@ -714,7 +714,7 @@ function getanswer(id,question){
         }
     });
 }
-// 获取排队的数量
+// 取得排队的数量
 function getnums(id){
     var value ="";
     $.ajax({
@@ -732,7 +732,7 @@ function getnums(id){
 
 var send = function () {
 
-    //获取 遊客id
+    //取得 遊客id
     var msg = $("#text_in").val();
     var reg = new RegExp( '<' , "g" )
     var msg2 =msg.replace(reg,'&lt;');

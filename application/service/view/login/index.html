@@ -38,7 +38,7 @@
         input::-moz-placeholder {/* Mozilla Firefox 19+ */            color:#a6aebf;}
         input:-moz-placeholder {/* Mozilla Firefox 4 to 18 */            color:#a6aebf;}
         input:-ms-input-placeholder {/* Internet Explorer 10-11 */            color:#a6aebf;}
-        input:-webkit-autofill {/* 取消Chrome记住密码的背景颜色 */            -webkit-box-shadow:0 0 0 1000px white inset !important;}
+        input:-webkit-autofill {/* 取消Chrome记住密碼的背景颜色 */            -webkit-box-shadow:0 0 0 1000px white inset !important;}
         html {height:100%;}
         .login-main .login-bottom .tip {clear:both;height:16px;line-height:16px;width:288px;margin:0 auto;}
         .login-main .login-bottom .tip .login-tip {font-family:MicrosoftYaHei;font-size:12px;font-weight:400;font-stretch:normal;letter-spacing:0;color:#9abcda;cursor:pointer;}
@@ -135,7 +135,7 @@
             $('#refreshCaptcha').attr("src","{:url('captcha')}?r=" + Math.random());
         }
 
-        // 登录过期的时候，跳出ifram框架
+        // 登入过期的时候，跳出ifram框架
         if (top.location != self.location) top.location = self.location;
 
         $('.bind-password').on('click', function () {

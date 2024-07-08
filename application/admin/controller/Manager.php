@@ -39,7 +39,7 @@ class Manager extends Base
     $res=Admins::table('wolive_reply')->where('id',$id)->delete();
 
     if($res){
-          $arr=['code'=>0,'msg'=>'删除成功!','data'=>''];
+          $arr=['code'=>0,'msg'=>'刪除成功!','data'=>''];
 
           return $arr;
      }
@@ -64,7 +64,7 @@ class Manager extends Base
 
           return $arr;
        }else{
-          $arr=['code'=>1,'msg'=>'新增失败','data'=>""];
+          $arr=['code'=>1,'msg'=>'新增失敗','data'=>""];
 
           return $arr;
        }
@@ -73,7 +73,7 @@ class Manager extends Base
 
 
     /**
-     * 客服列表页面.
+     * 客服列表頁面.
      *
      * @return mixed
      */
@@ -126,7 +126,7 @@ class Manager extends Base
 
 
      /**
-     * 新增客服页面.
+     * 新增客服頁面.
      *
      * @return mixed
      */
@@ -257,16 +257,16 @@ class Manager extends Base
 
 
     /**
-     * 客服注册验证.
+     * 客服注册驗證.
      *
      * @return [type] [description]
      */
     public function registForService()
     {
 
-        // 获取 注册信息 数据
+        // 取得 注册信息 数据
         $post = $this->request->post();
-        // 验证 表單信息
+        // 驗證 表單信息
         $result = $this->validate($post, 'Services');
         if ($result !== true) {
             
@@ -341,7 +341,7 @@ class Manager extends Base
         return $sdata;
     }
     /**
-      * 编辑客服分类
+      * 編輯客服分类
       * [addclass description]
       * @return [type] [description]
       */
@@ -357,13 +357,13 @@ class Manager extends Base
 
         $data =Admins::table('wolive_group')->update($post);
 
-        $sdata =['code'=>0,'msg'=>'编辑成功','data'=>$data];
+        $sdata =['code'=>0,'msg'=>'編輯成功','data'=>$data];
 
         return $sdata;
     }
 
     /**
-     * 删除客服分类
+     * 刪除客服分类
      * [delclass description]
      * @return [type] [description]
      */
@@ -373,13 +373,13 @@ class Manager extends Base
 
         $res =Admins::table('wolive_group')->where('id',$id)->delete();
         
-        $sdata =['code'=>0,'msg'=>'删除成功','data'=>$res];
+        $sdata =['code'=>0,'msg'=>'刪除成功','data'=>$res];
 
         return $sdata;
     }
 
     /**
-     * 删除.
+     * 刪除.
      *
      * @return string
      */
@@ -388,18 +388,18 @@ class Manager extends Base
         $post = $this->request->post();
 
         if ($post['id'] == 1) {
-            return ['code'=>1,'msg'=>'管理员账号无法删除'];
+            return ['code'=>1,'msg'=>'管理员账号无法刪除'];
         }
 
         $data = Admins::table("wolive_service")->where('service_id', $post['id'])->delete();
 
-        $sdata =['code'=>0,'msg'=>'删除成功','data'=>$data];
+        $sdata =['code'=>0,'msg'=>'刪除成功','data'=>$data];
         return $sdata;
         
     }
 
     /**
-     * 删除留言.
+     * 刪除留言.
      *
      * @return mixed
      */
@@ -409,7 +409,7 @@ class Manager extends Base
         
         $data = Admins::table('wolive_message')->where("mid","in",$post['chk_value'])->delete();
   
-        $sdata =['code'=>0,'msg'=>'删除成功','data'=>$data];
+        $sdata =['code'=>0,'msg'=>'刪除成功','data'=>$data];
         return $sdata;
         
     }
@@ -446,7 +446,7 @@ class Manager extends Base
         } else {
 
             $newpath = ROOT_PATH . "/public/upload/images/{$_SESSION['Msg']['business_id']}/";
-            // 可以新增 验证 规则
+            // 可以新增 驗證 规则
             $info = $file->validate(['ext' => 'jpg,png,gif,jpeg'])->move($newpath, time());
 
             if ($info ==false) {
@@ -496,7 +496,7 @@ class Manager extends Base
                 return $data;
             }
          }else{
-            $data =['code'=>1,'msg'=>'旧密码不正确！'];
+            $data =['code'=>1,'msg'=>'旧密碼不正确！'];
             return $data;
          }
 
@@ -519,13 +519,13 @@ class Manager extends Base
 
             return $data;
         }else{
-            $data =['code'=>1,'msg'=>'修改失败！'];
+            $data =['code'=>1,'msg'=>'修改失敗！'];
 
             return $data;
         }
     }
     /**
-     * 查看历史记录页面.
+     * 查看历史记录頁面.
      *
      * @return mixed
      */
@@ -594,7 +594,7 @@ class Manager extends Base
         }
         if(isset($post['qid'])){
             $res =Admins::table('wolive_question')->where('qid',$post['qid'])->update(['question'=>$post['question'],'answer'=>$post['answer'],'keyword'=>$post['keyword'],'sort'=>$sort,'status'=>$status]);
-                $arr=['code'=>0,'msg'=>'编辑成功'];
+                $arr=['code'=>0,'msg'=>'編輯成功'];
                 return $arr;
         }else{
             $res =Admins::table('wolive_question')->insert($post);

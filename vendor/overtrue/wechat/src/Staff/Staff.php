@@ -202,7 +202,7 @@ class Staff extends AbstractAPI
     }
 
     /**
-     * 获取聊天记录.
+     * 取得聊天记录.
      *
      * @param int $startTime
      * @param int $endTime

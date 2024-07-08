@@ -85,7 +85,7 @@ class Storage
         }
         if (is_null(self::$handler)) {
             if (empty($options)) {
-                //获取总帐号设置的存储位置，默认为Local
+                //取得总帐号设置的存储位置，默认为Local
                 $ops = \app\admin\model\Storage::get(['admin_id'=>1,'status'=>1]);
                 if (empty($ops)) {
                     self::$storage = 'Local';

@@ -1,12 +1,12 @@
 #Bugs
 
-> 说明：删除线表示已经解决。
+> 说明：刪除线表示已经解决。
 
 ####IE8
 
 - ~~不能加载；~~
 - flowChart（流程图）、sequenceDiagram（序列图）不支持IE8；
-- ~~不支持Markdown转HTML页面解析预览；~~
+- ~~不支持Markdown转HTML頁面解析预览；~~
 
 ####IE8 & IE9 & IE10
 
@@ -18,5 +18,5 @@
 
 ####Require.js
 
-- ~~CodeMirror编辑器的代码无法高亮；~~
+- ~~CodeMirror編輯器的代码无法高亮；~~
 - ~~sequenceDiagram不支持: `Uncaught TypeError: Cannot call method 'isArray' of undefined.`~~

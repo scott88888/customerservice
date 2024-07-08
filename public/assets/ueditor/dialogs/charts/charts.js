@@ -3,7 +3,7 @@
  **/
 
 var tableData = [],
-    //编辑器页面table
+    //編輯器頁面table
     editorTable = null,
     chartsConfig = window.typeConfig,
     resizeTimer = null,
@@ -14,7 +14,7 @@ window.onload = function () {
 
     editorTable = domUtils.findParentByTagName( editor.selection.getRange().startContainer, 'table', true);
 
-    //未找到表格， 显示错误页面
+    //未找到表格， 显示错误頁面
     if ( !editorTable ) {
         document.body.innerHTML = "<div class='edui-charts-not-data'>未找到数据</div>";
         return;
@@ -278,7 +278,7 @@ function collectData () {
 }
 
 /**
- * 获取使用者配置信息
+ * 取得使用者配置信息
  */
 function getUserConfig () {
 
@@ -362,7 +362,7 @@ function getSeriesAndCategories () {
 }
 
 /*
- * 获取数据源数据对齐方式
+ * 取得数据源数据对齐方式
  */
 function getTableDataFormat () {
 
@@ -414,7 +414,7 @@ function updateConfigItem ( value ) {
 }
 
 /*
- * 获取饼图数据
+ * 取得饼图数据
  * 饼图的数据只取第一行的
  **/
 function getSeriesForPieChart () {
@@ -491,7 +491,7 @@ dialog.onok = function () {
     //新增图表类型
     info.chartType = currentChartType;
 
-    //同步表格数据到编辑器
+    //同步表格数据到編輯器
     syncTableData();
 
     //执行图表命令
@@ -500,7 +500,7 @@ dialog.onok = function () {
 };
 
 /*
- * 同步图表编辑视图的表格数据到编辑器里的原始表格
+ * 同步图表編輯视图的表格数据到編輯器里的原始表格
  */
 function syncTableData () {
 

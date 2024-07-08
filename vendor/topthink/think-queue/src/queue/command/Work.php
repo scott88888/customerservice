@@ -136,7 +136,7 @@ class Work extends Command
     }
 
     /**
-     * 获取上次重启守护进程的时间
+     * 取得上次重启守护进程的时间
      *
      * @return int|null
      */
@@ -146,7 +146,7 @@ class Work extends Command
     }
 
     /**
-     * 检查是否要重启守护进程
+     * 檢查是否要重启守护进程
      *
      * @param  int|null $lastRestart
      * @return bool
@@ -157,7 +157,7 @@ class Work extends Command
     }
 
     /**
-     * 检查内存是否超出
+     * 檢查内存是否超出
      * @param  int $memoryLimit
      * @return bool
      */
@@ -167,7 +167,7 @@ class Work extends Command
     }
 
     /**
-     * 获取异常处理实例
+     * 取得异常处理实例
      *
      * @return \think\exception\Handle
      */

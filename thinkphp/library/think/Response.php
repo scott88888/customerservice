@@ -124,7 +124,7 @@ class Response
         echo $data;
 
         if (function_exists('fastcgi_finish_request')) {
-            // 提高页面响应
+            // 提高頁面响应
             fastcgi_finish_request();
         }
 
@@ -190,7 +190,7 @@ class Response
     }
 
     /**
-     * 设置页面输出内容
+     * 设置頁面输出内容
      * @param $content
      * @return $this
      */
@@ -254,7 +254,7 @@ class Response
     }
 
     /**
-     * 页面缓存控制
+     * 頁面缓存控制
      * @param string $cache 狀態码
      * @return $this
      */
@@ -265,7 +265,7 @@ class Response
     }
 
     /**
-     * 页面输出类型
+     * 頁面输出类型
      * @param string $contentType 输出类型
      * @param string $charset     输出编码
      * @return $this
@@ -277,7 +277,7 @@ class Response
     }
 
     /**
-     * 获取头部信息
+     * 取得头部信息
      * @param string $name 头部名称
      * @return mixed
      */
@@ -291,7 +291,7 @@ class Response
     }
 
     /**
-     * 获取原始数据
+     * 取得原始数据
      * @return mixed
      */
     public function getData()
@@ -300,7 +300,7 @@ class Response
     }
 
     /**
-     * 获取输出数据
+     * 取得输出数据
      * @return mixed
      */
     public function getContent()
@@ -322,7 +322,7 @@ class Response
     }
 
     /**
-     * 获取狀態码
+     * 取得狀態码
      * @return integer
      */
     public function getCode()

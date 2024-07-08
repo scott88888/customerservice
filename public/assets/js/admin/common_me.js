@@ -128,7 +128,7 @@ var modify =function(id){
     str+='<form id="pass" class="passform"><table>';
     str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">請輸入原密碼：</label><span><input class="am-form-field" type="password" id="old" name="oldpass"></span></div>';
     str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">請輸入新密碼：</label><span><input class="am-form-field" type="password" id="new" name="newpass"></span></div>';
-    str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">再次输入新密码：</label><span><input class="am-form-field" type="password" id="new2" name="newpass2" ></span></div>';
+    str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">再次输入新密碼：</label><span><input class="am-form-field" type="password" id="new2" name="newpass2" ></span></div>';
     str+='<div><label style="width: 166px;margin-bottom:0" class="hide"><input class="hide" type="text" name="id" value="'+id+'"><label></div>'
     str+='</table></form>';
 

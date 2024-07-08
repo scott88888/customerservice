@@ -12,7 +12,7 @@
 return [
     // 数据库调试模式
     'debug'          => false,
-    // 是否严格检查字段是否存在
+    // 是否严格檢查字段是否存在
     'fields_strict'  => true,
     // 是否自动写入时间戳字段
     'auto_timestamp' => false,
@@ -27,7 +27,7 @@ return [
     'database'       => 'scott',
     // 使用者名稱
     'username'       => 'scott',
-    // 密码
+    // 密碼
     'password'       => '123456',
     // 端口
     'hostport'       => '',

@@ -66,7 +66,7 @@ class Token
         if (is_null(self::$handler)) {
             if (empty($options) && 'complex' == Config::get('token.type')) {
                 $default = Config::get('token.default');
-                // 获取默认Token配置，并连接
+                // 取得默认Token配置，并连接
                 $options = Config::get('token.' . $default['type']) ?: $default;
             } elseif (empty($options)) {
                 $options = Config::get('token');
@@ -125,7 +125,7 @@ class Token
     }
 
     /**
-     * 删除Token(delete别名)
+     * 刪除Token(delete别名)
      * @access public
      * @param  string $token Token标识
      * @return boolean
@@ -136,7 +136,7 @@ class Token
     }
 
     /**
-     * 删除Token
+     * 刪除Token
      * @param string $token 标签名
      * @return bool
      */

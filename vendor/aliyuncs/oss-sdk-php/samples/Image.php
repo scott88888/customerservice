@@ -56,7 +56,7 @@ $options = array(
 $ossClient->getObject($bucketName, $object, $options);
 printImage("imageFormat", $download_file);
 
-// 获取图片信息
+// 取得图片信息
 $options = array(
     OssClient::OSS_FILE_DOWNLOAD => $download_file,
     OssClient::OSS_PROCESS => "image/info", );
@@ -74,7 +74,7 @@ $options = array(
 $signedUrl = $ossClient->signUrl($bucketName, $object, $timeout, "GET", $options);
 Common::println("rtmp url: \n" . $signedUrl);
 
-//最后删除上传的$object
+//最后刪除上传的$object
 $ossClient->deleteObject($bucketName, $object);     
 
 function printImage($func, $imageFile)

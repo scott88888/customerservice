@@ -91,7 +91,7 @@ $config = [
 $easySms = new EasySms($config);
 
 $easySms->send(13188888888, [
-    'content'  => '您的验证码为: 6379',
+    'content'  => '您的驗證碼为: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -101,7 +101,7 @@ $easySms->send(13188888888, [
 
 ## 短信内容
 
-由于使用多网关发送，所以一条短信要支持多平台发送，每家的发送方式不一样，但是我们抽象定义了以下公用属性：
+由于使用多网关发送，所以一條短信要支持多平台发送，每家的发送方式不一样，但是我们抽象定义了以下公用属性：
 
 - `content` 文字内容，使用在像云片类似的以文字内容发送的平台
 - `template` 模板 ID，使用在以模板ID来发送短信的平台
@@ -111,7 +111,7 @@ $easySms->send(13188888888, [
 
 ```php
 $easySms->send(13188888888, [
-    'content'  => '您的验证码为: 6379',
+    'content'  => '您的驗證碼为: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -124,7 +124,7 @@ $easySms->send(13188888888, [
 ```php
 $easySms->send(13188888888, [
     'content'  => function($gateway){
-        return '您的验证码为: 6379';
+        return '您的驗證碼为: 6379';
     },
     'template' => function($gateway){
         return 'SMS_001';
@@ -143,9 +143,9 @@ $easySms->send(13188888888, [
 $easySms->send(13188888888, [
     'content'  => function($gateway){
         if ($gateway->getName() == 'yunpian') {
-            return '云片专用验证码：1235';
+            return '云片专用驗證碼：1235';
         }
-        return '您的验证码为: 6379';
+        return '您的驗證碼为: 6379';
     },
     'template' => function($gateway){
         if ($gateway->getName() == 'aliyun') {
@@ -163,11 +163,11 @@ $easySms->send(13188888888, [
 
 ## 发送网关
 
-默认使用 `default` 中的设置来发送，如果某一条短信你想要覆盖默认的设置。在 `send` 方法中使用第三个参数即可：
+默认使用 `default` 中的设置来发送，如果某一條短信你想要覆盖默认的设置。在 `send` 方法中使用第三个参数即可：
 
 ```php
 $easySms->send(13188888888, [
-    'content'  => '您的验证码为: 6379',
+    'content'  => '您的驗證碼为: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -194,7 +194,7 @@ $easySms->send(13188888888, [
 ]
 ```
 
-如果所选网关列表均发送失败时，将会抛出 `Overtrue\EasySms\Exceptions\NoGatewayAvailableException` 异常，你可以使用 `$e->results` 获取发送结果。
+如果所选网关列表均发送失敗时，将会抛出 `Overtrue\EasySms\Exceptions\NoGatewayAvailableException` 异常，你可以使用 `$e->results` 取得发送结果。
 
 你也可以使用 `$e` 提供的更多便捷方法：
 
@@ -202,7 +202,7 @@ $easySms->send(13188888888, [
 $e->getResults();               // 返回所有 API 的结果，结构同上
 $e->getExceptions();            // 返回所有调用异常列表
 $e->getException($gateway);     // 返回指定网关名称的异常对象
-$e->getLastException();         // 获取最后一个失败的异常对象 
+$e->getLastException();         // 取得最后一个失敗的异常对象 
 ```
 
 ## 自定义网关
@@ -231,7 +231,7 @@ $easySms->extend('mygateway', function($gatewayConfig){
 });
 
 $easySms->send(13188888888, [
-    'content'  => '您的验证码为: 6379',
+    'content'  => '您的驗證碼为: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -250,7 +250,7 @@ use Overtrue\EasySms\PhoneNumber;
 $number = new PhoneNumber(13188888888, 31);
 
 $easySms->send($number, [
-    'content'  => '您的验证码为: 6379',
+    'content'  => '您的驗證碼为: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -454,7 +454,7 @@ $easySms->send(13188888888, $message);
         'account' => '',
         'password' => '',
 
-        // \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_VALIDATE_CODE  => 验证码通道（默认）
+        // \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_VALIDATE_CODE  => 驗證碼通道（默认）
         // \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_PROMOTION_CODE => 会员营销通道
         'channel'  => \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_VALIDATE_CODE, 
 
@@ -466,7 +466,7 @@ $easySms->send(13188888888, $message);
 
 ### [融云](http://www.rongcloud.cn)
 
-短信分为两大类，验证类和通知类短信。 发送验证类短信使用 `template` + `data`
+短信分为两大类，驗證类和通知类短信。 发送驗證类短信使用 `template` + `data`
 
 ```php
     'rongcloud' => [
@@ -482,7 +482,7 @@ $easySms->send(13188888888, $message);
 ```php
     'tianyiwuxian' => [
         'username' => '', //使用者名稱
-        'password' => '', //密码
+        'password' => '', //密碼
         'gwid' => '', //网关ID
     ]
 ```

@@ -500,7 +500,7 @@ Worker::runAll();
 
 ## Documentation
 
-中文主页:[http://www.workerman.net](http://www.workerman.net)
+中文主頁:[http://www.workerman.net](http://www.workerman.net)
 
 中文文档: [http://doc.workerman.net](http://doc.workerman.net)
 

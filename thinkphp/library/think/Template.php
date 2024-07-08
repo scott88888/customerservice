@@ -35,7 +35,7 @@ class Template
         'tpl_begin'          => '{', // 模板引擎普通标签开始标记
         'tpl_end'            => '}', // 模板引擎普通标签结束标记
         'strip_space'        => false, // 是否去除模板文件里面的html空格与换行
-        'tpl_cache'          => true, // 是否开启模板编译缓存,设为false则每次都会重新编译
+        'tpl_cache'          => true, // 是否開啟模板编译缓存,设为false则每次都会重新编译
         'compile_type'       => 'file', // 模板编译类型
         'cache_prefix'       => '', // 模板缓存前缀标识，可以动态改变
         'cache_time'         => 0, // 模板缓存有效期 0 为永久，(以数字为值，单位:秒)
@@ -126,7 +126,7 @@ class Template
     }
 
     /**
-     * 模板变量获取
+     * 模板变量取得
      * @access public
      * @param  string $name 变量名
      * @return mixed
@@ -181,15 +181,15 @@ class Template
                 $content = file_get_contents($template);
                 $this->compiler($content, $cacheFile);
             }
-            // 页面缓存
+            // 頁面缓存
             ob_start();
             ob_implicit_flush(0);
             // 读取编译存储
             $this->storage->read($cacheFile, $this->data);
-            // 获取并清空缓存
+            // 取得并清空缓存
             $content = ob_get_clean();
             if (!empty($this->config['cache_id']) && $this->config['display_cache']) {
-                // 缓存页面输出
+                // 缓存頁面输出
                 Cache::set($this->config['cache_id'], $content, $this->config['cache_time']);
             }
             echo $content;
@@ -224,17 +224,17 @@ class Template
     /**
      * 设置布局
      * @access public
-     * @param mixed     $name 布局模板名称 false 则关闭布局
+     * @param mixed     $name 布局模板名称 false 则關閉布局
      * @param string    $replace 布局模板内容替换标识
      * @return Template
      */
     public function layout($name, $replace = '')
     {
         if (false === $name) {
-            // 关闭布局
+            // 關閉布局
             $this->config['layout_on'] = false;
         } else {
-            // 开启布局
+            // 開啟布局
             $this->config['layout_on'] = true;
             // 名称必须为字符串
             if (is_string($name)) {
@@ -248,7 +248,7 @@ class Template
     }
 
     /**
-     * 检查编译缓存是否有效
+     * 檢查编译缓存是否有效
      * 如果无效则需要重新编译
      * @access private
      * @param string $cacheFile 缓存文件名
@@ -256,7 +256,7 @@ class Template
      */
     private function checkCache($cacheFile)
     {
-        // 未开启缓存功能
+        // 未開啟缓存功能
         if (!$this->config['tpl_cache']) {
             return false;
         }
@@ -264,7 +264,7 @@ class Template
         if (!is_file($cacheFile)) {
             return false;
         }
-        // 读取缓存文件失败
+        // 读取缓存文件失敗
         if (!$handle = @fopen($cacheFile, "r")) {
             return false;
         }
@@ -277,19 +277,19 @@ class Template
         if (!is_array($includeFile)) {
             return false;
         }
-        // 检查模板文件是否有更新
+        // 檢查模板文件是否有更新
         foreach ($includeFile as $path => $time) {
             if (is_file($path) && filemtime($path) > $time) {
                 // 模板文件如果有更新则缓存需要更新
                 return false;
             }
         }
-        // 检查编译存储是否有效
+        // 檢查编译存储是否有效
         return $this->storage->check($cacheFile, $this->config['cache_time']);
     }
 
     /**
-     * 检查编译缓存是否存在
+     * 檢查编译缓存是否存在
      * @access public
      * @param string $cacheId 缓存的id
      * @return boolean
@@ -297,7 +297,7 @@ class Template
     public function isCache($cacheId)
     {
         if ($cacheId && $this->config['display_cache']) {
-            // 缓存页面输出
+            // 缓存頁面输出
             return Cache::has($cacheId);
         }
         return false;
@@ -369,14 +369,14 @@ class Template
         $this->parseExtend($content);
         // 解析布局
         $this->parseLayout($content);
-        // 检查include语法
+        // 檢查include语法
         $this->parseInclude($content);
         // 替换包含文件中literal标签内容
         $this->parseLiteral($content);
-        // 检查PHP语法
+        // 檢查PHP语法
         $this->parsePhp($content);
 
-        // 获取需要引入的标签库列表
+        // 取得需要引入的标签库列表
         // 标签库只需要定义一次，允许引入多个一次
         // 一般放在文件的最前面
         // 格式：<taglib name="html,mytag..." />
@@ -411,7 +411,7 @@ class Template
     }
 
     /**
-     * 检查PHP语法
+     * 檢查PHP语法
      * @access private
      * @param string $content 要解析的模板内容
      * @return void
@@ -421,7 +421,7 @@ class Template
     {
         // 短标签的情况要将<?标签用echo方式输出 否则无法正常输出xml标识
         $content = preg_replace('/(<\?(?!php|=|$))/i', '<?php echo \'\\1\'; ?>' . "\n", $content);
-        // PHP语法检查
+        // PHP语法檢查
         if ($this->config['tpl_deny_php'] && false !== strpos($content, '<?php')) {
             throw new Exception('not allow php tag', 11600);
         }
@@ -510,7 +510,7 @@ class Template
                     $array[$matches['name']] = 1;
                     // 读取继承模板
                     $extend = $this->parseTemplateName($matches['name']);
-                    // 递归检查继承
+                    // 递归檢查继承
                     $func($extend);
                     // 取得block标签内容
                     $blocks = array_merge($blocks, $this->parseBlock($template));
@@ -569,7 +569,7 @@ class Template
     }
 
     /**
-     * 替换页面中的literal标签
+     * 替换頁面中的literal标签
      * @access private
      * @param  string   $content 模板内容
      * @param  boolean  $restore 是否为还原
@@ -601,7 +601,7 @@ class Template
     }
 
     /**
-     * 获取模板中的block标签
+     * 取得模板中的block标签
      * @access private
      * @param  string   $content 模板内容
      * @param  boolean  $sort 是否排序
@@ -646,7 +646,7 @@ class Template
     }
 
     /**
-     * 搜索模板页面中包含的TagLib库
+     * 搜索模板頁面中包含的TagLib库
      * 并返回列表
      * @access private
      * @param  string $content 模板内容
@@ -846,7 +846,7 @@ class Template
                             // 所有以Think.打头的以特殊变量对待 无需模板赋值就可以输出
                             $parseStr = $this->parseThinkVar($vars);
                         } elseif ('$Request' == $first) {
-                            // 获取Request请求对象参数
+                            // 取得Request请求对象参数
                             $method = array_shift($vars);
                             if (!empty($vars)) {
                                 $params = implode('.', $vars);
@@ -1033,7 +1033,7 @@ class Template
             }
             $template = $this->parseTemplateFile($templateName);
             if ($template) {
-                // 获取模板文件内容
+                // 取得模板文件内容
                 $parseStr .= file_get_contents($template);
             }
         }

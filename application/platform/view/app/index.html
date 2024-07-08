@@ -266,9 +266,9 @@
         </td>
         <td class="operate" style="padding-top: 10px">
             <!-- <a href="{:url('app/entry', ['id' => $vo['id']])}">进入客服系统</a> -->
-            <a href="#" data-toggle="modal" class="edit-app" id="{:url('platform/app/edit', ['id' => $vo['id']])}" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="编辑" title="编辑"></a>
+            <a href="#" data-toggle="modal" class="edit-app" id="{:url('platform/app/edit', ['id' => $vo['id']])}" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="編輯" title="編輯"></a>
             <a class="modify-password"
-               href="{:url('app/modifypassword', ['id' => $vo['id']])}"><img src="__image__/admin/A/change.png" alt="" title="重置密码"></a>
+               href="{:url('app/modifypassword', ['id' => $vo['id']])}"><img src="__image__/admin/A/change.png" alt="" title="重置密碼"></a>
             <a href="#" data-toggle="modal" class="clean-app" id="{:url('platform/app/truncate', ['id' => $vo['id']])}" data-target="#clean-modal"><img src="__image__/platform/truncate.png" alt="清理磁盘" title="清理磁盘"></a>
             <input type="hidden" value="{:url('admin/login/index',['business_id'=>$vo['id']])}" id="link">
             <a class="recycle-btn"
@@ -318,7 +318,7 @@
     });
     clipboard.on('error', function(e) {
         $.alert({
-            content:'複製失败,请手动複製'
+            content:'複製失敗,请手动複製'
         });
     });
 
@@ -330,7 +330,7 @@
             confirm: function (val) {
                 if (!val) {
                     $.myToast({
-                        content: "密码不能为空",
+                        content: "密碼不能为空",
                     });
                     return;
                 }
@@ -369,7 +369,7 @@
 
     $(document).on("click", ".edit-app", function () {
         let id = this.id;
-        $('.add-modal').find('.modal-title').text('编辑客服系统')
+        $('.add-modal').find('.modal-title').text('編輯客服系统')
         $.ajax({
             url: id,
             success: function (data) {

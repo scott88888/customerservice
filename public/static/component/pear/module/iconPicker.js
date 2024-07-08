@@ -17,11 +17,11 @@ layui.define(['laypage', 'form'], function (exports) {
             elem = opts.elem,
             // 数据类型：fontClass/unicode
             type = opts.type == null ? 'fontClass' : opts.type,
-            // 是否分页：true/false
+            // 是否分頁：true/false
             page = opts.page == null ? true : opts.page,
-            // 每页显示数量
+            // 每頁显示数量
             limit = opts.limit == null ? 12 : opts.limit,
-            // 是否开启搜索：true/false
+            // 是否開啟搜索：true/false
             search = opts.search == null ? true : opts.search,
             // 每个图标格子的宽度：'43px'或'20%'
             cellWidth = opts.cellWidth,
@@ -136,7 +136,7 @@ layui.define(['laypage', 'form'], function (exports) {
              * 绘制主体部分
              */
             createBody: function () {
-                // 获取数据
+                // 取得数据
                 var searchHtml = '';
 
                 if (search) {
@@ -167,9 +167,9 @@ layui.define(['laypage', 'form'], function (exports) {
                     pageHtml = '',
                     listHtml = $('<div class="layui-iconpicker-list">')//'<div class="layui-iconpicker-list">';
 
-                // 计算分页数据
-                var _limit = limit, // 每页显示数量
-                    _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1), // 总计多少页
+                // 计算分頁数据
+                var _limit = limit, // 每頁显示数量
+                    _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1), // 总计多少頁
                     _id = PAGE_ID;
 
                 // 图标列表
@@ -201,7 +201,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     icons.push(icon);
                 }
 
-                // 查询出图标后再分页
+                // 查询出图标后再分頁
                 l = icons.length;
                 _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1);
                 for (var i = 0; i < _pages; i++) {
@@ -220,7 +220,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     listHtml.append('<p class="layui-iconpicker-tips">无数据</p>');
                 }
 
-                // 判断是否分页
+                // 判断是否分頁
                 if (page){
                     $('#' + PICKER_BODY).addClass('layui-iconpicker-body-page');
                     pageHtml = '<div class="layui-iconpicker-page" id="'+ PAGE_ID +'">' +
@@ -254,13 +254,13 @@ layui.define(['laypage', 'form'], function (exports) {
                    var elem = e.currentTarget,
                        total = parseInt($('#' +PAGE_ID + '-pages').html()),
                        isPrev = $(elem).attr('prev') !== undefined,
-                       // 按钮上标的页码
+                       // 按钮上标的頁码
                        index = parseInt($(elem).attr('data-index')),
                        $cur = $('#' +PAGE_ID + '-current'),
-                       // 点击时正在显示的页码
+                       // 点击时正在显示的頁码
                        current = parseInt($cur.html());
 
-                    // 分页数据
+                    // 分頁数据
                     if (isPrev && current > 1) {
                         current=current-1;
                         $(icon + '[prev]').attr('data-index', current);
@@ -348,7 +348,7 @@ layui.define(['laypage', 'form'], function (exports) {
                 }
             },
             /**
-             * 获取数据
+             * 取得数据
              */
             getData: {
                 fontClass: function () {

@@ -33,7 +33,7 @@ if ($refreshErr != null) {
     print_r($refreshResult);
 }
 
-//如果只有刷新链接或者目录的需求，可以分布使用
+//如果只有刷新連結或者目录的需求，可以分布使用
 
 list($refreshResult, $refreshErr) = $cdnManager->refreshUrls($urls);
 if ($refreshErr != null) {

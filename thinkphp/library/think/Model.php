@@ -51,11 +51,11 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     private static $event = [];
     // 错误信息
     protected $error;
-    // 字段验证规则
+    // 字段驗證规则
     protected $validate;
-    // 数据表主键 复合主键使用数组定义 不设置则自动获取
+    // 数据表主键 复合主键使用数组定义 不设置则自动取得
     protected $pk;
-    // 数据表字段信息 留空则自动获取
+    // 数据表字段信息 留空则自动取得
     protected $field = [];
     // 数据排除字段
     protected $except = [];
@@ -98,13 +98,13 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     protected $replace = false;
     // 是否强制更新所有数据
     protected $force = false;
-    // 更新条件
+    // 更新條件
     protected $updateWhere;
-    // 验证失败是否抛出异常
+    // 驗證失敗是否抛出异常
     protected $failException = false;
     // 全局查询范围
     protected $useGlobalScope = true;
-    // 是否采用批量验证
+    // 是否采用批量驗證
     protected $batchValidate = false;
     // 查询数据集对象
     protected $resultSetType;
@@ -239,7 +239,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      * @access public
      * @param  array|object $data 数据
      * @param  bool         $isUpdate 是否为更新
-     * @param  mixed        $where 更新条件
+     * @param  mixed        $where 更新條件
      * @return Model
      */
     public function newInstance($data = [], $isUpdate = false, $where = null)
@@ -248,7 +248,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取当前模型的查询对象
+     * 取得当前模型的查询对象
      * @access public
      * @param bool      $buildNewQuery  创建新的查询对象
      * @return Query
@@ -266,7 +266,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取当前模型的数据库查询对象
+     * 取得当前模型的数据库查询对象
      * @access public
      * @param bool $useBaseQuery 是否调用全局查询范围
      * @param bool $buildNewQuery 创建新的查询对象
@@ -321,7 +321,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取父关联对象
+     * 取得父关联对象
      * @access public
      * @return Model
      */
@@ -360,9 +360,9 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取对象原始数据 如果不存在指定字段返回false
+     * 取得对象原始数据 如果不存在指定字段返回false
      * @access public
-     * @param string $name 字段名 留空获取全部
+     * @param string $name 字段名 留空取得全部
      * @return mixed
      * @throws InvalidArgumentException
      */
@@ -433,7 +433,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取当前模型的关联模型数据
+     * 取得当前模型的关联模型数据
      * @access public
      * @param string $name 关联方法名
      * @return mixed
@@ -580,7 +580,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取器 获取数据对象的值
+     * 取得器 取得数据对象的值
      * @access public
      * @param string $name 名称
      * @return mixed
@@ -596,7 +596,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             $value    = null;
         }
 
-        // 检测属性获取器
+        // 检测属性取得器
         $method = 'get' . Loader::parseName($name, 1) . 'Attr';
         if (method_exists($this, $method)) {
             $value = $this->$method($value, $this->data, $this->relation);
@@ -618,7 +618,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             $relation = Loader::parseName($name, 1, false);
             if (method_exists($this, $relation)) {
                 $modelRelation = $this->$relation();
-                // 不存在该字段 获取关联数据
+                // 不存在该字段 取得关联数据
                 $value = $this->getRelationData($modelRelation);
                 // 保存关联对象值
                 $this->relation[$name] = $value;
@@ -630,7 +630,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取关联模型数据
+     * 取得关联模型数据
      * @access public
      * @param Relation        $modelRelation 模型关联对象
      * @return mixed
@@ -641,7 +641,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
         if ($this->parent && !$modelRelation->isSelfRelation() && get_class($modelRelation->getModel()) == get_class($this->parent)) {
             $value = $this->parent;
         } else {
-            // 首先获取关联数据
+            // 首先取得关联数据
             if (method_exists($modelRelation, 'getRelation')) {
                 $value = $modelRelation->getRelation();
             } else {
@@ -749,7 +749,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
 
         $relation = Loader::parseName($relation, 1, false);
 
-        // 获取关联数据
+        // 取得关联数据
         if (isset($this->relation[$relation])) {
             $model = $this->relation[$relation];
         } else {
@@ -883,7 +883,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
                 $item[$key] = $this->getAttr($key);
             }
         }
-        // 追加属性（必须定义获取器）
+        // 追加属性（必须定义取得器）
         if (!empty($this->append)) {
             foreach ($this->append as $key => $name) {
                 if (is_array($name)) {
@@ -982,7 +982,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取模型对象的主键
+     * 取得模型对象的主键
      * @access public
      * @param string $name 模型名
      * @return mixed
@@ -1031,7 +1031,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      * 保存当前数据对象
      * @access public
      * @param array  $data     数据
-     * @param array  $where    更新条件
+     * @param array  $where    更新條件
      * @param string $sequence 自增序列名
      * @return integer|false
      */
@@ -1042,7 +1042,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             $data     = [];
         }
 
-        // 数据自动验证
+        // 数据自动驗證
         if (!empty($data)) {
             if (!$this->validateData($data)) {
                 return false;
@@ -1101,7 +1101,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
                 return false;
             }
 
-            // 获取有更新的数据
+            // 取得有更新的数据
             $data = $this->getChangedData();
 
             if (empty($data) || (count($data) == 1 && is_string($pk) && isset($data[$pk]))) {
@@ -1184,7 +1184,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
                 $result = $this->getQuery()->insert($this->data, $this->replace, false, $sequence);
             }
 
-            // 获取自动增长主键
+            // 取得自动增长主键
             if ($result && $insertId = $this->getQuery()->getLastInsID($sequence)) {
                 foreach ((array) $pk as $key) {
                     if (!isset($this->data[$key]) || '' == $this->data[$key]) {
@@ -1257,7 +1257,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取变化的数据 并排除只读数据
+     * 取得变化的数据 并排除只读数据
      * @access public
      * @return array
      */
@@ -1297,7 +1297,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      */
     public function setInc($field, $step = 1, $lazyTime = 0)
     {
-        // 更新条件
+        // 更新條件
         $where = $this->getWhere();
 
         $result = $this->getQuery()->where($where)->setInc($field, $step, $lazyTime);
@@ -1319,7 +1319,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      */
     public function setDec($field, $step = 1, $lazyTime = 0)
     {
-        // 更新条件
+        // 更新條件
         $where  = $this->getWhere();
         $result = $this->getQuery()->where($where)->setDec($field, $step, $lazyTime);
         if (true !== $result) {
@@ -1330,13 +1330,13 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取更新条件
+     * 取得更新條件
      * @access protected
      * @return mixed
      */
     protected function getWhere()
     {
-        // 删除条件
+        // 刪除條件
         $pk = $this->getPk();
 
         if (is_string($pk) && isset($this->data[$pk])) {
@@ -1360,7 +1360,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     public function saveAll($dataSet, $replace = true)
     {
         if ($this->validate) {
-            // 数据批量验证
+            // 数据批量驗證
             $validate = $this->validate;
             foreach ($dataSet as $data) {
                 if (!$this->validateData($data, $validate)) {
@@ -1478,7 +1478,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 删除当前的记录
+     * 刪除当前的记录
      * @access public
      * @return integer
      */
@@ -1488,13 +1488,13 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             return false;
         }
 
-        // 删除条件
+        // 刪除條件
         $where = $this->getWhere();
 
-        // 删除当前模型数据
+        // 刪除当前模型数据
         $result = $this->getQuery()->where($where)->delete();
 
-        // 关联删除
+        // 关联刪除
         if (!empty($this->relationWrite)) {
             foreach ($this->relationWrite as $key => $name) {
                 $name  = is_numeric($key) ? $name : $key;
@@ -1525,11 +1525,11 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 设置字段验证
+     * 设置字段驗證
      * @access public
-     * @param array|string|bool $rule  验证规则 true表示自动读取验证器类
+     * @param array|string|bool $rule  驗證规则 true表示自动读取驗證器类
      * @param array             $msg   提示信息
-     * @param bool              $batch 批量验证
+     * @param bool              $batch 批量驗證
      * @return $this
      */
     public function validate($rule = true, $msg = [], $batch = false)
@@ -1547,7 +1547,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 设置验证失败后是否抛出异常
+     * 设置驗證失敗后是否抛出异常
      * @access public
      * @param bool $fail 是否抛出异常
      * @return $this
@@ -1559,11 +1559,11 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 自动验证数据
+     * 自动驗證数据
      * @access protected
-     * @param array $data  验证数据
-     * @param mixed $rule  验证规则
-     * @param bool  $batch 批量验证
+     * @param array $data  驗證数据
+     * @param mixed $rule  驗證规则
+     * @param bool  $batch 批量驗證
      * @return bool
      */
     protected function validateData($data, $rule = null, $batch = null)
@@ -1670,7 +1670,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      * 更新数据
      * @access public
      * @param array      $data  数据数组
-     * @param array      $where 更新条件
+     * @param array      $where 更新條件
      * @param array|true $field 允许字段
      * @return $this
      */
@@ -1685,9 +1685,9 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 查找单条记录
+     * 查找单條记录
      * @access public
-     * @param mixed        $data  主键值或者查询条件（闭包）
+     * @param mixed        $data  主键值或者查询條件（闭包）
      * @param array|string $with  关联预查询
      * @param bool         $cache 是否缓存
      * @return static|null
@@ -1710,7 +1710,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 查找所有记录
      * @access public
-     * @param mixed        $data  主键列表或者查询条件（闭包）
+     * @param mixed        $data  主键列表或者查询條件（闭包）
      * @param array|string $with  关联预查询
      * @param bool         $cache 是否缓存
      * @return static[]|false
@@ -1729,7 +1729,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 分析查询表达式
      * @access public
-     * @param mixed  $data  主键列表或者查询条件（闭包）
+     * @param mixed  $data  主键列表或者查询條件（闭包）
      * @param string $with  关联预查询
      * @param bool   $cache 是否缓存
      * @return Query
@@ -1751,10 +1751,10 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 删除记录
+     * 刪除记录
      * @access public
-     * @param mixed $data 主键列表 支持闭包查询条件
-     * @return integer 成功删除的记录数
+     * @param mixed $data 主键列表 支持闭包查询條件
+     * @return integer 成功刪除的记录数
      */
     public static function destroy($data)
     {
@@ -1823,7 +1823,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
      * @param string  $relation 关联方法名
      * @param mixed   $operator 比较操作符
@@ -1841,10 +1841,10 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
      * @param  string $relation 关联方法名
-     * @param  mixed  $where    查询条件（数组或者闭包）
+     * @param  mixed  $where    查询條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Relation|Query
      */
@@ -1886,7 +1886,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             $subRelation = '';
             $closure     = null;
             if ($relation instanceof \Closure) {
-                // 支持闭包查询过滤关联条件
+                // 支持闭包查询过滤关联條件
                 $closure  = $relation;
                 $relation = $key;
             }
@@ -1989,7 +1989,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取模型的默认外键名
+     * 取得模型的默认外键名
      * @access public
      * @param string $name 模型名
      * @return string
@@ -2220,7 +2220,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 获取器 获取数据对象的值
+     * 取得器 取得数据对象的值
      * @access public
      * @param string $name 名称
      * @return mixed

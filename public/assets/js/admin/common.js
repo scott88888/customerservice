@@ -19,7 +19,7 @@ $(function () {
                 }, replace)
             } else {
                 if (response.code == 100) {
-                    $.AMUI.message.warning(response.msg, "登录失效", function () {
+                    $.AMUI.message.warning(response.msg, "登入失效", function () {
                         location.href = response.data
                     })
                 } else {

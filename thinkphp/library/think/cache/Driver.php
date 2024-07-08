@@ -66,7 +66,7 @@ abstract class Driver
     abstract public function dec($name, $step = 1);
 
     /**
-     * 删除缓存
+     * 刪除缓存
      * @access public
      * @param string $name 缓存变量名
      * @return boolean
@@ -82,7 +82,7 @@ abstract class Driver
     abstract public function clear($tag = null);
 
     /**
-     * 获取实际的缓存标识
+     * 取得实际的缓存标识
      * @access public
      * @param string $name 缓存名
      * @return string
@@ -93,7 +93,7 @@ abstract class Driver
     }
 
     /**
-     * 读取缓存并删除
+     * 读取缓存并刪除
      * @access public
      * @param string $name 缓存变量名
      * @return mixed
@@ -202,7 +202,7 @@ abstract class Driver
     }
 
     /**
-     * 获取标签包含的缓存标识
+     * 取得标签包含的缓存标识
      * @access public
      * @param string $tag 缓存标签
      * @return array

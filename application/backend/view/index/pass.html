@@ -10,21 +10,21 @@
         <div class="mainBox">
             <div class="main-container">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">原密码</label>
+                    <label class="layui-form-label">原密碼</label>
                     <div class="layui-input-block">
                         <input type="password" name="oldpass" lay-verify="required"  placeholder="請輸入原密碼" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">新密码</label>
+                    <label class="layui-form-label">新密碼</label>
                     <div class="layui-input-block">
                         <input type="password" name="newpass" lay-verify="required"  placeholder="請輸入新密碼" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">重复新密码</label>
+                    <label class="layui-form-label">重复新密碼</label>
                     <div class="layui-input-block">
-                        <input type="password" name="newpass2" lay-verify="required"  placeholder="再次输入新密码" class="layui-input">
+                        <input type="password" name="newpass2" lay-verify="required"  placeholder="再次输入新密碼" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@ layui.use(['form','jquery'],function(){
                         icon: 1
                     });
                     setTimeout(function() {
-                        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                        var index = parent.layer.getFrameIndex(window.name); //取得窗口索引
                         parent.layer.close(index);
                     }, 2000)
                 }else {

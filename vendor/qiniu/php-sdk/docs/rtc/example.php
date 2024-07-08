@@ -14,7 +14,7 @@ try {
     //创建app
     $resp = $client->createApp($hub, $title, $maxUsers);
     print_r($resp);
-    // 获取app狀態
+    // 取得app狀態
     $resp = $client->getApp('dgdl5ge8y');
     print_r($resp);
     //修改app狀態
@@ -22,10 +22,10 @@ try {
     $mergePublishRtmp['enable'] = true;
     $resp = $client->updateApp('dgdl5ge8y', $hub, $title, $maxUsers, $mergePublishRtmp);
     print_r($resp);
-    //删除app
+    //刪除app
     $resp = $client->deleteApp('dgdl5ge8y');
     print_r($resp);
-    //获取房间连麦的成员
+    //取得房间连麦的成员
     $resp=$client->listUser("dgbfvvzid", 'lfxl');
     print_r($resp);
     //剔除房间的连麦成员

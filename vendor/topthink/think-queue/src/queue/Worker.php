@@ -41,7 +41,7 @@ class Worker
     }
 
     /**
-     * 获取下个任务
+     * 取得下个任务
      * @param  string $queue
      * @return Job
      */

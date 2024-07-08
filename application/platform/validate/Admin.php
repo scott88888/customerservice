@@ -14,7 +14,7 @@ class Admin extends Validate
 {
 
     /**
-     * 验证规则.
+     * 驗證规则.
      * [$rule description]
      * @var [type]
      */
@@ -32,10 +32,10 @@ class Admin extends Validate
 
     protected $field = [
         'mobile2'  => '手機號碼',
-        'captcha_code' => '验证码',
+        'captcha_code' => '驗證碼',
     ];
     /**
-     * 验证失败信息.
+     * 驗證失敗信息.
      * [$message description]
      * @var array
      */
@@ -43,8 +43,8 @@ class Admin extends Validate
         "username.require" => "请填写使用者名稱",
         "username.alphaDash" => "使用者名稱只能是字母、数字和下划线_及破折号-",
         "username.length" => "使用者名稱长度为3~16个字符",
-        "password.require" => "密码不能为空",
-        "password.length" => "密码长度为6~16个字符",
+        "password.require" => "密碼不能为空",
+        "password.length" => "密碼长度为6~16个字符",
         "mobile.isMobile" => "手机格式不符合要求",
         "mobile2.isMobile" => "手机格式不符合要求",
         "mobile.unique" => "该手機號碼已存在",
@@ -56,7 +56,7 @@ class Admin extends Validate
 
 
     /**
-     * 验证场景.
+     * 驗證场景.
      * @access protected
      * @var array
      */

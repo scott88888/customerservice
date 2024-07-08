@@ -74,7 +74,7 @@ class Custom extends Base
     }
 
     /**
-     * 编辑分组
+     * 編輯分组
      * @return \think\response\Json
      * @throws \think\exception\DbException
      */
@@ -105,7 +105,7 @@ class Custom extends Base
                     return json(['code'=>1,'msg'=>'该组名称已存在']);
                 }
                 $data = $group->save($post);
-                return json(['code'=>0,'msg'=>'编辑成功','data'=>$data]);
+                return json(['code'=>0,'msg'=>'編輯成功','data'=>$data]);
             } else {
                 $group = Vgroup::get($post);
                 if ($group) {
@@ -119,7 +119,7 @@ class Custom extends Base
     }
 
     /**
-     * 删除分组
+     * 刪除分组
      * @return \think\response\Json
      * @throws \think\exception\DbException
      */
@@ -138,9 +138,9 @@ class Custom extends Base
             unset($post['id']);
             VisiterGroup::where('group_id',$post['group_id'])->delete();
             if ($res !== false) {
-                return json(['code'=>0,'msg'=>'删除成功']);
+                return json(['code'=>0,'msg'=>'刪除成功']);
             } else {
-                return json(['code'=>1,'msg'=>'删除失败']);
+                return json(['code'=>1,'msg'=>'刪除失敗']);
             }
         }
     }
@@ -156,7 +156,7 @@ class Custom extends Base
                 ->where('business_id',$this->login['business_id'])
                 ->where('service_id',$this->login['service_id'])
                 ->delete();
-            return json(['code'=>0,'msg'=>'删除成功']);
+            return json(['code'=>0,'msg'=>'刪除成功']);
 
         }
     }
@@ -354,7 +354,7 @@ class Custom extends Base
             if ($res !== false) {
                 $data = ['code'=>0,'msg'=>'操作成功'];
             } else {
-                $data = ['code'=>1,'msg'=>'操作失败'];
+                $data = ['code'=>1,'msg'=>'操作失敗'];
             }
             return json($data);
         }
@@ -402,7 +402,7 @@ class Custom extends Base
                 if ($res !== false) {
                     $data = ['code'=>0,'msg'=>'操作成功'];
                 } else {
-                    $data = ['code'=>1,'msg'=>'操作失败'];
+                    $data = ['code'=>1,'msg'=>'操作失敗'];
                 }
                 return json($data);
             } else {
@@ -434,7 +434,7 @@ class Custom extends Base
                 if ($result !== false) {
                     $data = ['code'=>0,'msg'=>'操作成功'];
                 } else {
-                    $data = ['code'=>1,'msg'=>'操作失败'];
+                    $data = ['code'=>1,'msg'=>'操作失敗'];
                 }
                 return json($data);
             }
@@ -444,7 +444,7 @@ class Custom extends Base
             if ($res !== false) {
                 $data = ['code'=>0,'msg'=>'操作成功'];
             } else {
-                $data = ['code'=>1,'msg'=>'操作失败'];
+                $data = ['code'=>1,'msg'=>'操作失敗'];
             }
             return json($data);
         }

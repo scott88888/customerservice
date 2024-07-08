@@ -67,7 +67,7 @@ class Redis extends Job
 
 
     /**
-     * 删除任务
+     * 刪除任务
      *
      * @return void
      */

@@ -36,7 +36,7 @@ Common::println("test-symlink is created");
 Common::println($result['x-oss-request-id']);
 Common::println($result['etag']);
 
-// 获取symlink
+// 取得symlink
 $content = $ossClient->getSymlink($bucket, "test-symlink");
 Common::println("test-symlink refer to : " . $content[OssClient::OSS_SYMLINK_TARGET]);
 
@@ -57,7 +57,7 @@ Common::println("ETag: " . $result[1]);
 $doesExist = $ossClient->doesObjectExist($bucket, "c.file.copy");
 Common::println("file c.file.copy exist? " . ($doesExist ? "yes" : "no"));
 
-// 删除object
+// 刪除object
 $result = $ossClient->deleteObject($bucket, "c.file.copy");
 Common::println("c.file.copy is deleted");
 Common::println("b.file is created");
@@ -67,7 +67,7 @@ Common::println($result['x-oss-request-id']);
 $doesExist = $ossClient->doesObjectExist($bucket, "c.file.copy");
 Common::println("file c.file.copy exist? " . ($doesExist ? "yes" : "no"));
 
-// 批量删除object
+// 批量刪除object
 $result = $ossClient->deleteObjects($bucket, array("b.file", "c.file"));
 foreach($result as $object)
     Common::println($object);
@@ -160,7 +160,7 @@ function uploadFile($ossClient, $bucket)
 }
 
 /**
- * 列出Bucket内所有目录和文件, 注意如果符合条件的文件数目超过设置的max-keys， 使用者需要使用返回的nextMarker作为入参，通过
+ * 列出Bucket内所有目录和文件, 注意如果符合條件的文件数目超过设置的max-keys， 使用者需要使用返回的nextMarker作为入参，通过
  * 循环调用ListObjects得到所有的文件，具体操作见下面的 listAllObjects 示例
  *
  * @param OssClient $ossClient OssClient实例
@@ -238,7 +238,7 @@ function listAllObjects($ossClient, $bucket)
             printf($e->getMessage() . "\n");
             return;
         }
-        // 得到nextMarker，从上一次listObjects读到的最后一个文件的下一个文件开始继续获取文件列表
+        // 得到nextMarker，从上一次listObjects读到的最后一个文件的下一个文件开始继续取得文件列表
         $nextMarker = $listObjectInfo->getNextMarker();
         $listObject = $listObjectInfo->getObjectList();
         $listPrefix = $listObjectInfo->getPrefixList();
@@ -251,7 +251,7 @@ function listAllObjects($ossClient, $bucket)
 }
 
 /**
- * 获取object的内容
+ * 取得object的内容
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -305,7 +305,7 @@ function putSymlink($ossClient, $bucket)
 }
 
 /**
- * 获取symlink
+ * 取得symlink
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -335,7 +335,7 @@ function getSymlink($ossClient, $bucket)
 /**
  * get_object_to_local_file
  *
- * 获取object
+ * 取得object
  * 将object下载到指定的文件
  *
  * @param OssClient $ossClient OssClient实例
@@ -425,7 +425,7 @@ function modifyMetaForObject($ossClient, $bucket)
 }
 
 /**
- * 获取object meta, 也就是getObjectMeta接口
+ * 取得object meta, 也就是getObjectMeta接口
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -452,7 +452,7 @@ function getObjectMeta($ossClient, $bucket)
 }
 
 /**
- * 删除object
+ * 刪除object
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -473,7 +473,7 @@ function deleteObject($ossClient, $bucket)
 
 
 /**
- * 批量删除object
+ * 批量刪除object
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称

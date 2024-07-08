@@ -498,7 +498,7 @@ class Pusher
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_value);
 
         $response = $this->exec_curl($ch);
-        //获取请求信息
+        //取得请求信息
 //        var_dump(curl_getinfo($ch));
 //        var_dump($response);
 // var_export($response);

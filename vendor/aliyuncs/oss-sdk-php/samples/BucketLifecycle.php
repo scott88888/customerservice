@@ -22,11 +22,11 @@ $lifecycleConfig->addRule($lifecycleRule);
 $ossClient->putBucketLifecycle($bucket, $lifecycleConfig);
 Common::println("bucket $bucket lifecycleConfig created:" . $lifecycleConfig->serializeToXml());
 
-//获取lifecycle规则
+//取得lifecycle规则
 $lifecycleConfig = $ossClient->getBucketLifecycle($bucket);
 Common::println("bucket $bucket lifecycleConfig fetched:" . $lifecycleConfig->serializeToXml());
 
-//删除bucket的lifecycle配置
+//刪除bucket的lifecycle配置
 $ossClient->deleteBucketLifecycle($bucket);
 Common::println("bucket $bucket lifecycleConfig deleted");
 
@@ -67,7 +67,7 @@ function putBucketLifecycle($ossClient, $bucket)
 }
 
 /**
- * 获取bucket的生命周期配置
+ * 取得bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -88,7 +88,7 @@ function getBucketLifecycle($ossClient, $bucket)
 }
 
 /**
- * 删除bucket的生命周期配置
+ * 刪除bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称

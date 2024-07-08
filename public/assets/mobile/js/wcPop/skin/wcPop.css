@@ -109,15 +109,15 @@
 	0% {opacity: 0; transform: translateY(100%);}
 	100% {opacity: 1; transform: translateY(0);}
 }
-/* 由上向下渐变关闭 */
+/* 由上向下渐变關閉 */
 @keyframes anim-fadeOutUp {
 	100% {opacity: 0; transform: translateY(100%);}
 }
-/* 渐变缩小关闭 */
+/* 渐变缩小關閉 */
 @keyframes anim-fadeOut {
 	100% {opacity: 0;}
 }
-/* 渐变缩小关闭 */
+/* 渐变缩小關閉 */
 @keyframes anim-fadeScaleOut {
 	100% {opacity: 0;-webkit-transform: scale(.9);transform: scale(.9);}
 }

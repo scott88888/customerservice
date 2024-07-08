@@ -79,7 +79,7 @@ class File
     }
 
     /**
-     * 获取主日志文件名
+     * 取得主日志文件名
      * @access public
      * @return string
      */
@@ -113,7 +113,7 @@ class File
     }
 
     /**
-     * 获取独立日志文件名
+     * 取得独立日志文件名
      * @access public
      * @param  string $path 日志目录
      * @param  string $type 日志类型
@@ -170,7 +170,7 @@ class File
     }
 
     /**
-     * 检查日志文件大小并自动生成备份文件
+     * 檢查日志文件大小并自动生成备份文件
      * @access protected
      * @param  string    $destination 日志文件
      * @return void
@@ -239,7 +239,7 @@ class File
         if (App::$debug && $append) {
 
             if ($this->config['json']) {
-                // 获取基本信息
+                // 取得基本信息
                 $runtime = round(microtime(true) - THINK_START_TIME, 10);
                 $reqs    = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
 

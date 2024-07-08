@@ -21,10 +21,10 @@ class Base extends Controller
     }
 
     /**
-     * 检查每次app请求的数据是否合法
+     * 檢查每次app请求的数据是否合法
      */
     public function checkRequestAuth() {
-        // 首先需要获取headers
+        // 首先需要取得headers
         $headers = request()->header();
 
         // 基础参数校验
@@ -37,7 +37,7 @@ class Base extends Controller
 //        // 需要sign
 //        if(!IAuth::checkSignPass($headers)) {
 //            throw new ApiException([
-//                'msg'=>'sign验证失败',
+//                'msg'=>'sign驗證失敗',
 //                'errorCode'=>10003
 //            ]);
 //        }

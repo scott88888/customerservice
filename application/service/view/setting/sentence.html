@@ -57,8 +57,8 @@
 		</script>
 
 		<script type="text/html" id="tool-bar">
-			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</button>
-			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>删除</button>
+			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>編輯</button>
+			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>刪除</button>
 		</script>
 
         <script src="/static/component/layui/layui.js"></script>
@@ -157,7 +157,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '编辑问候语',
+                        title: '編輯问候语',
                         shade: 0.1,
                         area: ['700px', '600px'],
                         content: MODULE_PATH + 'setting/sentence_edit?id='+obj.data.sid
@@ -165,7 +165,7 @@
                 };
 
                 window.remove = function(obj) {
-                    layer.confirm('确定要删除该问候语吗？', {
+                    layer.confirm('確定要刪除该问候语吗？', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

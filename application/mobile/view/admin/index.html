@@ -469,7 +469,7 @@
             <div class="swiper-container" style="height: 100%">
                 <div class="swiper-wrapper">
                     <!--<img class="clear-btn" src="__image__/index/clear.png">-->
-                    <!-- //1、）wolive主页-->
+                    <!-- //1、）wolive主頁-->
                     <div class="swiper-slide" data-history="index">
                         <div class="wc__scrolling-panel">
                             <!-- //聊天记录信息 -->
@@ -513,7 +513,7 @@
                                 </div>
                                 <div class="edit-btn">
                                     <div class="edit-cancel-btn">取消</div>
-                                    <div class="edit-del-btn">删除</div>
+                                    <div class="edit-del-btn">刪除</div>
                                 </div>
                             </div>
                         </div>
@@ -529,7 +529,7 @@
                                         <div class="item flexbox flex-alignc wc__material-cell person-info" style="background: #1E9FFF">
                                             <img class="uimg" src="{$mine.avatar}" />
                                             <span class="txt username flex1">
-                                                    <em style="color: #fff">{$mine.nick_name}</em><i style="color: #fff">登录名：{$mine.user_name}</i>
+                                                    <em style="color: #fff">{$mine.nick_name}</em><i style="color: #fff">登入名：{$mine.user_name}</i>
                                             </span>
                                         </div>
                                     </li>
@@ -591,19 +591,19 @@
                 <div class="add-group-body"><input class="add-group-input" type="text" placeholder="請輸入分组名，最多12个字"></div>
                 <div class="add-group-btn">
                     <div class="add-group-cancel">取消</div>
-                    <div class="add-group-submit">确定</div>
+                    <div class="add-group-submit">確定</div>
                 </div>
             </div>
         </div>
 
-        <!-- 删除记录 -->
+        <!-- 刪除记录 -->
         <div class="clearAll">
             <div class="add-group">
                 <div class="add-group-title"></div>
                 <div class="add-group-body" style="text-align:center;font-size:16px;">确认清空当前会话列表？</div>
                 <div class="add-group-btn">
                     <div class="add-group-cancel">取消</div>
-                    <div class="clear-submit">确定</div>
+                    <div class="clear-submit">確定</div>
                 </div>
             </div>
         </div>
@@ -654,13 +654,13 @@
     $(function(){
     	var audio = document.getElementById("chat-message-audio");
     	layer.confirm('客服工作台加载成功', {
-		  btn: ['确定'] //按钮
+		  btn: ['確定'] //按钮
 		}, function(index){
 			audio.play();
 			layer.close(index);
 		});
         //***1、wolive-------------------------
-        // 聊天记录页面（长按操作）
+        // 聊天记录頁面（长按操作）
         $("#J__recordChatList").on("longTap", "li", function(e){
             var that = $(this);
             wcPop({
@@ -668,7 +668,7 @@
                 shadeClose: true,
                 btns: [
                     {
-                        text: '删除该聊天',
+                        text: '刪除该聊天',
                         style: 'line-height:50px;',
                         onTap() {
                             $.ajax({
@@ -691,7 +691,7 @@
                 ]
             });
         });
-        // 跳转链接
+        // 跳转連結
         $(".wechat__panel").on("click", "*[routeUrl]", function(e){
             var routeurl = $(this).attr('routeUrl');
             if(!routeurl) return;
@@ -836,7 +836,7 @@
         }
 
 
-        // 获取排队列表
+        // 取得排队列表
         function getwait() {
 
             $.ajax({
@@ -1111,7 +1111,7 @@
                 getchat();
             });
 
-            // 认领后获取访客信息
+            // 认领后取得访客信息
             var channelme = pusher.subscribe("ud" + config.service_id);
             channelme.bind("on_notice", function (data) {
                 getwait();

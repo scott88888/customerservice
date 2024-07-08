@@ -58,7 +58,7 @@ require '/path/to/sdk/vendor/autoload.php';
 
 ### Phar 方式
 Phar 方式安装 SDK 的步骤如下：
-1. 在 [GitHub 发布页面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载相应的 phar 文件。
+1. 在 [GitHub 发布頁面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载相应的 phar 文件。
 2.  在代码中引入 phar 文件：
 ```
 require  '/path/to/cos-sdk-v5.phar';
@@ -66,7 +66,7 @@ require  '/path/to/cos-sdk-v5.phar';
 
 ### 源码方式
 源码方式安装 SDK 的步骤如下：
-1.  在 [GitHub 发布页面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载相应的 zip 文件。
+1.  在 [GitHub 发布頁面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载相应的 zip 文件。
 2.  解压通过 autoload.php 脚本加载 SDK：
 ```
 require '/path/to/sdk/vendor/autoload.php';
@@ -198,7 +198,7 @@ try {
 
 ### 下载文件
 * 使用getObject接口下载文件
-* 使用getObjectUrl接口获取文件下载URL
+* 使用getObjectUrl接口取得文件下载URL
 ```php
 # 下载文件
 ## getObject(下载文件)
@@ -253,7 +253,7 @@ try {
     echo "$e\n";
 }
 
-## getObjectUrl(获取文件UrL)
+## getObjectUrl(取得文件UrL)
 try {
     $signedUrl = $cosClient->getObjectUrl($bucket, $key, '+10 minutes');
     echo $signedUrl;

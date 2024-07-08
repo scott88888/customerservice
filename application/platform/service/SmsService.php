@@ -64,10 +64,10 @@ class SmsService
     {
         $ind_sms = Option::getList('ind_sms', 0, 'admin')['ind_sms'];
         if (!$ind_sms) {
-            throw new Exception('发送失败，短信尚未配置。');
+            throw new Exception('发送失敗，短信尚未配置。');
         }
         if (!$ind_sms['aliyun'] || !$ind_sms['aliyun']['access_key_id'] || !$ind_sms['aliyun']['access_key_secret'] || !$ind_sms['aliyun']['sign'] || !$ind_sms['aliyun']['tpl_id']) {
-            throw new Exception('发送失败，短信尚未配置。');
+            throw new Exception('发送失敗，短信尚未配置。');
         }
 
         return $ind_sms;

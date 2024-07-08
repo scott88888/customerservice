@@ -28,7 +28,7 @@ ThinkPHP 5.0 SAE扩展
 'database'    => SAE_MYSQL_DB,
 // 使用者名稱
 'username'    => SAE_MYSQL_USER,
-// 密码
+// 密碼
 'password'    => SAE_MYSQL_PASS,
 // 端口
 'hostport'    => SAE_MYSQL_PORT,

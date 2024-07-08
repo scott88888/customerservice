@@ -55,7 +55,7 @@
             //创建Flash相关的参数集合
             var flashOptions = {
                 container:"flashContainer",                                                    //flash容器id
-                url:urlWidthParams,                                           // 上传处理页面的url地址
+                url:urlWidthParams,                                           // 上传处理頁面的url地址
                 ext:editor.queryCommandValue('serverParam') || {},                                 //可向服务器送出的自定义参数列表
                 fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //上传文件格式限制
                 flashUrl:'imageUploader.swf',                                                  //上传用的flash组件地址
@@ -78,9 +78,9 @@
                 selectFileCallback: function(selectFiles){                // 选择文件的回调
                     selectedImageCount += selectFiles.length;
                     if(selectedImageCount) baidu.g("upload").style.display = "";
-                    dialog.buttons[0].setDisabled(true); //初始化时置灰确定按钮
+                    dialog.buttons[0].setDisabled(true); //初始化时置灰確定按钮
                 },
-                deleteFileCallback: function(delFiles){                 // 删除文件的回调
+                deleteFileCallback: function(delFiles){                 // 刪除文件的回调
                     selectedImageCount -= delFiles.length;
                     if (!selectedImageCount) {
                         baidu.g("upload").style.display = "none";
@@ -93,7 +93,7 @@
                     selectedImageCount--;
                     }catch(e){}
                 },
-                uploadErrorCallback: function (data){         // 单个文件上传失败的回调,
+                uploadErrorCallback: function (data){         // 单个文件上传失敗的回调,
                     console && console.log(data);
                 },
                 allCompleteCallback: function(){              // 全部上传完成时的回调

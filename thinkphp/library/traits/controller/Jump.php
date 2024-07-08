@@ -154,7 +154,7 @@ trait Jump
     }
 
     /**
-     * 获取当前的 response 输出类型
+     * 取得当前的 response 输出类型
      * @access protected
      * @return string
      */

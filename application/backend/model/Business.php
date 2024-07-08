@@ -32,7 +32,7 @@ class Business extends Model
 
     public static function addBusiness($post)
     {
-        //账号注册时需要开启事务,避免出现垃圾数据
+        //账号注册时需要開啟事务,避免出现垃圾数据
         Db::startTrans();
         try
         {

@@ -62,7 +62,7 @@ function switchTab( index ) {
         emotion.tabExist[index] = 1;
         createTab( 'tab' + index );
     }
-    //获取呈现元素句柄数组
+    //取得呈现元素句柄数组
     var tabHeads = $G( "tabHeads" ).getElementsByTagName( "span" ),
             tabBodys = $G( "tabBodys" ).getElementsByTagName( "div" ),
             i = 0, L = tabHeads.length;
@@ -116,8 +116,8 @@ function autoHeight( index ) {
 
 function createTab( tabName ) {
     var faceVersion = "?v=1.1", //版本号
-            tab = $G( tabName ), //获取将要生成的Div句柄
-            imagePath = emotion.SmileyPath + emotion.imageFolders[tabName], //获取显示表情和预览表情的路径
+            tab = $G( tabName ), //取得将要生成的Div句柄
+            imagePath = emotion.SmileyPath + emotion.imageFolders[tabName], //取得显示表情和预览表情的路径
             positionLine = 11 / 2, //中间数
             iWidth = iHeight = 35, //图片长宽
             iColWidth = 3, //表格剩余空间的显示比例

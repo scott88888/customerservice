@@ -32,7 +32,7 @@ Loader::addNamespace('addons', ADDON_PATH);
 
 // 闭包自动识别插件目录配置
 Hook::add('app_init', function () {
-    // 获取开关
+    // 取得开关
     $autoload = (bool)Config::get('addons.autoload', false);
     // 非正是返回
     if (!$autoload) {
@@ -49,7 +49,7 @@ Hook::add('app_init', function () {
         foreach (glob(ADDON_PATH . '*/*.php') as $addons_file) {
             // 格式化路径信息
             $info = pathinfo($addons_file);
-            // 获取插件目录名
+            // 取得插件目录名
             $name = pathinfo($info['dirname'], PATHINFO_FILENAME);
             // 找到插件入口文件
             if (strtolower($info['filename']) == strtolower($name)) {
@@ -79,7 +79,7 @@ Hook::add('app_init', function () {
 
 // 闭包初始化行为
 Hook::add('action_begin', function () {
-    // 获取系统配置
+    // 取得系统配置
     $data = App::$debug ? [] : Cache::get('hooks', []);
     $addons = (array)Config::get('addons.hooks');
     if (empty($data)) {
@@ -111,7 +111,7 @@ function hook($hook, $params = [])
 }
 
 /**
- * 获取插件类的类名
+ * 取得插件类的类名
  * @param $name 插件名
  * @param string $type 返回命名空间类型
  * @param string $class 当前类名
@@ -142,7 +142,7 @@ function get_addon_class($name, $type = 'hook', $class = null)
 }
 
 /**
- * 获取插件类的配置文件数组
+ * 取得插件类的配置文件数组
  * @param string $name 插件名
  * @return array
  */
@@ -179,7 +179,7 @@ function addon_url($url, $param = [], $suffix = true, $domain = false)
         $param = array_merge($query, $param);
     }
 
-    // 生成插件链接新规则
+    // 生成插件連結新规则
     $actions = "{$addons}-{$controller}-{$action}";
 
     return url("addons/execute/{$actions}", $param, $suffix, $domain);

@@ -27,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <h4>表格和分页实例</h4>
+            <h4>表格和分頁实例</h4>
             <table class="table table-bordered">
                 <tr>
                     <th>编号</th>
@@ -44,13 +44,13 @@
                         <div php-switch="$user['status']">
                             <span php-case="1">正常</span>
                             <span php-case="0">已禁用</span>
-                            <span php-case="-1">已删除</span>
+                            <span php-case="-1">已刪除</span>
                         </div>
                     </td>
                     <td>
                         <a php-show="$user['status'] === 1" php-after="echo ' '" href="javascript:void(0);" class="btn btn-xs btn-warning">禁用</a>
                         <a php-show="$user['status'] === 0" php-after="echo ' '" href="javascript:void(0);" class="btn btn-xs btn-primary">启用</a>
-                        <a php-show="$user['status'] >= 0" php-after="echo ' '" href="javascript:void(0);" class="btn btn-xs btn-danger">删除</a>
+                        <a php-show="$user['status'] >= 0" php-after="echo ' '" href="javascript:void(0);" class="btn btn-xs btn-danger">刪除</a>
                         <a php-show="$user['status'] == -1" php-after="echo ' '" href="javascript:void(0);" class="btn btn-xs btn-primary">恢复</a>
                     </td>
                 </tr>
@@ -62,7 +62,7 @@
 
             <h2>自动选中: php-selected</h2>
             <select class="form-control" php-init="$p = isset($_GET['p']) ? $_GET['p'] : 1">
-                <option php-for="$i = 1; $i <= 50; $i++" php-selected="$p == $i" value="{$i}">第{$i}页</option>
+                <option php-for="$i = 1; $i <= 50; $i++" php-selected="$p == $i" value="{$i}">第{$i}頁</option>
             </select>
 
             <h2>自动勾选: php-checked </h2>

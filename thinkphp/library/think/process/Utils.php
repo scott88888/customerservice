@@ -47,7 +47,7 @@ class Utils
     }
 
     /**
-     * 验证并进行规范化Process输入。
+     * 驗證并进行规范化Process输入。
      * @param string $caller
      * @param mixed  $input
      * @return string

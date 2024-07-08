@@ -12,7 +12,7 @@ $(function () {
                 dataType: 'json',
                 beforeSend: function () {
                     $submit
-                        .attr("data-am-loading", "{spinner: 'circle-o-notch', loadingText: '登录中...'}")
+                        .attr("data-am-loading", "{spinner: 'circle-o-notch', loadingText: '登入中...'}")
                         .button("loading");
                     $.AMUI.progress.start();
                 },
@@ -36,7 +36,7 @@ $(function () {
     });
 
     $("body")
-    // 密码输入框扩展
+    // 密碼输入框扩展
         .on("click", ".am-form-password .am-password-icon", function () {
             var $this = $(this);
             var $password = $this.prev();
@@ -49,12 +49,12 @@ $(function () {
             }
         });
 
-    // 验证码切换
+    // 驗證碼切换
     $("#login-captcha").on("click", function () {
         this.src = $(this).data('captcha') + '?_r=' + Math.random();
     });
 
-    // 显示登录容器
+    // 显示登入容器
     container = check_browser() ? 'login' : 'browser';
     // show_container();
 
@@ -77,7 +77,7 @@ $(function () {
 // }
 
 /**
- * 浏览器兼容检查
+ * 浏览器兼容檢查
  * @returns {boolean}
  */
 function check_browser() {

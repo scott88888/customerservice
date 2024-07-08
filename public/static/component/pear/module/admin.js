@@ -270,10 +270,10 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 				shade: 0.4, //遮罩透明度
 				content: "<div style='background-color:whitesmoke;'><div class='layui-card'><div class='layui-card-body'>来源 : &nbsp; " +
 					form + "</div><div class='layui-card-header' >标题 : &nbsp; " + title +
-					"</div><div class='layui-card-body' >内容 : &nbsp; " + context + "</div></div></div>", //支持获取DOM元素
+					"</div><div class='layui-card-body' >内容 : &nbsp; " + context + "</div></div></div>", //支持取得DOM元素
 				btn: ['确认'], //按钮组
-				scrollbar: false, //屏蔽浏览器滚动条
-				yes: function(index) { //layer.msg('yes');    //点击确定回调
+				scrollbar: false, //屏蔽浏览器滚动條
+				yes: function(index) { //layer.msg('yes');    //点击確定回调
 					layer.close(index);
 					showToast();
 				}
@@ -409,7 +409,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 		});
 
 		function bottomTool() {
-			return "<button id='closeTheme' style='position: absolute;bottom: 20px;left: 20px;' class='pear-btn'>关闭</button>"
+			return "<button id='closeTheme' style='position: absolute;bottom: 20px;left: 20px;' class='pear-btn'>關閉</button>"
 		}
 
 		body.on('click', '[data-select-bgcolor]', function() {

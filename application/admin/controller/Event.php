@@ -187,7 +187,7 @@ class Event extends Controller
 
         if ($time - $post['timestamp'] > 60) {
 
-            $data = ['code' => 1, 'msg' => '注册验证超时！'];
+            $data = ['code' => 1, 'msg' => '注册驗證超时！'];
             return json_encode($data);
         }
 
@@ -219,7 +219,7 @@ class Event extends Controller
 
         } else {
 
-            $data = ['code' => 1, 'msg' => '注册token验证失败！'];
+            $data = ['code' => 1, 'msg' => '注册token驗證失敗！'];
 
             return json_encode($data);
         }
@@ -327,7 +327,7 @@ class Event extends Controller
                 $returndata = ['code' => 0, 'msg' => 'success'];
                 return $returndata;
             } else {
-                // 客服关闭了对话框，重新设置为打开
+                // 客服關閉了对话框，重新设置为打开
                 $data = ['state' => 'normal'];
                 $qid = Admins::table('wolive_queue')->where('business_id', $arr['business_id'])->where('visiter_id', $arr['visiter_id'])->where('state', 'complete')->order('qid', 'desc')->value('qid');
                 if ($qid) {
@@ -432,7 +432,7 @@ class Event extends Controller
             //改成離線狀態接收通知
             if (empty($sended) && $business['template_state']=='open') {
                 TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
-                    "first"  => "你有一条新的客户信息!",
+                    "first"  => "你有一條新的客户信息!",
                     "keyword1"   => $visiter["visiter_name"] ?$visiter["visiter_name"]:'遊客'.$arr['visiter_id'],
                     "keyword2"  => date('Y-m-d H:i:s',time()),
                     "keyword3"  => $arr["content"],
@@ -1018,7 +1018,7 @@ class Event extends Controller
 
 
     /**
-     * 获取最近对话信息.
+     * 取得最近对话信息.
      *
      * @return string
      */
@@ -1070,7 +1070,7 @@ class Event extends Controller
 
 
     /**
-     * 删除访客信息.
+     * 刪除访客信息.
      *
      * @return boolAdmins
      */

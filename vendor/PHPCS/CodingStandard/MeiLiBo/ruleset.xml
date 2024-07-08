@@ -58,7 +58,7 @@
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
         <severity>0</severity>
     </rule>
-    <!-- 每一行代码只允许一条语句。 -->
+    <!-- 每一行代码只允许一條语句。 -->
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <!-- 方法与方法之间，都至少有一个空行。 -->
     <rule ref="Squiz.WhiteSpace.FunctionSpacing">

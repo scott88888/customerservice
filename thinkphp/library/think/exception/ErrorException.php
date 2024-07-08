@@ -47,7 +47,7 @@ class ErrorException extends Exception
     }
 
     /**
-     * 获取错误级别
+     * 取得错误级别
      * @return integer 错误级别
      */
     final public function getSeverity()

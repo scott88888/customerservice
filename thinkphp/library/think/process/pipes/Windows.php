@@ -155,7 +155,7 @@ class Windows extends Pipes
     }
 
     /**
-     * 删除临时文件
+     * 刪除临时文件
      */
     private function removeFiles()
     {

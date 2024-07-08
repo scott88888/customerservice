@@ -130,7 +130,7 @@ class Builder
     }
 
     /**
-     * 生成查询过滤条件
+     * 生成查询过滤條件
      * @access public
      * @param mixed $where
      * @return array
@@ -151,13 +151,13 @@ class Builder
                     $filter[$logic][] = $this->parseWhere($query->getOptions('where')[$logic]);
                 } else {
                     if (strpos($field, '|')) {
-                        // 不同字段使用相同查询条件（OR）
+                        // 不同字段使用相同查询條件（OR）
                         $array = explode('|', $field);
                         foreach ($array as $k) {
                             $filter['$or'][] = $this->parseWhereItem($k, $value);
                         }
                     } elseif (strpos($field, '&')) {
-                        // 不同字段使用相同查询条件（AND）
+                        // 不同字段使用相同查询條件（AND）
                         $array = explode('&', $field);
                         foreach ($array as $k) {
                             $filter['$and'][] = $this->parseWhereItem($k, $value);
@@ -177,13 +177,13 @@ class Builder
     protected function parseWhereItem($field, $val)
     {
         $key = $field ? $this->parseKey($field) : '';
-        // 查询规则和条件
+        // 查询规则和條件
         if (!is_array($val)) {
             $val = ['=', $val];
         }
         list($exp, $value) = $val;
 
-        // 对一个字段使用多个查询条件
+        // 对一个字段使用多个查询條件
         if (is_array($exp)) {
             $data = [];
             foreach ($val as $value) {
@@ -218,7 +218,7 @@ class Builder
             $k           = '$' . $exp;
             $query[$key] = [$k => $this->parseValue($value, $key)];
         } elseif ('all' == $exp) {
-            // 满足所有指定条件
+            // 满足所有指定條件
             $query[$key] = ['$all', $this->parseValue($value, $key)];
         } elseif ('between' == $exp) {
             // 区间查询
@@ -272,7 +272,7 @@ class Builder
     }
 
     /**
-     * 日期时间条件解析
+     * 日期时间條件解析
      * @access protected
      * @param string $value
      * @param string $key
@@ -280,7 +280,7 @@ class Builder
      */
     protected function parseDateTime($value, $key)
     {
-        // 获取时间字段类型
+        // 取得时间字段类型
         $type = $this->query->getTableInfo('', 'type');
         if (isset($type[$key])) {
             $value = strtotime($value) ?: $value;
@@ -296,7 +296,7 @@ class Builder
     }
 
     /**
-     * 获取最后写入的ID 如果是insertAll方法的话 返回所有写入的ID
+     * 取得最后写入的ID 如果是insertAll方法的话 返回所有写入的ID
      * @access public
      * @return mixed
      */

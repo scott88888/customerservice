@@ -12,7 +12,7 @@ class Permissions
 {
 
     /**
-     * 获取独立版子账号权限列表
+     * 取得独立版子账号权限列表
      * is_admin = false 表示子账号拥有的权限
      */
     public static function getCAdminPermission()

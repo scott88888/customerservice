@@ -35,7 +35,7 @@ This is an H2
                 
 ----
 
-~~删除线~~ <s>删除线（开启识别HTML标签时）</s>
+~~刪除线~~ <s>刪除线（開啟识别HTML标签时）</s>
 *斜体字*      _斜体字_
 **粗体**  __粗体__
 ***粗斜体*** ___粗斜体___
@@ -44,7 +44,7 @@ This is an H2
 
 **缩写(同HTML的abbr标签)**
 
-> 即更长的单词或短语的缩写形式，前提是开启识别HTML标签时，已默认开启
+> 即更长的单词或短语的缩写形式，前提是開啟识别HTML标签时，已默认開啟
 
 The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
@@ -54,23 +54,23 @@ The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is mainta
 
 引用的行内混合 Blockquotes
                     
-> 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通链接](http://localhost/)。
+> 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通連結](http://localhost/)。
 
-### 锚点与链接 Links
+### 锚点与連結 Links
 
-[普通链接](http://localhost/)
+[普通連結](http://localhost/)
 
-[普通链接带标题](http://localhost/ "普通链接带标题")
+[普通連結带标题](http://localhost/ "普通連結带标题")
 
-直接链接：<https://github.com>
+直接連結：<https://github.com>
 
-[锚点链接][anchor-id] 
+[锚点連結][anchor-id] 
 
 [anchor-id]: http://www.this-anchor-link.com/
 
 [mailto:test.test@gmail.com](mailto:test.test@gmail.com)
 
-GFM a-tail link @pandao  信箱地址自动链接 test.test@gmail.com  www@vip.qq.com
+GFM a-tail link @pandao  信箱地址自动連結 test.test@gmail.com  www@vip.qq.com
 
 > @pandao
 
@@ -170,7 +170,7 @@ Image:
 
 > 图为：厦门白城沙滩
 
-图片加链接 (Image + Link)：
+图片加連結 (Image + Link)：
 
 [![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/images/7.jpg "李健首张专辑《似水流年》封面")
 
@@ -332,7 +332,7 @@ f(x) = \int_{-\infty}^\infty
     \,d\xi
 ```
 
-### 分页符 Page break
+### 分頁符 Page break
 
 > Print Test: Ctrl + P
 
@@ -341,9 +341,9 @@ f(x) = \int_{-\infty}^\infty
 ### 绘制流程图 Flowchart
 
 ```flow
-st=>start: 使用者登陆
-op=>operation: 登陆操作
-cond=>condition: 登陆成功 Yes or No?
+st=>start: 使用者登入
+op=>operation: 登入操作
+cond=>condition: 登入成功 Yes or No?
 e=>end: 进入后台
 
 st->op->cond

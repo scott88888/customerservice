@@ -32,7 +32,7 @@ class Expression
     }
 
     /**
-     * 获取表达式
+     * 取得表达式
      *
      * @return string
      */

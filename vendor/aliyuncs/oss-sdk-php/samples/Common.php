@@ -14,7 +14,7 @@ use OSS\Core\OssException;
 /**
  * Class Common
  *
- * 示例程序【Samples/*.php】 的Common类，用于获取OssClient实例和其他公用方法
+ * 示例程序【Samples/*.php】 的Common类，用于取得OssClient实例和其他公用方法
  */
 class Common
 {

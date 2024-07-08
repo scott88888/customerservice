@@ -44,7 +44,7 @@ class Index extends Controller
             session('user_lang',$post['lang']);
             $this->success('操作成功！');
         }
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     /**
@@ -65,7 +65,7 @@ class Index extends Controller
                 $weixin = file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$appsecret&code={$data['code']}&grant_type=authorization_code");
                 $array = json_decode($weixin,true);
                 if(!isset($array['access_token'])){
-                    //说明没有获取到
+                    //说明没有取得到
                     $this->error($array['errmsg'],$url = null, $data = '', $wait = 999999999);
                 }
                 cache('oauth_access_token',$array['access_token'],7000);
@@ -107,7 +107,7 @@ class Index extends Controller
     }
 
     /**
-     * 对话窗口页面.
+     * 对话窗口頁面.
      *
      * @return mixed
      */
@@ -378,7 +378,7 @@ class Index extends Controller
     }
 
     /**
-     * 404页面
+     * 404頁面
      */
 
     public function errors()
@@ -387,7 +387,7 @@ class Index extends Controller
     }
 
     /**
-     * 获取排队数量.
+     * 取得排队数量.
      *
      * @return mixed
      */

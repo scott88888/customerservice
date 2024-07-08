@@ -136,7 +136,7 @@ class View
     }
 
     /**
-     * 解析和获取模板内容 用于输出
+     * 解析和取得模板内容 用于输出
      * @param string    $template 模板文件名或者内容
      * @param array     $vars     模板输出变量
      * @param array     $replace 替换内容
@@ -150,7 +150,7 @@ class View
         // 模板变量
         $vars = array_merge(self::$var, $this->data, $vars);
 
-        // 页面缓存
+        // 頁面缓存
         ob_start();
         ob_implicit_flush(0);
 
@@ -166,7 +166,7 @@ class View
             throw $e;
         }
 
-        // 获取并清空缓存
+        // 取得并清空缓存
         $content = ob_get_clean();
         // 内容过滤标签
         Hook::listen('view_filter', $content);

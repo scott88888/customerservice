@@ -1,5 +1,5 @@
 /**
- * 解析Ajax请求获取的HTML内容
+ * 解析Ajax请求取得的HTML内容
  * @param data
  * @returns {*}
  */
@@ -72,12 +72,12 @@ function build_url(url, vars) {
 }
 
 function notify(title, options, callback) {
-    // 先检查浏览器是否支持
+    // 先檢查浏览器是否支持
     if (!window.Notification || document.visibilityState != 'hidden') {
         return;
     }
     var notification;
-    // 检查使用者曾经是否同意接受通知
+    // 檢查使用者曾经是否同意接受通知
     if (Notification.permission === 'granted') {
         notification = new Notification(title, options); // 显示通知
 

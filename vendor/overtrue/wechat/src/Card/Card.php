@@ -86,7 +86,7 @@ class Card extends AbstractAPI
     const API_UPDATE_GENERAL_CARD_USER = 'https://api.weixin.qq.com/card/generalcard/updateuser';
 
     /**
-     * 获取卡券颜色.
+     * 取得卡券颜色.
      *
      * @return \EasyWeChat\Support\Collection
      */
@@ -157,7 +157,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 通过ticket换取二维码 链接.
+     * 通过ticket换取二维码 連結.
      *
      * @param string $ticket
      *
@@ -169,7 +169,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 获取 卡券 Api_ticket.
+     * 取得 卡券 Api_ticket.
      *
      * @param bool $refresh 是否强制刷新
      *
@@ -261,7 +261,7 @@ class Card extends AbstractAPI
      * @param string $pageTitle
      * @param bool   $canShare
      * @param string $scene     [SCENE_NEAR_BY 附近,SCENE_MENU 自定义菜单,SCENE_QRCODE 二维码,SCENE_ARTICLE 公众号文章,
-     *                          SCENE_H5 h5页面,SCENE_IVR 自动回复,SCENE_CARD_CUSTOM_CELL 卡券自定义cell]
+     *                          SCENE_H5 h5頁面,SCENE_IVR 自动回复,SCENE_CARD_CUSTOM_CELL 卡券自定义cell]
      * @param array  $cardList
      *
      * @return \EasyWeChat\Support\Collection
@@ -441,7 +441,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 获取使用者已领取卡券接口.
+     * 取得使用者已领取卡券接口.
      *
      * @param string $openid
      * @param string $cardId
@@ -606,7 +606,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 删除卡券接口.
+     * 刪除卡券接口.
      *
      * @param string $cardId
      *
@@ -768,7 +768,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 获取子商户信息.
+     * 取得子商户信息.
      *
      * @param int $merchantId
      *
@@ -780,7 +780,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 批量获取子商户信息.
+     * 批量取得子商户信息.
      *
      * @param int    $beginId
      * @param int    $limit

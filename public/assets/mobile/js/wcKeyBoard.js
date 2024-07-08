@@ -102,12 +102,12 @@
 				resObj.text(resObj.text() + $(this).text());
 				resObj.val(resObj.text());
 			});
-			// 处理删除
+			// 处理刪除
 			$("#" + opt.id).on("click", ".del", function () {
 				resObj.text(resObj.text().substring(0, resObj.text().length - 1));
 				resObj.val(resObj.text());
 			});
-			// 关闭键盘
+			// 關閉键盘
 			$("#" + opt.id).on("click", ".keyboard-xclose", function () {
 				$("#" + opt.id).remove();
 			});

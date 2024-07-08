@@ -152,9 +152,9 @@ class OssClient
     }
 
     /**
-     * 删除bucket
-     * 如果Bucket不为空（Bucket中有Object，或者有分块上传的碎片），则Bucket无法删除，
-     * 必须删除Bucket中的所有Object以及碎片后，Bucket才能成功删除。
+     * 刪除bucket
+     * 如果Bucket不为空（Bucket中有Object，或者有分块上传的碎片），则Bucket无法刪除，
+     * 必须刪除Bucket中的所有Object以及碎片后，Bucket才能成功刪除。
      *
      * @param string $bucket
      * @param array $options
@@ -191,7 +191,7 @@ class OssClient
     }
     
     /**
-     * 获取bucket所属的数据中心位置信息
+     * 取得bucket所属的数据中心位置信息
      *
      * @param string $bucket
      * @param array $options
@@ -211,7 +211,7 @@ class OssClient
     }
     
     /**
-     * 获取Bucket的Meta信息
+     * 取得Bucket的Meta信息
      *
      * @param string $bucket
      * @param array $options 具体参考SDK文档
@@ -229,7 +229,7 @@ class OssClient
     }
 
     /**
-     * 获取bucket的ACL配置情况
+     * 取得bucket的ACL配置情况
      *
      * @param string $bucket
      * @param array $options
@@ -271,7 +271,7 @@ class OssClient
     }
 
     /**
-     * 获取object的ACL属性
+     * 取得object的ACL属性
      *
      * @param string $bucket
      * @param string $object
@@ -314,7 +314,7 @@ class OssClient
     }
 
     /**
-     * 获取Bucket的访问日志配置情况
+     * 取得Bucket的访问日志配置情况
      *
      * @param string $bucket bucket名称
      * @param array $options 可以为空
@@ -334,7 +334,7 @@ class OssClient
     }
 
     /**
-     * 开启Bucket访问日志记录功能，只有Bucket的所有者才能更改
+     * 開啟Bucket访问日志记录功能，只有Bucket的所有者才能更改
      *
      * @param string $bucket bucket名称
      * @param string $targetBucket 日志文件存放的bucket
@@ -361,7 +361,7 @@ class OssClient
     }
 
     /**
-     * 关闭bucket访问日志记录功能
+     * 關閉bucket访问日志记录功能
      *
      * @param string $bucket bucket名称
      * @param array $options 可以为空
@@ -404,7 +404,7 @@ class OssClient
     }
 
     /**
-     * 获取bucket的静态网站托管狀態
+     * 取得bucket的静态网站托管狀態
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -424,7 +424,7 @@ class OssClient
     }
 
     /**
-     * 关闭bucket的静态网站托管模式
+     * 關閉bucket的静态网站托管模式
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -467,7 +467,7 @@ class OssClient
     }
 
     /**
-     * 获取Bucket的CORS配置情况
+     * 取得Bucket的CORS配置情况
      *
      * @param string $bucket bucket名称
      * @param array $options 可以为空
@@ -487,7 +487,7 @@ class OssClient
     }
 
     /**
-     * 关闭指定Bucket对应的CORS功能并清空所有规则
+     * 關閉指定Bucket对应的CORS功能并清空所有规则
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -534,7 +534,7 @@ class OssClient
     }
 
     /**
-     * 获取指定Bucket已绑定的CNAME列表
+     * 取得指定Bucket已绑定的CNAME列表
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -634,7 +634,7 @@ class OssClient
     }
 
     /**
-     * 获取LiveChannel信息
+     * 取得LiveChannel信息
      *
      * @param string $bucket bucket名称
      * @param string channelName $channelName
@@ -656,7 +656,7 @@ class OssClient
     }
 
     /**
-     * 获取LiveChannel狀態信息
+     * 取得LiveChannel狀態信息
      *
      * @param string $bucket bucket名称
      * @param string channelName $channelName
@@ -679,7 +679,7 @@ class OssClient
     }
 
      /**
-     *获取LiveChannel推流记录
+     *取得LiveChannel推流记录
      *
      * @param string $bucket bucket名称
      * @param string channelName $channelName
@@ -702,7 +702,7 @@ class OssClient
     }
   
     /**
-     *获取指定Bucket下的live channel列表
+     *取得指定Bucket下的live channel列表
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -755,7 +755,7 @@ class OssClient
     }
 
     /**
-     * 删除指定Bucket的LiveChannel
+     * 刪除指定Bucket的LiveChannel
      *
      * @param string $bucket bucket名称
      * @param string channelName $channelName
@@ -815,7 +815,7 @@ class OssClient
     /**
      * 检验跨域资源请求, 发送跨域请求之前会发送一个preflight请求（OPTIONS）并带上特定的来源域，
      * HTTP方法和header信息等给OSS以决定是否发送真正的请求。 OSS可以通过putBucketCors接口
-     * 来开启Bucket的CORS支持，开启CORS功能之后，OSS在收到浏览器preflight请求时会根据设定的
+     * 来開啟Bucket的CORS支持，開啟CORS功能之后，OSS在收到浏览器preflight请求时会根据设定的
      * 规则评估是否允许本次请求
      *
      * @param string $bucket bucket名称
@@ -868,7 +868,7 @@ class OssClient
     }
 
     /**
-     * 获取Bucket的Lifecycle配置情况
+     * 取得Bucket的Lifecycle配置情况
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -888,7 +888,7 @@ class OssClient
     }
 
     /**
-     * 删除指定Bucket的生命周期配置
+     * 刪除指定Bucket的生命周期配置
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -932,7 +932,7 @@ class OssClient
     }
 
     /**
-     * 获取Bucket的Referer配置情况
+     * 取得Bucket的Referer配置情况
      * Bucket Referer防盗链具体见OSS防盗链
      *
      * @param string $bucket bucket名称
@@ -978,7 +978,7 @@ class OssClient
     }
     
     /**
-     * 获取bucket的容量大小，单位GB
+     * 取得bucket的容量大小，单位GB
      *
      * @param string $bucket bucket名称
      * @param array $options
@@ -998,7 +998,7 @@ class OssClient
     }
 
     /**
-     * 获取bucket下的object列表
+     * 取得bucket下的object列表
      *
      * @param string $bucket
      * @param array $options
@@ -1009,7 +1009,7 @@ class OssClient
      *      'delimiter' => 是一个用于对Object名字进行分组的字符。所有名字包含指定的前缀且第一次出现delimiter字符之间的object作为一组元素
      *      'marker'    => 使用者设定结果从marker之后按字母排序的第一个开始返回。
      *)
-     * 其中 prefix，marker用来实现分页显示效果，参数的长度必须小于256字节。
+     * 其中 prefix，marker用来实现分頁显示效果，参数的长度必须小于256字节。
      * @throws OssException
      * @return ObjectListInfo
      */
@@ -1126,7 +1126,7 @@ class OssClient
     }
 
     /**
-     * 获取symlink
+     * 取得symlink
      *@param string $bucket bucket名称
      * @param string $symlink symlink名称
      * @return null
@@ -1294,7 +1294,7 @@ class OssClient
     }
 
     /**
-     * 获取Object的Meta信息
+     * 取得Object的Meta信息
      *
      * @param string $bucket bucket名称
      * @param string $object object名称
@@ -1313,7 +1313,7 @@ class OssClient
     }
 
     /**
-     * 删除某个Object
+     * 刪除某个Object
      *
      * @param string $bucket bucket名称
      * @param string $object object名称
@@ -1332,7 +1332,7 @@ class OssClient
     }
 
     /**
-     * 删除同一个Bucket中的多个Object
+     * 刪除同一个Bucket中的多个Object
      *
      * @param string $bucket bucket名称
      * @param array $objects object列表
@@ -1400,7 +1400,7 @@ class OssClient
 
     /**
      * 检测Object是否存在
-     * 通过获取Object的Meta信息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
+     * 通过取得Object的Meta信息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
      *
      * @param string $bucket bucket名称
      * @param string $object object名称
@@ -1440,7 +1440,7 @@ class OssClient
     }
 
     /**
-     * 获取分片大小，根据使用者提供的part_size，重新计算一个更合理的partsize
+     * 取得分片大小，根据使用者提供的part_size，重新计算一个更合理的partsize
      *
      * @param int $partSize
      * @return int
@@ -1540,7 +1540,7 @@ class OssClient
     }
 
     /**
-     * 获取已成功上传的part
+     * 取得已成功上传的part
      *
      * @param string $bucket Bucket名称
      * @param string $object Object名称
@@ -1760,7 +1760,7 @@ class OssClient
             $uploadId = $this->initiateMultipartUpload($bucket, $object, $options);
         }
 
-        // 获取的分片
+        // 取得的分片
         $pieces = $this->generateMultiuploadParts($upload_file_size, (integer)$options[self::OSS_PART_SIZE]);
         $response_upload_part = array();
         foreach ($pieces as $i => $piece) {
@@ -1975,7 +1975,7 @@ class OssClient
     }
 
     /**
-     * 获取value
+     * 取得value
      *
      * @param array $options
      * @param string $key
@@ -2006,7 +2006,7 @@ class OssClient
     }
 
     /**
-     * 获取mimetype类型
+     * 取得mimetype类型
      *
      * @param string $object
      * @return string
@@ -2029,7 +2029,7 @@ class OssClient
     }
 
     /**
-     * 验证并且执行请求，按照OSS Api协议，执行操作
+     * 驗證并且执行请求，按照OSS Api协议，执行操作
      *
      * @param array $options
      * @return ResponseCore
@@ -2039,13 +2039,13 @@ class OssClient
     private function auth($options)
     {
         OssUtil::validateOptions($options);
-        //验证bucket，list_bucket时不需要验证
+        //驗證bucket，list_bucket时不需要驗證
         $this->authPrecheckBucket($options);
-        //验证object
+        //驗證object
         $this->authPrecheckObject($options);
         //Object名称的编码必须是utf8
         $this->authPrecheckObjectEncoding($options);
-        //验证ACL
+        //驗證ACL
         $this->authPrecheckAcl($options);
         // 获得当次请求使用的协议头，是https还是http
         $scheme = $this->useSSL ? 'https://' : 'http://';
@@ -2220,7 +2220,7 @@ class OssClient
     }
 
     /**
-     * 获取最大尝试次数
+     * 取得最大尝试次数
      *
      * @return int
      */
@@ -2256,7 +2256,7 @@ class OssClient
     }
 
     /**
-     * 检查bucket名称格式是否正确，如果非法抛出异常
+     * 檢查bucket名称格式是否正确，如果非法抛出异常
      *
      * @param $options
      * @throws OssException
@@ -2270,7 +2270,7 @@ class OssClient
 
     /**
      *
-     * 检查object名称格式是否正确，如果非法抛出异常
+     * 檢查object名称格式是否正确，如果非法抛出异常
      *
      * @param $options
      * @throws OssException
@@ -2287,7 +2287,7 @@ class OssClient
     }
 
     /**
-     * 检查object的编码，如果是gbk或者gb2312则尝试将其转化为utf8编码
+     * 檢查object的编码，如果是gbk或者gb2312则尝试将其转化为utf8编码
      *
      * @param mixed $options 参数
      */
@@ -2310,7 +2310,7 @@ class OssClient
     }
 
     /**
-     * 检查ACL是否是预定义中三种之一，如果不是抛出异常
+     * 檢查ACL是否是预定义中三种之一，如果不是抛出异常
      *
      * @param $options
      * @throws OssException
@@ -2522,7 +2522,7 @@ class OssClient
     }
 
     /**
-     * 检查endpoint的种类
+     * 檢查endpoint的种类
      * 如有有协议头，剥去协议头
      * 并且根据参数 is_cname 和endpoint本身，判定域名类型，是ip，cname，还是专有域或者官网域名
      *
@@ -2553,7 +2553,7 @@ class OssClient
     }
 
     /**
-     * 用来检查sdk所以来的扩展是否打开
+     * 用来檢查sdk所以来的扩展是否打开
      *
      * @throws OssException
      */

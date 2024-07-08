@@ -8,7 +8,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Questions extends Base
 {
@@ -35,7 +35,7 @@ class Questions extends Base
             if (!is_int($status)) $this->error('是否显示字段非法！');
             $res = Question::where("qid", $post['id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $question = Question::get(['qid'=>$id]);
@@ -56,7 +56,7 @@ class Questions extends Base
             if (!is_int($status)) $this->error('是否显示字段非法！');
             $res =Question::insert($post);
             if ($res) $this->success('新增成功');
-            $this->error('新增失败！');
+            $this->error('新增失敗！');
         }
         return $this->fetch();
     }
@@ -65,6 +65,6 @@ class Questions extends Base
     {
         $id = $this->request->get('id');
         if (Question::destroy(['qid' => $id])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

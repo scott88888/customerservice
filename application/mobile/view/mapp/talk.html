@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <title>谈话页面</title>
+    <title>谈话頁面</title>
     <script>
     ROOT_URL = "{$baseroot?$baseroot:''}";
     </script>
@@ -462,7 +462,7 @@
             });
         }
 
-        // new pusher 链接websocket
+        // new pusher 連結websocket
         var wolive_connect = function () {
             if (config.value == 'true') {
                 var pusher = new Pusher(config.app_key, {
@@ -623,7 +623,7 @@
         </footer>
         <div id='group' class="bg" v-if="openGroup">
             <div class="group">
-                <div class="group-title">编辑分组</div>
+                <div class="group-title">編輯分组</div>
                 <div class="group-list">
                     <div class="group-item" v-for='item in list'>
                         <input class='checkbox' v-model="item.choose" :value="item.id" name='group' type='checkbox'>
@@ -632,7 +632,7 @@
                 </div>
                 <div class="group-btn">
                     <div @click="openGroup = false" class="group-cancel">取消</div>
-                    <div @click="edit" class="group-submit">确定</div>
+                    <div @click="edit" class="group-submit">確定</div>
                 </div>
             </div>
         </div>
@@ -791,7 +791,7 @@
                 audio_context = new AudioContext;
 
                 if (!navigator.getUserMedia) {
-                    console.log('语音创建失败');
+                    console.log('语音创建失敗');
                 };
             } catch (e) {
                 console.log(e);
@@ -813,7 +813,7 @@
                             icon: 16,
                             shade: 0.01,
                             skin: 'layui-layer-lan',
-                            time: 0 //20s后自动关闭
+                            time: 0 //20s后自动關閉
                                 ,
                             btn: ['发送', '取消'],
                             yes: function(index, layero) {
@@ -952,7 +952,7 @@
         }
 
         var init = function() {
-            // 获取历史消息
+            // 取得历史消息
             $.cookie("hid", '');
             getwatch(visiter_id);
             wolive_connect();
@@ -1459,7 +1459,7 @@
         }
         //发送消息
         var send = function() {
-            //获取 遊客id
+            //取得 遊客id
             var msg = $("#text_all").val();
 
 
@@ -1588,7 +1588,7 @@
         }
 
         var text = document.getElementById('text_all');
-        // 获取焦点，拉到底部
+        // 取得焦点，拉到底部
         text.onfocus = function() {
             $(".tool_box").hide();
             let height = +document.documentElement.clientHeight;

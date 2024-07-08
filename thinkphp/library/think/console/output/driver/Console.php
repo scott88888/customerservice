@@ -142,7 +142,7 @@ class Console
     }
 
     /**
-     * 获取终端宽度
+     * 取得终端宽度
      * @return int|null
      */
     protected function getTerminalWidth()
@@ -153,7 +153,7 @@ class Console
     }
 
     /**
-     * 获取终端高度
+     * 取得终端高度
      * @return int|null
      */
     protected function getTerminalHeight()
@@ -164,7 +164,7 @@ class Console
     }
 
     /**
-     * 获取当前终端的尺寸
+     * 取得当前终端的尺寸
      * @return array
      */
     public function getTerminalDimensions()
@@ -195,7 +195,7 @@ class Console
     }
 
     /**
-     * 获取stty列数
+     * 取得stty列数
      * @return string
      */
     private function getSttyColumns()
@@ -218,7 +218,7 @@ class Console
     }
 
     /**
-     * 获取终端模式
+     * 取得终端模式
      * @return string <width>x<height> 或 null
      */
     private function getMode()

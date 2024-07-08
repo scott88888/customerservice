@@ -6,13 +6,13 @@ namespace app\admin\validate;
 use think\Validate;
 
 /**
- *  注册验证器.
+ *  注册驗證器.
  */
 class Admins extends Validate
 {
 
     /**
-     * 验证规则.
+     * 驗證规则.
      * [$rule description]
      * @var [type]
      */
@@ -27,7 +27,7 @@ class Admins extends Validate
     ];
 
     /**
-     * 验证失败信息.
+     * 驗證失敗信息.
      * [$message description]
      * @var array
      */
@@ -39,17 +39,17 @@ class Admins extends Validate
         "nickname.length" => "暱稱长度为2~20个字符",
         "password.requireIf" => "请填写登入密碼",
         "password.length" => "登入密碼长度为6~16个字符",
-        "password2.confirm" => "密码不一致",
-        "password2.require" => "请再次输入密码",
-        'captcha.require' => '请填写验证码',
-        'captcha.captcha' => '验证码不正确',
+        "password2.confirm" => "密碼不一致",
+        "password2.require" => "请再次输入密碼",
+        'captcha.require' => '请填写驗證碼',
+        'captcha.captcha' => '驗證碼不正确',
         "email.email" => "格式不符合要求",
 
     ];
 
 
     /**
-     * 验证场景.
+     * 驗證场景.
      * @access protected
      * @var array
      */

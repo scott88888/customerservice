@@ -11,7 +11,7 @@ use app\service\iplocation\Ip;
  */
 class AdminLog extends Model
 {
-    // 获取日志列表
+    // 取得日志列表
     public static function getLog()
     {
         $where = [];

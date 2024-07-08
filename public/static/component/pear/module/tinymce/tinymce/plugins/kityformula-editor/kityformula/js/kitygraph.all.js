@@ -1441,7 +1441,7 @@ _p[10] = {
             browser = {
                 /**
              * @property platform
-             * @description 获取浏览器所在系统,"Win"->Windows;"Mac"->Mac;"Lux"->Linux
+             * @description 取得浏览器所在系统,"Win"->Windows;"Mac"->Mac;"Lux"->Linux
              * @type {String}
              */
                 platform: function(navigator) {
@@ -1550,7 +1550,7 @@ _p[10] = {
             /**
          * @property version
          * @for kity.Browser
-         * @description 获取当前浏览器的版本
+         * @description 取得当前浏览器的版本
          * @type {Number}
          */
             browser.version = version;
@@ -1737,8 +1737,8 @@ _p[11] = {
         Class.prototype.getClass = function() {
             return this.constructor;
         };
-        // 检查基类是否调用了父类的构造函数
-        // 该检查是弱检查，假如调用的代码被注释了，同样能检查成功（这个特性可用于知道建议调用，但是出于某些原因不想调用的情况）
+        // 檢查基类是否调用了父类的构造函数
+        // 该檢查是弱檢查，假如调用的代码被注释了，同样能檢查成功（这个特性可用于知道建议调用，但是出于某些原因不想调用的情况）
         function checkBaseConstructorCall(targetClass, classname) {
             var code = targetClass.toString();
             if (!/this\.callBase/.test(code)) {
@@ -2219,7 +2219,7 @@ _p[12] = {
                 }
                 // 对象
                 if (v1 instanceof Object) {
-                    // 如果值是一个支持原始表示的实例，获取其原始表示
+                    // 如果值是一个支持原始表示的实例，取得其原始表示
                     Class = v1.getClass && v1.getClass();
                     if (Class && Class.parse) {
                         v1 = v1.valueOf();
@@ -3004,7 +3004,7 @@ _p[24] = {
                 if (!this.container) {
                     return this;
                 }
-                //新增参数 this， 把当前引起变化的点传递过去， 以便有需要的地方可以获取到引起变化的源
+                //新增参数 this， 把当前引起变化的点传递过去， 以便有需要的地方可以取得到引起变化的源
                 if (this.container.update) this.container.update(this);
             }
         });
@@ -3378,7 +3378,7 @@ _p[26] = {
             /**
          * @method
          * @for kity.Circle
-         * @description 获取圆形的半径
+         * @description 取得圆形的半径
          *
          * @grammar getRadius() => {Number}
          */
@@ -3523,7 +3523,7 @@ _p[28] = {
                 //parse构造
                 if (typeof arguments[0] === "string") {
                     colorValue = ColorUtils.parseToValue(arguments[0]);
-                    //解析失败
+                    //解析失敗
                     if (colorValue === null) {
                         colorValue = {
                             r: 0,
@@ -3544,7 +3544,7 @@ _p[28] = {
                         a: arguments[3] === undefined ? 1 : parseFloat(arguments[3])
                     };
                     colorValue = ColorUtils.overflowFormat(colorValue);
-                    //获取hsl分量
+                    //取得hsl分量
                     colorValue = Utils.extend(colorValue, ColorUtils.rgbValueToHslValue(colorValue));
                 }
                 this._color = colorValue;
@@ -3792,7 +3792,7 @@ _p[28] = {
                 if (Utils.isObject(valStr) && "r" in valStr) {
                     rgbValue = valStr;
                 }
-                //解析失败， 返回一个默认color实例
+                //解析失敗， 返回一个默认color实例
                 if (rgbValue === null) {
                     return new Color();
                 }
@@ -4038,7 +4038,7 @@ _p[28] = {
                     return ("#" + vals.join("")).toLowerCase();
                 }
             },
-            //16进制的2个数字转化为10进制， 如果转化失败， 返回0
+            //16进制的2个数字转化为10进制， 如果转化失敗， 返回0
             toNumber: function(value) {
                 return Number("0x" + value) | 0;
             },
@@ -4176,7 +4176,7 @@ _p[30] = {
     value: function(require, exports, module) {
         var Utils = _p.r(12), CurveUtil = {
             /*
-             * 获取由两个以上的点组成的曲线的平移线
+             * 取得由两个以上的点组成的曲线的平移线
              * @param points 曲线上的点的集合， 集合中的点的数量必须大于2
              * @return 平移线数组
              */
@@ -4206,7 +4206,7 @@ _p[30] = {
                 return centerPoints;
             },
             /*
-             * 对getCenterPoints()接口获取到的数据做处理， 计算出各个顶点对应的平移线数据
+             * 对getCenterPoints()接口取得到的数据做处理， 计算出各个顶点对应的平移线数据
              * @param length 集合中点的个数
              * @param points 点集合， 该集合应该是getCenterPoints()接口返回的数据
              */
@@ -4321,7 +4321,7 @@ _p[30] = {
                     drawer.lineTo(points[1]);
                     return this;
                 }
-                //获取已转换过后的带控制点的所有点
+                //取得已转换过后的带控制点的所有点
                 withControlPoints = CurveUtil.getCurvePanLines(points, this.getSmoothFactor());
                 for (var i = 1, len = points.length; i < len; i++) {
                     //当前顶点
@@ -4518,7 +4518,7 @@ _p[33] = {
                     }
                 });
             }
-            //删除所有监听器
+            //刪除所有监听器
             if (isRemoveAll) {
                 deleteDomEvent(this.node, type, INNER_HANDLER_CACHE[eventId][type]);
                 delete USER_HANDLER_CACHE[eventId][type];
@@ -4541,7 +4541,7 @@ _p[33] = {
                         var result;
                         if (fn) {
                             result = fn.call(targetObject, e);
-                            //once 绑定， 执行完后删除
+                            //once 绑定， 执行完后刪除
                             if (isOnce) {
                                 targetObject.off(type, fn);
                             }
@@ -4574,7 +4574,7 @@ _p[33] = {
                 node.attachEvent("on" + type, handler);
             }
         }
-        // 删除dom事件
+        // 刪除dom事件
         function deleteDomEvent(node, type, handler) {
             if (node.removeEventListener) {
                 node.removeEventListener(type, handler, false);
@@ -6134,8 +6134,8 @@ _p[44] = {
                 this.color = {};
             },
             /*
-         * 获取颜色名称所对应的颜色值的Color对象
-         * @param name 需要获取的颜色名称
+         * 取得颜色名称所对应的颜色值的Color对象
+         * @param name 需要取得的颜色名称
          * @return 对应颜色名称的color对象， 如果未找到对应的名称， 则返回null
          */
             get: function(name) {
@@ -6146,8 +6146,8 @@ _p[44] = {
                 return null;
             },
             /*
-         * 获取给定名称的颜色的hex值表示
-         * @param name 需要获取的颜色名称
+         * 取得给定名称的颜色的hex值表示
+         * @param name 需要取得的颜色名称
          * @return 如果找到对应的名称， 则返回该名称所对应的hex格式的值， 否则， 返回一个空字符串
          */
             getColorValue: function(name) {
@@ -6168,9 +6168,9 @@ _p[44] = {
                 return value;
             },
             /*
-         * 删除调色板实例上使用者自己新增的颜色， 该方法不能删除内置的颜色
-         * @param name 需要删除的颜色名称
-         * @return 删除是否成功的bool值
+         * 刪除调色板实例上使用者自己新增的颜色， 该方法不能刪除内置的颜色
+         * @param name 需要刪除的颜色名称
+         * @return 刪除是否成功的bool值
          */
             remove: function(name) {
                 if (this.color.hasOwnProperty(name)) {
@@ -6189,8 +6189,8 @@ _p[44] = {
                 return null;
             },
             /*
-         * 通过给定的名字获取标准的颜色值表示， 返回的值以hex的方式提供
-         * @param name 需要获取的标准颜色名称
+         * 通过给定的名字取得标准的颜色值表示， 返回的值以hex的方式提供
+         * @param name 需要取得的标准颜色名称
          * @return 名字所对应的颜色值的hex表示， 如果未找到对应名称的值， 则返回一个空字符串
          */
             getColorValue: function(name) {
@@ -6212,9 +6212,9 @@ _p[44] = {
                 return value;
             },
             /*
-         * 删除使用者自己新增的颜色， 该方法不能删除内置的颜色， 该方法不会影响调色板实例自由的颜色
-         * @param name 需要删除的颜色名称
-         * @return 删除是否成功的bool值
+         * 刪除使用者自己新增的颜色， 该方法不能刪除内置的颜色， 该方法不会影响调色板实例自由的颜色
+         * @param name 需要刪除的颜色名称
+         * @return 刪除是否成功的bool值
          */
             removeColor: function(name) {
                 if (StandardColor.EXTEND_STANDARD.hasOwnProperty(name)) {
@@ -6919,7 +6919,7 @@ _p[56] = {
         var RectUtils = {}, Utils = _p.r(12), Point = _p.r(50), Box = _p.r(25);
         Utils.extend(RectUtils, {
             //根据传递进来的width、height和radius属性，
-            //获取最适合的radius值
+            //取得最适合的radius值
             formatRadius: function(width, height, radius) {
                 var minValue = Math.floor(Math.min(width / 2, height / 2));
                 return Math.min(minValue, radius);
@@ -8445,7 +8445,7 @@ _p[75] = {
                     // firefox:
                     // 1. viewBox 没有设置过的时候获得的是 null
                     // 2. svg 标签没有指定绝对大小的时候 clientWidth 和 clientHeigt 为 0，需要在父容器上查找
-                    // TODO: 第 2 条取得的不准确（假如有 padding 之类的）
+                    // TODO: 第 2 條取得的不准确（假如有 padding 之类的）
                     return {
                         x: 0,
                         y: 0,

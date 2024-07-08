@@ -20,7 +20,7 @@ Common::println("bucket $bucket websiteConfig created:" . $websiteConfig->serial
 $websiteConfig = $ossClient->getBucketWebsite($bucket);
 Common::println("bucket $bucket websiteConfig fetched:" . $websiteConfig->serializeToXml());
 
-// 删除Bucket的静态网站托管模式
+// 刪除Bucket的静态网站托管模式
 $ossClient->deleteBucketWebsite($bucket);
 Common::println("bucket $bucket websiteConfig deleted");
 
@@ -52,7 +52,7 @@ function putBucketWebsite($ossClient, $bucket)
 }
 
 /**
- * 获取bucket的静态网站托管狀態
+ * 取得bucket的静态网站托管狀態
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -73,7 +73,7 @@ function getBucketWebsite($ossClient, $bucket)
 }
 
 /**
- * 删除bucket的静态网站托管模式配置
+ * 刪除bucket的静态网站托管模式配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称

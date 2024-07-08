@@ -198,12 +198,12 @@ Class Index extends Base
  //            if ($res !== false) {
  //                return ['code'=>0,'msg'=>'操作成功'];
  //            } else {
- //                return ['code'=>1,'msg'=>'操作失败，请重试'];
+ //                return ['code'=>1,'msg'=>'操作失敗，请重试'];
  //            }
  //        } else {
  //            $model = Business::get($id);
  //            $this->assign('model',$model);
- //            $this->assign('title','编辑');
+ //            $this->assign('title','編輯');
  //            return $this->fetch();
  //        }
 

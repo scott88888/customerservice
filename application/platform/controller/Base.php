@@ -46,11 +46,11 @@ class Base extends Controller
 
         Hook::add('action_begin', 'app\\platform\\behavior\\Permission');
 
-        // 检测是否需要验证登录
+        // 检测是否需要驗證登入
         if (!$this->auth->match($this->noNeedLogin)) {
             //初始化
             $this->auth->init($token);
-            //检测是否登录
+            //检测是否登入
             if (!$this->auth->isLogin()) {
                 $this->redirect(url('passport/login'));
             }
@@ -61,7 +61,7 @@ class Base extends Controller
             $this->assign('admin',$this->admin);
             $this->assign('menu',$menu);
         } else {
-            // 如果有传递token才验证是否登录狀態
+            // 如果有传递token才驗證是否登入狀態
             if ($token) {
                 $this->auth->init($token);
             }

@@ -215,7 +215,7 @@ class Console
      */
     public function doRun(Input $input, Output $output)
     {
-        // 获取版本信息
+        // 取得版本信息
         if (true === $input->hasParameterOption(['--version', '-V'])) {
             $output->writeln($this->getLongVersion());
 
@@ -224,7 +224,7 @@ class Console
 
         $name = $this->getCommandName($input);
 
-        // 获取帮助信息
+        // 取得帮助信息
         if (true === $input->hasParameterOption(['--help', '-h'])) {
             if (!$name) {
                 $name  = 'help';
@@ -256,7 +256,7 @@ class Console
     }
 
     /**
-     * 获取输入参数定义
+     * 取得输入参数定义
      * @access public
      * @return InputDefinition
      */
@@ -266,7 +266,7 @@ class Console
     }
 
     /**
-     * 获取帮助信息
+     * 取得帮助信息
      * @access public
      * @return string
      */
@@ -302,7 +302,7 @@ class Console
     }
 
     /**
-     * 获取名称
+     * 取得名称
      * @access public
      * @return string
      */
@@ -325,7 +325,7 @@ class Console
     }
 
     /**
-     * 获取版本
+     * 取得版本
      * @access public
      * @return string
      */
@@ -348,7 +348,7 @@ class Console
     }
 
     /**
-     * 获取完整的版本号
+     * 取得完整的版本号
      * @access public
      * @return string
      */
@@ -420,7 +420,7 @@ class Console
     }
 
     /**
-     * 获取指令
+     * 取得指令
      * @access public
      * @param  string $name 指令名称
      * @return Command
@@ -461,7 +461,7 @@ class Console
     }
 
     /**
-     * 获取所有的命名空间
+     * 取得所有的命名空间
      * @access public
      * @return array
      */
@@ -589,7 +589,7 @@ class Console
     }
 
     /**
-     * 获取所有的指令
+     * 取得所有的指令
      * @access public
      * @param  string $namespace 命名空间
      * @return Command[]
@@ -610,7 +610,7 @@ class Console
     }
 
     /**
-     * 获取可能的指令名
+     * 取得可能的指令名
      * @access public
      * @param  array $names 指令名
      * @return array
@@ -675,7 +675,7 @@ class Console
     }
 
     /**
-     * 获取指令的名称
+     * 取得指令的名称
      * @access protected
      * @param  Input $input 输入实例
      * @return string
@@ -686,7 +686,7 @@ class Console
     }
 
     /**
-     * 获取默认输入定义
+     * 取得默认输入定义
      * @access protected
      * @return InputDefinition
      */
@@ -705,7 +705,7 @@ class Console
     }
 
     /**
-     * 获取默认命令
+     * 取得默认命令
      * @access protected
      * @return Command[]
      */
@@ -734,7 +734,7 @@ class Console
     }
 
     /**
-     * 获取可能的建议
+     * 取得可能的建议
      * @access private
      * @param  array $abbrevs
      * @return string

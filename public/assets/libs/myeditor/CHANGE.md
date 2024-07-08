@@ -20,7 +20,7 @@
     - 移除 `setMathJaxConfig()` 方法；
     - 移除 `loadMathJax()` 方法；
     - 移除MathJax的所有示例；
-    - 新增 `tex` 配置项，表示是否开启支持科学公式 TeX ，基于 KaTeX；
+    - 新增 `tex` 配置项，表示是否開啟支持科学公式 TeX ，基于 KaTeX；
     - 新增 `katexURL` 属性；
     - 新增 `loadKaTeX` 方法；
     - 新增 KaTeX 的示例；
@@ -43,7 +43,7 @@
 主要更新：
 
 - 设计并更换了 Logo；
-- 新增新增图片、链接、锚点链接、代码块、预格式文本等操作弹出对话框层及示例；
+- 新增新增图片、連結、锚点連結、代码块、预格式文本等操作弹出对话框层及示例；
 - 新增支持图片(跨域)上传；
 - 改用 `<textarea>` 来存放 Markdown 源文档；
 - 新增支持自定义工具栏；
@@ -65,10 +65,10 @@
     - 创建 Editor.md 只需要写一个 `<div id="xxxx"></div>` ，如果没有新增 `class="editormd"` 属性会自动新增，另外如果不存在 `<textarea>` 标签，则也会自动新增 `<textarea>` ；
 
 - 新增支持智能识别和解析 HTML 标签，增强了 Markdown 语法的扩展性，几乎无限，例如：插入视频等等；
-    - 新增配置项 `htmlDecode` ，表示是否开启 HTML 标签识别和解析，但是为了安全性，默认不开启；
+    - 新增配置项 `htmlDecode` ，表示是否開啟 HTML 标签识别和解析，但是为了安全性，默认不開啟；
     - 新增识别和解析 HTML 标签的示例；
     
-- 新增插入链接、锚点链接、预格式文本和代码块的弹出对话框层；
+- 新增插入連結、锚点連結、预格式文本和代码块的弹出对话框层；
     - 弹出层改为使用固定定位；
     - 新增动态创建对话框的方法 `createDialog()`；
     - 新增静态属性 `editormd.codeLanguages` ，用于存放代码语言列表；
@@ -81,13 +81,13 @@
     - 配置项 `toolbarIcons` 类型由数组更改为函数，返回一个图标按钮列表数组；
     - 新增配置项 `toolbarHandlers` 和 `toolbarIconsTexts` ，分别用于自定义按钮操作处理和按钮内容文本；
     - 新增方法 `getToolbarHandles()` ，用于可在外部使用默认的操作方法；
-    - 新增成员属性 `activeIcon` ，可获取当前或上次点击的工具栏图标的 jQuery 实例对象；
+    - 新增成员属性 `activeIcon` ，可取得当前或上次点击的工具栏图标的 jQuery 实例对象；
     
 - 新增表單取值、自定义工具栏、图片上传、多个 Editor.md 并存和动态加载 Editor.md 等多个示例；
 
 - 新增插入锚点按钮和操作处理；
 
-- 新增预览 HTML 内容窗口的关闭按钮，之前只能按 ESC 才能退出 HTML 全窗口预览；
+- 新增预览 HTML 内容窗口的關閉按钮，之前只能按 ESC 才能退出 HTML 全窗口预览；
 
 - 新增多语言（ l18n ）及动态加载语言包支持；
     - 新增英语 `en` 和繁体中文 `zh-tw` 语言包模块；
@@ -105,7 +105,7 @@
 
 - 解决 IE8 下加载出错的问题；
     - 新增两个静态成员属性 `isIE` 和 `isIE8` ，用于判断 IE8；
-    - 由于 IE8 不支持 FlowChart 和 SequenceDiagram，默认在 IE8 下不加载这两个组件，无论是否开启；
+    - 由于 IE8 不支持 FlowChart 和 SequenceDiagram，默认在 IE8 下不加载这两个组件，无论是否開啟；
 
 - 新增 Zepto.js 的支持；
 	- 为了兼容 Zepto.js ，某些元素在操作处理上不再使用 `outerWidth()` 、 `outerHeight()` 、`hover()` 、`is()` 等方法；
@@ -114,11 +114,11 @@
 - 新增 `editormd.$name` 属性，修改 `editormd.homePage` 属性的新地址；
 
 - `editormd.markdownToHTML()` 新增方法返回一个 jQuery 实例对象；
-    - 该实例对象定义了一个 `getMarkdown()`方法，用于获取 Markdown 源代码；
+    - 该实例对象定义了一个 `getMarkdown()`方法，用于取得 Markdown 源代码；
     - 该实例对象定义了一个 `tocContainer` 成员属性，即 ToC 列表的父层的 jQuery 实例对象；
 
 - 新增只读模式；
-    - 新增配置项 `readOnly` ，默认值为 `false` ，即可编辑模式；
+    - 新增配置项 `readOnly` ，默认值为 `false` ，即可編輯模式；
     - 其他相关改动；
 
 - 新增方法 `focus()` 、 `setCursor()` 、 `getCursor()` 、`setSelection()` 、`getSelection()` 、 `replaceSelection()` 和 `insertValue()` 方法，并增加对应的示例；
@@ -126,7 +126,7 @@
 - 新增配置项 `saveHTMLToTextarea` ，用于将解析后的 HTML 保存到 Textarea，以供送出到后台程序；
     - `getHTML()` 方法必须在 `saveHTMLToTextarea == true` 的情况下才能使用；
     - 新增 `getHTML()` 方法的别名 `getTextareaSavedHTML()` 方法；
-    - 新增方法 `getPreviewedHTML()` ，用于获取预览窗口的 HTML ；
+    - 新增方法 `getPreviewedHTML()` ，用于取得预览窗口的 HTML ；
 
 - 修复了一些大大小小的 Bugs；
 
@@ -195,7 +195,7 @@
 改进功能，具体如下：
 
 - 改进 [#27](https://github.com/pandao/editor.md/issues/27)；
-    - 新增配置项 `matchWordHighlight` ，可选值有： `true, false, "onselected"` ，默认值为 `true` ，即开启自动匹配和标示相同单词；
+    - 新增配置项 `matchWordHighlight` ，可选值有： `true, false, "onselected"` ，默认值为 `true` ，即開啟自动匹配和标示相同单词；
 
 - 改进 [#28](https://github.com/pandao/editor.md/issues/28)；
     - 将 `jquery.min.js` 、 `font-awesome.min.css` 、 `github-markdown.css` 移除（这是一个疏忽，它们不是动态加载的依赖模块或者不需要的，避免不必要的硬盘空间占用）；
@@ -296,7 +296,7 @@ v1.2.0 主要更新：
     - 通过设置 `settings.htmlDecode = "style,script,iframe"` 来实现过滤指定标签的解析；
 
 - 改进 Require.js 支持；
-    - 修复 Require.js 下 CodeMirror 编辑器的代码无法高亮的问题；
+    - 修复 Require.js 下 CodeMirror 編輯器的代码无法高亮的问题；
     - 更新 `underscore` 版本至 `1.8.2` ；
     - 移除 `editormd.requirejsInit()` 和 `editormd.requireModules()` 方法；
     - 新增 `Require.js/AMD` 专用版本文件 `editormd.amd.js` ；
@@ -329,11 +329,11 @@ v1.2.0 主要更新：
 - 更新 CodeMirror 版本为 `5.0`；
     - 修改无法输入 `/` 的问题；
 - 更新 Marked 版本为 `0.3.3`；
-- 新增自动高度和工具栏固定定位（滚动条拖动时）模式；
+- 新增自动高度和工具栏固定定位（滚动條拖动时）模式；
     - 新增配置项 `settings.autoHeight` ；
     - 新增配置项 `settings.toolbarAutoFixed` ；
     - 新增方法 `setToolbarAutoFixed(true|false)` ；
-- 新增信箱地址自动新增链接功能；
+- 新增信箱地址自动新增連結功能；
     - 新增配置项 `emailLink` ，默认为 `true` ; 
 - 改进表格插入对话框；
 - 工具栏新增三个按钮，分别是将所选文本首字母转成大写、转成小写、转成大写；
@@ -358,10 +358,10 @@ v1.2.0 主要更新：
 - 新增跳转到指定行的功能和对话框；
 - 新增 ToC 下拉菜单、自定义 ToC 容器的功能；
 - 新增跳转到行、搜索的工具栏按钮；
-- 新增支持插入和解析（打印）分页符；
+- 新增支持插入和解析（打印）分頁符；
 - 改进快捷键功能和自动高度模式等；
-- 改进：将锚点链接改名为引用链接；
-- 改进编辑器重建和重配置功能；
+- 改进：将锚点連結改名为引用連結；
+- 改进編輯器重建和重配置功能；
 - 修复多个 Bug；
 
 具体更新：
@@ -373,20 +373,20 @@ v1.2.0 主要更新：
 - 修复单独引用 `editormd.preview.css` 时无法显示 Font Awesome 和 Editor.md logo 字体的问题；
 - 更新和修改 Gulp 构建；
     - 修改了 `Gulpfile.js` ，并且 `gulp-ruby-sass` 升级到最新版本 `1.0.0-alpha.3` ; 
-    - 编辑 SCSS 时，不再生成 CSS 的 Source map 文件；
+    - 編輯 SCSS 时，不再生成 CSS 的 Source map 文件；
 - 执行 jshint 和更正一些 JS 写法的不规范，精简了代码；
 - 新增配置项 `appendMarkdown` 和 `appendMarkdown()` 方法，用于(初始化前后)追加 Markdown 到 Textarea ；
 - 改进部分预设快捷键功能，包括 F9 (watch)、F10 (preview)、F11 (fullscreen)等;
 - 修复自动高度模式下出现的几个问题；
     - 全屏退出时高度不正确的问题：修改了 `fullscreenExit()` 方法的内部实现；
-    - 当解析预览后的 HTML 内容高度高于 Markdown 源码编辑器高度时，无法正确预览的问题 [#49](https://github.com/pandao/editor.md/issues/49)；
+    - 当解析预览后的 HTML 内容高度高于 Markdown 源码編輯器高度时，无法正确预览的问题 [#49](https://github.com/pandao/editor.md/issues/49)；
 - 修改 `onscroll` 和 `onpreviewscroll` 无法访问 `this` 的问题；
 - 修改 `init()` 方法，可以只设置一个参数；
 - 新增插入 TeX (KaTeX) 公式的快捷键 `Ctrl + Shift + K` 和插入方法 `tex()` ；
-- 将锚点链接改为引用链接，引用的链接改为插入到页尾；
+- 将锚点連結改为引用連結，引用的連結改为插入到頁尾；
     - 工具栏的名称 `anchor` 改为 `reference-link`；
     - 工具栏的名称 `htmlEntities` 改名为 `html-entities`；
-- 改进编辑器重建和重配置功能；
+- 改进編輯器重建和重配置功能；
     - 修改了 `loadedDisplay()` 方法；
     - 修改了 `config()` 和 `recreate()` 方法；
 - 新增跳转到指定行的功能；
@@ -398,7 +398,7 @@ v1.2.0 主要更新：
 - 新增搜索工具栏按钮；
     - 新增方法 `search()` 、`searchReplace()` 和 `searchReplaceAll()` ；
     - 原全屏预览 HTML 按钮的图标改为 `fa-desktop`；
-    - 改为默认开启搜索替换功能；
+    - 改为默认開啟搜索替换功能；
 - 更换了关于 Editor.md 的标语（ slogan ）；
 - 标题按钮 `h` 改为大写的 `H`；
 - `saveToTextareas()` 方法更名为 `save()`；
@@ -411,38 +411,38 @@ v1.2.0 主要更新：
 - 修改了配置项 `placeholder` 的默认值；
 - 改进对 IE8 的兼容支持；
 - 修复 Firefox 下因为 `Object.watch()` 而出现的问题；
-- 新增支持插入和解析（打印）分页符；
+- 新增支持插入和解析（打印）分頁符；
     - 新增配置项 `pageBreak` ，默认值为 `true`；
     - 新增语法 `[========]` ，即括号内至少 8 个等号；
-    - 新增插入分页符的工具栏图标和方法 `pagebreak()` ；
-    - 新增插入分页符的快捷键 `Shift + Alt + P`；
+    - 新增插入分頁符的工具栏图标和方法 `pagebreak()` ；
+    - 新增插入分頁符的快捷键 `Shift + Alt + P`；
 - 修复一些 Bug，包括 [#51](https://github.com/pandao/editor.md/issues/51) 等；
 - 新增和修改以上更新的相关示例；
 
 #### v1.4.1
 
-- 新增配置项 `syncScrolling`，即是否开启同步滚动预览，默认值为 `false` ； 
+- 新增配置项 `syncScrolling`，即是否開啟同步滚动预览，默认值为 `false` ； 
 - 修复 Bug [＃64](https://github.com/pandao/editor.md/issues/64)；
     - 更新 `editormd.katexURL` 资源地址的默认值，即更新版本为 `0.3.0` ； 
     - 新增测试用例`tests/katex-tests.html`；
     - 修改示例文件`examples/katex.html`； 
 - 修复 Bug [＃66](https://github.com/pandao/editor.md/issues/66)；
-- 修复编辑器工具栏按钮 `:hover` CSS3 transition 无效的问题； 
+- 修复編輯器工具栏按钮 `:hover` CSS3 transition 无效的问题； 
 - 修改了 `README.md`；
 
 #### v1.4.2
 
 - 改进和增强自定义工具栏功能，支持图标按钮右对齐 [#69](https://github.com/pandao/editor.md/issues/69)；
 - 改进和增强 HTML 标签的解析过滤功能，支持过滤指定的属性等 [#70](https://github.com/pandao/editor.md/issues/70)；
-- 删除分支 `mathjax-version` 和 `v1.1.9`；
+- 刪除分支 `mathjax-version` 和 `v1.1.9`；
 
 #### v1.4.3
 
-- 改进：可配置是否自动聚焦编辑器 [#74](https://github.com/pandao/editor.md/issues/74)；
+- 改进：可配置是否自动聚焦編輯器 [#74](https://github.com/pandao/editor.md/issues/74)；
 	- 新增配置项 `autoFocus`，默认值为 `true`; 
 - 修复 Bug [#77](https://github.com/pandao/editor.md/issues/77)；
-- 改进：帮助对话框里的链接改为新窗口打开，避免直接跳转到链接，导致编辑内容丢失的问题 [#79](https://github.com/pandao/editor.md/issues/79)；
-- 改进和完善编辑器配置项；
+- 改进：帮助对话框里的連結改为新窗口打开，避免直接跳转到連結，导致編輯内容丢失的问题 [#79](https://github.com/pandao/editor.md/issues/79)；
+- 改进和完善編輯器配置项；
 	- 新增配置项 `tabSize`、`indentUnit` 和 `lineWrapping`；
 	- 新增配置项 `autoCloseBrackets` 和 `showTrailingSpace` ；
 	- 新增配置项 `matchBrackets`、`indentWithTabs` 和 `styleSelectedText`；
@@ -475,11 +475,11 @@ v1.2.0 主要更新：
 
 主要更新：
 
-- 新增：编辑器黑色主题 Dark，改进自定义主题功能（即工具栏、编辑区、预览区可分别设置主题样式）；
+- 新增：編輯器黑色主题 Dark，改进自定义主题功能（即工具栏、編輯区、预览区可分别设置主题样式）；
 - 新增：多行公式支持；
-- 新增：支持非编辑狀態下的 ToC 自定义容器；
+- 新增：支持非編輯狀態下的 ToC 自定义容器；
 - 新增：支持设置为单向同步滚动；
-- 改进：编辑器样式美化，更换了滚动条样式; 
+- 改进：編輯器样式美化，更换了滚动條样式; 
 - 改进：提高同步滚动定位的精确度；
 - 改进：修复和改进 HTML 标签及属性过滤功能；
 - 改进：修复在 Bootstrap 下的兼容性问题；
@@ -493,21 +493,21 @@ v1.2.0 主要更新：
     - 新增：新增语法：\`\`\`math | latex | katex；
     - 改进：美化 KaTeX 公式，即加大字号等；
 
-- 新增：支持设置为单向同步滚动，即只是编辑区单向同步滚动，配置项 `syncScrolling : "single"`；
+- 新增：支持设置为单向同步滚动，即只是編輯区单向同步滚动，配置项 `syncScrolling : "single"`；
     - 新增：配置同步滚动示例文件 `sync-scrolling.html`；
 
-- 新增：增加了编辑器样式主题 Dark，即工具栏和预览区各自有一个暗黑色主题；
+- 新增：增加了編輯器样式主题 Dark，即工具栏和预览区各自有一个暗黑色主题；
     - 变更：自 `v1.5.0` 开始，配置项 `theme` 改为指定 Editor.md 本身的主题；
-    - 新增配置项 `editorTheme` ，用于指定编辑区的主题，即 CodeMirror 的主题；
+    - 新增配置项 `editorTheme` ，用于指定編輯区的主题，即 CodeMirror 的主题；
     - 新增配置项 `previewTheme` ，用于指定预览区的主题；
     - 新增方法 `setEditorTheme()`，别名： `setCodeMirror()`；
     - 新增方法 `setPreviewTheme()`；
     - 修改了方法 `setTheme()` ；
-    - 更换了滚动条样式，Only Webkit；
+    - 更换了滚动條样式，Only Webkit；
     - 改进全屏狀態下的样式显示，去掉 JS 操作的部分，改为通过 CSS 样式类 `.editormd-fullscreen` 控制；
     - 修改和增加相关的方法、SCSS 文件及示例文件 `themes.html`；
 
-- 新增：非编辑狀態下 ToC 自定义容器支持；
+- 新增：非編輯狀態下 ToC 自定义容器支持；
     - 新增配置项 `markdownSourceCode`，即解析后是否保留源码，默认为不保留 `false`；
     - 新增配置项 `tocContainer`，值为自定义 ToC 容器的 ID 选择器 `#xxxxx`，默认为空；
     - 新增和修改了相关示例文件；
@@ -515,7 +515,7 @@ v1.2.0 主要更新：
 - 新增：新增加了 CSS 样式类 `editormd-preview-active`，可以控制全屏HTML预览时的内容层样式；
     - 修改了 `previewing()` 和 `previewed()` 方法；
     - 相关 issues [#103](https://github.com/pandao/editor.md/issues/103)；
-    - 另外也调整了关闭按钮的位置；
+    - 另外也调整了關閉按钮的位置；
 
 - 改进：修复插入 Emoji `:moon:` 无法显示的问题，修改为其是 `:waxing_gibbous_moon:` 的别名 [#94](https://github.com/pandao/editor.md/pull/94)；
 

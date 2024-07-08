@@ -9,7 +9,7 @@ use think\File;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Visitors extends Base
 {
@@ -28,14 +28,14 @@ class Visitors extends Base
         $get = $this->request->get();
         $res = Db::table('wolive_queue')->where('visiter_id', $get['id'])->update(['state' => 'in_black_list']);
         if ($res) $this->success('操作成功');
-        $this->error('操作失败');
+        $this->error('操作失敗');
     }
 
     public function white(){
         $get = $this->request->get();
         $res = Db::table('wolive_queue')->where('visiter_id', $get['id'])->update(['state' => 'normal']);
         if ($res) $this->success('操作成功');
-        $this->error('操作失败');
+        $this->error('操作失敗');
     }
 
     public function lang(){
@@ -44,7 +44,7 @@ class Visitors extends Base
             $post = $this->request->post();
             $res = Db::name("wolive_visiter")->where(['visiter_id' => $id])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $visiter = Db::name("wolive_visiter")->where(['visiter_id' => $id])->find();
         $this->assign('visiter', $visiter);
@@ -58,7 +58,7 @@ class Visitors extends Base
             $post = $this->request->post();
             $res = Db::name("wolive_queue")->where(['visiter_id' => $id])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $queue = Db::name("wolive_queue")->where(['visiter_id' => $id])->find();
         $group = Db::name("wolive_vgroup")->select();

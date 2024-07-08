@@ -15,7 +15,7 @@ use think\Cookie;
 
 
 /**
- * 登录控制器.
+ * 登入控制器.
  */
 class Login extends Controller
 {
@@ -29,7 +29,7 @@ class Login extends Controller
     }
 
     /**
-     * 登陆首頁.
+     * 登入首頁.
      *
      * @return string
      */
@@ -37,7 +37,7 @@ class Login extends Controller
     {
         $token = Cookie::get('service_token');
         if ($token||(isset($_SESSION['Msg'])&&!empty($_SESSION['Msg']))) $this->redirect(url('service/index/index'));
-        // 未登陆，呈现登陆页面.
+        // 未登入，呈现登入頁面.
         $params = [];
         $goto = $this->request->get('goto', '');
         if ($goto) $params['goto'] = urlencode($goto);
@@ -50,7 +50,7 @@ class Login extends Controller
 
 
     /**
-     * 验证码.
+     * 驗證碼.
      *
      * @return \think\Response
      */
@@ -62,7 +62,7 @@ class Login extends Controller
     }
 
     /**
-     * 注册验证码.
+     * 注册驗證碼.
      *
      * @return \think\Response
      */
@@ -73,7 +73,7 @@ class Login extends Controller
     }
 
     /**
-     * 登录检查.
+     * 登入檢查.
      *
      * @return void
      */
@@ -92,12 +92,12 @@ class Login extends Controller
             ->where('password', $pass)
             ->find();
         if (!$admin) {
-            $this->record_log('登录失败');
-            $this->error('登录使用者名稱或密码错误');
+            $this->record_log('登入失敗');
+            $this->error('登入使用者名稱或密碼错误');
         }
-        // 获取登陆数据
+        // 取得登入数据
         $login = $admin->getData();
-        // 删掉登录使用者的敏感信息
+        // 删掉登入使用者的敏感信息
         unset($login['password']);
         $res = Admins::table('wolive_service')->where('service_id', $login['service_id'])->update(['state' => 'online']);
         $_SESSION['Msg'] = $login;
@@ -134,7 +134,7 @@ class Login extends Controller
             'password' => $post['password'],
         );
         if(Business::addBusiness($add)) $this->success('注册成功！', url("service/login/index"));
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     private function record_log($info)
@@ -150,7 +150,7 @@ class Login extends Controller
     }
 
     /**
-     * 退出登陆 并清除session.
+     * 退出登入 并清除session.
      *
      * @return void
      */
@@ -169,7 +169,7 @@ class Login extends Controller
     }
 
     /**
-     * socket_auth 验证
+     * socket_auth 驗證
      * [auth description]
      * @return [type] [description]
      */

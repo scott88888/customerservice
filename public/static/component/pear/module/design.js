@@ -75,7 +75,7 @@ layui.define(['layer', 'form'], function(exports) {
 	}
 
 	function input(type, size) {
-		var name = type === 'text' ? '输入框' : (type === 'password' ? '密码框' : '');
+		var name = type === 'text' ? '输入框' : (type === 'password' ? '密碼框' : '');
 		var html = '  <div class="layui-form-item">\n' +
 			'    <label class="layui-form-label">' + name + '</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +

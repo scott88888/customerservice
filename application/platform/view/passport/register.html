@@ -131,7 +131,7 @@
         <div>
             <span class="text-muted">已有账号？</span>
             <a class="p-0"
-               href="{:url('platform/passport/login')}">登录</a>
+               href="{:url('platform/passport/login')}">登入</a>
         </div>
     </div>
 
@@ -160,15 +160,15 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-4 col-form-label text-right">设置密码</label>
+                <label class="col-sm-4 col-form-label text-right">设置密碼</label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="password" v-model="password" placeholder="請輸入密码">
+                    <input class="form-control" type="password" v-model="password" placeholder="請輸入密碼">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">確認密碼</label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="password" v-model="password2" placeholder="请再次输入密码">
+                    <input class="form-control" type="password" v-model="password2" placeholder="请再次输入密碼">
                 </div>
             </div>
             <div class="form-group row">
@@ -193,19 +193,19 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-4 col-form-label text-right">验证码</label>
+                <label class="col-sm-4 col-form-label text-right">驗證碼</label>
                 <div class="col-sm-8" style="position: relative">
                     <div class="input-group">
-                        <input class="form-control" v-model="sms_code" placeholder="請輸入验证码">
+                        <input class="form-control" v-model="sms_code" placeholder="請輸入驗證碼">
                         <span class="input-group-btn">
                             <a v-if="send_sms_code_timeout > 0" href="javascript:"
                                class="btn btn-primary show-sms-code-modal disabled" data-toggle="modal"
-                               data-target="#smsCodeModal">获取验证码</a>
+                               data-target="#smsCodeModal">取得驗證碼</a>
                             <a v-else href="javascript:" class="btn btn-primary show-sms-code-modal" data-toggle="modal"
-                               data-target="#smsCodeModal">获取验证码</a>
+                               data-target="#smsCodeModal">取得驗證碼</a>
                         </span>
                     </div>
-                    <a class="btn btn-light disabled send-code-timeout" v-if="send_sms_code_timeout > 0">{{send_sms_code_timeout}}秒再次获取</a>
+                    <a class="btn btn-light disabled send-code-timeout" v-if="send_sms_code_timeout > 0">{{send_sms_code_timeout}}秒再次取得</a>
                 </div>
             </div>
             <div class="form-group row">
@@ -239,28 +239,28 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">获取验证码</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">取得驗證碼</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>验证码将以手机短信方式发送到您填写的手機號碼上。</p>
+                    <p>驗證碼将以手机短信方式发送到您填写的手機號碼上。</p>
                     <div class="row">
                         <div class="col-sm-8">
-                            <input v-model="captcha_code" class="form-control mb-3" placeholder="請輸入图片验证码">
+                            <input v-model="captcha_code" class="form-control mb-3" placeholder="請輸入图片驗證碼">
                         </div>
                         <div class="col-sm-4">
                             <img class="refresh-captcha"
                                  data-refresh=""
                                  src=""
                                  style="height: 33px;width: 72px;float: right;cursor: pointer;border: 1px solid #ccc"
-                                 title="点击刷新验证码">
+                                 title="点击刷新驗證碼">
                         </div>
                     </div>
                     <p v-if="send_sms_error" class="text-danger"></p>
                     <div class="text-right">
-                        <a class="btn btn-primary send-sms-code" href="javascript:">发送验证码</a>
+                        <a class="btn btn-primary send-sms-code" href="javascript:">发送驗證碼</a>
                     </div>
                 </div>
             </div>

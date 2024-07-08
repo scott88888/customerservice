@@ -14,11 +14,11 @@ if (is_null($ossClient)) exit(1);
 $ossClient->putBucketLogging($bucket, $bucket, "access.log", array());
 Common::println("bucket $bucket lifecycleConfig created");
 
-// 获取Bucket访问日志记录规则
+// 取得Bucket访问日志记录规则
 $loggingConfig = $ossClient->getBucketLogging($bucket, array());
 Common::println("bucket $bucket lifecycleConfig fetched:" . $loggingConfig->serializeToXml());
 
-// 删除Bucket访问日志记录规则
+// 刪除Bucket访问日志记录规则
 $loggingConfig = $ossClient->getBucketLogging($bucket, array());
 Common::println("bucket $bucket lifecycleConfig deleted");
 
@@ -54,7 +54,7 @@ function putBucketLogging($ossClient, $bucket)
 }
 
 /**
- * 获取bucket的Logging配置
+ * 取得bucket的Logging配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -76,7 +76,7 @@ function getBucketLogging($ossClient, $bucket)
 }
 
 /**
- * 删除bucket的Logging配置
+ * 刪除bucket的Logging配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称

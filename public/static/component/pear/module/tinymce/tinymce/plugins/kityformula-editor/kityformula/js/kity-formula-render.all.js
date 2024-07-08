@@ -5156,7 +5156,7 @@ _p[37] = {
                         space.bottom = -topDiff;
                     } else {
                         space.height -= bottomDiff;
-                        // 比较上下偏移， 获取正确的偏移值
+                        // 比较上下偏移， 取得正确的偏移值
                         topDiff = -topDiff;
                         bottomDiff = -bottomDiff;
                         if (topDiff > bottomDiff) {
@@ -5409,7 +5409,7 @@ _p[41] = {
 _p[42] = {
     value: function(require) {
         var kity = _p.r(34), // 符号图形属性
-        // 线条宽度
+        // 线條宽度
         SHAPE_DATA_WIDTH = 1, // 计算公式
         radians = 2 * Math.PI / 360, sin15 = Math.sin(15 * radians), cos15 = Math.cos(15 * radians), tan15 = Math.tan(15 * radians);
         return kity.createClass("RadicalOperator", {

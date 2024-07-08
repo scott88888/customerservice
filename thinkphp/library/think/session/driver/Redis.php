@@ -21,7 +21,7 @@ class Redis extends SessionHandler
     protected $config  = [
         'host'         => '127.0.0.1', // redis主机
         'port'         => 6379, // redis端口
-        'password'     => '', // 密码
+        'password'     => '', // 密碼
         'select'       => 0, // 操作库
         'expire'       => 3600, // 有效期(秒)
         'timeout'      => 0, // 超时时间(秒)
@@ -66,7 +66,7 @@ class Redis extends SessionHandler
     }
 
     /**
-     * 关闭Session
+     * 關閉Session
      * @access public
      */
     public function close()
@@ -105,7 +105,7 @@ class Redis extends SessionHandler
     }
 
     /**
-     * 删除Session
+     * 刪除Session
      * @access public
      * @param string $sessID
      * @return bool

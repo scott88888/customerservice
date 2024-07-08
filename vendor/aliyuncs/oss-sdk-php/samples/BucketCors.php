@@ -24,11 +24,11 @@ $corsConfig->addRule($rule);
 $ossClient->putBucketCors($bucket, $corsConfig);
 Common::println("bucket $bucket corsConfig created:" . $corsConfig->serializeToXml());
 
-// 获取cors配置
+// 取得cors配置
 $corsConfig = $ossClient->getBucketCors($bucket);
 Common::println("bucket $bucket corsConfig fetched:" . $corsConfig->serializeToXml());
 
-// 删除cors配置
+// 刪除cors配置
 $ossClient->deleteBucketCors($bucket);
 Common::println("bucket $bucket corsConfig deleted");
 
@@ -67,7 +67,7 @@ function putBucketCors($ossClient, $bucket)
 }
 
 /**
- * 获取并打印bucket的cors配置
+ * 取得并打印bucket的cors配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -88,7 +88,7 @@ function getBucketCors($ossClient, $bucket)
 }
 
 /**
- * 删除bucket的所有的cors配置
+ * 刪除bucket的所有的cors配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称

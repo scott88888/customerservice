@@ -30,7 +30,7 @@ return [
     'var_jsonp_handler'      => 'callback',
     // 默认时区
     'default_timezone'       => 'PRC',
-    // 是否开启多语言
+    // 是否開啟多语言
     'lang_switch_on'         => false,
     // 默认全局过滤方法 用逗号分隔多个
     'default_filter'         => '',
@@ -53,7 +53,7 @@ return [
     'default_controller'     => 'Index',
     // 默认操作名
     'default_action'         => 'index',
-    // 默认验证器
+    // 默认驗證器
     'default_validate'       => '',
     // 默认的空控制器名
     'empty_controller'       => 'Error',
@@ -70,7 +70,7 @@ return [
 
     // PATHINFO变量名 用于兼容模式
     'var_pathinfo'           => 's',
-    // 兼容PATH_INFO获取
+    // 兼容PATH_INFO取得
     'pathinfo_fetch'         => ['ORIG_PATH_INFO', 'REDIRECT_PATH_INFO', 'REDIRECT_URL'],
     // pathinfo分隔符
     'pathinfo_depr'          => '/',
@@ -82,7 +82,7 @@ return [
     'url_common_param'       => false,
     // URL参数方式 0 按名称成对解析 1 按顺序解析
     'url_param_type'         => 0,
-    // 是否开启路由
+    // 是否開啟路由
     'url_route_on'           => true,
     // 路由配置文件（支持配置多个）
     'route_config_file'      => ['route'],
@@ -104,7 +104,7 @@ return [
     'var_ajax'               => '_ajax',
     // 表單pjax伪装变量
     'var_pjax'               => '_pjax',
-    // 是否开启请求缓存 true自动缓存 支持设置请求缓存规则
+    // 是否開啟请求缓存 true自动缓存 支持设置请求缓存规则
     'request_cache'          => false,
     // 请求缓存有效期
     'request_cache_expire'   => null,
@@ -122,7 +122,7 @@ return [
         'type'         => 'Think',
         // 视图基础目录，配置目录为所有模块的视图起始目录
         'view_base'    => '',
-        // 当前模板的视图目录 留空为自动获取
+        // 当前模板的视图目录 留空为自动取得
         'view_path'    => '',
         // 模板后缀
         'view_suffix'  => 'html',
@@ -140,7 +140,7 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [],
-    // 默认跳转页面对应的模板文件
+    // 默认跳转頁面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
 
@@ -148,11 +148,11 @@ return [
     // | 异常及错误设置
     // +----------------------------------------------------------------------
 
-    // 异常页面的模板文件
+    // 异常頁面的模板文件
     'exception_tmpl'         => THINK_PATH . 'tpl' . DS . 'think_exception.tpl',
 
     // 错误显示信息,非调试模式有效
-    'error_message'          => '页面错误！请稍后再试～',
+    'error_message'          => '頁面错误！请稍后再试～',
     // 显示错误信息
     'show_error_msg'         => false,
     // 异常处理handle类 留空使用 \think\exception\Handle
@@ -174,7 +174,7 @@ return [
     ],
 
     // +----------------------------------------------------------------------
-    // | Trace设置 开启 app_trace 后 有效
+    // | Trace设置 開啟 app_trace 后 有效
     // +----------------------------------------------------------------------
     'trace'                  => [
         // 内置Html Console 支持扩展
@@ -208,7 +208,7 @@ return [
         'prefix'         => 'think',
         // 驱动方式 支持redis memcache memcached
         'type'           => '',
-        // 是否自动开启 SESSION
+        // 是否自动開啟 SESSION
         'auto_start'     => true,
         'httponly'       => true,
         'secure'         => false,
@@ -249,7 +249,7 @@ return [
         'database'        => '',
         // 数据库使用者名稱
         'username'        => 'root',
-        // 数据库密码
+        // 数据库密碼
         'password'        => '',
         // 数据库连接端口
         'hostport'        => '',
@@ -269,7 +269,7 @@ return [
         'master_num'      => 1,
         // 指定从服务器序号
         'slave_no'        => '',
-        // 是否严格检查字段是否存在
+        // 是否严格檢查字段是否存在
         'fields_strict'   => true,
         // 数据集返回类型
         'resultset_type'  => 'array',
@@ -281,7 +281,7 @@ return [
         'sql_explain'     => false,
     ],
 
-    //分页配置
+    //分頁配置
     'paginate'               => [
         'type'      => 'bootstrap',
         'var_page'  => 'page',

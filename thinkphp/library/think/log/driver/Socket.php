@@ -175,7 +175,7 @@ class Socket
     protected function check()
     {
         $tabid = $this->getClientArg('tabid');
-        //是否记录日志的检查
+        //是否记录日志的檢查
         if (!$tabid && !$this->config['force_client_ids']) {
             return false;
         }

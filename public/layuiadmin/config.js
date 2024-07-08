@@ -14,13 +14,13 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     ,views: layui.cache.base + 'tpl/' //动态模板所在目录
     ,entry: 'index' //默认视图文件名
     ,engine: '.html' //视图文件后缀名
-    ,pageTabs: true //是否开启页面选项卡功能。iframe版推荐开启
+    ,pageTabs: true //是否開啟頁面选项卡功能。iframe版推荐開啟
     
     ,name: 'layuiAdmin'
     ,tableName: 'layuiAdmin' //本地存储表名
     ,MOD_NAME: 'admin' //模块事件名
     
-    ,debug: true //是否开启调试模式。如开启，接口异常时会抛出异常 URL 等信息
+    ,debug: true //是否開啟调试模式。如開啟，接口异常时会抛出异常 URL 等信息
 
     //自定义请求字段
     ,request: {
@@ -32,7 +32,7 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
       statusName: 'code' //数据狀態的字段名称
       ,statusCode: {
         ok: 0 //数据狀態一切正常的狀態码
-        ,logout: 1001 //登录狀態失效的狀態码
+        ,logout: 1001 //登入狀態失效的狀態码
       }
       ,msgName: 'msg' //狀態信息的字段名称
       ,dataName: 'data' //数据详情的字段名称

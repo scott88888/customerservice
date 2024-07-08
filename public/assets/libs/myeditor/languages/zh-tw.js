@@ -23,7 +23,7 @@
                 "list-ul"        : "無序列表",
                 "list-ol"        : "有序列表",
                 hr               : "横线",
-                link             : "链接",
+                link             : "連結",
                 "reference-link" : "引用鏈接",
                 image            : "圖片",
                 code             : "行內代碼",

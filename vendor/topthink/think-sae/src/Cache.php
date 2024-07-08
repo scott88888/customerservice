@@ -80,7 +80,7 @@ class Cache
     }
 
     /**
-     * 删除缓存
+     * 刪除缓存
      * @param    string  $name 缓存变量名
      * @param bool|false $ttl
      * @return bool

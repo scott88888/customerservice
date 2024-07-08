@@ -494,7 +494,7 @@ class Cx extends Taglib
         $type     = isset($tag['type']) ? strtolower($tag['type']) : '';
         $parseStr = '';
         $endStr   = '';
-        // 判断是否存在加载条件 允许使用函数判断(默认为isset)
+        // 判断是否存在加载條件 允许使用函数判断(默认为isset)
         if (isset($tag['value'])) {
             $name = $tag['value'];
             $name = $this->autoBuildVar($name);
@@ -586,7 +586,7 @@ class Cx extends Taglib
         $comparison = 'lt';
         $name       = 'i';
         $rand       = rand(); //新增随机数，防止嵌套变量冲突
-        //获取属性
+        //取得属性
         foreach ($tag as $key => $value) {
             $value = trim($value);
             $flag  = substr($value, 0, 1);

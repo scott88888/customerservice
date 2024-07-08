@@ -79,7 +79,7 @@ class Rest extends Base
             if ($res !== false) {
                 return json(['code'=>0,'msg'=>'操作成功']);
             } else {
-                return json(['code'=>1,'msg'=>'操作失败']);
+                return json(['code'=>1,'msg'=>'操作失敗']);
             }
         }
     }

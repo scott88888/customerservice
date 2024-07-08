@@ -39,7 +39,7 @@ class Passport extends Controller
         $this->auth->init($this->token);
         $auth = $this->auth;
 
-        //监听注册登录注销的事件
+        //监听注册登入注销的事件
         Hook::add('user_login_successed', function ($user) use ($auth) {
             $expire = input('post.keeplogin') ? 30 * 86400 : 0;
             Cookie::set('uid', $user->id, $expire);
@@ -90,7 +90,7 @@ class Passport extends Controller
     }
 
     /**
-     * 验证码.
+     * 驗證碼.
      *
      * @return \think\Response
      */
@@ -119,7 +119,7 @@ class Passport extends Controller
         if (!$this->auth->isLogin()) {
             return [
                 'code' => 1,
-                'msg' => '没有登录',
+                'msg' => '没有登入',
             ];
         }
         $data = request()->param();
@@ -156,7 +156,7 @@ class Passport extends Controller
             if (empty($verify)) {
                 return [
                     'code' => 1,
-                    'msg' => '验证码已失效',
+                    'msg' => '驗證碼已失效',
                 ];
             }
             if ($admin['mobile'] != $verify['mobile']) {
@@ -169,7 +169,7 @@ class Passport extends Controller
                 SmsService::clearSession();
                 return [
                     'code' => 1,
-                    'msg' => '验证码错误次数过多，请重新发送',
+                    'msg' => '驗證碼错误次数过多，请重新发送',
                 ];
             }
             if ($data['sms_code'] != $verify['code']) {
@@ -177,7 +177,7 @@ class Passport extends Controller
                 session(apps::RESET_PASSWORD_SMS_CODE_VALIDATE_COUNT,$num);
                 return [
                     'code' => 1,
-                    'msg' => '短信验证码不正确',
+                    'msg' => '短信驗證碼不正确',
                 ];
             }
             $newpassword = md5(md5($data['password']) . $admin['username']);
@@ -189,7 +189,7 @@ class Passport extends Controller
 
             return [
                 'code' => 0,
-                'msg' => '重置密码成功',
+                'msg' => '重置密碼成功',
             ];
         }
     }
@@ -200,7 +200,7 @@ class Passport extends Controller
         return $this->fetch();
     }
 
-    //注册 数据验证
+    //注册 数据驗證
     public function registerValidate()
     {
         $post = $this->request->param();

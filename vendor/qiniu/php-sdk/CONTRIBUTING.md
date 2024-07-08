@@ -6,7 +6,7 @@
 
 ## Pull Request要求
 
-- **[PSR-2 编码风格标准](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** 。要通过项目中的code sniffer检查。
+- **[PSR-2 编码风格标准](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** 。要通过项目中的code sniffer檢查。
 
 - **代码格式** 送出前 请按 ./vendor/bin/phpcbf --standard=PSR2  进行格式化。
 

@@ -10,7 +10,7 @@ use think\File;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Services extends Base
 {
@@ -30,7 +30,7 @@ class Services extends Base
         if ($this->request->isAjax()) {
             $post = $this->request->post();
             $result = $this->validate($post, 'Services');
-            if ($result !== true) $this->error('验证失败！');
+            if ($result !== true) $this->error('驗證失敗！');
             if ($post['nick_name'] == "") $post['nick_name'] = "客服" . $post['user_name'];
             $num = Service::where('business_id', $_SESSION['Msg']['business_id'])->count();
             $max = Business::where('id', $_SESSION['Msg']['business_id'])->value('max_count');
@@ -44,7 +44,7 @@ class Services extends Base
             $post['password'] = $pass;
             $res = Service::field(true)->insert($post);
             if ($res) $this->success('新增成功');
-            $this->error('新增失败！');
+            $this->error('新增失敗！');
         }
         $group = Db::name("wolive_group")->where(['business_id'=>$_SESSION['Msg']['business_id']])->select();
         $this->assign('group', $group);
@@ -57,7 +57,7 @@ class Services extends Base
             $post = $this->request->post();
             $res = Service::where("service_id", $post['id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $service = Service::where(['service_id' => $id])->find();
@@ -78,24 +78,24 @@ class Services extends Base
                 $imgpath = $this->base_root . "/upload/images/{$_SESSION['Msg']['business_id']}/" . $imgname;
                 $this->success('上传成功', '', $imgpath);
             } else {
-                $this->error('上传失败！');
+                $this->error('上传失敗！');
             }
         }
-        $this->error('上传失败！');
+        $this->error('上传失敗！');
     }
 
     public function pass()
     {
         if ($this->request->isAjax()) {
             $post = $this->request->post();
-            if ($post['newpass'] != $post['newpass2']) $this->error('新密码不一致');
+            if ($post['newpass'] != $post['newpass2']) $this->error('新密碼不一致');
             $result = $this->validate($post, 'Check.change_service_pwd');
             if ($result !== true) return ['code' => 0, 'msg' => $result];
             $user = Service::where("service_id", $post['id'])->find();
             $pass = md5($user['user_name'] . "hjkj" . $post['newpass']);
             $res = Service::table("wolive_service")->where("service_id", $post['id'])->update(["password" => $pass]);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         return $this->fetch();
     }
@@ -105,13 +105,13 @@ class Services extends Base
         $post = $this->request->post();
         $result = Service::where('service_id', $post['service_id'])->update(['offline_first' => $post['offline_first']]);
         if ($result) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     public function remove()
     {
         $id = $this->request->get('service_id');
         if (Service::destroy(['service_id' => $id,'business_id'=>$_SESSION['Msg']['business_id']])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

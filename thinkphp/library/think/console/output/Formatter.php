@@ -55,7 +55,7 @@ class Formatter
     }
 
     /**
-     * 获取外观标识
+     * 取得外观标识
      * @return bool
      */
     public function isDecorated()
@@ -84,7 +84,7 @@ class Formatter
     }
 
     /**
-     * 获取样式
+     * 取得样式
      * @param string $name
      * @return Style
      * @throws \InvalidArgumentException

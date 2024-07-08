@@ -14,7 +14,7 @@ use app\Common;
 use app\extra\push\Pusher;
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Index extends Base
 {
@@ -43,7 +43,7 @@ class Index extends Base
         
         // 接入总量
         $getinall = Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id', $login['business_id'])->count();
-        // 获取总会话量
+        // 取得总会话量
         $chatsall = Admins::table("wolive_chats")->where($where)->count();
         // 正在排队人数
         $waiter = Admins::table("wolive_queue")->where(['business_id' => $login['business_id'], 'state' => 'normal'])->where("service_id", 0)->count();
@@ -113,9 +113,9 @@ class Index extends Base
                 $newpass =md5($user['user_name']."hjkj" . $post['newpass']);
                 $res =Admins::table("wolive_service")->where("service_id",$user['service_id'])->update(["password"=>$newpass]);
                 if($res) $this->success('修改成功');
-                $this->error('修改失败！');
+                $this->error('修改失敗！');
             }
-            $this->error('旧密码不正确');
+            $this->error('旧密碼不正确');
         }
         return $this->fetch();
     }
@@ -125,7 +125,7 @@ class Index extends Base
     }
 
     /**
-     * 后台对话页面.
+     * 后台对话頁面.
      *
      * @return mixed
      */
@@ -142,7 +142,7 @@ class Index extends Base
 
 
     /**
-     * 常用语页面.
+     * 常用语頁面.
      *
      * @return mixed
      */
@@ -184,7 +184,7 @@ class Index extends Base
 
 
     /**
-     * 生成前台文件页面.
+     * 生成前台文件頁面.
      *
      * @return mixed
      */
@@ -211,7 +211,7 @@ class Index extends Base
 
 
     /**
-     * 所有聊天记录页面。
+     * 所有聊天记录頁面。
      * [history description]
      * @return [type] [description]
      */
@@ -223,7 +223,7 @@ class Index extends Base
     }
 
     /**
-     * 留言页面.
+     * 留言頁面.
      *
      * @return mixed
      */
@@ -264,7 +264,7 @@ class Index extends Base
     }
 
     /**
-     * 转接客服页面
+     * 转接客服頁面
      * @return [type] [description]
      */
     public function service()
@@ -326,7 +326,7 @@ class Index extends Base
             $arr = ['code' => 0, 'msg' => '转接成功！'];
             return $arr;
         } else {
-            $arr = ['code' => 1, 'msg' => '转接失败！'];
+            $arr = ['code' => 1, 'msg' => '转接失敗！'];
             return $arr;
         }
     }
@@ -347,7 +347,7 @@ class Index extends Base
     }
 
     /**
-     * 常见问题编辑页面
+     * 常见问题編輯頁面
      * [editer description]
      * @return [type] [description]
      */
@@ -375,7 +375,7 @@ class Index extends Base
         return $this->fetch();
     }
     /**
-     * 常见问题编辑页面
+     * 常见问题編輯頁面
      * [editer description]
      * @return [type] [description]
      */
@@ -406,7 +406,7 @@ class Index extends Base
 
 
     /**
-     * 编辑tab页面
+     * 編輯tab頁面
      * [editertab description]
      * @return [type] [description]
      */
@@ -450,7 +450,7 @@ $content='';
     }
 
     /**
-     * 设置页面
+     * 设置頁面
      * [set description]
      */
     public function set()
@@ -486,7 +486,7 @@ $content='';
     }
 
     /**
-     * tab面版页面。
+     * tab面版頁面。
      * [tablist description]
      * @return [type] [description]
      */
@@ -504,7 +504,7 @@ $content='';
 
         $this->assign('tablist', $res);
 
-        $this->assign('title', '编辑前端tab面版');
+        $this->assign('title', '編輯前端tab面版');
         $this->assign('part', '设置');
 
         return $this->fetch();
@@ -537,7 +537,7 @@ $content='';
             $post=$common->deep_array_map_trim($post);
             $res = WechatPlatform::edit($post);
 
-            $arr = $res!== false ? ['code' => 0, 'msg' => '成功']: ['code' => 1, 'msg' => '失败'];
+            $arr = $res!== false ? ['code' => 0, 'msg' => '成功']: ['code' => 1, 'msg' => '失敗'];
             return $arr;
         } else {
             $template = WechatPlatform::get(['business_id'=>$_SESSION['Msg']['business_id']]);
@@ -570,7 +570,7 @@ $content='';
         if($this->request->isAjax()){
             $post = $this->request->post();
             $text = strip_tags($this->request->post('text','','\app\Common::clearXSS'));
-            if(empty($text)) $this->error('翻译失败');
+            if(empty($text)) $this->error('翻译失敗');
             $business = Db::table('wolive_business')->where(['id'=>$_SESSION['Msg']['business_id']])->field("bd_trans_appid,bd_trans_secret,auto_trans,trans_type,google_trans_key")->find();
             $to = 'zh';
             if($business['trans_type']){
@@ -594,10 +594,10 @@ $content='';
                         if(isset($post['cid'])&&$post['cid']) Db::table('wolive_chats')->where("cid",$post['cid'])->update(["content_trans"=>$res['data']['translations'][0]['translatedText']]);
                         $this->success('翻译成功',"",$res['data']['translations'][0]['translatedText']);
                     }else{
-                        $this->error('翻译失败');
+                        $this->error('翻译失敗');
                     }
                 }catch (Exception $e) {
-                    $this->error('翻译失败');
+                    $this->error('翻译失敗');
                 }
             }else{
                 if(empty($business['bd_trans_appid'])||empty($business['bd_trans_secret'])) $this->error('请先配置百度翻译API接口');
@@ -618,7 +618,7 @@ $content='';
                     if(isset($post['cid'])&&$post['cid']) Db::table('wolive_chats')->where("cid",$post['cid'])->update(["content_trans"=>$res['trans_result'][0]['dst']]);
                     $this->success('翻译成功',"",$res['trans_result'][0]['dst']);
                 }else{
-                    $this->error('翻译失败');
+                    $this->error('翻译失敗');
                 }
             }
         }

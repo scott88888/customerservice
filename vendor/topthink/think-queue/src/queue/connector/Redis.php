@@ -118,7 +118,7 @@ class Redis extends Connector
     }
 
     /**
-     * 删除任务
+     * 刪除任务
      *
      * @param  string $queue
      * @param  string $job
@@ -183,7 +183,7 @@ class Redis extends Connector
     }
 
     /**
-     * 获取所有到期任务
+     * 取得所有到期任务
      *
      * @param  string $from
      * @param  int    $time
@@ -195,7 +195,7 @@ class Redis extends Connector
     }
 
     /**
-     * 删除过期任务
+     * 刪除过期任务
      *
      * @param  string $from
      * @param  int    $time
@@ -235,7 +235,7 @@ class Redis extends Connector
     }
 
     /**
-     * 获取队列名
+     * 取得队列名
      *
      * @param  string|null $queue
      * @return string

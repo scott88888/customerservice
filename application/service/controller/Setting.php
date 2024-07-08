@@ -10,7 +10,7 @@ use app\service\model\Service;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Setting extends Base
 {
@@ -59,7 +59,7 @@ class Setting extends Base
             $post['content'] = $this->request->post('content', '', '\app\Common::clearXSS');
             $res = Sentence::insert($post);
             if ($res) $this->success('新增成功');
-            $this->error('新增失败！');
+            $this->error('新增失敗！');
         }
         return $this->fetch();
     }
@@ -77,7 +77,7 @@ class Setting extends Base
             $post['content'] = $this->request->post('content', '', '\app\Common::clearXSS');
             $res = Sentence::where("sid", $post['id'])->where('service_id', $_SESSION['Msg']['service_id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $robot = Sentence::get(['sid' => $id]);
@@ -89,7 +89,7 @@ class Setting extends Base
     {
         $id = $this->request->get('id');
         if (Sentence::destroy(['sid' => $id])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     public function access()

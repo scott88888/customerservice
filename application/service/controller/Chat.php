@@ -7,7 +7,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Chat extends Base
 {

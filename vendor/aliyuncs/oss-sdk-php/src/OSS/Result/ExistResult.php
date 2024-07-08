@@ -3,7 +3,7 @@
 namespace OSS\Result;
 
 /**
- * Class ExistResult 检查bucket和object是否存在的返回结果，
+ * Class ExistResult 檢查bucket和object是否存在的返回结果，
  * 根据返回response的http status判断
  * @package OSS\Result
  */

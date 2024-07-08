@@ -9,7 +9,7 @@ use think\Loader;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Busines extends Base
 {
@@ -32,7 +32,7 @@ class Busines extends Base
             $business = Business::get(['business_name' => $post['business_name']]);
             if ($business) $this->error('商户名称已存在');
             if(Business::addBusiness($post)) $this->success('操作成功！');
-            $this->error('操作失败！');
+            $this->error('操作失敗！');
         }
         return $this->fetch();
     }
@@ -42,7 +42,7 @@ class Busines extends Base
         if ($this->request->isAjax()) {
             $post = $this->request->post();
             if(Business::editBusiness($post)) $this->success('操作成功！');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $business = Business::where(['id' => $id])->find();
@@ -55,7 +55,7 @@ class Busines extends Base
         $post = $this->request->post();
         $result = Business::where('id', $post['id'])->update(['is_delete' => $post['is_delete']]);
         if ($result) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     public function remove()
@@ -73,7 +73,7 @@ class Busines extends Base
             Db::name('wolive_option')->where('business_id', $id)->delete();
             $this->success('操作成功！');
         }
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     public function clear()
@@ -82,6 +82,6 @@ class Busines extends Base
         if (Db::name('wolive_chats')->where('business_id', $id)->delete()) {
             $this->success('操作成功！');
         }
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

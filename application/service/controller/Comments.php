@@ -9,7 +9,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Comments extends Base
 {
@@ -26,7 +26,7 @@ class Comments extends Base
         if ($this->request->isAjax()){
             $setting = CommentSetting::get(['business_id'=>$_SESSION['Msg']['business_id']]);
             if (!empty($setting)) $setting['comments'] = json_decode($setting['comments'],true);
-            $this->success('获取成功','',$setting);
+            $this->success('取得成功','',$setting);
         }
         return $this->fetch();
     }
@@ -37,17 +37,17 @@ class Comments extends Base
         $data['comments'] = json_encode($comments);
         $data['business_id'] = $_SESSION['Msg']['business_id'];
         if (empty($data['title'])) $this->error("评价说明不能为空");
-        if (empty($comments)) $this->error("评价条目不能为空");
+        if (empty($comments)) $this->error("评价條目不能为空");
         foreach ($comments as $v) {
-            if (mb_strlen($v)>8 || empty($v)) $this->error("评价条目限8字且不能为空");
+            if (mb_strlen($v)>8 || empty($v)) $this->error("评价條目限8字且不能为空");
         }
         if ($data['word_switch'] == 'open') {
-            if (mb_strlen($data['word_title']) >8 || !isset($data['word_title'])) $this->error("评价条目限8字且不能为空");
+            if (mb_strlen($data['word_title']) >8 || !isset($data['word_title'])) $this->error("评价條目限8字且不能为空");
         }
         $setting = CommentSetting::get(['business_id'=>$data['business_id']]);
         if (!empty($setting)) $res = $setting->save($data);
         else $res = CommentSetting::create($data);
         if ($res !== false) $this->success('操作成功');
-        $this->error("操作失败");
+        $this->error("操作失敗");
     }
 }

@@ -25,7 +25,7 @@ class Angular
     public function __construct($config = [])
     {
         $default = [
-            'debug'            => App::$debug, // 是否开启调试模式
+            'debug'            => App::$debug, // 是否開啟调试模式
             'tpl_path'         => App::$modulePath . 'view' . DS, // 模板目录
             'tpl_suffix'       => '.html', // 模板后缀
             'tpl_cache_path'   => RUNTIME_PATH . 'temp' . DS, // 模板缓存目录
@@ -41,7 +41,7 @@ class Angular
     }
 
     /**
-     * 获取模版运行结果
+     * 取得模版运行结果
      * @param string $template 模版地址
      * @param array $data 模版数据
      * @param array $config 配置
@@ -75,7 +75,7 @@ class Angular
     }
 
     /**
-     * 如果模版为空, 则通过URL参数获取模版地址
+     * 如果模版为空, 则通过URL参数取得模版地址
      * @param string $template 模版地址
      * @return string
      */

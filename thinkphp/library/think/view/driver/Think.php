@@ -32,7 +32,7 @@ class Think
         'view_suffix' => 'html',
         // 模板文件名分隔符
         'view_depr'   => DS,
-        // 是否开启模板编译缓存,设为false则每次都会重新编译
+        // 是否開啟模板编译缓存,设为false则每次都会重新编译
         'tpl_cache'   => true,
         // 默认模板渲染规则 1 解析为小写+下划线 2 全部转换小写
         'auto_rule'   => 1,
@@ -57,7 +57,7 @@ class Think
     public function exists($template)
     {
         if ('' == pathinfo($template, PATHINFO_EXTENSION)) {
-            // 获取模板文件名
+            // 取得模板文件名
             $template = $this->parseTemplate($template);
         }
         return is_file($template);
@@ -74,7 +74,7 @@ class Think
     public function fetch($template, $data = [], $config = [])
     {
         if ('' == pathinfo($template, PATHINFO_EXTENSION)) {
-            // 获取模板文件名
+            // 取得模板文件名
             $template = $this->parseTemplate($template);
         }
         // 模板不存在 抛出异常
@@ -110,7 +110,7 @@ class Think
     {
         // 分析模板文件规则
         $request = Request::instance();
-        // 获取视图根目录
+        // 取得视图根目录
         if (strpos($template, '@')) {
             // 跨模块调用
             list($module, $template) = explode('@', $template);
@@ -142,7 +142,7 @@ class Think
     }
 
     /**
-     * 配置或者获取模板引擎参数
+     * 配置或者取得模板引擎参数
      * @access private
      * @param string|array  $name 参数名
      * @param mixed         $value 参数值

@@ -19,7 +19,7 @@ class Session
     protected static $init   = null;
 
     /**
-     * 设置或者获取session作用域（前缀）
+     * 设置或者取得session作用域（前缀）
      * @param string $prefix
      * @return string|void
      */
@@ -97,7 +97,7 @@ class Session
             // 读取session驱动
             $class = false !== strpos($config['type'], '\\') ? $config['type'] : '\\think\\session\\driver\\' . ucwords($config['type']);
 
-            // 检查驱动类
+            // 檢查驱动类
             if (!class_exists($class) || !session_set_save_handler(new $class($config))) {
                 throw new ClassNotFoundException('error session handler:' . $class, $class);
             }
@@ -154,7 +154,7 @@ class Session
     }
 
     /**
-     * session获取
+     * session取得
      * @param string        $name session名称
      * @param string|null   $prefix 作用域（前缀）
      * @return mixed
@@ -164,10 +164,10 @@ class Session
         empty(self::$init) && self::boot();
         $prefix = !is_null($prefix) ? $prefix : self::$prefix;
         if ('' == $name) {
-            // 获取全部的session
+            // 取得全部的session
             $value = $prefix ? (!empty($_SESSION[$prefix]) ? $_SESSION[$prefix] : []) : $_SESSION;
         } elseif ($prefix) {
-            // 获取session
+            // 取得session
             if (strpos($name, '.')) {
                 list($name1, $name2) = explode('.', $name);
                 $value               = isset($_SESSION[$prefix][$name1][$name2]) ? $_SESSION[$prefix][$name1][$name2] : null;
@@ -186,7 +186,7 @@ class Session
     }
 
     /**
-     * session获取并删除
+     * session取得并刪除
      * @param string        $name session名称
      * @param string|null   $prefix 作用域（前缀）
      * @return mixed
@@ -239,7 +239,7 @@ class Session
     }
 
     /**
-     * 删除session数据
+     * 刪除session数据
      * @param string|array  $name session名称
      * @param string|null   $prefix 作用域（前缀）
      * @return void
@@ -345,7 +345,7 @@ class Session
 
     /**
      * 重新生成session_id
-     * @param bool $delete 是否删除关联会话文件
+     * @param bool $delete 是否刪除关联会话文件
      * @return void
      */
     public static function regenerate($delete = false)

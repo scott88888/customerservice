@@ -15,7 +15,7 @@ use app\backend\model\Admins;
 
 class Login extends Controller
 {
-    // 登录页面
+    // 登入頁面
     public function index()
     {
         return $this->fetch();
@@ -40,8 +40,8 @@ class Login extends Controller
                 ->where('username', $post['username'])
                 ->where('password', $pass)
                 ->find();
-            if (!$admin) $this->error('登录使用者名稱或密码错误');
-            // 获取登陆数据
+            if (!$admin) $this->error('登入使用者名稱或密碼错误');
+            // 取得登入数据
             $login = $admin->getData();
             // 设置session标识狀態
             session('admin_user_name', $login['username']);
@@ -51,7 +51,7 @@ class Login extends Controller
     }
 
     /**
-     * 验证码.
+     * 驗證碼.
      *
      * @return \think\Response
      */

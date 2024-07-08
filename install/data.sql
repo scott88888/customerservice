@@ -47,7 +47,7 @@ CREATE TABLE `wolive_admin_log`  (
   `user_agent` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'User-Agent',
   `create_time` int(11) NULL DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理员登录日志' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理员登入日志' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for wolive_admin_menu
@@ -126,10 +126,10 @@ CREATE TABLE `wolive_business`  (
   `logo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `copyright` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '底部版权信息',
   `admin_id` int(11) NOT NULL DEFAULT 0,
-  `video_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否开启视频',
-  `voice_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'open' COMMENT '是否开启提示音',
-  `audio_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否开启音频',
-  `template_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否开启模板消息',
+  `video_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟视频',
+  `voice_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'open' COMMENT '是否開啟提示音',
+  `audio_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟音频',
+  `template_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟模板消息',
   `distribution_rule` enum('auto','claim') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'auto' COMMENT 'claim:认领，auto:自动分配',
   `voice_address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '/upload/voice/default.mp3' COMMENT '提示音文件地址',
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
@@ -147,7 +147,7 @@ CREATE TABLE `wolive_business`  (
   `auto_ip` tinyint(1) NOT NULL DEFAULT 0 COMMENT '根据IP自动设置客户语言',
   `trans_type` tinyint(1) NOT NULL DEFAULT 0 COMMENT '翻译接口：百度0；谷歌1',
   `theme` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '主题颜色',
-  `header` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '悬浮条背景色',
+  `header` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '悬浮條背景色',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `bussiness`(`business_name`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商家表' ROW_FORMAT = COMPACT;
@@ -211,7 +211,7 @@ CREATE TABLE `wolive_comment_setting`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `business_id` int(11) NOT NULL DEFAULT 0,
   `title` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '评价说明',
-  `comments` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '评价条目',
+  `comments` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '评价條目',
   `word_switch` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close',
   `word_title` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -368,7 +368,7 @@ CREATE TABLE `wolive_service`  (
   `service_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '使用者名稱',
   `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '暱稱',
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密码',
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密碼',
   `groupid` varchar(225) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '客服分类id',
   `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '手机',
   `open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
@@ -438,7 +438,7 @@ CREATE TABLE `wolive_visiter`  (
   `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '头像',
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的姓名',
   `tel` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的電話',
-  `login_times` int(11) NOT NULL DEFAULT 1 COMMENT '登录次数',
+  `login_times` int(11) NOT NULL DEFAULT 1 COMMENT '登入次数',
   `connect` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '联系方式',
   `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '备注',
   `extends` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '浏览器扩展',
@@ -484,7 +484,7 @@ CREATE TABLE `wolive_wechat_platform`  (
   `visitor_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '新访客模板消息',
   `msg_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '新消息提示模板消息',
   `customer_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '访客模板消息',
-  `isscribe` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否开启引导关注1开启0关闭',
+  `isscribe` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否開啟引导关注1開啟0關閉',
   `desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '公共号说明、备注',
   `addtime` int(11) NOT NULL DEFAULT 0,
   `is_delete` smallint(1) NOT NULL DEFAULT 0,
@@ -528,7 +528,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- Records of wolive_admin_menu
 -- ----------------------------
 INSERT INTO `wolive_admin_menu` VALUES (1, 0, '首頁', '/backend/index/home', 'layui-icon layui-icon-home', 1, 1, 1);
-INSERT INTO `wolive_admin_menu` VALUES (2, 0, '登录日志', '/backend/log/index', 'layui-icon layui-icon-layouts', 2, 1, 1);
+INSERT INTO `wolive_admin_menu` VALUES (2, 0, '登入日志', '/backend/log/index', 'layui-icon layui-icon-layouts', 2, 1, 1);
 INSERT INTO `wolive_admin_menu` VALUES (3, 0, '商户管理', '', 'layui-icon layui-icon-username', 1, 0, 1);
 INSERT INTO `wolive_admin_menu` VALUES (4, 3, '商户列表', '/backend/busines/index', NULL, 99, 1, 1);
 INSERT INTO `wolive_admin_menu` VALUES (5, 3, '客服列表', '/backend/services/index', NULL, 99, 1, 1);
@@ -554,7 +554,7 @@ INSERT INTO `wolive_admin_permission` VALUES (15, 0, '如何接入', '', 'layui-
 INSERT INTO `wolive_admin_permission` VALUES (16, 15, '接入配置', '/service/setting/access', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (17, 15, '接入教程', '/service/setting/course', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (18, 0, '商户设置', '/service/setting/index', 'layui-icon layui-icon-set', 1, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (23, 0, '登录日志', '/service/log/index', 'layui-icon layui-icon-layouts', 8, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (23, 0, '登入日志', '/service/log/index', 'layui-icon layui-icon-layouts', 8, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (24, 0, '数据统计', '/service/log/data', 'layui-icon layui-icon-senior', 8, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (25, 0, '违禁词', '/service/banwords/index', 'layui-icon layui-icon-face-cry', 4, 1, 1, 1);
 

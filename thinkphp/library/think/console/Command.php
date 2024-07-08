@@ -61,7 +61,7 @@ class Command
     }
 
     /**
-     * 忽略验证错误
+     * 忽略驗證错误
      */
     public function ignoreValidationErrors()
     {
@@ -78,7 +78,7 @@ class Command
     }
 
     /**
-     * 获取控制台
+     * 取得控制台
      * @return Console
      * @api
      */
@@ -117,7 +117,7 @@ class Command
     }
 
     /**
-     * 使用者验证
+     * 使用者驗證
      * @param Input  $input
      * @param Output $output
      */
@@ -250,7 +250,7 @@ class Command
     }
 
     /**
-     * 获取参数定义
+     * 取得参数定义
      * @return Definition
      * @api
      */
@@ -260,7 +260,7 @@ class Command
     }
 
     /**
-     * 获取当前指令的参数定义
+     * 取得当前指令的参数定义
      * @return Definition
      */
     public function getNativeDefinition()
@@ -315,7 +315,7 @@ class Command
     }
 
     /**
-     * 获取指令名称
+     * 取得指令名称
      * @return string
      */
     public function getName()
@@ -336,7 +336,7 @@ class Command
     }
 
     /**
-     *  获取描述
+     *  取得描述
      * @return string
      */
     public function getDescription()
@@ -357,7 +357,7 @@ class Command
     }
 
     /**
-     * 获取帮助信息
+     * 取得帮助信息
      * @return string
      */
     public function getHelp()
@@ -407,7 +407,7 @@ class Command
     }
 
     /**
-     * 获取别名
+     * 取得别名
      * @return array
      */
     public function getAliases()
@@ -416,7 +416,7 @@ class Command
     }
 
     /**
-     * 获取简介
+     * 取得简介
      * @param bool $short 是否简单的
      * @return string
      */
@@ -448,7 +448,7 @@ class Command
     }
 
     /**
-     * 获取用法介绍
+     * 取得用法介绍
      * @return array
      */
     public function getUsages()
@@ -457,7 +457,7 @@ class Command
     }
 
     /**
-     * 验证指令名称
+     * 驗證指令名称
      * @param string $name
      * @throws \InvalidArgumentException
      */

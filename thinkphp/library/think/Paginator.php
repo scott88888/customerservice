@@ -26,19 +26,19 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     /** @var Collection 数据集 */
     protected $items;
 
-    /** @var integer 当前页 */
+    /** @var integer 当前頁 */
     protected $currentPage;
 
-    /** @var  integer 最后一页 */
+    /** @var  integer 最后一頁 */
     protected $lastPage;
 
     /** @var integer|null 数据总数 */
     protected $total;
 
-    /** @var  integer 每页的数量 */
+    /** @var  integer 每頁的数量 */
     protected $listRows;
 
-    /** @var bool 是否有下一页 */
+    /** @var bool 是否有下一頁 */
     protected $hasMore;
 
     /** @var array 一些配置 */
@@ -105,7 +105,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 获取页码对应的链接
+     * 取得頁码对应的連結
      *
      * @param $page
      * @return string
@@ -134,7 +134,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 自动获取当前页码
+     * 自动取得当前頁码
      * @param string $varPage
      * @param int    $default
      * @return int
@@ -151,7 +151,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 自动获取当前的path
+     * 自动取得当前的path
      * @return string
      */
     public static function getCurrentPath()
@@ -186,7 +186,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 数据是否足够分页
+     * 数据是否足够分頁
      * @return boolean
      */
     public function hasPages()
@@ -195,7 +195,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 创建一组分页链接
+     * 创建一组分頁連結
      *
      * @param  int $start
      * @param  int $end
@@ -259,7 +259,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 渲染分页html
+     * 渲染分頁html
      * @return mixed
      */
     abstract public function render();

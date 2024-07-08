@@ -84,7 +84,7 @@ class Log
     }
 
     /**
-     * 获取日志信息
+     * 取得日志信息
      * @access public
      * @param  string $type 信息类型
      * @return array|string
@@ -131,7 +131,7 @@ class Log
     }
 
     /**
-     * 检查日志写入权限
+     * 檢查日志写入权限
      * @access public
      * @param  array $config 当前日志配置参数
      * @return bool
@@ -161,7 +161,7 @@ class Log
         }
 
         if (empty(self::$config['level'])) {
-            // 获取全部日志
+            // 取得全部日志
             $log = self::$log;
             if (!App::$debug && isset($log['debug'])) {
                 unset($log['debug']);

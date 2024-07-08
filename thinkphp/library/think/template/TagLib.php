@@ -78,7 +78,7 @@ class TagLib
     }
 
     /**
-     * 按签标库替换页面中的标签
+     * 按签标库替换頁面中的标签
      * @access public
      * @param  string $content 模板内容
      * @param  string $lib 标签库名
@@ -279,7 +279,7 @@ class TagLib
     }
 
     /**
-     * 解析条件表达式
+     * 解析條件表达式
      * @access public
      * @param  string $condition 表达式标签内容
      * @return string
@@ -322,11 +322,11 @@ class TagLib
     }
 
     /**
-     * 获取标签列表
+     * 取得标签列表
      * @access public
      * @return array
      */
-    // 获取标签定义
+    // 取得标签定义
     public function getTags()
     {
         return $this->tags;

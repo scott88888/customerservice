@@ -105,16 +105,16 @@ class Evaluate extends Base
                 return json(['code'=>1,'msg'=>'评价说明不能为空']);
             }
             if (empty($comments)) {
-                return json(['code'=>1,'msg'=>'评价条目不能为空']);
+                return json(['code'=>1,'msg'=>'评价條目不能为空']);
             }
             foreach ($comments as $v) {
                 if (mb_strlen($v)>8 || empty($v)) {
-                    return json(['code'=>1,'msg'=>'评价条目限8字且不能为空']);
+                    return json(['code'=>1,'msg'=>'评价條目限8字且不能为空']);
                 }
             }
             if ($data['word_switch'] == 'open') {
                 if (mb_strlen($data['word_title']) >8 || !isset($data['word_title'])) {
-                    return json(['code'=>1,'msg'=>'评价条目限8字且不能为空']);
+                    return json(['code'=>1,'msg'=>'评价條目限8字且不能为空']);
                 }
             }
             $setting = CommentSetting::get(['business_id'=>$data['business_id']]);
@@ -126,7 +126,7 @@ class Evaluate extends Base
             if ($res !== false) {
                 return json(['code'=>0,'msg'=>'操作成功']);
             } else {
-                return json(['code'=>1,'msg'=>'操作失败']);
+                return json(['code'=>1,'msg'=>'操作失敗']);
             }
         }
     }

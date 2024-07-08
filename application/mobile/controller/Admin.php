@@ -11,7 +11,7 @@ use think\Paginator;
 class Admin extends Base
 {
     /**
-     * .主页
+     * .主頁
      * [index description]
      * @return [type] [description]
      */
@@ -151,7 +151,7 @@ class Admin extends Base
   }
 
     /**
-     * .对话页面
+     * .对话頁面
      * [chat description]
      * @return [type] [description]
      */
@@ -186,7 +186,7 @@ class Admin extends Base
 	}
   
   /**
-   * .留言页面
+   * .留言頁面
    * [message description]
    * @return [type] [description]
    */

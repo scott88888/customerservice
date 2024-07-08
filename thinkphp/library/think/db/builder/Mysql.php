@@ -34,7 +34,7 @@ class Mysql extends Builder
      */
     public function insertAll($dataSet, $options = [], $replace = false)
     {
-        // 获取合法的字段
+        // 取得合法的字段
         if ('*' == $options['field']) {
             $fields = array_keys($this->query->getFieldsType($options['table']));
         } else {

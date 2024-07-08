@@ -14,7 +14,7 @@ namespace think;
 class Exception extends \Exception
 {
     /**
-     * @var array 保存异常页面显示的额外 Debug 数据
+     * @var array 保存异常頁面显示的额外 Debug 数据
      */
     protected $data = [];
 
@@ -32,7 +32,7 @@ class Exception extends \Exception
      *   key2      value2
      *
      * @access protected
-     * @param  string $label 数据分类，用于异常页面显示
+     * @param  string $label 数据分类，用于异常頁面显示
      * @param  array  $data  需要显示的数据，必须为关联数组
      * @return void
      */
@@ -42,8 +42,8 @@ class Exception extends \Exception
     }
 
     /**
-     * 获取异常额外 Debug 数据
-     * 主要用于输出到异常页面便于调试
+     * 取得异常额外 Debug 数据
+     * 主要用于输出到异常頁面便于调试
      * @access public
      * @return array
      */

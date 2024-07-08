@@ -70,7 +70,7 @@ class OssClientMultipartUploadTest extends TestOssClientBase
         $copiedObject = "mpu/multipart-test.txt.copied";
         $this->ossClient->putObject($this->bucket, $copiedObject, file_get_contents(__FILE__));
         /**
-         *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 获取upload id
+         *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 取得upload id
          */
         try {
             $upload_id = $this->ossClient->initiateMultipartUpload($this->bucket, $object);
@@ -112,7 +112,7 @@ class OssClientMultipartUploadTest extends TestOssClientBase
     {
         $object = "mpu/multipart-test.txt";
         /**
-         *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 获取upload id
+         *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 取得upload id
          */
         try {
             $upload_id = $this->ossClient->initiateMultipartUpload($this->bucket, $object);
@@ -197,7 +197,7 @@ class OssClientMultipartUploadTest extends TestOssClientBase
     {
         $object = "mpu/multipart-test.txt";
         /**
-         *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 获取upload id
+         *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 取得upload id
          */
         try {
             $upload_id = $this->ossClient->initiateMultipartUpload($this->bucket, $object);

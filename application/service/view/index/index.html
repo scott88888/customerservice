@@ -75,7 +75,7 @@
 
           /*channelme.bind("on_chat", function (data) {
               $.cookie("cu_com",'');
-              layer.msg('该访客被删除');
+              layer.msg('该访客被刪除');
               getchat();
           });*/
           // 公共平道
@@ -156,7 +156,7 @@
           channel.bind('bind-wechat',function(data){
               layer.open({
                   content: data.message
-                  ,btn: ['确定']
+                  ,btn: ['確定']
                   ,yes: function(index, layero){
                       location.reload();
                   }
@@ -225,7 +225,7 @@
                       }
                   });
                   str = str.replace(/<div><a[^<>]+><i>.+?<\/i>.+?<\/a><\/div>/,'[文件]');
-                  str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超链接]');
+                  str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超連結]');
                   str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[图片]');
                   $("#msg" + data.message.channel).html(str);
                   var div = document.getElementById("wrap");
@@ -385,9 +385,9 @@
       <div id="sideMenu"></div>
     </div>
   </div>
-  <!-- 视 图 页 面 -->
+  <!-- 视 图 頁 面 -->
   <div class="layui-body">
-    <!-- 内 容 页 面 -->
+    <!-- 内 容 頁 面 -->
     <div id="content"></div>
   </div>
 </div>
@@ -462,7 +462,7 @@
         });
         layelem.on('nav(layui_nav_right)', function(elem) {
             if ($(elem).hasClass('logout')) {
-                layer.confirm('确定退出登入吗?', function(index) {
+                layer.confirm('確定退出登入吗?', function(index) {
                     layer.close(index);
                     $.ajax({
                         url: "{:url('service/login/logout')}",

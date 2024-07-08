@@ -80,7 +80,7 @@ class Option
     }
 
     /**
-     * 获取短名称
+     * 取得短名称
      * @return string
      */
     public function getShortcut()
@@ -89,7 +89,7 @@ class Option
     }
 
     /**
-     * 获取选项名
+     * 取得选项名
      * @return string
      */
     public function getName()
@@ -156,7 +156,7 @@ class Option
     }
 
     /**
-     * 获取默认值
+     * 取得默认值
      * @return mixed
      */
     public function getDefault()
@@ -165,7 +165,7 @@ class Option
     }
 
     /**
-     * 获取描述文字
+     * 取得描述文字
      * @return string
      */
     public function getDescription()
@@ -174,7 +174,7 @@ class Option
     }
 
     /**
-     * 检查所给选项是否是当前这个
+     * 檢查所给选项是否是当前这个
      * @param Option $option
      * @return bool
      */

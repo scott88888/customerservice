@@ -10,7 +10,7 @@ require '../src/Angular.php';
 
 // 配置
 $config = [
-    'debug'            => true, // 是否开启调试, 开启调试会实时生成缓存
+    'debug'            => true, // 是否開啟调试, 開啟调试会实时生成缓存
     'tpl_path'         => './view/', // 模板根目录
     'tpl_suffix'       => '.html', // 模板后缀
     'tpl_cache_path'   => './cache/', // 模板缓存目录

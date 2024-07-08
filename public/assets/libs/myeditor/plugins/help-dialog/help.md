@@ -26,12 +26,12 @@
 | Ctrl + H / Command + H                          | 插入水平线                        | Insert horizontal rule                             |
 | Ctrl + I / Command + I                          | 插入斜体                          | Insert italic                                      |
 | Ctrl + K / Command + K                          | 插入行内代码                      | Insert inline code                                 |
-| Ctrl + L / Command + L                          | 插入链接                          | Insert link                                        |
+| Ctrl + L / Command + L                          | 插入連結                          | Insert link                                        |
 | Ctrl + U / Command + U                          | 插入无序列表                      | Insert unordered list                              |
 | Ctrl + Q                                        | 代码折叠切换                      | Switch code fold                                   |
 | Ctrl + Z / Command + Z                          | 撤销                              | Undo                                               |
 | Ctrl + Y / Command + Y                          | 重做                              | Redo                                               |
-| Ctrl + Shift + A                                | 插入@链接                         | Insert &#64;link                                   |
+| Ctrl + Shift + A                                | 插入@連結                         | Insert &#64;link                                   |
 | Ctrl + Shift + C                                | 插入行内代码                      | Insert inline code                                 |
 | Ctrl + Shift + E                                | 打开插入Emoji表情对话框           | Open emoji dialog                                  |
 | Ctrl + Shift + F / Command + Option + F         | 替换                              | Replace                                            |
@@ -39,18 +39,18 @@
 | Ctrl + Shift + H                                | 打开HTML实体字符对话框            | Open HTML Entities dialog                          |
 | Ctrl + Shift + I                                | 插入图片                          | Insert image &#33;[]&#40;&#41;                     |
 | Ctrl + Shift + K                                | 插入TeX(KaTeX)公式符号            | Insert TeX(KaTeX) symbol &#36;&#36;TeX&#36;&#36;   |
-| Ctrl + Shift + L                                | 打开插入链接对话框                | Open link dialog                                   |
+| Ctrl + Shift + L                                | 打开插入連結对话框                | Open link dialog                                   |
 | Ctrl + Shift + O                                | 插入有序列表                      | Insert ordered list                                |
 | Ctrl + Shift + P                                | 打开插入PRE对话框                 | Open Preformatted text dialog                      |
 | Ctrl + Shift + Q                                | 插入引用                          | Insert blockquotes                                 |
 | Ctrl + Shift + R / Shift + Command + Option + F | 全部替换                          | Replace all                                        |
-| Ctrl + Shift + S                                | 插入删除线                        | Insert strikethrough                               |
+| Ctrl + Shift + S                                | 插入刪除线                        | Insert strikethrough                               |
 | Ctrl + Shift + T                                | 打开插入表格对话框                | Open table dialog                                  |
 | Ctrl + Shift + U                                | 将所选文字转成大写                | Selection text convert to uppercase                |
 | Shift + Alt + C                                 | 插入```代码                       | Insert code blocks (```)                           |
 | Shift + Alt + H                                 | 打开使用帮助对话框                | Open help dialog                                   |
 | Shift + Alt + L                                 | 将所选文本转成小写                | Selection text convert to lowercase                |
-| Shift + Alt + P                                 | 插入分页符                        | Insert page break                                  |
+| Shift + Alt + P                                 | 插入分頁符                        | Insert page break                                  |
 | Alt + L                                         | 将所选文本转成小写                | Selection text convert to lowercase                |
 | Shift + Alt + U                                 | 将所选的每个单词的首字母转成大写  | Selection words first letter convert to Uppercase  |
 | Ctrl + Shift + Alt + C                          | 打开插入代码块对话框层            | Open code blocks dialog                            |

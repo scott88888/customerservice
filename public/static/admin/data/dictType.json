@@ -26,9 +26,9 @@
 		"remark": null,
 		"params": null,
 		"id": "1317360314219495424",
-		"typeName": "登录类型",
+		"typeName": "登入类型",
 		"typeCode": "login",
-		"description": "登录类型",
+		"description": "登入类型",
 		"enable": "0"
 	}, {
 		"createTime": null,

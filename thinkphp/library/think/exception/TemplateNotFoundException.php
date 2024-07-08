@@ -22,7 +22,7 @@ class TemplateNotFoundException extends \RuntimeException
     }
 
     /**
-     * 获取模板文件
+     * 取得模板文件
      * @access public
      * @return string
      */

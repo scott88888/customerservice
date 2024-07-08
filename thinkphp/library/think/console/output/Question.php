@@ -35,7 +35,7 @@ class Question
     }
 
     /**
-     * 获取问题
+     * 取得问题
      * @return string
      */
     public function getQuestion()
@@ -44,7 +44,7 @@ class Question
     }
 
     /**
-     * 获取默认答案
+     * 取得默认答案
      * @return mixed
      */
     public function getDefault()
@@ -99,7 +99,7 @@ class Question
     }
 
     /**
-     * 获取自动完成
+     * 取得自动完成
      * @return null|array|\Traversable
      */
     public function getAutocompleterValues()
@@ -136,7 +136,7 @@ class Question
     }
 
     /**
-     * 设置答案的验证器
+     * 设置答案的驗證器
      * @param null|callable $validator
      * @return Question The current instance
      */
@@ -148,7 +148,7 @@ class Question
     }
 
     /**
-     * 获取验证器
+     * 取得驗證器
      * @return null|callable
      */
     public function getValidator()
@@ -174,7 +174,7 @@ class Question
     }
 
     /**
-     * 获取最大重试次数
+     * 取得最大重试次数
      * @return null|int
      */
     public function getMaxAttempts()
@@ -195,7 +195,7 @@ class Question
     }
 
     /**
-     * 获取响应回调
+     * 取得响应回调
      * The normalizer can ba a callable (a string), a closure or a class implementing __invoke.
      * @return string|\Closure
      */

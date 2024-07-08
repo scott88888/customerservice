@@ -44,7 +44,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 获取当前的关联模型类的实例
+     * 取得当前的关联模型类的实例
      * @access public
      * @return Model
      */
@@ -56,9 +56,9 @@ class MorphTo extends Relation
     }
 
     /**
-     * 延迟获取关联数据
+     * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询条件
+     * @param \Closure $closure     闭包查询條件
      * @return mixed
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -78,7 +78,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -92,9 +92,9 @@ class MorphTo extends Relation
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
-     * @param  mixed  $where 查询条件（数组或者闭包）
+     * @param  mixed  $where 查询條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -161,7 +161,7 @@ class MorphTo extends Relation
         $morphType = $this->morphType;
         $range     = [];
         foreach ($resultSet as $result) {
-            // 获取关联外键列表
+            // 取得关联外键列表
             if (!empty($result->$morphKey)) {
                 $range[$result->$morphType][] = $result->$morphKey;
             }

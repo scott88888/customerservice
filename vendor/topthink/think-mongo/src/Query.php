@@ -84,12 +84,12 @@ class Query
     public function __call($method, $args)
     {
         if (strtolower(substr($method, 0, 5)) == 'getby') {
-            // 根据某个字段获取记录
+            // 根据某个字段取得记录
             $field         = Loader::parseName(substr($method, 5));
             $where[$field] = $args[0];
             return $this->where($where)->find();
         } elseif (strtolower(substr($method, 0, 10)) == 'getfieldby') {
-            // 根据某个字段获取记录的某个值
+            // 根据某个字段取得记录的某个值
             $name         = Loader::parseName(substr($method, 10));
             $where[$name] = $args[0];
             return $this->where($where)->value($args[1]);
@@ -99,7 +99,7 @@ class Query
     }
 
     /**
-     * 获取当前的数据库Connection对象
+     * 取得当前的数据库Connection对象
      * @access public
      * @return Connection
      */
@@ -250,7 +250,7 @@ class Query
     }
 
     /**
-     * 获取最近插入的ID
+     * 取得最近插入的ID
      * @access public
      * @return string
      */
@@ -264,7 +264,7 @@ class Query
     }
 
     /**
-     * 获取最近一次执行的指令
+     * 取得最近一次执行的指令
      * @access public
      * @return string
      */
@@ -274,7 +274,7 @@ class Query
     }
 
     /**
-     * 获取数据库的配置参数
+     * 取得数据库的配置参数
      * @access public
      * @param string $name 参数名称
      * @return boolean
@@ -317,7 +317,7 @@ class Query
                 Cache::set($key, $result, $cache['expire']);
             }
         } else {
-            // 清空查询条件
+            // 清空查询條件
             $this->options = [];
         }
         return !is_null($result) ? $result : $default;
@@ -380,7 +380,7 @@ class Query
                 Cache::set($guid, $result, $cache['expire']);
             }
         } else {
-            // 清空查询条件
+            // 清空查询條件
             $this->options = [];
         }
         return $result;
@@ -423,7 +423,7 @@ class Query
     }
 
     /**
-     * 获取数据库的所有collection
+     * 取得数据库的所有collection
      * @access public
      * @param string  $db 数据库名称 留空为当前数据库
      * @throws Exception
@@ -480,7 +480,7 @@ class Query
     {
         $condition = !empty($this->options['where']) ? $this->options['where'] : [];
         if (empty($condition)) {
-            // 没有条件不做任何更新
+            // 没有條件不做任何更新
             throw new Exception('no data to update');
         }
         if ($lazyTime > 0) {
@@ -507,7 +507,7 @@ class Query
     {
         $condition = !empty($this->options['where']) ? $this->options['where'] : [];
         if (empty($condition)) {
-            // 没有条件不做任何更新
+            // 没有條件不做任何更新
             throw new Exception('no data to update');
         }
         if ($lazyTime > 0) {
@@ -522,7 +522,7 @@ class Query
     }
 
     /**
-     * 延时更新检查 返回false表示需要延时
+     * 延时更新檢查 返回false表示需要延时
      * 否则返回实际写入的数值
      * @access public
      * @param string    $guid 写入标识
@@ -535,7 +535,7 @@ class Query
         if (false !== ($value = Cache::get($guid))) {
             // 存在缓存写入数据
             if ($_SERVER['REQUEST_TIME'] > Cache::get($guid . '_time') + $lazyTime) {
-                // 延时更新时间到了，删除缓存数据 并实际写入数据库
+                // 延时更新时间到了，刪除缓存数据 并实际写入数据库
                 Cache::rm($guid);
                 Cache::rm($guid . '_time');
                 return $value + $step;
@@ -554,11 +554,11 @@ class Query
     }
 
     /**
-     * 指定AND查询条件
+     * 指定AND查询條件
      * @access public
      * @param mixed $field 查询字段
      * @param mixed $op 查询表达式
-     * @param mixed $condition 查询条件
+     * @param mixed $condition 查询條件
      * @return $this
      */
     public function where($field, $op = null, $condition = null)
@@ -570,11 +570,11 @@ class Query
     }
 
     /**
-     * 指定OR查询条件
+     * 指定OR查询條件
      * @access public
      * @param mixed $field 查询字段
      * @param mixed $op 查询表达式
-     * @param mixed $condition 查询条件
+     * @param mixed $condition 查询條件
      * @return $this
      */
     public function whereOr($field, $op = null, $condition = null)
@@ -586,11 +586,11 @@ class Query
     }
 
     /**
-     * 指定NOR查询条件
+     * 指定NOR查询條件
      * @access public
      * @param mixed $field 查询字段
      * @param mixed $op 查询表达式
-     * @param mixed $condition 查询条件
+     * @param mixed $condition 查询條件
      * @return $this
      */
     public function whereNor($field, $op = null, $condition = null)
@@ -607,7 +607,7 @@ class Query
      * @param string                $logic 查询逻辑    and or xor
      * @param string|array|\Closure $field 查询字段
      * @param mixed                 $op 查询表达式
-     * @param mixed                 $condition 查询条件
+     * @param mixed                 $condition 查询條件
      * @param array                 $param 查询参数
      * @return void
      */
@@ -695,18 +695,18 @@ class Query
     }
 
     /**
-     * 分页查询
-     * @param int|null  $listRows 每页数量
+     * 分頁查询
+     * @param int|null  $listRows 每頁数量
      * @param bool      $simple 简洁模式
      * @param array     $config 配置参数
-     *                      page:当前页,
+     *                      page:当前頁,
      *                      path:url路径,
      *                      query:url额外参数,
      *                      fragment:url锚点,
-     *                      var_page:分页变量,
-     *                      list_rows:每页数量
-     *                      type:分页类名,
-     *                      namespace:分页类命名空间
+     *                      var_page:分頁变量,
+     *                      list_rows:每頁数量
+     *                      type:分頁类名,
+     *                      namespace:分頁类命名空间
      * @return \think\paginator\Collection
      * @throws DbException
      */
@@ -769,7 +769,7 @@ class Query
     }
 
     /**
-     * 不主动获取数据集
+     * 不主动取得数据集
      * @access public
      * @param bool $cursor 是否返回 Cursor 对象
      * @return $this
@@ -818,7 +818,7 @@ class Query
     /**
      * 设置查询数据不存在是否抛出异常
      * @access public
-     * @param bool $fail 是否严格检查字段
+     * @param bool $fail 是否严格檢查字段
      * @return $this
      */
     public function failException($fail = true)
@@ -1018,10 +1018,10 @@ class Query
     }
 
     /**
-     * 指定分页
+     * 指定分頁
      * @access public
-     * @param mixed $page 页数
-     * @param mixed $listRows 每页数量
+     * @param mixed $page 頁数
+     * @param mixed $listRows 每頁数量
      * @return $this
      */
     public function page($page, $listRows = null)
@@ -1075,7 +1075,7 @@ class Query
     }
 
     /**
-     * 获取当前数据表的主键
+     * 取得当前数据表的主键
      * @access public
      * @return string|array
      */
@@ -1097,7 +1097,7 @@ class Query
     }
 
     /**
-     * 获取当前的查询参数
+     * 取得当前的查询参数
      * @access public
      * @param string $name 参数名
      * @return mixed
@@ -1120,7 +1120,7 @@ class Query
     }
 
     /**
-     * 把主键值转换为查询条件 支持复合主键
+     * 把主键值转换为查询條件 支持复合主键
      * @access public
      * @param array|string  $data 主键数据
      * @param mixed         $options 表达式参数
@@ -1176,7 +1176,7 @@ class Query
     }
 
     /**
-     * 插入记录并获取自增ID
+     * 插入记录并取得自增ID
      * @access public
      * @param mixed $data 数据
      * @return integer
@@ -1235,7 +1235,7 @@ class Query
         $options = $this->parseExpress();
         if (empty($options['where'])) {
             $pk = $this->getPk();
-            // 如果存在主键数据 则自动作为更新条件
+            // 如果存在主键数据 则自动作为更新條件
             if (is_string($pk) && isset($data[$pk])) {
                 $where[$pk] = $data[$pk];
                 $key        = 'mongo:' . $options['table'] . '|' . $data[$pk];
@@ -1253,7 +1253,7 @@ class Query
                 }
             }
             if (!isset($where)) {
-                // 如果没有任何更新条件则不执行
+                // 如果没有任何更新條件则不执行
                 throw new Exception('miss update condition');
             } else {
                 $options['where']['$and'] = $where;
@@ -1266,16 +1266,16 @@ class Query
         $writeResult  = $this->execute($options['table'], $bulk, $writeConcern);
         // 检测缓存
         if (isset($key) && Cache::get($key)) {
-            // 删除缓存
+            // 刪除缓存
             Cache::rm($key);
         }
         return $writeResult->getModifiedCount();
     }
 
     /**
-     * 删除记录
+     * 刪除记录
      * @access public
-     * @param array $data 表达式 true 表示强制删除
+     * @param array $data 表达式 true 表示强制刪除
      * @return int
      * @throws Exception
      * @throws AuthenticationException
@@ -1294,12 +1294,12 @@ class Query
                 // 缓存标识
                 $key = 'mongo:' . $options['table'] . '|' . $data;
             }
-            // AR模式分析主键条件
+            // AR模式分析主键條件
             $this->parsePkWhere($data, $options);
         }
 
         if (true !== $data && empty($options['where'])) {
-            // 如果不是强制删除且条件为空 不进行删除操作
+            // 如果不是强制刪除且條件为空 不进行刪除操作
             throw new Exception('delete without condition');
         }
 
@@ -1310,7 +1310,7 @@ class Query
         $writeResult = $this->execute($options['table'], $bulk, $writeConcern);
         // 检测缓存
         if (isset($key) && Cache::get($key)) {
-            // 删除缓存
+            // 刪除缓存
             Cache::rm($key);
         }
         return $writeResult->getDeletedCount();
@@ -1340,7 +1340,7 @@ class Query
         $options = $this->parseExpress();
 
         if (!is_null($data)) {
-            // 主键条件分析
+            // 主键條件分析
             $this->parsePkWhere($data, $options);
         }
 
@@ -1397,7 +1397,7 @@ class Query
     }
 
     /**
-     * 查找单条记录
+     * 查找单條记录
      * @access public
      * @param array|string|Query|\Closure $data
      * @return array|false|Cursor|string|Model
@@ -1420,7 +1420,7 @@ class Query
         $options = $this->parseExpress();
 
         if (!is_null($data)) {
-            // AR模式分析主键条件
+            // AR模式分析主键條件
             $this->parsePkWhere($data, $options);
         }
 
@@ -1480,7 +1480,7 @@ class Query
     }
 
     /**
-     * 查询失败 抛出异常
+     * 查询失敗 抛出异常
      * @access public
      * @param array $options 查询参数
      * @throws ModelNotFoundException
@@ -1496,7 +1496,7 @@ class Query
     }
 
     /**
-     * 查找多条记录 如果不存在则抛出异常
+     * 查找多條记录 如果不存在则抛出异常
      * @access public
      * @param array|string|Query|\Closure $data
      * @return array|\PDOStatement|string|Model
@@ -1513,7 +1513,7 @@ class Query
     }
 
     /**
-     * 查找单条记录 如果不存在则抛出异常
+     * 查找单條记录 如果不存在则抛出异常
      * @access public
      * @param array|string|Query|\Closure $data
      * @return array|\PDOStatement|string|Model
@@ -1559,10 +1559,10 @@ class Query
     }
 
     /**
-     * 获取数据表信息
+     * 取得数据表信息
      * @access public
-     * @param string $tableName 数据表名 留空自动获取
-     * @param string $fetch 获取信息类型 包括 fields type pk
+     * @param string $tableName 数据表名 留空自动取得
+     * @param string $fetch 取得信息类型 包括 fields type pk
      * @return mixed
      */
     public function getTableInfo($tableName = '', $fetch = '')
@@ -1575,7 +1575,7 @@ class Query
         }
 
         if (strpos($tableName, ',')) {
-            // 多表不获取字段信息
+            // 多表不取得字段信息
             return false;
         } else {
             $tableName = $this->parseSqlTable($tableName);
@@ -1612,7 +1612,7 @@ class Query
     {
         $options = $this->options;
 
-        // 获取数据表
+        // 取得数据表
         if (empty($options['table'])) {
             $options['table'] = $this->getTable();
         }
@@ -1653,7 +1653,7 @@ class Query
         }
 
         if (isset($options['page'])) {
-            // 根据页数计算limit
+            // 根据頁数计算limit
             list($page, $listRows) = $options['page'];
             $page                  = $page > 0 ? $page : 1;
             $listRows              = $listRows > 0 ? $listRows : (is_numeric($options['limit']) ? $options['limit'] : 20);

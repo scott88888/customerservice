@@ -108,7 +108,7 @@ class Build
         // 创建模块目录
         !is_dir(APP_PATH . $module) && mkdir(APP_PATH . $module);
 
-        // 如果不是 runtime 目录则需要创建配置文件和公共文件、创建模块的默认页面
+        // 如果不是 runtime 目录则需要创建配置文件和公共文件、创建模块的默认頁面
         if (basename(RUNTIME_PATH) != $module) {
             self::buildCommon($module);
             self::buildHello($module, $namespace, $suffix);
@@ -175,7 +175,7 @@ class Build
     }
 
     /**
-     * 创建模块的欢迎页面
+     * 创建模块的欢迎頁面
      * @access protected
      * @param  string $module    模块名
      * @param  string $namespace 应用类库命名空间

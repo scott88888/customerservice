@@ -36,7 +36,7 @@ class File extends SplFileObject
     protected $rule = 'date';
 
     /**
-     * @var array 文件上传验证规则
+     * @var array 文件上传驗證规则
      */
     protected $validate = [];
 
@@ -94,7 +94,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取上传文件的信息
+     * 取得上传文件的信息
      * @access public
      * @param  string $name 信息名称
      * @return array|string
@@ -105,7 +105,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取上传文件的文件名
+     * 取得上传文件的文件名
      * @access public
      * @return string
      */
@@ -128,7 +128,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取文件的哈希散列值
+     * 取得文件的哈希散列值
      * @access public
      * @param  string $type 类型
      * @return string
@@ -143,7 +143,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 检查目录是否可写
+     * 檢查目录是否可写
      * @access protected
      * @param  string $path 目录
      * @return boolean
@@ -160,7 +160,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取文件类型信息
+     * 取得文件类型信息
      * @access public
      * @return string
      */
@@ -185,9 +185,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置上传文件的验证规则
+     * 设置上传文件的驗證规则
      * @access public
-     * @param  array $rule 验证规则
+     * @param  array $rule 驗證规则
      * @return $this
      */
     public function validate(array $rule = [])
@@ -210,32 +210,32 @@ class File extends SplFileObject
     /**
      * 检测上传文件
      * @access public
-     * @param  array $rule 验证规则
+     * @param  array $rule 驗證规则
      * @return bool
      */
     public function check($rule = [])
     {
         $rule = $rule ?: $this->validate;
 
-        /* 检查文件大小 */
+        /* 檢查文件大小 */
         if (isset($rule['size']) && !$this->checkSize($rule['size'])) {
             $this->error = 'filesize not match';
             return false;
         }
 
-        /* 检查文件 Mime 类型 */
+        /* 檢查文件 Mime 类型 */
         if (isset($rule['type']) && !$this->checkMime($rule['type'])) {
             $this->error = 'mimetype to upload is not allowed';
             return false;
         }
 
-        /* 检查文件后缀 */
+        /* 檢查文件后缀 */
         if (isset($rule['ext']) && !$this->checkExt($rule['ext'])) {
             $this->error = 'extensions to upload is not allowed';
             return false;
         }
 
-        /* 检查图像文件 */
+        /* 檢查图像文件 */
         if (!$this->checkImg()) {
             $this->error = 'illegal image files';
             return false;
@@ -328,7 +328,7 @@ class File extends SplFileObject
      */
     public function move($path, $savename = true, $replace = true)
     {
-        // 文件上传失败，捕获错误代码
+        // 文件上传失敗，捕获错误代码
         if (!empty($this->info['error'])) {
             $this->error($this->info['error']);
             return false;
@@ -340,7 +340,7 @@ class File extends SplFileObject
             return false;
         }
 
-        // 验证上传
+        // 驗證上传
         if (!$this->check()) {
             return false;
         }
@@ -377,7 +377,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取保存文件名
+     * 取得保存文件名
      * @access protected
      * @param  string|bool $savename 保存的文件名 默认自动生成
      * @return string
@@ -416,7 +416,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取错误代码信息
+     * 取得错误代码信息
      * @access private
      * @param  int $errorNo 错误号
      * @return $this
@@ -448,7 +448,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 获取错误信息（支持多语言）
+     * 取得错误信息（支持多语言）
      * @access public
      * @return string
      */
@@ -465,7 +465,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 魔法方法，获取文件的 hash 值
+     * 魔法方法，取得文件的 hash 值
      * @access public
      * @param  string $method 方法名
      * @param  mixed  $args   调用参数

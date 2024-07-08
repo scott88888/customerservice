@@ -62,7 +62,7 @@ class Redirect extends Response
     }
 
     /**
-     * 获取跳转地址
+     * 取得跳转地址
      * @return string
      */
     public function getTargetUrl()

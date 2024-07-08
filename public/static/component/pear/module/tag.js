@@ -39,7 +39,7 @@ layui.define('jquery', function(exports){
     return this;
   };
   
-  //外部Tag删除
+  //外部Tag刪除
   tag.prototype.delete = function(filter, layid){
     var tagElem = $(TAG_CLASS + '[lay-filter='+ filter +']')
     ,tagItemElem = tagElem.find('>.' + TAG_ITEM + '[lay-id="'+ layid +'"]');
@@ -96,7 +96,7 @@ layui.define('jquery', function(exports){
         call.tagAuto(filter);
       }).focus();
     }
-    //Tag删除
+    //Tag刪除
     ,delete: function(e, othis){
       var tagItem = othis || $(this).parent(), index = tagItem.index()
       ,parents = tagItem.parents(TAG_CLASS).eq(0)
@@ -119,7 +119,7 @@ layui.define('jquery', function(exports){
       $(TAG_CLASS + elemFilter).each(function(){
         var othis = $(this),tagItem = othis.children('.' + TAG_ITEM), buttonNewTag = othis.children('.' + BUTTON_NEW_TAG);
         tagItem.removeClass(DEFAULT_SKIN).addClass(options.skin);
-        //允许关闭
+        //允许關閉
         if(othis.attr('lay-allowClose') && tagItem.length){
           tagItem.each(function(){
             var li = $(this);

@@ -33,7 +33,7 @@ class phpUserAgent
   {
     return $this->browserName;
   }
-  //获取中文版浏览器名字
+  //取得中文版浏览器名字
     public function getBrowserNameCn()
     {
         $BrowserNameCn=array(
@@ -75,7 +75,7 @@ class phpUserAgent
 
         }
     }
-    //获取中文版浏览器名字
+    //取得中文版浏览器名字
     public function getOperatingSystemCn()
     {
         $SystemCn=array(

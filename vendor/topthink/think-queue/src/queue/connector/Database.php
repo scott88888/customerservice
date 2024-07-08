@@ -99,7 +99,7 @@ class Database extends Connector
     }
 
     /**
-     * 获取下个有效任务
+     * 取得下个有效任务
      *
      * @param  string|null $queue
      * @return \StdClass|null
@@ -155,7 +155,7 @@ class Database extends Connector
     }
 
     /**
-     * 删除任务
+     * 刪除任务
      * @param  string $id
      * @return void
      */

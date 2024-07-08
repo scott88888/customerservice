@@ -14,7 +14,7 @@ class App extends Validate
 {
 
     /**
-     * 验证规则.
+     * 驗證规则.
      * [$rule description]
      * @var array
      */
@@ -27,7 +27,7 @@ class App extends Validate
     ];
 
     /**
-     * 验证消息.
+     * 驗證消息.
      * [$messege description]
      * @var [type]
      */
@@ -39,7 +39,7 @@ class App extends Validate
         'user_name.length' => '管理员账号为3~16个字符',
         'user_name.alphaDash' => '管理员账号只能是字母、数字、下划线 _ ',
         'password.require' => '请填写登入密碼',
-        'password.length' => '密码长度为1~16个字符',
+        'password.length' => '密碼长度为1~16个字符',
         'max_count.require' =>'请填写数量',
         'max_count.number' =>'客服数量只能是数字',
         'expire_time' => '有效期格式不正确',

@@ -61,7 +61,7 @@ class Memcache extends SessionHandler
     }
 
     /**
-     * 关闭Session
+     * 關閉Session
      * @access public
      */
     public function close()
@@ -95,7 +95,7 @@ class Memcache extends SessionHandler
     }
 
     /**
-     * 删除Session
+     * 刪除Session
      * @access public
      * @param string $sessID
      * @return bool

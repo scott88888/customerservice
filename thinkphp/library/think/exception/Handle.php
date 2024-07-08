@@ -132,7 +132,7 @@ class Handle
     {
         // 收集异常数据
         if (App::$debug) {
-            // 调试模式，获取详细的错误信息
+            // 调试模式，取得详细的错误信息
             $data = [
                 'name'    => get_class($exception),
                 'file'    => $exception->getFile(),
@@ -176,7 +176,7 @@ class Handle
         ob_start();
         extract($data);
         include Config::get('exception_tmpl');
-        // 获取并清空缓存
+        // 取得并清空缓存
         $content  = ob_get_clean();
         $response = new Response($content, 'html');
 
@@ -193,7 +193,7 @@ class Handle
     }
 
     /**
-     * 获取错误编码
+     * 取得错误编码
      * ErrorException则使用错误级别作为错误编码
      * @param  \Exception $exception
      * @return integer                错误编码
@@ -208,7 +208,7 @@ class Handle
     }
 
     /**
-     * 获取错误信息
+     * 取得错误信息
      * ErrorException则使用错误级别作为错误编码
      * @param  \Exception $exception
      * @return string                错误信息
@@ -233,8 +233,8 @@ class Handle
     }
 
     /**
-     * 获取出错文件内容
-     * 获取错误的前9行和后9行
+     * 取得出错文件内容
+     * 取得错误的前9行和后9行
      * @param  \Exception $exception
      * @return array                 错误文件内容
      */
@@ -257,7 +257,7 @@ class Handle
     }
 
     /**
-     * 获取异常扩展信息
+     * 取得异常扩展信息
      * 用于非调试模式html返回类型显示
      * @param  \Exception $exception
      * @return array                 异常类定义的扩展数据
@@ -272,7 +272,7 @@ class Handle
     }
 
     /**
-     * 获取常量列表
+     * 取得常量列表
      * @return array 常量列表
      */
     private static function getConst()

@@ -5468,7 +5468,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UI.dropdown = Dropdown;
 
-	// TODO: 1. 处理链接 focus
+	// TODO: 1. 处理連結 focus
 	//       2. 增加 mouseenter / mouseleave 选项
 	//       3. 宽度适应
 
@@ -8158,7 +8158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    isPopup && $element.removeClass(options.className.out);
 	    $element.hide();
 	    this.transitioning = 0;
-	    // 不强制关闭 Dimmer，以便多个 Modal 可以共享 Dimmer
+	    // 不强制關閉 Dimmer，以便多个 Modal 可以共享 Dimmer
 	    this.dimmer.close($element, false);
 	    this.active = false;
 	  };
@@ -9293,7 +9293,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _this.sizePopover();
 	  }
 
-	  // TODO: 监听页面内容变化，重新调整位置
+	  // TODO: 监听頁面内容变化，重新调整位置
 
 	  $element.on('open.popover.amui', function() {
 	    $(window).on('resize.popover.amui', UI.utils.debounce(sizePopover, 50));
@@ -10039,7 +10039,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // press to toggle Toolbar
 	  toggleToolbar: true,
 
-	  // 从何处获取图片，img 可以使用 data-rel 指定大图
+	  // 从何处取得图片，img 可以使用 data-rel 指定大图
 	  target: 'img',
 
 	  // 微信 Webview 中调用微信的图片浏览器
@@ -10938,7 +10938,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$originalOptions = this.$element.find('option');
 
 	  // 单选框使用 JS 禁用已经选择的 option 以后，
-	  // 浏览器会重新选定第一个 option，但有一定延迟，致使 JS 获取 value 时返回 null
+	  // 浏览器会重新选定第一个 option，但有一定延迟，致使 JS 取得 value 时返回 null
 	  if (!this.multiple && ($element.val() === null)) {
 	    this.$originalOptions.length &&
 	    (this.$originalOptions.get(0).selected = true);
@@ -11224,8 +11224,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    height: 450,
 	    icon: 'weibo'
 	  },
-	  // url          链接地址
-	  // title:”,     分享的文字内容(可选，默认为所在页面的title)
+	  // url          連結地址
+	  // title:”,     分享的文字内容(可选，默认为所在頁面的title)
 	  // appkey:”,    您申请的应用appkey,显示分享来源(可选)
 	  // pic:”,       分享图片的路径(可选)
 	  // ralateUid:”, 关联使用者的UID，分享微博会@该使用者(可选)
@@ -11286,7 +11286,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // 550 * 400
 	  // resourceUrl : '', // 分享的资源Url
 	  // srcUrl : '',	     // 分享的资源来源Url,
-	  //                   //   默认为header中的Referer,如果分享失败可以调整此值为resourceUrl试试
+	  //                   //   默认为header中的Referer,如果分享失敗可以调整此值为resourceUrl试试
 	  // pic : '',		 // 分享的主题图片，会自动抓取
 	  // title : '',		 // 分享的标题
 	  // description : ''	 // 分享的详细描述
@@ -11300,7 +11300,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // http://www.douban.com/service/sharebutton
 	  // 450 * 330
 	  // http://www.douban.com/share/service?bm=1&image=&href=xxx&updated=&name=
-	  // href 链接
+	  // href 連結
 	  // name 标题
 
 	  /* void (function() {
@@ -11492,7 +11492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    '<div class="am-share-wx-qr"></div>' +
 	    '<div class="am-share-wechat-tip">' +
 	    '打开微信，点击底部的<em>发现</em>，<br/> ' +
-	    '使用<em>扫一扫</em>将网页分享至朋友圈</div></div></div></div>');
+	    '使用<em>扫一扫</em>将网頁分享至朋友圈</div></div></div></div>');
 
 	    $qr.attr('id', qrId);
 
@@ -11721,7 +11721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * 获取单个字符的utf8编码
+	 * 取得单个字符的utf8编码
 	 * unicode BMP平面约65535个字符
 	 * @param {num} code
 	 * return {array}
@@ -11745,7 +11745,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * 获取字符串的utf8编码字节串
+	 * 取得字符串的utf8编码字节串
 	 * @param {string} string
 	 * @return {array}
 	 */
@@ -11782,7 +11782,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	QRCodeAlg.prototype = {
 	  constructor: QRCodeAlg,
 	  /**
-	   * 获取二维码矩阵大小
+	   * 取得二维码矩阵大小
 	   * @return {num} 矩阵大小
 	   */
 	  getModuleCount: function() {
@@ -12257,7 +12257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return (data << 12) | d;
 	  },
 	  /*
-	   获取BCH位信息
+	   取得BCH位信息
 	   */
 	  getBCHDigit: function(data) {
 
@@ -12271,7 +12271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return digit;
 	  },
 	  /*
-	   获取版本对应的矫正图形位置
+	   取得版本对应的矫正图形位置
 	   */
 	  getPatternPosition: function(typeNumber) {
 	    return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
@@ -12305,7 +12305,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /*
-	   获取RS的纠错多项式
+	   取得RS的纠错多项式
 	   */
 	  getErrorCorrectPolynomial: function(errorCorrectLength) {
 
@@ -12318,7 +12318,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return a;
 	  },
 	  /*
-	   获取评价
+	   取得评价
 	   */
 	  getLostPoint: function(qrCode) {
 
@@ -12815,7 +12815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 	/**
-	 * 根据数据获取对应版本
+	 * 根据数据取得对应版本
 	 * @return {[type]} [description]
 	 */
 	QRCodeAlg.prototype.getRightType = function() {
@@ -12879,7 +12879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	/**
-	 * 获取单个字符的utf8编码
+	 * 取得单个字符的utf8编码
 	 * unicode BMP平面约65535个字符
 	 * @param {num} code
 	 * return {array}
@@ -12903,7 +12903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * 获取字符串的utf8编码字节串
+	 * 取得字符串的utf8编码字节串
 	 * @param {string} string
 	 * @return {array}
 	 */
@@ -12940,7 +12940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	QRCodeAlg.prototype = {
 	  constructor: QRCodeAlg,
 	  /**
-	   * 获取二维码矩阵大小
+	   * 取得二维码矩阵大小
 	   * @return {num} 矩阵大小
 	   */
 	  getModuleCount: function() {
@@ -13415,7 +13415,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return (data << 12) | d;
 	  },
 	  /*
-	   获取BCH位信息
+	   取得BCH位信息
 	   */
 	  getBCHDigit: function(data) {
 
@@ -13429,7 +13429,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return digit;
 	  },
 	  /*
-	   获取版本对应的矫正图形位置
+	   取得版本对应的矫正图形位置
 	   */
 	  getPatternPosition: function(typeNumber) {
 	    return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
@@ -13463,7 +13463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /*
-	   获取RS的纠错多项式
+	   取得RS的纠错多项式
 	   */
 	  getErrorCorrectPolynomial: function(errorCorrectLength) {
 
@@ -13476,7 +13476,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return a;
 	  },
 	  /*
-	   获取评价
+	   取得评价
 	   */
 	  getLostPoint: function(qrCode) {
 
@@ -13973,7 +13973,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 	/**
-	 * 根据数据获取对应版本
+	 * 根据数据取得对应版本
 	 * @return {[type]} [description]
 	 */
 	QRCodeAlg.prototype.getRightType = function() {
@@ -14623,7 +14623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UCheck;
 
-	// TODO: 与表單验证结合使用的情况
+	// TODO: 与表單驗證结合使用的情况
 
 
 /***/ },
@@ -14934,7 +14934,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  // check minimum and maximum
 	  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
-	  // TODO: 日期验证最小值和最大值 min/max
+	  // TODO: 日期驗證最小值和最大值 min/max
 	  if (!isNaN(min) && Number(value) < min) {
 	    validity.valid = false;
 	    validity.rangeUnderflow = true;
@@ -16100,7 +16100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        map.centerAndZoom(point, setZoom);
 	        marker.setPosition(point);
 	        map.addOverlay(marker);
-	        map.openInfoWindow(infoWindow, point); // 开启信息窗口
+	        map.openInfoWindow(infoWindow, point); // 開啟信息窗口
 	      }
 	    }, '');
 
@@ -16111,9 +16111,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      marker.setPosition(point);
 	      map.addOverlay(marker);
 	      if (address) {
-	        map.openInfoWindow(infoWindow, point); // 开启信息窗口
+	        map.openInfoWindow(infoWindow, point); // 開啟信息窗口
 	      } else {
-	        map.openInfoWindow(new BMap.InfoWindow(address, opts), point); // 开启信息窗口
+	        map.openInfoWindow(new BMap.InfoWindow(address, opts), point); // 開啟信息窗口
 	      }
 	    });
 	  }
@@ -16427,7 +16427,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  function checkNavBarItems() {
 	    if (calcSuiteItems() >= navItemsCounter) {
-	      // 显示所有链接，隐藏 more
+	      // 显示所有連結，隐藏 more
 	      $moreLink.hide();
 	      $moreActions.find('li').insertBefore($moreLink);
 	      return;
@@ -16453,7 +16453,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  /**
-	   * 计算最适合显示的条目个数
+	   * 计算最适合显示的條目个数
 	   * @returns {number}
 	   */
 	  function calcSuiteItems() {
@@ -16680,7 +16680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (res.checkResult.chooseWXPay) {
 	          wx.chooseWXPay(options);
 	        } else {
-	          alert('微信版本不支持支付接口或没有开启！');
+	          alert('微信版本不支持支付接口或没有開啟！');
 	        }
 	      },
 	      fail: function() {

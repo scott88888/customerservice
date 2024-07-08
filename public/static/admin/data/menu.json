@@ -117,7 +117,7 @@
 				"href": "view/document/dtree.html"
 			}, {
 				"id": 2035,
-				"title": "文本编辑",
+				"title": "文本編輯",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -234,7 +234,7 @@
 	},
 	{
 		"id": "result",
-		"title": "结果页面",
+		"title": "结果頁面",
 		"icon": "layui-icon layui-icon-auz",
 		"type": 0,
 		"href": "",
@@ -248,7 +248,7 @@
 			},
 			{
 				"id": "failure",
-				"title": "失败",
+				"title": "失敗",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -258,7 +258,7 @@
 	},
 	{
 		"id": "error",
-		"title": "错误页面",
+		"title": "错误頁面",
 		"icon": "layui-icon layui-icon-face-cry",
 		"type": 0,
 		"href": "",
@@ -350,20 +350,20 @@
 	},
 	{
 		"id": "common",
-		"title": "常用页面",
+		"title": "常用頁面",
 		"icon": "layui-icon layui-icon-template-1",
 		"type": 0,
 		"href": "",
 		"children": [{
 			"id": 701,
-			"title": "登录页面",
+			"title": "登入頁面",
 			"icon": "layui-icon layui-icon-face-smile",
 			"type": 1,
 			"openType": "_iframe",
 			"href": "login.html"
 		}, {
 			"id": 702,
-			"title": "空白页面",
+			"title": "空白頁面",
 			"icon": "layui-icon layui-icon-face-smile",
 			"type": 1,
 			"openType": "_iframe",

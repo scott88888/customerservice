@@ -181,7 +181,7 @@ $(document).ready(function () {
     function uploader_init() {
         _pl_file_uploader.uploader = new plupload.Uploader({
             browse_button: _pl_file_uploader.id, //触发文件选择对话框的按钮，为那个元素id
-            url: _upload_url, //服务器端的上传页面地址
+            url: _upload_url, //服务器端的上传頁面地址
         });
         _pl_file_uploader.uploader.bind('Init', function (uploader) {
             _pl_file_uploader.input = $('#' + _pl_file_uploader.id + ' ~ .moxie-shim input[type=file]');
@@ -394,8 +394,8 @@ $(document).ready(function () {
         data: {
             group_list: [],
             selected: 0,  //选中组
-            edit_group: -1, //编辑组
-            edit_setting: -1, //打开编辑组
+            edit_group: -1, //編輯组
+            edit_setting: -1, //打开編輯组
             file_list: [], //选中的图片
             list: [], //当前组的所有图片
         }

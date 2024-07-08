@@ -3,7 +3,7 @@
 use app\common\lib\Storage;
 
 /**
- * UEditor编辑器通用上传类
+ * UEditor編輯器通用上传类
  */
 class Uploader
 {
@@ -36,15 +36,15 @@ class Uploader
         "ERROR_TMP_FILE_NOT_FOUND" => "找不到临时文件",
         "ERROR_SIZE_EXCEED" => "文件大小超出网站限制",
         "ERROR_TYPE_NOT_ALLOWED" => "文件类型不允许",
-        "ERROR_CREATE_DIR" => "目录创建失败",
+        "ERROR_CREATE_DIR" => "目录创建失敗",
         "ERROR_DIR_NOT_WRITEABLE" => "目录没有写权限",
         "ERROR_FILE_MOVE" => "文件保存时出错",
         "ERROR_FILE_NOT_FOUND" => "找不到上传文件",
         "ERROR_WRITE_CONTENT" => "写入文件内容错误",
         "ERROR_UNKNOWN" => "未知错误",
-        "ERROR_DEAD_LINK" => "链接不可用",
-        "ERROR_HTTP_LINK" => "链接不是http链接",
-        "ERROR_HTTP_CONTENTTYPE" => "链接contentType不正确",
+        "ERROR_DEAD_LINK" => "連結不可用",
+        "ERROR_HTTP_LINK" => "連結不是http連結",
+        "ERROR_HTTP_CONTENTTYPE" => "連結contentType不正确",
         "INVALID_URL" => "非法 URL",
         "INVALID_IP" => "非法 IP"
     );
@@ -53,7 +53,7 @@ class Uploader
      * 构造函数
      * @param string $fileField 表單名称
      * @param array $config 配置项
-     * @param bool $base64 是否解析base64编码，可省略。若开启，则$fileField代表的是base64编码的字符串表單名
+     * @param bool $base64 是否解析base64编码，可省略。若開啟，则$fileField代表的是base64编码的字符串表單名
      */
     public function __construct($fileField, $config, $type = "upload")
     {
@@ -97,12 +97,12 @@ class Uploader
         $this->fileType = $this->getFileExt();
         $this->fullName = $this->getFullName();
 
-        //检查文件大小是否超出限制
+        //檢查文件大小是否超出限制
         if (!$this->checkSize()) {
             $this->stateInfo = $this->getStateInfo("ERROR_SIZE_EXCEED");
             return;
         }
-        //检查是否不允许的文件格式
+        //檢查是否不允许的文件格式
         if (!$this->checkType()) {
             $this->stateInfo = $this->getStateInfo("ERROR_TYPE_NOT_ALLOWED");
             return;
@@ -130,7 +130,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
         $this->fileType = $this->getFileExt();
         $this->fullName = $this->getFullName();
 
-        //检查文件大小是否超出限制
+        //檢查文件大小是否超出限制
         if (!$this->checkSize()) {
             $this->stateInfo = $this->getStateInfo("ERROR_SIZE_EXCEED");
             return;
@@ -171,7 +171,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
         $imgUrl = htmlspecialchars($this->fileField);
         $imgUrl = str_replace("&amp;", "&", $imgUrl);
 
-        //http开头验证
+        //http开头驗證
         if (strpos($imgUrl, "http") !== 0) {
             $this->stateInfo = $this->getStateInfo("ERROR_HTTP_LINK");
             return;
@@ -189,7 +189,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
         preg_match('/^https*:\/\/(.+)/', $host_with_protocol, $matches);
         $host_without_protocol = count($matches) > 1 ? $matches[1] : '';
 
-        // 此时提取出来的可能是 ip 也有可能是域名，先获取 ip
+        // 此时提取出来的可能是 ip 也有可能是域名，先取得 ip
         $ip = gethostbyname($host_without_protocol);
         // 判断是否是私有 ip
         if(!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE)) {
@@ -197,20 +197,20 @@ $this->fileMd5=md5_file($file["tmp_name"]);
             return;
         }
 
-        //获取请求头并检测死链
+        //取得请求头并检测死链
         $heads = get_headers($imgUrl, 1);
         if (!(stristr($heads[0], "200") && stristr($heads[0], "OK"))) {
             $this->stateInfo = $this->getStateInfo("ERROR_DEAD_LINK");
             return;
         }
-        //格式验证(扩展名验证和Content-Type验证)
+        //格式驗證(扩展名驗證和Content-Type驗證)
         $fileType = strtolower(strrchr($imgUrl, '.'));
         if (!in_array($fileType, $this->config['allowFiles']) || !isset($heads['Content-Type']) || !stristr($heads['Content-Type'], "image")) {
             $this->stateInfo = $this->getStateInfo("ERROR_HTTP_CONTENTTYPE");
             return;
         }
 
-        //打开输出缓冲区并获取远程图片
+        //打开输出缓冲区并取得远程图片
         ob_start();
         $context = stream_context_create(
             array('http' => array(
@@ -227,7 +227,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
         $this->fileType = $this->getFileExt();
         $this->fullName = $this->getFullName();
 
-        //检查文件大小是否超出限制
+        //檢查文件大小是否超出限制
         if (!$this->checkSize()) {
             $this->stateInfo = $this->getStateInfo("ERROR_SIZE_EXCEED");
             return;
@@ -260,7 +260,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 上传错误检查
+     * 上传错误檢查
      * @param $errCode
      * @return string
      */
@@ -270,7 +270,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 获取文件扩展名
+     * 取得文件扩展名
      * @return string
      */
     private function getFileExt()
@@ -351,7 +351,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 获取当前上传成功文件的各项信息
+     * 取得当前上传成功文件的各项信息
      * @return array
      */
     public function getFileInfo()

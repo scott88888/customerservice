@@ -3888,7 +3888,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
       cityEl.attr('lay-filter', cityFilter);
       countyEl.attr('lay-filter', countyFilter);
   
-      //获取默认值
+      //取得默认值
       if(provinceEl.data('value')){
         options.data.province = provinceEl.data('value');
         options.data.provinceCode = getCode('province', options.data.province);

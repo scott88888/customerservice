@@ -23,7 +23,7 @@ class AppClient
      * title: app 的名称  注意，Title 不是唯一标识，重复 create 动作将生成多个 app
      * maxUsers：人数限制
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人（抢流）。默认为 false ，
-       即同一个身份的 client (app/room/user) ，新的连麦请求可以成功，旧连接被关闭。
+       即同一个身份的 client (app/room/user) ，新的连麦请求可以成功，旧连接被關閉。
      */
     public function createApp($hub, $title, $maxUsers = null, $noAutoKickUser = null)
     {
@@ -47,7 +47,7 @@ class AppClient
      * MaxUsers: int 类型，可选，连麦房间支持的最大線上人数。
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人。
      * MergePublishRtmp: 连麦合流转推 RTMP 的配置，可选择。其详细配置包括如下
-            Enable: 布尔类型，用于开启和关闭所有房间的合流功能。
+            Enable: 布尔类型，用于開啟和關閉所有房间的合流功能。
             AudioOnly: 布尔类型，可选，指定是否只合成音频。
             Height, Width: int64，可选，指定合流输出的高和宽，默认为 640 x 480。
             OutputFps: int64，可选，指定合流输出的帧率，默认为 25 fps 。
@@ -95,7 +95,7 @@ class AppClient
     }
 
     /*
-     * 获取房间的人数
+     * 取得房间的人数
      * appId: app 的唯一标识，创建的时候由系统生成。
      * roomName: 操作所查询的连麦房间。
      */
@@ -120,10 +120,10 @@ class AppClient
     }
 
     /*
-     * 获取房间的人数
+     * 取得房间的人数
      * appId: app 的唯一标识，创建的时候由系统生成。
      * prefix: 所查询房间名的前缀索引，可以为空。
-     * offset: int 类型，分页查询的位移标记。
+     * offset: int 类型，分頁查询的位移标记。
      * limit: int 类型，此次查询的最大长度。
      * GET /v3/apps/<AppID>/rooms?prefix=<RoomNamePrefix>&offset=<Offset>&limit=<Limit>
      */

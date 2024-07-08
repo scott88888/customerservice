@@ -33,7 +33,7 @@ final class ArgusManager
      * @param $body     body信息
      * @param $vid      videoID
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  https://developer.qiniu.com/dora/manual/4258/video-pulp
      */
     public function pulpVideo($body, $vid)

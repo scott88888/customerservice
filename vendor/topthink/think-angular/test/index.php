@@ -79,5 +79,5 @@ $view->display('index');
 // $html = $view->fetch('index');
 // echo $html;
 
-// 获取混编代码
+// 取得混编代码
 // $php_code = $view->compiler('index');

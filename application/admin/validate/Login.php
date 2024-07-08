@@ -7,13 +7,13 @@ use think\Validate;
 
 /**
  *
- * 登陆验证器.
+ * 登入驗證器.
  */
 class Login extends Validate
 {
 
     /**
-     * 验证规则.
+     * 驗證规则.
      * [$rule description]
      * @var array
      */
@@ -24,14 +24,14 @@ class Login extends Validate
     ];
 
     /**
-     * 验证消息.
+     * 驗證消息.
      * [$messege description]
      * @var [type]
      */
     protected $messege = [
-        'username.require' => '请填写登录帐号',
+        'username.require' => '请填写登入帐号',
         'password.require' => '请填写登入密碼',
-        'captcha.require'  => '请填写验证码',
-        'captcha.captcha'  => '验证码不正确'
+        'captcha.require'  => '请填写驗證碼',
+        'captcha.captcha'  => '驗證碼不正确'
     ];
 }

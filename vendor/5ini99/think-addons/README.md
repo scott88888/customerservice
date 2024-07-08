@@ -8,9 +8,9 @@ The ThinkPHP5 Addons Package
 ### 公共配置
 ```
 'addons'=>[
-    // 是否自动读取取插件钩子配置信息（默认是关闭）
+    // 是否自动读取取插件钩子配置信息（默认是關閉）
     'autoload' => false,
-    // 当关闭自动获取配置时需要手动配置hooks信息
+    // 当關閉自动取得配置时需要手动配置hooks信息
     'hooks' => [
 	    // 可以定义多个钩子
         'testhook'=>'test' // 键为钩子名称，用于在业务中自定义钩子处理，值为实现该钩子的插件，
@@ -22,9 +22,9 @@ The ThinkPHP5 Addons Package
 ```
 <?php
 return [
-	// 是否自动读取取插件钩子配置信息（默认是关闭）
+	// 是否自动读取取插件钩子配置信息（默认是關閉）
     'autoload' => false,
-    // 当关闭自动获取配置时需要手动配置hooks信息
+    // 当關閉自动取得配置时需要手动配置hooks信息
     'hooks' => [
         // 可以定义多个钩子
         'testhook'=>'test' // 键为钩子名称，用于在业务中自定义钩子处理，值为实现该钩子的插件，
@@ -127,8 +127,8 @@ return [
 ```
 <h1>hello tpl</h1>
 
-如果插件中需要有链接或送出数据的业务，可以在插件中创建controller业务文件，
-要访问插件中的controller时使用addon_url生成url链接。
+如果插件中需要有連結或送出数据的业务，可以在插件中创建controller业务文件，
+要访问插件中的controller时使用addon_url生成url連結。
 如下：
 <a href="{:addon_url('test://Action/link')}">link test</a>
 格式为：

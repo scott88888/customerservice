@@ -39,7 +39,7 @@ return [
     'var_jsonp_handler' => 'callback',
     // 默认时区
     'default_timezone' => 'PRC',
-    // 是否开启多语言
+    // 是否開啟多语言
     'lang_switch_on' => false,
     // 默认全局过滤方法 用逗号分隔多个
     'default_filter' => 'htmlspecialchars,trim',
@@ -63,7 +63,7 @@ return [
     'default_controller' => 'Index',
     // 默认操作名
     'default_action' => 'index',
-    // 默认验证器
+    // 默认驗證器
     'default_validate' => '',
     // 默认的空控制器名
     'empty_controller' => 'Error',
@@ -78,7 +78,7 @@ return [
 
     // PATHINFO变量名 用于兼容模式
     'var_pathinfo' => 's',
-    // 兼容PATH_INFO获取
+    // 兼容PATH_INFO取得
     'pathinfo_fetch' => ['ORIG_PATH_INFO', 'REDIRECT_PATH_INFO', 'REDIRECT_URL'],
     // pathinfo分隔符
     'pathinfo_depr' => '/',
@@ -88,7 +88,7 @@ return [
     'url_common_param' => false,
     // URL参数方式 0 按名称成对解析 1 按顺序解析
     'url_param_type' => 0,
-    // 是否开启路由
+    // 是否開啟路由
     'url_route_on' => true,
     // 路由使用完整匹配
     'route_complete_match' => false,
@@ -110,7 +110,7 @@ return [
     'var_ajax' => '_ajax',
     // 表單pjax伪装变量
     'var_pjax' => '_pjax',
-    // 是否开启请求缓存 true自动缓存 支持设置请求缓存规则
+    // 是否開啟请求缓存 true自动缓存 支持设置请求缓存规则
     'request_cache' => false,
     // 请求缓存有效期
     'request_cache_expire' => null,
@@ -149,7 +149,7 @@ return [
         '__static__' => $basename . '/static',
         '__libs__' => $basename . '/assets/libs'
     ],
-    // 默认跳转页面对应的模板文件
+    // 默认跳转頁面对应的模板文件
     'dispatch_success_tmpl' => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl' => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
 
@@ -157,7 +157,7 @@ return [
     // | 异常及错误设置
     // +----------------------------------------------------------------------
 
-    // 异常页面的模板文件
+    // 异常頁面的模板文件
     'exception_tmpl' => APP_PATH . 'common' . DS . 'tpl' . DS . 'think_exception.tpl',
 
     // 错误显示信息,非调试模式有效
@@ -181,7 +181,7 @@ return [
     ],
 
     // +----------------------------------------------------------------------
-    // | Trace设置 开启 app_trace 后 有效
+    // | Trace设置 開啟 app_trace 后 有效
     // +----------------------------------------------------------------------
     'trace' => [
         // 内置Html Console 支持扩展
@@ -215,7 +215,7 @@ return [
         'prefix' => '',
         // 驱动方式 支持redis memcache memcached
         'type' => '',
-        // 是否自动开启 SESSION
+        // 是否自动開啟 SESSION
         'auto_start' => true,
     ],
 
@@ -239,41 +239,41 @@ return [
         'setcookie' => true,
     ],
 
-    // 分页配置
+    // 分頁配置
     'paginate' => [
         'type' => 'bootstrap',
         'var_page' => 'page',
         'list_rows' => 10,
     ],
 
-    // 验证码设置
+    // 驗證碼设置
 
     'captcha' => [
-        // 验证码加密密钥
+        // 驗證碼加密密钥
         'seKey' => 'AdminSystem',
-        // 验证码字符集合
+        // 驗證碼字符集合
         'codeSet' => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
-        // 验证码过期时间（s）
+        // 驗證碼过期时间（s）
         'expire' => 1800,
-        // 验证码字体大小(px)
+        // 驗證碼字体大小(px)
         'fontSize' => 26,
         // 是否画混淆曲线
         'useCurve' => false,
         // 是否新增杂点
         'useNoise' => true,
-        // 验证码图片高度
+        // 驗證碼图片高度
         'imageH' => 0,
-        // 验证码图片宽度
+        // 驗證碼图片宽度
         'imageW' => 0,
-        // 验证码位数
+        // 驗證碼位数
         'length' => 4,
-        // 验证码字体，不设置随机获取
+        // 驗證碼字体，不设置随机取得
         'fontttf' => '5.ttf',
         // 背景颜色
         'bg' => [243, 251, 254],
     ],
 
-    // 自定义错误页面
+    // 自定义错误頁面
     'http_exception_template' => [
         // 定义404错误重定向
         403 => APP_PATH . '403.html',
@@ -300,7 +300,7 @@ return [
     //注册免费试用天数
     'default_reg_day' => 3,
 
-    //是否开启注册:1开启0关闭
+    //是否開啟注册:1開啟0關閉
     'open_reg' => 1,
 
     'lang' => [

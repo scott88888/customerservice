@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //编辑视频时初始化相关信息
+        //編輯视频时初始化相关信息
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 将单个视频信息插入编辑器中
+     * 将单个视频信息插入編輯器中
      */
     function insertSingle(){
         var width = $G("videoWidth"),
@@ -129,7 +129,7 @@
     }
 
     /**
-     * 将元素id下的所有代表视频的图片插入编辑器中
+     * 将元素id下的所有代表视频的图片插入編輯器中
      * @param id
      */
     function insertSearch(id){
@@ -348,7 +348,7 @@
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没选择文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
-            // 总体进度条
+            // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
             // 新增的文件数量
                 fileCount = 0,
@@ -473,7 +473,7 @@
                     percentages[ file.id ] = [ file.size, 0 ];
                     file.rotation = 0;
 
-                    /* 检查文件格式 */
+                    /* 檢查文件格式 */
                     if (!file.ext || acceptExtensions.indexOf(file.ext.toLowerCase()) == -1) {
                         showError('not_allow_type');
                         uploader.removeFile(file);

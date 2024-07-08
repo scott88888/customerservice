@@ -55,7 +55,7 @@
 
 // 配置
 $config = [
-    'debug'            => true, // 是否开启调试
+    'debug'            => true, // 是否開啟调试
     'tpl_path'         => './view/', // 模板根目录
     'tpl_suffix'       => '.html', // 模板后缀
     'tpl_cache_path'   => './cache/', // 模板缓存目录
@@ -85,7 +85,7 @@ $view->assign($data);
 // 输出解析结果
 $view->display('index');
 
-// 获取输出结果
+// 取得输出结果
 // $view->fetch('index');
 
 ~~~
@@ -111,7 +111,7 @@ $view->display('index');
     <body>
         <div class="box" php-show="$title">{$title}</div>
 
-        <div class="box" php-hide="$title">如果title的值为空, 则可以显示这条消息, 否则不显示</div>
+        <div class="box" php-hide="$title">如果title的值为空, 则可以显示这條消息, 否则不显示</div>
 
         <div class="box">
             <span>foreach by [1,2,3,4,5]</span>
@@ -185,7 +185,7 @@ $view->display('index');
     <body>
         <?php if ($title) { ?><div class="box" ><?php echo $title; ?></div><?php } ?>
 
-        <?php if (!($title)) { ?><div class="box" >如果title的值为空, 则可以显示这条消息, 否则不显示</div><?php } ?>
+        <?php if (!($title)) { ?><div class="box" >如果title的值为空, 则可以显示这條消息, 否则不显示</div><?php } ?>
 
         <div class="box">
             <span>foreach by [1,2,3,4,5]</span>

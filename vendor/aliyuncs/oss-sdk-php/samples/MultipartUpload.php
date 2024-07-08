@@ -70,7 +70,7 @@ function putObjectByRawApis($ossClient, $bucket)
 {
     $object = "test/multipart-test.txt";
     /**
-     *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 获取upload id
+     *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 取得upload id
      */
     try {
         $uploadId = $ossClient->initiateMultipartUpload($bucket, $object);
@@ -156,7 +156,7 @@ function uploadDir($ossClient, $bucket)
 }
 
 /**
- * 获取当前未完成的分片上传列表
+ * 取得当前未完成的分片上传列表
  *
  * @param $ossClient OssClient
  * @param $bucket   string

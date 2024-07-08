@@ -55,7 +55,7 @@
             modules[ id ] = module.exports;
         },
 
-        // 根据id获取module
+        // 根据id取得module
         getModule = function( id ) {
             var module = modules[ id ] || root[ id ];
 
@@ -239,7 +239,7 @@
             when: promise.when,
     
             /**
-             * @description  简单的浏览器检查结果。
+             * @description  简单的浏览器檢查结果。
              *
              * * `webkit`  webkit版本号，如果浏览器为非webkit内核，此属性为`undefined`。
              * * `chrome`  chrome浏览器版本号，如果浏览器为chrome，此属性为`undefined`。
@@ -273,7 +273,7 @@
             })( navigator.userAgent ),
     
             /**
-             * @description  操作系统检查结果。
+             * @description  操作系统檢查结果。
              *
              * * `android`  如果在android浏览器环境下，此值为对应的android版本号，否则为`undefined`。
              * * `ios` 如果在ios浏览器环境下，此值为对应的ios版本号，否则为`undefined`。
@@ -491,7 +491,7 @@
             separator = /\s+/,
             protos;
     
-        // 根据条件过滤出事件handlers.
+        // 根据條件过滤出事件handlers.
         function findHandlers( arr, name, callback, context ) {
             return $.grep( arr, function( handler ) {
                 return handler &&
@@ -768,7 +768,7 @@
             },
     
             /**
-             * 获取或者设置Uploader配置项。
+             * 取得或者设置Uploader配置项。
              * @method option
              * @grammar option( key ) => *
              * @grammar option( key, val ) => self
@@ -804,10 +804,10 @@
             },
     
             /**
-             * 获取文件统计信息。返回一个包含一下信息的对象。
+             * 取得文件统计信息。返回一个包含一下信息的对象。
              * * `successNum` 上传成功的文件数
-             * * `uploadFailNum` 上传失败的文件数
-             * * `cancelNum` 被删除的文件数
+             * * `uploadFailNum` 上传失敗的文件数
+             * * `cancelNum` 被刪除的文件数
              * * `invalidNum` 无效的文件数
              * * `queueNum` 还在队列中的文件数
              * @method getStats
@@ -889,7 +889,7 @@
         var $ = Base.$,
             factories = {},
     
-            // 获取对象的第一个key
+            // 取得对象的第一个key
             getFirstKey = function( obj ) {
                 for ( var key in obj ) {
                     if ( obj.hasOwnProperty( key ) ) {
@@ -1295,7 +1295,7 @@
                     promise = Base.when.apply( Base, dfds );
                     key = promise.pipe ? 'pipe' : 'then';
     
-                    // 很重要不能删除。删除了会死循环。
+                    // 很重要不能刪除。刪除了会死循环。
                     // 保证执行顺序。让callback总是在下一个tick中执行。
                     return promise[ key ](function() {
                                 var deferred = Base.Deferred(),
@@ -1366,7 +1366,7 @@
         /**
          * @event dndAccept
          * @param {DataTransferItemList} items DataTransferItem
-         * @description 阻止此事件可以拒绝某些类型的文件拖入进来。目前只有 chrome 提供这样的 API，且只能通过 mime-type 验证。
+         * @description 阻止此事件可以拒绝某些类型的文件拖入进来。目前只有 chrome 提供这样的 API，且只能通过 mime-type 驗證。
          * @for  Uploader
          */
         return Uploader.register({
@@ -2006,7 +2006,7 @@
     
                 // 为空的话则保留原有图片格式。
                 // 否则强制转换成指定的类型。
-                // IE 8下面 base64 大小不能超过 32K 否则预览失败，而非 jpeg 编码的图片很可
+                // IE 8下面 base64 大小不能超过 32K 否则预览失敗，而非 jpeg 编码的图片很可
                 // 能会超过 32k, 所以这里设置成预览的时候都是 image/jpeg
                 type: 'image/jpeg'
             },
@@ -2265,7 +2265,7 @@
             this.id = gid();
     
             /**
-             * 文件扩展名，通过文件名获取，例如test.png的扩展名为png
+             * 文件扩展名，通过文件名取得，例如test.png的扩展名为png
              * @property ext
              * @type {string}
              */
@@ -2317,7 +2317,7 @@
             },
     
             /**
-             * 获取文件狀態
+             * 取得文件狀態
              * @return {File.Status}
              * @example
                      文件狀態具体包括以下几种类型：
@@ -2341,7 +2341,7 @@
             },
     
             /**
-             * 获取文件原始信息。
+             * 取得文件原始信息。
              * @return {*}
              */
             getSource: function() {
@@ -2456,7 +2456,7 @@
             },
     
             /**
-             * 获取文件对象
+             * 取得文件对象
              *
              * @method getFile
              * @param  {String} fileId   文件ID
@@ -2506,7 +2506,7 @@
             },
     
             /**
-             * 获取指定类型的文件列表, 列表中每一个成员为[File](#WebUploader:File)对象。
+             * 取得指定类型的文件列表, 列表中每一个成员为[File](#WebUploader:File)对象。
              * @grammar getFiles( [status1[, status2 ...]] ) => Array
              * @method getFiles
              * @param {String} [status] [文件狀態值](#WebUploader:File:File.Status)
@@ -2890,7 +2890,7 @@
     
     });
     /**
-     * @fileOverview 新增获取Runtime相关信息的方法。
+     * @fileOverview 新增取得Runtime相关信息的方法。
      */
     define('widgets/runtime',[
         'uploader',
@@ -3571,7 +3571,7 @@
             /**
              * @event uploadComplete
              * @param {File} [file] File对象
-             * @description 不管成功或者失败，文件上传完成时触发。
+             * @description 不管成功或者失敗，文件上传完成时触发。
              * @for  Uploader
              */
     
@@ -3728,7 +3728,7 @@
         });
     });
     /**
-     * @fileOverview 各种验证，包括文件总大小是否超出、单文件是否超出和文件是否重复。
+     * @fileOverview 各种驗證，包括文件总大小是否超出、单文件是否超出和文件是否重复。
      */
     
     define('widgets/validator',[
@@ -3755,12 +3755,12 @@
         // 暴露给外面的api
         api = {
     
-            // 新增验证器
+            // 新增驗證器
             addValidator: function( type, cb ) {
                 validators[ type ] = cb;
             },
     
-            // 移除验证器
+            // 移除驗證器
             removeValidator: function( type ) {
                 delete validators[ type ];
             }
@@ -3780,7 +3780,7 @@
          * @property {int} [fileNumLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 验证文件总数量, 超出则不允许加入队列。
+         * @description 驗證文件总数量, 超出则不允许加入队列。
          */
         api.addValidator( 'fileNumLimit', function() {
             var uploader = this,
@@ -3824,7 +3824,7 @@
          * @property {int} [fileSizeLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 验证文件总大小是否超出限制, 超出则不允许加入队列。
+         * @description 驗證文件总大小是否超出限制, 超出则不允许加入队列。
          */
         api.addValidator( 'fileSizeLimit', function() {
             var uploader = this,
@@ -3868,7 +3868,7 @@
          * @property {int} [fileSingleSizeLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 验证单个文件大小是否超出限制, 超出则不允许加入队列。
+         * @description 驗證单个文件大小是否超出限制, 超出则不允许加入队列。
          */
         api.addValidator( 'fileSingleSizeLimit', function() {
             var uploader = this,
@@ -4011,7 +4011,7 @@
             };
     
             me.destory = function() {
-                // @todo 删除池子中的所有实例
+                // @todo 刪除池子中的所有实例
                 return destory && destory.apply( this, arguments );
             };
         }
@@ -5355,7 +5355,7 @@
     /**
      * @fileOverview Transport
      * @todo 支持chunked传输，优势：
-     * 可以将大文件分成小块，挨个传输，可以提高大文件成功率，当失败的时候，也只需要重传那小部分，
+     * 可以将大文件分成小块，挨个传输，可以提高大文件成功率，当失敗的时候，也只需要重传那小部分，
      * 而不需要重头再传一次。另外断点续传也需要用chunked方式。
      */
     define('runtime/html5/transport',[

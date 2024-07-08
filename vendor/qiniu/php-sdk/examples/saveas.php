@@ -4,7 +4,7 @@ require_once __DIR__ . '/../autoload.php';
 use Qiniu\Auth;
 use Qiniu\Processing\PersistentFop;
 
-// 后台来获取AK, SK
+// 后台来取得AK, SK
 $accessKey = 'Access_Key';
 $secretKey = 'Secret_Key';
 

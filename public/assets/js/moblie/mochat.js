@@ -594,7 +594,7 @@ function getanswer(id,question){
 
 
 
-// 获取排队的数量
+// 取得排队的数量
 function getnums(id){
     var value ="";
     $.ajax({
@@ -612,7 +612,7 @@ function getnums(id){
 //发送消息
 
 var send = function () {
-    //获取 遊客id
+    //取得 遊客id
 
     var msg = $("#text_in").val();
     var reg = new RegExp( '<' , "g" )

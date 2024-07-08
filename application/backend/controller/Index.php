@@ -15,7 +15,7 @@ use app\backend\model\Admins;
 
 class Index extends Base
 {
-    // 登录页面
+    // 登入頁面
     public function index()
     {
         return $this->fetch();
@@ -60,9 +60,9 @@ class Index extends Base
                 $newpass = md5(md5($post["newpass"]) . $user['username']);
                 $res =Admins::table("wolive_admin")->where("id",session('admin_user_id'))->update(["password"=>$newpass]);
                 if($res) $this->success('修改成功');
-                $this->error('修改失败！');
+                $this->error('修改失敗！');
             }
-            $this->error('旧密码不正确');
+            $this->error('旧密碼不正确');
         }
         return $this->fetch();
     }

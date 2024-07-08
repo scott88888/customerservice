@@ -68,7 +68,7 @@ abstract class Connection
         'database'        => '',
         // 使用者名稱
         'username'        => '',
-        // 密码
+        // 密碼
         'password'        => '',
         // 端口
         'hostport'        => '',
@@ -92,7 +92,7 @@ abstract class Connection
         'slave_no'        => '',
         // 模型写入后自动读取主服务器
         'read_master'     => false,
-        // 是否严格检查字段是否存在
+        // 是否严格檢查字段是否存在
         'fields_strict'   => true,
         // 数据返回类型
         'result_type'     => PDO::FETCH_ASSOC,
@@ -137,7 +137,7 @@ abstract class Connection
     }
 
     /**
-     * 获取新的查询对象
+     * 取得新的查询对象
      * @access protected
      * @return Query
      */
@@ -148,7 +148,7 @@ abstract class Connection
     }
 
     /**
-     * 获取当前连接器类对应的Builder类
+     * 取得当前连接器类对应的Builder类
      * @access public
      * @return string
      */
@@ -229,7 +229,7 @@ abstract class Connection
     }
 
     /**
-     * 获取数据库的配置参数
+     * 取得数据库的配置参数
      * @access public
      * @param string $config 配置名称
      * @return mixed
@@ -322,7 +322,7 @@ abstract class Connection
     }
 
     /**
-     * 获取PDO对象
+     * 取得PDO对象
      * @access public
      * @return \PDO|false
      */
@@ -784,7 +784,7 @@ abstract class Connection
     }
 
     /**
-     * 关闭数据库（或者重新连接）
+     * 關閉数据库（或者重新连接）
      * @access public
      * @return $this
      */
@@ -836,7 +836,7 @@ abstract class Connection
     }
 
     /**
-     * 获取最近一次查询的sql语句
+     * 取得最近一次查询的sql语句
      * @access public
      * @return string
      */
@@ -846,7 +846,7 @@ abstract class Connection
     }
 
     /**
-     * 获取最近插入的ID
+     * 取得最近插入的ID
      * @access public
      * @param string  $sequence     自增序列名
      * @return string
@@ -857,7 +857,7 @@ abstract class Connection
     }
 
     /**
-     * 获取返回或者影响的记录数
+     * 取得返回或者影响的记录数
      * @access public
      * @return integer
      */
@@ -867,7 +867,7 @@ abstract class Connection
     }
 
     /**
-     * 获取最近的错误信息
+     * 取得最近的错误信息
      * @access public
      * @return string
      */
@@ -902,14 +902,14 @@ abstract class Connection
      * 数据库调试 记录当前SQL及分析性能
      * @access protected
      * @param boolean $start 调试开始标记 true 开始 false 结束
-     * @param string  $sql 执行的SQL语句 留空自动获取
+     * @param string  $sql 执行的SQL语句 留空自动取得
      * @param boolean $master 主从标记
      * @return void
      */
     protected function debug($start, $sql = '', $master = false)
     {
         if (!empty($this->config['debug'])) {
-            // 开启数据库调试模式
+            // 開啟数据库调试模式
             if ($start) {
                 Debug::remark('queryStartTime', 'time');
             } else {
@@ -1056,7 +1056,7 @@ abstract class Connection
         if ($this->PDOStatement) {
             $this->free();
         }
-        // 关闭连接
+        // 關閉连接
         $this->close();
     }
 }

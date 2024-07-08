@@ -33,7 +33,7 @@ class CorsConfig implements XmlConfig
 
 
     /**
-     * 新增一条CorsRule
+     * 新增一條CorsRule
      *
      * @param CorsRule $rule
      * @throws OssException

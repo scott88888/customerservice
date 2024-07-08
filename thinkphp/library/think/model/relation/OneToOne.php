@@ -51,7 +51,7 @@ abstract class OneToOne extends Relation
      * @param Query    $query       查询对象
      * @param string   $relation    关联名
      * @param string   $subRelation 子关联
-     * @param \Closure $closure     闭包条件
+     * @param \Closure $closure     闭包條件
      * @param bool     $first
      * @return void
      */
@@ -86,7 +86,7 @@ abstract class OneToOne extends Relation
         if ($closure) {
             // 执行闭包查询
             call_user_func_array($closure, [ & $query]);
-            // 使用withField指定获取关联的字段，如
+            // 使用withField指定取得关联的字段，如
             // $query->where(['id'=>1])->withField('id,name');
             if ($query->getOptions('with_field')) {
                 $field = $query->getOptions('with_field');
@@ -190,7 +190,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 获取预载入方式
+     * 取得预载入方式
      * @access public
      * @return integer
      */
@@ -215,7 +215,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 获取绑定属性
+     * 取得绑定属性
      * @access public
      * @return array
      */
@@ -295,7 +295,7 @@ abstract class OneToOne extends Relation
      * 一对一 关联模型预查询（IN方式）
      * @access public
      * @param object        $model       关联模型对象
-     * @param array         $where       关联预查询条件
+     * @param array         $where       关联预查询條件
      * @param string        $key         关联键名
      * @param string        $relation    关联名
      * @param string        $subRelation 子关联

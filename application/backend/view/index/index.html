@@ -78,9 +78,9 @@
       <div id="sideMenu"></div>
     </div>
   </div>
-  <!-- 视 图 页 面 -->
+  <!-- 视 图 頁 面 -->
   <div class="layui-body">
-    <!-- 内 容 页 面 -->
+    <!-- 内 容 頁 面 -->
     <div id="content"></div>
   </div>
 </div>
@@ -155,7 +155,7 @@
         });
         layelem.on('nav(layui_nav_right)', function(elem) {
             if ($(elem).hasClass('logout')) {
-                layer.confirm('确定退出登入吗?', function(index) {
+                layer.confirm('確定退出登入吗?', function(index) {
                     layer.close(index);
                     $.ajax({
                         url: "{:url('backend/login/logout')}",

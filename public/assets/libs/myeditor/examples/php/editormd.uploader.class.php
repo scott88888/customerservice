@@ -119,7 +119,7 @@
         }
 
         /**
-         * 检查并移动上传文件
+         * 檢查并移动上传文件
          *
          * @access  private
          * @return  boolean
@@ -194,7 +194,7 @@
                     
                     case '999':
                     default:
-                        $message = "未知错误，请检查文件是否损坏、是否超大等原因。";
+                        $message = "未知错误，请檢查文件是否损坏、是否超大等原因。";
                         break;
                 }
 
@@ -203,7 +203,7 @@
                 return false;
             }
             
-            @unlink($files["tmp_name"]); //删除临时文件
+            @unlink($files["tmp_name"]); //刪除临时文件
             
             return true;
         }
@@ -273,7 +273,7 @@
          }
 
         /**
-         * 获取文件后缀名函数
+         * 取得文件后缀名函数
          *
          * @access  public
          * @return  string
@@ -312,7 +312,7 @@
             
             $url = $this->saveURL . $this->saveName;
 
-            // 适用于跨域上传时，跳转到中介页面等
+            // 适用于跨域上传时，跳转到中介頁面等
             if ($this->redirect) 
             {
                 $this->redirectURL .= "&success=" . $success . "&message=" . $message;

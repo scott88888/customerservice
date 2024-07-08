@@ -125,7 +125,7 @@ class Lang
     }
 
     /**
-     * 获取语言定义(不区分大小写)
+     * 取得语言定义(不区分大小写)
      * @access public
      * @param  string|null $name  语言变量
      * @param  string      $range 语言作用域
@@ -139,7 +139,7 @@ class Lang
     }
 
     /**
-     * 获取语言定义(不区分大小写)
+     * 取得语言定义(不区分大小写)
      * @access public
      * @param  string|null $name  语言变量
      * @param  array       $vars  变量替换
@@ -184,7 +184,7 @@ class Lang
     }
 
     /**
-     * 自动侦测设置获取语言选择
+     * 自动侦测设置取得语言选择
      * @access public
      * @return string
      */

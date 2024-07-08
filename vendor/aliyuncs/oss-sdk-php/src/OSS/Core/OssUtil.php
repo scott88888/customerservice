@@ -51,7 +51,7 @@ class OssUtil
     }
 
     /**
-     * 检查是否是中文编码
+     * 檢查是否是中文编码
      *
      * @param $str
      * @return int
@@ -199,7 +199,7 @@ class OssUtil
     }
 
     /**
-     * 检查上传文件的内容是否合法
+     * 檢查上传文件的内容是否合法
      *
      * @param $content string
      * @throws OssException

@@ -56,7 +56,7 @@ layui.define(['jquery'],function (exports) {
 
     t.init = t.render
 
-    // 获取ID对应的编辑器对象
+    // 取得ID对应的編輯器对象
     t.get = function (elem) {
 
         initTinymce();
@@ -128,7 +128,7 @@ layui.define(['jquery'],function (exports) {
 
         option.menu = isset(option.menu) ? option.menu : {
             file: {title: '文件', items: 'newdocument | print preview fullscreen | wordcount'},
-            edit: {title: '编辑', items: 'undo redo | cut copy paste pastetext selectall | searchreplace'},
+            edit: {title: '編輯', items: 'undo redo | cut copy paste pastetext selectall | searchreplace'},
             format: {
                 title: '格式',
                 items: 'bold italic underline strikethrough superscript subscript | formats | forecolor backcolor | removeformat'
@@ -184,7 +184,7 @@ layui.define(['jquery'],function (exports) {
 
     function initTinymce() {
         if (typeof tinymce == 'undefined') {
-            $.ajax({//获取插件
+            $.ajax({//取得插件
                 url: settings.base_url + '/' + plugin_filename,
                 dataType: 'script',
                 cache: true,

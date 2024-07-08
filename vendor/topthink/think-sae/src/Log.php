@@ -27,7 +27,7 @@ class Log
     {
         static $is_debug = null;
         $now             = date($this->config['log_time_format']);
-        // 获取基本信息
+        // 取得基本信息
         if (isset($_SERVER['HTTP_HOST'])) {
             $current_uri = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         } else {

@@ -194,7 +194,7 @@ function randomChar(l){
 }
 //发送消息
 var send = function () {
-    //获取 遊客id
+    //取得 遊客id
     var msg = $("#text_in").val();
     var reg = new RegExp( '<' , "g" )
     msg =msg.replace(reg,'&lt;');
@@ -320,7 +320,7 @@ $('body').click(function(){
     $(".tool_box").hide();
 });
 
-//获取表情图片
+//取得表情图片
 $(".wl_faces_main img").click(function () {
     var a = $(this).attr("title");
     var str=$("#text_in").val();
@@ -338,7 +338,7 @@ $(".wl_faces_main img").click(function () {
 });
 
 
-//删除对象
+//刪除对象
 
 function cut(id) {
 
@@ -363,7 +363,7 @@ function cut(id) {
                     $(".chatbox").addClass('hide');
                     $(".no_chats").removeClass('hide');
                 }
-                // 删除修改
+                // 刪除修改
                 getblacklist();
             }
         }
@@ -381,7 +381,7 @@ function recovery(id){
         success: function (res) {
 
             if(res.code == 0){
-                // 删除修改
+                // 刪除修改
                 getblacklist();
                 getchat();
             }
@@ -389,7 +389,7 @@ function recovery(id){
     });
 }
 
-//删除cookie方法
+//刪除cookie方法
 function delCookie(name) {
     var date = new Date();
     date.setTime(date.getTime() - 10000);

@@ -81,7 +81,7 @@ class Set extends Base
             $wechat = WechatPlatform::get(['business_id'=>$arr['business_id']]);
             if ($visiter['state'] == 'offline' && trim($wechat['customer_tpl'])!='' && strlen($visiter['visiter_id'])>16) {
                 TplService::send($arr["business_id"],$visiter['visiter_id'],url('index/index/wechat',['business_id'=>$arr['business_id'],'groupid'=>$queue['groupid']],true,true),$wechat['customer_tpl'],[
-                    "first"  => "你有一条新的信息!",
+                    "first"  => "你有一條新的信息!",
                     "keyword1"   => $arr["content"],
                     "keyword2"  => $login['nick_name'],
                     "remark" => $login['business']['business_name']."提示:客服有新的消息,快去看看吧~",
@@ -202,7 +202,7 @@ class Set extends Base
     }
 
     /**
-     * 删除访客类.
+     * 刪除访客类.
      *
      * @return mixed
      */
@@ -314,7 +314,7 @@ class Set extends Base
             $arr = ['code' => 0, 'msg' => '转接成功！'];
             return $arr;
         } else {
-            $arr = ['code' => 1, 'msg' => '转接失败！'];
+            $arr = ['code' => 1, 'msg' => '转接失敗！'];
             return $arr;
         }
 
@@ -373,7 +373,7 @@ class Set extends Base
             $resdata = Admins::table('wolive_chats')->where(['visiter_id' => $post['visiter_id'], 'business_id' => $login['business_id']])->update(['service_id' => $login['service_id']]);
 
 
-            // 获取默认的常用语
+            // 取得默认的常用语
             $words = Admins::table('wolive_sentence')->where('service_id', $login['service_id'])->where('state', 'using')->find();
             if ($words['content'] == "") {
                 $words['content'] = "你好!";
@@ -550,7 +550,7 @@ class Set extends Base
                 }elseif (strpos($chats2['content'], '</video>') !== false) {
                     $newcontent = '[视频]';
                 } elseif (strpos($chats2['content'], '</a>') !== false) {
-                    $newcontent = '[超链接]';
+                    $newcontent = '[超連結]';
                 } else {
 
                     if ($chats2['content'] == null) {
@@ -610,7 +610,7 @@ class Set extends Base
 
 
     /**
-     * 获取当前聊天信息类.
+     * 取得当前聊天信息类.
      *
      * @return string
      */
@@ -687,7 +687,7 @@ class Set extends Base
     }
 
     /**
-     * 获取所有该使用者的聊天记录。
+     * 取得所有该使用者的聊天记录。
      * [history description]
      * @return [type] [description]
      */
@@ -738,7 +738,7 @@ class Set extends Base
 
 
     /**
-     * 获取ip地址类.
+     * 取得ip地址类.
      *
      * @return string
      */
@@ -767,7 +767,7 @@ class Set extends Base
     }
 
     /**
-     * 获取未看信息条数类.
+     * 取得未看信息條数类.
      *
      * @return mixed
      */
@@ -822,7 +822,7 @@ class Set extends Base
     }
 
     /**
-     * 获取该business_id下所用的黑名单信息.
+     * 取得该business_id下所用的黑名单信息.
      *
      * @return bool|string
      */
@@ -871,7 +871,7 @@ class Set extends Base
         return $arr;
     }
     /**
-     * 常用语删除.
+     * 常用语刪除.
      *
      * @return bool
      */
@@ -965,7 +965,7 @@ class Set extends Base
     }
 
     /**
-     * 获取该客服交谈过的所有客服.
+     * 取得该客服交谈过的所有客服.
      *
      * @return mixed
      */
@@ -1000,7 +1000,7 @@ class Set extends Base
     }
 
     /**
-     * 获取排队人数.
+     * 取得排队人数.
      *
      * @return mixed
      */
@@ -1022,7 +1022,7 @@ class Set extends Base
     }
 
     /**
-     * 获取访客的狀態
+     * 取得访客的狀態
      *
      * @return array|false|\PDOStatement|string|\think\Model
      */
@@ -1186,7 +1186,7 @@ class Set extends Base
         } else {
             $arr = [
                 "code" => 0,
-                "data" => "修改失败"
+                "data" => "修改失敗"
             ];
             return $arr;
         }
@@ -1224,7 +1224,7 @@ class Set extends Base
         } else {
             $arr = [
                 "code" => 0,
-                "data" => "修改失败"
+                "data" => "修改失敗"
             ];
             return $arr;
         }
@@ -1262,7 +1262,7 @@ class Set extends Base
         } else {
             $arr = [
                 "code" => 0,
-                "data" => "修改失败"
+                "data" => "修改失敗"
             ];
             return $arr;
         }
@@ -1295,7 +1295,7 @@ class Set extends Base
         } else {
             $arr = [
                 "code" => 0,
-                "data" => "修改失败"
+                "data" => "修改失敗"
             ];
             return $arr;
         }
@@ -1327,7 +1327,7 @@ class Set extends Base
         } else {
             $arr = [
                 "code" => 0,
-                "data" => "修改失败"
+                "data" => "修改失敗"
             ];
             return $arr;
         }
@@ -1350,7 +1350,7 @@ class Set extends Base
         if (isset($post['tid'])) {
 
             $res = Admins::table('wolive_tablist')->where('tid', $post['tid'])->update(['title' => $post['title'], 'content' => $post['content'], 'content_read' => $post['content_read']]);
-            $flag = '编辑';
+            $flag = '編輯';
         } else {
             $num = Admins::table('wolive_tablist')->where('business_id',$post['business_id'])->count();
             if ($num>10) {
@@ -1372,7 +1372,7 @@ class Set extends Base
 
         if (isset($post['sid']) && $post['sid']>0) {
             $res = Admins::table('wolive_sentence')->where('sid', $post['sid'])->update(['sid' => $post['sid'], 'content' => $post['content']]);
-            $arr = ['code' => 0, 'msg' => '编辑成功'];
+            $arr = ['code' => 0, 'msg' => '編輯成功'];
             return $arr;
         } else {
 //            content	text	内容
@@ -1386,7 +1386,7 @@ class Set extends Base
                 $data =['code'=>0,'msg'=>'新增成功'];
                 return $data;
             }else{
-                $arr = ['code' => 1, 'msg' => '新增失败'];
+                $arr = ['code' => 1, 'msg' => '新增失敗'];
                 return $arr;
             }
 
@@ -1394,7 +1394,7 @@ class Set extends Base
     }
 
     /**
-     * 删除tab面版
+     * 刪除tab面版
      * [getdeleteTab description]
      * @return [type] [description]
      */
@@ -1406,7 +1406,7 @@ class Set extends Base
         $result = Admins::table('wolive_tablist')->where('tid', $id)->delete();
 
         if ($result) {
-            $arr = ['code' => 0, 'msg' => '删除成功'];
+            $arr = ['code' => 0, 'msg' => '刪除成功'];
             return $arr;
         }
     }
@@ -1430,7 +1430,7 @@ class Set extends Base
     }
 
     /**
-     * 删除常见问题
+     * 刪除常见问题
      * [getdeleteQuestion description]
      * @return [type] [description]
      */
@@ -1442,7 +1442,7 @@ class Set extends Base
         $result = Admins::table("wolive_question")->where('qid', $id)->delete();
 
         if ($result) {
-            $arr = ['code' => 0, 'msg' => '删除成功'];
+            $arr = ['code' => 0, 'msg' => '刪除成功'];
             return $arr;
         }
     }
@@ -1497,7 +1497,7 @@ class Set extends Base
         } catch (StorageException $exception) {
             $data = ['code'=> -1,'msg'=>$exception->getMessage(),'data'=>''];
         } catch (\Exception $e) {
-            $data = ['code'=> -1,'msg'=>'请检查存储介质配置信息','data'=>$e];
+            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置信息','data'=>$e];
         }
         return $data;
     }
@@ -1521,7 +1521,7 @@ class Set extends Base
         } catch (StorageException $exception) {
             $data = ['code'=> -1,'msg'=>$exception->getMessage(),'data'=>''];
         } catch (\Exception $e) {
-            $data = ['code'=> -1,'msg'=>'请检查存储介质配置信息'];
+            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置信息'];
         }
         return $data;
     }
@@ -1589,7 +1589,7 @@ class Set extends Base
 
         $this->assign('wechat', $wechat);
         $html=$this->fetch();
-        $data = ['code' => 0, 'msg' => '生成微信公众号链接成功', 'data' => $html];
+        $data = ['code' => 0, 'msg' => '生成微信公众号連結成功', 'data' => $html];
         return $data;
     }
     /**
@@ -2076,7 +2076,7 @@ class Set extends Base
             if ($res !== false) {
                 return json(['code'=>0,'msg'=>'保存成功']);
             } else {
-                return json(['code'=>1,'msg'=>'保存失败']);
+                return json(['code'=>1,'msg'=>'保存失敗']);
             }
         } elseif(empty($pushurl)){
             Admins::table('wolive_business')->where('id', $login['business_id'])->update(['push_url' => $pushurl]);
@@ -2113,7 +2113,7 @@ class Set extends Base
                 ]);
             } else {
                 TplService::send($login['business_id'],$open_id,url('weixin/login/callback',['business_id'=>$login['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
-                    "first"  => "你有一条新的信息!",
+                    "first"  => "你有一條新的信息!",
                     "keyword1"   => "测试",
                     "keyword2"  => "测试发送新消息提醒模板消息",
                     "keyword3"  => "测试",

@@ -21,7 +21,7 @@ trait Instance
     protected static $instance = null;
 
     /**
-     * 获取示例
+     * 取得示例
      * @param array $options 实例配置
      * @return static
      */

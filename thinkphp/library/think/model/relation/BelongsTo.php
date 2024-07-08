@@ -39,9 +39,9 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 延迟获取关联数据
+     * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询条件
+     * @param \Closure $closure     闭包查询條件
      * @access public
      * @return array|false|\PDOStatement|string|Model
      */
@@ -65,7 +65,7 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -78,9 +78,9 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
-     * @param  mixed  $where 查询条件（数组或者闭包）
+     * @param  mixed  $where 查询條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -122,7 +122,7 @@ class BelongsTo extends OneToOne
 
         $range = [];
         foreach ($resultSet as $result) {
-            // 获取关联外键列表
+            // 取得关联外键列表
             if (isset($result->$foreignKey)) {
                 $range[] = $result->$foreignKey;
             }
@@ -233,7 +233,7 @@ class BelongsTo extends OneToOne
     {
         if (empty($this->baseQuery)) {
             if (isset($this->parent->{$this->foreignKey})) {
-                // 关联查询带入关联条件
+                // 关联查询带入关联條件
                 $this->query->where($this->localKey, '=', $this->parent->{$this->foreignKey});
             }
 

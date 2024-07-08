@@ -72,7 +72,7 @@ class Debug
     }
 
     /**
-     * 获取当前访问的吞吐率情况
+     * 取得当前访问的吞吐率情况
      * @access public
      * @return string
      */
@@ -154,7 +154,7 @@ class Debug
     }
 
     /**
-     * 获取文件加载信息
+     * 取得文件加载信息
      * @access public
      * @param  bool $detail 是否显示详细
      * @return integer|array

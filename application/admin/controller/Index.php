@@ -11,7 +11,7 @@ use think\Paginator;
 use app\Common;
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Index extends Base
 {
@@ -27,7 +27,7 @@ class Index extends Base
     }
 
     /**
-     * 后台对话页面.
+     * 后台对话頁面.
      *
      * @return mixed
      */
@@ -44,7 +44,7 @@ class Index extends Base
 
 
     /**
-     * 常用语页面.
+     * 常用语頁面.
      *
      * @return mixed
      */
@@ -63,7 +63,7 @@ class Index extends Base
 
 
     /**
-     * 生成前台文件页面.
+     * 生成前台文件頁面.
      *
      * @return mixed
      */
@@ -89,7 +89,7 @@ class Index extends Base
 
 
     /**
-     * 所有聊天记录页面。
+     * 所有聊天记录頁面。
      * [history description]
      * @return [type] [description]
      */
@@ -101,7 +101,7 @@ class Index extends Base
     }
 
     /**
-     * 留言页面.
+     * 留言頁面.
      *
      * @return mixed
      */
@@ -142,7 +142,7 @@ class Index extends Base
     }
 
     /**
-     * 转接客服页面
+     * 转接客服頁面
      * @return [type] [description]
      */
     public function service()
@@ -181,7 +181,7 @@ class Index extends Base
     }
 
     /**
-     * 常见问题编辑页面
+     * 常见问题編輯頁面
      * [editer description]
      * @return [type] [description]
      */
@@ -209,7 +209,7 @@ class Index extends Base
         return $this->fetch();
     }
     /**
-     * 常见问题编辑页面
+     * 常见问题編輯頁面
      * [editer description]
      * @return [type] [description]
      */
@@ -240,7 +240,7 @@ class Index extends Base
 
 
     /**
-     * 编辑tab页面
+     * 編輯tab頁面
      * [editertab description]
      * @return [type] [description]
      */
@@ -284,7 +284,7 @@ $content='';
     }
 
     /**
-     * 设置页面
+     * 设置頁面
      * [set description]
      */
     public function set()
@@ -320,7 +320,7 @@ $content='';
     }
 
     /**
-     * tab面版页面。
+     * tab面版頁面。
      * [tablist description]
      * @return [type] [description]
      */
@@ -338,7 +338,7 @@ $content='';
 
         $this->assign('tablist', $res);
 
-        $this->assign('title', '编辑前端tab面版');
+        $this->assign('title', '編輯前端tab面版');
         $this->assign('part', '设置');
 
         return $this->fetch();
@@ -371,7 +371,7 @@ $content='';
             $post=$common->deep_array_map_trim($post);
             $res = WechatPlatform::edit($post);
 
-            $arr = $res!== false ? ['code' => 0, 'msg' => '成功']: ['code' => 1, 'msg' => '失败'];
+            $arr = $res!== false ? ['code' => 0, 'msg' => '成功']: ['code' => 1, 'msg' => '失敗'];
             return $arr;
         } else {
             $template = WechatPlatform::get(['business_id'=>$_SESSION['Msg']['business_id']]);

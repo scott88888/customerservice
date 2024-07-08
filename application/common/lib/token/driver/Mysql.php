@@ -54,7 +54,7 @@ class Mysql extends Driver
     }
 
     /**
-     * 获取Token内的信息
+     * 取得Token内的信息
      * @param   string $token
      * @return  array
      */
@@ -88,7 +88,7 @@ class Mysql extends Driver
     }
 
     /**
-     * 删除Token
+     * 刪除Token
      * @param   string $token
      * @return  boolean
      */
@@ -99,7 +99,7 @@ class Mysql extends Driver
     }
 
     /**
-     * 删除指定使用者的所有Token
+     * 刪除指定使用者的所有Token
      * @param   int $user_id
      * @return  boolean
      */

@@ -27,7 +27,7 @@ class Visiter extends Base
        if($res){
            $this->success('修改成功');
        }else{
-           $this->error('修改失败');
+           $this->error('修改失敗');
        }
 
     }

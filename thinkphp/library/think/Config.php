@@ -105,13 +105,13 @@ class Config
             return isset(self::$config[$range][strtolower($name)]);
         }
 
-        // 二维数组设置和获取支持
+        // 二维数组设置和取得支持
         $name = explode('.', $name, 2);
         return isset(self::$config[$range][strtolower($name[0])][$name[1]]);
     }
 
     /**
-     * 获取配置参数 为空则获取所有配置
+     * 取得配置参数 为空则取得所有配置
      * @access public
      * @param  string $name 配置参数名（支持二级配置 . 号分割）
      * @param  string $range  作用域
@@ -121,7 +121,7 @@ class Config
     {
         $range = $range ?: self::$range;
 
-        // 无参数时获取所有
+        // 无参数时取得所有
         if (empty($name) && isset(self::$config[$range])) {
             return self::$config[$range];
         }
@@ -132,7 +132,7 @@ class Config
             return isset(self::$config[$range][$name]) ? self::$config[$range][$name] : null;
         }
 
-        // 二维数组设置和获取支持
+        // 二维数组设置和取得支持
         $name    = explode('.', $name, 2);
         $name[0] = strtolower($name[0]);
 

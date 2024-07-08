@@ -21,9 +21,9 @@ ThinkPHP 目前使用 Git 来控制程序版本，如果你想为 ThinkPHP 贡�
 
 * 本项目代码格式化标准选用 [**PSR-2**](http://www.kancloud.cn/thinkphp/php-fig-psr/3141)；
 * 类名和类文件名遵循 [**PSR-4**](http://www.kancloud.cn/thinkphp/php-fig-psr/3144)；
-* 对于 Issues 的处理，请使用诸如 `fix #xxx(Issue ID)` 的 commit title 直接关闭 issue。
+* 对于 Issues 的处理，请使用诸如 `fix #xxx(Issue ID)` 的 commit title 直接關閉 issue。
 * 系统会自动在 PHP 5.4 5.5 5.6 7.0 和 HHVM 上测试修改，其中 HHVM 下的测试容许报错，请确保你的修改符合 PHP 5.4 ~ 5.6 和 PHP 7.0 的语法规范；
-* 管理员不会合并造成 CI faild 的修改，若出现 CI faild 请检查自己的源代码或修改相应的[单元测试文件](tests)；
+* 管理员不会合并造成 CI faild 的修改，若出现 CI faild 请檢查自己的源代码或修改相应的[单元测试文件](tests)；
 
 ## GitHub Issue
 
@@ -40,13 +40,13 @@ GitHub 提供了 Issue 功能，该功能可以用于：
 
 ## 快速修改
 
-**GitHub 提供了快速编辑文件的功能**
+**GitHub 提供了快速編輯文件的功能**
 
-1. 登录 GitHub 帐号；
+1. 登入 GitHub 帐号；
 2. 浏览项目文件，找到要进行修改的文件；
 3. 点击右上角铅笔图标进行修改；
 4. 填写 `Commit changes` 相关内容（Title 必填）；
-5. 送出修改，等待 CI 验证和管理员合并。
+5. 送出修改，等待 CI 驗證和管理员合并。
 
 **若您需要一次送出大量修改，请继续阅读下面的内容**
 
@@ -60,7 +60,7 @@ GitHub 提供了 Issue 功能，该功能可以用于：
 6. 变基（衍合 `rebase`）你的分支到上游 master 分支；
 7. `push` 你的本地仓库到 GitHub；
 8. 送出 `pull request`；
-9. 等待 CI 验证（若不通过则重复 5~7，不需要重新送出 `pull request`，GitHub 会自动更新你的 `pull request`）；
+9. 等待 CI 驗證（若不通过则重复 5~7，不需要重新送出 `pull request`，GitHub 会自动更新你的 `pull request`）；
 10. 等待管理员处理，并及时 `rebase` 你的分支到上游 master 分支（若上游 master 分支有修改）。
 
 *若有必要，可以 `git push -f` 强行推送 rebase 后的分支到自己的 `fork`*
@@ -70,7 +70,7 @@ GitHub 提供了 Issue 功能，该功能可以用于：
 ### 注意事项
 
 * 若对上述流程有任何不清楚的地方，请查阅 GIT 教程，如 [这个](http://backlogtool.com/git-guide/cn/)；
-* 对于代码**不同方面**的修改，请在自己 `fork` 的项目中**创建不同的分支**（原因参见`完整流程`第9条备注部分）；
+* 对于代码**不同方面**的修改，请在自己 `fork` 的项目中**创建不同的分支**（原因参见`完整流程`第9條备注部分）；
 * 变基及交互式变基操作参见 [Git 交互式变基](http://pakchoi.me/2015/03/17/git-interactive-rebase/)
 
 ## 推荐资源
@@ -91,7 +91,7 @@ GitHub 提供了 Issue 功能，该功能可以用于：
 
 *Linux 使用者自行配置环境， Mac 使用者推荐使用内置 Apache 配合 Homebrew 安装 PHP 和 MariaDB*
 
-### 编辑器
+### 編輯器
 
 Sublime Text 3 + phpfmt 插件
 
@@ -109,7 +109,7 @@ phpfmt 插件参数
 }
 ```
 
-或其他 编辑器 / IDE 配合 PSR2 自动格式化工具
+或其他 編輯器 / IDE 配合 PSR2 自动格式化工具
 
 ### Git GUI
 

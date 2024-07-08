@@ -12,9 +12,9 @@ layui.define(['jquery', 'element','table'], function(exports) {
 	var common = new function() {
 		
 		/**
-		 * 获取当前表格选中字段
+		 * 取得当前表格选中字段
 		 * @param obj 表格回调参数
-		 * @param field 要获取的字段
+		 * @param field 要取得的字段
 		 * */
 		this.checkField = function(obj, field) {
 			let data = table.checkStatus(obj.config.id).data;
@@ -57,7 +57,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 			    success:callback !=null?callback(result):function(result){
 			        if(result.success){
 			            layer.msg(result.msg,{icon:1,time:1000},function(){
-			                parent.layer.close(parent.layer.getFrameIndex(window.name));//關閉當前页
+			                parent.layer.close(parent.layer.getFrameIndex(window.name));//關閉當前頁
 			                parent.layui.table.reload(table);
 			            });
 			        }else{

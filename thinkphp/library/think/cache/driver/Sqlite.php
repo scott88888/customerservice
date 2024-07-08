@@ -46,7 +46,7 @@ class Sqlite extends Driver
     }
 
     /**
-     * 获取实际的缓存标识
+     * 取得实际的缓存标识
      * @access public
      * @param string $name 缓存名
      * @return string
@@ -165,7 +165,7 @@ class Sqlite extends Driver
     }
 
     /**
-     * 删除缓存
+     * 刪除缓存
      * @access public
      * @param string $name 缓存变量名
      * @return boolean

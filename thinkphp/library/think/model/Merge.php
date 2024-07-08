@@ -38,9 +38,9 @@ class Merge extends Model
     }
 
     /**
-     * 查找单条记录
+     * 查找单條记录
      * @access public
-     * @param mixed        $data  主键值或者查询条件（闭包）
+     * @param mixed        $data  主键值或者查询條件（闭包）
      * @param string|array $with  关联预查询
      * @param bool         $cache 是否缓存
      * @return \think\Model
@@ -76,7 +76,7 @@ class Merge extends Model
     }
 
     /**
-     * 获取关联模型的字段 并解决混淆
+     * 取得关联模型的字段 并解决混淆
      * @access protected
      * @param \think\db\Query $query  查询对象
      * @param string          $name   模型名称
@@ -87,7 +87,7 @@ class Merge extends Model
      */
     protected static function getModelField($query, $name, $table = '', $map = [], $fields = [])
     {
-        // 获取模型的字段信息
+        // 取得模型的字段信息
         $fields = $fields ?: $query->getTableInfo($table, 'fields');
         $array  = [];
         foreach ($fields as $field) {
@@ -104,7 +104,7 @@ class Merge extends Model
     /**
      * 查找所有记录
      * @access public
-     * @param mixed        $data 主键列表或者查询条件（闭包）
+     * @param mixed        $data 主键列表或者查询條件（闭包）
      * @param array|string $with 关联预查询
      * @param bool         $cache
      * @return array|false|string
@@ -143,7 +143,7 @@ class Merge extends Model
      * 保存模型数据 以及关联数据
      * @access public
      * @param mixed  $data     数据
-     * @param array  $where    更新条件
+     * @param array  $where    更新條件
      * @param string $sequence 自增序列名
      * @return false|int
      * @throws \Exception
@@ -151,7 +151,7 @@ class Merge extends Model
     public function save($data = [], $where = [], $sequence = null)
     {
         if (!empty($data)) {
-            // 数据自动验证
+            // 数据自动驗證
             if (!$this->validateData($data)) {
                 return false;
             }
@@ -193,7 +193,7 @@ class Merge extends Model
                     $where = $this->updateWhere;
                 }
 
-                // 获取有更新的数据
+                // 取得有更新的数据
                 $data = $this->getChangedData();
                 // 保留主键数据
                 foreach ($this->data as $key => $val) {
@@ -284,7 +284,7 @@ class Merge extends Model
     }
 
     /**
-     * 删除当前的记录 并删除关联数据
+     * 刪除当前的记录 并刪除关联数据
      * @access public
      * @return int
      * @throws \Exception
@@ -300,10 +300,10 @@ class Merge extends Model
         try {
             $result = $db->delete($this->data);
             if ($result) {
-                // 获取主键数据
+                // 取得主键数据
                 $pk = $this->data[$this->getPk()];
 
-                // 删除关联数据
+                // 刪除关联数据
                 foreach ($this->relationModel as $key => $model) {
                     $table = is_int($key) ? $db->getTable($model) : $model;
                     $query = new Query;

@@ -190,7 +190,7 @@
 	}
 	
 	Common.prototype.init = function(target){
-		//初始化页面上已有的select
+		//初始化頁面上已有的select
 		$((target ? target : `select[${NAME}]`)).each((index, select) => {
 			let othis = $(select),
 				id = othis.attr(NAME),
@@ -214,7 +214,7 @@
  					searchType: othis.attr(SEARCH_TYPE) == 'dl' ? 1 : 0,
  					showCount: othis.attr(SHOW_COUNT) - 0,
  				},
-				value = othis.find('option[selected]').toArray().map((option) => {//获取已选中的数据
+				value = othis.find('option[selected]').toArray().map((option) => {//取得已选中的数据
 					return {
 						name: option.innerHTML,
 						value: option.value,
@@ -315,7 +315,7 @@
 		let fs = data[id],
 			isCreate = fs.config.isCreate,
 			reElem = $(`dl[xid="${id}"]`).parents(`.${FORM_SELECT}`);
-		//如果开启了远程搜索
+		//如果開啟了远程搜索
 		if(searchUrl){
 			if(ajaxConfig.searchVal){
 				inputValue = ajaxConfig.searchVal;
@@ -1138,11 +1138,11 @@
 			this.remove(vals, val)
 		);
 		if(!div[0]) return ;
-		//单选选完后直接关闭选择域
+		//单选选完后直接關閉选择域
 		if(fs.config.radio){
 			this.changeShow(div, false);
 		}
-		//移除表單验证的红色边框
+		//移除表單驗證的红色边框
 		div.parents(`.${FORM_TITLE}`).prev().removeClass('layui-form-danger');
 		
 		//清空搜索值
@@ -1487,11 +1487,11 @@
 				temp = {},
 				dd,
 				isAdd = true;
-			if(isAppend == false){//删除传入的数组
+			if(isAppend == false){//刪除传入的数组
 				isAdd = false;
 			}else if(isAppend == true){//追加模式
 				isAdd = true;
-			}else{//删除原有的数据
+			}else{//刪除原有的数据
 				common.removeAll(id);
 			}
 			if(isAdd){

@@ -243,7 +243,7 @@
             {$item['is_recycle'] == 1 ? '回收站': '正常'}
         </td>
         <td class="operate">
-            <a href="#" data-toggle="modal" class="edit-app" id="{:url('platform/app/edit', ['id' => $item['id']])}" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="编辑"></a>
+            <a href="#" data-toggle="modal" class="edit-app" id="{:url('platform/app/edit', ['id' => $item['id']])}" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="編輯"></a>
             <a href="#" data-toggle="modal" class="clean-app" id="{:url('platform/app/truncate',  ['id' => $item['id']])}" data-target="#clean-modal">
 			<img src="__image__/platform/truncate.png" alt="清理磁盘" title="清理磁盘"></a>    
             {if condition="$item['is_recycle'] == 0"}
@@ -280,7 +280,7 @@
     $(document).on("click", ".delete-btn", function () {
         var href = $(this).attr("href");
         $.myConfirm({
-            content: "确认将客服系统删除？请谨慎操作",
+            content: "确认将客服系统刪除？请谨慎操作",
             confirm: function () {
                 $.myLoading({
                     title: "正在送出",
@@ -344,7 +344,7 @@
 
     $(document).on("click", ".edit-app", function () {
         let id = this.id;
-        $('.add-modal').find('.modal-title').text('编辑客服系统')
+        $('.add-modal').find('.modal-title').text('編輯客服系统')
         $.ajax({
             url: id,
             success: function (data) {

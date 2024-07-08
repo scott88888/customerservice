@@ -25,7 +25,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">登入密碼</label>
                     <div class="layui-input-block">
-                        <input type="password" name="password" value=""  placeholder="输入则为重置密码" class="layui-input" autocomplete="off">
+                        <input type="password" name="password" value=""  placeholder="输入则为重置密碼" class="layui-input" autocomplete="off">
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ layui.use(['form','jquery','laydate'],function(){
                         icon: 1
                     });
                     setTimeout(function() {
-                        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                        var index = parent.layer.getFrameIndex(window.name); //取得窗口索引
                         parent.layer.close(index);
                         parent.layui.table.reload("dataTable");
                     }, 2000)

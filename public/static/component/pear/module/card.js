@@ -12,16 +12,16 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 		elem: "#currentTableId",// 构建的模型
 		url: "",// 数据 url 连接
 		loading: true,//是否加载
-		limit: 0, //每页数量默认是每行数量的双倍
+		limit: 0, //每頁数量默认是每行数量的双倍
 		linenum: 4, //每行数量 2,3,4,6
-		currentPage: 1,//当前页
+		currentPage: 1,//当前頁
 		data:[],       //静态数据
-		limits:[],     //页码
-		page: true, //是否分页
-		layout: ['count', 'prev', 'page', 'next','limit', 'skip'],//分页控件
+		limits:[],     //頁码
+		page: true, //是否分頁
+		layout: ['count', 'prev', 'page', 'next','limit', 'skip'],//分頁控件
 		request: {
-			pageName: 'page' //页码的参数名称，默认：page
-			, limitName: 'limit' //每页数据量的参数名，默认：limit
+			pageName: 'page' //頁码的参数名称，默认：page
+			, limitName: 'limit' //每頁数据量的参数名，默认：limit
 			, idName: 'id'       //主键名称，默认：id
 			, titleName: 'title' //标题名称，默认：title
 			, imageName: 'image' //图片地址，默认：image

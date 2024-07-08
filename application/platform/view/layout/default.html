@@ -324,23 +324,23 @@
                     <div class="modal-body">
                         <form method="post" class="auto-submit-form alter-password-form">
                             <div class="form-group">
-                                <label class="col-form-label required">原密码</label>
+                                <label class="col-form-label required">原密碼</label>
                                 <div class="form-input">
                                     <input type="password" name="old_password" class="form-control"
-                                           placeholder="您当前的密码">
+                                           placeholder="您当前的密碼">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-form-label required">新密码</label>
+                                <label class="col-form-label required">新密碼</label>
                                 <div class="form-input">
                                     <input type="password" name="new_password" class="form-control new-password-1"
-                                           placeholder="要设置的新密码">
+                                           placeholder="要设置的新密碼">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label required check">確認密碼</label>
                                 <div class="form-input">
-                                    <input type="password" class="form-control new-password-2" placeholder="再次输入新密码">
+                                    <input type="password" class="form-control new-password-2" placeholder="再次输入新密碼">
                                 </div>
                             </div>
                             <div class="form-error alert alert-danger" style="display: none">aaaaaa</div>
@@ -401,7 +401,7 @@
                 var error = $(".alter-password-form .form-error");
                 var btn = $(this);
                 if (new_password_1 !== new_password_2) {
-                    error.html("新密码与確認密碼不一致，请重新输入").show();
+                    error.html("新密碼与確認密碼不一致，请重新输入").show();
                     return false;
                 }
                 error.hide();

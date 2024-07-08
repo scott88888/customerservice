@@ -32,12 +32,12 @@ class Controller
     protected $request;
 
     /**
-     * @var bool 验证失败是否抛出异常
+     * @var bool 驗證失敗是否抛出异常
      */
     protected $failException = false;
 
     /**
-     * @var bool 是否批量验证
+     * @var bool 是否批量驗證
      */
     protected $batchValidate = false;
 
@@ -169,7 +169,7 @@ class Controller
     }
 
     /**
-     * 设置验证失败后是否抛出异常
+     * 设置驗證失敗后是否抛出异常
      * @access protected
      * @param bool $fail 是否抛出异常
      * @return $this
@@ -182,12 +182,12 @@ class Controller
     }
 
     /**
-     * 验证数据
+     * 驗證数据
      * @access protected
      * @param  array $data 数据
-     * @param  string|array $validate 验证器名或者验证规则数组
+     * @param  string|array $validate 驗證器名或者驗證规则数组
      * @param  array $message 提示信息
-     * @param  bool $batch 是否批量验证
+     * @param  bool $batch 是否批量驗證
      * @param  mixed $callback 回调方法（闭包）
      * @return array|string|true
      * @throws ValidateException
@@ -208,7 +208,7 @@ class Controller
             !empty($scene) && $v->scene($scene);
         }
 
-        // 批量验证
+        // 批量驗證
         if ($batch || $this->batchValidate) {
             $v->batch(true);
         }
@@ -218,7 +218,7 @@ class Controller
             $v->message($message);
         }
 
-        // 使用回调验证
+        // 使用回调驗證
         if ($callback && is_callable($callback)) {
             call_user_func_array($callback, [$v, &$data]);
         }

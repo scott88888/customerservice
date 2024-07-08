@@ -37,7 +37,7 @@ class Message extends Controller
         $new_content = str_replace("<", "&lt;", $content);
 
         $post['content'] = $new_content;
-        //验证
+        //驗證
         $result = $this->validate($post, 'Message');
 
         if ($result === true) {
@@ -45,7 +45,7 @@ class Message extends Controller
             if ($res) {
                 return "送出成功";
             } else {
-                return "送出失败";
+                return "送出失敗";
             }
 
         } else {

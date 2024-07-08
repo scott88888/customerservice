@@ -8,7 +8,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Vgroups extends Base
 {
@@ -32,7 +32,7 @@ class Vgroups extends Base
             if ($group) $this->error('该组名称已存在');
             $res = Vgroup::where("id", $post['id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $group = Vgroup::get(['id' => $id]);
@@ -56,7 +56,7 @@ class Vgroups extends Base
             if ($group) $this->error('该组名称已存在');
             $res = Vgroup::insert($post);
             if ($res) $this->success('新增成功');
-            $this->error('新增失败！');
+            $this->error('新增失敗！');
         }
         return $this->fetch();
     }
@@ -65,8 +65,8 @@ class Vgroups extends Base
     {
         $id = $this->request->get('id');
         $check = Db::name('wolive_queue')->where(['groupid'=>$id])->find();
-        if($check) $this->error('该分组下有使用者，不能删除');
+        if($check) $this->error('该分组下有使用者，不能刪除');
         if (Vgroup::destroy(['id' => $id])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

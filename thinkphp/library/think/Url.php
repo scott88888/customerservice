@@ -21,7 +21,7 @@ class Url
      * URL生成 支持路由反射
      * @param string            $url 路由地址
      * @param string|array      $vars 参数（支持数组和字符串）a=val&b=val2... ['a'=>'val1', 'b'=>'val2']
-     * @param string|bool       $suffix 伪静态后缀，默认为true表示获取配置值
+     * @param string|bool       $suffix 伪静态后缀，默认为true表示取得配置值
      * @param boolean|string    $domain 是否显示域名 或者直接传入域名
      * @return string
      */
@@ -86,7 +86,7 @@ class Url
         } elseif (!empty($rule) && isset($name)) {
             throw new \InvalidArgumentException('route name not exists:' . $name);
         } else {
-            // 检查别名路由
+            // 檢查别名路由
             $alias      = Route::rules('alias');
             $matchAlias = false;
             if ($alias) {

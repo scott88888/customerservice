@@ -15856,7 +15856,7 @@
         },
         dataView: {
           title: '数据视图',
-          lang: ['数据视图', '关闭', '刷新']
+          lang: ['数据视图', '關閉', '刷新']
         },
         dataZoom: {
           title: {
@@ -43626,7 +43626,7 @@
         minShowLabelAngle: 0,
         // 选中时扇区偏移量
         selectedOffset: 10,
-        // 选择模式，默认关闭，可选single，multiple
+        // 选择模式，默认關閉，可选single，multiple
         // selectedMode: false,
         // 南丁格尔玫瑰图模式，'radius'（半径） | 'area'（面积）
         // roseType: null,
@@ -58613,7 +58613,7 @@
           // 属性length控制线长
           length: 10,
           distance: 10,
-          // 属性lineStyle（详见lineStyle）控制线条样式
+          // 属性lineStyle（详见lineStyle）控制线條样式
           lineStyle: {
             color: '#63677A',
             width: 3,
@@ -58629,7 +58629,7 @@
           // 属性length控制线长
           length: 6,
           distance: 10,
-          // 属性lineStyle控制线条样式
+          // 属性lineStyle控制线條样式
           lineStyle: {
             color: '#63677A',
             width: 1,

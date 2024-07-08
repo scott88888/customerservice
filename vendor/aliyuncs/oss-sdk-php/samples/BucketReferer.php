@@ -18,11 +18,11 @@ $refererConfig->addReferer("www.aliiyun.com");
 $refererConfig->addReferer("www.aliiyuncs.com");
 $ossClient->putBucketReferer($bucket, $refererConfig);
 Common::println("bucket $bucket refererConfig created:" . $refererConfig->serializeToXml());
-//获取Referer白名单
+//取得Referer白名单
 $refererConfig = $ossClient->getBucketReferer($bucket);
 Common::println("bucket $bucket refererConfig fetched:" . $refererConfig->serializeToXml());
 
-//删除referer白名单
+//刪除referer白名单
 $refererConfig = new RefererConfig();
 $ossClient->putBucketReferer($bucket, $refererConfig);
 Common::println("bucket $bucket refererConfig deleted");
@@ -59,7 +59,7 @@ function putBucketReferer($ossClient, $bucket)
 }
 
 /**
- * 获取bucket的防盗链配置
+ * 取得bucket的防盗链配置
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名称
@@ -80,7 +80,7 @@ function getBucketReferer($ossClient, $bucket)
 }
 
 /**
- * 删除bucket的防盗链配置
+ * 刪除bucket的防盗链配置
  * Referer白名单不能直接清空，只能通过重新设置来覆盖之前的规则。
  *
  * @param OssClient $ossClient OssClient实例

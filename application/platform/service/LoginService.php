@@ -29,7 +29,7 @@ class LoginService
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '使用者名稱或密码错误',
+                'msg' => '使用者名稱或密碼错误',
             ];
         }
 

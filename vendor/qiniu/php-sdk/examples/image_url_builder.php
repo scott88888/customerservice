@@ -13,9 +13,9 @@ $url2 = 'http://78re52.com1.z0.glb.clouddn.com/resource/gogopher.jpg?watermark/1
 $waterImage = 'http://developer.qiniu.com/resource/logo-2.jpg';
 
 /**
- * 缩略图链接拼接
+ * 缩略图連結拼接
  *
- * @param  string $url 图片链接
+ * @param  string $url 图片連結
  * @param  int $mode 缩略模式
  * @param  int $width 宽度
  * @param  int $height 长度
@@ -36,8 +36,8 @@ var_dump($thumbLink, $thumbLink2);
 /**
  * 图片水印
  *
- * @param  string $url 图片链接
- * @param  string $image 水印图片链接
+ * @param  string $url 图片連結
+ * @param  string $image 水印图片連結
  * @param  numeric $dissolve 透明度 [可选]
  * @param  string $gravity 水印位置 [可选]
  * @param  numeric $dx 横轴边距 [可选]
@@ -55,7 +55,7 @@ var_dump($waterLink);
 /**
  * 文字水印
  *
- * @param  string $url 图片链接
+ * @param  string $url 图片連結
  * @param  string $text 文字
  * @param  string $font 文字字体
  * @param  string $fontSize 文字字号

@@ -45,7 +45,7 @@ class Database extends Job
     }
 
     /**
-     * 删除任务
+     * 刪除任务
      * @return void
      */
     public function delete()
@@ -69,7 +69,7 @@ class Database extends Job
     }
 
     /**
-     * 获取当前任务尝试次数
+     * 取得当前任务尝试次数
      * @return int
      */
     public function attempts()

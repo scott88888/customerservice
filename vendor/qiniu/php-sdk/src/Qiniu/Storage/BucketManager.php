@@ -28,7 +28,7 @@ final class BucketManager
     }
 
     /**
-     * 获取指定账号下所有的空间名。
+     * 取得指定账号下所有的空间名。
      *
      * @return string[] 包含所有空间名
      */
@@ -42,7 +42,7 @@ final class BucketManager
     }
 
     /**
-     * 获取指定空间绑定的所有的域名
+     * 取得指定空间绑定的所有的域名
      *
      * @return string[] 包含所有空间域名
      */
@@ -52,7 +52,7 @@ final class BucketManager
     }
 
     /**
-     * 获取空间绑定的域名列表
+     * 取得空间绑定的域名列表
      * @return string[] 包含空间绑定的所有域名
      */
 
@@ -88,10 +88,10 @@ final class BucketManager
     }
 
     /**
-     * 获取资源的元信息，但不返回文件内容
+     * 取得资源的元信息，但不返回文件内容
      *
-     * @param $bucket     待获取信息资源所在的空间
-     * @param $key        待获取资源的文件名
+     * @param $bucket     待取得信息资源所在的空间
+     * @param $key        待取得资源的文件名
      *
      * @return array    包含文件信息的数组，类似：
      *                                              [
@@ -111,12 +111,12 @@ final class BucketManager
     }
 
     /**
-     * 删除指定资源
+     * 刪除指定资源
      *
-     * @param $bucket     待删除资源所在的空间
-     * @param $key        待删除资源的文件名
+     * @param $bucket     待刪除资源所在的空间
+     * @param $key        待刪除资源的文件名
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/delete.html
      */
     public function delete($bucket, $key)
@@ -134,7 +134,7 @@ final class BucketManager
      * @param $oldname    待操作资源文件名
      * @param $newname    目标资源文件名
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      */
     public function rename($bucket, $oldname, $newname)
     {
@@ -149,7 +149,7 @@ final class BucketManager
      * @param $to_bucket       目标资源空间名
      * @param $to_key          目标资源文件名
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/copy.html
      */
     public function copy($from_bucket, $from_key, $to_bucket, $to_key, $force = false)
@@ -172,7 +172,7 @@ final class BucketManager
      * @param $to_bucket       目标资源空间名
      * @param $to_key          目标资源文件名
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/move.html
      */
     public function move($from_bucket, $from_key, $to_bucket, $to_key, $force = false)
@@ -194,7 +194,7 @@ final class BucketManager
      * @param $key        待操作资源文件名
      * @param $mime       待操作文件目标mimeType
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/chgm.html
      */
     public function changeMime($bucket, $key, $mime)
@@ -214,7 +214,7 @@ final class BucketManager
      * @param $key        待操作资源文件名
      * @param $fileType       待操作文件目标文件类型
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  https://developer.qiniu.com/kodo/api/3710/modify-the-file-type
      */
     public function changeType($bucket, $key, $fileType)
@@ -232,7 +232,7 @@ final class BucketManager
      * @param $key        待操作资源文件名
      * @param $status       待操作文件目标文件类型
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  https://developer.qiniu.com/kodo/api/4173/modify-the-file-status
      */
     public function changeStatus($bucket, $key, $status)
@@ -259,7 +259,7 @@ final class BucketManager
      *                                          null
      *                                  ]
      *
-     *                         失败时：  [
+     *                         失敗时：  [
      *                                          null,
      *                                         Qiniu/Http/Error
      *                                  ]
@@ -282,10 +282,10 @@ final class BucketManager
     /**
      * 从镜像源站抓取资源到空间中，如果空间中已经存在，则覆盖该资源
      *
-     * @param $bucket     待获取资源所在的空间
-     * @param $key        代获取资源文件名
+     * @param $bucket     待取得资源所在的空间
+     * @param $key        代取得资源文件名
      *
-     * @return mixed      成功返回NULL，失败返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/prefetch.html
      */
     public function prefetch($bucket, $key)
@@ -328,7 +328,7 @@ final class BucketManager
      *
      * @param $bucket 设置文件生命周期文件所在的空间
      * @param $key    设置文件生命周期文件的文件名
-     * @param $days   设置该文件多少天后删除，当$days设置为0时表示取消该文件的生命周期
+     * @param $days   设置该文件多少天后刪除，当$days设置为0时表示取消该文件的生命周期
      *
      * @return Mixed
      * @link https://developer.qiniu.com/kodo/api/update-file-lifecycle

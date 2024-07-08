@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <title>谈话页面</title>
+    <title>谈话頁面</title>
     <script type="text/javascript" src="__libs__/jquery/jquery.min.js?v=__lkversion__"></script>
     <script src="__libs__/layui/layui.js?v=__lkversion__" type="text/javascript"></script>
     <script src="__libs__/jquery/jquery.cookie.js?v=__lkversion__" type="text/javascript"></script>
@@ -281,7 +281,7 @@
         }
 
 
-        // new pusher 链接websocket
+        // new pusher 連結websocket
         var wolive_connect = function () {
             var pusher = new Pusher('{$app_key}', {
                 encrypted: {$value}
@@ -423,7 +423,7 @@
                     audio_context = new AudioContext;
 
                     if (!navigator.getUserMedia) {
-                        console.log('语音创建失败');
+                        console.log('语音创建失敗');
                     }
                     ;
                 } catch (e) {
@@ -446,7 +446,7 @@
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
-                                , time: 0 //20s后自动关闭
+                                , time: 0 //20s后自动關閉
                                 , btn: ['发送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
@@ -574,7 +574,7 @@ var getstate =function(obj){
     }
 
     var init=function () {
-        // 获取历史消息
+        // 取得历史消息
         $.cookie("hid",'');
         getdata();
         getwatch(visiter_id);
@@ -944,7 +944,7 @@ function putfile() {
 
 //发送消息
 var send = function () {
-    //获取 遊客id
+    //取得 遊客id
     var msg = $("#text_in").val();
 
 

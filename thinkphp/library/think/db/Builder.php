@@ -44,7 +44,7 @@ abstract class Builder
     }
 
     /**
-     * 获取当前的连接对象实例
+     * 取得当前的连接对象实例
      * @access public
      * @return Connection
      */
@@ -54,7 +54,7 @@ abstract class Builder
     }
 
     /**
-     * 获取当前的Query对象实例
+     * 取得当前的Query对象实例
      * @access public
      * @return Query
      */
@@ -88,7 +88,7 @@ abstract class Builder
             return [];
         }
 
-        // 获取绑定信息
+        // 取得绑定信息
         $bind = $this->query->getFieldsBind($options['table']);
         if ('*' == $options['field']) {
             $fields = array_keys($bind);
@@ -231,7 +231,7 @@ abstract class Builder
     /**
      * where分析
      * @access protected
-     * @param mixed $where   查询条件
+     * @param mixed $where   查询條件
      * @param array $options 查询参数
      * @return string
      */
@@ -239,7 +239,7 @@ abstract class Builder
     {
         $whereStr = $this->buildWhere($where, $options);
         if (!empty($options['soft_delete'])) {
-            // 附加软删除条件
+            // 附加软刪除條件
             list($field, $condition) = $options['soft_delete'];
 
             $binds    = $this->query->getFieldsBind($options['table']);
@@ -250,7 +250,7 @@ abstract class Builder
     }
 
     /**
-     * 生成查询条件SQL
+     * 生成查询條件SQL
      * @access public
      * @param mixed     $where
      * @param array     $options
@@ -282,7 +282,7 @@ abstract class Builder
                         $str[] = ' ' . $key . ' ( ' . $whereClause . ' )';
                     }
                 } elseif (strpos($field, '|')) {
-                    // 不同字段使用相同查询条件（OR）
+                    // 不同字段使用相同查询條件（OR）
                     $array = explode('|', $field);
                     $item  = [];
                     foreach ($array as $k) {
@@ -290,7 +290,7 @@ abstract class Builder
                     }
                     $str[] = ' ' . $key . ' ( ' . implode(' OR ', $item) . ' )';
                 } elseif (strpos($field, '&')) {
-                    // 不同字段使用相同查询条件（AND）
+                    // 不同字段使用相同查询條件（AND）
                     $array = explode('&', $field);
                     $item  = [];
                     foreach ($array as $k) {
@@ -316,13 +316,13 @@ abstract class Builder
         // 字段分析
         $key = $field ? $this->parseKey($field, $options, true) : '';
 
-        // 查询规则和条件
+        // 查询规则和條件
         if (!is_array($val)) {
             $val = is_null($val) ? ['null', ''] : ['=', $val];
         }
         list($exp, $value) = $val;
 
-        // 对一个字段使用多个查询条件
+        // 对一个字段使用多个查询條件
         if (is_array($exp)) {
             $item = array_pop($val);
             // 传入 or 或者 and
@@ -476,7 +476,7 @@ abstract class Builder
     }
 
     /**
-     * 日期时间条件解析
+     * 日期时间條件解析
      * @access protected
      * @param string    $value
      * @param string    $key
@@ -487,7 +487,7 @@ abstract class Builder
      */
     protected function parseDateTime($value, $key, $options = [], $bindName = null, $bindType = null)
     {
-        // 获取时间字段类型
+        // 取得时间字段类型
         if (strpos($key, '.')) {
             list($table, $key) = explode('.', $key);
             if (isset($options['alias']) && $pos = array_search($table, $options['alias'])) {
@@ -538,7 +538,7 @@ abstract class Builder
      * join分析
      * @access protected
      * @param array $join
-     * @param array $options 查询条件
+     * @param array $options 查询條件
      * @return string
      */
     protected function parseJoin($join, $options = [])
@@ -570,7 +570,7 @@ abstract class Builder
      * order分析
      * @access protected
      * @param mixed $order
-     * @param array $options 查询条件
+     * @param array $options 查询條件
      * @return string
      */
     protected function parseOrder($order, $options = [])
@@ -771,7 +771,7 @@ abstract class Builder
      */
     public function insertAll($dataSet, $options = [], $replace = false)
     {
-        // 获取合法的字段
+        // 取得合法的字段
         if ('*' == $options['field']) {
             $fields = array_keys($this->query->getFieldsType($options['table']));
         } else {

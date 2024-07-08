@@ -5,7 +5,7 @@
 - Appclient
     - [x] 创建房间: client->createApp()
     - [x] 查看房间: client->getApp()
-    - [x] 删除房间: client->deleteApp()
+    - [x] 刪除房间: client->deleteApp()
     - [x] 生成房间token: client->appToken()
 
 

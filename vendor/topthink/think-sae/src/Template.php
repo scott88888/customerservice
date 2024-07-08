@@ -68,7 +68,7 @@ class Template
     }
 
     /**
-     * 检查编译缓存是否有效
+     * 檢查编译缓存是否有效
      * @param string  $cacheFile 缓存的文件名
      * @param int     $cacheTime 缓存时间
      * @return boolean

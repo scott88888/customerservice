@@ -17,7 +17,7 @@ class Update extends Base
     protected $noNeedLogin = [];
 
     /**
-     * 获取更新信息
+     * 取得更新信息
      */
     public function index()
     {

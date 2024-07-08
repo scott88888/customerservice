@@ -80,7 +80,7 @@ if (!function_exists('debug')) {
 
 if (!function_exists('lang')) {
     /**
-     * 获取语言变量值
+     * 取得语言变量值
      * @param string    $name 语言变量名
      * @param array     $vars 动态变量值
      * @param string    $lang 语言
@@ -94,7 +94,7 @@ if (!function_exists('lang')) {
 
 if (!function_exists('config')) {
     /**
-     * 获取和设置配置参数
+     * 取得和设置配置参数
      * @param string|array  $name 参数名
      * @param mixed         $value 参数值
      * @param string        $range 作用域
@@ -112,8 +112,8 @@ if (!function_exists('config')) {
 
 if (!function_exists('input')) {
     /**
-     * 获取输入数据 支持默认值和过滤
-     * @param string    $key 获取的变量名
+     * 取得输入数据 支持默认值和过滤
+     * @param string    $key 取得的变量名
      * @param mixed     $default 默认值
      * @param string    $filter 过滤方法
      * @return mixed
@@ -172,8 +172,8 @@ if (!function_exists('model')) {
 
 if (!function_exists('validate')) {
     /**
-     * 实例化验证器
-     * @param string    $name 验证器名称
+     * 实例化驗證器
+     * @param string    $name 驗證器名称
      * @param string    $layer 业务层名称
      * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Validate
@@ -300,10 +300,10 @@ if (!function_exists('session')) {
             // 清除
             Session::clear('' === $value ? null : $value);
         } elseif ('' === $value) {
-            // 判断或获取
+            // 判断或取得
             return 0 === strpos($name, '?') ? Session::has(substr($name, 1), $prefix) : Session::get($name, $prefix);
         } elseif (is_null($value)) {
-            // 删除
+            // 刪除
             return Session::delete($name, $prefix);
         } else {
             // 设置
@@ -329,10 +329,10 @@ if (!function_exists('cookie')) {
             // 清除
             Cookie::clear($value);
         } elseif ('' === $value) {
-            // 获取
+            // 取得
             return 0 === strpos($name, '?') ? Cookie::has(substr($name, 1), $option) : Cookie::get($name, $option);
         } elseif (is_null($value)) {
-            // 删除
+            // 刪除
             return Cookie::delete($name);
         } else {
             // 设置
@@ -365,10 +365,10 @@ if (!function_exists('cache')) {
         if (is_null($name)) {
             return $cache->clear($value);
         } elseif ('' === $value) {
-            // 获取缓存
+            // 取得缓存
             return 0 === strpos($name, '?') ? $cache->has(substr($name, 1)) : $cache->get($name);
         } elseif (is_null($value)) {
-            // 删除缓存
+            // 刪除缓存
             return $cache->rm($name);
         } elseif (0 === strpos($name, '?') && '' !== $value) {
             $expire = is_numeric($options) ? $options : null;
@@ -408,7 +408,7 @@ if (!function_exists('trace')) {
 
 if (!function_exists('request')) {
     /**
-     * 获取当前Request对象实例
+     * 取得当前Request对象实例
      * @return Request
      */
     function request()
@@ -449,7 +449,7 @@ if (!function_exists('view')) {
 
 if (!function_exists('json')) {
     /**
-     * 获取\think\response\Json对象实例
+     * 取得\think\response\Json对象实例
      * @param mixed   $data 返回的数据
      * @param integer $code 狀態码
      * @param array   $header 头部
@@ -464,7 +464,7 @@ if (!function_exists('json')) {
 
 if (!function_exists('jsonp')) {
     /**
-     * 获取\think\response\Jsonp对象实例
+     * 取得\think\response\Jsonp对象实例
      * @param mixed   $data    返回的数据
      * @param integer $code    狀態码
      * @param array   $header 头部
@@ -479,7 +479,7 @@ if (!function_exists('jsonp')) {
 
 if (!function_exists('xml')) {
     /**
-     * 获取\think\response\Xml对象实例
+     * 取得\think\response\Xml对象实例
      * @param mixed   $data    返回的数据
      * @param integer $code    狀態码
      * @param array   $header  头部
@@ -494,7 +494,7 @@ if (!function_exists('xml')) {
 
 if (!function_exists('redirect')) {
     /**
-     * 获取\think\response\Redirect对象实例
+     * 取得\think\response\Redirect对象实例
      * @param mixed         $url 重定向地址 支持Url::build方法的地址
      * @param array|integer $params 额外参数
      * @param integer       $code 狀態码

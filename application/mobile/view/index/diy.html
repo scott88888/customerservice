@@ -672,12 +672,12 @@
         var state=$.cookie('state');
         if(state == "on"){
             $('.state-mp3').html('&#xe685;');
-            layer.msg('关闭提示音',{end:function(){
+            layer.msg('關閉提示音',{end:function(){
                     $.cookie('state',"off");
                 }});
         }else{
             $('.state-mp3').html('&#xe645;');
-            layer.msg('开启提示音',{end:function(){
+            layer.msg('開啟提示音',{end:function(){
                     $.cookie('state',"on");
                 }});
         }
@@ -805,7 +805,7 @@
                     audio_context = new AudioContext;
 
                     if (!navigator.getUserMedia) {
-                        console.log('语音创建失败');
+                        console.log('语音创建失敗');
                     }
                     ;
                 } catch (e) {
@@ -828,7 +828,7 @@
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
-                                , time: 0 //20s后自动关闭
+                                , time: 0 //20s后自动關閉
                                 , btn: ['发送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
@@ -985,7 +985,7 @@
     }
     
     var text = document.getElementById('text_in');
-    // 获取焦点，拉到底部
+    // 取得焦点，拉到底部
     text.onfocus  = function() {
         $(".tool_box").hide();
         let height = +document.documentElement.clientHeight;

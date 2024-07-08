@@ -25,7 +25,7 @@ function writable($var)
     }
     return $writeable;
 }
-//获取随机数
+//取得随机数
 function GetRandStr($length){
     //字符组合
     $str = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -102,7 +102,7 @@ foreach ($dirarray as $key => $dir) {
     </div>
     <script>
         layer.alert('使用AI智能客服产品期间，不得危害国家安全、泄露国家秘密，不得侵犯国家社会集体和公民的合法权益。<br><br><strong>AI智能客服产品禁止用于含有木马、病毒、色情、赌博、诈骗等违法违规业务。一经发现，AI智能客服有权立即停止服务，并协助相关行政执法机关进行清查。</strong><br><br>对因意外事故、滥用、错误使用、擅自修改所引起的软件使用问题，AI智能客服不承担任何责任，也不做任何保证。', {
-            title: '提示条款',
+            title: '提示條款',
             maxWidth: '500',
             btn: '同意',
             skin: 'layui-layer-lan' //样式类名
@@ -305,7 +305,7 @@ foreach ($dirarray as $key => $dir) {
                                placeholder="Database Username">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbPass">数据库密码</label>
+                        <label class="control-label" for="dbPass">数据库密碼</label>
                         <input type="text" class="form-control" id="dbPass" name="dbPass"
                                value="<?php if (isset($_POST['dbPass'])) echo $_POST['dbPass']; ?>"
                                placeholder="Database Password">
@@ -327,7 +327,7 @@ foreach ($dirarray as $key => $dir) {
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label" for="adminPass">管理密码</label>
+                        <label class="control-label" for="adminPass">管理密碼</label>
                         <input type="text" class="form-control" id="adminPass" name="adminPass" minlength="6"
                                maxlength="16"
                                value="<?php if (isset($_POST['adminPass'])) echo $_POST['adminPass']; ?>">
@@ -434,7 +434,7 @@ foreach ($dirarray as $key => $dir) {
             </center>
 
         <?php elseif (strlen($adminPass) < 5): ?>
-            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 密码不能小于5位数.</div>
+            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 密碼不能小于5位数.</div>
 
             <center>
                 <a href="javascript:history.go(-1)" style="display: inline-block;width: 90px;" class="btn btn-default">返回上一步</a>
@@ -508,7 +508,7 @@ foreach ($dirarray as $key => $dir) {
             <?php sleep(2); ?>
 
             <center style="margin-bottom: 20px;">
-                <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/backend" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">登录总后台</a>  <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/service" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">商户后台</a>
+                <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/backend" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">登入总后台</a>  <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/service" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">商户后台</a>
             </center>
             <?php
 
@@ -530,7 +530,7 @@ foreach ($dirarray as $key => $dir) {
 return [
     // 数据库调试模式
     'debug'          => false,
-    // 是否严格检查字段是否存在
+    // 是否严格檢查字段是否存在
     'fields_strict'  => true,
     // 是否自动写入时间戳字段
     'auto_timestamp' => false,
@@ -545,7 +545,7 @@ return [
     'database'       => '{$dbName}',
     // 使用者名稱
     'username'       => '{$dbUser}',
-    // 密码
+    // 密碼
     'password'       => '{$dbPass}',
     // 端口
     'hostport'       => '',
@@ -628,7 +628,7 @@ require __DIR__ . '/../thinkphp/start.php';");
 // App id
 \$app_id = {$app_id};
 
-// websocket 端口，客服系统网页会连这个端口
+// websocket 端口，客服系统网頁会连这个端口
 \$websocket_port = {$wport};
 
 // Api 端口，用于后端与pusher通讯
@@ -647,7 +647,7 @@ require __DIR__ . '/../thinkphp/start.php';");
     <?php else: ?>
 
         <div class="alert alert-success"><strong>已经安装成功</strong></div>
-        <p>如果想重新安装，请删除<code>public\index.php</code></p>
+        <p>如果想重新安装，请刪除<code>public\index.php</code></p>
     <?php endif; ?>
 </div>
 </div>

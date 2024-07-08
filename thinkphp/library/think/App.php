@@ -96,7 +96,7 @@ class App
 
             // 默认语言
             Lang::range($config['default_lang']);
-            // 开启多语言机制 检测当前语言
+            // 開啟多语言机制 检测当前语言
             $config['lang_switch_on'] && Lang::detect();
             $request->langset(Lang::range());
 
@@ -108,7 +108,7 @@ class App
 
             // 监听 app_dispatch
             Hook::listen('app_dispatch', self::$dispatch);
-            // 获取应用调度信息
+            // 取得应用调度信息
             $dispatch = self::$dispatch;
 
             // 未设置调度信息则进行 URL 路由检测
@@ -129,7 +129,7 @@ class App
             // 监听 app_begin
             Hook::listen('app_begin', $dispatch);
 
-            // 请求缓存检查
+            // 请求缓存檢查
             $request->cache(
                 $config['request_cache'],
                 $config['request_cache_expire'],
@@ -368,7 +368,7 @@ class App
      */
     private static function bindParams($reflect, $vars = [])
     {
-        // 自动获取请求变量
+        // 自动取得请求变量
         if (empty($vars)) {
             $vars = Config::get('url_param_type') ?
             Request::instance()->route() :
@@ -390,7 +390,7 @@ class App
     }
 
     /**
-     * 获取参数值
+     * 取得参数值
      * @access private
      * @param \ReflectionParameter  $param 参数
      * @param array                 $vars  变量
@@ -525,7 +525,7 @@ class App
                 $request->module($module);
                 $config = self::init($module);
 
-                // 模块请求缓存检查
+                // 模块请求缓存檢查
                 $request->cache(
                     $config['request_cache'],
                     $config['request_cache_expire'],
@@ -549,7 +549,7 @@ class App
         // 是否自动转换控制器和操作名
         $convert = is_bool($convert) ? $convert : $config['url_convert'];
 
-        // 获取控制器名
+        // 取得控制器名
         $controller = strip_tags($result[1] ?: $config['default_controller']);
 
         if (!preg_match('/^[A-Za-z](\w|\.)*$/', $controller)) {
@@ -558,7 +558,7 @@ class App
 
         $controller = $convert ? strtolower($controller) : $controller;
 
-        // 获取操作名
+        // 取得操作名
         $actionName = strip_tags($result[2] ?: $config['default_action']);
         if (!empty($config['action_convert'])) {
             $actionName = Loader::parseName($actionName, 1);
@@ -583,14 +583,14 @@ class App
             throw new HttpException(404, 'controller not exists:' . $e->getClass());
         }
 
-        // 获取当前操作名
+        // 取得当前操作名
         $action = $actionName . $config['action_suffix'];
 
         $vars = [];
         if (is_callable([$instance, $action])) {
             // 执行操作方法
             $call = [$instance, $action];
-            // 严格获取当前操作方法名
+            // 严格取得当前操作方法名
             $reflect    = new \ReflectionMethod($instance, $action);
             $methodName = $reflect->getName();
             $suffix     = $config['action_suffix'];
@@ -628,7 +628,7 @@ class App
         // 路由检测
         $check = !is_null(self::$routeCheck) ? self::$routeCheck : $config['url_route_on'];
         if ($check) {
-            // 开启路由
+            // 開啟路由
             if (is_file(RUNTIME_PATH . 'route.php')) {
                 // 读取路由缓存
                 $rules = include RUNTIME_PATH . 'route.php';

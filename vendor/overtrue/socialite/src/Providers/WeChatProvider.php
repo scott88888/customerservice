@@ -22,7 +22,7 @@ use Overtrue\Socialite\WeChatComponentInterface;
  * Class WeChatProvider.
  *
  * @see http://mp.weixin.qq.com/wiki/9/01f711493b5a02f24b04365ac5d8fd95.html [WeChat - 公众平台OAuth文档]
- * @see https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN [网站应用微信登录开发指南]
+ * @see https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN [网站应用微信登入开发指南]
  */
 class WeChatProvider extends AbstractProvider implements ProviderInterface
 {

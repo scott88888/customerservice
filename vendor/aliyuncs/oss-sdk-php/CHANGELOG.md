@@ -63,7 +63,7 @@
 ## v2.0.1
 
 * 增加对ListObjects/ListMultipartUploads时特殊字符的处理
-* 提供接口获取OssException中的详细信息
+* 提供接口取得OssException中的详细信息
 
 
 ## 2015.11.25

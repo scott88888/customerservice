@@ -295,7 +295,7 @@ class Process
     }
 
     /**
-     * 获取PID
+     * 取得PID
      * @return int|null
      * @throws \RuntimeException
      */
@@ -323,7 +323,7 @@ class Process
     }
 
     /**
-     * 禁用从底层过程获取输出和错误输出。
+     * 禁用从底层过程取得输出和错误输出。
      * @return Process
      */
     public function disableOutput()
@@ -341,7 +341,7 @@ class Process
     }
 
     /**
-     * 开启从底层过程获取输出和错误输出。
+     * 開啟从底层过程取得输出和错误输出。
      * @return Process
      * @throws \RuntimeException
      */
@@ -366,7 +366,7 @@ class Process
     }
 
     /**
-     * 获取当前的输出管道
+     * 取得当前的输出管道
      * @return string
      * @throws \LogicException
      * @throws \LogicException
@@ -469,7 +469,7 @@ class Process
     }
 
     /**
-     * 获取退出码
+     * 取得退出码
      * @return null|int
      */
     public function getExitCode()
@@ -484,7 +484,7 @@ class Process
     }
 
     /**
-     * 获取退出文本
+     * 取得退出文本
      * @return null|string
      */
     public function getExitCodeText()
@@ -497,7 +497,7 @@ class Process
     }
 
     /**
-     * 检查是否成功
+     * 檢查是否成功
      * @return bool
      */
     public function isSuccessful()
@@ -540,7 +540,7 @@ class Process
     }
 
     /**
-     * 检查子进程信号是否已停止
+     * 檢查子进程信号是否已停止
      * @return bool
      */
     public function hasBeenStopped()
@@ -566,7 +566,7 @@ class Process
     }
 
     /**
-     * 检查是否正在运行
+     * 檢查是否正在运行
      * @return bool
      */
     public function isRunning()
@@ -581,7 +581,7 @@ class Process
     }
 
     /**
-     * 检查是否已开始
+     * 檢查是否已开始
      * @return bool
      */
     public function isStarted()
@@ -590,7 +590,7 @@ class Process
     }
 
     /**
-     * 检查是否已终止
+     * 檢查是否已终止
      * @return bool
      */
     public function isTerminated()
@@ -601,7 +601,7 @@ class Process
     }
 
     /**
-     * 获取当前的狀態
+     * 取得当前的狀態
      * @return string
      */
     public function getStatus()
@@ -661,7 +661,7 @@ class Process
     }
 
     /**
-     * 获取被执行的指令
+     * 取得被执行的指令
      * @return string
      */
     public function getCommandLine()
@@ -682,7 +682,7 @@ class Process
     }
 
     /**
-     * 获取超时时间
+     * 取得超时时间
      * @return float|null
      */
     public function getTimeout()
@@ -691,7 +691,7 @@ class Process
     }
 
     /**
-     * 获取idle超时时间
+     * 取得idle超时时间
      * @return float|null
      */
     public function getIdleTimeout()
@@ -747,7 +747,7 @@ class Process
     }
 
     /**
-     * 检查是否是tty模式
+     * 檢查是否是tty模式
      * @return bool
      */
     public function isTty()
@@ -777,7 +777,7 @@ class Process
     }
 
     /**
-     * 获取工作目录
+     * 取得工作目录
      * @return string|null
      */
     public function getWorkingDirectory()
@@ -802,7 +802,7 @@ class Process
     }
 
     /**
-     * 获取环境变量
+     * 取得环境变量
      * @return array
      */
     public function getEnv()
@@ -830,7 +830,7 @@ class Process
     }
 
     /**
-     * 获取输入
+     * 取得输入
      * @return null|string
      */
     public function getInput()
@@ -855,7 +855,7 @@ class Process
     }
 
     /**
-     * 获取proc_open的选项
+     * 取得proc_open的选项
      * @return array
      */
     public function getOptions()
@@ -1032,7 +1032,7 @@ class Process
     }
 
     /**
-     * 是否开启 '--enable-sigchild'
+     * 是否開啟 '--enable-sigchild'
      * @return bool
      */
     protected function isSigchildEnabled()
@@ -1052,7 +1052,7 @@ class Process
     }
 
     /**
-     * 验证是否超时
+     * 驗證是否超时
      * @param int|float|null $timeout
      * @return float|null
      */
@@ -1099,7 +1099,7 @@ class Process
     }
 
     /**
-     * 关闭资源
+     * 關閉资源
      * @return int 退出码
      */
     private function close()
@@ -1182,7 +1182,7 @@ class Process
     }
 
     /**
-     * 确保进程已经开启
+     * 确保进程已经開啟
      * @param string $functionName
      */
     private function requireProcessIsStarted($functionName)

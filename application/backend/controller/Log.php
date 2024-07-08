@@ -7,7 +7,7 @@ use app\backend\model\AdminLog;
 use think\Db;
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Log extends Base
 {

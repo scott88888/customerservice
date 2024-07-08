@@ -20,7 +20,7 @@ class Str
     protected static $studlyCache = [];
 
     /**
-     * 检查字符串中是否包含某些字符串
+     * 檢查字符串中是否包含某些字符串
      * @param string       $haystack
      * @param string|array $needles
      * @return bool
@@ -37,7 +37,7 @@ class Str
     }
 
     /**
-     * 检查字符串是否以某些字符串结尾
+     * 檢查字符串是否以某些字符串结尾
      *
      * @param  string       $haystack
      * @param  string|array $needles
@@ -55,7 +55,7 @@ class Str
     }
 
     /**
-     * 检查字符串是否以某些字符串开头
+     * 檢查字符串是否以某些字符串开头
      *
      * @param  string       $haystack
      * @param  string|array $needles
@@ -73,7 +73,7 @@ class Str
     }
 
     /**
-     * 获取指定长度的随机字母数字组合的字符串
+     * 取得指定长度的随机字母数字组合的字符串
      *
      * @param  int $length
      * @return string
@@ -108,7 +108,7 @@ class Str
     }
 
     /**
-     * 获取字符串的长度
+     * 取得字符串的长度
      *
      * @param  string $value
      * @return int

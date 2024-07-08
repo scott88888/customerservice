@@ -839,12 +839,12 @@
     }
 
 
-    //获取qq截图的图片
+    //取得qq截图的图片
     (function () {
         var imgReader = function (item) {
             var blob = item.getAsFile(),
                 reader = new FileReader();
-            // 读取文件后将其显示在网页中
+            // 读取文件后将其显示在网頁中
             reader.onload = function (e) {
                 var msg = '';
                 msg += "<img   src='" + e.target.result + "'>";
@@ -1048,7 +1048,7 @@
             audio_context = new AudioContext;
 
             if (!navigator.getUserMedia) {
-                console.log('语音创建失败');
+                console.log('语音创建失敗');
             }
             ;
         } catch (e) {
@@ -1071,7 +1071,7 @@
                         icon: 16
                         , shade: 0.01
                         , skin: 'layui-layer-lan'
-                        , time: 0 //20s后自动关闭
+                        , time: 0 //20s后自动關閉
                         , btn: ['发送', '取消']
                         , yes: function (index, layero) {
                             //按钮【按钮一】的回调

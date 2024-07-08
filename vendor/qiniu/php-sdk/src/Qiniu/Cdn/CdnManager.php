@@ -19,7 +19,7 @@ final class CdnManager
     }
 
     /**
-     * @param array $urls 待刷新的文件链接数组
+     * @param array $urls 待刷新的文件連結数组
      * @return array
      */
     public function refreshUrls(array $urls)
@@ -28,7 +28,7 @@ final class CdnManager
     }
 
     /**
-     * @param array $dirs 待刷新的文件链接数组
+     * @param array $dirs 待刷新的文件連結数组
      * @return array
      * 目前客户默认没有目录刷新权限，刷新会有400038报错，参考：https://developer.qiniu.com/fusion/api/1229/cache-refresh
      * 需要刷新目录请工单联系技术支持 https://support.qiniu.com/tickets/category
@@ -39,8 +39,8 @@ final class CdnManager
     }
 
     /**
-     * @param array $urls 待刷新的文件链接数组
-     * @param array $dirs 待刷新的目录链接数组
+     * @param array $urls 待刷新的文件連結数组
+     * @param array $dirs 待刷新的目录連結数组
      *
      * @return array 刷新的请求回复和错误，参考 examples/cdn_manager.php 代码
      * @link http://developer.qiniu.com/article/fusion/api/refresh.html
@@ -64,7 +64,7 @@ final class CdnManager
     }
 
     /**
-     * @param array $urls 待预取的文件链接数组
+     * @param array $urls 待预取的文件連結数组
      *
      * @return array 预取的请求回复和错误，参考 examples/cdn_manager.php 代码
      *
@@ -82,10 +82,10 @@ final class CdnManager
     }
 
     /**
-     * @param array $domains 待获取带宽数据的域名数组
+     * @param array $domains 待取得带宽数据的域名数组
      * @param string $startDate 开始的日期，格式类似 2017-01-01
      * @param string $endDate 结束的日期，格式类似 2017-01-01
-     * @param string $granularity 获取数据的时间间隔，可以是 5min, hour 或者 day
+     * @param string $granularity 取得数据的时间间隔，可以是 5min, hour 或者 day
      *
      * @return array 带宽数据和错误信息，参考 examples/cdn_manager.php 代码
      *
@@ -105,10 +105,10 @@ final class CdnManager
     }
 
     /**
-     * @param array $domains 待获取流量数据的域名数组
+     * @param array $domains 待取得流量数据的域名数组
      * @param string $startDate 开始的日期，格式类似 2017-01-01
      * @param string $endDate 结束的日期，格式类似 2017-01-01
-     * @param string $granularity 获取数据的时间间隔，可以是 5min, hour 或者 day
+     * @param string $granularity 取得数据的时间间隔，可以是 5min, hour 或者 day
      *
      * @return array 流量数据和错误信息，参考 examples/cdn_manager.php 代码
      *
@@ -128,10 +128,10 @@ final class CdnManager
     }
 
     /**
-     * @param array $domains 待获取日志下载链接的域名数组
-     * @param string $logDate 获取指定日期的日志下载链接，格式类似 2017-01-01
+     * @param array $domains 待取得日志下载連結的域名数组
+     * @param string $logDate 取得指定日期的日志下载連結，格式类似 2017-01-01
      *
-     * @return array 日志下载链接数据和错误信息，参考 examples/cdn_manager.php 代码
+     * @return array 日志下载連結数据和错误信息，参考 examples/cdn_manager.php 代码
      *
      * @link http://developer.qiniu.com/article/fusion/api/log.html
      */
@@ -163,7 +163,7 @@ final class CdnManager
      *
      * @param string $rawUrl 需要签名的资源url
      * @param string $encryptKey 时间戳防盗链密钥
-     * @param string $durationInSeconds 链接的有效期（以秒为单位）
+     * @param string $durationInSeconds 連結的有效期（以秒为单位）
      *
      * @return string 带鉴权信息的资源外链，参考 examples/cdn_timestamp_antileech.php 代码
      */

@@ -63,8 +63,8 @@
 		</script>
 
 		<script type="text/html" id="tool-bar">
-			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</button>
-			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>删除</button>
+			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>編輯</button>
+			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>刪除</button>
 		</script>
 
         <script src="/static/component/layui/layui.js"></script>
@@ -174,7 +174,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '编辑常见问题',
+                        title: '編輯常见问题',
                         shade: 0.1,
                         area: ['700px', '500px'],
                         content: MODULE_PATH + 'questions/edit?id='+obj.data.qid
@@ -182,7 +182,7 @@
                 };
 
                 window.remove = function(obj) {
-                    layer.confirm('确定要删除该常见问题吗？', {
+                    layer.confirm('確定要刪除该常见问题吗？', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

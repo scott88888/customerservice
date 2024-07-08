@@ -40,7 +40,7 @@ baidu.dom = baidu.dom || {};
 
 
 /**
- * 从文档中获取指定的DOM元素
+ * 从文档中取得指定的DOM元素
  * @name baidu.dom.g
  * @function
  * @grammar baidu.dom.g(id)
@@ -49,7 +49,7 @@ baidu.dom = baidu.dom || {};
  * @meta standard
  * @see baidu.dom.q
  *
- * @return {HTMLElement|null} 获取的元素，查找不到时返回null,如果参数不合法，直接返回参数.
+ * @return {HTMLElement|null} 取得的元素，查找不到时返回null,如果参数不合法，直接返回参数.
  */
 baidu.dom.g = function(id) {
     if (!id) return null;
@@ -210,7 +210,7 @@ baidu.dom.insertHTML = function (element, position, html) {
 baidu.insertHTML = baidu.dom.insertHTML;
 
 /**
- * 操作flash对象的方法，包括创建flash对象、获取flash对象以及判断flash插件的版本号
+ * 操作flash对象的方法，包括创建flash对象、取得flash对象以及判断flash插件的版本号
  * @namespace baidu.swf
  */
 baidu.swf = baidu.swf || {};
@@ -300,7 +300,7 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.quality 			设置flash播放的画质，允许值：low/medium/high/autolow/autohigh/best
  * @param {string} 	options.scale 				设置flash内容如何缩放来适应设置的宽高。允许值：showall/noborder/exactfit
  * @param {string} 	options.wmode 				设置flash的显示模式。允许值：window/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	设置flash与页面的通信权限。允许值：always/never/sameDomain
+ * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信权限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
  * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
@@ -421,7 +421,7 @@ baidu.swf.createHTML = function (options) {
 
 
 /**
- * 在页面中创建一个flash对象
+ * 在頁面中创建一个flash对象
  * @name baidu.swf.create
  * @function
  * @grammar baidu.swf.create(options[, container])
@@ -443,7 +443,7 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.quality 			设置flash播放的画质，允许值：low/medium/high/autolow/autohigh/best
  * @param {string} 	options.scale 				设置flash内容如何缩放来适应设置的宽高。允许值：showall/noborder/exactfit
  * @param {string} 	options.wmode 				设置flash的显示模式。允许值：window/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	设置flash与页面的通信权限。允许值：always/never/sameDomain
+ * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信权限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
  * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
@@ -579,7 +579,7 @@ baidu.flash._Base = (function(){
     };
    
     /**
-     * 检查flash狀態
+     * 檢查flash狀態
      * @private
      * @param {Object} target flash对象
      * @return {Boolean}
@@ -660,7 +660,7 @@ baidu.flash._Base = (function(){
             callBack = callBack || [];
 
         /**
-         * 将flash文件绘制到页面上
+         * 将flash文件绘制到頁面上
          * @public
          * @return {Null}
          */
@@ -721,7 +721,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * 检查flash是否ready， 并进行调用
+         * 檢查flash是否ready， 并进行调用
          * @private
          * @return {Null}
          */
@@ -768,17 +768,17 @@ baidu.flash._Base = (function(){
  * @config {Number} vars.maxNum:32 最大上传多少个文件
  * @config {Number} vars.compressLength 能接受的最大边长，超过该值会等比压缩
  * @config {String} vars.url 上传的url地址
- * @config {Number} vars.mode mode == 0时，是使用滚动条，mode == 1时，拉伸flash, 默认值为0
+ * @config {Number} vars.mode mode == 0时，是使用滚动條，mode == 1时，拉伸flash, 默认值为0
  * @see baidu.swf.createHTML
  * @param {String} backgroundUrl 背景图片路径
  * @param {String} listBacgroundkUrl 布局控件背景
  * @param {String} buttonUrl 按钮图片不背景
  * @param {String|Function} selectFileCallback 选择文件的回调
  * @param {String|Function} exceedFileCallback文件超出限制的最大体积时的回调
- * @param {String|Function} deleteFileCallback 删除文件的回调
+ * @param {String|Function} deleteFileCallback 刪除文件的回调
  * @param {String|Function} startUploadCallback 开始上传某个文件时的回调
  * @param {String|Function} uploadCompleteCallback 某个文件上传完成的回调
- * @param {String|Function} uploadErrorCallback 某个文件上传失败的回调
+ * @param {String|Function} uploadErrorCallback 某个文件上传失敗的回调
  * @param {String|Function} allCompleteCallback 全部上传完成时的回调
  * @param {String|Function} changeFlashHeight 改变Flash的高度，mode==1的时候才有用
  */ 
@@ -944,9 +944,9 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 删除文件
+     * 刪除文件
      * @public
-     * @param {Number|Array} [index] 要删除的index，不传则全部删除
+     * @param {Number|Array} [index] 要刪除的index，不传则全部刪除
      * @param {Function} callBack
      * */
     me.deleteFile = function(index, callBack){
@@ -1063,7 +1063,7 @@ baidu.sio._createScriptTag = function(scr, url, charset){
 };
 
 /**
- * 删除script的属性，再删除script标签，以解决修复内存泄漏的问题
+ * 刪除script的属性，再刪除script标签，以解决修复内存泄漏的问题
  * 
  * @param {HTMLElement} src script节点
  */
@@ -1097,7 +1097,7 @@ baidu.sio._removeScriptTag = function(scr){
  * @config {Function} [onfailure] timeOut设定后才生效，到达超时时间时触发本函数
  * @remark
  * 1、与callByServer不同，callback参数只支持Function类型，不支持string。
- * 2、如果请求了一个不存在的页面，callback函数在IE/opera下也会被调用，因此使用者需要在onsuccess函数中判断数据是否正确加载。
+ * 2、如果请求了一个不存在的頁面，callback函数在IE/opera下也会被调用，因此使用者需要在onsuccess函数中判断数据是否正确加载。
  * @meta standard
  * @see baidu.sio.callByServer
  */
@@ -1215,7 +1215,7 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
 };
 
 /**
- * 通过请求一个图片的方式令服务器存储一条日志
+ * 通过请求一个图片的方式令服务器存储一條日志
  * @function
  * @grammar baidu.sio.log(url)
  * @param {string} url 要发送的地址.

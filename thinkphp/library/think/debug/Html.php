@@ -19,7 +19,7 @@ use think\Request;
 use think\Response;
 
 /**
- * 页面Trace调试
+ * 頁面Trace调试
  */
 class Html
 {
@@ -52,12 +52,12 @@ class Html
         } elseif (!empty($contentType) && strpos($contentType, 'html') === false) {
             return false;
         }
-        // 获取基本信息
+        // 取得基本信息
         $runtime = number_format(microtime(true) - THINK_START_TIME, 10, '.', '');
         $reqs    = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
         $mem     = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
 
-        // 页面Trace信息
+        // 頁面Trace信息
         if (isset($_SERVER['HTTP_HOST'])) {
             $uri = $_SERVER['SERVER_PROTOCOL'] . ' ' . $_SERVER['REQUEST_METHOD'] . ' : ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         } else {
@@ -77,7 +77,7 @@ class Html
 
         $info = Debug::getFile(true);
 
-        // 页面Trace信息
+        // 頁面Trace信息
         $trace = [];
         foreach ($this->config['trace_tabs'] as $name => $title) {
             $name = strtolower($name);
@@ -102,7 +102,7 @@ class Html
                     }
             }
         }
-        // 调用Trace页面模板
+        // 调用Trace頁面模板
         ob_start();
         include $this->config['trace_file'];
         return ob_get_clean();

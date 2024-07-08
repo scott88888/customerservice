@@ -45,7 +45,7 @@ class File extends Driver
     }
 
     /**
-     * 初始化检查
+     * 初始化檢查
      * @access private
      * @return boolean
      */
@@ -207,7 +207,7 @@ class File extends Driver
     }
 
     /**
-     * 删除缓存
+     * 刪除缓存
      * @access public
      * @param string $name 缓存变量名
      * @return boolean
@@ -254,7 +254,7 @@ class File extends Driver
     }
 
     /**
-     * 判断文件是否存在后，删除
+     * 判断文件是否存在后，刪除
      * @param $path
      * @return bool
      * @author byron sampson <xiaobo.sun@qq.com>

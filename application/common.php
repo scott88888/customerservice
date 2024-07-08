@@ -321,7 +321,7 @@ class Common
     }
 
     /**
-     * 获取时间段日期
+     * 取得时间段日期
      * @return array
      */
     public static function getDaysByDay($sday,$eday)

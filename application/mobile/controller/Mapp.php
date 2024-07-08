@@ -14,7 +14,7 @@ use think\Paginator;
 class Mapp extends Mbase
 {
     /**
-     * 登陆首頁.
+     * 登入首頁.
      *
      * @return string
      */
@@ -24,7 +24,7 @@ class Mapp extends Mbase
         if ($token) {
             $this->redirect(url('Mobile/mapp/index'));
         }
-        // 未登陆，呈现登陆页面.
+        // 未登入，呈现登入頁面.
         $params = [];
         $goto = $this->request->get('goto', '');
         if ($goto) {
@@ -40,7 +40,7 @@ class Mapp extends Mbase
     }
 
     /**
-     * 退出登陆 并清除session.
+     * 退出登入 并清除session.
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class Mapp extends Mbase
     }
 
     /**
-     * 检查.
+     * 檢查.
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class Mapp extends Mbase
         if ($result !== true) {
             $this->error($result);
         }
-        // 密码检查
+        // 密碼檢查
 
         $pass = md5($post['user_name'] . "hjkj" . $post['password']);
 
@@ -93,14 +93,14 @@ class Mapp extends Mbase
 
         if (!$admin) {
 
-            $this->error('登录使用者名稱或密码错误');
+            $this->error('登入使用者名稱或密碼错误');
         }
 
-        // 获取登陆数据
+        // 取得登入数据
 
         $login = $admin->getData();
 
-        // 删掉登录使用者的敏感信息
+        // 删掉登入使用者的敏感信息
         unset($login['password']);
 
         $res = Admins::table('wolive_service')->where('service_id', $login['service_id'])->update(['state' => 'online']);
@@ -119,7 +119,7 @@ class Mapp extends Mbase
 
     }
     /**
-     * .主页
+     * .主頁
      * [index description]
      * @return [type] [description]
      */
@@ -265,7 +265,7 @@ class Mapp extends Mbase
   }
 
     /**
-     * .对话页面
+     * .对话頁面
      * [chat description]
      * @return [type] [description]
      */
@@ -300,7 +300,7 @@ class Mapp extends Mbase
 	}
   
   /**
-   * .留言页面
+   * .留言頁面
    * [message description]
    * @return [type] [description]
    */

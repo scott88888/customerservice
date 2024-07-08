@@ -33,7 +33,7 @@ class ChuanglanGateway extends Gateway
     const ENDPOINT_URL_TEMPLATE = 'https://%s.253.com/msg/send/json';
 
     /**
-     * 验证码渠道code.
+     * 驗證碼渠道code.
      */
     const CHANNEL_VALIDATE_CODE = 'smsbj1';
 

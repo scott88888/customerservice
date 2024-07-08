@@ -56,7 +56,7 @@ class App extends Base
         if (!$business) {
             return [
                 'code' => 1,
-                'msg' => '数据错误，请刷新页面后重试',
+                'msg' => '数据错误，请刷新頁面后重试',
             ];
         }
 
@@ -64,7 +64,7 @@ class App extends Base
         if (strlen($paswword) < 6 ) {
             return [
                 'code' => 1,
-                'msg' => '密码不能少于6位',
+                'msg' => '密碼不能少于6位',
             ];
         }
 
@@ -80,7 +80,7 @@ class App extends Base
         } else {
             return [
                 'code' => 1,
-                'msg' => '修改密碼失败',
+                'msg' => '修改密碼失敗',
             ];
         }
     }
@@ -156,7 +156,7 @@ class App extends Base
             if ($res !== false) {
                 return ['code'=>0,'msg'=>'操作成功'];
             } else {
-                return ['code'=>1,'msg'=>'操作失败，请重试'];
+                return ['code'=>1,'msg'=>'操作失敗，请重试'];
             }
         } else {
             $business = null;
@@ -322,7 +322,7 @@ class App extends Base
         }else{
             return [
                 'code' => 1,
-                'msg' => '操作失败',
+                'msg' => '操作失敗',
             ];
         }
     }
@@ -355,7 +355,7 @@ class App extends Base
         }else{
             return [
                 'code' => 1,
-                'msg' => '操作失败',
+                'msg' => '操作失敗',
             ];
         }
     }

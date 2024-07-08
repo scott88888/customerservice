@@ -37,7 +37,7 @@ class View extends Response
     }
 
     /**
-     * 获取视图变量
+     * 取得视图变量
      * @access public
      * @param string $name 模板变量
      * @return mixed

@@ -92,7 +92,7 @@
 
             channelme.bind("on_chat", function (data) {
                 $.cookie("cu_com",'');
-                layer.msg('该访客被删除');
+                layer.msg('该访客被刪除');
                 getchat();
             });
             // 公共平道
@@ -183,7 +183,7 @@
             channel.bind('bind-wechat',function(data){
                 layer.open({
                     content: data.message
-                    ,btn: ['确定']
+                    ,btn: ['確定']
                     ,yes: function(index, layero){
                         location.reload();
                     }
@@ -264,7 +264,7 @@
                     });
 
                     str = str.replace(/<div><a[^<>]+><i>.+?<\/i>.+?<\/a><\/div>/,'[文件]');
-                    str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超链接]');
+                    str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超連結]');
                     str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[图片]');
 
                     $("#msg" + data.message.channel).html(str);
@@ -493,7 +493,7 @@
             btn2: function(index, layero){
                 //按钮【按钮二】的回调
 
-                //return false 开启该代码可禁止点击该按钮关闭
+                //return false 開啟该代码可禁止点击该按钮關閉
             }
             ,cancel: function(){
 
@@ -506,7 +506,7 @@
         <div class="my-setting">
                 <div class="head">
                     <div class="title">
-                        部署网页组件（推荐）：网页咨询组件同时支持桌面网站和移动网站，提供强大的使用者行为采集能力和系统对接能力
+                        部署网頁组件（推荐）：网頁咨询组件同时支持桌面网站和移动网站，提供强大的使用者行为采集能力和系统对接能力
                     </div>
                    
                 </div>
@@ -525,9 +525,9 @@
                     <!--<button id="bulidhtml" class="layui-btn layui-btn-normal" onclick="show()" style="margin-left:10px
 ">生成html</button>
                     <button id="buildwechat" class="layui-btn layui-btn-normal" style="margin-left:10px
-" onclick="buildmp()">生成微信公众号链接</button>
+" onclick="buildmp()">生成微信公众号連結</button>
                     <button id="buildpersonal" class="layui-btn layui-btn-normal" style="margin-left:10px
-" onclick="buildpersonal()">生成我的专属链接</button>-->
+" onclick="buildpersonal()">生成我的专属連結</button>-->
                     {:hook('generatelinkhook', ['id'=>1])}
                     {:hook('testhook', ['id'=>1])}
                 </div>
@@ -537,7 +537,7 @@
                 <div class="layui-card-body">
                     <form class="layui-form" id="form-diy">
                         <div class="layui-form-item">
-                            <label class="layui-form-label" style="width: 120px">开启弹窗</label>
+                            <label class="layui-form-label" style="width: 120px">開啟弹窗</label>
                             <div class="layui-input-inline">
                                 <input type="checkbox" checked name="isopen" lay-skin="switch" lay-filter="switchTest" lay-text="开|关">
                             </div>
@@ -548,7 +548,7 @@
                             <div class="layui-input-inline">
                                 <input type="text" name="open_delay" placeholder="聊天窗口延时时间" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux">单位秒，开启弹窗有效（只对自定义窗口生成js有效）</div>
+                            <div class="layui-form-mid layui-word-aux">单位秒，開啟弹窗有效（只对自定义窗口生成js有效）</div>
                         </div>
                         <div class="layui-form-item">
                         <label class="layui-form-label" style="width: 120px">弹窗高度</label>
@@ -558,7 +558,7 @@
                         <div class="layui-form-mid layui-word-aux">单位像素，只针对手机端有效（只对自定义窗口生成js有效）</div>
                     </div>
                         <div class="layui-form-item">
-                            <label class="layui-form-label" style="width: 120px">悬浮条背景色</label>
+                            <label class="layui-form-label" style="width: 120px">悬浮條背景色</label>
                             <div class="layui-input-inline">
                                 <input type="hidden" name="m_kfbtbg" placeholder="请选择颜色" class="layui-input" id="m_kfbtbg" value="#{$business['header']}">
                             </div>
@@ -566,7 +566,7 @@
                                 <div id="test-form"></div>
                             </div>
                             <div class="layui-inline">
-                                <div class="layui-form-mid layui-word-aux">客服悬浮条背景色</div>
+                                <div class="layui-form-mid layui-word-aux">客服悬浮條背景色</div>
                             </div>
                         </div>
                         <div class="layui-form-item">

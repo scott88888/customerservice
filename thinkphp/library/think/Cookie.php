@@ -53,7 +53,7 @@ class Cookie
     }
 
     /**
-     * 设置或者获取 cookie 作用域（前缀）
+     * 设置或者取得 cookie 作用域（前缀）
      * @access public
      * @param  string $prefix 前缀
      * @return string|
@@ -68,7 +68,7 @@ class Cookie
     }
 
     /**
-     * Cookie 设置、获取、删除
+     * Cookie 设置、取得、刪除
      * @access public
      * @param  string $name   cookie 名称
      * @param  mixed  $value  cookie 值
@@ -150,7 +150,7 @@ class Cookie
     }
 
     /**
-     * 获取 Cookie 的值
+     * 取得 Cookie 的值
      * @access public
      * @param string      $name   cookie 名称
      * @param string|null $prefix cookie 前缀
@@ -164,7 +164,7 @@ class Cookie
         $key    = $prefix . $name;
 
         if ('' == $name) {
-            // 获取全部
+            // 取得全部
             if ($prefix) {
                 $value = [];
 
@@ -192,7 +192,7 @@ class Cookie
     }
 
     /**
-     * 删除 Cookie
+     * 刪除 Cookie
      * @access public
      * @param  string      $name   cookie 名称
      * @param  string|null $prefix cookie 前缀
@@ -213,7 +213,7 @@ class Cookie
             );
         }
 
-        // 删除指定 cookie
+        // 刪除指定 cookie
         unset($_COOKIE[$name]);
     }
 
@@ -231,7 +231,7 @@ class Cookie
 
         !isset(self::$init) && self::init();
 
-        // 要删除的 cookie 前缀，不指定则删除 config 设置的指定前缀
+        // 要刪除的 cookie 前缀，不指定则刪除 config 设置的指定前缀
         $config = self::$config;
         $prefix = !is_null($prefix) ? $prefix : $config['prefix'];
 

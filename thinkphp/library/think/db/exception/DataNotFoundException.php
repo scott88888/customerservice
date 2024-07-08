@@ -32,7 +32,7 @@ class DataNotFoundException extends DbException
     }
 
     /**
-     * 获取数据表名
+     * 取得数据表名
      * @access public
      * @return string
      */

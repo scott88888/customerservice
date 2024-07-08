@@ -18,8 +18,8 @@ class CurlUtils {
         curl_setopt($this->ch,CURLOPT_RETURNTRANSFER,1);//设置以文件流的形式返回
         curl_setopt($this->ch,CURLOPT_HEADER,$responseHeader);//设置响应头信息是否返回
         curl_setopt($this->ch,CURLOPT_TIMEOUT,$timeout);//设置响应头信息是否返回
-        curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false); //不验证证书
-        curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, false); //不验证证书
+        curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false); //不驗證证书
+        curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, false); //不驗證证书
     }
 
     /**
@@ -70,7 +70,7 @@ class CurlUtils {
     }
 
     /**
-     * 关闭curl句柄
+     * 關閉curl句柄
      */
     private function close(){
         curl_close($this->ch);

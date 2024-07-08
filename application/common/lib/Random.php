@@ -169,7 +169,7 @@ class Random
     }
 
     /**
-     * 获取全球唯一标识
+     * 取得全球唯一标识
      * @return string
      */
     public static function uuid()

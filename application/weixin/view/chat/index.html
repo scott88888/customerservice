@@ -55,7 +55,7 @@
             var value = {$arr['service_id']};
             var channel = pusher.subscribe("kefu"+value);
                 channel.bind("cu-event", function (data) {
-                    // 获取未读消息数
+                    // 取得未读消息数
                     getnews(data.message.visiter_id);
                     var str = data.message.content;
                     str.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, function (match, capture) {
@@ -87,7 +87,7 @@
                 getchat();
             });
 
-            // 认领后获取访客信息
+            // 认领后取得访客信息
             var channelme = pusher.subscribe("ud" + value);
             channelme.bind("on_notice", function (data) {
                 getwait();
@@ -336,10 +336,10 @@ function get(id) {
         success: function (res) {
 
            if(res.code == 0){
-                  layer.msg("删除成功", {offset: "20px"});
+                  layer.msg("刪除成功", {offset: "20px"});
                 }
                
-                // 删除修改
+                // 刪除修改
                 getchat();
            
         }
@@ -347,7 +347,7 @@ function get(id) {
 }
 
 
-    // 获取排队列表
+    // 取得排队列表
     function getwait() {
 
     $.ajax({
@@ -457,7 +457,7 @@ function get(id) {
     var init =function () {
         getwait();
         getchat();
-        // 获取最近的一条消息显示
+        // 取得最近的一條消息显示
     }
 
     window.onload=init();

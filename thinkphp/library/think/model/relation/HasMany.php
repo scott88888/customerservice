@@ -36,9 +36,9 @@ class HasMany extends Relation
     }
 
     /**
-     * 延迟获取关联数据
+     * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询条件
+     * @param \Closure $closure     闭包查询條件
      * @return false|\PDOStatement|string|\think\Collection
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -70,7 +70,7 @@ class HasMany extends Relation
         $localKey = $this->localKey;
         $range    = [];
         foreach ($resultSet as $result) {
-            // 获取关联外键列表
+            // 取得关联外键列表
             if (isset($result->$localKey)) {
                 $range[] = $result->$localKey;
             }
@@ -171,7 +171,7 @@ class HasMany extends Relation
      * 一对多 关联模型预查询
      * @access public
      * @param object $model       关联模型对象
-     * @param array  $where       关联预查询条件
+     * @param array  $where       关联预查询條件
      * @param string $relation    关联名
      * @param string $subRelation 子关联
      * @param bool   $closure
@@ -246,7 +246,7 @@ class HasMany extends Relation
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -269,9 +269,9 @@ class HasMany extends Relation
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
-     * @param  mixed     $where  查询条件（数组或者闭包）
+     * @param  mixed     $where  查询條件（数组或者闭包）
      * @param  mixed     $fields 字段
      * @return Query
      */
@@ -308,7 +308,7 @@ class HasMany extends Relation
     {
         if (empty($this->baseQuery)) {
             if (isset($this->parent->{$this->localKey})) {
-                // 关联查询带入关联条件
+                // 关联查询带入关联條件
                 $this->query->where($this->foreignKey, $this->parent->{$this->localKey});
             }
             $this->baseQuery = true;

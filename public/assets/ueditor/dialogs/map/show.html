@@ -55,7 +55,7 @@
         marker.enableDragging();
         map.addOverlay(marker); // 将标注新增到地图中
 
-        if(parent.editor && parent.document.body.contentEditable=="true") { //在编辑狀態下
+        if(parent.editor && parent.document.body.contentEditable=="true") { //在編輯狀態下
             setMapListener();//地图改变修改外层的iframe标签src属性
         }
     }

@@ -45,9 +45,9 @@ class MorphOne extends Relation
     }
 
     /**
-     * 延迟获取关联数据
+     * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询条件
+     * @param \Closure $closure     闭包查询條件
      * @return false|\PDOStatement|string|\think\Collection
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -65,7 +65,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -79,9 +79,9 @@ class MorphOne extends Relation
     }
 
     /**
-     * 根据关联条件查询当前模型
+     * 根据关联條件查询当前模型
      * @access public
-     * @param  mixed $where  查询条件（数组或者闭包）
+     * @param  mixed $where  查询條件（数组或者闭包）
      * @param  mixed $fields 字段
      * @return Query
      */
@@ -107,7 +107,7 @@ class MorphOne extends Relation
         $range     = [];
         foreach ($resultSet as $result) {
             $pk = $result->getPk();
-            // 获取关联外键列表
+            // 取得关联外键列表
             if (isset($result->$pk)) {
                 $range[] = $result->$pk;
             }
@@ -169,7 +169,7 @@ class MorphOne extends Relation
     /**
      * 多态一对一 关联模型预查询
      * @access   public
-     * @param array         $where       关联预查询条件
+     * @param array         $where       关联预查询條件
      * @param string        $relation    关联名
      * @param string        $subRelation 子关联
      * @param bool|\Closure $closure     闭包

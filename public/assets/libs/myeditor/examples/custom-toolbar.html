@@ -45,13 +45,13 @@ $(function() {
             /**
              * @param {Object}      cm         CodeMirror对象
              * @param {Object}      icon       图标按钮jQuery元素对象
-             * @param {Object}      cursor     CodeMirror的光标对象，可获取光标所在行和位置
-             * @param {String}      selection  编辑器选中的文本
+             * @param {Object}      cursor     CodeMirror的光标对象，可取得光标所在行和位置
+             * @param {String}      selection  編輯器选中的文本
              */
             testIcon : function(cm, icon, cursor, selection) {
 
-                //var cursor    = cm.getCursor();     //获取当前光标对象，同cursor参数
-                //var selection = cm.getSelection();  //获取当前选中的文本，同selection参数
+                //var cursor    = cm.getCursor();     //取得当前光标对象，同cursor参数
+                //var selection = cm.getSelection();  //取得当前选中的文本，同selection参数
 
                 // 替换选中文本，如果没有选中文本，则直接插入
                 cm.replaceSelection("[" + selection + ":testIcon]");
@@ -129,13 +129,13 @@ $(function() {
                         /**
                          * @param {Object}      cm         CodeMirror对象
                          * @param {Object}      icon       图标按钮jQuery元素对象
-                         * @param {Object}      cursor     CodeMirror的光标对象，可获取光标所在行和位置
-                         * @param {String}      selection  编辑器选中的文本
+                         * @param {Object}      cursor     CodeMirror的光标对象，可取得光标所在行和位置
+                         * @param {String}      selection  編輯器选中的文本
                          */
                         testIcon : function(cm, icon, cursor, selection) {
                             
-                            //var cursor    = cm.getCursor();     //获取当前光标对象，同cursor参数
-                            //var selection = cm.getSelection();  //获取当前选中的文本，同selection参数
+                            //var cursor    = cm.getCursor();     //取得当前光标对象，同cursor参数
+                            //var selection = cm.getSelection();  //取得当前选中的文本，同selection参数
                             
                             // 替换选中文本，如果没有选中文本，则直接插入
                             cm.replaceSelection("[" + selection + ":testIcon]");

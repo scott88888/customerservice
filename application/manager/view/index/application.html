@@ -127,7 +127,7 @@
                 </div>
             </td>
             <td>
-                <a href="#" data-toggle="modal" class="edit-app" id="1" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="编辑"></a>
+                <a href="#" data-toggle="modal" class="edit-app" id="1" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="編輯"></a>
             </td>
           </tr>
         </tbody>
@@ -147,7 +147,7 @@
 <script>
     $(document).on("click", ".edit-app", function () {
         let id = this.id;
-        $('.add-modal').find('.modal-title').text('编辑客服系统')
+        $('.add-modal').find('.modal-title').text('編輯客服系统')
         $.ajax({
             url: id,
             success: function (data) {

@@ -57,7 +57,7 @@ class Image
 
     protected function __construct(\SplFileInfo $file)
     {
-        //获取图像信息
+        //取得图像信息
         $info = @getimagesize($file->getPathname());
 
         //检测图像合法性
@@ -114,7 +114,7 @@ class Image
      */
     public function save($pathname, $type = null, $quality = 80, $interlace = true)
     {
-        //自动获取图像类型
+        //自动取得图像类型
         if (is_null($type)) {
             $type = $this->info['type'];
         } else {
@@ -387,7 +387,7 @@ class Image
         if (!is_file($source)) {
             throw new ImageException('水印图像不存在');
         }
-        //获取水印图像信息
+        //取得水印图像信息
         $info = getimagesize($source);
         if (false === $info || (IMAGETYPE_GIF === $info[2] && empty($info['bits']))) {
             throw new ImageException('非法水印文件');
@@ -488,7 +488,7 @@ class Image
         if (!is_file($font)) {
             throw new ImageException("不存在的字体文件：{$font}");
         }
-        //获取文字信息
+        //取得文字信息
         $info = imagettfbbox($size, $angle, $font, $text);
         $minx = min($info[0], $info[2], $info[4], $info[6]);
         $maxx = max($info[0], $info[2], $info[4], $info[6]);

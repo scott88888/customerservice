@@ -78,7 +78,7 @@ class HuaweiGateway extends Gateway
             $result = $this->request('post', $endpoint, [
                 'headers' => $headers,
                 'form_params' => $params,
-                //为防止因HTTPS证书认证失败造成API调用失败，需要先忽略证书信任问题
+                //为防止因HTTPS证书认证失敗造成API调用失敗，需要先忽略证书信任问题
                 'verify' => false,
             ]);
         } catch (RequestException $e) {
@@ -107,7 +107,7 @@ class HuaweiGateway extends Gateway
     }
 
     /**
-     * 获取请求 Headers 参数.
+     * 取得请求 Headers 参数.
      *
      * @param string $appKey
      * @param string $appSecret

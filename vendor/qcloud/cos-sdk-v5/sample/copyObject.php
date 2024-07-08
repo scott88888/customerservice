@@ -22,7 +22,7 @@ try {
     // 请求成功
     print_r($result);
 } catch (\Exception $e) {
-    // 请求失败
+    // 请求失敗
     echo($e);
 }
 

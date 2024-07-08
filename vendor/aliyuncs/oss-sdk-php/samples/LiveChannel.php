@@ -120,6 +120,6 @@ $ossClient->postVodPlaylist($bucket,
 );
 
 /**
- *  如果一个直播频道已经不打算再使用了，那么可以调用delete_live_channel来删除频道。
+ *  如果一个直播频道已经不打算再使用了，那么可以调用delete_live_channel来刪除频道。
  */
 $ossClient->deleteBucketLiveChannel($bucket, "test_rtmp_live");

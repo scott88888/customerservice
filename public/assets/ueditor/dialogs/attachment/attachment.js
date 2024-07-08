@@ -116,7 +116,7 @@
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没选择文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
-            // 总体进度条
+            // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
             // 新增的文件数量
                 fileCount = 0,
@@ -241,7 +241,7 @@
                     percentages[ file.id ] = [ file.size, 0 ];
                     file.rotation = 0;
 
-                    /* 检查文件格式 */
+                    /* 檢查文件格式 */
                     if (!file.ext || acceptExtensions.indexOf(file.ext.toLowerCase()) == -1) {
                         showError('not_allow_type');
                         uploader.removeFile(file);

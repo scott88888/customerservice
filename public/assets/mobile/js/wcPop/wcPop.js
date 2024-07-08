@@ -14,7 +14,7 @@
 				fn.call(this, e);
 			}, !1);
 		},
-		//获取插件js路径
+		//取得插件js路径
 		jspath: function(){
 			for(var s = _doc.getElementsByTagName("script"), i = s.length; i > 0; i--)
 				if(s[i-1].src && s[i-1].src.match(/wcPop[\w\-\.]*\.js/) != null)
@@ -33,9 +33,9 @@
 				icon: '',					//弹窗小图标(success | info | error | loading)
 				
 				shade: true,				//是否显示遮罩层
-				shadeClose: true,			//是否点击遮罩时关闭层
+				shadeClose: true,			//是否点击遮罩时關閉层
 				anim: 'scaleIn',			//scaleIn：缩放打开(默认)  fadeIn：渐变打开  fadeInUpBig：由上向下打开 fadeInDownBig：由下向上打开  rollIn：左侧翻转打开  shake：震动  footer：底部向上弹出
-				time: 0,					//设置弹窗自动关闭秒数1、 2、 3
+				time: 0,					//设置弹窗自动關閉秒数1、 2、 3
 				zIndex: 9999,				//设置元素层叠
 				
 				btns: null,					//不设置则不显示按钮，btn参数: [{按钮1配置}, {按钮2配置}]
@@ -91,7 +91,7 @@
 		},
 		callback: function(){
 			var _this = this, opt = _this.opts;
-			//自动关闭弹窗
+			//自动關閉弹窗
 			if(opt.time){
 				util.timer[_this.index] = setTimeout(function(){
 					exports.close(_this.index);
@@ -107,7 +107,7 @@
 						typeof btn.onTap === "function" && btn.onTap(e);
 					});
 			}
-			//点击遮罩层关闭
+			//点击遮罩层關閉
 			if(opt.shade && opt.shadeClose){
 				var c = util.$(opt.id).getElementsByClassName("popui__modal-mask")[0];
 				util.touch(c, function () {
@@ -115,7 +115,7 @@
 				});
 			}
 		},
-		//获取弹窗最大层级
+		//取得弹窗最大层级
 		maxIndex: function(){
 			for(var idx = this.opts.zIndex, elem = _doc.getElementsByTagName("*"), i = 0, len = elem.length; i < len; i++)
 				idx = Math.max(idx, elem[i].style.zIndex);
@@ -130,7 +130,7 @@
 			return o.index;
 		};
 		
-		//关闭弹窗
+		//關閉弹窗
 		fn.close = function(index){
 			var index = index ? index : "";
 			var o = _doc.getElementsByClassName("wcPop"+index)[0];

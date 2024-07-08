@@ -11,7 +11,7 @@ $app_secret = 'nnregp2pcxfun0j0lxdbv06tjz0bbcn5';
 // App id
 $app_id = 232;
 
-// websocket 端口，客服系统网页会连这个端口
+// websocket 端口，客服系统网頁会连这个端口
 $websocket_port = 9090;
 
 // Api 端口，用于后端与pusher通讯

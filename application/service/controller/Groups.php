@@ -8,7 +8,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Groups extends Base
 {
@@ -25,7 +25,7 @@ class Groups extends Base
             $post = $this->request->post();
             $res = Group::where("id", $post['id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $group = Group::where(['id' => $id])->find();
@@ -42,7 +42,7 @@ class Groups extends Base
             $post['create_time'] = time();
             $res = Group::insert($post);
             if ($res) $this->success('新增成功');
-            $this->error('新增失败！');
+            $this->error('新增失敗！');
         }
         return $this->fetch();
     }
@@ -51,8 +51,8 @@ class Groups extends Base
     {
         $id = $this->request->get('id');
         $check = Db::name('wolive_service')->where(['groupid'=>$id])->find();
-        if($check) $this->error('该分组下有客服，不能删除');
+        if($check) $this->error('该分组下有客服，不能刪除');
         if (Group::destroy(['id' => $id])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

@@ -125,7 +125,7 @@ try {
 }
 
 ## 预签名上传createPresignedUrl
-## 获取带有签名的url
+## 取得带有签名的url
 ### 简单上传预签名
 try {
     #此处可以替换为其他上传接口
@@ -156,7 +156,7 @@ try {
     echo($e);
 }
 
-### 获取签名
+### 取得签名
 try {
     #此处可以替换为其他上传接口
     $command = $cosClient->getCommand('putObject', array(
@@ -227,7 +227,7 @@ try {
     echo($e);
 }
 
-## getObjectUrl(获取文件UrL)
+## getObjectUrl(取得文件UrL)
 try {
     $signedUrl = $cosClient->getObjectUrl($bucket, $key, '+10 minutes');
     echo $signedUrl;
@@ -235,7 +235,7 @@ try {
     echo($e);
 }
 
-# 删除object
+# 刪除object
 ## deleteObject
 try {
     $result = $cosClient->deleteObject(array(
@@ -248,7 +248,7 @@ try {
     echo($e);
 }
 
-# 删除多个object
+# 刪除多个object
 ## deleteObjects
 try {
     $result = $cosClient->deleteObjects(array(
@@ -266,7 +266,7 @@ try {
     echo($e);
 }
 
-# 获取object信息
+# 取得object信息
 ## headObject
 /*
  * 可代替isObjectExist接口，查询object是否存在
@@ -282,7 +282,7 @@ try {
     echo($e);
 }
 
-# 获取bucket列表
+# 取得bucket列表
 ## listBuckets
 try {
     $result = $cosClient->listBuckets();
@@ -300,7 +300,7 @@ try {
     echo($e);
 }
 
-# 删除bucket
+# 刪除bucket
 ## deleteBucket
 try {
     $result = $cosClient->deleteBucket(array(
@@ -311,7 +311,7 @@ try {
     echo($e);
 }
 
-# 获取bucket信息
+# 取得bucket信息
 ## headBucket
 /*
  * 可代替isBucketExist接口，查询bucket是否存在
@@ -329,7 +329,7 @@ try {
 ## listObjects
 ### 列出所有object
 /*
- * 该接口一次最多列出1000个，需要列出所有请参考其他服务中的清空并删除bucket接口
+ * 该接口一次最多列出1000个，需要列出所有请参考其他服务中的清空并刪除bucket接口
  */
 try {
     $result = $cosClient->listObjects(array(
@@ -355,7 +355,7 @@ try {
     echo($e);
 }
 
-# 获取bucket地域
+# 取得bucket地域
 ## getBucketLocation
 try {
     $result = $cosClient->getBucketLocation(array(
@@ -366,7 +366,7 @@ try {
 };
 
 # 多版本相关
-## putBucketVersioning(开启关闭某个bucket的多版本)
+## putBucketVersioning(開啟關閉某个bucket的多版本)
 try {
     $result = $cosClient->putBucketVersioning(array(
         'Bucket' => $bucket,
@@ -391,7 +391,7 @@ try {
     echo($e);
 }
 
-## getBucketVersioning(获取某个bucket多版本属性)
+## getBucketVersioning(取得某个bucket多版本属性)
 try {
     $result = $cosClient->getBucketVersioning(
         array('Bucket' => $bucket));
@@ -425,7 +425,7 @@ try {
     echo($e);
 }
 
-## getBucketAcl(获取bucketACL)
+## getBucketAcl(取得bucketACL)
 try {
     $result = $cosClient->getBucketAcl(array(
         'Bucket' => $bucket));
@@ -459,7 +459,7 @@ try {
     echo($e);
 }
 
-## GetObjectAcl(获取objectACL)
+## GetObjectAcl(取得objectACL)
 try {
     $result = $cosClient->getObjectAcl(array(
         'Bucket' => $bucket,
@@ -496,7 +496,7 @@ try {
     echo($e);
 }
 
-## getBucketLifecycle(获取bucket生命周期)
+## getBucketLifecycle(取得bucket生命周期)
 try {
     $result = $cosClient->getBucketLifecycle(array(
         'Bucket' => $bucket,
@@ -506,7 +506,7 @@ try {
     echo($e);
 }
 
-## deleteBucketLifecycle(删除bucket生命周期)
+## deleteBucketLifecycle(刪除bucket生命周期)
 try {
     $result = $cosClient->deleteBucketLifecycle(array(
         'Bucket' => $bucket,
@@ -535,7 +535,7 @@ try {
     echo($e);
 }
 
-## getBucketCors(获取bucket跨域信息)
+## getBucketCors(取得bucket跨域信息)
 try {
     $result = $cosClient->getBucketCors(array());
     print_r($result);
@@ -543,7 +543,7 @@ try {
     echo($e);
 }
 
-## deleteBucketCors(删除bucket跨域)
+## deleteBucketCors(刪除bucket跨域)
 try {
     $result = $cosClient->deleteBucketCors(array(
         // Bucket is required
@@ -556,7 +556,7 @@ try {
 
 # 跨区域複製相关
 ## PutBucketReplication(设置bucket跨区域複製)
-### 注意：目标bucket和源bucket都需要开启多版本
+### 注意：目标bucket和源bucket都需要開啟多版本
 try {
     $result = $cosClient->putBucketReplication(array(
         'Bucket' => $bucket,
@@ -579,7 +579,7 @@ try {
     echo($e);
 }
 
-## GetBucketReplication(获取bucket跨区域複製信息)
+## GetBucketReplication(取得bucket跨区域複製信息)
 try {
     $result = $cosClient->getBucketReplication(array(
         'Bucket' => $bucket
@@ -589,7 +589,7 @@ try {
     echo($e);
 }
 
-## DeleteBucketReplication(删除bucket跨区域複製信息)
+## DeleteBucketReplication(刪除bucket跨区域複製信息)
 try {
     $result = $cosClient->deleteBucketReplication(array(
         'Bucket' => $bucket
@@ -726,7 +726,7 @@ try {
         foreach ($result['Contents'] as $rt) {
             print_r($rt['Key'] . " ");
             /*
-             * 使用下面的代码可以删除全部object
+             * 使用下面的代码可以刪除全部object
              */
             // try {
             //     $result = $cosClient->deleteobjects(array(
@@ -746,9 +746,9 @@ try {
     echo($e);
 }
 
-## 删除所有因上传失败而产生的分块
+## 刪除所有因上传失敗而产生的分块
 /*
- * 可以清理掉因分块上传失败
+ * 可以清理掉因分块上传失敗
  */
 try {
     while (true) {
@@ -777,8 +777,8 @@ try {
 
 ## 分块上传断点重传
 /*
- * 仅适用于分块上传失败的情况
- * 需要填写上传失败的uploadId
+ * 仅适用于分块上传失敗的情况
+ * 需要填写上传失敗的uploadId
  */
 try {
     $result = $cosClient->resumeUpload(
@@ -792,7 +792,7 @@ try {
     echo($e);
 }
 
-## 删除某些前缀的空bucket
+## 刪除某些前缀的空bucket
 function startsWith($haystack, $needle)
 {
     $length = strlen($needle);
@@ -809,7 +809,7 @@ try {
                 $cosClient2 = new Qcloud\Cos\Client(array(
                     'region' => $region,
                     'credentials' => array(
-                        //getenv为获取本地环境变量，请替换为真实密钥
+                        //getenv为取得本地环境变量，请替换为真实密钥
                         'secretId' => getenv('COS_KEY'),
                         'secretKey' => getenv('COS_SECRET'))
                 ));

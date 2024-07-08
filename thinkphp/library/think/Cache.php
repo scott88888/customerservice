@@ -79,7 +79,7 @@ class Cache
         if (is_null(self::$handler)) {
             if (empty($options) && 'complex' == Config::get('cache.type')) {
                 $default = Config::get('cache.default');
-                // 获取默认缓存配置，并连接
+                // 取得默认缓存配置，并连接
                 $options = Config::get('cache.' . $default['type']) ?: $default;
             } elseif (empty($options)) {
                 $options = Config::get('cache');
@@ -177,7 +177,7 @@ class Cache
     }
 
     /**
-     * 删除缓存
+     * 刪除缓存
      * @access public
      * @param  string $name 缓存标识
      * @return boolean
@@ -203,7 +203,7 @@ class Cache
     }
 
     /**
-     * 读取缓存并删除
+     * 读取缓存并刪除
      * @access public
      * @param  string $name 缓存变量名
      * @return mixed

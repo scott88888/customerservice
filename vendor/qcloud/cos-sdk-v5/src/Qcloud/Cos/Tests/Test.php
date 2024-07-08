@@ -445,7 +445,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 
 
     /*
-     * put bucket cors，cors规则包含多条
+     * put bucket cors，cors规则包含多條
      * 200
      */
     public function testPutBucketCors()
@@ -600,7 +600,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                                     'StorageClass' => 'Archive')
                             ),
                             'Expiration' => array(
-                                # 3650天后过期删除
+                                # 3650天后过期刪除
                                 'Days' => 3650,
                             )
                         )
@@ -645,7 +645,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                                 'StorageClass' => 'Archive')
                         ),
                         'Expiration' => array(
-                            # 3650天后过期删除
+                            # 3650天后过期刪除
                             'Days' => 3650,
                         )
                     )
@@ -1009,7 +1009,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 获取文件url
+     * 取得文件url
      * 200
      */
     public function testGetObjectUrl() {
@@ -1055,7 +1055,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 
 
     /*
-     * 获取objectacl
+     * 取得objectacl
      * 200
      */
     public function testGetObjectACL()

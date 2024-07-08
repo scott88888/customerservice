@@ -5,7 +5,7 @@ require_once __DIR__ . '/../autoload.php';
 use \Qiniu\Cdn\CdnManager;
 
 //创建时间戳防盗链
-//时间戳防盗链密钥，后台获取
+//时间戳防盗链密钥，后台取得
 $encryptKey = 'your_domain_timestamp_antileech_encryptkey';
 
 //带访问协议的域名

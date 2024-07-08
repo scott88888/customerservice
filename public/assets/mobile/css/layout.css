@@ -22,7 +22,7 @@
 .wechat__panel{-webkit-touch-callout:none; -webkit-user-select:none; -moz-user-select:none; user-select:none; -webkit-tap-highlight-color: transparent;}
 .wc__home-wrapper{height: calc(100vh); position: relative;}
 
-/* __ 顶部条 */
+/* __ 顶部條 */
 .wc__headerBar .inner{background:#1E9FFF; height:1rem; width:100%; z-index:999; position:relative;}
 .wc__headerBar.fixed{padding-bottom:1rem;}
 .wc__headerBar.fixed .inner{max-width:750px; width:100%; position:fixed; top:0;}
@@ -39,11 +39,11 @@
 .wc__headerBar .inner .sear{background: url(../img/topbar/icon__sear.png) no-repeat center; background-size:.4rem;}
 .wc__headerBar .inner .add{background: url(../img/topbar/icon__add.png) no-repeat center; background-size:.4rem;}
 
-/* __ tabBar四个页面滑动切换 */
+/* __ tabBar四个頁面滑动切换 */
 .wc__swiper-tabBar .swiper-slide{height: calc(100vh - 2.1rem); position: relative; z-index: 11;}
 .wc__scrolling-panel{overflow: auto; -webkit-overflow-scrolling: touch; height: 100%; position: relative;padding-bottom: 20vh}
 
-/* 页面1：微聊记录列表 */
+/* 頁面1：微聊记录列表 */
 .wc__recordChat-list ul li{background: #fff; font-family: 'Microsoft Yahei'; padding: .15rem .3rem; position: relative;}
 .wc__recordChat-list ul li:before{background: transparent; content: ''; height: 100%; width: 100%; position: absolute; left: 0; top: 0;}
 .wc__recordChat-list ul li:after{content: ''; background-color: #d9d9d9; color: #d9d9d9; height: 1px; width: 100%; position: absolute; left: 0; bottom: 0; transform: scaleY(0.5); -webkit-transform: scaleY(0.5);}
@@ -53,7 +53,7 @@
 .wc__recordChat-list ul li .title{color: #333; font-size: .28rem;}
 .wc__recordChat-list ul li .desc{color: #999; font-size: .24rem; font-family: Verdana; margin-top:.1rem;word-break:break-all;}
 .wc__recordChat-list ul li .time{color: #ccc; font-size: .2rem; font-family: Verdana; margin-top: .1rem;}
-/* 页面2：通讯录 */
+/* 頁面2：通讯录 */
 .wc__addrFriend-showletter{background: rgba(0,0,0,.5); border-radius: .05rem; color:#fff; font-size: .32rem; font-family: Verdana; text-align:center; margin:-.5rem 0 0 -.5rem; height: 1rem;line-height: 1rem; width: 1rem; position: absolute; left: 50%; top: 50%; z-index: 11; display: none;}
 .wc__addrFriend-floatletter{
 	/*background: #fbf9fe;*/ color: #666; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: .4rem; position: absolute; right: 0; top:0; bottom:0; z-index: 11;
@@ -66,7 +66,7 @@
 .wc__addrFriend-list ul li .row:last-child::after{display: none;}
 .wc__addrFriend-list ul li .row .uimg{display: block; margin-right: .2rem; height: .7rem; width: .7rem;}
 .wc__addrFriend-list ul li .row .name{color:#333; font-size: .28rem;}
-/* 页面3：探索 */
+/* 頁面3：探索 */
 .wc__explore-list{padding-bottom: .35rem;}
 .wc__explore-list ul li{margin-top: .35rem;}
 .wc__explore-list ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .25rem .3rem; position: relative;}
@@ -77,7 +77,7 @@
 .wc__explore-list ul li .item .notice{position: relative;}
 .wc__explore-list ul li .item .notice img{vertical-align: middle; height: .5rem; width: .5rem;}
 .wc__explore-list ul li .item .notice .wc__badge{position: absolute; top: -5px; left: 17px;}
-/* 页面4：我的(使用者中心) */
+/* 頁面4：我的(使用者中心) */
 .wc__ucenter-list{padding-bottom: .35rem;}
 .wc__ucenter-list ul li{margin-top: .35rem;}
 .wc__ucenter-list ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .25rem .3rem; position: relative;}
@@ -157,9 +157,9 @@
 .wc__chatTapMenu .menu a .ico.i3{background: url(../img/wchat/icon__chat-save.png) no-repeat; background-size: cover;}
 .wc__chatTapMenu .menu a .ico.i4{background: url(../img/wchat/icon__chat-revoke.png) no-repeat; background-size: cover;}
 .wc__chatTapMenu .menu a .ico.i5{background: url(../img/wchat/icon__chat-del.png) no-repeat; background-size: cover;}
-/* 底部编辑器部分 */
+/* 底部編輯器部分 */
 .wc__footTool-panel{background: #fbf9fe; max-width: 750px; width: 100%; z-index: 1005;}
-/* 编辑器 */
+/* 編輯器 */
 .wc__editor-panel{padding: .15rem .25rem; align-items: flex-end;}
 .wc__editor-panel .wrap-editor{max-width: 100%;}
 .wc__editor-panel .wrap-editor .editor{background: none; border-bottom: 1px solid #e3e3e3; color: #333; caret-color: #ffd100; font-size: .28rem; padding: .1rem .15rem; overflow-y: auto; overflow-x: hidden; outline: none; word-wrap: break-word; word-break: break-all; line-height: .4rem; max-height: 2.3rem; max-width: 100%; transition: border-color .3s;}
@@ -196,7 +196,7 @@
 .wc__choose-panel .wrap-emotion .emotion__cells-footer ul li.cur{background-color: #f3f3f3;}
 .wc__choose-panel .wrap-emotion .emotion__cells-footer ul li img{height: 100%;}
 .wc__choose-panel .wrap-emotion .emotion__cells-footer ul li.swiperTmplSet img{height: 100%;}
-/* 滚动隐藏滚动条 */
+/* 滚动隐藏滚动條 */
 .wc__choose-panel .wrap-emotion .emotion__cells-footer::-webkit-scrollbar{
 	display:none;
 }
@@ -258,7 +258,7 @@
 /* }}} */
 
 
-/* …… 好友主页-详细资料 {{{ …… */
+/* …… 好友主頁-详细资料 {{{ …… */
 .wc__ucinfo-detail{padding-bottom: .35rem;}
 .wc__ucinfo-detail ul li{margin-top: .35rem;}
 .wc__ucinfo-detail ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .25rem .3rem; position: relative;}
@@ -402,7 +402,7 @@
 /* }}} */
 
 
-/* …… 登录页面 {{{ …… */
+/* …… 登入頁面 {{{ …… */
 .wc__lgregPanel .hdtips{color: #333; font-size: .4rem; padding: 1rem .3rem .5rem;}
 .wc__lgregPanel .forms{margin: 0 .2rem;}
 .wc__lgregPanel .forms ul li{position: relative;}
@@ -414,7 +414,7 @@
 .wc__lgregPanel .forms .lgway a{color: #0060a0; font-size: .28rem;}
 .wc__lgregPanel .forms .btns{padding: 1rem .05rem;}
 .wc__lgregPanel .forms .btns .btn__login{font-size: .36rem;}
-/* 底部链接 */
+/* 底部連結 */
 .wc__lgregFoot{text-align: center; padding: .2rem 0;}
 .wc__lgregFoot ul{display: inline-block; vertical-align: top;}
 .wc__lgregFoot ul li{border-left: 1px solid #e9e9e9; float: left; padding: 0 .2rem;}
@@ -436,14 +436,14 @@
 .wrap__topbar-menu ul li .ico.i2{background: url(../img/topbar/icon__add-friend.png) no-repeat center; background-size: .48rem;}
 .wrap__topbar-menu ul li .ico.i3{background: url(../img/topbar/icon__help.png) no-repeat -.02rem center; background-size: .48rem;}
 
-/* …… 聊天页面大图预览 …… */
+/* …… 聊天頁面大图预览 …… */
 .wc__popup-imgPreview{background: rgba(0,0,0,1); height: 100%; width: 100%; position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 2003;}
 .wc__popup-imgPreview .swiper-container{height: 100%; max-width: 750px;}
 .wc__popup-imgPreview .swiper-slide{display:-webkit-box; display:-webkit-flex; display:flex; align-items: center;}
 .wc__popup-imgPreview .swiper-slide img{max-height: 100%; max-width: 100%; width: 100%; transition: all .3s; transform:scale(.8);}
 .wc__popup-imgPreview .swiper-slide-active img{transform:scale(1);}
 
-/* …… 聊天页面视频预览 …… */
+/* …… 聊天頁面视频预览 …… */
 .wc__popup-videoPreview{background: rgba(0,0,0,1); height: 100%; width: 100%; position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 2003;}
 .wc__popup-videoPreview:after{content: ''; background-image: linear-gradient(-180deg,  rgba(0,0,0,.6), transparent); height: 1.2rem; width: 100%; position: absolute; top: 0; left: 0;}
 .wc__popup-videoPreview .wc__videoClose{margin-left: -.25rem; height: .5rem; width: .5rem; position: absolute; top: .3rem; left: 50%; z-index: 2003;}

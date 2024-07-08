@@ -70,7 +70,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 获取全部的数据
+     * 取得全部的数据
      * @access public
      * @return array
      */
@@ -143,7 +143,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回并删除数据中的的最后一个元素（出栈）
+     * 返回并刪除数据中的的最后一个元素（出栈）
      * @access public
      * @return mixed
      */
@@ -153,7 +153,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回并删除数据中首个元素
+     * 返回并刪除数据中首个元素
      * @access public
      * @return mixed
      */
@@ -366,7 +366,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 获取指定键对应的值
+     * 取得指定键对应的值
      * @access public
      * @param  mixed $offset 键名
      * @return mixed
@@ -393,7 +393,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 删除指定键值
+     * 刪除指定键值
      * @access public
      * @param  mixed $offset 键名
      * @return void
@@ -414,7 +414,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 获取数据的迭代器
+     * 取得数据的迭代器
      * @access public
      * @return ArrayIterator
      */

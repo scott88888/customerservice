@@ -2,7 +2,7 @@
     var parent = window.parent;
     //dialog对象
     dialog = parent.$EDITORUI[window.frameElement.id.replace( /_iframe$/, '' )];
-    //当前打开dialog的编辑器实例
+    //当前打开dialog的編輯器实例
     editor = dialog.editor;
 
     UE = parent.UE;

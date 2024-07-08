@@ -47,7 +47,7 @@ class Argument
     }
 
     /**
-     * 获取参数名
+     * 取得参数名
      * @return string
      */
     public function getName()
@@ -96,7 +96,7 @@ class Argument
     }
 
     /**
-     * 获取默认值
+     * 取得默认值
      * @return mixed
      */
     public function getDefault()
@@ -105,7 +105,7 @@ class Argument
     }
 
     /**
-     * 获取描述
+     * 取得描述
      * @return string
      */
     public function getDescription()

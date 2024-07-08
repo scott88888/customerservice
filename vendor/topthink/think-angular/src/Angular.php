@@ -14,7 +14,7 @@ class Angular
 {
 
     public        $config      = [
-        'debug'            => false, // 是否开启调试
+        'debug'            => false, // 是否開啟调试
         'tpl_path'         => './view/', // 模板根目录
         'tpl_suffix'       => '.html', // 模板后缀
         'tpl_cache_path'   => './cache/', // 模板缓存目录
@@ -48,7 +48,7 @@ class Angular
     }
 
     /**
-     * 获取模板文件内容
+     * 取得模板文件内容
      * @param string $tpl_file
      * @return string
      */
@@ -106,11 +106,11 @@ class Angular
         if (!is_null($this->tpl_var)) {
             extract($this->tpl_var, EXTR_OVERWRITE);
         }
-        // 页面缓存
+        // 頁面缓存
         ob_start();
         ob_implicit_flush(0);
         require $cache_file;
-        // 获取并清空缓存
+        // 取得并清空缓存
         $content = ob_get_clean();
         return $content;
     }
@@ -200,7 +200,7 @@ class Angular
                 $tpl = $this->parseTemplateFile($tpl);
             }
             if (file_exists($tpl)) {
-                // 获取模板文件内容
+                // 取得模板文件内容
                 $parse_str .= file_get_contents($tpl);
             } else {
                 $parse_str .= '模板文件不存在: ' . $tpl;
@@ -556,7 +556,7 @@ class Angular
     }
 
     /**
-     * 解析php-model指令, 方便做内容编辑功能，value会自动转移特殊字符(htmlentities)， 保证 input的value正确输出
+     * 解析php-model指令, 方便做内容編輯功能，value会自动转移特殊字符(htmlentities)， 保证 input的value正确输出
      * @return string
      */
     public function parseModel($content, $match)
@@ -610,7 +610,7 @@ class Angular
     }
 
     /**
-     * 获取第一个表达式
+     * 取得第一个表达式
      * @param string $content   要解析的模板内容
      * @param string $directive 指令名称
      * @param string $val       属性值

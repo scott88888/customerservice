@@ -8,7 +8,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Services extends Base
 {
@@ -25,7 +25,7 @@ class Services extends Base
     {
         $id = $this->request->get('service_id');
         if (Service::destroy(['service_id' => $id])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 
     public function clear()
@@ -34,6 +34,6 @@ class Services extends Base
         if (Db::name('wolive_chats')->where('service_id', $id)->delete()) {
             $this->success('操作成功！');
         }
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

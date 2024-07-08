@@ -19,12 +19,12 @@ try {
     // 请求成功
     print_r($result);
 } catch (\Exception $e) {
-    // 请求失败
-    $statusCode = $e->getStatusCode(); // 获取错误码
-    $errorMessage = $e->getMessage(); // 获取错误信息
-    $requestId = $e->getRequestId(); // 获取错误的requestId
-    $errorCode = $e->getCosErrorCode(); // 获取错误名称
-    $request = $e->getRequest(); // 获取完整的请求
-    $response = $e->getResponse(); // 获取完整的响应
+    // 请求失敗
+    $statusCode = $e->getStatusCode(); // 取得错误码
+    $errorMessage = $e->getMessage(); // 取得错误信息
+    $requestId = $e->getRequestId(); // 取得错误的requestId
+    $errorCode = $e->getCosErrorCode(); // 取得错误名称
+    $request = $e->getRequest(); // 取得完整的请求
+    $response = $e->getResponse(); // 取得完整的响应
 }
 

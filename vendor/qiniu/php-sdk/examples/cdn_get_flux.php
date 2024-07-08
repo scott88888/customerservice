@@ -10,7 +10,7 @@ $secretKey = getenv('QINIU_SECRET_KEY');
 $auth = new Qiniu\Auth($accessKey, $secretKey);
 $cdnManager = new CdnManager($auth);
 
-//获取流量和带宽数据
+//取得流量和带宽数据
 //参考文档：http://developer.qiniu.com/article/fusion/api/traffic-bandwidth.html
 
 $domains = array(
@@ -24,7 +24,7 @@ $endDate = "2017-08-21";
 //5min or hour or day
 $granularity = "day";
 
-//获取流量数据
+//取得流量数据
 list($fluxData, $getFluxErr) = $cdnManager->getFluxData($domains, $startDate, $endDate, $granularity);
 if ($getFluxErr != null) {
     var_dump($getFluxErr);

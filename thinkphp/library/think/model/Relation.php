@@ -39,7 +39,7 @@ abstract class Relation
     protected $selfRelation;
 
     /**
-     * 获取关联的所属模型
+     * 取得关联的所属模型
      * @access public
      * @return Model
      */
@@ -49,7 +49,7 @@ abstract class Relation
     }
 
     /**
-     * 获取当前的关联模型对象实例
+     * 取得当前的关联模型对象实例
      * @access public
      * @return Model
      */
@@ -59,7 +59,7 @@ abstract class Relation
     }
 
     /**
-     * 获取关联的查询对象
+     * 取得关联的查询对象
      * @access public
      * @return Query
      */

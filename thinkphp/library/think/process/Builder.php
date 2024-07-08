@@ -190,7 +190,7 @@ class Builder
     }
 
     /**
-     * 开启输出
+     * 開啟输出
      * @return self
      */
     public function enableOutput()

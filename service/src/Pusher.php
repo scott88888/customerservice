@@ -43,14 +43,14 @@ class Pusher extends Worker
     protected $_globalDataSnapshot = array();
 
     /**
-     * 事件对应的客户端链接
+     * 事件对应的客户端連結
      *
      * @var array
      */
     protected $_eventClients = array();
 
     /**
-     * 所有的客户端链接
+     * 所有的客户端連結
      *
      * @var array
      */
@@ -162,7 +162,7 @@ class Pusher extends Worker
         $this->_allClients[$socket_id]                 = $connection;
 
         /*
-         * 向客户端发送链接成功的消息
+         * 向客户端发送連結成功的消息
          * {"event":"pusher:connection_established","data":"{\"socket_id\":\"208836.27464492\",\"activity_timeout\":120}"}
          */
         $data = array(
@@ -177,7 +177,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 客户端关闭链接时
+     * 客户端關閉連結时
      *
      * @param $connection
      */
@@ -230,7 +230,7 @@ class Pusher extends Worker
             // {"event":"pusher:subscribe","data":{"channel":"my-channel"}}
             case 'pusher:subscribe':
                 $channel = $data['data']['channel'];
-                // private- 和 presence- 开头的channel需要验证
+                // private- 和 presence- 开头的channel需要驗證
                 $channel_type = $this->getChannelType($channel);
                 if ($channel_type === 'presence') {
                     // {"event":"pusher:subscribe","data":{"auth":"b054014693241bcd9c26:10e3b628cb78e8bc4d1f44d47c9294551b446ae6ec10ef113d3d7e84e99763e6","channel_data":"{\"user_id\":100,\"user_info\":{\"name\":\"123\"}}","channel":"presence-channel"}}
@@ -310,7 +310,7 @@ class Pusher extends Worker
                     // {"event":"pusher:error","data":{"code":null,"message":"Client event rejected - only supported on private and presence channels"}}
                     return $connection->send($this->error(null, 'Client event rejected - only supported on private and presence channels'));
                 }
-                // 当前链接没有订阅这个channel
+                // 当前連結没有订阅这个channel
                 if (!isset($connection->channels[$channel])) {
                     return $connection->send($this->error(null, 'Client event rejected - you didn\'t subscribe this channel'));
                 }
@@ -319,7 +319,7 @@ class Pusher extends Worker
                     return $connection->send($this->error(null, 'Client event rejected - client events must be prefixed by \'client-\''));
                 }
 
-                // @todo 检查是否设置了可前端发布事件
+                // @todo 檢查是否设置了可前端发布事件
                 // {"event":"pusher:error","data":{"code":null,"message":"To send client events, you must enable this feature in the Settings page of your dashboard."}}
                 // 全局发布事件
                 $this->publishToClients($connection->appKey, $channel, $event, $data['data'], $connection->socketID);
@@ -343,7 +343,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 组装失败信息
+     * 组装失敗信息
      *
      * @param $code
      * @param $message
@@ -552,7 +552,7 @@ class Pusher extends Worker
 
 
     /**
-     * 检查心跳，将心跳超时的客户端关闭
+     * 檢查心跳，将心跳超时的客户端關閉
      *
      * @return void
      */

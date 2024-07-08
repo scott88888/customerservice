@@ -240,7 +240,7 @@ class Input
     }
 
     /**
-     * 获取第一个参数
+     * 取得第一个参数
      * @return string|null
      */
     public function getFirstArgument()
@@ -256,8 +256,8 @@ class Input
     }
 
     /**
-     * 检查原始参数是否包含某个值
-     * @param string|array $values 需要检查的值
+     * 檢查原始参数是否包含某个值
+     * @param string|array $values 需要檢查的值
      * @return bool
      */
     public function hasParameterOption($values)
@@ -276,8 +276,8 @@ class Input
     }
 
     /**
-     * 获取原始选项的值
-     * @param string|array $values  需要检查的值
+     * 取得原始选项的值
+     * @param string|array $values  需要檢查的值
      * @param mixed        $default 默认值
      * @return mixed The option value
      */
@@ -304,7 +304,7 @@ class Input
     }
 
     /**
-     * 验证输入
+     * 驗證输入
      * @throws \RuntimeException
      */
     public function validate()
@@ -315,7 +315,7 @@ class Input
     }
 
     /**
-     * 检查输入是否是交互的
+     * 檢查输入是否是交互的
      * @return bool
      */
     public function isInteractive()
@@ -333,7 +333,7 @@ class Input
     }
 
     /**
-     * 获取所有的参数
+     * 取得所有的参数
      * @return Argument[]
      */
     public function getArguments()
@@ -342,7 +342,7 @@ class Input
     }
 
     /**
-     * 根据名称获取参数
+     * 根据名称取得参数
      * @param string $name 参数名
      * @return mixed
      * @throws \InvalidArgumentException
@@ -373,7 +373,7 @@ class Input
     }
 
     /**
-     * 检查是否存在某个参数
+     * 檢查是否存在某个参数
      * @param string|int $name 参数名或位置
      * @return bool
      */
@@ -383,7 +383,7 @@ class Input
     }
 
     /**
-     * 获取所有的选项
+     * 取得所有的选项
      * @return Option[]
      */
     public function getOptions()
@@ -392,7 +392,7 @@ class Input
     }
 
     /**
-     * 获取选项值
+     * 取得选项值
      * @param string $name 选项名称
      * @return mixed
      * @throws \InvalidArgumentException

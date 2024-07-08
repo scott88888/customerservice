@@ -24,7 +24,7 @@ class Memcached extends SessionHandler
         'timeout'      => 0, // 连接超时时间（单位：毫秒）
         'session_name' => '', // memcache key前缀
         'username'     => '', //账号
-        'password'     => '', //密码
+        'password'     => '', //密碼
     ];
 
     public function __construct($config = [])
@@ -69,7 +69,7 @@ class Memcached extends SessionHandler
     }
 
     /**
-     * 关闭Session
+     * 關閉Session
      * @access public
      */
     public function close()
@@ -103,7 +103,7 @@ class Memcached extends SessionHandler
     }
 
     /**
-     * 删除Session
+     * 刪除Session
      * @access public
      * @param string $sessID
      * @return bool

@@ -131,7 +131,7 @@ class Route
     }
 
     /**
-     * 设置或者获取路由标识
+     * 设置或者取得路由标识
      * @access public
      * @param string|array $name  路由命名标识 数组表示批量设置
      * @param array        $value 路由地址及变量信息
@@ -171,25 +171,25 @@ class Route
      */
     public static function import(array $rule, $type = '*')
     {
-        // 检查域名部署
+        // 檢查域名部署
         if (isset($rule['__domain__'])) {
             self::domain($rule['__domain__']);
             unset($rule['__domain__']);
         }
 
-        // 检查变量规则
+        // 檢查变量规则
         if (isset($rule['__pattern__'])) {
             self::pattern($rule['__pattern__']);
             unset($rule['__pattern__']);
         }
 
-        // 检查路由别名
+        // 檢查路由别名
         if (isset($rule['__alias__'])) {
             self::alias($rule['__alias__']);
             unset($rule['__alias__']);
         }
 
-        // 检查资源路由
+        // 檢查资源路由
         if (isset($rule['__rest__'])) {
             self::resource($rule['__rest__']);
             unset($rule['__rest__']);
@@ -357,7 +357,7 @@ class Route
     }
 
     /**
-     * 获取当前执行的所有参数信息
+     * 取得当前执行的所有参数信息
      * @access public
      * @return array
      */
@@ -367,7 +367,7 @@ class Route
     }
 
     /**
-     * 获取当前的分组信息
+     * 取得当前的分组信息
      * @access public
      * @param string $type 分组信息名称 name option pattern
      * @return mixed
@@ -705,7 +705,7 @@ class Route
     }
 
     /**
-     * 获取或者批量设置路由定义
+     * 取得或者批量设置路由定义
      * @access public
      * @param mixed $rules 请求类型或者路由定义数组
      * @return array
@@ -735,7 +735,7 @@ class Route
     {
         // 域名规则
         $rules = self::$rules['domain'];
-        // 开启子域名部署 支持二级和三级域名
+        // 開啟子域名部署 支持二级和三级域名
         if (!empty($rules)) {
             $host = $request->host(true);
             if (isset($rules[$host])) {
@@ -835,7 +835,7 @@ class Route
      */
     public static function check($request, $url, $depr = '/', $checkDomain = false)
     {
-        //检查解析缓存
+        //檢查解析缓存
         if (!App::$debug && Config::get('route_check_cache')) {
             $key = self::getCheckCacheKey($request);
             if (Cache::has($key)) {
@@ -855,7 +855,7 @@ class Route
             }
         }
         $method = strtolower($request->method());
-        // 获取当前请求类型的路由规则
+        // 取得当前请求类型的路由规则
         $rules = isset(self::$rules[$method]) ? self::$rules[$method] : [];
         // 检测域名部署
         if ($checkDomain) {
@@ -920,7 +920,7 @@ class Route
             $option  = $item['option'];
             $pattern = $item['pattern'];
 
-            // 检查参数有效性
+            // 檢查参数有效性
             if (!self::checkOption($option, $request)) {
                 continue;
             }
@@ -1008,7 +1008,7 @@ class Route
             $rule = $item;
         }
         $bind = implode('|', $array);
-        // 参数有效性检查
+        // 参数有效性檢查
         if (isset($option) && !self::checkOption($option, $request)) {
             // 路由不匹配
             return false;
@@ -1133,7 +1133,7 @@ class Route
     }
 
     /**
-     * 路由参数有效性检查
+     * 路由参数有效性檢查
      * @access private
      * @param array   $option  路由参数
      * @param Request $request Request对象
@@ -1172,11 +1172,11 @@ class Route
      */
     private static function checkRule($rule, $route, $url, $pattern, $option, $depr)
     {
-        // 检查完整规则定义
+        // 檢查完整规则定义
         if (isset($pattern['__url__']) && !preg_match(0 === strpos($pattern['__url__'], '/') ? $pattern['__url__'] : '/^' . $pattern['__url__'] . '/', str_replace('|', $depr, $url))) {
             return false;
         }
-        // 检查路由的参数分隔符
+        // 檢查路由的参数分隔符
         if (isset($option['param_depr'])) {
             $url = str_replace(['|', $option['param_depr']], [$depr, '|'], $url);
         }
@@ -1261,7 +1261,7 @@ class Route
             self::parseUrlParams(empty($path) ? '' : implode('|', $path));
             // 封装路由
             $route = [$module, $controller, $action];
-            // 检查地址是否被定义过路由
+            // 檢查地址是否被定义过路由
             $name  = strtolower($module . '/' . Loader::parseName($controller, 1) . '/' . $action);
             $name2 = '';
             if (empty($module) || isset($bind) && $module == $bind) {
@@ -1357,7 +1357,7 @@ class Route
                     return false;
                 }
                 if (isset($m1[$key]) && isset($pattern[$name])) {
-                    // 检查变量规则
+                    // 檢查变量规则
                     if ($pattern[$name] instanceof \Closure) {
                         $result = call_user_func_array($pattern[$name], [$m1[$key]]);
                         if (false === $result) {
@@ -1404,7 +1404,7 @@ class Route
         // 解析路由规则
         if ($rule) {
             $rule = explode('/', $rule);
-            // 获取URL地址中的参数
+            // 取得URL地址中的参数
             $paths = explode('|', $pathinfo);
             foreach ($rule as $item) {
                 $fun = '';
@@ -1423,7 +1423,7 @@ class Route
             $paths = explode('|', $pathinfo);
         }
 
-        // 获取路由地址规则
+        // 取得路由地址规则
         if (is_string($route) && isset($option['prefix'])) {
             // 路由地址前缀
             $route = $option['prefix'] . $route;
@@ -1529,7 +1529,7 @@ class Route
             // 路由到模块/控制器/操作
             $result = self::parseModule($route, isset($option['convert']) ? $option['convert'] : false);
         }
-        // 开启请求缓存
+        // 開啟请求缓存
         if ($request->isGet() && isset($option['cache'])) {
             $cache = $option['cache'];
             if (is_array($cache)) {
@@ -1624,7 +1624,7 @@ class Route
     }
 
     /**
-     * 获取路由解析缓存的key
+     * 取得路由解析缓存的key
      * @param Request $request
      * @return string
      */

@@ -11,7 +11,7 @@ $view->assign('category', $category);
 $list = load('blog_list');
 $view->assign('list', $list);
 
-// 分页
+// 分頁
 $view->assign('pagecount', 100);
 $view->assign('p', isset($_GET['p']) ? $_GET['p'] : 1);
 $view->assign('page', function ($p) {
@@ -25,5 +25,5 @@ $view->display('blog');
 // $html = $view->fetch('index');
 // echo $html;
 
-// 获取混编代码
+// 取得混编代码
 // $php_code = $view->compiler('index');

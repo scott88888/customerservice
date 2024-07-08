@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">评价条目<br><span>(最多限5条)</span></label>
+                    <label class="layui-form-label">评价條目<br><span>(最多限5條)</span></label>
                     <div class="layui-input-block comments" v-for="(item,index) in list.comments" :key="index">
                         <input type="text"  placeholder="請輸入评价说明" autocomplete="off" class="layui-input" style="width: 30%;display: inline-block" v-model="list.comments[index]">
                         <div class="star">
@@ -49,13 +49,13 @@
                             <img src="__image__/index/star-light.png" alt="">
                             <img src="__image__/index/star-light.png" alt="">
                         </div>
-                        <a class="pear-btn pear-btn-xs" lay-event="remove" v-if='list.comments.length > 1'  @click="low(index)"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        <a class="pear-btn pear-btn-xs" lay-event="remove" v-if='list.comments.length > 1'  @click="low(index)"><i class="layui-icon layui-icon-delete"></i>刪除</a>
                     </div>
                 </div>
                 <div class="layui-form-item" v-if="list.comments.length != 5">
                     <label class="layui-form-label"></label>
                     <div class="layui-input-block">
-                        <a class="pear-btn pear-btn-primary pear-btn-xs" lay-event="remove" @click="add"><i class="layui-icon layui-icon-addition"></i>新增条目</a>
+                        <a class="pear-btn pear-btn-primary pear-btn-xs" lay-event="remove" @click="add"><i class="layui-icon layui-icon-addition"></i>新增條目</a>
                     </div>
                 </div>
                 <div class="layui-form-item">

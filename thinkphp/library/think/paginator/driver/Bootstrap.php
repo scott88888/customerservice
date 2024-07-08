@@ -17,7 +17,7 @@ class Bootstrap extends Paginator
 {
 
     /**
-     * 上一页按钮
+     * 上一頁按钮
      * @param string $text
      * @return string
      */
@@ -36,7 +36,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 下一页按钮
+     * 下一頁按钮
      * @param string $text
      * @return string
      */
@@ -52,7 +52,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 页码按钮
+     * 頁码按钮
      * @return string
      */
     protected function getLinks()
@@ -103,7 +103,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 渲染分页html
+     * 渲染分頁html
      * @return mixed
      */
     public function render()
@@ -171,7 +171,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 批量生成页码按钮.
+     * 批量生成頁码按钮.
      *
      * @param  array $urls
      * @return string
@@ -188,7 +188,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 生成普通页码按钮
+     * 生成普通頁码按钮
      *
      * @param  string $url
      * @param  int    $page

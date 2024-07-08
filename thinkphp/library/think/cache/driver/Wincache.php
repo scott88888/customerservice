@@ -119,7 +119,7 @@ class Wincache extends Driver
     }
 
     /**
-     * 删除缓存
+     * 刪除缓存
      * @access public
      * @param string $name 缓存变量名
      * @return boolean

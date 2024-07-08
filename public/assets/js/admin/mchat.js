@@ -170,7 +170,7 @@ var getaudio = function() {
         audio_context = new AudioContext;
 
         if (!navigator.getUserMedia) {
-            console.log('语音创建失败');
+            console.log('语音创建失敗');
         };
     } catch (e) {
         console.log(e);
@@ -192,7 +192,7 @@ var getaudio = function() {
                     icon: 16,
                     shade: 0.01,
                     skin: 'layui-layer-lan',
-                    time: 0 //20s后自动关闭
+                    time: 0 //20s后自动關閉
                     ,
                     btn: ['发送', '取消'],
                     yes: function(index, layero) {
@@ -331,7 +331,7 @@ var back = function() {
 }
 
 var init = function() {
-    // 获取历史消息
+    // 取得历史消息
     $.cookie("hid", '');
     getwatch(visiter_id);
     wolive_connect();
@@ -786,7 +786,7 @@ function randomChar(l){
 }
 //发送消息
 var send = function() {
-    //获取 遊客id
+    //取得 遊客id
     var msg = $("#text_all").val();
 
 
@@ -924,7 +924,7 @@ document.getElementById("wrap").onscroll = function() {
 
 
 var text = document.getElementById('text_all');
-// 获取焦点，拉到底部
+// 取得焦点，拉到底部
 text.onfocus = function() {
     $(".tool_box").hide();
     let height = +document.documentElement.clientHeight;

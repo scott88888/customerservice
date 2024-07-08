@@ -52,7 +52,7 @@ abstract class Addons
      */
     public function __construct()
     {
-        // 获取当前插件目录
+        // 取得当前插件目录
         $this->addons_path = ADDON_PATH . $this->getName() . DS;
         // 读取当前插件配置信息
         if (is_file($this->addons_path . 'config.php')) {
@@ -71,7 +71,7 @@ abstract class Addons
     }
 
     /**
-     * 获取插件的配置数组
+     * 取得插件的配置数组
      * @param string $name 可选模块名
      * @return array|mixed|null
      */
@@ -108,7 +108,7 @@ abstract class Addons
     }
 
     /**
-     * 获取当前模块名
+     * 取得当前模块名
      * @return string
      */
     final public function getName()
@@ -118,7 +118,7 @@ abstract class Addons
     }
 
     /**
-     * 检查配置信息是否完整
+     * 檢查配置信息是否完整
      * @return bool
      */
     final public function checkInfo()
@@ -133,7 +133,7 @@ abstract class Addons
     }
 
     /**
-     * 加载模板和页面输出 可以返回输出内容
+     * 加载模板和頁面输出 可以返回输出内容
      * @access public
      * @param string $template 模板文件名或者内容
      * @param array $vars 模板输出变量
@@ -147,7 +147,7 @@ abstract class Addons
         if (!is_file($template)) {
             $template = '/' . $template;
         }
-        // 关闭模板布局
+        // 關閉模板布局
         $this->view->engine->layout(false);
 
         echo $this->view->fetch($template, $vars, $replace, $config);
@@ -164,7 +164,7 @@ abstract class Addons
      */
     public function display($content, $vars = [], $replace = [], $config = [])
     {
-        // 关闭模板布局
+        // 關閉模板布局
         $this->view->engine->layout(false);
 
         echo $this->view->display($content, $vars, $replace, $config);
@@ -179,7 +179,7 @@ abstract class Addons
      */
     public function show($content, $vars = [])
     {
-        // 关闭模板布局
+        // 關閉模板布局
         $this->view->engine->layout(false);
 
         echo $this->view->fetch($content, $vars, [], [], true);
@@ -198,7 +198,7 @@ abstract class Addons
     }
 
     /**
-     * 获取当前错误信息
+     * 取得当前错误信息
      * @return mixed
      */
     public function getError()

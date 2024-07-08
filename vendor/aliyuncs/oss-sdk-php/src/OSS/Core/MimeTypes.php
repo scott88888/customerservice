@@ -12,7 +12,7 @@ namespace OSS\Core;
 class MimeTypes
 {
     /**
-     * 根据文件名，获取http协议header中的content-type应该填写的数据
+     * 根据文件名，取得http协议header中的content-type应该填写的数据
      *
      * @param string $name 缺省名
      * @return string content-type

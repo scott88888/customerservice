@@ -29,7 +29,7 @@ abstract class Driver
     abstract function set($token, $user_id, $expire = 0);
 
     /**
-     * 获取Token内的信息
+     * 取得Token内的信息
      * @param   string $token
      * @return  array
      */
@@ -44,14 +44,14 @@ abstract class Driver
     abstract function check($token, $user_id);
 
     /**
-     * 删除Token
+     * 刪除Token
      * @param   string $token
      * @return  boolean
      */
     abstract function delete($token);
 
     /**
-     * 删除指定使用者的所有Token
+     * 刪除指定使用者的所有Token
      * @param   int $user_id
      * @return  boolean
      */
@@ -69,7 +69,7 @@ abstract class Driver
     }
 
     /**
-     * 获取加密后的Token
+     * 取得加密后的Token
      * @param string $token Token标识
      * @return string
      */
@@ -80,7 +80,7 @@ abstract class Driver
     }
 
     /**
-     * 获取过期剩余时长
+     * 取得过期剩余时长
      * @param $expiretime
      * @return float|int|mixed
      */

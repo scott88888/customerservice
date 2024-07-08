@@ -72,7 +72,7 @@ class Connection
         'database'       => '',
         // 使用者名稱
         'username'       => '',
-        // 密码
+        // 密碼
         'password'       => '',
         // 端口
         'hostport'       => '',
@@ -96,7 +96,7 @@ class Connection
         'master_num'     => 1,
         // 指定从服务器序号
         'slave_no'       => '',
-        // 是否严格检查字段是否存在
+        // 是否严格檢查字段是否存在
         'fields_strict'  => true,
         // 数据集返回类型
         'resultset_type' => 'array',
@@ -198,7 +198,7 @@ class Connection
     }
 
     /**
-     * 获取数据库的配置参数
+     * 取得数据库的配置参数
      * @access public
      * @param string $config 配置名称
      * @return mixed
@@ -221,7 +221,7 @@ class Connection
     }
 
     /**
-     * 获取Mongo Manager对象
+     * 取得Mongo Manager对象
      * @access public
      * @return Manager|null
      */
@@ -235,7 +235,7 @@ class Connection
     }
 
     /**
-     * 设置/获取当前操作的database
+     * 设置/取得当前操作的database
      * @access public
      * @param string  $db db
      * @throws Exception
@@ -330,7 +330,7 @@ class Connection
         $typeMap = is_string($typeMap) ? ['root' => $typeMap] : $typeMap;
         $this->cursor->setTypeMap($typeMap);
 
-        // 获取数据集
+        // 取得数据集
         $result = $this->cursor->toArray();
         if ($this->getConfig('pk_convert_id')) {
             // 转换ObjectID 字段
@@ -441,7 +441,7 @@ class Connection
     }
 
     /**
-     * 获取执行的指令
+     * 取得执行的指令
      * @access public
      * @return string
      */
@@ -487,13 +487,13 @@ class Connection
      * 数据库调试 记录当前SQL及分析性能
      * @access protected
      * @param boolean $start 调试开始标记 true 开始 false 结束
-     * @param string  $sql 执行的SQL语句 留空自动获取
+     * @param string  $sql 执行的SQL语句 留空自动取得
      * @return void
      */
     protected function debug($start, $sql = '')
     {
         if (!empty($this->config['debug'])) {
-            // 开启数据库调试模式
+            // 開啟数据库调试模式
             if ($start) {
                 Debug::remark('queryStartTime', 'time');
             } else {
@@ -517,7 +517,7 @@ class Connection
     }
 
     /**
-     * 关闭数据库
+     * 關閉数据库
      * @access public
      */
     public function close()
@@ -604,7 +604,7 @@ class Connection
         // 释放查询
         $this->free();
 
-        // 关闭连接
+        // 關閉连接
         $this->close();
     }
 }

@@ -30,7 +30,7 @@ if(!isset($_GET['action'])){
 $action = $_GET['action'];
 
 
-    // 验证了才能上传
+    // 驗證了才能上传
     switch ($action) {
         case 'config':
             $result =  json_encode($CONFIG, JSON_UNESCAPED_UNICODE);

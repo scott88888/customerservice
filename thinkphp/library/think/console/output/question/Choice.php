@@ -64,7 +64,7 @@ class Choice extends Question
     }
 
     /**
-     * 获取提示
+     * 取得提示
      * @return string
      */
     public function getPrompt()
@@ -98,7 +98,7 @@ class Choice extends Question
     }
 
     /**
-     * 获取默认的验证方法
+     * 取得默认的驗證方法
      * @return callable
      */
     private function getDefaultValidator()

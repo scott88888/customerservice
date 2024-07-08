@@ -64,9 +64,9 @@ class Hook
     }
 
     /**
-     * 获取插件信息
+     * 取得插件信息
      * @access public
-     * @param  string $tag 插件位置(留空获取全部)
+     * @param  string $tag 插件位置(留空取得全部)
      * @return array
      */
     public static function get($tag = '')
@@ -84,7 +84,7 @@ class Hook
      * @param  string $tag    标签名称
      * @param  mixed  $params 传入参数
      * @param  mixed  $extra  额外参数
-     * @param  bool   $once   只获取一个有效返回值
+     * @param  bool   $once   只取得一个有效返回值
      * @return mixed
      */
     public static function listen($tag, &$params = null, $extra = null, $once = false)
@@ -94,7 +94,7 @@ class Hook
         foreach (static::get($tag) as $key => $name) {
             $results[$key] = self::exec($name, $tag, $params, $extra);
 
-            // 如果返回 false，或者仅获取一个有效返回则中断行为执行
+            // 如果返回 false，或者仅取得一个有效返回则中断行为执行
             if (false === $results[$key] || (!is_null($results[$key]) && $once)) {
                 break;
             }

@@ -8,7 +8,7 @@ use think\Db;
 
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Robots extends Base
 {
@@ -35,7 +35,7 @@ class Robots extends Base
             if (!is_int($status)) $this->error('匹配方式字段非法！');
             $res = Robot::where("id", $post['id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
-            $this->error('修改失败！');
+            $this->error('修改失敗！');
         }
         $id = $this->request->get('id');
         $robot = Robot::get(['id'=>$id]);
@@ -56,7 +56,7 @@ class Robots extends Base
             if (!is_int($status)) $this->error('匹配方式字段非法！');
             $res =Robot::insert($post);
             if ($res) $this->success('新增成功');
-            $this->error('新增失败！');
+            $this->error('新增失敗！');
         }
         return $this->fetch();
     }
@@ -65,6 +65,6 @@ class Robots extends Base
     {
         $id = $this->request->get('id');
         if (Robot::destroy(['id' => $id])) $this->success('操作成功！');
-        $this->error('操作失败！');
+        $this->error('操作失敗！');
     }
 }

@@ -49,7 +49,7 @@ class Php
     public function exists($template)
     {
         if ('' == pathinfo($template, PATHINFO_EXTENSION)) {
-            // 获取模板文件名
+            // 取得模板文件名
             $template = $this->parseTemplate($template);
         }
         return is_file($template);
@@ -65,7 +65,7 @@ class Php
     public function fetch($template, $data = [])
     {
         if ('' == pathinfo($template, PATHINFO_EXTENSION)) {
-            // 获取模板文件名
+            // 取得模板文件名
             $template = $this->parseTemplate($template);
         }
         // 模板不存在 抛出异常
@@ -109,7 +109,7 @@ class Php
         }
 
         $request = Request::instance();
-        // 获取视图根目录
+        // 取得视图根目录
         if (strpos($template, '@')) {
             // 跨模块调用
             list($module, $template) = explode('@', $template);

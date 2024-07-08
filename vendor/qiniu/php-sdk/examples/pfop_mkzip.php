@@ -4,7 +4,7 @@ require_once __DIR__ . '/../autoload.php';
 use Qiniu\Auth;
 use Qiniu\Processing\PersistentFop;
 
-// 去我们的portal 后台来获取AK, SK
+// 去我们的portal 后台来取得AK, SK
 $accessKey = getenv('QINIU_ACCESS_KEY');
 $secretKey = getenv('QINIU_SECRET_KEY');
 $bucket = getenv('QINIU_TEST_BUCKET');

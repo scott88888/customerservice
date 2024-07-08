@@ -61,7 +61,7 @@ class Auth
     }
 
     /**
-     * 获取模型
+     * 取得模型
      */
     public function getUser()
     {
@@ -127,7 +127,7 @@ class Auth
      * 注册使用者
      *
      * @param string $username  使用者名稱
-     * @param string $password  密码
+     * @param string $password  密碼
      * @param string $email     信箱
      * @param string $mobile    手機號碼
      * @param array $extend    扩展参数
@@ -159,7 +159,7 @@ class Auth
         $params = array_merge($params, $extend);
         $params['password'] = $this->getEncryptPassword($password, $data['username']);
 
-        //账号注册时需要开启事务,避免出现垃圾数据
+        //账号注册时需要開啟事务,避免出现垃圾数据
         Db::startTrans();
         try
         {
@@ -187,10 +187,10 @@ class Auth
     }
 
     /**
-     * 使用者登录
+     * 使用者登入
      *
      * @param string    $account    账号,使用者名稱、信箱、手機號碼
-     * @param string    $password   密码
+     * @param string    $password   密碼
      * @return boolean
      */
     public function login($account, $password)
@@ -208,16 +208,16 @@ class Auth
         }
 
         if ($user->is_delete != 0) {
-            $this->setError('账户已删除');
+            $this->setError('账户已刪除');
             return FALSE;
         }
         if ($user->password != $this->getEncryptPassword($password, $user->username))
         {
-            $this->setError('密码不正确');
+            $this->setError('密碼不正确');
             return FALSE;
         }
 
-        //直接登录会员
+        //直接登入会员
         $this->direct($user->id);
 
         return TRUE;
@@ -232,12 +232,12 @@ class Auth
     {
         if (!$this->_logined)
         {
-            $this->setError('你没有登录');
+            $this->setError('你没有登入');
             return false;
         }
-        //设置登录标识
+        //设置登入标识
         $this->_logined = FALSE;
-        //删除Token
+        //刪除Token
         Token::delete($this->_token);
         //注销成功的事件
         Hook::listen("user_logout_successed", $this->_user);
@@ -246,19 +246,19 @@ class Auth
 
     /**
      * 修改密碼
-     * @param string    $newpassword        新密码
-     * @param string    $oldpassword        旧密码
-     * @param bool      $ignoreoldpassword  忽略旧密码
+     * @param string    $newpassword        新密碼
+     * @param string    $oldpassword        旧密碼
+     * @param bool      $ignoreoldpassword  忽略旧密碼
      * @return boolean
      */
     public function changepwd($newpassword, $oldpassword = '', $ignoreoldpassword = false)
     {
         if (!$this->_logined)
         {
-            $this->setError('你没有登录');
+            $this->setError('你没有登入');
             return false;
         }
-        //判断旧密码是否正确
+        //判断旧密碼是否正确
         if ($this->_user->password == $this->getEncryptPassword($oldpassword, $this->_user->username) || $ignoreoldpassword)
         {
             $salt = $this->_user->username;
@@ -272,7 +272,7 @@ class Auth
         }
         else
         {
-            $this->setError('密码不正确');
+            $this->setError('密碼不正确');
             return false;
         }
     }
@@ -281,7 +281,7 @@ class Auth
     {
         if (!$this->_logined)
         {
-            $this->setError('你没有登录');
+            $this->setError('你没有登入');
             return false;
         }
         // 检测使用者名稱或信箱、手機號碼是否存在
@@ -297,7 +297,7 @@ class Auth
         return true;
     }
     /**
-     * 直接登录账号
+     * 直接登入账号
      * @param int $user_id
      * @return boolean
      */
@@ -324,7 +324,7 @@ class Auth
     }
 
     /**
-     * 判断是否登录
+     * 判断是否登入
      * @return boolean
      */
     public function isLogin()
@@ -337,7 +337,7 @@ class Auth
     }
 
     /**
-     * 获取当前Token
+     * 取得当前Token
      * @return string
      */
     public function getToken()
@@ -346,7 +346,7 @@ class Auth
     }
 
     /**
-     * 获取会员基本信息
+     * 取得会员基本信息
      */
     public function getUserinfo()
     {
@@ -358,7 +358,7 @@ class Auth
     }
 
     /**
-     * 获取当前请求的URI
+     * 取得当前请求的URI
      * @return string
      */
     public function getRequestUri()
@@ -376,7 +376,7 @@ class Auth
     }
 
     /**
-     * 获取允许输出的字段
+     * 取得允许输出的字段
      * @return array
      */
     public function getAllowFields()
@@ -394,7 +394,7 @@ class Auth
     }
 
     /**
-     * 删除一个指定会员
+     * 刪除一个指定会员
      * @param int $user_id 会员ID
      * @return boolean
      */
@@ -406,11 +406,11 @@ class Auth
             return FALSE;
         }
 
-        // 调用事务删除账号
+        // 调用事务刪除账号
         $result = Db::transaction(function($db) use($user_id) {
-                    // 删除会员
+                    // 刪除会员
                     Admin::destroy($user_id);
-                    // 删除会员指定的所有Token
+                    // 刪除会员指定的所有Token
                     Token::clear($user_id);
                     return TRUE;
                 });
@@ -422,9 +422,9 @@ class Auth
     }
 
     /**
-     * 获取密码加密后的字符串
-     * @param string $password  密码
-     * @param string $salt      密码盐
+     * 取得密碼加密后的字符串
+     * @param string $password  密碼
+     * @param string $salt      密碼盐
      * @return string
      */
     public function getEncryptPassword($password, $salt = '')
@@ -436,7 +436,7 @@ class Auth
     /**
      * 检测当前控制器和方法是否匹配传递的数组
      *
-     * @param array $arr 需要验证权限的数组
+     * @param array $arr 需要驗證权限的数组
      * @return boolean
      */
     public function match($arr = [])
@@ -520,7 +520,7 @@ class Auth
     }
 
     /**
-     * 获取错误信息
+     * 取得错误信息
      * @return string
      */
     public function getError()

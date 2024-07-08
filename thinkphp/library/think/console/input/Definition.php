@@ -119,7 +119,7 @@ class Definition
     }
 
     /**
-     * 根据名称或者位置获取参数
+     * 根据名称或者位置取得参数
      * @param string|int $name 参数名或者位置
      * @return Argument 参数
      * @throws \InvalidArgumentException
@@ -136,7 +136,7 @@ class Definition
     }
 
     /**
-     * 根据名称或位置检查是否具有某个参数
+     * 根据名称或位置檢查是否具有某个参数
      * @param string|int $name 参数名或者位置
      * @return bool
      * @api
@@ -149,7 +149,7 @@ class Definition
     }
 
     /**
-     * 获取所有的参数
+     * 取得所有的参数
      * @return Argument[] 参数数组
      */
     public function getArguments()
@@ -158,7 +158,7 @@ class Definition
     }
 
     /**
-     * 获取参数数量
+     * 取得参数数量
      * @return int
      */
     public function getArgumentCount()
@@ -167,7 +167,7 @@ class Definition
     }
 
     /**
-     * 获取必填的参数的数量
+     * 取得必填的参数的数量
      * @return int
      */
     public function getArgumentRequiredCount()
@@ -176,7 +176,7 @@ class Definition
     }
 
     /**
-     * 获取参数默认值
+     * 取得参数默认值
      * @return array
      */
     public function getArgumentDefaults()
@@ -243,7 +243,7 @@ class Definition
     }
 
     /**
-     * 根据名称获取选项
+     * 根据名称取得选项
      * @param string $name 选项名
      * @return Option
      * @throws \InvalidArgumentException
@@ -259,7 +259,7 @@ class Definition
     }
 
     /**
-     * 根据名称检查是否有这个选项
+     * 根据名称檢查是否有这个选项
      * @param string $name 选项名
      * @return bool
      * @api
@@ -270,7 +270,7 @@ class Definition
     }
 
     /**
-     * 获取所有选项
+     * 取得所有选项
      * @return Option[]
      * @api
      */
@@ -280,7 +280,7 @@ class Definition
     }
 
     /**
-     * 根据名称检查某个选项是否有短名称
+     * 根据名称檢查某个选项是否有短名称
      * @param string $name 短名称
      * @return bool
      */
@@ -290,7 +290,7 @@ class Definition
     }
 
     /**
-     * 根据短名称获取选项
+     * 根据短名称取得选项
      * @param string $shortcut 短名称
      * @return Option
      */
@@ -300,7 +300,7 @@ class Definition
     }
 
     /**
-     * 获取所有选项的默认值
+     * 取得所有选项的默认值
      * @return array
      */
     public function getOptionDefaults()
@@ -314,7 +314,7 @@ class Definition
     }
 
     /**
-     * 根据短名称获取选项名
+     * 根据短名称取得选项名
      * @param string $shortcut 短名称
      * @return string
      * @throws \InvalidArgumentException
@@ -329,7 +329,7 @@ class Definition
     }
 
     /**
-     * 获取该指令的介绍
+     * 取得该指令的介绍
      * @param bool $short 是否简洁介绍
      * @return string
      */

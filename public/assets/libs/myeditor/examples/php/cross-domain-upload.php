@@ -48,7 +48,7 @@
         }
         else
         {
-            $imageUploader->message('上传失败！', 0);
+            $imageUploader->message('上传失敗！', 0);
         }
     }
 ?>

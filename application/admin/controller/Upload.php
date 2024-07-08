@@ -13,7 +13,7 @@ use think\Paginator;
 use app\Common;
 /**
  *
- * 后台页面控制器.
+ * 后台頁面控制器.
  */
 class Upload extends Base
 {

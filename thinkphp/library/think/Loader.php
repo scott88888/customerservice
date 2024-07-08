@@ -41,7 +41,7 @@ class Loader
     private static $prefixDirsPsr4 = [];
 
     /**
-     * @var array PSR-4 加载失败的回退目录
+     * @var array PSR-4 加载失敗的回退目录
      */
     private static $fallbackDirsPsr4 = [];
 
@@ -51,7 +51,7 @@ class Loader
     private static $prefixesPsr0 = [];
 
     /**
-     * @var array PSR-0 加载失败的回退目录
+     * @var array PSR-0 加载失敗的回退目录
      */
     private static $fallbackDirsPsr0 = [];
 
@@ -491,10 +491,10 @@ class Loader
     }
 
     /**
-     * 实例化验证类 格式：[模块名/]验证器名
+     * 实例化驗證类 格式：[模块名/]驗證器名
      * @access public
      * @param  string $name         资源地址
-     * @param  string $layer        验证层名称
+     * @param  string $layer        驗證层名称
      * @param  bool   $appendSuffix 是否新增类名后缀
      * @param  string $common       公共模块名
      * @return object|false
@@ -534,7 +534,7 @@ class Loader
      * 解析模块和类名
      * @access protected
      * @param  string $name         资源地址
-     * @param  string $layer        验证层名称
+     * @param  string $layer        驗證层名称
      * @param  bool   $appendSuffix 是否新增类名后缀
      * @return array
      */

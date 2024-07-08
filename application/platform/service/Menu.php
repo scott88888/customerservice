@@ -144,7 +144,7 @@ class Menu
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '删除应用',
+                                'name' => '刪除应用',
                                 'route' => 'platform/app/delete',
                                 'is_admin' => false,
                             ],
@@ -164,7 +164,7 @@ class Menu
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '修改客服系统管理员密码',
+                                'name' => '修改客服系统管理员密碼',
                                 'route' => 'platform/app/modifypassword',
                                 'is_admin' => false
                             ]

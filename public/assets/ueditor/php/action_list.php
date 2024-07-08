@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 获取已上传的文件列表
+ * 取得已上传的文件列表
  */
 include "Uploader.class.php";
 
@@ -31,12 +31,12 @@ if (!$allowFiles[0]) {
     unset($allowFiles[0]);
 }
 
-/* 获取参数 */
+/* 取得参数 */
 $size = isset($_GET['size']) ? htmlspecialchars($_GET['size']) : $listSize;
 $start = isset($_GET['start']) ? htmlspecialchars($_GET['start']) : 0;
 $end = $start + $size;
 
-/* 获取我的列表 */
+/* 取得我的列表 */
 $where=[];
 $service_id=input('param.service_id',0);
 if($service_id){

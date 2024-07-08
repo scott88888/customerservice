@@ -29,7 +29,7 @@ abstract class Result
     }
 
     /**
-     * 获取requestId
+     * 取得requestId
      *
      * @return string
      */
@@ -99,7 +99,7 @@ abstract class Result
     }
 
     /**
-     * 尝试从body中获取错误Message
+     * 尝试从body中取得错误Message
      *
      * @param $body
      * @return string
@@ -117,7 +117,7 @@ abstract class Result
     }
 
     /**
-     * 尝试从body中获取错误Code
+     * 尝试从body中取得错误Code
      *
      * @param $body
      * @return string

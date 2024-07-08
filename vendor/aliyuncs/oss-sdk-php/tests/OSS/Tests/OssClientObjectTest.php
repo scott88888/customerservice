@@ -129,7 +129,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * getObject到本地变量，检查是否match
+         * getObject到本地变量，檢查是否match
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $object);
@@ -160,7 +160,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 下载文件到本地变量，检查是否match
+         * 下载文件到本地变量，檢查是否match
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $object);
@@ -239,7 +239,7 @@ class OssClientObjectTest extends TestOssClientBase
         } 
 
         /**
-         * 检查複製的是否相同
+         * 檢查複製的是否相同
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $to_object);
@@ -295,7 +295,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 获取文件的meta信息
+         * 取得文件的meta信息
          */
         $object = "oss-php-sdk-test/upload-test-object-name.txt";
         try {
@@ -306,7 +306,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         *  删除单个文件
+         *  刪除单个文件
          */
         $object = "oss-php-sdk-test/upload-test-object-name.txt";
 
@@ -319,7 +319,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         *  删除多个个文件
+         *  刪除多个个文件
          */
         $object1 = "oss-php-sdk-test/upload-test-object-name.txt";
         $object2 = "oss-php-sdk-test/upload-test-object-name.txt.copy";
@@ -359,7 +359,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 检查内容的是否相同
+         * 檢查内容的是否相同
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $object);
@@ -370,7 +370,7 @@ class OssClientObjectTest extends TestOssClientBase
 
         
         /**
-         * 删除测试object
+         * 刪除测试object
          */
         try {
             $this->ossClient->deleteObject($this->bucket, $object);
@@ -391,7 +391,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 检查複製的是否相同
+         * 檢查複製的是否相同
          */
         try {
             $content = $this->ossClient->getObject($this->bucket, $object);
@@ -401,7 +401,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
         
         /**
-         * 删除测试object
+         * 刪除测试object
          */
         try {
             $this->ossClient->deleteObject($this->bucket, $object);
@@ -428,7 +428,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 获取文件的meta信息
+         * 取得文件的meta信息
          */
         try {
             $objectMeta = $this->ossClient->getObjectMeta($this->bucket, $object);
@@ -438,7 +438,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 删除测试object
+         * 刪除测试object
          */
         try {
             $this->ossClient->deleteObject($this->bucket, $object);
@@ -465,7 +465,7 @@ class OssClientObjectTest extends TestOssClientBase
     	$options = array(OssClient::OSS_CHECK_MD5 => true);
     	
     	/**
-    	 * 上传数据开启MD5
+    	 * 上传数据開啟MD5
     	 */
     	try {
     		$this->ossClient->putObject($this->bucket, $object, $content, $options);
@@ -474,7 +474,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查複製的是否相同
+    	 * 檢查複製的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);
@@ -484,7 +484,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
 
     	/**
-    	 * 上传文件开启MD5
+    	 * 上传文件開啟MD5
     	 */
     	try {
     		$this->ossClient->uploadFile($this->bucket, $object, __FILE__, $options);
@@ -493,7 +493,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查複製的是否相同
+    	 * 檢查複製的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);
@@ -503,7 +503,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     
     	/**
-    	 * 删除测试object
+    	 * 刪除测试object
     	 */
     	try {
     		$this->ossClient->deleteObject($this->bucket, $object);
@@ -530,7 +530,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查内容的是否相同
+    	 * 檢查内容的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);
@@ -540,7 +540,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 删除测试object
+    	 * 刪除测试object
     	 */
     	try {
     		$this->ossClient->deleteObject($this->bucket, $object);
@@ -561,7 +561,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 检查複製的是否相同
+    	 * 檢查複製的是否相同
     	 */
     	try {
     		$content = $this->ossClient->getObject($this->bucket, $object);
@@ -571,7 +571,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 删除测试object
+    	 * 刪除测试object
     	 */
     	try {
     		$this->ossClient->deleteObject($this->bucket, $object);

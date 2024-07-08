@@ -21,7 +21,7 @@ var scrawl = function (options) {
 
         initOptions:function (options) {
             var me = this;
-            me.originalState(options);//初始页面狀態
+            me.originalState(options);//初始頁面狀態
             me._buildToolbarColor(options.colorList);//动态生成颜色选择集合
 
             me._addBoardListener(options.saveNum);//新增画板处理
@@ -30,7 +30,7 @@ var scrawl = function (options) {
             me._addBrushBarListener();//新增画笔大小处理
             me._addEraserBarListener();//新增橡皮大小处理
             me._addAddImgListener();//新增增添背景图片处理
-            me._addRemoveImgListenter();//删除背景图片处理
+            me._addRemoveImgListenter();//刪除背景图片处理
             me._addScalePicListenter();//新增缩放处理
             me._addClearSelectionListenter();//新增清楚选中狀態处理
 

@@ -1086,7 +1086,7 @@ class Set extends Base
 
         if ($type == -1) {
 
-            $data = ['code' => 1, 'msg' => '对方不在线'];
+            $data = ['code' => 1, 'msg' => '对方不線上'];
             return $data;
         }
 
@@ -1559,7 +1559,7 @@ class Set extends Base
         $str .= "\t".'<div class="ymwl-form"  id="ymwl-kefu" '.$xfbg.'>'."\r\n\t\t".'<i class="ymwl-icon"></i> ';
         $str .= "\r\n\t\t".'<form class="ymwl-item" action="' . $action . '/index/index/home?'.$theme.'visiter_id=&visiter_name=&avatar=&business_id=' . $login['business_id'] . '&groupid=0" method="post" target="_blank" >';
         $str .= '<input type="hidden" name="product"  value="">';
-        $str .= '<input type="submit" value="在线咨询">'."\r\n\t\t".'</form>' . $html."\r\n";
+        $str .= '<input type="submit" value="線上咨询">'."\r\n\t\t".'</form>' . $html."\r\n";
         $str .= '</div>';
         $data = ['code' => 0, 'msg' => '生成html成功!', 'data' => $str];
         return $data;
@@ -1658,7 +1658,7 @@ class Set extends Base
                       {$xfbg}
                       document.body.appendChild(div);
                       var w =document.getElementById('ymwl-kefu');
-                      w.innerHTML=' <i class=\"ymwl-icon\"></i><p class=\"ymwl-item\" onclick=\"blzx.blank(0)\" >在线咨询</p>" . $html . "';
+                      w.innerHTML=' <i class=\"ymwl-icon\"></i><p class=\"ymwl-item\" onclick=\"blzx.blank(0)\" >線上咨询</p>" . $html . "';
                     }
 
                  },
@@ -1761,7 +1761,7 @@ class Set extends Base
                             {$xfbg}
                             document.body.appendChild(div);
                             var w =document.getElementById('ymwl-kefu');
-                            w.innerHTML=' <i class=\"ymwl-icon\"></i><p class=\"ymwl-item zidong\" onclick=\"blzx.connenct(0)\" >在线咨询</p>" . $html . "';
+                            w.innerHTML=' <i class=\"ymwl-icon\"></i><p class=\"ymwl-item zidong\" onclick=\"blzx.connenct(0)\" >線上咨询</p>" . $html . "';
                         }
                      },
                      connenct:function(groupid){
@@ -1915,7 +1915,7 @@ class Set extends Base
                             document.body.appendChild(div);
                             var w =document.getElementById('blzxMinChatWindowDiv');
                             w.classList.add('{$div}');
-                            w.innerHTML='<div id=\"minblzxmsgtitlecontainer\"><img id=\"minblzxWinlogo\" src=\"{$url}{$this->base_root}/assets/style1/img/wechatLogo.png\"><div id=\"minblzxmsgtitlecontainerlabel\" class=\"{$mdiv}\" onclick=\"blzx.connenct(0)\">在线咨询</div><img id=\"minblzxmsgtitlecontainerclosebutton\" class=\"$hdiv\" onclick=\"blzx.closeMinChatWindow(\'blzxMinChatWindowDiv\');\" src=\"{$url}{$this->base_root}/assets/style1/img/closewin.png\"><img id=\"minblzxNewBigWin\"  class=\"$hdiv\" onclick=\"blzx.connenct(0)\" src=\"{$url}{$this->base_root}/assets/style1/img/up_arrow.png\"></div>';
+                            w.innerHTML='<div id=\"minblzxmsgtitlecontainer\"><img id=\"minblzxWinlogo\" src=\"{$url}{$this->base_root}/assets/style1/img/wechatLogo.png\"><div id=\"minblzxmsgtitlecontainerlabel\" class=\"{$mdiv}\" onclick=\"blzx.connenct(0)\">線上咨询</div><img id=\"minblzxmsgtitlecontainerclosebutton\" class=\"$hdiv\" onclick=\"blzx.closeMinChatWindow(\'blzxMinChatWindowDiv\');\" src=\"{$url}{$this->base_root}/assets/style1/img/closewin.png\"><img id=\"minblzxNewBigWin\"  class=\"$hdiv\" onclick=\"blzx.connenct(0)\" src=\"{$url}{$this->base_root}/assets/style1/img/up_arrow.png\"></div>';
                             document.getElementById('minblzxmsgtitlecontainer').style.backgroundColor='{$xfbg}';
                         }
                      },

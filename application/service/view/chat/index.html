@@ -298,7 +298,7 @@
         });
 
         channel.bind("geton", function (data) {
-            //表示访客在线
+            //表示访客線上
             var cdata = $.cookie("cu_com");
             var chas;
             if (cdata) {
@@ -1248,7 +1248,7 @@
                 if(res.code){
                     layer.msg(res.msg,{icon:1});
                     that.data('istop',istop?0:1);
-                    that.text(istop?'取消置顶':'置顶对话');
+                    that.text(istop?'取消置顶':'置頂對話');
                     setclass=istop?that.addClass('layui-btn-normal').removeClass('layui-btn-danger'):that.addClass('layui-btn-danger').removeClass('layui-btn-normal');
                     window.location.reload(true);
                 }else{

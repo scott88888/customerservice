@@ -36,7 +36,7 @@ Class Index extends Base
           $cdata['is_delete'] = $web['is_delete'];
           // 正在谈话人数
           $talknum =Admins::table('wolive_queue')->where(['business_id'=>$v])->where('state','normal')->where("service_id",'<>',0)->count();
-          // 在线客服人数
+          // 線上客服人数
           $services=Admins::table("wolive_service")->where(['business_id'=>$v,'state'=>'online'])->count();
           // 正在排队人数
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$v])->where("service_id",0)->count();
@@ -85,7 +85,7 @@ Class Index extends Base
           $cdata=[];
           // 正在谈话人数
          $talknum =Admins::table('wolive_queue')->where(['business_id'=>$login['business_id']])->where('state','normal')->where("service_id",'<>',0)->count();
-          // 在线客服人数
+          // 線上客服人数
           $services=Admins::table("wolive_service")->where(['business_id'=>$login['business_id'],'state'=>'online'])->count();
           // 正在排队人数
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$login['business_id']])->where("service_id",0)->count();

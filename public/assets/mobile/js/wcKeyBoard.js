@@ -1,7 +1,7 @@
 /**
 	* @title 			数字输入法键盘插件【仿微信】wcKeyBoard-v1.0 beta (UTF-8)
 	* @Create		hison
-	* @Timer		2018/04/27 15:30:45 GMT+0800 (中国标准时间)
+	* @Timer		2018/04/27 15:30:45 GMT+0800 (中國标准时间)
 */
 !function (win) {
 	var _doc = win.document, _docEle = _doc.documentElement,

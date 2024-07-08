@@ -112,7 +112,7 @@
         });
     }
 
-    /* 初始化在线图片列表 */
+    /* 初始化線上图片列表 */
     function initImagePanel() {
         onlineImage = onlineImage || new OnlineImage('imageList');
     }
@@ -180,7 +180,7 @@
     }
 
 
-    /* 在线图片 */
+    /* 線上图片 */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();

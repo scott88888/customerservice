@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传图片对话框逻辑代码,包括tab: 远程图片/上传图片/在线图片/搜索图片
+ * 上传图片对话框逻辑代码,包括tab: 远程图片/上传图片/線上图片/搜索图片
  */
 
 (function () {
@@ -564,7 +564,7 @@
     };
 
 
-    /* 在线附件 */
+    /* 線上附件 */
     function OnlineFile(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();

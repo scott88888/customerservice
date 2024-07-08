@@ -96,7 +96,7 @@ class  Index extends Controller
                            return '价格：￥4999';
                            break;
                        case '官网':
-                           return '请访问:<a href="http://www.80zx.com/">八零在线</a>提供技术驱动';
+                           return '请访问:<a href="http://www.80zx.com/">八零線上</a>提供技术驱动';
                            break;
                    }
                    break;

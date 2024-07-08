@@ -66,7 +66,7 @@ function getstatus(cha) {
                         $("#login_device").text(res.data.extends.os + ' ' + res.data.extends.browserName);
                     }
                     if(res.data.state == 'online'){
-                        $("#v_state").text("在线");
+                        $("#v_state").text("線上");
                     }else{
                         $("#v_state").text("离线");
                     }
@@ -372,7 +372,7 @@ function getdata(cha) {
                 }
                 str += '</div><div class="group-list-left"><img src="/assets/style1/img/add.png" alt="" class="editusergroup" data-vid="'+user.vid+'"></div><div class="group-list-right">';
                 changetop=user.istop?0:1;
-                changetips=user.istop?'取消置顶':'置顶对话';
+                changetips=user.istop?'取消置顶':'置頂對話';
                 btnClass=user.istop?'layui-btn-danger':'layui-btn-normal';
 
                 str +='<button class="layui-btn layui-btn-sm '+btnClass+' chat2top js-ajax-btn"  onclick="chat2top(\''+user.visiter_id+'\',this)" data-istop="'+changetop+'"><i class="layui-icon layui-icon-upload-circle"></i>'+changetips+'</button>';

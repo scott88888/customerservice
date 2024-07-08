@@ -653,7 +653,7 @@ require __DIR__ . '/../thinkphp/start.php';");
 </div>
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">©2021 AI在线客服系统 | 本产品禁止用于含木马、病毒、色情、赌博、诈骗等违法违规业务</p>
+        <p class="text-muted">©2021 AI線上客服系统 | 本产品禁止用于含木马、病毒、色情、赌博、诈骗等违法违规业务</p>
     </div>
 </footer>
 <!-- javascript -->

@@ -228,7 +228,7 @@
         
         lang : {
             name        : "zh-cn",
-            description : "开源在线Markdown编辑器<br/>Open source online Markdown editor.",
+            description : "开源線上Markdown编辑器<br/>Open source online Markdown editor.",
             tocTitle    : "目录",
             toolbar     : {
                 undo             : "撤销（Ctrl+Z）",

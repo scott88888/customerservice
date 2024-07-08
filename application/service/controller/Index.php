@@ -49,7 +49,7 @@ class Index extends Base
         $waiter = Admins::table("wolive_queue")->where(['business_id' => $login['business_id'], 'state' => 'normal'])->where("service_id", 0)->count();
         // 正在咨询的人
         $talking = Admins::table('wolive_queue')->where(['business_id' => $login['business_id']])->where('state', 'normal')->where("service_id", '<>', 0)->count();
-        // 在线客服人数
+        // 線上客服人数
         $services = Admins::table("wolive_service")->where($where)->where(['state' => 'online'])->count();
         // 今日会话量
         $nowchats = Admins::table("wolive_chats")->where($where)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();

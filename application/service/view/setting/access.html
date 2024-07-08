@@ -316,7 +316,7 @@
 
             channel.bind("geton", function (data) {
 
-                //表示访客在线
+                //表示访客線上
                 var cdata = $.cookie("cu_com");
                 var chas;
                 if (cdata) {
@@ -326,7 +326,7 @@
                 if (chas == data.message.chas) {
                     //头像变亮
                     $("#img" + data.message.chas).removeClass("icon_gray");
-                    $("#v_state").text("在线");
+                    $("#v_state").text("線上");
                 }
 
                 $("#img" + data.message.chas).removeClass("icon_gray");
@@ -359,7 +359,7 @@
             });
 
             pusher.connection.bind('connected', function() {
-                $(".profile").text('在线');
+                $(".profile").text('線上');
             });
         }
 

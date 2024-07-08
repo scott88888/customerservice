@@ -181,7 +181,7 @@ function  get_user_info(vid) {
                         $(".login_device").text(res.data.extends.os + ' ' + res.data.extends.browserName);
                     }
                     if(res.data.state == 'online'){
-                        $(".v_state").text("在线");
+                        $(".v_state").text("線上");
                     }else{
                         $(".v_state").text("离线");
                     }

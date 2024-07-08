@@ -44,7 +44,7 @@ class AppClient
      * appId: app 的唯一标识，创建的时候由系统生成。
      * Title: app 的名称， 可选。
      * Hub: 绑定的直播 hub，可选，用于合流后 rtmp 推流。
-     * MaxUsers: int 类型，可选，连麦房间支持的最大在线人数。
+     * MaxUsers: int 类型，可选，连麦房间支持的最大線上人数。
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人。
      * MergePublishRtmp: 连麦合流转推 RTMP 的配置，可选择。其详细配置包括如下
             Enable: 布尔类型，用于开启和关闭所有房间的合流功能。

@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright ©2020 AI在线客服系统
+ * @copyright ©2020 AI線上客服系统
  * Created by PhpStorm.
  * User: Andy - Wangjie
  * Date: 2020/5/14

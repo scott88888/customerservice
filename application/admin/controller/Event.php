@@ -65,7 +65,7 @@ class Event extends Controller
     }
 
     /**
-     * 离线，在线监控类.
+     * 离线，線上监控类.
      *
      * @returngetanswer void
      */
@@ -136,18 +136,18 @@ class Event extends Controller
                     }
                 }
 
-                // 通知在线
+                // 通知線上
                 if ($event["name"] == "channel_added") {
 
                     if (strpos($event['channel'], 'kefu') === 0) {
-                        // 通知 访客，客服在线
+                        // 通知 访客，客服線上
                         $channel = str_replace('kefu', 'se', $event['channel']);
                         $id = str_replace('kefu', '', $event['channel']);
                         $res = Admins::table('wolive_service')->where('service_id', $id)->update(['state' => 'online']);
                         $pusher->trigger($channel, 'geton', array('message' => $this->lang_array['service_online']));
 
                     } elseif (strpos($event['channel'], 'cu') === 0) {
-                        // 通知 客服 ，访客在线
+                        // 通知 客服 ，访客線上
                         $channel = str_replace('cu', '', $event['channel']);
 
                         $newstr = pack("H*", $channel);

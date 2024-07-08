@@ -42,7 +42,7 @@ getBucketLifecycle($ossClient, $bucket);
  * 设置bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名称
+ * @param string $bucket 存储空间名稱
  * @return null
  */
 function putBucketLifecycle($ossClient, $bucket)
@@ -70,7 +70,7 @@ function putBucketLifecycle($ossClient, $bucket)
  * 取得bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名称
+ * @param string $bucket 存储空间名稱
  * @return null
  */
 function getBucketLifecycle($ossClient, $bucket)
@@ -91,7 +91,7 @@ function getBucketLifecycle($ossClient, $bucket)
  * 刪除bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名称
+ * @param string $bucket 存储空间名稱
  * @return null
  */
 function deleteBucketLifecycle($ossClient, $bucket)

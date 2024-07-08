@@ -38,9 +38,9 @@ class Connection
     protected $dbName = ''; // dbName
     /** @var string 当前SQL指令 */
     protected $queryStr = '';
-    // 查询数据集类型
+    // 查詢数据集类型
     protected $resultSetType = 'array';
-    // 查询数据类型
+    // 查詢数据类型
     protected $typeMap = 'array';
     protected $mongo; // MongoDb Object
     protected $cursor; // MongoCursor Object
@@ -58,9 +58,9 @@ class Connection
     protected $numRows = 0;
     // 错误信息
     protected $error = '';
-    // 查询对象
+    // 查詢对象
     protected $query = [];
-    // 查询参数
+    // 查詢参数
     protected $options = [];
     // 数据库连接参数配置
     protected $config = [
@@ -166,10 +166,10 @@ class Connection
     }
 
     /**
-     * 创建指定模型的查询对象
+     * 创建指定模型的查詢对象
      * @access public
-     * @param string $model 模型类名称
-     * @param string $queryClass 查询对象类名
+     * @param string $model 模型类名稱
+     * @param string $queryClass 查詢对象类名
      * @return Query
      */
     public function model($model, $queryClass = '')
@@ -182,9 +182,9 @@ class Connection
     }
 
     /**
-     * 调用Query类的查询方法
+     * 调用Query类的查詢方法
      * @access public
-     * @param string    $method 方法名称
+     * @param string    $method 方法名稱
      * @param array     $args 调用参数
      * @return mixed
      */
@@ -200,7 +200,7 @@ class Connection
     /**
      * 取得数据库的配置参数
      * @access public
-     * @param string $config 配置名称
+     * @param string $config 配置名稱
      * @return mixed
      */
     public function getConfig($config = '')
@@ -211,7 +211,7 @@ class Connection
     /**
      * 设置数据库的配置参数
      * @access public
-     * @param string    $config 配置名称
+     * @param string    $config 配置名稱
      * @param mixed     $value 配置值
      * @return void
      */
@@ -250,10 +250,10 @@ class Connection
     }
 
     /**
-     * 执行查询
+     * 执行查詢
      * @access public
-     * @param string            $namespace 当前查询的collection
-     * @param MongoQuery        $query 查询对象
+     * @param string            $namespace 当前查詢的collection
+     * @param MongoQuery        $query 查詢对象
      * @param ReadPreference    $readPreference readPreference
      * @param string|bool       $class 返回的数据集类型
      * @param string|array      $typeMap 指定返回的typeMap
@@ -508,7 +508,7 @@ class Connection
     }
 
     /**
-     * 释放查询结果
+     * 释放查詢结果
      * @access public
      */
     public function free()
@@ -601,7 +601,7 @@ class Connection
      */
     public function __destruct()
     {
-        // 释放查询
+        // 释放查詢
         $this->free();
 
         // 關閉连接

@@ -21,7 +21,7 @@ use think\console\output\driver\Buffer;
 class Console
 {
     /**
-     * @var string 命令名称
+     * @var string 命令名稱
      */
     private $name;
 
@@ -79,7 +79,7 @@ class Console
     /**
      * Console constructor.
      * @access public
-     * @param  string     $name    名称
+     * @param  string     $name    名稱
      * @param  string     $version 版本
      * @param null|string $user    执行使用者
      */
@@ -302,7 +302,7 @@ class Console
     }
 
     /**
-     * 取得名称
+     * 取得名稱
      * @access public
      * @return string
      */
@@ -312,9 +312,9 @@ class Console
     }
 
     /**
-     * 设置名称
+     * 设置名稱
      * @access public
-     * @param  string $name 名称
+     * @param  string $name 名稱
      * @return $this
      */
     public function setName($name)
@@ -368,7 +368,7 @@ class Console
     /**
      * 注册一个指令
      * @access public
-     * @param string $name 指令名称
+     * @param string $name 指令名稱
      * @return Command
      */
     public function register($name)
@@ -422,7 +422,7 @@ class Console
     /**
      * 取得指令
      * @access public
-     * @param  string $name 指令名称
+     * @param  string $name 指令名稱
      * @return Command
      * @throws \InvalidArgumentException
      */
@@ -452,7 +452,7 @@ class Console
     /**
      * 某个指令是否存在
      * @access public
-     * @param  string $name 指令名称
+     * @param  string $name 指令名稱
      * @return bool
      */
     public function has($name)
@@ -485,7 +485,7 @@ class Console
     }
 
     /**
-     * 查找注册命名空间中的名称或缩写
+     * 查找注册命名空间中的名稱或缩写
      * @access public
      * @param string $namespace
      * @return string
@@ -535,7 +535,7 @@ class Console
     /**
      * 查找指令
      * @access public
-     * @param  string $name 名称或者别名
+     * @param  string $name 名稱或者别名
      * @return Command
      * @throws \InvalidArgumentException
      */
@@ -675,7 +675,7 @@ class Console
     }
 
     /**
-     * 取得指令的名称
+     * 取得指令的名稱
      * @access protected
      * @param  Input $input 输入实例
      * @return string
@@ -752,7 +752,7 @@ class Console
     /**
      * 返回指令的命名空间部分
      * @access public
-     * @param  string $name  指令名称
+     * @param  string $name  指令名稱
      * @param  string $limit 部分的命名空间的最大数量
      * @return string
      */
@@ -767,7 +767,7 @@ class Console
     /**
      * 查找可替代的建议
      * @access private
-     * @param string             $name       指令名称
+     * @param string             $name       指令名稱
      * @param array|\Traversable $collection 建议集合
      * @return array
      */
@@ -829,7 +829,7 @@ class Console
     /**
      * 设置默认的指令
      * @access public
-     * @param string $commandName 指令名称
+     * @param string $commandName 指令名稱
      * @return $this
      */
     public function setDefaultCommand($commandName)
@@ -842,7 +842,7 @@ class Console
     /**
      * 返回所有的命名空间
      * @access private
-     * @param  string $name 指令名称
+     * @param  string $name 指令名稱
      * @return array
      */
     private function extractAllNamespaces($name)

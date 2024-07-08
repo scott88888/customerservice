@@ -278,7 +278,7 @@ class Response
 
     /**
      * 取得头部信息
-     * @param string $name 头部名称
+     * @param string $name 头部名稱
      * @return mixed
      */
     public function getHeader($name = '')

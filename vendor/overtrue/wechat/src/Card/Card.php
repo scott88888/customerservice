@@ -280,7 +280,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 导入code接口.
+     * 匯入code接口.
      *
      * @param string $cardId
      * @param array  $code
@@ -298,7 +298,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 查询导入code数目.
+     * 查詢匯入code数目.
      *
      * @param string $cardId
      *
@@ -332,7 +332,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 查询Code接口.
+     * 查詢Code接口.
      *
      * @param string $code
      * @param bool   $checkConsume
@@ -475,7 +475,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 批量查询卡列表.
+     * 批量查詢卡列表.
      *
      * @param int    $offset
      * @param int    $count
@@ -800,7 +800,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 卡券开放类目查询接口.
+     * 卡券开放类目查詢接口.
      *
      * @return \EasyWeChat\Support\Collection
      */

@@ -27,13 +27,13 @@ abstract class Relation
     protected $parent;
     /** @var  Model 当前关联的模型类 */
     protected $model;
-    /** @var Query 关联模型查询对象 */
+    /** @var Query 关联模型查詢对象 */
     protected $query;
     // 关联表外键
     protected $foreignKey;
     // 关联表主键
     protected $localKey;
-    // 基础查询
+    // 基础查詢
     protected $baseQuery;
     // 是否为自关联
     protected $selfRelation;
@@ -59,7 +59,7 @@ abstract class Relation
     }
 
     /**
-     * 取得关联的查询对象
+     * 取得关联的查詢对象
      * @access public
      * @return Query
      */
@@ -128,7 +128,7 @@ abstract class Relation
     }
 
     /**
-     * 执行基础查询（仅执行一次）
+     * 执行基础查詢（仅执行一次）
      * @access protected
      * @return void
      */
@@ -138,7 +138,7 @@ abstract class Relation
     public function __call($method, $args)
     {
         if ($this->query) {
-            // 执行基础查询
+            // 执行基础查詢
             $this->baseQuery();
 
             $result = call_user_func_array([$this->query, $method], $args);

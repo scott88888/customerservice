@@ -144,7 +144,7 @@ class Manager extends Base
     }
 
     /**
-     * 分组管理
+     * 分組管理
      * [group description]
      * @return [type] [description]
      */
@@ -159,7 +159,7 @@ class Manager extends Base
         $page = $group->render();
 
         $this->assign('part','设置');
-        $this->assign('title','客服分组设置');
+        $this->assign('title','客服分組设置');
         $this->assign('group',$group);
         $this->assign('page',$page);
         

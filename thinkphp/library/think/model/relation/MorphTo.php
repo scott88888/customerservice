@@ -58,7 +58,7 @@ class MorphTo extends Relation
     /**
      * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询條件
+     * @param \Closure $closure     闭包查詢條件
      * @return mixed
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -78,7 +78,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -92,9 +92,9 @@ class MorphTo extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查询條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -136,7 +136,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 移除关联查询参数
+     * 移除关联查詢参数
      * @access public
      * @return $this
      */
@@ -146,7 +146,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 预载入关联查询
+     * 预载入关联查詢
      * @access public
      * @param array    $resultSet   数据集
      * @param string   $relation    当前关联名
@@ -199,7 +199,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 预载入关联查询
+     * 预载入关联查詢
      * @access public
      * @param Model    $result      数据对象
      * @param string   $relation    当前关联名
@@ -228,7 +228,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 多态MorphTo 关联模型预查询
+     * 多态MorphTo 关联模型预查詢
      * @access   public
      * @param object $model       关联模型对象
      * @param string $relation    关联名
@@ -238,7 +238,7 @@ class MorphTo extends Relation
      */
     protected function eagerlyMorphToOne($model, $relation, &$result, $subRelation = '')
     {
-        // 预载入关联查询 支持嵌套预载入
+        // 预载入关联查詢 支持嵌套预载入
         $pk   = $this->parent->{$this->morphKey};
         $data = (new $model)->with($subRelation)->find($pk);
         if ($data) {
@@ -286,7 +286,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 创建关联统计子查询
+     * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计数据别名

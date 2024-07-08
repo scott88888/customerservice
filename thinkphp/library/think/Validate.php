@@ -136,7 +136,7 @@ class Validate
     /**
      * 新增字段驗證规则
      * @access protected
-     * @param string|array  $name  字段名称或者规则数组
+     * @param string|array  $name  字段名稱或者规则数组
      * @param mixed         $rule  驗證规则
      * @return Validate
      */
@@ -169,7 +169,7 @@ class Validate
     /**
      * 设置驗證规则的默认提示信息
      * @access protected
-     * @param string|array  $type  驗證规则类型名称或者数组
+     * @param string|array  $type  驗證规则类型名稱或者数组
      * @param string        $msg  驗證提示信息
      * @return void
      */
@@ -185,7 +185,7 @@ class Validate
     /**
      * 设置提示信息
      * @access public
-     * @param string|array  $name  字段名称
+     * @param string|array  $name  字段名稱
      * @param string        $message 提示信息
      * @return Validate
      */
@@ -292,7 +292,7 @@ class Validate
                 $msg  = [];
             }
             if (strpos($key, '|')) {
-                // 字段|描述 用于指定属性名称
+                // 字段|描述 用于指定属性名稱
                 list($key, $title) = explode('|', $key);
             } else {
                 $title = isset($this->field[$key]) ? $this->field[$key] : $key;
@@ -1293,7 +1293,7 @@ class Validate
      * @access protected
      * @param string    $attribute  字段英文名
      * @param string    $title  字段描述名
-     * @param string    $type  驗證规则名称
+     * @param string    $type  驗證规则名稱
      * @param mixed     $rule  驗證规则数据
      * @return string
      */

@@ -32,7 +32,7 @@ use think\View;
 
 if (!function_exists('load_trait')) {
     /**
-     * 快速导入Traits PHP5.5以上无需调用
+     * 快速匯入Traits PHP5.5以上无需调用
      * @param string    $class trait库
      * @param string    $ext 类库后缀
      * @return boolean
@@ -146,7 +146,7 @@ if (!function_exists('input')) {
 if (!function_exists('widget')) {
     /**
      * 渲染输出Widget
-     * @param string    $name Widget名称
+     * @param string    $name Widget名稱
      * @param array     $data 传入的参数
      * @return mixed
      */
@@ -159,8 +159,8 @@ if (!function_exists('widget')) {
 if (!function_exists('model')) {
     /**
      * 实例化Model
-     * @param string    $name Model名称
-     * @param string    $layer 业务层名称
+     * @param string    $name Model名稱
+     * @param string    $layer 业务层名稱
      * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Model
      */
@@ -173,8 +173,8 @@ if (!function_exists('model')) {
 if (!function_exists('validate')) {
     /**
      * 实例化驗證器
-     * @param string    $name 驗證器名称
-     * @param string    $layer 业务层名称
+     * @param string    $name 驗證器名稱
+     * @param string    $layer 业务层名稱
      * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Validate
      */
@@ -187,7 +187,7 @@ if (!function_exists('validate')) {
 if (!function_exists('db')) {
     /**
      * 实例化数据库类
-     * @param string        $name 操作的数据表名称（不含前缀）
+     * @param string        $name 操作的数据表名稱（不含前缀）
      * @param array|string  $config 数据库配置参数
      * @param bool          $force 是否强制重新连接
      * @return \think\db\Query
@@ -202,7 +202,7 @@ if (!function_exists('controller')) {
     /**
      * 实例化控制器 格式：[模块/]控制器
      * @param string    $name 资源地址
-     * @param string    $layer 控制层名称
+     * @param string    $layer 控制层名稱
      * @param bool      $appendSuffix 是否新增类名后缀
      * @return \think\Controller
      */
@@ -217,7 +217,7 @@ if (!function_exists('action')) {
      * 调用模块的操作方法 参数格式 [模块/控制器/]操作
      * @param string        $url 调用地址
      * @param string|array  $vars 调用参数 支持字符串和数组
-     * @param string        $layer 要调用的控制层名称
+     * @param string        $layer 要调用的控制层名稱
      * @param bool          $appendSuffix 是否新增类名后缀
      * @return mixed
      */
@@ -229,10 +229,10 @@ if (!function_exists('action')) {
 
 if (!function_exists('import')) {
     /**
-     * 导入所需的类库 同java的Import 本函数有缓存功能
+     * 匯入所需的类库 同java的Import 本函数有缓存功能
      * @param string    $class 类库命名空间字符串
      * @param string    $baseUrl 起始路径
-     * @param string    $ext 导入的文件扩展名
+     * @param string    $ext 匯入的文件扩展名
      * @return boolean
      */
     function import($class, $baseUrl = '', $ext = EXT)
@@ -243,7 +243,7 @@ if (!function_exists('import')) {
 
 if (!function_exists('vendor')) {
     /**
-     * 快速导入第三方框架类库 所有第三方框架的类库文件统一放到 系统的Vendor目录下面
+     * 快速匯入第三方框架类库 所有第三方框架的类库文件统一放到 系统的Vendor目录下面
      * @param string    $class 类库
      * @param string    $ext 类库后缀
      * @return boolean
@@ -286,7 +286,7 @@ if (!function_exists('url')) {
 if (!function_exists('session')) {
     /**
      * Session管理
-     * @param string|array  $name session名称，如果为数组表示进行session设置
+     * @param string|array  $name session名稱，如果为数组表示进行session设置
      * @param mixed         $value session值
      * @param string        $prefix 前缀
      * @return mixed
@@ -315,7 +315,7 @@ if (!function_exists('session')) {
 if (!function_exists('cookie')) {
     /**
      * Cookie管理
-     * @param string|array  $name cookie名称，如果为数组表示进行cookie设置
+     * @param string|array  $name cookie名稱，如果为数组表示进行cookie设置
      * @param mixed         $value cookie值
      * @param mixed         $option 参数
      * @return mixed
@@ -344,7 +344,7 @@ if (!function_exists('cookie')) {
 if (!function_exists('cache')) {
     /**
      * 缓存管理
-     * @param mixed     $name 缓存名称，如果为数组表示进行缓存设置
+     * @param mixed     $name 缓存名稱，如果为数组表示进行缓存设置
      * @param mixed     $value 缓存值
      * @param mixed     $options 缓存参数
      * @param string    $tag 缓存标签
@@ -376,7 +376,7 @@ if (!function_exists('cache')) {
         } else {
             // 缓存数据
             if (is_array($options)) {
-                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查询缓存无法设置过期时间
+                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢缓存无法设置过期时间
             } else {
                 $expire = is_numeric($options) ? $options : null; //默认快捷缓存设置过期时间
             }
@@ -543,7 +543,7 @@ if (!function_exists('halt')) {
 if (!function_exists('token')) {
     /**
      * 生成表單令牌
-     * @param string $name 令牌名称
+     * @param string $name 令牌名稱
      * @param mixed  $type 令牌生成方法
      * @return string
      */
@@ -556,7 +556,7 @@ if (!function_exists('token')) {
 
 if (!function_exists('load_relation')) {
     /**
-     * 延迟预载入关联查询
+     * 延迟预载入关联查詢
      * @param mixed $resultSet 数据集
      * @param mixed $relation 关联
      * @return array

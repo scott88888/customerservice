@@ -103,7 +103,7 @@ $cosClient = new Qcloud\Cos\Client(array('region' => '<Region>',
 # 上传文件
 ## putObject(上传接口，最大支持上传5G文件)
 ### 上传内存中的字符串
-//bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名称必须为此格式
+//bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名稱必须为此格式
 try {
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -203,7 +203,7 @@ try {
 # 下载文件
 ## getObject(下载文件)
 ### 下载到内存
-//bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名称必须为此格式
+//bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名稱必须为此格式
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,

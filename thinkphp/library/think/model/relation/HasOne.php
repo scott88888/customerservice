@@ -39,7 +39,7 @@ class HasOne extends OneToOne
     /**
      * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询條件
+     * @param \Closure $closure     闭包查詢條件
      * @return array|false|\PDOStatement|string|Model
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -49,7 +49,7 @@ class HasOne extends OneToOne
         if ($closure) {
             call_user_func_array($closure, [ & $this->query]);
         }
-        // 判断关联类型执行查询
+        // 判断关联类型执行查詢
         $relationModel = $this->query
             ->removeWhereField($this->foreignKey)
             ->where($this->foreignKey, $this->parent->$localKey)
@@ -64,7 +64,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @return Query
      */
@@ -83,9 +83,9 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查询條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -112,7 +112,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 预载入关联查询（数据集）
+     * 预载入关联查詢（数据集）
      * @access public
      * @param array    $resultSet   数据集
      * @param string   $relation    当前关联名
@@ -165,7 +165,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 预载入关联查询（数据）
+     * 预载入关联查詢（数据）
      * @access public
      * @param Model    $result      数据对象
      * @param string   $relation    当前关联名
@@ -197,7 +197,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 执行基础查询（仅执行一次）
+     * 执行基础查詢（仅执行一次）
      * @access protected
      * @return void
      */
@@ -205,7 +205,7 @@ class HasOne extends OneToOne
     {
         if (empty($this->baseQuery)) {
             if (isset($this->parent->{$this->localKey})) {
-                // 关联查询带入关联條件
+                // 关联查詢带入关联條件
                 $this->query->where($this->foreignKey, '=', $this->parent->{$this->localKey});
             }
 

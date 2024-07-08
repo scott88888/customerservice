@@ -495,7 +495,7 @@ class Service {
                 /**
                 刪除存储桶 (Bucket)的方法.
 
-                COS 目前仅支持刪除已经清空的 Bucket，如果 Bucket 中仍有对象，将会刪除失敗. 因此，在执行刪除 Bucket 前，需确保 Bucket 内已经没有对象. 刪除 Bucket 时，还需要确保操作的身份已被授权该操作，并确认 传入了正确的存储桶名称和地域参数, 请参阅 putBucket(PutBucketRequest).
+                COS 目前仅支持刪除已经清空的 Bucket，如果 Bucket 中仍有对象，将会刪除失敗. 因此，在执行刪除 Bucket 前，需确保 Bucket 内已经没有对象. 刪除 Bucket 时，还需要确保操作的身份已被授权该操作，并确认 传入了正确的存储桶名稱和地域参数, 请参阅 putBucket(PutBucketRequest).
 
                 关于刪除 Bucket 的描述,请查看 https://cloud.tencent.com/document/product/436/14105.
 
@@ -563,7 +563,7 @@ class Service {
                 /**
                 刪除 COS 上单个对象的方法.
 
-                COS 支持直接刪除一个或多个对象，当仅需要刪除一个对象时,只需要提供对象的名称（即对象键)即可.
+                COS 支持直接刪除一个或多个对象，当仅需要刪除一个对象时,只需要提供对象的名稱（即对象键)即可.
 
                 关于刪除 COS 上单个对象的具体描述，请查看 https://cloud.tencent.com/document/product/436/14119.
 
@@ -952,13 +952,13 @@ class Service {
                             'static' => true,
                             'default' => 'application/xml'))),
                 /**
-                查询存储桶（Bucket) 跨域访问配置信息的方法.
+                查詢存储桶（Bucket) 跨域访问配置信息的方法.
 
-                COS 支持查询当前 Bucket 跨域访问配置信息，以確定是否配置跨域信息.当跨域访问配置不存在时，请求 返回403 Forbidden. 跨域访问配置可以通过 putBucketCORS(PutBucketCORSRequest) 或者 putBucketCORSAsync(PutBucketCORSRequest, CosXmlResultListener) 方法来開啟 Bucket 的跨域访问 支持.
+                COS 支持查詢当前 Bucket 跨域访问配置信息，以確定是否配置跨域信息.当跨域访问配置不存在时，请求 返回403 Forbidden. 跨域访问配置可以通过 putBucketCORS(PutBucketCORSRequest) 或者 putBucketCORSAsync(PutBucketCORSRequest, CosXmlResultListener) 方法来開啟 Bucket 的跨域访问 支持.
 
-                关于查询 Bucket 跨域访问配置信息接口的具体描述， 请查看 https://cloud.tencent.com/document/product/436/8274.
+                关于查詢 Bucket 跨域访问配置信息接口的具体描述， 请查看 https://cloud.tencent.com/document/product/436/8274.
 
-                cos php SDK 中查询 Bucket 跨域访问配置信息的方法具体步骤如下：
+                cos php SDK 中查詢 Bucket 跨域访问配置信息的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 
@@ -992,13 +992,13 @@ class Service {
                     ),
                 ),
                 /**
-                查询存储桶（Bucket) 的生命周期配置的方法.
+                查詢存储桶（Bucket) 的生命周期配置的方法.
 
                 COS 支持以生命周期配置的方式来管理 Bucket 中对象的生命周期，生命周期配置包含一个或多个将 应用于一组对象规则的规则集 (其中每个规则为 COS 定义一个操作)，请参阅 putBucketLifecycle(PutBucketLifecycleRequest).
 
-                关于查询 Bucket 的生命周期配置接口的具体描述，请查看https://cloud.tencent.com/document/product/436/8278.
+                关于查詢 Bucket 的生命周期配置接口的具体描述，请查看https://cloud.tencent.com/document/product/436/8278.
 
-                cos php SDK 中查询 Bucket 的生命周期配置的方法具体步骤如下：
+                cos php SDK 中查詢 Bucket 的生命周期配置的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 
@@ -1033,7 +1033,7 @@ class Service {
                 /**
                 取得存储桶（Bucket）版本控制信息的方法.
 
-                通过查询版本控制信息，可以得知该 Bucket 的版本控制功能是处于禁用狀態还是启用狀態（Enabled 或者 Suspended）, 開啟版本控制功能，可参考putBucketVersioning(PutBucketVersioningRequest).
+                通过查詢版本控制信息，可以得知该 Bucket 的版本控制功能是处于禁用狀態还是启用狀態（Enabled 或者 Suspended）, 開啟版本控制功能，可参考putBucketVersioning(PutBucketVersioningRequest).
 
                 cos php SDK 中取得 Bucket 版本控制信息的方法具体步骤如下：
 
@@ -2193,13 +2193,13 @@ class Service {
                     ),
                 ),
                 /**
-                查询存储桶（Bucket）中正在进行中的分块上传对象的方法.
+                查詢存储桶（Bucket）中正在进行中的分块上传对象的方法.
 
-                COS 支持查询 Bucket 中有哪些正在进行中的分块上传对象，单次请求操作最多列出 1000 个正在进行中的 分块上传对象.
+                COS 支持查詢 Bucket 中有哪些正在进行中的分块上传对象，单次请求操作最多列出 1000 个正在进行中的 分块上传对象.
 
-                关于查询 Bucket 中正在进行中的分块上传对象接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/7736.
+                关于查詢 Bucket 中正在进行中的分块上传对象接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/7736.
 
-                cos php SDK 中查询 Bucket 中正在进行中的分块上传对象的方法具体步骤如下：
+                cos php SDK 中查詢 Bucket 中正在进行中的分块上传对象的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 
@@ -2243,7 +2243,7 @@ class Service {
                             'static' => true,
                             'default' => 'application/xml'))),
                 /**
-                查询存储桶（Bucket) 下的部分或者全部对象的方法.
+                查詢存储桶（Bucket) 下的部分或者全部对象的方法.
 
                 COS 支持列出指定 Bucket 下的部分或者全部对象.
 
@@ -2257,9 +2257,9 @@ class Service {
 
                 如果再设置 delimiter 定界符为 “/”，则只列出该文件夹下的文件，子文件夹下递归的文件和文件夹名 将不被列出.而子文件夹名将会以 CommonPrefix 的形式给出.
 
-                关于查询Bucket 下的部分或者全部对象接口的具体描述，请查看https://cloud.tencent.com/document/product/436/7734.
+                关于查詢Bucket 下的部分或者全部对象接口的具体描述，请查看https://cloud.tencent.com/document/product/436/7734.
 
-                cos php SDK 中查询 Bucket 下的部分或者全部对象的方法具体步骤如下：
+                cos php SDK 中查詢 Bucket 下的部分或者全部对象的方法具体步骤如下：
 
                 1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
 

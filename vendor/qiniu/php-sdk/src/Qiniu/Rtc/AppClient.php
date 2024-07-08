@@ -20,7 +20,7 @@ class AppClient
 
     /*
      * hub: 直播空间名
-     * title: app 的名称  注意，Title 不是唯一标识，重复 create 动作将生成多个 app
+     * title: app 的名稱  注意，Title 不是唯一标识，重复 create 动作将生成多个 app
      * maxUsers：人数限制
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人（抢流）。默认为 false ，
        即同一个身份的 client (app/room/user) ，新的连麦请求可以成功，旧连接被關閉。
@@ -42,7 +42,7 @@ class AppClient
 
     /*
      * appId: app 的唯一标识，创建的时候由系统生成。
-     * Title: app 的名称， 可选。
+     * Title: app 的名稱， 可选。
      * Hub: 绑定的直播 hub，可选，用于合流后 rtmp 推流。
      * MaxUsers: int 类型，可选，连麦房间支持的最大線上人数。
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人。
@@ -97,7 +97,7 @@ class AppClient
     /*
      * 取得房间的人数
      * appId: app 的唯一标识，创建的时候由系统生成。
-     * roomName: 操作所查询的连麦房间。
+     * roomName: 操作所查詢的连麦房间。
      */
     public function listUser($appId, $roomName)
     {
@@ -122,9 +122,9 @@ class AppClient
     /*
      * 取得房间的人数
      * appId: app 的唯一标识，创建的时候由系统生成。
-     * prefix: 所查询房间名的前缀索引，可以为空。
-     * offset: int 类型，分頁查询的位移标记。
-     * limit: int 类型，此次查询的最大长度。
+     * prefix: 所查詢房间名的前缀索引，可以为空。
+     * offset: int 类型，分頁查詢的位移标记。
+     * limit: int 类型，此次查詢的最大长度。
      * GET /v3/apps/<AppID>/rooms?prefix=<RoomNamePrefix>&offset=<Offset>&limit=<Limit>
      */
     public function listActiveRooms($appId, $prefix = null, $offset = null, $limit = null)
@@ -150,7 +150,7 @@ class AppClient
 
     /*
      * appId: app 的唯一标识，创建的时候由系统生成。
-     * roomName: 房间名称，需满足规格 ^[a-zA-Z0-9_-]{3,64}$
+     * roomName: 房间名稱，需满足规格 ^[a-zA-Z0-9_-]{3,64}$
      * userId: 请求加入房间的使用者 ID，需满足规格 ^[a-zA-Z0-9_-]{3,50}$
      * expireAt: int64 类型，鉴权的有效时间，传入以秒为单位的64位Unix
        绝对时间，token 将在该时间后失效。

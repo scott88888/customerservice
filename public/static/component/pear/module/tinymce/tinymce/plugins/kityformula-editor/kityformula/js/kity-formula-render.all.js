@@ -3650,7 +3650,7 @@ _p[14] = {
             base: _p.r(19),
             /**
          * function表达式构造函数
-         * @param funcName function名称
+         * @param funcName function名稱
          * @param expr 函数表达式
          * @param sup 上标
          * @param sub 下标
@@ -3931,7 +3931,7 @@ _p[20] = {
 _p[21] = {
     value: function(require) {
         var kity = _p.r(34), GTYPE = _p.r(6), FONT_CONF = _p.r(47).font, // 打包函数列表
-        WRAP_FN = [], // 注册的打包函数的名称与其在注册器列表中的索引之间的对应关系
+        WRAP_FN = [], // 注册的打包函数的名稱与其在注册器列表中的索引之间的对应关系
         WRAP_FN_INDEX = {}, Expression = kity.createClass("Expression", {
             base: _p.r(46),
             constructor: function() {
@@ -5374,7 +5374,7 @@ _p[41] = {
                 this.type = GTYPE.OP;
                 // 该操作符所属的表达式
                 this.parentExpression = null;
-                // 操作符名称
+                // 操作符名稱
                 this.operatorName = operatorName;
                 // 操作符图形
                 this.operatorShape = new kity.Group();

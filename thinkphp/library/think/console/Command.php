@@ -41,7 +41,7 @@ class Command
 
     /**
      * 构造方法
-     * @param string|null $name 命令名称,如果没有设置则比如在 configure() 里设置
+     * @param string|null $name 命令名稱,如果没有设置则比如在 configure() 里设置
      * @throws \LogicException
      * @api
      */
@@ -270,7 +270,7 @@ class Command
 
     /**
      * 新增参数
-     * @param string $name        名称
+     * @param string $name        名稱
      * @param int    $mode        类型
      * @param string $description 描述
      * @param mixed  $default     默认值
@@ -285,7 +285,7 @@ class Command
 
     /**
      * 新增选项
-     * @param string $name        选项名称
+     * @param string $name        选项名稱
      * @param string $shortcut    别名
      * @param int    $mode        类型
      * @param string $description 描述
@@ -300,7 +300,7 @@ class Command
     }
 
     /**
-     * 设置指令名称
+     * 设置指令名稱
      * @param string $name
      * @return Command
      * @throws \InvalidArgumentException
@@ -315,7 +315,7 @@ class Command
     }
 
     /**
-     * 取得指令名称
+     * 取得指令名稱
      * @return string
      */
     public function getName()
@@ -457,7 +457,7 @@ class Command
     }
 
     /**
-     * 驗證指令名称
+     * 驗證指令名稱
      * @param string $name
      * @throws \InvalidArgumentException
      */

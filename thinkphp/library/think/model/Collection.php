@@ -17,7 +17,7 @@ use think\Model;
 class Collection extends BaseCollection
 {
     /**
-     * 延迟预载入关联查询
+     * 延迟预载入关联查詢
      * @access public
      * @param mixed $relation 关联
      * @return $this

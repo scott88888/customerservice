@@ -44,7 +44,7 @@ class Lang
     protected static $allowLangList = [];
 
     /**
-     * @var array Accept-Language 转义为对应语言包名称 系统默认配置
+     * @var array Accept-Language 转义为对应语言包名稱 系统默认配置
      */
     protected static $acceptLanguage = ['zh-hans-cn' => 'zh-cn'];
 
@@ -222,7 +222,7 @@ class Lang
     /**
      * 设置语言自动侦测的变量
      * @access public
-     * @param  string $var 变量名称
+     * @param  string $var 变量名稱
      * @return void
      */
     public static function setLangDetectVar($var)
@@ -233,7 +233,7 @@ class Lang
     /**
      * 设置语言的 cookie 保存变量
      * @access public
-     * @param  string $var 变量名称
+     * @param  string $var 变量名稱
      * @return void
      */
     public static function setLangCookieVar($var)

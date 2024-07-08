@@ -58,7 +58,7 @@ class File extends SplFileObject
     /**
      * File constructor.
      * @access public
-     * @param  string $filename 文件名称
+     * @param  string $filename 文件名稱
      * @param  string $mode     访问模式
      */
     public function __construct($filename, $mode = 'r')
@@ -96,7 +96,7 @@ class File extends SplFileObject
     /**
      * 取得上传文件的信息
      * @access public
-     * @param  string $name 信息名称
+     * @param  string $name 信息名稱
      * @return array|string
      */
     public function getInfo($name = '')
@@ -117,7 +117,7 @@ class File extends SplFileObject
     /**
      * 设置上传文件的保存文件名
      * @access public
-     * @param  string $saveName 保存名称
+     * @param  string $saveName 保存名稱
      * @return $this
      */
     public function setSaveName($saveName)
@@ -277,7 +277,7 @@ class File extends SplFileObject
     /**
      * 判断图像类型
      * @access protected
-     * @param  string $image 图片名称
+     * @param  string $image 图片名稱
      * @return bool|int
      */
     protected function getImageType($image)

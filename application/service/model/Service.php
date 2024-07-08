@@ -26,7 +26,7 @@ class Service extends Model
             $item['personal'] = $action.'/index/index/home?visiter_id=&visiter_name=&avatar=&business_id='.$item['business_id'].'&groupid='.$item['groupid'].'&special='.$item['service_id'];
             $item['personalwechat'] = $action.'/index/index/wechat/business_id/'.$item['business_id'].'/groupid/'.$item['groupid'].'/special/'.$item['service_id'];
             $group = self::table('wolive_group')->where(['id'=>$item['groupid']])->find();
-            $item['group_name'] = $group['groupname']?:'暂未分组';
+            $item['group_name'] = $group['groupname']?:'暂未分組';
             return $item;
         });
         return ['code'=>0,'data'=>$list->items(),'count' => $list->total(), 'limit' => $limit];
@@ -42,7 +42,7 @@ class Service extends Model
             $v['personal'] = $action.'/index/index/home?visiter_id=&visiter_name=&avatar=&business_id='.$v['business_id'].'&groupid='.$v['groupid'].'&special='.$v['service_id'];
             $v['personalwechat'] = $action.'/index/index/wechat/business_id/'.$v['business_id'].'/groupid/'.$v['groupid'].'/special/'.$v['service_id'];
             $group = self::table('wolive_group')->where(['id'=>$v['groupid']])->find();
-            $v['group_name'] = $group['groupname']?:'暂未分组';
+            $v['group_name'] = $group['groupname']?:'暂未分組';
         }
         return $list;
     }

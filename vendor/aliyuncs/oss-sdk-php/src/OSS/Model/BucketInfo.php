@@ -36,7 +36,7 @@ class BucketInfo
     }
 
     /**
-     * 得到bucket的名称
+     * 得到bucket的名稱
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class BucketInfo
      */
     private $location;
     /**
-     * bucket的名称
+     * bucket的名稱
      *
      * @var string
      */

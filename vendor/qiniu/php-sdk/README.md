@@ -46,7 +46,7 @@ $ ./vendor/bin/phpunit tests/Qiniu/Tests/
 
 ## 常见问题
 
-- $error保留了请求响应的信息，失敗情况下ret 为none, 将$error可以打印出来，送出给我们。
+- $error保留了请求响应的信息，失敗情况下ret 为none, 将$error可以列印出来，送出给我们。
 - API 的使用 demo 可以参考 [单元测试](https://github.com/qiniu/php-sdk/blob/master/tests)。
 
 ## 代码贡献

@@ -27,7 +27,7 @@ trait SoftDelete
     }
 
     /**
-     * 查询包含软刪除的数据
+     * 查詢包含软刪除的数据
      * @access public
      * @return Query
      */
@@ -37,7 +37,7 @@ trait SoftDelete
     }
 
     /**
-     * 只查询软刪除数据
+     * 只查詢软刪除数据
      * @access public
      * @return Query
      */
@@ -101,7 +101,7 @@ trait SoftDelete
     /**
      * 刪除记录
      * @access public
-     * @param mixed $data  主键列表(支持闭包查询條件)
+     * @param mixed $data  主键列表(支持闭包查詢條件)
      * @param bool  $force 是否强制刪除
      * @return integer 成功刪除的记录数
      */
@@ -159,9 +159,9 @@ trait SoftDelete
     }
 
     /**
-     * 查询默认不包含软刪除数据
+     * 查詢默认不包含软刪除数据
      * @access protected
-     * @param Query $query 查询对象
+     * @param Query $query 查詢对象
      * @return Query
      */
     protected function base($query)
@@ -173,7 +173,7 @@ trait SoftDelete
     /**
      * 取得软刪除字段
      * @access public
-     * @param bool $read 是否查询操作(写操作的时候会自动去掉表别名)
+     * @param bool $read 是否查詢操作(写操作的时候会自动去掉表别名)
      * @return string
      */
     protected function getDeleteTimeField($read = false)

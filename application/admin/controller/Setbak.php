@@ -1523,7 +1523,7 @@ class Set extends Base
             $temp['url'] = url('index/index/wechat',['theme'=>$theme,'business_id'=>$login['business_id'],'groupid'=>$v['id']] ,true, true);
             $wechat[] = $temp;
         }
-        $wechat[] = ['group_name'=>'通用分组','url'=> url('index/index/wechat',['theme'=>$theme,'business_id'=>$login['business_id'],'groupid'=>0], true, true)];
+        $wechat[] = ['group_name'=>'通用分組','url'=> url('index/index/wechat',['theme'=>$theme,'business_id'=>$login['business_id'],'groupid'=>0], true, true)];
 
         $this->assign('wechat', $wechat);
         $html=$this->fetch();

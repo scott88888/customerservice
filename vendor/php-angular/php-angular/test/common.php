@@ -19,7 +19,7 @@ $config = [
     'max_tag'          => 10000, // 标签的最大解析次数
 ];
 
-// 自定义扩展, 打印变量的值
+// 自定义扩展, 列印变量的值
 \PHPAngular\Angular::extend('dump', function ($content, $param, $angular) {
     $old = $param['html'];
     $new = '<pre>';

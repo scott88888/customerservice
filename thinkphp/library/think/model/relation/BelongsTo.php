@@ -41,7 +41,7 @@ class BelongsTo extends OneToOne
     /**
      * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询條件
+     * @param \Closure $closure     闭包查詢條件
      * @access public
      * @return array|false|\PDOStatement|string|Model
      */
@@ -65,7 +65,7 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -78,9 +78,9 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查询條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -107,7 +107,7 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 预载入关联查询（数据集）
+     * 预载入关联查詢（数据集）
      * @access public
      * @param array     $resultSet 数据集
      * @param string    $relation 当前关联名
@@ -161,7 +161,7 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 预载入关联查询（数据）
+     * 预载入关联查詢（数据）
      * @access public
      * @param Model     $result 数据对象
      * @param string    $relation 当前关联名
@@ -225,7 +225,7 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 执行基础查询（仅执行一次）
+     * 执行基础查詢（仅执行一次）
      * @access protected
      * @return void
      */
@@ -233,7 +233,7 @@ class BelongsTo extends OneToOne
     {
         if (empty($this->baseQuery)) {
             if (isset($this->parent->{$this->foreignKey})) {
-                // 关联查询带入关联條件
+                // 关联查詢带入关联條件
                 $this->query->where($this->localKey, '=', $this->parent->{$this->foreignKey});
             }
 

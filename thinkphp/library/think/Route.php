@@ -55,7 +55,7 @@ class Route
     private static $subDomain = '';
     // 域名绑定
     private static $bind = [];
-    // 当前分组信息
+    // 当前分組信息
     private static $group = [];
     // 当前子域名绑定
     private static $domainBind;
@@ -163,7 +163,7 @@ class Route
     }
 
     /**
-     * 导入配置文件的路由规则
+     * 匯入配置文件的路由规则
      * @access public
      * @param array  $rule 路由规则
      * @param string $type 请求类型
@@ -234,7 +234,7 @@ class Route
         $group = self::getGroup('name');
 
         if (!is_null($group)) {
-            // 路由分组
+            // 路由分組
             $option  = array_merge(self::getGroup('option'), $option);
             $pattern = array_merge(self::getGroup('pattern'), $pattern);
         }
@@ -367,9 +367,9 @@ class Route
     }
 
     /**
-     * 取得当前的分组信息
+     * 取得当前的分組信息
      * @access public
-     * @param string $type 分组信息名称 name option pattern
+     * @param string $type 分組信息名稱 name option pattern
      * @return mixed
      */
     public static function getGroup($type)
@@ -382,11 +382,11 @@ class Route
     }
 
     /**
-     * 设置当前的路由分组
+     * 设置当前的路由分組
      * @access public
-     * @param string $name    分组名称
-     * @param array  $option  分组路由参数
-     * @param array  $pattern 分组变量规则
+     * @param string $name    分組名稱
+     * @param array  $option  分組路由参数
+     * @param array  $pattern 分組变量规则
      * @return void
      */
     public static function setGroup($name, $option = [], $pattern = [])
@@ -397,9 +397,9 @@ class Route
     }
 
     /**
-     * 注册路由分组
+     * 注册路由分組
      * @access public
-     * @param string|array   $name    分组名称或者参数
+     * @param string|array   $name    分組名稱或者参数
      * @param array|\Closure $routes  路由地址
      * @param array          $option  路由参数
      * @param array          $pattern 变量规则
@@ -411,7 +411,7 @@ class Route
             $option = $name;
             $name   = isset($option['name']) ? $option['name'] : '';
         }
-        // 分组
+        // 分組
         $currentGroup = self::getGroup('name');
         if ($currentGroup) {
             $name = $currentGroup . ($name ? '/' . ltrim($name, '/') : '');
@@ -667,7 +667,7 @@ class Route
     /**
      * rest方法定义和修改
      * @access public
-     * @param string|array $name     方法名称
+     * @param string|array $name     方法名稱
      * @param array|bool   $resource 资源
      * @return void
      */
@@ -901,8 +901,8 @@ class Route
      * @param array   $rules   路由规则
      * @param string  $url     URL地址
      * @param string  $depr    URL分割符
-     * @param string  $group   路由分组名
-     * @param array   $options 路由参数（分组）
+     * @param string  $group   路由分組名
+     * @param array   $options 路由参数（分組）
      * @return mixed
      */
     private static function checkRoute($request, $rules, $url, $depr = '/', $group = '', $options = [])
@@ -931,7 +931,7 @@ class Route
             }
 
             if (is_array($rule)) {
-                // 分组路由
+                // 分組路由
                 $pos = strpos(str_replace('<', ':', $key), ':');
                 if (false !== $pos) {
                     $str = substr($key, 0, $pos);

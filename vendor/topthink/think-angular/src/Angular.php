@@ -569,7 +569,7 @@ class Angular
 
     /**
      * 扩展解析规则
-     * @param string|array $extends  属性名称
+     * @param string|array $extends  属性名稱
      * @param mixed        $callback 回调方法
      * @return void
      */
@@ -612,7 +612,7 @@ class Angular
     /**
      * 取得第一个表达式
      * @param string $content   要解析的模板内容
-     * @param string $directive 指令名称
+     * @param string $directive 指令名稱
      * @param string $val       属性值
      * @return array 一个匹配的标签数组
      */

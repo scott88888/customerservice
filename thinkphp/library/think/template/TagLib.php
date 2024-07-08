@@ -31,7 +31,7 @@ class TagLib
     protected $xml  = '';
     protected $tags = []; // 标签定义
     /**
-     * 标签库名称
+     * 标签库名稱
      * @var string
      * @access protected
      */

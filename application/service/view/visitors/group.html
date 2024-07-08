@@ -11,15 +11,15 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">分组名称</label>
+							<label class="layui-form-label">分組名稱</label>
 							<div class="layui-input-inline">
-								<input type="text" name="groupname" placeholder="請輸入分组名称" class="layui-input">
+								<input type="text" name="groupname" placeholder="請輸入分組名稱" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item layui-inline">
 							<button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
 								<i class="layui-icon layui-icon-search"></i>
-								查询
+								查詢
 							</button>
 							<button type="reset" class="pear-btn pear-btn-md">
 								<i class="layui-icon layui-icon-refresh"></i>
@@ -39,7 +39,7 @@
 		<script type="text/html" id="toolbar">
 		    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
 		        <i class="layui-icon layui-icon-addition"></i>
-		        新增客服分组
+		        新增客服分組
 			</button>
 		</script>
 
@@ -69,12 +69,12 @@
                                 width: 80
                             },{
                                 field: 'groupname',
-                                title: '客服分组',
+                                title: '客服分組',
                                 unresize: true,
                                 align: 'left'
                             }, {
                                 field: 'group_num',
-                                title: '分组人数',
+                                title: '分組人数',
                                 unresize: true,
                                 align: 'left',
                             },  {
@@ -139,7 +139,7 @@
 				window.add = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '新增客服分组',
+                        title: '新增客服分組',
                         shade: 0.1,
                         area: ['500px', '230px'],
                         content: MODULE_PATH + 'groups/add'
@@ -149,7 +149,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '編輯客服分组',
+                        title: '編輯客服分組',
                         shade: 0.1,
                         area: ['500px', '230px'],
                         content: MODULE_PATH + 'groups/edit?id='+obj.data.id
@@ -157,7 +157,7 @@
                 };
 
                 window.remove = function(obj) {
-                    layer.confirm('確定要刪除该分组吗？', {
+                    layer.confirm('確定要刪除该分組吗？', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

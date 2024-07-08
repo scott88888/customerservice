@@ -47,7 +47,7 @@ class MorphOne extends Relation
     /**
      * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询條件
+     * @param \Closure $closure     闭包查詢條件
      * @return false|\PDOStatement|string|\think\Collection
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -65,7 +65,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -79,9 +79,9 @@ class MorphOne extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
-     * @param  mixed $where  查询條件（数组或者闭包）
+     * @param  mixed $where  查詢條件（数组或者闭包）
      * @param  mixed $fields 字段
      * @return Query
      */
@@ -91,7 +91,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 预载入关联查询
+     * 预载入关联查詢
      * @access public
      * @param array    $resultSet   数据集
      * @param string   $relation    当前关联名
@@ -136,7 +136,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 预载入关联查询
+     * 预载入关联查詢
      * @access public
      * @param Model    $result      数据对象
      * @param string   $relation    当前关联名
@@ -167,9 +167,9 @@ class MorphOne extends Relation
     }
 
     /**
-     * 多态一对一 关联模型预查询
+     * 多态一对一 关联模型预查詢
      * @access   public
-     * @param array         $where       关联预查询條件
+     * @param array         $where       关联预查詢條件
      * @param string        $relation    关联名
      * @param string        $subRelation 子关联
      * @param bool|\Closure $closure     闭包
@@ -177,7 +177,7 @@ class MorphOne extends Relation
      */
     protected function eagerlyMorphToOne($where, $relation, $subRelation = '', $closure = false)
     {
-        // 预载入关联查询 支持嵌套预载入
+        // 预载入关联查詢 支持嵌套预载入
         if ($closure) {
             call_user_func_array($closure, [ & $this]);
         }
@@ -234,7 +234,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 执行基础查询（进执行一次）
+     * 执行基础查詢（进执行一次）
      * @access protected
      * @return void
      */
@@ -250,7 +250,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 创建关联统计子查询
+     * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计数据别名

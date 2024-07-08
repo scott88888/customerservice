@@ -10,7 +10,7 @@ $cosClient = new Qcloud\Cos\Client(array(
     ),
 ));
 
-// 若初始化 Client 时未填写 appId，则 bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名称必须为此格式
+// 若初始化 Client 时未填写 appId，则 bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名稱必须为此格式
 $bucket = 'test2-1252448703';
 $key = 'a.txt';
 $local_path = "E:/a.txt";
@@ -269,7 +269,7 @@ try {
 # 取得object信息
 ## headObject
 /*
- * 可代替isObjectExist接口，查询object是否存在
+ * 可代替isObjectExist接口，查詢object是否存在
  */
 try {
     $result = $cosClient->headObject(array(
@@ -314,7 +314,7 @@ try {
 # 取得bucket信息
 ## headBucket
 /*
- * 可代替isBucketExist接口，查询bucket是否存在
+ * 可代替isBucketExist接口，查詢bucket是否存在
  */
 try {
     $result = $cosClient->headBucket(array(

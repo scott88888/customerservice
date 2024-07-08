@@ -21,10 +21,10 @@
 							</div>
 						</div>
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">使用者分组</label>
+							<label class="layui-form-label">使用者分組</label>
 							<div class="layui-input-inline">
 								<select name="groupid">
-									<option value="">请选择使用者分组</option>
+									<option value="">请选择使用者分組</option>
 									{foreach $group as $v}
 									<option value="{$v.id}">{$v.group_name|default=''}</option>
 									{/foreach}
@@ -34,7 +34,7 @@
 						<div class="layui-form-item layui-inline">
 							<button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
 								<i class="layui-icon layui-icon-search"></i>
-								查询
+								查詢
 							</button>
 							<button type="reset" class="pear-btn pear-btn-md">
 								<i class="layui-icon layui-icon-refresh"></i>
@@ -65,7 +65,7 @@
 
 		<script type="text/html" id="tool-bar">
 			<button class="pear-btn pear-btn-success pear-btn-xs" lay-event="lang"><i class="layui-icon layui-icon-website"></i>语言</button>
-			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>分组</button>
+			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>分組</button>
 			{{#if (d.state == 'normal') { }}
 			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="blacklist"><i class="layui-icon layui-icon-group"></i>拉黑</button>
 			{{# }else{ }}
@@ -94,7 +94,7 @@
                                 align: 'left',
                             },{
                                 field: 'group_name',
-                                title: '客户分组',
+                                title: '客户分組',
                                 unresize: true,
                                 align: 'left',
                             }, {
@@ -181,7 +181,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '使用者分组',
+                        title: '使用者分組',
                         shade: 0.1,
                         area: ['500px', '300px'],
                         content: MODULE_PATH + 'visitors/edit?id='+obj.data.visiter_id

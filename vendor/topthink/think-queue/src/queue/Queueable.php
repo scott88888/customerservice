@@ -14,7 +14,7 @@ namespace think\queue;
 trait Queueable
 {
 
-    /** @var string 队列名称 */
+    /** @var string 队列名稱 */
     public $queue;
 
     /** @var integer 延迟时间 */

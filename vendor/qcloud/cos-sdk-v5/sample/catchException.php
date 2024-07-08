@@ -23,7 +23,7 @@ try {
     $statusCode = $e->getStatusCode(); // 取得错误码
     $errorMessage = $e->getMessage(); // 取得错误信息
     $requestId = $e->getRequestId(); // 取得错误的requestId
-    $errorCode = $e->getCosErrorCode(); // 取得错误名称
+    $errorCode = $e->getCosErrorCode(); // 取得错误名稱
     $request = $e->getRequest(); // 取得完整的请求
     $response = $e->getResponse(); // 取得完整的响应
 }

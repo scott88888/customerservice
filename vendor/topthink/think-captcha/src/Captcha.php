@@ -64,7 +64,7 @@ class Captcha
     /**
      * 使用 $this->name 取得配置
      * @access public
-     * @param  string $name 配置名称
+     * @param  string $name 配置名稱
      * @return mixed    配置值
      */
     public function __get($name)
@@ -75,7 +75,7 @@ class Captcha
     /**
      * 设置驗證碼配置
      * @access public
-     * @param  string $name  配置名称
+     * @param  string $name  配置名稱
      * @param  string $value 配置值
      * @return void
      */
@@ -89,7 +89,7 @@ class Captcha
     /**
      * 檢查配置
      * @access public
-     * @param  string $name 配置名称
+     * @param  string $name 配置名稱
      * @return bool
      */
     public function __isset($name)

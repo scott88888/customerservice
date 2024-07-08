@@ -12,7 +12,7 @@ $auth = new Auth($accessKey, $secretKey);
 // 要转码的文件所在的空间。
 $bucket = 'Bucket_Name';
 
-// 转码是使用的队列名称。 https://portal.qiniu.com/mps/pipeline
+// 转码是使用的队列名稱。 https://portal.qiniu.com/mps/pipeline
 $pipeline = 'pipeline_name';
 
 // 初始化

@@ -344,7 +344,7 @@
 					_item.addClass(DD_HIDE);
 				}
 			});
-			//控制分组名称
+			//控制分組名稱
 			reElem.find('dl dt').each((index, item) => {
 				if(!$(item).nextUntil('dt', `:not(.${DD_HIDE})`).length) {
 					$(item).addClass(DD_HIDE);

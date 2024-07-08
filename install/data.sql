@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `wolive_admin_menu`;
 CREATE TABLE `wolive_admin_menu`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `pid` int(11) NOT NULL DEFAULT 0 COMMENT '父级ID',
-  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
+  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名稱',
   `href` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '地址',
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `sort` tinyint(4) NOT NULL DEFAULT 99 COMMENT '排序',
@@ -73,7 +73,7 @@ DROP TABLE IF EXISTS `wolive_admin_permission`;
 CREATE TABLE `wolive_admin_permission`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `pid` int(11) NOT NULL DEFAULT 0 COMMENT '父级ID',
-  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
+  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名稱',
   `href` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '地址',
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `sort` tinyint(4) NOT NULL DEFAULT 99 COMMENT '排序',
@@ -404,7 +404,7 @@ CREATE TABLE `wolive_storage`  (
 DROP TABLE IF EXISTS `wolive_tablist`;
 CREATE TABLE `wolive_tablist`  (
   `tid` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'tab的名称',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'tab的名稱',
   `content_read` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `business_id` int(11) NOT NULL DEFAULT 0,
@@ -433,7 +433,7 @@ DROP TABLE IF EXISTS `wolive_visiter`;
 CREATE TABLE `wolive_visiter`  (
   `vid` int(11) NOT NULL AUTO_INCREMENT,
   `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客id',
-  `visiter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客名称',
+  `visiter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客名稱',
   `channel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '使用者遊客频道',
   `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '头像',
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的姓名',
@@ -539,13 +539,13 @@ INSERT INTO `wolive_admin_menu` VALUES (5, 3, '客服列表', '/backend/services
 INSERT INTO `wolive_admin_permission` VALUES (1, 0, '首頁', '/service/index/home', 'layui-icon layui-icon-home', 1, 1, 1, 0);
 INSERT INTO `wolive_admin_permission` VALUES (2, 0, '客服管理', '', 'layui-icon layui-icon-username', 2, 0, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (3, 2, '客服列表', '/service/services/index', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (4, 2, '客服分组', '/service/groups/index', NULL, 99, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (4, 2, '客服分組', '/service/groups/index', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (5, 0, '评价列表', '/service/comments/index', 'layui-icon layui-icon-praise', 5, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (6, 0, '评价设置', '/service/comments/setting', 'layui-icon layui-icon-tabs', 6, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (7, 0, '常见问题设置', '/service/questions/index', 'layui-icon layui-icon-survey', 4, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (8, 0, '客户管理', '', 'layui-icon layui-icon-user', 3, 0, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (9, 8, '客户列表', '/service/visitors/index', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (10, 8, '客户分组', '/service/vgroups/index', NULL, 99, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (10, 8, '客户分組', '/service/vgroups/index', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (11, 0, '问候语设置', '/service/setting/sentence', 'layui-icon layui-icon-release', 6, 1, 1, 0);
 INSERT INTO `wolive_admin_permission` VALUES (12, 0, '消息记录', '/service/history/index', 'layui-icon layui-icon-form', 7, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (13, 0, '客服工作台', '/service/chat/index', 'layui-icon layui-icon-service', 1, 1, 1, 0);

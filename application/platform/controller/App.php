@@ -135,7 +135,7 @@ class App extends Base
                 }
                 $business = Business::get(['admin_id'=>$post['admin_id'],'business_name'=>$post['business_name'],'is_delete'=>0]);
                 if ($business) {
-                    return ['code'=>1,'msg'=>'客服系统名称已存在'];
+                    return ['code'=>1,'msg'=>'客服系统名稱已存在'];
                 }
                 $service = Admins::table('wolive_service')
                     ->where('user_name',$post['user_name'])
@@ -149,7 +149,7 @@ class App extends Base
 
                 $business = Business::get(['admin_id'=>$post['admin_id'],'business_name'=>$post['business_name'],'id'=>['<>',$post['id'],'is_delete'=>0]]);
                 if ($business) {
-                    return ['code'=>1,'msg'=>'客服系统名称已存在'];
+                    return ['code'=>1,'msg'=>'客服系统名稱已存在'];
                 }
                 $res = Business::editBusiness($post);
             }

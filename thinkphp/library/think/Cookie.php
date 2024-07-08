@@ -17,7 +17,7 @@ class Cookie
      * @var array cookie 设置参数
      */
     protected static $config = [
-        'prefix'    => '', // cookie 名称前缀
+        'prefix'    => '', // cookie 名稱前缀
         'expire'    => 0, // cookie 保存时间
         'path'      => '/', // cookie 保存路径
         'domain'    => '', // cookie 有效域名
@@ -70,7 +70,7 @@ class Cookie
     /**
      * Cookie 设置、取得、刪除
      * @access public
-     * @param  string $name   cookie 名称
+     * @param  string $name   cookie 名稱
      * @param  mixed  $value  cookie 值
      * @param  mixed  $option 可选参数 可能会是 null|integer|string
      * @return void
@@ -117,7 +117,7 @@ class Cookie
     /**
      * 永久保存 Cookie 数据
      * @access public
-     * @param  string $name   cookie 名称
+     * @param  string $name   cookie 名稱
      * @param  mixed  $value  cookie 值
      * @param  mixed  $option 可选参数 可能会是 null|integer|string
      * @return void
@@ -136,7 +136,7 @@ class Cookie
     /**
      * 判断是否有 Cookie 数据
      * @access public
-     * @param  string      $name   cookie 名称
+     * @param  string      $name   cookie 名稱
      * @param  string|null $prefix cookie 前缀
      * @return bool
      */
@@ -152,7 +152,7 @@ class Cookie
     /**
      * 取得 Cookie 的值
      * @access public
-     * @param string      $name   cookie 名称
+     * @param string      $name   cookie 名稱
      * @param string|null $prefix cookie 前缀
      * @return mixed
      */
@@ -194,7 +194,7 @@ class Cookie
     /**
      * 刪除 Cookie
      * @access public
-     * @param  string      $name   cookie 名称
+     * @param  string      $name   cookie 名稱
      * @param  string|null $prefix cookie 前缀
      * @return void
      */

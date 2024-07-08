@@ -347,7 +347,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 查询数据.
+     * 查詢数据.
      *
      * @param string $api
      * @param string $from

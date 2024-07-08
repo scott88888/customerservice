@@ -504,7 +504,7 @@ foreach ($dirarray as $key => $dir) {
             session_destroy();
             mysqli_close($link);
             ?>
-            <div class="alert alert-success"><strong>数据已经导入!</strong>安装已经成功!</div>
+            <div class="alert alert-success"><strong>数据已经匯入!</strong>安装已经成功!</div>
             <?php sleep(2); ?>
 
             <center style="margin-bottom: 20px;">

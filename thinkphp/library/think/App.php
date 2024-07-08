@@ -637,7 +637,7 @@ class App
                 $files = $config['route_config_file'];
                 foreach ($files as $file) {
                     if (is_file(CONF_PATH . $file . CONF_EXT)) {
-                        // 导入路由配置
+                        // 匯入路由配置
                         $rules = include CONF_PATH . $file . CONF_EXT;
                         is_array($rules) && Route::import($rules);
                     }

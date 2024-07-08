@@ -36,7 +36,7 @@ getSignedUrlForGettingObject($ossClient, $bucket);
  * 生成GetObject的签名url,主要用于私有权限下的读访问控制
  *
  * @param $ossClient OssClient OssClient实例
- * @param $bucket string 存储空间名称
+ * @param $bucket string 存储空间名稱
  * @return null
  */
 function getSignedUrlForGettingObject($ossClient, $bucket)
@@ -70,7 +70,7 @@ function getSignedUrlForGettingObject($ossClient, $bucket)
  * 生成PutObject的签名url,主要用于私有权限下的写访问控制
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名称
+ * @param string $bucket 存储空间名稱
  * @return null
  * @throws OssException
  */
@@ -109,7 +109,7 @@ function getSignedUrlForPuttingObject($ossClient, $bucket)
  * 从文件上传文件
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名称
+ * @param string $bucket 存储空间名稱
  * @throws OssException
  */
 function getSignedUrlForPuttingObjectFromFile($ossClient, $bucket)

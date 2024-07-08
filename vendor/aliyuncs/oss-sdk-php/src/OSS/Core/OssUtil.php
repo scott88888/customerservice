@@ -114,13 +114,13 @@ class OssUtil
     }
 
     /**
-     * 检验bucket名称是否合法
+     * 检验bucket名稱是否合法
      * bucket的命名规范：
      * 1. 只能包括小写字母，数字
      * 2. 必须以小写字母或者数字开头
      * 3. 长度必须在3-63字节之间
      *
-     * @param string $bucket Bucket名称
+     * @param string $bucket Bucket名稱
      * @return boolean
      */
     public static function validateBucket($bucket)
@@ -133,13 +133,13 @@ class OssUtil
     }
 
     /**
-     * 检验object名称是否合法
+     * 检验object名稱是否合法
      * object命名规范:
      * 1. 规则长度必须在1-1023字节之间
      * 2. 使用UTF-8编码
      * 3. 不能以 "/" "\\"开头
      *
-     * @param string $object Object名称
+     * @param string $object Object名稱
      * @return boolean
      */
     public static function validateObject($object)

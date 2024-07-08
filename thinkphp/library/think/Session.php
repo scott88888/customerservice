@@ -128,7 +128,7 @@ class Session
 
     /**
      * session设置
-     * @param string        $name session名称
+     * @param string        $name session名稱
      * @param mixed         $value session值
      * @param string|null   $prefix 作用域（前缀）
      * @return void
@@ -155,7 +155,7 @@ class Session
 
     /**
      * session取得
-     * @param string        $name session名称
+     * @param string        $name session名稱
      * @param string|null   $prefix 作用域（前缀）
      * @return mixed
      */
@@ -187,7 +187,7 @@ class Session
 
     /**
      * session取得并刪除
-     * @param string        $name session名称
+     * @param string        $name session名稱
      * @param string|null   $prefix 作用域（前缀）
      * @return mixed
      */
@@ -204,7 +204,7 @@ class Session
 
     /**
      * session设置 下一次请求有效
-     * @param string        $name session名称
+     * @param string        $name session名稱
      * @param mixed         $value session值
      * @param string|null   $prefix 作用域（前缀）
      * @return void
@@ -240,7 +240,7 @@ class Session
 
     /**
      * 刪除session数据
-     * @param string|array  $name session名称
+     * @param string|array  $name session名稱
      * @param string|null   $prefix 作用域（前缀）
      * @return void
      */
@@ -286,7 +286,7 @@ class Session
 
     /**
      * 判断session数据
-     * @param string        $name session名称
+     * @param string        $name session名稱
      * @param string|null   $prefix
      * @return bool
      */

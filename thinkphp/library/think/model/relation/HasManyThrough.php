@@ -48,7 +48,7 @@ class HasManyThrough extends Relation
     /**
      * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询條件
+     * @param \Closure $closure     闭包查詢條件
      * @return false|\PDOStatement|string|\think\Collection
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -61,7 +61,7 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -75,9 +75,9 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查询條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -87,7 +87,7 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 预载入关联查询
+     * 预载入关联查詢
      * @access public
      * @param array    $resultSet   数据集
      * @param string   $relation    当前关联名
@@ -99,7 +99,7 @@ class HasManyThrough extends Relation
     {}
 
     /**
-     * 预载入关联查询 返回模型对象
+     * 预载入关联查詢 返回模型对象
      * @access public
      * @param Model    $result      数据对象
      * @param string   $relation    当前关联名
@@ -121,7 +121,7 @@ class HasManyThrough extends Relation
     {}
 
     /**
-     * 创建关联统计子查询
+     * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计数据别名
@@ -133,7 +133,7 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 执行基础查询（进执行一次）
+     * 执行基础查詢（进执行一次）
      * @access protected
      * @return void
      */

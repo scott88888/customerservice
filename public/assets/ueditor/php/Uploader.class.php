@@ -51,7 +51,7 @@ class Uploader
 
     /**
      * 构造函数
-     * @param string $fileField 表單名称
+     * @param string $fileField 表單名稱
      * @param array $config 配置项
      * @param bool $base64 是否解析base64编码，可省略。若開啟，则$fileField代表的是base64编码的字符串表單名
      */

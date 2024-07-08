@@ -787,7 +787,7 @@ class Request
 
     /**
      * 取得request变量
-     * @param string       $name    数据名称
+     * @param string       $name    数据名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -808,7 +808,7 @@ class Request
     /**
      * 取得session数据
      * @access public
-     * @param string|array $name    数据名称
+     * @param string|array $name    数据名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -827,7 +827,7 @@ class Request
     /**
      * 取得cookie参数
      * @access public
-     * @param string|array $name    数据名称
+     * @param string|array $name    数据名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -860,7 +860,7 @@ class Request
     /**
      * 取得server参数
      * @access public
-     * @param string|array $name    数据名称
+     * @param string|array $name    数据名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -879,7 +879,7 @@ class Request
     /**
      * 取得上传的文件信息
      * @access public
-     * @param string|array $name 名称
+     * @param string|array $name 名稱
      * @return null|array|\think\File
      */
     public function file($name = '')
@@ -938,7 +938,7 @@ class Request
 
     /**
      * 取得环境变量
-     * @param string|array $name    数据名称
+     * @param string|array $name    数据名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -957,7 +957,7 @@ class Request
     /**
      * 设置或者取得当前的Header
      * @access public
-     * @param string|array $name    header名称
+     * @param string|array $name    header名稱
      * @param string       $default 默认值
      * @return string
      */
@@ -1121,7 +1121,7 @@ class Request
      */
     public function filterExp(&$value)
     {
-        // 过滤查询特殊字符
+        // 过滤查詢特殊字符
         if (is_string($value) && preg_match('/^(EXP|NEQ|GT|EGT|LT|ELT|OR|XOR|LIKE|NOTLIKE|NOT LIKE|NOT BETWEEN|NOTBETWEEN|BETWEEN|NOT EXISTS|NOTEXISTS|EXISTS|NOT NULL|NOTNULL|NULL|BETWEEN TIME|NOT BETWEEN TIME|NOTBETWEEN TIME|NOTIN|NOT IN|IN)$/i', $value)) {
             $value .= ' ';
         }
@@ -1441,7 +1441,7 @@ class Request
     /**
      * 取得当前请求的路由信息
      * @access public
-     * @param array $route 路由名称
+     * @param array $route 路由名稱
      * @return array
      */
     public function routeInfo($route = [])
@@ -1558,7 +1558,7 @@ class Request
     /**
      * 生成请求令牌
      * @access public
-     * @param string $name 令牌名称
+     * @param string $name 令牌名稱
      * @param mixed  $type 令牌生成方法
      * @return string
      */

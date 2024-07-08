@@ -647,7 +647,7 @@ class Event extends Controller
                     }
 
                 } else {
-                    //换了分组
+                    //换了分組
                     $qid = $service['qid'];
 
                     $res = Admins::table('wolive_queue')->where('qid', $qid)->update(['groupid' => $arr['groupid'], 'service_id' => 0, 'state' => 'normal']);

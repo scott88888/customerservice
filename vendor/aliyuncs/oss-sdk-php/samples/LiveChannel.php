@@ -12,7 +12,7 @@ if (is_null($ossClient)) exit(1);
 
 /**
     创建一个直播频道
-    频道的名称是test_rtmp_live。直播生成的m3u8文件叫做test.m3u8，该索引文件包含3片ts文件，每片ts文件的时长为5秒（这只是一个建议值，具体的时长取决于关键帧）。
+    频道的名稱是test_rtmp_live。直播生成的m3u8文件叫做test.m3u8，该索引文件包含3片ts文件，每片ts文件的时长为5秒（这只是一个建议值，具体的时长取决于关键帧）。
  */
 $config = new LiveChannelConfig(array(
             'description' => 'live channel test',

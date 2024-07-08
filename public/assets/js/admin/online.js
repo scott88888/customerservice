@@ -539,7 +539,7 @@ $(document).on('click','.editusergroup',function (){
         layer.open({
             skin: 'group',
             type: 1,
-            title: '设置分组',
+            title: '设置分組',
             area: ['300px', 'auto'],
             content: res,
             btn: ['确认', '取消'],

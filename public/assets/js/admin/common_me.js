@@ -10,7 +10,7 @@ function add(data,group) {
     value += '<tr><td>手机:</td><td><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></td></tr>';
     value += '<tr><td>信箱:</td><td><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></td></tr>';
     value += '<tr><td>网站id:</td><td><span> '+data.business_id+' </span><input type="text" name="id" class="hide" value=' + '"' + data.service_id + '"' + '></td></tr>';
-    value += '<tr><td>客服分组:</td><td><select id="classification" name="groupid" style="width: 200px;height: 38px;border-color: #ddd; ">';
+    value += '<tr><td>客服分組:</td><td><select id="classification" name="groupid" style="width: 200px;height: 38px;border-color: #ddd; ">';
     if(data.groupid == 0){
         value +='<option value="0" selected="selected">通用客服</option>';
     }
@@ -76,7 +76,7 @@ function showinfo(data,group) {
     value += '<div class="info_form_item"><label>手机</label><span><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>信箱</label><span><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>网站id</label><span><span> '+data.business_id+' </span><input type="text" name="id" class="hide" value=' + '"' + data.service_id + '"' + '></span></div>';
-    value += '<div class="info_form_item"><label>客服分组</label><span><select id="classification" name="groupid">';
+    value += '<div class="info_form_item"><label>客服分組</label><span><select id="classification" name="groupid">';
     if(data.groupid == 0){
         value +='<option value="0" selected="selected">通用客服</option>';
     }

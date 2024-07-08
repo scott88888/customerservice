@@ -28,7 +28,7 @@ class Option
     /**
      * 构造方法
      * @param string       $name        选项名
-     * @param string|array $shortcut    短名称,多个用|隔开或者使用数组
+     * @param string|array $shortcut    短名稱,多个用|隔开或者使用数组
      * @param int          $mode        选项类型(可选类型为 self::VALUE_*)
      * @param string       $description 描述
      * @param mixed        $default     默认值 (类型为 self::VALUE_REQUIRED 或者 self::VALUE_NONE 的时候必须为null)
@@ -80,7 +80,7 @@ class Option
     }
 
     /**
-     * 取得短名称
+     * 取得短名稱
      * @return string
      */
     public function getShortcut()

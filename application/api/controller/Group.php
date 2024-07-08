@@ -29,7 +29,7 @@ class Group extends Base
             ->field('id,groupname')
             ->where('business_id',$business_id)
             ->select();
-        $data = empty($data) ?[['id'=>0,'groupname'=>'通用分组']]:$data;
+        $data = empty($data) ?[['id'=>0,'groupname'=>'通用分組']]:$data;
         return json([
             'code'=>0,
             'data' => $data

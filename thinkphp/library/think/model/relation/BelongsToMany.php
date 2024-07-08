@@ -25,11 +25,11 @@ class BelongsToMany extends Relation
 {
     // 中间表表名
     protected $middle;
-    // 中间表模型名称
+    // 中间表模型名稱
     protected $pivotName;
     // 中间表模型对象
     protected $pivot;
-    // 中间表数据名称
+    // 中间表数据名稱
     protected $pivotDataName = 'pivot';
 
     /**
@@ -73,7 +73,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 设置中间表数据名称
+     * 设置中间表数据名稱
      * @access public
      * @param  string $name
      * @return $this
@@ -137,7 +137,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 创建关联查询Query对象
+     * 创建关联查詢Query对象
      * @return Query
      */
     protected function buildQuery()
@@ -145,7 +145,7 @@ class BelongsToMany extends Relation
         $foreignKey = $this->foreignKey;
         $localKey   = $this->localKey;
         $pk         = $this->parent->getPk();
-        // 关联查询
+        // 关联查詢
         $condition['pivot.' . $localKey] = $this->parent->$pk;
         return $this->belongsToManyQuery($foreignKey, $localKey, $condition);
     }
@@ -153,7 +153,7 @@ class BelongsToMany extends Relation
     /**
      * 延迟取得关联数据
      * @param string   $subRelation 子关联名
-     * @param \Closure $closure     闭包查询條件
+     * @param \Closure $closure     闭包查詢條件
      * @return false|\PDOStatement|string|\think\Collection
      */
     public function getRelation($subRelation = '', $closure = null)
@@ -229,7 +229,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个数
@@ -243,9 +243,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查询條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      * @throws Exception
@@ -256,7 +256,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 设置中间表的查询條件
+     * 设置中间表的查詢條件
      * @param      $field
      * @param null $op
      * @param null $condition
@@ -270,7 +270,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 预载入关联查询（数据集）
+     * 预载入关联查詢（数据集）
      * @access public
      * @param array    $resultSet   数据集
      * @param string   $relation    当前关联名
@@ -293,7 +293,7 @@ class BelongsToMany extends Relation
         }
 
         if (!empty($range)) {
-            // 查询关联数据
+            // 查詢关联数据
             $data = $this->eagerlyManyToMany([
                 'pivot.' . $localKey => [
                     'in',
@@ -314,7 +314,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 预载入关联查询（单个数据）
+     * 预载入关联查詢（单个数据）
      * @access public
      * @param Model    $result      数据对象
      * @param string   $relation    当前关联名
@@ -327,7 +327,7 @@ class BelongsToMany extends Relation
         $pk = $result->getPk();
         if (isset($result->$pk)) {
             $pk = $result->$pk;
-            // 查询管理数据
+            // 查詢管理数据
             $data = $this->eagerlyManyToMany(['pivot.' . $this->localKey => $pk], $relation, $subRelation);
 
             // 关联数据封装
@@ -357,7 +357,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 取得关联统计子查询
+     * 取得关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计数据别名
@@ -381,16 +381,16 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 多对多 关联模型预查询
+     * 多对多 关联模型预查詢
      * @access public
-     * @param array  $where       关联预查询條件
+     * @param array  $where       关联预查詢條件
      * @param string $relation    关联名
      * @param string $subRelation 子关联
      * @return array
      */
     protected function eagerlyManyToMany($where, $relation, $subRelation = '')
     {
-        // 预载入关联查询 支持嵌套预载入
+        // 预载入关联查詢 支持嵌套预载入
         $list = $this->belongsToManyQuery($this->foreignKey, $this->localKey, $where)->with($subRelation)->select();
 
         // 组装模型数据
@@ -413,16 +413,16 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * BELONGS TO MANY 关联查询
+     * BELONGS TO MANY 关联查詢
      * @access public
      * @param string $foreignKey 关联模型关联键
      * @param string $localKey   当前模型关联键
-     * @param array  $condition  关联查询條件
+     * @param array  $condition  关联查詢條件
      * @return Query
      */
     protected function belongsToManyQuery($foreignKey, $localKey, $condition = [])
     {
-        // 关联查询封装
+        // 关联查詢封装
         $tableName = $this->query->getTable();
         $table     = $this->pivot->getTable();
         $fields    = $this->getQueryFields($tableName);
@@ -627,7 +627,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 执行基础查询（进执行一次）
+     * 执行基础查詢（进执行一次）
      * @access protected
      * @return void
      */

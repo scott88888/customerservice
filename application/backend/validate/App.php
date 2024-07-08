@@ -30,9 +30,9 @@ class App extends Validate
      * @var [type]
      */
     protected $message = [
-        'business_name.require' => '请填写商户名称',
-        'business_name.length' => '商户名称为3~16个字符',
-        'business_name.alphaDash' => '商户名称只能是字母、数字、下划线 _ ',
+        'business_name.require' => '请填写商户名稱',
+        'business_name.length' => '商户名稱为3~16个字符',
+        'business_name.alphaDash' => '商户名稱只能是字母、数字、下划线 _ ',
         'password.require' => '请填写登入密碼',
         'password.length' => '密碼长度为1~16个字符',
         'max_count.require' =>'请填写数量',

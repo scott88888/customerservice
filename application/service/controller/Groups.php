@@ -51,7 +51,7 @@ class Groups extends Base
     {
         $id = $this->request->get('id');
         $check = Db::name('wolive_service')->where(['groupid'=>$id])->find();
-        if($check) $this->error('该分组下有客服，不能刪除');
+        if($check) $this->error('该分組下有客服，不能刪除');
         if (Group::destroy(['id' => $id])) $this->success('操作成功！');
         $this->error('操作失敗！');
     }

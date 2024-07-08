@@ -45,7 +45,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket,bucket名称非法
+     * put bucket,bucket名稱非法
      * InvalidBucketName
      * 400
      */
@@ -695,7 +695,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket,bucket名称带有-
+     * put bucket,bucket名稱带有-
      * 200
      */
     public function testPutBucket2()
@@ -713,7 +713,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket,bucket名称带有两个-
+     * put bucket,bucket名稱带有两个-
      * 200
      */
     public function testPutBucket3()
@@ -918,7 +918,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * get object，object名称包含特殊字符
+     * get object，object名稱包含特殊字符
      * 200
      */
     public function testGetObjectSpecialName() {

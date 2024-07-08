@@ -176,7 +176,7 @@ class Input
 
     /**
      * 新增一个短选项的值
-     * @param string $shortcut 短名称
+     * @param string $shortcut 短名稱
      * @param mixed  $value    值
      * @throws \RuntimeException
      */
@@ -342,7 +342,7 @@ class Input
     }
 
     /**
-     * 根据名称取得参数
+     * 根据名稱取得参数
      * @param string $name 参数名
      * @return mixed
      * @throws \InvalidArgumentException
@@ -393,7 +393,7 @@ class Input
 
     /**
      * 取得选项值
-     * @param string $name 选项名称
+     * @param string $name 选项名稱
      * @return mixed
      * @throws \InvalidArgumentException
      */

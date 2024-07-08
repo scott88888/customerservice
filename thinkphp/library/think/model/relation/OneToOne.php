@@ -46,9 +46,9 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 预载入关联查询（JOIN方式）
+     * 预载入关联查詢（JOIN方式）
      * @access public
-     * @param Query    $query       查询对象
+     * @param Query    $query       查詢对象
      * @param string   $relation    关联名
      * @param string   $subRelation 子关联
      * @param \Closure $closure     闭包條件
@@ -84,7 +84,7 @@ abstract class OneToOne extends Relation
         }
 
         if ($closure) {
-            // 执行闭包查询
+            // 执行闭包查詢
             call_user_func_array($closure, [ & $query]);
             // 使用withField指定取得关联的字段，如
             // $query->where(['id'=>1])->withField('id,name');
@@ -99,7 +99,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     *  预载入关联查询（数据集）
+     *  预载入关联查詢（数据集）
      * @param array    $resultSet
      * @param string   $relation
      * @param string   $subRelation
@@ -109,7 +109,7 @@ abstract class OneToOne extends Relation
     abstract protected function eagerlySet(&$resultSet, $relation, $subRelation, $closure);
 
     /**
-     * 预载入关联查询（数据）
+     * 预载入关联查詢（数据）
      * @param Model    $result
      * @param string   $relation
      * @param string   $subRelation
@@ -119,7 +119,7 @@ abstract class OneToOne extends Relation
     abstract protected function eagerlyOne(&$result, $relation, $subRelation, $closure);
 
     /**
-     * 预载入关联查询（数据集）
+     * 预载入关联查詢（数据集）
      * @access public
      * @param array    $resultSet   数据集
      * @param string   $relation    当前关联名
@@ -130,7 +130,7 @@ abstract class OneToOne extends Relation
     public function eagerlyResultSet(&$resultSet, $relation, $subRelation, $closure)
     {
         if (1 == $this->eagerlyType) {
-            // IN查询
+            // IN查詢
             $this->eagerlySet($resultSet, $relation, $subRelation, $closure);
         } else {
             // 模型关联组装
@@ -141,7 +141,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 预载入关联查询（数据）
+     * 预载入关联查詢（数据）
      * @access public
      * @param Model    $result      数据对象
      * @param string   $relation    当前关联名
@@ -152,7 +152,7 @@ abstract class OneToOne extends Relation
     public function eagerlyResult(&$result, $relation, $subRelation, $closure)
     {
         if (1 == $this->eagerlyType) {
-            // IN查询
+            // IN查詢
             $this->eagerlyOne($result, $relation, $subRelation, $closure);
         } else {
             // 模型关联组装
@@ -180,7 +180,7 @@ abstract class OneToOne extends Relation
     /**
      * 设置预载入方式
      * @access public
-     * @param integer $type 预载入方式 0 JOIN查询 1 IN查询
+     * @param integer $type 预载入方式 0 JOIN查詢 1 IN查詢
      * @return $this
      */
     public function setEagerlyType($type)
@@ -236,9 +236,9 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 一对一 关联模型预查询拼装
+     * 一对一 关联模型预查詢拼装
      * @access public
-     * @param string $model    模型名称
+     * @param string $model    模型名稱
      * @param string $relation 关联名
      * @param Model  $result   模型对象实例
      * @return void
@@ -292,10 +292,10 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 一对一 关联模型预查询（IN方式）
+     * 一对一 关联模型预查詢（IN方式）
      * @access public
      * @param object        $model       关联模型对象
-     * @param array         $where       关联预查询條件
+     * @param array         $where       关联预查詢條件
      * @param string        $key         关联键名
      * @param string        $relation    关联名
      * @param string        $subRelation 子关联
@@ -306,7 +306,7 @@ abstract class OneToOne extends Relation
     {
         $this->baseQuery = true;
 
-        // 预载入关联查询 支持嵌套预载入
+        // 预载入关联查詢 支持嵌套预载入
         if ($closure) {
             call_user_func_array($closure, [ & $model]);
             if ($field = $model->getOptions('with_field')) {
@@ -324,7 +324,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 创建关联统计子查询
+     * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计数据别名

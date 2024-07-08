@@ -126,7 +126,7 @@ class Login extends Controller
         $result = $this->validate($post, 'Login');
         if ($result !== true) $this->error($result);
         $business = Business::get(['business_name' => $post['user_name']]);
-        if ($business) $this->error('商户名称已存在');
+        if ($business) $this->error('商户名稱已存在');
         $add = array(
             'business_name' => $post['user_name'],
             'max_count' => "3",

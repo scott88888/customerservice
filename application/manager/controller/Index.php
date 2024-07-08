@@ -192,7 +192,7 @@ Class Index extends Base
  //            }
  //            $business = Business::get(['admin_id'=>$post['admin_id'],'business_name'=>$post['business_name'],'id'=>['<>',$post['id'],'is_delete'=>0]]);
  //            if ($business) {
- //                return ['code'=>1,'msg'=>'客服系统名称已存在'];
+ //                return ['code'=>1,'msg'=>'客服系统名稱已存在'];
  //            }
  //            $res = Business::editBusiness($post);
  //            if ($res !== false) {

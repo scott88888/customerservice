@@ -20,7 +20,7 @@ use think\exception\ClassNotFoundException;
  * @method void log($msg) static 记录一般日志
  * @method void error($msg) static 记录错误日志
  * @method void info($msg) static 记录一般信息日志
- * @method void sql($msg) static 记录 SQL 查询日志
+ * @method void sql($msg) static 记录 SQL 查詢日志
  * @method void notice($msg) static 记录提示日志
  * @method void alert($msg) static 记录报警日志
  */

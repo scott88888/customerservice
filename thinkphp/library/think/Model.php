@@ -33,19 +33,19 @@ use think\model\relation\MorphTo;
  */
 abstract class Model implements \JsonSerializable, \ArrayAccess
 {
-    // 数据库查询对象池
+    // 数据库查詢对象池
     protected static $links = [];
     // 数据库配置
     protected $connection = [];
     // 父关联模型对象
     protected $parent;
-    // 数据库查询对象
+    // 数据库查詢对象
     protected $query;
-    // 当前模型名称
+    // 当前模型名稱
     protected $name;
-    // 数据表名称
+    // 数据表名稱
     protected $table;
-    // 当前类名称
+    // 当前类名稱
     protected $class;
     // 回调事件
     private static $event = [];
@@ -102,11 +102,11 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     protected $updateWhere;
     // 驗證失敗是否抛出异常
     protected $failException = false;
-    // 全局查询范围
+    // 全局查詢范围
     protected $useGlobalScope = true;
     // 是否采用批量驗證
     protected $batchValidate = false;
-    // 查询数据集对象
+    // 查詢数据集对象
     protected $resultSetType;
     // 关联自动写入
     protected $relationWrite;
@@ -194,7 +194,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 创建模型的查询对象
+     * 创建模型的查詢对象
      * @access protected
      * @return Query
      */
@@ -212,7 +212,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
         }
 
         $con = Db::connect($connection);
-        // 设置当前模型 确保查询返回模型对象
+        // 设置当前模型 确保查詢返回模型对象
         $queryClass = $this->query ?: $con->getConfig('query');
         $query      = new $queryClass($con, $this);
 
@@ -248,9 +248,9 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 取得当前模型的查询对象
+     * 取得当前模型的查詢对象
      * @access public
-     * @param bool      $buildNewQuery  创建新的查询对象
+     * @param bool      $buildNewQuery  创建新的查詢对象
      * @return Query
      */
     public function getQuery($buildNewQuery = false)
@@ -258,7 +258,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
         if ($buildNewQuery) {
             return $this->buildQuery();
         } elseif (!isset(self::$links[$this->class])) {
-            // 创建模型查询对象
+            // 创建模型查詢对象
             self::$links[$this->class] = $this->buildQuery();
         }
 
@@ -266,10 +266,10 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 取得当前模型的数据库查询对象
+     * 取得当前模型的数据库查詢对象
      * @access public
-     * @param bool $useBaseQuery 是否调用全局查询范围
-     * @param bool $buildNewQuery 创建新的查询对象
+     * @param bool $useBaseQuery 是否调用全局查詢范围
+     * @param bool $buildNewQuery 创建新的查詢对象
      * @return Query
      */
     public function db($useBaseQuery = true, $buildNewQuery = true)
@@ -281,7 +281,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             call_user_func_array([$this, 'base'], [ & $query]);
         }
 
-        // 返回当前模型的数据库查询对象
+        // 返回当前模型的数据库查詢对象
         return $query;
     }
 
@@ -582,7 +582,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 取得器 取得数据对象的值
      * @access public
-     * @param string $name 名称
+     * @param string $name 名稱
      * @return mixed
      * @throws InvalidArgumentException
      */
@@ -1001,7 +1001,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 判断一个字段名是否为主键字段
      * @access public
-     * @param string $key 名称
+     * @param string $key 名稱
      * @return bool
      */
     protected function isPk($key)
@@ -1687,8 +1687,8 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 查找单條记录
      * @access public
-     * @param mixed        $data  主键值或者查询條件（闭包）
-     * @param array|string $with  关联预查询
+     * @param mixed        $data  主键值或者查詢條件（闭包）
+     * @param array|string $with  关联预查詢
      * @param bool         $cache 是否缓存
      * @return static|null
      * @throws exception\DbException
@@ -1710,8 +1710,8 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 查找所有记录
      * @access public
-     * @param mixed        $data  主键列表或者查询條件（闭包）
-     * @param array|string $with  关联预查询
+     * @param mixed        $data  主键列表或者查詢條件（闭包）
+     * @param array|string $with  关联预查詢
      * @param bool         $cache 是否缓存
      * @return static[]|false
      * @throws exception\DbException
@@ -1727,10 +1727,10 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 分析查询表达式
+     * 分析查詢表达式
      * @access public
-     * @param mixed  $data  主键列表或者查询條件（闭包）
-     * @param string $with  关联预查询
+     * @param mixed  $data  主键列表或者查詢條件（闭包）
+     * @param string $with  关联预查詢
      * @param bool   $cache 是否缓存
      * @return Query
      */
@@ -1753,7 +1753,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 刪除记录
      * @access public
-     * @param mixed $data 主键列表 支持闭包查询條件
+     * @param mixed $data 主键列表 支持闭包查詢條件
      * @return integer 成功刪除的记录数
      */
     public static function destroy($data)
@@ -1783,7 +1783,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 命名范围
      * @access public
-     * @param string|array|\Closure $name 命名范围名称 逗号分隔
+     * @param string|array|\Closure $name 命名范围名稱 逗号分隔
      * @internal  mixed                 ...$params 参数调用
      * @return Query
      */
@@ -1811,8 +1811,8 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 设置是否使用全局查询范围
-     * @param bool $use 是否启用全局查询范围
+     * 设置是否使用全局查詢范围
+     * @param bool $use 是否启用全局查詢范围
      * @access public
      * @return Query
      */
@@ -1823,7 +1823,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param string  $relation 关联方法名
      * @param mixed   $operator 比较操作符
@@ -1841,10 +1841,10 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 根据关联條件查询当前模型
+     * 根据关联條件查詢当前模型
      * @access public
      * @param  string $relation 关联方法名
-     * @param  mixed  $where    查询條件（数组或者闭包）
+     * @param  mixed  $where    查詢條件（数组或者闭包）
      * @param  mixed  $fields   字段
      * @return Relation|Query
      */
@@ -1871,7 +1871,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 查询当前模型的关联数据
+     * 查詢当前模型的关联数据
      * @access public
      * @param string|array $relations 关联名
      * @return $this
@@ -1886,7 +1886,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             $subRelation = '';
             $closure     = null;
             if ($relation instanceof \Closure) {
-                // 支持闭包查询过滤关联條件
+                // 支持闭包查詢过滤关联條件
                 $closure  = $relation;
                 $relation = $key;
             }
@@ -1903,7 +1903,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 预载入关联查询 返回数据集
+     * 预载入关联查詢 返回数据集
      * @access public
      * @param array  $resultSet 数据集
      * @param string $relation  关联名
@@ -1931,7 +1931,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     }
 
     /**
-     * 预载入关联查询 返回模型对象
+     * 预载入关联查詢 返回模型对象
      * @access public
      * @param Model  $result   数据对象
      * @param string $relation 关联名
@@ -2210,7 +2210,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 修改器 设置数据对象的值
      * @access public
-     * @param string $name  名称
+     * @param string $name  名稱
      * @param mixed  $value 值
      * @return void
      */
@@ -2222,7 +2222,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 取得器 取得数据对象的值
      * @access public
-     * @param string $name 名称
+     * @param string $name 名稱
      * @return mixed
      */
     public function __get($name)
@@ -2233,7 +2233,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 检测数据对象的值
      * @access public
-     * @param string $name 名称
+     * @param string $name 名稱
      * @return boolean
      */
     public function __isset($name)
@@ -2254,7 +2254,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
     /**
      * 销毁数据对象的值
      * @access public
-     * @param string $name 名称
+     * @param string $name 名稱
      * @return void
      */
     public function __unset($name)

@@ -158,7 +158,7 @@ layui.define(['laypage', 'form'], function (exports) {
             },
             /**
              * 绘制图标列表
-             * @param text 模糊查询关键字
+             * @param text 模糊查詢关键字
              * @returns {string}
              */
             createList: function (text) {
@@ -178,7 +178,7 @@ layui.define(['laypage', 'form'], function (exports) {
                 for (var i = 0; i < l; i++) {
                     var obj = d[i];
 
-                    // 判断是否模糊查询
+                    // 判断是否模糊查詢
                     if (text && obj.indexOf(text) === -1) {
                         continue;
                     }
@@ -201,7 +201,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     icons.push(icon);
                 }
 
-                // 查询出图标后再分頁
+                // 查詢出图标后再分頁
                 l = icons.length;
                 _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1);
                 for (var i = 0; i < _pages; i++) {
@@ -368,7 +368,7 @@ layui.define(['laypage', 'form'], function (exports) {
     /**
      * 选中图标
      * @param filter lay-filter
-     * @param iconName 图标名称，自动识别fontClass/unicode
+     * @param iconName 图标名稱，自动识别fontClass/unicode
      */
     IconPicker.prototype.checkIcon = function (filter, iconName){
         var el = $('*[lay-filter='+ filter +']'),

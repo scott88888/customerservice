@@ -13,7 +13,7 @@ $auth = new Auth($accessKey, $secretKey);
 //要转码的文件所在的空间和文件名。
 $key = 'qiniu.mp4';
 
-//转码是使用的队列名称。 https://portal.qiniu.com/mps/pipeline
+//转码是使用的队列名稱。 https://portal.qiniu.com/mps/pipeline
 $pipeline = 'sdktest';
 
 //转码完成后通知到你的业务服务器。
@@ -36,7 +36,7 @@ if ($err != null) {
     echo "PersistentFop Id: $id\n";
 }
 
-//查询转码的进度和狀態
+//查詢转码的进度和狀態
 list($ret, $err) = $pfop->status($id);
 echo "\n====> pfop avthumb status: \n";
 if ($err != null) {

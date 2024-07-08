@@ -366,11 +366,11 @@ class Loader
     }
 
     /**
-     * 导入所需的类库 同 Java 的 Import 本函数有缓存功能
+     * 匯入所需的类库 同 Java 的 Import 本函数有缓存功能
      * @access public
      * @param  string $class   类库命名空间字符串
      * @param  string $baseUrl 起始路径
-     * @param  string $ext     导入的文件扩展名
+     * @param  string $ext     匯入的文件扩展名
      * @return bool
      */
     public static function import($class, $baseUrl = '', $ext = EXT)
@@ -402,7 +402,7 @@ class Loader
             $baseUrl .= DS;
         }
 
-        // 如果类存在则导入类库文件
+        // 如果类存在则匯入类库文件
         if (is_array($baseUrl)) {
             foreach ($baseUrl as $path) {
                 if (is_file($filename = $path . DS . $class . $ext)) {
@@ -429,8 +429,8 @@ class Loader
     /**
      * 实例化（分层）模型
      * @access public
-     * @param  string $name         Model名称
-     * @param  string $layer        业务层名称
+     * @param  string $name         Model名稱
+     * @param  string $layer        业务层名稱
      * @param  bool   $appendSuffix 是否新增类名后缀
      * @param  string $common       公共模块名
      * @return object
@@ -465,9 +465,9 @@ class Loader
      * 实例化（分层）控制器 格式：[模块名/]控制器名
      * @access public
      * @param  string $name         资源地址
-     * @param  string $layer        控制层名称
+     * @param  string $layer        控制层名稱
      * @param  bool   $appendSuffix 是否新增类名后缀
-     * @param  string $empty        空控制器名称
+     * @param  string $empty        空控制器名稱
      * @return object
      * @throws ClassNotFoundException
      */
@@ -494,7 +494,7 @@ class Loader
      * 实例化驗證类 格式：[模块名/]驗證器名
      * @access public
      * @param  string $name         资源地址
-     * @param  string $layer        驗證层名称
+     * @param  string $layer        驗證层名稱
      * @param  bool   $appendSuffix 是否新增类名后缀
      * @param  string $common       公共模块名
      * @return object|false
@@ -534,7 +534,7 @@ class Loader
      * 解析模块和类名
      * @access protected
      * @param  string $name         资源地址
-     * @param  string $layer        驗證层名称
+     * @param  string $layer        驗證层名稱
      * @param  bool   $appendSuffix 是否新增类名后缀
      * @return array
      */
@@ -573,7 +573,7 @@ class Loader
      * @access public
      * @param  string       $url          调用地址
      * @param  string|array $vars         调用参数 支持字符串和数组
-     * @param  string       $layer        要调用的控制层名称
+     * @param  string       $layer        要调用的控制层名稱
      * @param  bool         $appendSuffix 是否新增类名后缀
      * @return mixed
      */

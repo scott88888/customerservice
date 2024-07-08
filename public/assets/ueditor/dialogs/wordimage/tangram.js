@@ -548,7 +548,7 @@ baidu.lang.toArray = function (source) {
  * @name baidu.swf.getMovie
  * @function
  * @grammar baidu.swf.getMovie(name)
- * @param {string} name flash对象的名称
+ * @param {string} name flash对象的名稱
  * @see baidu.swf.create
  * @meta standard
  * @returns {HTMLElement} flash对象的实例

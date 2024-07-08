@@ -106,7 +106,7 @@ class Image
 
     /**
      * 保存图像
-     * @param string      $pathname  图像保存路径名称
+     * @param string      $pathname  图像保存路径名稱
      * @param null|string $type      图像类型
      * @param int         $quality   图像质量
      * @param bool        $interlace 是否对JPEG类型图像设置隔行扫描

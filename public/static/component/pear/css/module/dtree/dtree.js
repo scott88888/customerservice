@@ -31,7 +31,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         $BODY = $("body"),				//body选择器
         $WIN = $(window),				//window窗口
         $DOC = $(document),				//当前文档
-        MOD_NAME = "dtree",				//模块名称
+        MOD_NAME = "dtree",				//模块名稱
         VERSION = "v2.5.6",				//版本
         OPTIONS = {},					//全局属性配置
         DTrees = {};				    //当前被实例化的树的集合
@@ -89,7 +89,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         CBOX = "-checkbox",			//自定义样式复选框样式后缀
         CHS = "-choose";			//自定义样式复选框选中样式后缀
 
-    // 树自定义操作事件名称集合	绑定dtree-click的事件
+    // 树自定义操作事件名稱集合	绑定dtree-click的事件
     var eventName = {
         checkNodeClick: "checkNodeClick",				//点击复选框
         itemNodeClick: "itemNodeClick"					//点击子节点div
@@ -113,7 +113,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         unCheckAll: "unCheckAll",						//menubar全不选
         invertAll: "invertAll",							//menubar反选
         remove: "remove",								//menubar刪除选中节点
-        searchNode: "searchNode"						//menubar查询节点
+        searchNode: "searchNode"						//menubar查詢节点
     };
 
     // 树的公共事件
@@ -242,13 +242,13 @@ layui.define(['jquery','layer','form'], function(exports) {
             statusName: "code",		//返回标识
             statusCode: 200,		//返回码
             message: "message",		//返回信息
-            rootName: "data",		//根节点名称
+            rootName: "data",		//根节点名稱
             treeId: "id",			//节点ID
             parentId: "parentId",	//父节点ID
-            title: "title",			//节点名称
+            title: "title",			//节点名稱
             ficonClass: "ficonClass", //自定义一级图标
             iconClass: "iconClass",	  //自定义二级图标
-            childName: "children",	//子节点名称
+            childName: "children",	//子节点名稱
             last: "last",		//是否最后一级节点
 //			level: "level",			//层级
             spread: "spread",		//展开
@@ -259,7 +259,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             type: "type",			//复选框标记
             basicData: "basicData"	//表示使用者自定义需要存储在树节点中的数据
         };
-        this.defaultRequest = {  // 树的默认发起请求参数格式，最后会将value作为参数名称传递
+        this.defaultRequest = {  // 树的默认发起请求参数格式，最后会将value作为参数名稱传递
             nodeId: "nodeId",		//节点ID
             parentId: "parentId",	//父节点ID
             context: "context",	//节点内容
@@ -706,7 +706,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         this.selectTreeDiv = this.obj[0].id + "_tree_div";		// 上级DIV节点
         this.selectCardDiv = this.obj[0].id + "_select_card_div";	// 上级layui卡片节点
         this.selectDiv = this.obj[0].id + "_select_div";		// 模拟的select节点
-        this.selectTipsName = this.obj[0].id + "_select_input"; // select的提示输入框名称
+        this.selectTipsName = this.obj[0].id + "_select_input"; // select的提示输入框名稱
         this.selectTips = this.options.selectTips || "请选择";			// 输入框的提示语
         this.selectInputName = this.options.selectInputName || {nodeId: this.obj[0].id + "_select_nodeId"};  // select表單中的元素
         
@@ -793,7 +793,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         	if(typeof param === 'undefined') { // 不传，则为当前树中记录的ID
             	param = _this.getNowParam();
             }
-            if(typeof param === 'string') { // 传递ID，则查询树节点ID对应的值
+            if(typeof param === 'string') { // 传递ID，则查詢树节点ID对应的值
             	param = _this.getParam(param);
             }
             
@@ -1435,7 +1435,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
                 }
 
-                // 判断是否存在错误数据，并是否打印错误数据
+                // 判断是否存在错误数据，并是否列印错误数据
                 _this.msgErrData();
                 
                 // 设置复选框的初始值
@@ -1518,7 +1518,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                             _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
                         }
 
-                        // 判断是否存在错误数据，并是否打印错误数据
+                        // 判断是否存在错误数据，并是否列印错误数据
                         _this.msgErrData();
                         
                         // 设置复选框的初始值
@@ -1532,7 +1532,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                         // 加载完毕后的回调
                         _this.done(result, _this.obj);
                     } else {
-                        // 如果打印不出任何信息说明是在这里，用了错误的数据格式， 或返回码不正确
+                        // 如果列印不出任何信息说明是在这里，用了错误的数据格式， 或返回码不正确
                         if (_this.dataStyle == 'layuiStyle'){
                             _this.obj.html(_this.getNoneDom().errText(result[_this.response.message]));
                             _this.error(null, code, result[_this.response.message]);
@@ -1591,7 +1591,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
             }
 
-            // 判断是否存在错误数据，并是否打印错误数据
+            // 判断是否存在错误数据，并是否列印错误数据
             _this.msgErrData();
             
             // 保存树副本
@@ -1644,7 +1644,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                             _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
                         }
 
-                        // 判断是否存在错误数据，并是否打印错误数据
+                        // 判断是否存在错误数据，并是否列印错误数据
                         _this.msgErrData();
 
                         $ul.addClass(NAV_SHOW);
@@ -1742,7 +1742,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 判断在数据加载时是否存在错误数据，并是否打印错误数据
+    // 判断在数据加载时是否存在错误数据，并是否列印错误数据
     DTree.prototype.msgErrData = function() {
         var _this = this;
         if(_this.errData.length > 0 && _this.errDataShow) {
@@ -3181,7 +3181,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 gg = (_this.checkbar) ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.remove+"' title='刪除选中节点'><i class='"+_this.usefontStyle.menubar.remove+"'></i></button>" : "";
                 break;
             case defaultMenu.searchNode:
-                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.searchNode+"' title='查询节点'><i class='"+_this.usefontStyle.menubar.search+"'></i></button>";
+                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.searchNode+"' title='查詢节点'><i class='"+_this.usefontStyle.menubar.search+"'></i></button>";
                 break;
         }
         return gg;
@@ -3224,7 +3224,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.toolbarMenu[defaultMenu.remove] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.remove, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.remove, "刪除选中");
                 break;
             case defaultMenu.searchNode:
-                _this.toolbarMenu[defaultMenu.searchNode] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.searchNode, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.searchNode, "查询");
+                _this.toolbarMenu[defaultMenu.searchNode] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.searchNode, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.searchNode, "查詢");
                 break;
         }
     };
@@ -3308,19 +3308,19 @@ layui.define(['jquery','layer','form'], function(exports) {
             remove: function(){// 刪除选中节点
             	_this.removeCheckedNode();
             },
-            searchNode: function(){//模糊查询该值，展开该值节点
+            searchNode: function(){//模糊查詢该值，展开该值节点
                 layer.prompt({
                     formType: 0,
                     value: "",
-                    title: '查询节点'
+                    title: '查詢节点'
                 }, function(value, index1, elem){
                     if (value) {
                         var flag = _this.searchNode(value);
                         if (!flag) {
-                            layer.msg("该名称节点不存在！", {icon:5});
+                            layer.msg("该名稱节点不存在！", {icon:5});
                         }
                     } else {
-                        layer.msg("未指定查询节点名称", {icon:5});
+                        layer.msg("未指定查詢节点名稱", {icon:5});
                     }
                     layer.close(index1);
                 });
@@ -3392,7 +3392,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    //模糊查询该值，展开该值节点
+    //模糊查詢该值，展开该值节点
     DTree.prototype.searchNode = function(value){
         var _this = this;
         var b = false;

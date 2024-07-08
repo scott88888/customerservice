@@ -80,7 +80,7 @@ return [
     'url_html_suffix'        => 'html',
     // URL普通方式参数 用于自动生成
     'url_common_param'       => false,
-    // URL参数方式 0 按名称成对解析 1 按顺序解析
+    // URL参数方式 0 按名稱成对解析 1 按顺序解析
     'url_param_type'         => 0,
     // 是否開啟路由
     'url_route_on'           => true,
@@ -218,7 +218,7 @@ return [
     // | Cookie设置
     // +----------------------------------------------------------------------
     'cookie'                 => [
-        // cookie 名称前缀
+        // cookie 名稱前缀
         'prefix'    => '',
         // cookie 保存时间
         'expire'    => 0,

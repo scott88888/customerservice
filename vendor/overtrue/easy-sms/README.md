@@ -201,7 +201,7 @@ $easySms->send(13188888888, [
 ```php
 $e->getResults();               // 返回所有 API 的结果，结构同上
 $e->getExceptions();            // 返回所有调用异常列表
-$e->getException($gateway);     // 返回指定网关名称的异常对象
+$e->getException($gateway);     // 返回指定网关名稱的异常对象
 $e->getLastException();         // 取得最后一个失敗的异常对象 
 ```
 

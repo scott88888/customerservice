@@ -45,8 +45,8 @@ class Template
         'taglib_begin'       => '{', // 标签库标签开始标记
         'taglib_end'         => '}', // 标签库标签结束标记
         'taglib_load'        => true, // 是否使用内置标签库之外的其它标签库，默认自动检测
-        'taglib_build_in'    => 'cx', // 内置标签库名称(标签使用不必指定标签库名称),以逗号分隔 注意解析顺序
-        'taglib_pre_load'    => '', // 需要额外加载的标签库(须指定标签库名称)，多个以逗号分隔
+        'taglib_build_in'    => 'cx', // 内置标签库名稱(标签使用不必指定标签库名稱),以逗号分隔 注意解析顺序
+        'taglib_pre_load'    => '', // 需要额外加载的标签库(须指定标签库名稱)，多个以逗号分隔
         'display_cache'      => false, // 模板渲染缓存
         'cache_id'           => '', // 模板缓存ID
         'tpl_replace_string' => [],
@@ -224,7 +224,7 @@ class Template
     /**
      * 设置布局
      * @access public
-     * @param mixed     $name 布局模板名称 false 则關閉布局
+     * @param mixed     $name 布局模板名稱 false 则關閉布局
      * @param string    $replace 布局模板内容替换标识
      * @return Template
      */
@@ -236,7 +236,7 @@ class Template
         } else {
             // 開啟布局
             $this->config['layout_on'] = true;
-            // 名称必须为字符串
+            // 名稱必须为字符串
             if (is_string($name)) {
                 $this->config['layout_name'] = $name;
             }
@@ -384,7 +384,7 @@ class Template
         if ($this->config['taglib_load']) {
             $tagLibs = $this->getIncludeTagLib($content);
             if (!empty($tagLibs)) {
-                // 对导入的TagLib进行解析
+                // 对匯入的TagLib进行解析
                 foreach ($tagLibs as $tagLibName) {
                     $this->parseTagLib($tagLibName, $content);
                 }
@@ -397,7 +397,7 @@ class Template
                 $this->parseTagLib($tag, $content);
             }
         }
-        // 内置标签库 无需使用taglib标签导入就可以使用 并且不需使用标签库XML前缀
+        // 内置标签库 无需使用taglib标签匯入就可以使用 并且不需使用标签库XML前缀
         $tagLibs = explode(',', $this->config['taglib_build_in']);
         foreach ($tagLibs as $tag) {
             $this->parseTagLib($tag, $content, true);
@@ -900,7 +900,7 @@ class Template
             $varStr = $_varFunctionList[$_key];
         } else {
             $varArray = explode('|', $varStr);
-            // 取得变量名称
+            // 取得变量名稱
             $name = array_shift($varArray);
             // 对变量使用函数
             $length = count($varArray);

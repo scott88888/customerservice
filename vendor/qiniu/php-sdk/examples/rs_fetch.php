@@ -14,7 +14,7 @@ $bucketManager = new BucketManager($auth);
 $url = 'http://devtools.qiniu.com/qiniu.png';
 $key = time() . '.png';
 
-// 指定抓取的文件保存名称
+// 指定抓取的文件保存名稱
 list($ret, $err) = $bucketManager->fetch($url, $bucket, $key);
 echo "=====> fetch $url to bucket: $bucket  key: $key\n";
 if ($err !== null) {

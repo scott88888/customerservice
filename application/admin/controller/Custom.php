@@ -74,7 +74,7 @@ class Custom extends Base
     }
 
     /**
-     * 編輯分组
+     * 編輯分組
      * @return \think\response\Json
      * @throws \think\exception\DbException
      */
@@ -85,16 +85,16 @@ class Custom extends Base
             $post['business_id'] = $this->login['business_id'];
             $post['service_id'] = $this->login['service_id'];
             if (empty($post['group_name'])) {
-                return json(['code'=>1,'msg'=>'分组名不能为空']);
+                return json(['code'=>1,'msg'=>'分組名不能为空']);
             }
             if(mb_strlen($post['group_name'],'UTF8') > 20){
-                $data = ['code'=>1,'msg'=>'分组名不能多于12个字符！'];
+                $data = ['code'=>1,'msg'=>'分組名不能多于12个字符！'];
                 return json($data);
             }
             if (isset($post['id'])) {
                 $group = Vgroup::get($post['id']);
                 if (empty($group)) {
-                    return json(['code'=>1,'msg'=>'该分组不存在']);
+                    return json(['code'=>1,'msg'=>'该分組不存在']);
                 }
                 $where=$post;
                 $where['id']=['<>',$post['id']];
@@ -102,14 +102,14 @@ class Custom extends Base
                 $res = Vgroup::get($where);
 
                 if ($res['group_name'] == $post['group_name']) {
-                    return json(['code'=>1,'msg'=>'该组名称已存在']);
+                    return json(['code'=>1,'msg'=>'该组名稱已存在']);
                 }
                 $data = $group->save($post);
                 return json(['code'=>0,'msg'=>'編輯成功','data'=>$data]);
             } else {
                 $group = Vgroup::get($post);
                 if ($group) {
-                    return json(['code'=>1,'msg'=>'该组名称已存在']);
+                    return json(['code'=>1,'msg'=>'该组名稱已存在']);
                 }
                 $data = Vgroup::create($post);
                 $sdata = ['code'=>0,'msg'=>'新增成功','data'=>$data->getData()];
@@ -119,7 +119,7 @@ class Custom extends Base
     }
 
     /**
-     * 刪除分组
+     * 刪除分組
      * @return \think\response\Json
      * @throws \think\exception\DbException
      */
@@ -131,7 +131,7 @@ class Custom extends Base
             $post['service_id'] = $this->login['service_id'];
             $group = Vgroup::get($post['id']);
             if (empty($group)) {
-                return json(['code'=>1,'msg'=>'该分组不存在']);
+                return json(['code'=>1,'msg'=>'该分組不存在']);
             }
             $res = $group->where('id',$post['id'])->delete();
             $post['group_id'] = $post['id'];
@@ -162,7 +162,7 @@ class Custom extends Base
     }
 
     /**
-     * 查找客服系统分组
+     * 查找客服系统分組
      * @return \think\response\Json
      * @throws \think\exception\DbException
      */
@@ -200,7 +200,7 @@ class Custom extends Base
     }
 
     /**
-     * 查找分组下的客户
+     * 查找分組下的客户
      * @return \think\response\Json
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
@@ -301,7 +301,7 @@ class Custom extends Base
     }
 
     /**
-     * 批量操作客户分组
+     * 批量操作客户分組
      *  group_id[]:8
      *  group_id[]:7
      *  vid[]:1
@@ -366,12 +366,12 @@ class Custom extends Base
             $vids = $this->request->post('vid/a',[]);
             $gid = $this->request->post('group_id',0);
             if (empty($vids) || empty($gid)) {
-                return json(['code'=>1,'msg'=>'请选择分组或客户']);
+                return json(['code'=>1,'msg'=>'请选择分組或客户']);
             }
             if ($gid != -1) {
                 $group = Vgroup::get($gid);
                 if (empty($group)) {
-                    return json(['code'=>1,'msg'=>'分组不存在']);
+                    return json(['code'=>1,'msg'=>'分組不存在']);
                 }
                 $vgmodel = new VisiterGroup();
                 $visiter = $vgmodel->where('business_id',$this->login['business_id'])
@@ -424,7 +424,7 @@ class Custom extends Base
             $vids = $this->request->post('vid/a', []);
             $gid = $this->request->post('group_id', 0);
             if (empty($gid)) {
-                return json($data = ['code'=>1,'msg'=>'请选择分组']);
+                return json($data = ['code'=>1,'msg'=>'请选择分組']);
             } elseif ($gid == -1) {
                 $result = Queue::alias('q')->where('q.business_id', $this->login['business_id'])
                     ->join('wolive_visiter v','q.visiter_id = v.visiter_id','left')
@@ -451,7 +451,7 @@ class Custom extends Base
     }
 
     /**
-     * 查找某个分组下某客户
+     * 查找某个分組下某客户
      * @return \think\response\Json
      * @throws \think\exception\DbException
      */

@@ -27,9 +27,9 @@ class Vgroups extends Base
     {
         if ($this->request->isAjax()) {
             $post = $this->request->post();
-            if(mb_strlen($post['group_name'],'UTF8') > 20) $this->error('分组名不能多于12个字符');
+            if(mb_strlen($post['group_name'],'UTF8') > 20) $this->error('分組名不能多于12个字符');
             $group = Vgroup::get(['group_name'=>$post['group_name']]);
-            if ($group) $this->error('该组名称已存在');
+            if ($group) $this->error('该组名稱已存在');
             $res = Vgroup::where("id", $post['id'])->field(true)->update($post);
             if ($res) $this->success('修改成功');
             $this->error('修改失敗！');
@@ -51,9 +51,9 @@ class Vgroups extends Base
             $post['business_id'] = $_SESSION['Msg']['business_id'];
             $post['service_id'] = $_SESSION['Msg']['service_id'];
             $post['create_time'] = date('Y-m-d H:i:s');
-            if(mb_strlen($post['group_name'],'UTF8') > 20) $this->error('分组名不能多于12个字符');
+            if(mb_strlen($post['group_name'],'UTF8') > 20) $this->error('分組名不能多于12个字符');
             $group = Vgroup::get(['group_name'=>$post['group_name']]);
-            if ($group) $this->error('该组名称已存在');
+            if ($group) $this->error('该组名稱已存在');
             $res = Vgroup::insert($post);
             if ($res) $this->success('新增成功');
             $this->error('新增失敗！');
@@ -65,7 +65,7 @@ class Vgroups extends Base
     {
         $id = $this->request->get('id');
         $check = Db::name('wolive_queue')->where(['groupid'=>$id])->find();
-        if($check) $this->error('该分组下有使用者，不能刪除');
+        if($check) $this->error('该分組下有使用者，不能刪除');
         if (Vgroup::destroy(['id' => $id])) $this->success('操作成功！');
         $this->error('操作失敗！');
     }

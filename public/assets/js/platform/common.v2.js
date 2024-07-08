@@ -271,7 +271,7 @@ $(document).on('click', '#file_select_modal .file-more', function () {
     loading_block.show();
     more_btn.hide();
 
-    //分组的id
+    //分組的id
     var group_id = file_app.group_list[file_app.selected].id;
 
     $.ajax({

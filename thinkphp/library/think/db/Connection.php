@@ -50,7 +50,7 @@ abstract class Connection
     protected $linkRead;
     protected $linkWrite;
 
-    // 查询结果类型
+    // 查詢结果类型
     protected $fetchType = PDO::FETCH_ASSOC;
     // 字段属性大小写
     protected $attrCase = PDO::CASE_LOWER;
@@ -137,7 +137,7 @@ abstract class Connection
     }
 
     /**
-     * 取得新的查询对象
+     * 取得新的查詢对象
      * @access protected
      * @return Query
      */
@@ -162,9 +162,9 @@ abstract class Connection
     }
 
     /**
-     * 调用Query类的查询方法
+     * 调用Query类的查詢方法
      * @access public
-     * @param string    $method 方法名称
+     * @param string    $method 方法名稱
      * @param array     $args 调用参数
      * @return mixed
      */
@@ -231,7 +231,7 @@ abstract class Connection
     /**
      * 取得数据库的配置参数
      * @access public
-     * @param string $config 配置名称
+     * @param string $config 配置名稱
      * @return mixed
      */
     public function getConfig($config = '')
@@ -242,7 +242,7 @@ abstract class Connection
     /**
      * 设置数据库的配置参数
      * @access public
-     * @param string|array      $config 配置名称
+     * @param string|array      $config 配置名稱
      * @param mixed             $value 配置值
      * @return void
      */
@@ -313,7 +313,7 @@ abstract class Connection
     }
 
     /**
-     * 释放查询结果
+     * 释放查詢结果
      * @access public
      */
     public function free()
@@ -336,7 +336,7 @@ abstract class Connection
     }
 
     /**
-     * 执行查询 返回数据集
+     * 执行查詢 返回数据集
      * @access public
      * @param string        $sql sql指令
      * @param array         $bind 参数绑定
@@ -375,7 +375,7 @@ abstract class Connection
             } else {
                 $this->bindValue($bind);
             }
-            // 执行查询
+            // 执行查詢
             $this->PDOStatement->execute();
             // 调试结束
             $this->debug(false, '', $master);
@@ -404,7 +404,7 @@ abstract class Connection
      * @access public
      * @param  string        $sql sql指令
      * @param  array         $bind 参数绑定
-     * @param  Query         $query 查询对象
+     * @param  Query         $query 查詢对象
      * @return int
      * @throws PDOException
      * @throws \Exception
@@ -668,7 +668,7 @@ abstract class Connection
     }
 
     /**
-     * 用于非自动送出狀態下面的查询送出
+     * 用于非自动送出狀態下面的查詢送出
      * @access public
      * @return void
      * @throws PDOException
@@ -763,9 +763,9 @@ abstract class Connection
     }
 
     /**
-     * 获得查询次数
+     * 获得查詢次数
      * @access public
-     * @param boolean $execute 是否包含所有查询
+     * @param boolean $execute 是否包含所有查詢
      * @return integer
      */
     public function getQueryTimes($execute = false)
@@ -794,7 +794,7 @@ abstract class Connection
         $this->linkWrite = null;
         $this->linkRead  = null;
         $this->links     = [];
-        // 释放查询
+        // 释放查詢
         $this->free();
         return $this;
     }
@@ -836,7 +836,7 @@ abstract class Connection
     }
 
     /**
-     * 取得最近一次查询的sql语句
+     * 取得最近一次查詢的sql语句
      * @access public
      * @return string
      */
@@ -889,7 +889,7 @@ abstract class Connection
      * SQL指令安全过滤
      * @access public
      * @param string $str SQL字符串
-     * @param bool   $master 是否主库查询
+     * @param bool   $master 是否主库查詢
      * @return string
      */
     public function quote($str, $master = true)
@@ -1052,7 +1052,7 @@ abstract class Connection
      */
     public function __destruct()
     {
-        // 释放查询
+        // 释放查詢
         if ($this->PDOStatement) {
             $this->free();
         }

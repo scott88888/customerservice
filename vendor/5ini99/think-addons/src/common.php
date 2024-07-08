@@ -101,7 +101,7 @@ Hook::add('action_begin', function () {
 
 /**
  * 处理插件钩子
- * @param string $hook 钩子名称
+ * @param string $hook 钩子名稱
  * @param mixed $params 传入参数
  * @return void
  */

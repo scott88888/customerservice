@@ -119,7 +119,7 @@ class Definition
     }
 
     /**
-     * 根据名称或者位置取得参数
+     * 根据名稱或者位置取得参数
      * @param string|int $name 参数名或者位置
      * @return Argument 参数
      * @throws \InvalidArgumentException
@@ -136,7 +136,7 @@ class Definition
     }
 
     /**
-     * 根据名称或位置檢查是否具有某个参数
+     * 根据名稱或位置檢查是否具有某个参数
      * @param string|int $name 参数名或者位置
      * @return bool
      * @api
@@ -243,7 +243,7 @@ class Definition
     }
 
     /**
-     * 根据名称取得选项
+     * 根据名稱取得选项
      * @param string $name 选项名
      * @return Option
      * @throws \InvalidArgumentException
@@ -259,7 +259,7 @@ class Definition
     }
 
     /**
-     * 根据名称檢查是否有这个选项
+     * 根据名稱檢查是否有这个选项
      * @param string $name 选项名
      * @return bool
      * @api
@@ -280,8 +280,8 @@ class Definition
     }
 
     /**
-     * 根据名称檢查某个选项是否有短名称
-     * @param string $name 短名称
+     * 根据名稱檢查某个选项是否有短名稱
+     * @param string $name 短名稱
      * @return bool
      */
     public function hasShortcut($name)
@@ -290,8 +290,8 @@ class Definition
     }
 
     /**
-     * 根据短名称取得选项
-     * @param string $shortcut 短名称
+     * 根据短名稱取得选项
+     * @param string $shortcut 短名稱
      * @return Option
      */
     public function getOptionForShortcut($shortcut)
@@ -314,8 +314,8 @@ class Definition
     }
 
     /**
-     * 根据短名称取得选项名
-     * @param string $shortcut 短名称
+     * 根据短名稱取得选项名
+     * @param string $shortcut 短名稱
      * @return string
      * @throws \InvalidArgumentException
      */

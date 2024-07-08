@@ -39,7 +39,7 @@ class ListMultipartUploadInfo
     }
 
     /**
-     * 得到bucket名称
+     * 得到bucket名稱
      *
      * @return string
      */

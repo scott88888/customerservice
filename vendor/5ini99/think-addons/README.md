@@ -13,7 +13,7 @@ The ThinkPHP5 Addons Package
     // 当關閉自动取得配置时需要手动配置hooks信息
     'hooks' => [
 	    // 可以定义多个钩子
-        'testhook'=>'test' // 键为钩子名称，用于在业务中自定义钩子处理，值为实现该钩子的插件，
+        'testhook'=>'test' // 键为钩子名稱，用于在业务中自定义钩子处理，值为实现该钩子的插件，
 					// 多个插件可以用数组也可以用逗号分割
 	]
 ]
@@ -27,7 +27,7 @@ return [
     // 当關閉自动取得配置时需要手动配置hooks信息
     'hooks' => [
         // 可以定义多个钩子
-        'testhook'=>'test' // 键为钩子名称，用于在业务中自定义钩子处理，值为实现该钩子的插件，
+        'testhook'=>'test' // 键为钩子名稱，用于在业务中自定义钩子处理，值为实现该钩子的插件，
                     // 多个插件可以用数组也可以用逗号分割
     ]
 ]
@@ -61,7 +61,7 @@ class Test extends Addons	// 需继承think\addons\Addons类
 	// 该插件的基础信息
     public $info = [
         'name' => 'test',	// 插件标识
-        'title' => '插件测试',	// 插件名称
+        'title' => '插件测试',	// 插件名稱
         'description' => 'thinkph5插件测试',	// 插件简介
         'status' => 0,	// 狀態
         'author' => 'byron sampson',

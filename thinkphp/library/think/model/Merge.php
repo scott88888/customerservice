@@ -40,8 +40,8 @@ class Merge extends Model
     /**
      * 查找单條记录
      * @access public
-     * @param mixed        $data  主键值或者查询條件（闭包）
-     * @param string|array $with  关联预查询
+     * @param mixed        $data  主键值或者查詢條件（闭包）
+     * @param string|array $with  关联预查詢
      * @param bool         $cache 是否缓存
      * @return \think\Model
      */
@@ -53,9 +53,9 @@ class Merge extends Model
     }
 
     /**
-     * 附加查询表达式
+     * 附加查詢表达式
      * @access protected
-     * @param \think\db\Query $query 查询对象
+     * @param \think\db\Query $query 查詢对象
      * @return \think\db\Query
      */
     protected static function attachQuery($query)
@@ -78,11 +78,11 @@ class Merge extends Model
     /**
      * 取得关联模型的字段 并解决混淆
      * @access protected
-     * @param \think\db\Query $query  查询对象
-     * @param string          $name   模型名称
-     * @param string          $table  关联表名称
+     * @param \think\db\Query $query  查詢对象
+     * @param string          $name   模型名稱
+     * @param string          $table  关联表名稱
      * @param array           $map    字段映射
-     * @param array           $fields 查询字段
+     * @param array           $fields 查詢字段
      * @return array
      */
     protected static function getModelField($query, $name, $table = '', $map = [], $fields = [])
@@ -104,8 +104,8 @@ class Merge extends Model
     /**
      * 查找所有记录
      * @access public
-     * @param mixed        $data 主键列表或者查询條件（闭包）
-     * @param array|string $with 关联预查询
+     * @param mixed        $data 主键列表或者查詢條件（闭包）
+     * @param array|string $with 关联预查詢
      * @param bool         $cache
      * @return array|false|string
      */
@@ -119,7 +119,7 @@ class Merge extends Model
     /**
      * 处理写入的模型数据
      * @access public
-     * @param string $model  模型名称
+     * @param string $model  模型名稱
      * @param array  $data   数据
      * @return array
      */

@@ -18,7 +18,7 @@ abstract class Builder
 {
     // connection对象实例
     protected $connection;
-    // 查询对象实例
+    // 查詢对象实例
     protected $query;
 
     // 数据库表达式
@@ -35,7 +35,7 @@ abstract class Builder
      * 构造函数
      * @access public
      * @param Connection    $connection 数据库连接对象实例
-     * @param Query         $query      数据库查询对象实例
+     * @param Query         $query      数据库查詢对象实例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -78,7 +78,7 @@ abstract class Builder
      * 数据分析
      * @access protected
      * @param array     $data 数据
-     * @param array     $options 查询参数
+     * @param array     $options 查詢参数
      * @return array
      * @throws Exception
      */
@@ -231,8 +231,8 @@ abstract class Builder
     /**
      * where分析
      * @access protected
-     * @param mixed $where   查询條件
-     * @param array $options 查询参数
+     * @param mixed $where   查詢條件
+     * @param array $options 查詢参数
      * @return string
      */
     protected function parseWhere($where, $options)
@@ -250,7 +250,7 @@ abstract class Builder
     }
 
     /**
-     * 生成查询條件SQL
+     * 生成查詢條件SQL
      * @access public
      * @param mixed     $where
      * @param array     $options
@@ -274,7 +274,7 @@ abstract class Builder
                 if ($value instanceof Expression) {
                     $str[] = ' ' . $key . ' ( ' . $value->getValue() . ' )';
                 } elseif ($value instanceof \Closure) {
-                    // 使用闭包查询
+                    // 使用闭包查詢
                     $query = new Query($this->connection);
                     call_user_func_array($value, [ & $query]);
                     $whereClause = $this->buildWhere($query->getOptions('where'), $options);
@@ -282,7 +282,7 @@ abstract class Builder
                         $str[] = ' ' . $key . ' ( ' . $whereClause . ' )';
                     }
                 } elseif (strpos($field, '|')) {
-                    // 不同字段使用相同查询條件（OR）
+                    // 不同字段使用相同查詢條件（OR）
                     $array = explode('|', $field);
                     $item  = [];
                     foreach ($array as $k) {
@@ -290,7 +290,7 @@ abstract class Builder
                     }
                     $str[] = ' ' . $key . ' ( ' . implode(' OR ', $item) . ' )';
                 } elseif (strpos($field, '&')) {
-                    // 不同字段使用相同查询條件（AND）
+                    // 不同字段使用相同查詢條件（AND）
                     $array = explode('&', $field);
                     $item  = [];
                     foreach ($array as $k) {
@@ -298,7 +298,7 @@ abstract class Builder
                     }
                     $str[] = ' ' . $key . ' ( ' . implode(' AND ', $item) . ' )';
                 } else {
-                    // 对字段使用表达式查询
+                    // 对字段使用表达式查詢
                     $field = is_string($field) ? $field : '';
                     $str[] = ' ' . $key . ' ' . $this->parseWhereItem($field, $value, $key, $options, $binds);
                 }
@@ -316,13 +316,13 @@ abstract class Builder
         // 字段分析
         $key = $field ? $this->parseKey($field, $options, true) : '';
 
-        // 查询规则和條件
+        // 查詢规则和條件
         if (!is_array($val)) {
             $val = is_null($val) ? ['null', ''] : ['=', $val];
         }
         list($exp, $value) = $val;
 
-        // 对一个字段使用多个查询條件
+        // 对一个字段使用多个查詢條件
         if (is_array($exp)) {
             $item = array_pop($val);
             // 传入 or 或者 and
@@ -391,17 +391,17 @@ abstract class Builder
                 $whereStr .= $key . ' ' . $exp . ' ' . $this->parseValue($value, $field);
             }
         } elseif ('EXP' == $exp) {
-            // 表达式查询
+            // 表达式查詢
             if ($value instanceof Expression) {
                 $whereStr .= '( ' . $key . ' ' . $value->getValue() . ' )';
             } else {
                 throw new Exception('where express error:' . $exp);
             }
         } elseif (in_array($exp, ['NOT NULL', 'NULL'])) {
-            // NULL 查询
+            // NULL 查詢
             $whereStr .= $key . ' IS ' . $exp;
         } elseif (in_array($exp, ['NOT IN', 'IN'])) {
-            // IN 查询
+            // IN 查詢
             if ($value instanceof \Closure) {
                 $whereStr .= $key . ' ' . $exp . ' ' . $this->parseClosure($value);
             } else {
@@ -428,7 +428,7 @@ abstract class Builder
                 $whereStr .= $key . ' ' . $exp . ' (' . (empty($zone) ? "''" : $zone) . ')';
             }
         } elseif (in_array($exp, ['NOT BETWEEN', 'BETWEEN'])) {
-            // BETWEEN 查询
+            // BETWEEN 查詢
             $data = is_array($value) ? $value : explode(',', $value);
             if (array_key_exists($field, $binds)) {
                 if ($this->query->isBind($bindName . '_between_1')) {
@@ -449,7 +449,7 @@ abstract class Builder
             }
             $whereStr .= $key . ' ' . $exp . ' ' . $between;
         } elseif (in_array($exp, ['NOT EXISTS', 'EXISTS'])) {
-            // EXISTS 查询
+            // EXISTS 查詢
             if ($value instanceof \Closure) {
                 $whereStr .= $exp . ' ' . $this->parseClosure($value);
             } else {
@@ -467,7 +467,7 @@ abstract class Builder
         return $whereStr;
     }
 
-    // 执行闭包子查询
+    // 执行闭包子查詢
     protected function parseClosure($call, $show = true)
     {
         $query = new Query($this->connection);
@@ -538,7 +538,7 @@ abstract class Builder
      * join分析
      * @access protected
      * @param array $join
-     * @param array $options 查询條件
+     * @param array $options 查詢條件
      * @return string
      */
     protected function parseJoin($join, $options = [])
@@ -570,7 +570,7 @@ abstract class Builder
      * order分析
      * @access protected
      * @param mixed $order
-     * @param array $options 查询條件
+     * @param array $options 查詢條件
      * @return string
      */
     protected function parseOrder($order, $options = [])
@@ -702,7 +702,7 @@ abstract class Builder
     }
 
     /**
-     * 生成查询SQL
+     * 生成查詢SQL
      * @access public
      * @param array $options 表达式
      * @return string

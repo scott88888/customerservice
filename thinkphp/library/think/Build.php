@@ -225,7 +225,7 @@ class Build
     /**
      * 创建目录
      * @access protected
-     * @param  string $dirname 目录名称
+     * @param  string $dirname 目录名稱
      * @return void
      */
     protected static function checkDirBuild($dirname)

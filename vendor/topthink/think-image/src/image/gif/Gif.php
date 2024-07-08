@@ -78,7 +78,7 @@ class Gif
     /**
      * 编码并保存当前GIF图片
      *
-     * @param  string $pathname 图片名称
+     * @param  string $pathname 图片名稱
      */
     public function save($pathname)
     {

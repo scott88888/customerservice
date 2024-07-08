@@ -10,14 +10,14 @@ UE.I18N['zh-cn'] = {
         'anchor':'锚点', 'undo':'撤销', 'redo':'重做', 'bold':'加粗', 'indent':'首行缩进', 'snapscreen':'截图',
         'italic':'斜体', 'underline':'下划线', 'strikethrough':'刪除线', 'subscript':'下标','fontborder':'字符边框',
         'superscript':'上标', 'formatmatch':'格式刷', 'source':'源代码', 'blockquote':'引用',
-        'pasteplain':'纯文本粘贴模式', 'selectall':'全选', 'print':'打印', 'preview':'预览',
+        'pasteplain':'纯文本粘贴模式', 'selectall':'全选', 'print':'列印', 'preview':'预览',
         'horizontal':'分隔线', 'removeformat':'清除格式', 'time':'时间', 'date':'日期',
         'unlink':'取消連結', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合并单元格', 'mergedown':'下合并单元格',
         'deleterow':'刪除行', 'deletecol':'刪除列', 'splittorows':'拆分成行',
         'splittocols':'拆分成列', 'splittocells':'完全拆分单元格','deletecaption':'刪除表格标题','inserttitle':'插入标题',
         'mergecells':'合并多个单元格', 'deletetable':'刪除表格', 'cleardoc':'清空文档','insertparagraphbeforetable':"表格前插入行",'insertcode':'代码语言',
         'fontfamily':'字体', 'fontsize':'字号', 'paragraph':'段落格式', 'simpleupload':'单图上传', 'insertimage':'多图上传','edittable':'表格属性','edittd':'单元格属性', 'link':'超連結',
-        'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查询替换', 'map':'Baidu地图', 'gmap':'Google地图',
+        'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查詢替换', 'map':'Baidu地图', 'gmap':'Google地图',
         'insertvideo':'视频', 'help':'帮助', 'justifyleft':'居左对齐', 'justifyright':'居右对齐', 'justifycenter':'居中对齐',
         'justifyjustify':'两端对齐', 'forecolor':'字体颜色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
         'insertunorderedlist':'无序列表', 'fullscreen':'全屏', 'directionalityltr':'从左向右输入', 'directionalityrtl':'从右向左输入',
@@ -158,8 +158,8 @@ UE.I18N['zh-cn'] = {
         'insertcol':"左插入列",
         'insertrownext':'后插入行',
         'insertcolnext':'右插入列',
-        'insertcaption':'插入表格名称',
-        'deletecaption':'刪除表格名称',
+        'insertcaption':'插入表格名稱',
+        'deletecaption':'刪除表格名稱',
         'inserttitle':'插入表格标题行',
         'deletetitle':'刪除表格标题行',
         'inserttitlecol':'插入表格标题列',
@@ -560,7 +560,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_target':'是否在新窗口打开：'
         },
         'validLink':'只支持选中一个連結时生效',
-        'httpPrompt':'您输入的超連結中不包含http等协议名称，默认将为您新增http://前缀'
+        'httpPrompt':'您输入的超連結中不包含http等协议名稱，默认将为您新增http://前缀'
     },
     'map':{
         'static':{
@@ -618,7 +618,7 @@ UE.I18N['zh-cn'] = {
     'edittable':{
         'static':{
             'lang_tableStyle':'表格样式',
-            'lang_insertCaption':'新增表格名称行',
+            'lang_insertCaption':'新增表格名稱行',
             'lang_insertTitle':'新增表格标题行',
             'lang_insertTitleCol':'新增表格标题列',
             'lang_orderbycontent':"使表格内容可排序",
@@ -629,7 +629,7 @@ UE.I18N['zh-cn'] = {
             'lang_borderStyle':'表格边框',
             'lang_color':'颜色:'
         },
-        captionName:'表格名称',
+        captionName:'表格名稱',
         titleName:'标题',
         cellsName:'内容',
         errorMsg:'有合并单元格，不可排序'

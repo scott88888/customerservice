@@ -1481,7 +1481,7 @@
         /**
          * 新增组件
          * @param  {object} widgetProto 组件原型，构造函数通过constructor属性定义
-         * @param  {object} responseMap API名称与函数实现的映射
+         * @param  {object} responseMap API名稱与函数实现的映射
          * @example
          *     Uploader.register( {
          *         init: function( options ) {},
@@ -5449,7 +5449,7 @@
                 return origin.apply( null, arguments );
             }
     
-            // 检测是否canvas支持jpeg导出，根据数据格式来判断。
+            // 检测是否canvas支持jpeg匯出，根据数据格式来判断。
             // JPEG 前两位分别是：255, 216
             if ( type === 'image/jpeg' && typeof supportJpeg === 'undefined' ) {
                 fragement = origin.apply( null, arguments );

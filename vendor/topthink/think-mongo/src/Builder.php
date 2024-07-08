@@ -25,20 +25,20 @@ class Builder
 {
     // connection对象实例
     protected $connection;
-    // 查询对象实例
+    // 查詢对象实例
     protected $query;
-    // 查询参数
+    // 查詢参数
     protected $options = [];
     // 最后插入ID
     protected $insertId = [];
-    // 查询表达式
+    // 查詢表达式
     protected $exp = ['<>' => 'ne', 'neq' => 'ne', '=' => 'eq', '>' => 'gt', '>=' => 'gte', '<' => 'lt', '<=' => 'lte', 'in' => 'in', 'not in' => 'nin', 'nin' => 'nin', 'mod' => 'mod', 'exists' => 'exists', 'regex' => 'regex', 'type' => 'type', 'all' => 'all', '> time' => '> time', '< time' => '< time', 'between' => 'between', 'not between' => 'not between', 'between time' => 'between time', 'not between time' => 'not between time', 'notbetween time' => 'not between time', 'like' => 'like', 'near' => 'near'];
 
     /**
      * 架构函数
      * @access public
      * @param Connection    $connection 数据库连接对象实例
-     * @param Query         $query 数据库查询对象实例
+     * @param Query         $query 数据库查詢对象实例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -79,7 +79,7 @@ class Builder
      * insert数据分析
      * @access protected
      * @param array $data 数据
-     * @param array $options 查询参数
+     * @param array $options 查詢参数
      * @return array
      */
     protected function parseData($data, $options)
@@ -108,7 +108,7 @@ class Builder
      * Set数据分析
      * @access protected
      * @param array $data 数据
-     * @param array $options 查询参数
+     * @param array $options 查詢参数
      * @return array
      */
     protected function parseSet($data, $options)
@@ -130,7 +130,7 @@ class Builder
     }
 
     /**
-     * 生成查询过滤條件
+     * 生成查詢过滤條件
      * @access public
      * @param mixed $where
      * @return array
@@ -145,25 +145,25 @@ class Builder
         foreach ($where as $logic => $val) {
             foreach ($val as $field => $value) {
                 if ($value instanceof \Closure) {
-                    // 使用闭包查询
+                    // 使用闭包查詢
                     $query = new Query($this->connection);
                     call_user_func_array($value, [ & $query]);
                     $filter[$logic][] = $this->parseWhere($query->getOptions('where')[$logic]);
                 } else {
                     if (strpos($field, '|')) {
-                        // 不同字段使用相同查询條件（OR）
+                        // 不同字段使用相同查詢條件（OR）
                         $array = explode('|', $field);
                         foreach ($array as $k) {
                             $filter['$or'][] = $this->parseWhereItem($k, $value);
                         }
                     } elseif (strpos($field, '&')) {
-                        // 不同字段使用相同查询條件（AND）
+                        // 不同字段使用相同查詢條件（AND）
                         $array = explode('&', $field);
                         foreach ($array as $k) {
                             $filter['$and'][] = $this->parseWhereItem($k, $value);
                         }
                     } else {
-                        // 对字段使用表达式查询
+                        // 对字段使用表达式查詢
                         $field            = is_string($field) ? $field : '';
                         $filter[$logic][] = $this->parseWhereItem($field, $value);
                     }
@@ -177,13 +177,13 @@ class Builder
     protected function parseWhereItem($field, $val)
     {
         $key = $field ? $this->parseKey($field) : '';
-        // 查询规则和條件
+        // 查詢规则和條件
         if (!is_array($val)) {
             $val = ['=', $val];
         }
         list($exp, $value) = $val;
 
-        // 对一个字段使用多个查询條件
+        // 对一个字段使用多个查詢條件
         if (is_array($exp)) {
             $data = [];
             foreach ($val as $value) {
@@ -211,7 +211,7 @@ class Builder
 
         $query = [];
         if ('=' == $exp) {
-            // 普通查询
+            // 普通查詢
             $query[$key] = $this->parseValue($value, $key);
         } elseif (in_array($exp, ['neq', 'ne', 'gt', 'egt', 'gte', 'lt', 'lte', 'elt', 'mod'])) {
             // 比较运算
@@ -221,27 +221,27 @@ class Builder
             // 满足所有指定條件
             $query[$key] = ['$all', $this->parseValue($value, $key)];
         } elseif ('between' == $exp) {
-            // 区间查询
+            // 区间查詢
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$gte' => $this->parseValue($value[0], $key), '$lte' => $this->parseValue($value[1], $key)];
         } elseif ('not between' == $exp) {
-            // 范围查询
+            // 范围查詢
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$lt' => $this->parseValue($value[0], $key), '$gt' => $this->parseValue($value[1], $key)];
         } elseif ('exists' == $exp) {
             // 字段是否存在
             $query[$key] = ['$exists' => (bool) $value];
         } elseif ('type' == $exp) {
-            // 类型查询
+            // 类型查詢
             $query[$key] = ['$type' => intval($value)];
         } elseif ('exp' == $exp) {
-            // 表达式查询
+            // 表达式查詢
             $query['$where'] = $value instanceof Javascript ? $value : new Javascript($value);
         } elseif ('like' == $exp) {
-            // 模糊查询 采用正则方式
+            // 模糊查詢 采用正则方式
             $query[$key] = $value instanceof Regex ? $value : new Regex($value, 'i');
         } elseif (in_array($exp, ['nin', 'in'])) {
-            // IN 查询
+            // IN 查詢
             $value = is_array($value) ? $value : explode(',', $value);
             foreach ($value as $k => $val) {
                 $value[$k] = $this->parseValue($val, $key);
@@ -254,18 +254,18 @@ class Builder
         } elseif ('> time' == $exp) {
             $query[$key] = ['$gt' => $this->parseDateTime($value, $field)];
         } elseif ('between time' == $exp) {
-            // 区间查询
+            // 区间查詢
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$gte' => $this->parseDateTime($value[0], $field), '$lte' => $this->parseDateTime($value[1], $field)];
         } elseif ('not between time' == $exp) {
-            // 范围查询
+            // 范围查詢
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$lt' => $this->parseDateTime($value[0], $field), '$gt' => $this->parseDateTime($value[1], $field)];
         } elseif ('near' == $exp) {
-            // 经纬度查询
+            // 经纬度查詢
             $query[$key] = ['$near' => $this->parseValue($value, $key)];
         } else {
-            // 普通查询
+            // 普通查詢
             $query[$key] = $this->parseValue($value, $key);
         }
         return $query;
@@ -389,7 +389,7 @@ class Builder
     }
 
     /**
-     * 生成Mongo查询对象
+     * 生成Mongo查詢对象
      * @access public
      * @param array $options 参数
      * @return MongoQuery
@@ -449,7 +449,7 @@ class Builder
     }
 
     /**
-     * 查询所有的collection
+     * 查詢所有的collection
      * @access public
      * @return Command
      */
@@ -462,7 +462,7 @@ class Builder
     }
 
     /**
-     * 查询数据表的狀態信息
+     * 查詢数据表的狀態信息
      * @access public
      * @return Command
      */

@@ -503,7 +503,7 @@ class Cx extends Taglib
             $endStr = '<?php endif; ?>';
         }
 
-        // 文件方式导入
+        // 文件方式匯入
         $array = explode(',', $file);
         foreach ($array as $val) {
             $type = strtolower(substr(strrchr($val, '.'), 1));

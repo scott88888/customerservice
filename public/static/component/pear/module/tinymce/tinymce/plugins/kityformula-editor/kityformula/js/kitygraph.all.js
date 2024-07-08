@@ -1583,8 +1583,8 @@ _p[11] = {
      * @for kity.Class
      * @protected
      * @grammar base(name, args...) => {any}
-     * @description 调用父类指定名称的函数
-     * @param {string} name 函数的名称
+     * @description 调用父类指定名稱的函数
+     * @param {string} name 函数的名稱
      * @param {parameter} args... 传递给父类函数的参数
      *
      * @example
@@ -2429,7 +2429,7 @@ _p[16] = {
             }
         });
         _p.r(12).extend(Effect, {
-            // 特效名称常量
+            // 特效名稱常量
             NAME_GAUSSIAN_BLUR: "feGaussianBlur",
             NAME_OFFSET: "feOffset",
             NAME_COMPOSITE: "feComposite",
@@ -3557,7 +3557,7 @@ _p[28] = {
              *
              * @grammar set(name, value) => {this}
              *
-             * @param {string} name  要设置的颜色通道的名称
+             * @param {string} name  要设置的颜色通道的名稱
              *     r: 红色（Red），取值范围 [0, 255]
              *     g: 绿色（Green），取值范围 [0, 255]
              *     b: 蓝色（Blue），取值范围 [0, 255]
@@ -3595,7 +3595,7 @@ _p[28] = {
              *
              * @grammar inc(name, value) => {this}
              *
-             * @param  {string} name  要增加的通道的名称，具体含义请查看 set 方法
+             * @param  {string} name  要增加的通道的名稱，具体含义请查看 set 方法
              * @param  {number} value 增量值
              */
             inc: function(name, value) {
@@ -3616,7 +3616,7 @@ _p[28] = {
              *
              * @grammar dec(name, value) => {this}
              *
-             * @param  {string} name  要减少值的通道的名称，具体含义请查看 set 方法
+             * @param  {string} name  要减少值的通道的名稱，具体含义请查看 set 方法
              * @param  {number} value 减量值
              */
             dec: function(name, value) {
@@ -6134,9 +6134,9 @@ _p[44] = {
                 this.color = {};
             },
             /*
-         * 取得颜色名称所对应的颜色值的Color对象
-         * @param name 需要取得的颜色名称
-         * @return 对应颜色名称的color对象， 如果未找到对应的名称， 则返回null
+         * 取得颜色名稱所对应的颜色值的Color对象
+         * @param name 需要取得的颜色名稱
+         * @return 对应颜色名稱的color对象， 如果未找到对应的名稱， 则返回null
          */
             get: function(name) {
                 var colorValue = this.color[name] || StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
@@ -6146,17 +6146,17 @@ _p[44] = {
                 return null;
             },
             /*
-         * 取得给定名称的颜色的hex值表示
-         * @param name 需要取得的颜色名称
-         * @return 如果找到对应的名称， 则返回该名称所对应的hex格式的值， 否则， 返回一个空字符串
+         * 取得给定名稱的颜色的hex值表示
+         * @param name 需要取得的颜色名稱
+         * @return 如果找到对应的名稱， 则返回该名稱所对应的hex格式的值， 否则， 返回一个空字符串
          */
             getColorValue: function(name) {
                 return this.color[name] || StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
             },
             /*
-         * 向调色板实例新增自己独有的颜色名称，对已存在的颜色名称， 将会覆盖掉
-         * @param name 新新增的颜色名称
-         * @param value 新新增的颜色名称所对应的值， 可以是一个合法的颜色字符串或者是一个color对象
+         * 向调色板实例新增自己独有的颜色名稱，对已存在的颜色名稱， 将会覆盖掉
+         * @param name 新新增的颜色名稱
+         * @param value 新新增的颜色名稱所对应的值， 可以是一个合法的颜色字符串或者是一个color对象
          * @return 新新增的颜色的值
          */
             add: function(name, value) {
@@ -6169,7 +6169,7 @@ _p[44] = {
             },
             /*
          * 刪除调色板实例上使用者自己新增的颜色， 该方法不能刪除内置的颜色
-         * @param name 需要刪除的颜色名称
+         * @param name 需要刪除的颜色名稱
          * @return 刪除是否成功的bool值
          */
             remove: function(name) {
@@ -6190,17 +6190,17 @@ _p[44] = {
             },
             /*
          * 通过给定的名字取得标准的颜色值表示， 返回的值以hex的方式提供
-         * @param name 需要取得的标准颜色名称
-         * @return 名字所对应的颜色值的hex表示， 如果未找到对应名称的值， 则返回一个空字符串
+         * @param name 需要取得的标准颜色名稱
+         * @return 名字所对应的颜色值的hex表示， 如果未找到对应名稱的值， 则返回一个空字符串
          */
             getColorValue: function(name) {
                 return StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
             },
             /*
-         * 向调色板新增颜色名称，新新增的颜色对所有的调色板对象都可见
-         * 对已存在的颜色名称， 将会覆盖掉
-         * @param name 新新增的颜色名称
-         * @param value 新新增的颜色名称所对于的值， 应该是一个hex格式的颜色字符串， 如： ”#ff0000“
+         * 向调色板新增颜色名稱，新新增的颜色对所有的调色板对象都可见
+         * 对已存在的颜色名稱， 将会覆盖掉
+         * @param name 新新增的颜色名稱
+         * @param value 新新增的颜色名稱所对于的值， 应该是一个hex格式的颜色字符串， 如： ”#ff0000“
          * @return 新新增的颜色的值
          */
             addColor: function(name, value) {
@@ -6213,7 +6213,7 @@ _p[44] = {
             },
             /*
          * 刪除使用者自己新增的颜色， 该方法不能刪除内置的颜色， 该方法不会影响调色板实例自由的颜色
-         * @param name 需要刪除的颜色名称
+         * @param name 需要刪除的颜色名稱
          * @return 刪除是否成功的bool值
          */
             removeColor: function(name) {

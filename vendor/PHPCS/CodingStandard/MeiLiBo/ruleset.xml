@@ -96,10 +96,10 @@
     <rule ref="PSR2.Namespaces.UseDeclaration"/>
 
     <!-- 类、类属性和类方法 -->
-    <!-- 类、接口和特征的名称必须以大写开头，如：PartnerInfo、Partner_Info -->
+    <!-- 类、接口和特征的名稱必须以大写开头，如：PartnerInfo、Partner_Info -->
     <rule ref="MeiLiBo.Classes.ValidClassName"/>
     <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
-    <!-- 类方法的名称和变量的名称定义必须由小写开头，如：getBrandName, queryAll, $lastSql、$sqlQueries -->
+    <!-- 类方法的名稱和变量的名稱定义必须由小写开头，如：getBrandName, queryAll, $lastSql、$sqlQueries -->
     <!-- 方法名不允许使用单一下划线开头来表示其 protected 和 private 的可见性 -->
     <rule ref="MeiLiBo.Classes.ValidMethodName"/>
     <!-- 一个文件中只能包含类、接口和特征中的一个,不允许出现多个. -->
@@ -123,7 +123,7 @@
         所有类属性的前面必须定义其可见性。
         不允许使用 var 关键字来定义一个类属性。
         每一行只允许定义一个类属性。
-        类属性名称不允许使用单一下划线开头来表示其 protected 和 private 的可见性。
+        类属性名稱不允许使用单一下划线开头来表示其 protected 和 private 的可见性。
     -->
     <rule ref="PSR2.Classes.PropertyDeclaration"/>
 
@@ -131,7 +131,7 @@
     <!--
         所有类方法都必须定义其可见性(public/protected/private)。
         方法名不允许使用单一下划线开头来表示其 protected 和 private 的可见性。
-        类方法定义的名称后面不允许出现空格。开始大括号和方法名称必须在同一行，
+        类方法定义的名稱后面不允许出现空格。开始大括号和方法名稱必须在同一行，
         结束大括号必须在下一行或代码块结束后的下一行。在开始括号的后面和结束括号的前面都不允许出现空格。
     -->
     <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
@@ -158,7 +158,7 @@
 
     <!-- 类方法和一般函数(function)的调用 -->
     <!-- 
-        当调用一个类方法或者一般函数时，方法或函数名称和开始括号之间不允许出现空格，
+        当调用一个类方法或者一般函数时，方法或函数名稱和开始括号之间不允许出现空格，
         在开始括号之后和结束括号之前都不允许出现空格。
         在参数队列里，逗号之前不允许出现空格，逗号之后必须有一个空格。
         参数队列可以被写到多行，每一行都需要用一个同样的缩进，

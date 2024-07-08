@@ -1190,8 +1190,8 @@
         /**
          * 动态新增css样式
          * @method cssRule
-         * @param { String } 节点名称
-         * @grammar UE.utils.cssRule('新增的样式的节点名称',['样式'，'放到哪个document上'])
+         * @param { String } 节点名稱
+         * @grammar UE.utils.cssRule('新增的样式的节点名稱',['样式'，'放到哪个document上'])
          * @grammar UE.utils.cssRule('body','body{background:#ccc}') => null  //给body新增背景颜色
          * @grammar UE.utils.cssRule('body') =>样式的字符串  //取得key值为body的样式的内容,如果没有找到key值先关的样式将返回空，例如刚才那个背景颜色，将返回 body{background:#ccc}
          * @grammar UE.utils.cssRule('body',document) => 返回指定key的样式，并且指定是哪个document
@@ -1539,7 +1539,7 @@
         /**
          * 注册事件监听器
          * @method addListener
-         * @param { String } types 监听的事件名称，同时监听多个事件使用空格分隔
+         * @param { String } types 监听的事件名稱，同时监听多个事件使用空格分隔
          * @param { Function } fn 监听的事件被触发时，会执行该回调函数
          * @waining 事件被触发时，监听的函数假如返回的值恒等于true，回调函数的队列中后面的函数将不执行
          * @example
@@ -1577,7 +1577,7 @@
         /**
          * 移除事件监听器
          * @method removeListener
-         * @param { String } types 移除的事件名称，同时移除多个事件使用空格分隔
+         * @param { String } types 移除的事件名稱，同时移除多个事件使用空格分隔
          * @param { Function } fn 移除监听事件的函数引用
          * @example
          * ```javascript
@@ -1595,7 +1595,7 @@
         /**
          * 触发事件
          * @method fireEvent
-         * @param { String } types 触发的事件名称，同时触发多个事件使用空格分隔
+         * @param { String } types 触发的事件名稱，同时触发多个事件使用空格分隔
          * @remind 该方法会触发addListener
          * @return { * } 返回触发事件的队列中，最后执行的回调函数的返回值
          * @example
@@ -1607,7 +1607,7 @@
         /**
          * 触发事件
          * @method fireEvent
-         * @param { String } types 触发的事件名称，同时触发多个事件使用空格分隔
+         * @param { String } types 触发的事件名稱，同时触发多个事件使用空格分隔
          * @param { *... } options 可选参数，可以传入一个或多个参数，会传给事件触发的回调函数
          * @return { * } 返回触发事件的队列中，最后执行的回调函数的返回值
          * @example
@@ -1657,7 +1657,7 @@
      * @since 1.2.6.1
      * @method getListener
      * @public
-     * @param { Object } obj  查询监听器的对象
+     * @param { Object } obj  查詢监听器的对象
      * @param { String } type 事件类型
      * @param { Boolean } force  为true且当前所有type类型的侦听器不存在时，创建一个空监听器数组
      * @return { Array } 监听器数组
@@ -1931,8 +1931,8 @@
         /**
          * 取得节点A相对于节点B的位置关系
          * @method getPosition
-         * @param { Node } nodeA 需要查询位置关系的节点A
-         * @param { Node } nodeB 需要查询位置关系的节点B
+         * @param { Node } nodeA 需要查詢位置关系的节点A
+         * @param { Node } nodeB 需要查詢位置关系的节点B
          * @return { Number } 节点A与节点B的关系
          * @example
          * ```javascript
@@ -2167,7 +2167,7 @@
          * 查找node的节点名为tagName的第一个祖先节点， 查找的起点是node节点的父节点。
          * @method findParentByTagName
          * @param { Node } node 需要查找的节点对象
-         * @param { Array } tagNames 需要查找的父节点的名称数组
+         * @param { Array } tagNames 需要查找的父节点的名稱数组
          * @warning 查找的终点是到body节点为止
          * @return { Node | NULL } 如果找到符合條件的节点， 则返回该节点， 否则返回NULL
          * @example
@@ -2183,7 +2183,7 @@
          * 否则， 起点是node的父节点。
          * @method findParentByTagName
          * @param { Node } node 需要查找的节点对象
-         * @param { Array } tagNames 需要查找的父节点的名称数组
+         * @param { Array } tagNames 需要查找的父节点的名稱数组
          * @param { Boolean } includeSelf 查找过程是否包含node节点自身
          * @warning 查找的终点是到body节点为止
          * @return { Node | NULL } 如果找到符合條件的节点， 则返回该节点， 否则返回NULL
@@ -3208,10 +3208,10 @@
                         node.style.KhtmlUserSelect = 'none';
         },
         /**
-         * 刪除节点node上的指定属性名称的属性
+         * 刪除节点node上的指定属性名稱的属性
          * @method  removeAttributes
          * @param { Node } node 需要刪除属性的节点对象
-         * @param { String } attrNames 可以是空格隔开的多个属性名称，该操作将会依次刪除相应的属性
+         * @param { String } attrNames 可以是空格隔开的多个属性名稱，该操作将会依次刪除相应的属性
          * @example
          * ```html
          * <div id="wrap">
@@ -3230,7 +3230,7 @@
          */
 
         /**
-         * 刪除节点node上的指定属性名称的属性
+         * 刪除节点node上的指定属性名稱的属性
          * @method  removeAttributes
          * @param { Node } node 需要刪除属性的节点对象
          * @param { Array } attrNames 需要刪除的属性名数组
@@ -3613,7 +3613,7 @@
          * 取得元素element的style属性的指定值
          * @method getStyle
          * @param { Element } element 需要取得属性值的元素
-         * @param { String } styleName 需要取得的style的名称
+         * @param { String } styleName 需要取得的style的名稱
          * @warning 该方法仅取得元素style属性中所标明的值
          * @return { String } 该元素包含指定的style属性值
          * @example
@@ -4231,7 +4231,7 @@
         },
 
         /**
-         * 查询给定的range选区是否在给定的node节点内，且在该节点的最末尾
+         * 查詢给定的range选区是否在给定的node节点内，且在该节点的最末尾
          * @method isInNodeEndBoundary
          * @param { UE.dom.Range } rng 需要判断的range对象， 该对象的startContainer不能为NULL
          * @param node 需要检测的节点对象
@@ -6799,7 +6799,7 @@
              * @method setOpt
              * @warning 三处设置配置项的優先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
              * @warning 该方法仅供編輯器插件内部和編輯器初始化时调用，其他地方不能调用。
-             * @param { String } key 編輯器的可接受的选项名称
+             * @param { String } key 編輯器的可接受的选项名稱
              * @param { * } val  该选项可接受的值
              * @example
              * ```javascript
@@ -7570,7 +7570,7 @@
              * 执行編輯命令
              * @method _callCmdFn
              * @private
-             * @param { String } fnName 函数名称
+             * @param { String } fnName 函数名稱
              * @param { * } args 传给命令函数的参数
              * @return { * } 返回命令函数运行的返回值
              */
@@ -7629,7 +7629,7 @@
             /**
              * 根据传入的command命令，查选編輯器当前的选区，返回命令的狀態
              * @method  queryCommandState
-             * @param { String } cmdName 需要查询的命令名称
+             * @param { String } cmdName 需要查詢的命令名稱
              * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
              * @return { Number } number 返回放前命令的狀態，返回值三种情况：(-1|0|1)
              * @example
@@ -7645,7 +7645,7 @@
             /**
              * 根据传入的command命令，查选編輯器当前的选区，根据命令返回相关的值
              * @method queryCommandValue
-             * @param { String } cmdName 需要查询的命令名称
+             * @param { String } cmdName 需要查詢的命令名稱
              * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
              * @remind 只有部分插件有此方法
              * @return { * } 返回每个命令特定的当前狀態值
@@ -8003,10 +8003,10 @@
             },
 
             /**
-             * 根据action名称取得请求的路径
+             * 根据action名稱取得请求的路径
              * @method  getActionUrl
              * @remind 假如没有设置serverUrl,会根据imageUrl设置默认的controller路径
-             * @param { String } action action名称
+             * @param { String } action action名稱
              * @example
              * ```javascript
              * editor.getActionUrl('config'); //返回 "/ueditor/php/controller.php?action=config"
@@ -8847,7 +8847,7 @@
             /**
              * 取得节点的html内容
              * @method innerHTML
-             * @warning 假如节点的type不是'element'，或节点的标签名称不在dtd列表里，直接返回当前节点
+             * @warning 假如节点的type不是'element'，或节点的标签名稱不在dtd列表里，直接返回当前节点
              * @return { String } 返回节点的html内容
              * @example
              * ```javascript
@@ -8858,7 +8858,7 @@
             /**
              * 设置节点的html内容
              * @method innerHTML
-             * @warning 假如节点的type不是'element'，或节点的标签名称不在dtd列表里，直接返回当前节点
+             * @warning 假如节点的type不是'element'，或节点的标签名稱不在dtd列表里，直接返回当前节点
              * @param { String } htmlstr 传入要设置的html内容
              * @return { UE.uNode } 返回节点本身
              * @example
@@ -8895,7 +8895,7 @@
             /**
              * 取得节点的纯文本内容
              * @method innerText
-             * @warning 假如节点的type不是'element'，或节点的标签名称不在dtd列表里，直接返回当前节点
+             * @warning 假如节点的type不是'element'，或节点的标签名稱不在dtd列表里，直接返回当前节点
              * @return { String } 返回节点的存文本内容
              * @example
              * ```javascript
@@ -8906,7 +8906,7 @@
             /**
              * 设置节点的纯文本内容
              * @method innerText
-             * @warning 假如节点的type不是'element'，或节点的标签名称不在dtd列表里，直接返回当前节点
+             * @warning 假如节点的type不是'element'，或节点的标签名稱不在dtd列表里，直接返回当前节点
              * @param { String } textStr 传入要设置的文本内容
              * @return { UE.uNode } 返回节点本身
              * @example
@@ -9162,7 +9162,7 @@
             /**
              * 取得当前节点所代表的元素属性，即取得attrs对象下的属性值
              * @method getAttr
-             * @param { String } attrName 要取得的属性名称
+             * @param { String } attrName 要取得的属性名稱
              * @return { * } 返回attrs对象下的属性值
              * @example
              * ```javascript
@@ -9176,7 +9176,7 @@
             /**
              * 设置当前节点所代表的元素属性，即设置attrs对象下的属性值
              * @method setAttr
-             * @param { String } attrName 要设置的属性名称
+             * @param { String } attrName 要设置的属性名稱
              * @param { * } attrVal 要设置的属性值，类型视设置的属性而定
              * @return { * } 返回attrs对象下的属性值
              * @example
@@ -9251,9 +9251,9 @@
             },
 
             /**
-             * 在当前节点下，根据元素名称查找节点列表
+             * 在当前节点下，根据元素名稱查找节点列表
              * @method getNodesByTagName
-             * @param { String } tagNames 要查找的元素名称
+             * @param { String } tagNames 要查找的元素名稱
              * @return { Array } 返回找到的节点列表
              * @example
              * ```javascript
@@ -9274,9 +9274,9 @@
             },
 
             /**
-             * 根据样式名称，取得节点的样式值
+             * 根据样式名稱，取得节点的样式值
              * @method getStyle
-             * @param { String } name 要取得的样式名称
+             * @param { String } name 要取得的样式名稱
              * @return { String } 返回样式值
              * @example
              * ```javascript
@@ -9299,7 +9299,7 @@
             /**
              * 给节点设置样式
              * @method setStyle
-             * @param { String } name 要设置的的样式名称
+             * @param { String } name 要设置的的样式名稱
              * @param { String } val 要设置的的样值
              * @example
              * ```javascript
@@ -12505,13 +12505,13 @@
 
 // plugins/print.js
     /**
-     * 打印
+     * 列印
      * @file
      * @since 1.2.6.1
      */
 
     /**
-     * 打印
+     * 列印
      * @command print
      * @method execCommand
      * @param { String } cmd 命令字符串
@@ -12866,7 +12866,7 @@
          */
 
         /**
-         * 查询当前选区的文字输入方向
+         * 查詢当前选区的文字输入方向
          * @command directionality
          * @method queryCommandValue
          * @param { String } cmdName 命令字符串
@@ -13133,7 +13133,7 @@
          * ```
          */
         /**
-         * 查询当前选区内容的行高大小
+         * 查詢当前选区内容的行高大小
          * @command lineheight
          * @method queryCommandValue
          * @param { String } cmd 命令字符串
@@ -13799,7 +13799,7 @@
                  * @command anchor
                  * @method execCommand
                  * @param { String } cmd 命令字符串
-                 * @param { String } name 锚点名称字符串
+                 * @param { String } name 锚点名稱字符串
                  * @example
                  * ```javascript
                  * //editor 是編輯器实例
@@ -14907,7 +14907,7 @@
          */
 
         /**
-         * 查询当前是否处于纯文本粘贴模式
+         * 查詢当前是否处于纯文本粘贴模式
          * @command pasteplain
          * @method queryCommandState
          * @param { String } cmd 命令字符串
@@ -15130,7 +15130,7 @@
 
             html.html = root.toHtml();
         });
-        //导出时，去掉p标签
+        //匯出时，去掉p标签
         me.getOpt('disablePInList') === true && me.addOutputRule(function(root){
             utils.each(root.getNodesByTagName('li'),function(li){
                 var newChildrens = [],index=0;
@@ -15824,7 +15824,7 @@
          * ```
          */
         /**
-         * 查询当前选区内容是否有序列表
+         * 查詢当前选区内容是否有序列表
          * @command insertorderedlist
          * @method queryCommandState
          * @param { String } cmd 命令字符串
@@ -15835,7 +15835,7 @@
          * ```
          */
         /**
-         * 查询当前选区内容是否有序列表
+         * 查詢当前选区内容是否有序列表
          * @command insertorderedlist
          * @method queryCommandValue
          * @param { String } cmd 命令字符串
@@ -15858,7 +15858,7 @@
          * ```
          */
         /**
-         * 查询当前是否有word文档粘贴进来的图片
+         * 查詢当前是否有word文档粘贴进来的图片
          * @command insertunorderedlist
          * @method insertunorderedlist
          * @param { String } command 命令字符串
@@ -15869,7 +15869,7 @@
          * ```
          */
         /**
-         * 查询当前选区内容是否有序列表
+         * 查詢当前选区内容是否有序列表
          * @command insertunorderedlist
          * @method queryCommandValue
          * @param { String } command 命令字符串
@@ -16293,7 +16293,7 @@
              */
 
             /**
-             * 查询当前編輯区域的狀態是源码模式还是可视化模式
+             * 查詢当前編輯区域的狀態是源码模式还是可视化模式
              * @command source
              * @method queryCommandState
              * @param { String } cmd 命令字符串
@@ -17748,10 +17748,10 @@
          */
 
         /**
-         * 查询当前光标所在处是否是一个视频
+         * 查詢当前光标所在处是否是一个视频
          * @command insertvideo
          * @method queryCommandState
-         * @param { String } cmd 需要查询的命令字符串
+         * @param { String } cmd 需要查詢的命令字符串
          * @return { int } 如果当前光标所在处的元素是一个视频对象， 则返回1，否则返回0
          * @example
          * ```javascript
@@ -18233,7 +18233,7 @@
                         endColIndex:endInfo.colIndex + endInfo.colSpan - 1
                     };
                 }
-                //给第一行设置firstRow的样式名称,在排序图标的样式上使用到
+                //给第一行设置firstRow的样式名稱,在排序图标的样式上使用到
                 if(!domUtils.hasClass(this.table.rows[0], "firstRow")) {
                     domUtils.addClass(this.table.rows[0], "firstRow");
                     for(var i = 1; i< this.table.rows.length; i++) {
@@ -19682,7 +19682,7 @@
                 }
             },
             /**
-             * 查询当前点击的单元格的对齐狀態， 如果当前已经选择了多个单元格， 则会返回所有单元格经过统一协调过后的狀態
+             * 查詢当前点击的单元格的对齐狀態， 如果当前已经选择了多个单元格， 则会返回所有单元格经过统一协调过后的狀態
              * @see UE.UETable.getTableCellAlignState
              */
             queryCommandValue: function (cmd) {
@@ -22842,7 +22842,7 @@
 ///import core
 ///commands 查找替换
 ///commandsName  SearchReplace
-///commandsTitle  查询替换
+///commandsTitle  查詢替换
 ///commandsDialog  dialogs\searchreplace
     /**
      * @description 查找替换
@@ -28913,7 +28913,7 @@
                                     '<span onclick=$$._onRemoveButtonClick(\'anchor\') class="edui-clickable">' + editor.getLang("delete") + '</span></nobr>');
                             }
                             if (img.getAttribute("word_img")) {
-                                //todo 放到dialog去做查询
+                                //todo 放到dialog去做查詢
                                 editor.word_img = [img.getAttribute("word_img")];
                                 dialogName = "wordimageDialog"
                             }

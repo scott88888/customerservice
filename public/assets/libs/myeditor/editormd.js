@@ -284,11 +284,11 @@
                 },
                 referenceLink : {
                     title    : "新增引用連結",
-                    name     : "引用名称",
+                    name     : "引用名稱",
                     url      : "連結地址",
                     urlId    : "連結ID",
                     urlTitle : "連結标题",
-                    nameEmpty: "错误：引用連結的名称不能为空。",
+                    nameEmpty: "错误：引用連結的名稱不能为空。",
                     idEmpty  : "错误：请填写引用連結的ID。",
                     urlEmpty : "错误：请填写引用連結的URL地址。"
                 },
@@ -1204,7 +1204,7 @@
          * Get toolbar icons event handlers
          * 
          * @param   {Object}   cm    CodeMirror的实例对象
-         * @param   {String}   name  要取得的事件处理器名称
+         * @param   {String}   name  要取得的事件处理器名稱
          * @returns {Object}         返回处理对象序列
          */
             
@@ -4462,7 +4462,7 @@
      * 
      * @param   {String} [mouseEventType="click"]    供选择的鼠标事件
      * @param   {String} [touchEventType="touchend"] 供选择的触摸事件
-     * @returns {String} EventType                   返回事件类型名称
+     * @returns {String} EventType                   返回事件类型名稱
      */
     
     editormd.mouseOrTouch = function(mouseEventType, touchEventType) {

@@ -30,7 +30,7 @@ class Busines extends Base
             $validate = Loader::validate('App');
             if(!$validate->scene('insert')->check($post)) $this->error($validate->getError());
             $business = Business::get(['business_name' => $post['business_name']]);
-            if ($business) $this->error('商户名称已存在');
+            if ($business) $this->error('商户名稱已存在');
             if(Business::addBusiness($post)) $this->success('操作成功！');
             $this->error('操作失敗！');
         }

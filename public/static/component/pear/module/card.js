@@ -20,20 +20,20 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 		page: true, //是否分頁
 		layout: ['count', 'prev', 'page', 'next','limit', 'skip'],//分頁控件
 		request: {
-			pageName: 'page' //頁码的参数名称，默认：page
+			pageName: 'page' //頁码的参数名稱，默认：page
 			, limitName: 'limit' //每頁数据量的参数名，默认：limit
-			, idName: 'id'       //主键名称，默认：id
-			, titleName: 'title' //标题名称，默认：title
+			, idName: 'id'       //主键名稱，默认：id
+			, titleName: 'title' //标题名稱，默认：title
 			, imageName: 'image' //图片地址，默认：image
-			, remarkName: 'remark' //备注名称，默认：remark
-			, timeName: 'time' //时间名称，默认：time
+			, remarkName: 'remark' //备注名稱，默认：remark
+			, timeName: 'time' //时间名稱，默认：time
 		},
 		response: {
-			statusName: 'code' //规定数据狀態的字段名称，默认：code
+			statusName: 'code' //规定数据狀態的字段名稱，默认：code
 			, statusCode: 0 //规定成功的狀態码，默认：0
-			, msgName: 'msg' //规定狀態信息的字段名称，默认：msg
-			, countName: 'count' //规定数据总数的字段名称，默认：count
-			, dataName: 'data' //规定数据列表的字段名称，默认：data
+			, msgName: 'msg' //规定狀態信息的字段名稱，默认：msg
+			, countName: 'count' //规定数据总数的字段名稱，默认：count
+			, dataName: 'data' //规定数据列表的字段名稱，默认：data
 		},
 		clickItem: function(data){},
 		done: function () {

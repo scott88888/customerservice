@@ -32,9 +32,9 @@ class App extends Validate
      * @var [type]
      */
     protected $message = [
-        'business_name.require' => '请填写客服系统名称',
-        'business_name.length' => '客服系统名称为3~16个字符',
-        'business_name.chsDash' => '客服系统名称只能是汉字、字母、数字和下划线_及破折号-',
+        'business_name.require' => '请填写客服系统名稱',
+        'business_name.length' => '客服系统名稱为3~16个字符',
+        'business_name.chsDash' => '客服系统名稱只能是汉字、字母、数字和下划线_及破折号-',
         'user_name.require' => '请填写帐号',
         'user_name.length' => '管理员账号为3~16个字符',
         'user_name.alphaDash' => '管理员账号只能是字母、数字、下划线 _ ',

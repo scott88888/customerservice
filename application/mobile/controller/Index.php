@@ -285,7 +285,7 @@ class Index extends Controller
         $groupid = htmlspecialchars($arr2['groupid']);
 
          if ($visiter_name == '') {
-            $visiter_name = '游客' . $visiter_id;
+            $visiter_name = '遊客' . $visiter_id;
         }
         $app_key = app_key;
         $whost = whost;

@@ -117,7 +117,7 @@ class Index extends Controller
         $visiter_name =htmlspecialchars($request['visiter_name']);
         
         if($visiter_name == ''){
-            $visiter_name='游客'.$visiter_id;
+            $visiter_name='遊客'.$visiter_id;
         }
 
 
@@ -317,7 +317,7 @@ class Index extends Controller
         $avatar = $arr2['avatar'];
         $groupid = $arr2['groupid'];
         if ($visiter_name == '') {
-             $visiter_name = '游客' . $visiter_id;
+             $visiter_name = '遊客' . $visiter_id;
          }
         $app_key = app_key;
         $whost = whost;

@@ -433,7 +433,7 @@ class Event extends Controller
             if (empty($sended) && $business['template_state']=='open') {
                 TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
                     "first"  => "你有一条新的客户信息!",
-                    "keyword1"   => $visiter["visiter_name"] ?$visiter["visiter_name"]:'游客'.$arr['visiter_id'],
+                    "keyword1"   => $visiter["visiter_name"] ?$visiter["visiter_name"]:'遊客'.$arr['visiter_id'],
                     "keyword2"  => date('Y-m-d H:i:s',time()),
                     "keyword3"  => $arr["content"],
                     "remark" => $business['business_name']."提示:客户等不及啦,快去回复吧~",
@@ -780,7 +780,7 @@ class Event extends Controller
                         $queue = Admins::table("wolive_queue")->insert($data);
                     }
 
-                    // 推送游客信息
+                    // 推送遊客信息
                     $pusher->trigger("ud" . $service_data['service_id'], 'on_notice', array('message' => $arr));
 
                     $words = Admins::table('wolive_sentence')->where("lang",$lang)->where("service_id", $service_data['service_id'])->where('state', 'using')->find();
@@ -833,7 +833,7 @@ class Event extends Controller
                     $queue = Admins::table("wolive_queue")->insert($data);
                 }
 
-                // 推送游客信息
+                // 推送遊客信息
                 $pusher->trigger("ud" . $service_data['service_id'], 'on_notice', array('message' => $arr));
 
                 $words = Admins::table('wolive_sentence')->where("lang",$lang)->where("service_id", $service_data['service_id'])->where('state', 'using')->find();
@@ -853,7 +853,7 @@ class Event extends Controller
                     try {
                         TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_data['service_id']],true,true),$wechat['visitor_tpl'],[
                             "first"  => "您有新访客！",
-                            "keyword1"   => $arr["visiter_name"] ?$arr["visiter_name"]:'游客'.$arr['visiter_id'],
+                            "keyword1"   => $arr["visiter_name"] ?$arr["visiter_name"]:'遊客'.$arr['visiter_id'],
                             "keyword2"  => date('Y-m-d H:i:s',time()),
                             "remark" => $business['business_name']."提示:有新客户啦,快去撩一把~",
                         ]);

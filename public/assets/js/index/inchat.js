@@ -732,7 +732,7 @@ function getnums(id){
 
 var send = function () {
 
-    //获取 游客id
+    //获取 遊客id
     var msg = $("#text_in").val();
     var reg = new RegExp( '<' , "g" )
     var msg2 =msg.replace(reg,'&lt;');

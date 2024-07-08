@@ -177,7 +177,7 @@ function getblack() {
 
 //发送消息
 var send = function () {
-    //获取 游客id
+    //获取 遊客id
     var msg = $("#text_in").val();
 
 

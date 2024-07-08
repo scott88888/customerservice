@@ -749,7 +749,7 @@
                             if(count > 99) {
                                 count = '99+'
                             }
-                            item.visiter_name=item.visiter_name?item.visiter_name:'游客'+item.visiter_id;
+                            item.visiter_name=item.visiter_name?item.visiter_name:'遊客'+item.visiter_id;
                             var uname=item.name?item.name:item.visiter_name;
                             var unread_str = count ? '<em class="wc__badge">'+count+'</em>' : '';
                             var _tpl = [
@@ -847,7 +847,7 @@
                         var all_list = '';
                         $("#J__addrFriendList > ul").empty();
                         $.each(res.data, function (k, item) {
-                            item.visiter_name=item.visiter_name?item.visiter_name:'游客'+item.visiter_id;
+                            item.visiter_name=item.visiter_name?item.visiter_name:'遊客'+item.visiter_id;
                             var uname=item.name?item.name:item.visiter_name;
                             var _tpl = [
                                 '<li class="flexbox wc__material-cell '+item.state+'" id="accept-visiter-'+item.visiter_id+'" accept="'+item.visiter_id+'">\
@@ -1102,7 +1102,7 @@
             });
 
 
-            // 通知 游客离线
+            // 通知 遊客离线
             channel.bind("logout", function (data) {
                 getchat();
             });

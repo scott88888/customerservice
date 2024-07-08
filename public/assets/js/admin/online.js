@@ -114,7 +114,7 @@ function getchat() {
                 $.each(data, function (k, v) {
                     var str = JSON.stringify(v);
                     chat_data['visiter'+v.vid] =v;
-                    v.visiter_name=v.visiter_name?v.visiter_name:'游客'+v.visiter_id;
+                    v.visiter_name=v.visiter_name?v.visiter_name:'遊客'+v.visiter_id;
                     uname=v.name?v.name:v.visiter_name;
                     if((v.name || v.tel) && msgreminder) {
                         name = "<span class='c_name'><span class='c_tag'>已留信息</span><span>" + uname + "</span></span>";
@@ -225,7 +225,7 @@ function getwait() {
                 }
                 var a = "";
                 $.each(res.data, function (k, v) {
-                    v.visiter_name=v.visiter_name?v.visiter_name:'游客'+v.visiter_id;
+                    v.visiter_name=v.visiter_name?v.visiter_name:'遊客'+v.visiter_id;
                     var uname=v.name?v.name:v.visiter_name;
                     if(v.state == "online"){
                         a += '<div class="waiter">';
@@ -361,7 +361,7 @@ function getdata(cha) {
                     mindata = null;
                 }
                 var pic = $("#se_avatar").attr('src');
-                user.visiter_name=user.visiter_name?user.visiter_name:'游客'+user.visiter_id;
+                user.visiter_name=user.visiter_name?user.visiter_name:'遊客'+user.visiter_id;
                 var uname=user.name?user.name:user.visiter_name;
                 str += '<div class="chatbox-name"><div class="chatbox-info">';
                 str += '<div style="float:left;width:auto;margin-right:5px">'+uname+'</div>';

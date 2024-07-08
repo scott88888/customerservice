@@ -324,7 +324,7 @@ class Index extends Controller
         $visiter_name = htmlspecialchars($arr2['visiter_name']);
         $avatar = htmlspecialchars($arr2['avatar']);
         if ($visiter_name == '') {
-            $visiter_name = '游客' . $visiter_id;
+            $visiter_name = '遊客' . $visiter_id;
         }
         $groupid = htmlspecialchars($arr2['groupid']);
         $app_key = app_key;

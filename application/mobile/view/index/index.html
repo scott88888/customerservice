@@ -588,9 +588,9 @@
     <div class="dialog">
         <div class="title">{$lang['evaluate_service']}</div>
         <div class="dialog-body">
-            <div style="margin-bottom: 20px;">请对我的服务进行评价，满意请打5星哦~</div>
+            <div style="margin-bottom: 20px;">請對我的服務進行評價，滿意請打5星哦~</div>
             <div class='evaluate-item evaluate-score' data-score="0">
-                <span class="evaluate-title">服务态度态度</span>
+                <span class="evaluate-title">服務態度態度</span>
                 <img class="star" data-id="1" src="__image__/index/star.png" alt="">
                 <img class="star" data-id="2" src="__image__/index/star.png" alt="">
                 <img class="star" data-id="3" src="__image__/index/star.png" alt="">
@@ -598,7 +598,7 @@
                 <img class="star" data-id="5" src="__image__/index/star.png" alt="">
             </div>
             <div class='evaluate-item' style="height: 80px;line-height: 1;margin-top: 10px;align-items: flex-start">
-                <span style="display: inline-block;margin-right: 12px;white-space: nowrap">意见意见建议</span>
+                <span style="display: inline-block;margin-right: 12px;white-space: nowrap">意見意見建議</span>
                 <textarea class="about-text" name="" id="" cols="30" rows="4"></textarea>
             </div>
             <div class="evaluate-btn">
@@ -614,7 +614,7 @@
             <div class="title">{$lang['choose_lang']}</div>
             <img src="__image__/index/closer.gif" class="lang-close">
             <div class="dialog-body lang-choose">
-                <span data-lang="cn"><img src="__image__/flag/cn.png" class="lang-flag" />中文简体</span>
+                <span data-lang="cn"><img src="__image__/flag/cn.png" class="lang-flag" />中文簡體</span>
                 <span data-lang="tc"><img src="__image__/flag/tc.png" class="lang-flag" />中文繁體</span>
                 <span data-lang="en"><img src="__image__/flag/en.png" class="lang-flag" />English</span>
                 <span data-lang="vi"><img src="__image__/flag/vi.png" class="lang-flag" />Việt Nam</span>
@@ -914,7 +914,7 @@
                     audio_context = new AudioContext;
 
                     if (!navigator.getUserMedia) {
-                        console.log('语音创建失败');
+                        console.log('語音建立失敗');
                     }
                     ;
                 } catch (e) {
@@ -933,12 +933,12 @@
                         layui.use(['jquery', 'layer'], function () {
                             var layer = layui.layer;
 
-                            layer.msg('录音中...', {
+                            layer.msg('錄音中...', {
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
                                 , time: 0 //20s后自动关闭
-                                , btn: ['发送', '取消']
+                                , btn: ['傳送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
                                     recorder && recorder.stop();

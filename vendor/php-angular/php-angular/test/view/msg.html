@@ -10,7 +10,7 @@
                 <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">你的邮箱</label>
+                <label for="exampleInputEmail1">你的信箱</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
             </div>
             <div class="form-group">
@@ -25,15 +25,15 @@
             var email = $('input[name=email]').val();
             var msg = $('textarea[name=msg]').val();
             if (!name) {
-                alert('请输入你的名字');
+                alert('請輸入你的名字');
                 return false;
             }
             if (!email) {
-                alert('请输入你的邮箱');
+                alert('請輸入你的信箱');
                 return false;
             }
             if (!msg) {
-                alert('请输入你的建议');
+                alert('請輸入你的建議');
                 return false;
             }
             var data = {

@@ -52,7 +52,7 @@ var types=function(){
             e = e || window.event;
             if (e.ctrlKey && e.keyCode == 13) {
                 if ($('#text_in').html() == "" || $.cookie("service") == '' ) {
-                    layer.msg('请输入信息');
+                    layer.msg('請輸入信息');
                 } else {
                     send();
                 }
@@ -204,7 +204,7 @@ var send = function () {
         var img = json.avater;
     }
     if (msg == "") {
-        layer.msg('请输入信息');
+        layer.msg('請輸入信息');
     } else {
         var sid = $('#channel').text();
         var se = $("#chatmsg_submit").attr('name');

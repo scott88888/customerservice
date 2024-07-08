@@ -124,7 +124,7 @@ function toTrans() {
     var text = $('#text_all').val();
     var to = $('#lang').text();
     if(text == ''){
-        layer.msg("请输入内容", {icon: 2});
+        layer.msg("請輸入内容", {icon: 2});
     }else{
         $.ajax({
             url: '/service/index/trans',
@@ -808,7 +808,7 @@ var send = function() {
     }
 
     if (msg == "") {
-        layer.msg('请输入信息');
+        layer.msg('請輸入信息');
     } else {
 
         var se = $("#chatmsg_submit").attr('name');

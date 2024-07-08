@@ -79,7 +79,7 @@ layui.define(['layer', 'form'], function(exports) {
 		var html = '  <div class="layui-form-item">\n' +
 			'    <label class="layui-form-label">' + name + '</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
-			'      <input type="' + type + '" name="' + key + '" required  lay-verify="required" placeholder="请输入' + name +
+			'      <input type="' + type + '" name="' + key + '" required  lay-verify="required" placeholder="請輸入' + name +
 			'内容" autocomplete="off" class="layui-input">\n' +
 			'    </div>\n' +
 			'  </div>\n';
@@ -140,7 +140,7 @@ layui.define(['layer', 'form'], function(exports) {
 		var html = '  <div class="layui-form-item layui-form-text">\n' +
 			'    <label class="layui-form-label">文本域</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
-			'      <textarea name="' + key + '" placeholder="请输入内容" class="layui-textarea"></textarea>\n' +
+			'      <textarea name="' + key + '" placeholder="請輸入内容" class="layui-textarea"></textarea>\n' +
 			'    </div>\n' +
 			'  </div>\n';
 		return html;

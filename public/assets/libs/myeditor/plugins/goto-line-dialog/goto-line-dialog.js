@@ -24,7 +24,7 @@
 				dialog : {
 					"goto-line" : {
 						title  : "跳转到行",
-						label  : "请输入行号",
+						label  : "請輸入行号",
 						error  : "错误："
 					}
 				}

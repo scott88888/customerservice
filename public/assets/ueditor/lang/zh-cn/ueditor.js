@@ -271,7 +271,7 @@ UE.I18N['zh-cn'] = {
             'lang_start_upload':"开始上传",
             'lock':{'title':"锁定宽高比例"}, //属性
             'searchType':{'title':"图片类型", 'options':["新闻", "壁纸", "表情", "头像"]}, //select的option
-            'searchTxt':{'value':"请输入搜索关键词"},
+            'searchTxt':{'value':"請輸入搜索关键词"},
             'searchBtn':{'value':"百度一下"},
             'searchReset':{'value':"清空搜索"},
             'noneAlign':{'title':'无浮动'},
@@ -303,10 +303,10 @@ UE.I18N['zh-cn'] = {
         'errorHttp':'http请求错误',
         'errorServerUpload':'服务器返回出错',
         'remoteLockError':"宽高不正确,不能所定比例",
-        'numError':"请输入正确的长度或者宽度值！例如：123，400",
+        'numError':"請輸入正确的长度或者宽度值！例如：123，400",
         'imageUrlError':"不允许的图片格式或者图片域！",
         'imageLoadError':"图片加载失败！请检查链接地址或网络状态！",
-        'searchRemind':"请输入搜索关键词",
+        'searchRemind':"請輸入搜索关键词",
         'searchLoading':"图片加载中，请稍后……",
         'searchRetry':" :( ，抱歉，没有找到图片！请重试一次！"
     },
@@ -350,7 +350,7 @@ UE.I18N['zh-cn'] = {
             'lang_videoW':"宽度",
             'lang_videoH':"高度",
             'lang_alignment':"对齐方式",
-            'videoSearchTxt':{'value':"请输入搜索关键字！"},
+            'videoSearchTxt':{'value':"請輸入搜索关键字！"},
             'videoType':{'options':["全部", "热门", "娱乐", "搞笑", "体育", "科技", "综艺"]},
             'videoSearchBtn':{'value':"百度一下"},
             'videoSearchReset':{'value':"清空结果"},
@@ -365,7 +365,7 @@ UE.I18N['zh-cn'] = {
             'lang_format_advice':"建议使用mp4格式."
 
         },
-        'numError':"请输入正确的数值，如123,400",
+        'numError':"請輸入正确的数值，如123,400",
         'floatLeft':"左浮动",
         'floatRight':"右浮动",
         '"default"':"默认",
@@ -550,7 +550,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_alignMode':'对齐方式：',
             'align':{title:"对齐方式", options:["默认", "左对齐", "右对齐", "居中"]}
         },
-        'enterAddress':'请输入地址!'
+        'enterAddress':'請輸入地址!'
     },
     'link':{
         'static':{

@@ -8,7 +8,7 @@ function add(data,group) {
     value += '<tr><td>用户名:</td><td><span>'+data.user_name+'</span></td></tr>';
     value += '<tr><td>昵称:</td><td><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></td></tr>';
     value += '<tr><td>手机:</td><td><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></td></tr>';
-    value += '<tr><td>邮箱:</td><td><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></td></tr>';
+    value += '<tr><td>信箱:</td><td><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></td></tr>';
     value += '<tr><td>网站id:</td><td><span> '+data.business_id+' </span><input type="text" name="id" class="hide" value=' + '"' + data.service_id + '"' + '></td></tr>';
     value += '<tr><td>客服分组:</td><td><select id="classification" name="groupid" style="width: 200px;height: 38px;border-color: #ddd; ">';
     if(data.groupid == 0){
@@ -74,7 +74,7 @@ function showinfo(data,group) {
     value += '<div class="info_form_item"><label>OpenId</label><span><input type="text" id="open_id" name="open_id" class="am-form-field"  value=' + '"' + data.open_id + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>昵称</label><span><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>手机</label><span><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></span></div>';
-    value += '<div class="info_form_item"><label>邮箱</label><span><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></span></div>';
+    value += '<div class="info_form_item"><label>信箱</label><span><input type="text" id="email" name="email" class="am-form-field" value=' + '"' + data.email + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>网站id</label><span><span> '+data.business_id+' </span><input type="text" name="id" class="hide" value=' + '"' + data.service_id + '"' + '></span></div>';
     value += '<div class="info_form_item"><label>客服分组</label><span><select id="classification" name="groupid">';
     if(data.groupid == 0){
@@ -126,8 +126,8 @@ function showinfo(data,group) {
 var modify =function(id){
     var str ='';
     str+='<form id="pass" class="passform"><table>';
-    str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">请输入原密码：</label><span><input class="am-form-field" type="password" id="old" name="oldpass"></span></div>';
-    str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">请输入新密码：</label><span><input class="am-form-field" type="password" id="new" name="newpass"></span></div>';
+    str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">請輸入原密碼：</label><span><input class="am-form-field" type="password" id="old" name="oldpass"></span></div>';
+    str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">請輸入新密碼：</label><span><input class="am-form-field" type="password" id="new" name="newpass"></span></div>';
     str+='<div class="info_form_item" style="height: 36px"><label style="width: 166px;margin-bottom:0">再次输入新密码：</label><span><input class="am-form-field" type="password" id="new2" name="newpass2" ></span></div>';
     str+='<div><label style="width: 166px;margin-bottom:0" class="hide"><input class="hide" type="text" name="id" value="'+id+'"><label></div>'
     str+='</table></form>';

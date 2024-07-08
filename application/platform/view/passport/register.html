@@ -155,14 +155,14 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">帐户名</label>
                 <div class="col-sm-8">
-                    <input class="form-control" v-model="username" placeholder="请输入帐户名">
+                    <input class="form-control" v-model="username" placeholder="請輸入帐户名">
                     <div class="fs-sm text-muted">帐户名必须是字母开头，只允许有字母、数字、下划线 _</div>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">设置密码</label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="password" v-model="password" placeholder="请输入密码">
+                    <input class="form-control" type="password" v-model="password" placeholder="請輸入密码">
                 </div>
             </div>
             <div class="form-group row">
@@ -183,20 +183,20 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">姓名/企业名称</label>
                 <div class="col-sm-8">
-                    <input class="form-control" v-model="name" placeholder="请输入帐户名">
+                    <input class="form-control" v-model="name" placeholder="請輸入帐户名">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">联系人手机号</label>
                 <div class="col-sm-8">
-                    <input class="form-control" v-model="mobile" placeholder="请输入手机号">
+                    <input class="form-control" v-model="mobile" placeholder="請輸入手机号">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">验证码</label>
                 <div class="col-sm-8" style="position: relative">
                     <div class="input-group">
-                        <input class="form-control" v-model="sms_code" placeholder="请输入验证码">
+                        <input class="form-control" v-model="sms_code" placeholder="請輸入验证码">
                         <span class="input-group-btn">
                             <a v-if="send_sms_code_timeout > 0" href="javascript:"
                                class="btn btn-primary show-sms-code-modal disabled" data-toggle="modal"
@@ -211,7 +211,7 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">申请原因</label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" v-model="desc" placeholder="请输入申请原因" rows="4"></textarea>
+                    <textarea class="form-control" v-model="desc" placeholder="請輸入申请原因" rows="4"></textarea>
                 </div>
             </div>
             <div class="form-group row">
@@ -248,7 +248,7 @@
                     <p>验证码将以手机短信方式发送到您填写的手机号上。</p>
                     <div class="row">
                         <div class="col-sm-8">
-                            <input v-model="captcha_code" class="form-control mb-3" placeholder="请输入图片验证码">
+                            <input v-model="captcha_code" class="form-control mb-3" placeholder="請輸入图片验证码">
                         </div>
                         <div class="col-sm-4">
                             <img class="refresh-captcha"

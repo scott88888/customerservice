@@ -482,7 +482,7 @@
 
                     <div class="msg-input">
                         <div class="input-box">
-                            <textarea id="text_in" class="edit-ipt" style="overflow-y: auto; font-weight: normal; font-size: 14px; overflow-x: hidden; word-break: break-all; font-style: normal; outline: none;padding: 5px;border:none;" contenteditable="true" hidefocus="true" tabindex="0" placeholder="请输入..."></textarea>
+                            <textarea id="text_in" class="edit-ipt" style="overflow-y: auto; font-weight: normal; font-size: 14px; overflow-x: hidden; word-break: break-all; font-style: normal; outline: none;padding: 5px;border:none;" contenteditable="true" hidefocus="true" tabindex="0" placeholder="請輸入..."></textarea>
                         </div>
                         <div class="msg-toolbar-footer grey12" >
                             <a onclick="send()" class="layui-btn msg-send-btn">
@@ -648,7 +648,7 @@
         var text = $('#text_in').val();
         var to = $('#lang').text();
         if(text == ''){
-            layer.msg("请输入内容", {icon: 2});
+            layer.msg("請輸入内容", {icon: 2});
         }else{
             $.ajax({
                 url: '/service/index/trans',

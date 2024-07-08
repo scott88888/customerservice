@@ -35,13 +35,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">评价说明</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title"  v-model="list.title" value=""  placeholder="请输入评价说明" autocomplete="off" class="layui-input" style="width: 50%">
+                        <input type="text" name="title"  v-model="list.title" value=""  placeholder="請輸入评价说明" autocomplete="off" class="layui-input" style="width: 50%">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">评价条目<br><span>(最多限5条)</span></label>
                     <div class="layui-input-block comments" v-for="(item,index) in list.comments" :key="index">
-                        <input type="text"  placeholder="请输入评价说明" autocomplete="off" class="layui-input" style="width: 30%;display: inline-block" v-model="list.comments[index]">
+                        <input type="text"  placeholder="請輸入评价说明" autocomplete="off" class="layui-input" style="width: 30%;display: inline-block" v-model="list.comments[index]">
                         <div class="star">
                             <img src="__image__/index/star-light.png" alt="">
                             <img src="__image__/index/star-light.png" alt="">
@@ -67,7 +67,7 @@
                 <div class="layui-form-item text-evaluate" v-if="list.word_switch == 'open'">
                     <label class="layui-form-label">评价说明</label>
                     <div class="layui-input-block">
-                        <input type="text" maxlength="6" v-model="list.word_title"  placeholder="请输入评价说明（限6个）" autocomplete="off" class="layui-input" style="width: 30%">
+                        <input type="text" maxlength="6" v-model="list.word_title"  placeholder="請輸入评价说明（限6个）" autocomplete="off" class="layui-input" style="width: 30%">
                     </div>
                 </div>
                 <div class="layui-input-block" style="min-height: 80px;">

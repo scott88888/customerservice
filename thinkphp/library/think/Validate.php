@@ -646,7 +646,7 @@ class Validate
                 $result = $this->filter($value, FILTER_VALIDATE_INT);
                 break;
             case 'email':
-                // 是否为邮箱地址
+                // 是否为信箱地址
                 $result = $this->filter($value, FILTER_VALIDATE_EMAIL);
                 break;
             case 'boolean':

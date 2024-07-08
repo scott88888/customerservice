@@ -333,7 +333,7 @@ v1.2.0 主要更新：
     - 新增配置项 `settings.autoHeight` ；
     - 新增配置项 `settings.toolbarAutoFixed` ；
     - 新增方法 `setToolbarAutoFixed(true|false)` ；
-- 新增邮箱地址自动添加链接功能；
+- 新增信箱地址自动添加链接功能；
     - 新增配置项 `emailLink` ，默认为 `true` ; 
 - 改进表格插入对话框；
 - 工具栏新增三个按钮，分别是将所选文本首字母转成大写、转成小写、转成大写；

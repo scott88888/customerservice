@@ -128,14 +128,14 @@ class Auth
      *
      * @param string $username  用户名
      * @param string $password  密码
-     * @param string $email     邮箱
+     * @param string $email     信箱
      * @param string $mobile    手机号
      * @param array $extend    扩展参数
      * @return boolean
      */
     public function register($username, $password, $mobile = '', $extend = [])
     {
-        // 检测用户名或邮箱、手机号是否存在
+        // 检测用户名或信箱、手机号是否存在
         if (Admin::getByUsername($username))
         {
             $this->setError('用户名已存在');
@@ -189,7 +189,7 @@ class Auth
     /**
      * 用户登录
      *
-     * @param string    $account    账号,用户名、邮箱、手机号
+     * @param string    $account    账号,用户名、信箱、手机号
      * @param string    $password   密码
      * @return boolean
      */
@@ -284,7 +284,7 @@ class Auth
             $this->setError('你没有登录');
             return false;
         }
-        // 检测用户名或邮箱、手机号是否存在
+        // 检测用户名或信箱、手机号是否存在
         if (Admin::getByUsername($username))
         {
             $this->setError('用户名已存在');

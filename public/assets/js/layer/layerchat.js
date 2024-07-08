@@ -572,7 +572,7 @@ var send = function () {
 
 
     if (msg == '' || $.cookie("service") == '') {
-        layer.msg('请输入信息');
+        layer.msg('請輸入信息');
     } else {
         var time;
 

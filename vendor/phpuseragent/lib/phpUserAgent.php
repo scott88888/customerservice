@@ -37,32 +37,32 @@ class phpUserAgent
     public function getBrowserNameCn()
     {
         $BrowserNameCn=array(
-            'shiretoko'     => '火狐浏览器',
-            'qqbrowser'     => 'QQ浏览器',
-            'qqnbrowser'     => 'QQ内浏览器',
-            'opr'     => '欧朋浏览器',
-            'safari'     => 'Safari浏览器',
-            'chrome'     => '谷歌浏览器',
-            'namoroka'      => '火狐浏览器',
-            'shredder'      => '火狐浏览器',
-            'minefield'     => '火狐浏览器',
-            'granparadiso'  => '火狐浏览器',
-            'firefox'  => '火狐浏览器',
-            'micromessenger'=>'微信内浏览器',
-            'msie'=>'微信IE内浏览器',
-            'webkit'=>'Webkit内核浏览器',
-            'opera'=>'欧朋浏览器',
-            'konqueror'=>'Konqueror浏览器',
-            'gecko'=>'Gecko内核浏览器',
-            'googlebot'=>'谷歌爬虫',
-            'sogoubrowser'=>'搜狗浏览器',
-            'iphone'=>'苹果浏览器',
-            'msnbot'=>'微软爬虫',
-            'applewebkit'=>'AppleWebkit内核浏览器',
-            'ubrowser'=>'UC浏览器',
-            'trident'=>'IE浏览器',
-            'maxthon'=>'傲游浏览器',
-            'lbbrowser'=>'猎豹浏览器'
+            'shiretoko' => '火狐瀏覽器',
+            'qqbrowser' => 'QQ瀏覽器',
+            'qqnbrowser' => 'QQ內瀏覽器',
+            'opr' => '歐朋瀏覽器',
+            'safari' => 'Safari瀏覽器',
+            'chrome' => 'Google瀏覽器',
+            'namoroka' => '火狐瀏覽器',
+            'shredder' => '火狐瀏覽器',
+            'minefield' => '火狐瀏覽器',
+            'granparadiso' => '火狐瀏覽器',
+            'firefox' => '火狐瀏覽器',
+            'micromessenger'=>'微信內瀏覽器',
+            'msie'=>'微信IE內瀏覽器',
+            'webkit'=>'Webkit核心瀏覽器',
+            'opera'=>'歐朋瀏覽器',
+            'konqueror'=>'Konqueror瀏覽器',
+            'gecko'=>'Gecko核心瀏覽器',
+            'googlebot'=>'Google爬蟲',
+            'sogoubrowser'=>'搜狗瀏覽器',
+            'iphone'=>'蘋果瀏覽器',
+            'msnbot'=>'微軟爬蟲',
+            'applewebkit'=>'AppleWebkit核心瀏覽器',
+            'ubrowser'=>'UC瀏覽器',
+            'trident'=>'IE瀏覽器',
+            'maxthon'=>'傲遊瀏覽器',
+            'lbbrowser'=>'獵豹瀏覽器'
         );
         if(isset($BrowserNameCn[$this->browserName])){
             return $BrowserNameCn[$this->browserName];
@@ -70,7 +70,7 @@ class phpUserAgent
             if($this->browserName){
                 return $this->browserName;
             }else{
-                return '其他浏览器';
+                return '其他瀏覽器';
             }
 
         }
@@ -79,13 +79,13 @@ class phpUserAgent
     public function getOperatingSystemCn()
     {
         $SystemCn=array(
-            'android'=>'安卓系统',
-            'windows'=>'微软Windows系统',
-            'macintosh'=>'MAC系统',
-            'linux'=>'Linux系统',
-            'freebsd'=>'FreeBSD系统',
-            'unix'=>'Uninx系统',
-            'iphone'=>'苹果手机系统'
+         'android'=>'安卓系統',
+            'windows'=>'微軟Windows系統',
+            'macintosh'=>'MAC系統',
+            'linux'=>'Linux系統',
+            'freebsd'=>'FreeBSD系統',
+            'unix'=>'Uninx系統',
+            'iphone'=>'蘋果手機系統'
         );
         if(isset($SystemCn[$this->operatingSystem])){
             return $SystemCn[$this->operatingSystem];

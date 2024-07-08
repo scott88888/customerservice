@@ -34,7 +34,7 @@ function chat2top(id,that){
             if(res.code){
                 layer.msg(res.msg,{icon:1});
                 that.data('istop',istop?0:1);
-                that.text(istop?'取消置顶':'置顶对话');
+                that.text(istop?'取消置顶':'置頂對話');
                 setclass=istop?that.addClass('layui-btn-normal').removeClass('layui-btn-danger'):that.addClass('layui-btn-danger').removeClass('layui-btn-normal');
             }else{
                 layer.msg(res.msg,{icon:2});

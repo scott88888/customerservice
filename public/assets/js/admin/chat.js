@@ -127,7 +127,7 @@ function getreply(){
                 });
 
 
-                str+='<div class="add-reply" onclick="addreply()" >添加快捷回复</div><div class="manager-reply" onclick="show()" >管理快捷回复</div>';
+                str+='<div class="add-reply" onclick="addreply()" >新增快速回覆</div><div class="manager-reply" onclick="show()" >管理快捷回复</div>';
 
                 $("#quit_reply").prepend(str);
             }

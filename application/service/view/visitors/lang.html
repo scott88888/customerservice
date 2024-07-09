@@ -10,10 +10,10 @@
 	<div class="mainBox">
 		<div class="main-container">
 			<div class="layui-form-item">
-				<label class="layui-form-label">使用者语言</label>
+				<label class="layui-form-label">使用者語言</label>
 				<div class="layui-input-inline">
 					<select name="lang" lay-verify="required">
-						<option value="">请选择使用者语言</option>
+						<option value="">請選擇使用者語言</option>
 						{foreach name=":config('lang')" item="vo"}
 						<option value="{$key}" {if $visiter.lang == $key}selected{/if}>{$vo}</option>
 						{/foreach}

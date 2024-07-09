@@ -261,7 +261,7 @@ class Card extends AbstractAPI
      * @param string $pageTitle
      * @param bool   $canShare
      * @param string $scene     [SCENE_NEAR_BY 附近,SCENE_MENU 自定义菜单,SCENE_QRCODE 二维码,SCENE_ARTICLE 公众号文章,
-     *                          SCENE_H5 h5頁面,SCENE_IVR 自动回复,SCENE_CARD_CUSTOM_CELL 卡券自定义cell]
+     *                          SCENE_H5 h5頁面,SCENE_IVR 自動回覆,SCENE_CARD_CUSTOM_CELL 卡券自定义cell]
      * @param array  $cardList
      *
      * @return \EasyWeChat\Support\Collection
@@ -495,7 +495,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 更改卡券信息接口 and 设置跟随推荐接口.
+     * 更改卡券訊息接口 and 设置跟随推荐接口.
      *
      * @param string $cardId
      * @param string $type
@@ -672,7 +672,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 拉取会员信息接口.
+     * 拉取会员訊息接口.
      *
      * @param string $cardId
      * @param string $code
@@ -690,7 +690,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 更新会员信息.
+     * 更新会员訊息.
      *
      * @param array $params
      *
@@ -702,7 +702,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 更新通用员信息.
+     * 更新通用员訊息.
      *
      * @param array $params
      *
@@ -768,7 +768,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 取得子商户信息.
+     * 取得子商户訊息.
      *
      * @param int $merchantId
      *
@@ -780,7 +780,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 批量取得子商户信息.
+     * 批量取得子商户訊息.
      *
      * @param int    $beginId
      * @param int    $limit

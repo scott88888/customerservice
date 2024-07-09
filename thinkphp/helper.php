@@ -32,7 +32,7 @@ use think\View;
 
 if (!function_exists('load_trait')) {
     /**
-     * 快速匯入Traits PHP5.5以上无需调用
+     * 快速匯入Traits PHP5.5以上無需调用
      * @param string    $class trait库
      * @param string    $ext 类库后缀
      * @return boolean
@@ -80,10 +80,10 @@ if (!function_exists('debug')) {
 
 if (!function_exists('lang')) {
     /**
-     * 取得语言变量值
-     * @param string    $name 语言变量名
+     * 取得語言变量值
+     * @param string    $name 語言变量名
      * @param array     $vars 动态变量值
-     * @param string    $lang 语言
+     * @param string    $lang 語言
      * @return mixed
      */
     function lang($name, $vars = [], $lang = '')
@@ -112,7 +112,7 @@ if (!function_exists('config')) {
 
 if (!function_exists('input')) {
     /**
-     * 取得输入数据 支持默认值和过滤
+     * 取得输入資料 支持默认值和过滤
      * @param string    $key 取得的变量名
      * @param mixed     $default 默认值
      * @param string    $filter 过滤方法
@@ -186,9 +186,9 @@ if (!function_exists('validate')) {
 
 if (!function_exists('db')) {
     /**
-     * 实例化数据库类
-     * @param string        $name 操作的数据表名稱（不含前缀）
-     * @param array|string  $config 数据库配置参数
+     * 实例化資料库类
+     * @param string        $name 操作的資料表名稱（不含前缀）
+     * @param array|string  $config 資料库配置参数
      * @param bool          $force 是否强制重新连接
      * @return \think\db\Query
      */
@@ -374,9 +374,9 @@ if (!function_exists('cache')) {
             $expire = is_numeric($options) ? $options : null;
             return $cache->remember(substr($name, 1), $value, $expire);
         } else {
-            // 缓存数据
+            // 缓存資料
             if (is_array($options)) {
-                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢缓存无法设置过期时间
+                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢缓存無法设置过期时间
             } else {
                 $expire = is_numeric($options) ? $options : null; //默认快捷缓存设置过期时间
             }
@@ -391,8 +391,8 @@ if (!function_exists('cache')) {
 
 if (!function_exists('trace')) {
     /**
-     * 记录日志信息
-     * @param mixed     $log log信息 支持字符串和数组
+     * 记录日志訊息
+     * @param mixed     $log log訊息 支持字符串和数组
      * @param string    $level 日志级别
      * @return void|array
      */
@@ -420,9 +420,9 @@ if (!function_exists('request')) {
 if (!function_exists('response')) {
     /**
      * 创建普通 Response 对象实例
-     * @param mixed      $data   输出数据
+     * @param mixed      $data   输出資料
      * @param int|string $code   狀態码
-     * @param array      $header 头信息
+     * @param array      $header 头訊息
      * @param string     $type
      * @return Response
      */
@@ -450,7 +450,7 @@ if (!function_exists('view')) {
 if (!function_exists('json')) {
     /**
      * 取得\think\response\Json对象实例
-     * @param mixed   $data 返回的数据
+     * @param mixed   $data 返回的資料
      * @param integer $code 狀態码
      * @param array   $header 头部
      * @param array   $options 参数
@@ -465,7 +465,7 @@ if (!function_exists('json')) {
 if (!function_exists('jsonp')) {
     /**
      * 取得\think\response\Jsonp对象实例
-     * @param mixed   $data    返回的数据
+     * @param mixed   $data    返回的資料
      * @param integer $code    狀態码
      * @param array   $header 头部
      * @param array   $options 参数
@@ -480,7 +480,7 @@ if (!function_exists('jsonp')) {
 if (!function_exists('xml')) {
     /**
      * 取得\think\response\Xml对象实例
-     * @param mixed   $data    返回的数据
+     * @param mixed   $data    返回的資料
      * @param integer $code    狀態码
      * @param array   $header  头部
      * @param array   $options 参数
@@ -515,7 +515,7 @@ if (!function_exists('abort')) {
     /**
      * 抛出HTTP异常
      * @param integer|Response      $code 狀態码 或者 Response对象实例
-     * @param string                $message 错误信息
+     * @param string                $message 错误訊息
      * @param array                 $header 参数
      */
     function abort($code, $message = null, $header = [])
@@ -531,7 +531,7 @@ if (!function_exists('abort')) {
 if (!function_exists('halt')) {
     /**
      * 调试变量并且中断输出
-     * @param mixed      $var 调试变量或者信息
+     * @param mixed      $var 调试变量或者訊息
      */
     function halt($var)
     {
@@ -557,7 +557,7 @@ if (!function_exists('token')) {
 if (!function_exists('load_relation')) {
     /**
      * 延迟预载入关联查詢
-     * @param mixed $resultSet 数据集
+     * @param mixed $resultSet 資料集
      * @param mixed $relation 关联
      * @return array
      */
@@ -573,8 +573,8 @@ if (!function_exists('load_relation')) {
 
 if (!function_exists('collection')) {
     /**
-     * 数组转换为数据集对象
-     * @param array $resultSet 数据集数组
+     * 数组转换为資料集对象
+     * @param array $resultSet 資料集数组
      * @return \think\model\Collection|\think\Collection
      */
     function collection($resultSet)

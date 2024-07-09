@@ -44,7 +44,7 @@ class Session
         if (empty($config)) {
             $config = Config::get('session');
         }
-        // 记录初始化信息
+        // 记录初始化訊息
         App::$debug && Log::record('[ SESSION ] INIT ' . var_export($config, true), 'info');
         $isDoStart = false;
         if (isset($config['use_trans_sid'])) {
@@ -219,7 +219,7 @@ class Session
     }
 
     /**
-     * 清空当前请求的session数据
+     * 清空当前请求的session資料
      * @return void
      */
     public static function flush()
@@ -239,7 +239,7 @@ class Session
     }
 
     /**
-     * 刪除session数据
+     * 刪除session資料
      * @param string|array  $name session名稱
      * @param string|null   $prefix 作用域（前缀）
      * @return void
@@ -269,7 +269,7 @@ class Session
     }
 
     /**
-     * 清空session数据
+     * 清空session資料
      * @param string|null   $prefix 作用域（前缀）
      * @return void
      */
@@ -285,7 +285,7 @@ class Session
     }
 
     /**
-     * 判断session数据
+     * 判断session資料
      * @param string        $name session名稱
      * @param string|null   $prefix
      * @return bool
@@ -304,7 +304,7 @@ class Session
     }
 
     /**
-     * 新增数据到一个session数组
+     * 新增資料到一个session数组
      * @param  string  $key
      * @param  mixed   $value
      * @return void

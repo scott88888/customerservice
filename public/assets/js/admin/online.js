@@ -117,7 +117,7 @@ function getchat() {
                     v.visiter_name=v.visiter_name?v.visiter_name:'遊客'+v.visiter_id;
                     uname=v.name?v.name:v.visiter_name;
                     if((v.name || v.tel) && msgreminder) {
-                        name = "<span class='c_name'><span class='c_tag'>已留信息</span><span>" + uname + "</span></span>";
+                        name = "<span class='c_name'><span class='c_tag'>已留訊息</span><span>" + uname + "</span></span>";
                     }else {
                         name = "<span class='c_name'>" + uname + "</span>";
                     }
@@ -208,7 +208,7 @@ function hidecut(obj){
     $(obj).children('i').addClass('hide');
 }
 
-//取得队列的实时数据
+//取得队列的实时資料
 function getwait() {
 
     $.ajax({
@@ -286,7 +286,7 @@ function getblacklist() {
 
 
 
-//取得ip的详细信息
+//取得ip的详细訊息
 var getip = function (cip) {
     $.ajax({
         url:"/admin/set/getipinfo",
@@ -475,7 +475,7 @@ function getdata(cha) {
                     if(res.data.length <= 2){
 
                         $("#top_div").remove();
-                        $(".conversation").prepend("<div id='top_div' class='showtime'>已没有数据</div>");
+                        $(".conversation").prepend("<div id='top_div' class='showtime'>已没有資料</div>");
                         if(div){
                             div.scrollTop =0;
                         }

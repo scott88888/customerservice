@@ -98,7 +98,7 @@ class Login extends Controller
             if ($result !== true) {
                 $this->error($result);
             }
-            // 取得信息 根据$post['username'] 的数据 来做條件 取得整條信息
+            // 取得訊息 根据$post['username'] 的資料 来做條件 取得整條訊息
 //                        ->where('business_id',$post['business_id'])
            /* $admin = Admins::table("wolive_service")
                 ->where('user_name', $post['user_name'])
@@ -120,11 +120,11 @@ class Login extends Controller
                 $this->error('登入使用者名稱或密碼错误');
             }
 
-            // 取得登入数据
+            // 取得登入資料
 
             $login = $admin->getData();
 
-            // 删掉登入使用者的敏感信息
+            // 删掉登入使用者的敏感訊息
             unset($login['password']);
 
             $res = Admins::table('wolive_service')->where('service_id', $login['service_id'])->update(['state' => 'online']);

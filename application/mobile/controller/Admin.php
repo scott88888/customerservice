@@ -220,7 +220,7 @@ class Admin extends Base
     $data = $userAdmin->where('business_id', $login['business_id'])->paginate(3, false, $pageParam);
     if($data->count() == 0){
     
-       $this->assign('content','暂时没有留言数据');
+       $this->assign('content','暂时没有留言資料');
     }else{
        $this->assign('content',"");
     }

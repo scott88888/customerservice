@@ -67,7 +67,7 @@ class Cx extends Taglib
     }
 
     /**
-     * volist标签解析 循环输出数据集
+     * volist标签解析 循环输出資料集
      * 格式：
      * {volist name="userList" id="user" empty=""}
      * {user.username}
@@ -87,7 +87,7 @@ class Cx extends Taglib
         $mod    = isset($tag['mod']) ? $tag['mod'] : '2';
         $offset = !empty($tag['offset']) && is_numeric($tag['offset']) ? intval($tag['offset']) : 0;
         $length = !empty($tag['length']) && is_numeric($tag['length']) ? intval($tag['length']) : 'null';
-        // 允许使用函数设定数据集 <volist name=":fun('arg')" id="vo">{$vo.name}</volist>
+        // 允许使用函数设定資料集 <volist name=":fun('arg')" id="vo">{$vo.name}</volist>
         $parseStr = '<?php ';
         $flag     = substr($name, 0, 1);
         if (':' == $flag) {
@@ -120,7 +120,7 @@ class Cx extends Taglib
     }
 
     /**
-     * foreach标签解析 循环输出数据集
+     * foreach标签解析 循环输出資料集
      * 格式：
      * {foreach name="userList" id="user" key="key" index="i" mod="2" offset="3" length="5" empty=""}
      * {user.username}

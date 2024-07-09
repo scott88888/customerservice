@@ -36,7 +36,7 @@ foreach ($source as $imgUrl) {
     ));
 }
 
-/* 返回抓取数据 */
+/* 返回抓取資料 */
 return json_encode(array(
     'state'=> count($list) ? 'SUCCESS':'ERROR',
     'list'=> $list

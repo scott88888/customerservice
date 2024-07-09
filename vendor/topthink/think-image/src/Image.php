@@ -49,7 +49,7 @@ class Image
     protected $gif;
 
     /**
-     * 图像信息，包括 width, height, type, mime, size
+     * 图像訊息，包括 width, height, type, mime, size
      *
      * @var array
      */
@@ -57,7 +57,7 @@ class Image
 
     protected function __construct(\SplFileInfo $file)
     {
-        //取得图像信息
+        //取得图像訊息
         $info = @getimagesize($file->getPathname());
 
         //检测图像合法性
@@ -65,7 +65,7 @@ class Image
             throw new ImageException('Illegal image file');
         }
 
-        //设置图像信息
+        //设置图像訊息
         $this->info = [
             'width'  => $info[0],
             'height' => $info[1],
@@ -128,7 +128,7 @@ class Image
         } elseif ('gif' == $type && !empty($this->gif)) {
             $this->gif->save($pathname);
         } elseif ('png' == $type) {
-            //设定保存完整的 alpha 通道信息
+            //设定保存完整的 alpha 通道訊息
             imagesavealpha($this->im, true);
             //ImagePNG生成图像的质量范围从0到9的
             imagepng($this->im, $pathname, min((int) ($quality / 10), 9));
@@ -387,7 +387,7 @@ class Image
         if (!is_file($source)) {
             throw new ImageException('水印图像不存在');
         }
-        //取得水印图像信息
+        //取得水印图像訊息
         $info = getimagesize($source);
         if (false === $info || (IMAGETYPE_GIF === $info[2] && empty($info['bits']))) {
             throw new ImageException('非法水印文件');
@@ -488,7 +488,7 @@ class Image
         if (!is_file($font)) {
             throw new ImageException("不存在的字体文件：{$font}");
         }
-        //取得文字信息
+        //取得文字訊息
         $info = imagettfbbox($size, $angle, $font, $text);
         $minx = min($info[0], $info[2], $info[4], $info[6]);
         $maxx = max($info[0], $info[2], $info[4], $info[6]);
@@ -512,7 +512,7 @@ class Image
                 break;
             /* 左上角文字 */
             case self::WATER_NORTHWEST:
-                // 起始坐标即为左上角坐标，无需调整
+                // 起始坐标即为左上角坐标，無需调整
                 break;
             /* 右上角文字 */
             case self::WATER_NORTHEAST:

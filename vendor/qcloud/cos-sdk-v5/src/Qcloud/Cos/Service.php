@@ -22,11 +22,11 @@ class Service {
 
                 cos php SDK 中舍弃一个分块上传且刪除已上传的分片块请求的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 AbortMultipfartUpload 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则操作成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则操作成功。
                  */
                 'AbortMultipartUpload' => array(
                     'httpMethod' => 'DELETE',
@@ -68,11 +68,11 @@ class Service {
 
                 cos php SDK 中创建 Bucket的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 CreateBucket 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则创建成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则创建成功。
 
                 示例：
                 $result = $cosClient->createBucket(array('Bucket' => 'testbucket-1252448703'));
@@ -110,11 +110,11 @@ class Service {
 
                 关于完成整个分片上传接口的描述，请查看 https://cloud.tencent.com/document/product/436/7742.
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 CompleteMultipartUpload 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则操作成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则操作成功。
 
                  */
                 'CompleteMultipartUpload' => array(
@@ -503,11 +503,11 @@ class Service {
 
                 cos php SDK 中刪除 Bucket 的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 DeleteBucket 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，刪除成功。
+                3. 接收该接口的返回資料，若没有抛出异常，刪除成功。
 
                 示例：
                 $result = $cosClient->deleteBucket(array(
@@ -526,19 +526,19 @@ class Service {
                             'type' => 'string',
                             'location' => 'uri'))),
                 /**
-                刪除跨域访问配置信息的方法.
+                刪除跨域访问配置訊息的方法.
 
-                若是 Bucket 不需要支持跨域访问配置，可以调用此接口刪除已配置的跨域访问信息. 跨域访问配置可以通过 putBucketCORS(PutBucketCORSRequest) 或者 putBucketCORSAsync(PutBucketCORSRequest, CosXmlResultListener) 方法来開啟 Bucket 的跨域访问 支持.
+                若是 Bucket 不需要支持跨域访问配置，可以调用此接口刪除已配置的跨域访问訊息. 跨域访问配置可以通过 putBucketCORS(PutBucketCORSRequest) 或者 putBucketCORSAsync(PutBucketCORSRequest, CosXmlResultListener) 方法来開啟 Bucket 的跨域访问 支持.
 
-                关于刪除跨域访问配置信息接口的具体描述，请查看https://cloud.tencent.com/document/product/436/8283.
+                关于刪除跨域访问配置訊息接口的具体描述，请查看https://cloud.tencent.com/document/product/436/8283.
 
-                cos php SDK 中刪除跨域访问配置信息的方法具体步骤如下：
+                cos php SDK 中刪除跨域访问配置訊息的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 DeleteBucketCORS 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，刪除成功。
+                3. 接收该接口的返回資料，若没有抛出异常，刪除成功。
 
                 示例：
                 $result = $cosClient->deleteBucketCors(array(
@@ -571,11 +571,11 @@ class Service {
 
                 cos php SDK 中刪除 COS 上单个对象请求的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 DeleteObject 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则刪除成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则刪除成功。
 
                 示例：
                 $result = $cosClient->deleteObject(array(
@@ -619,17 +619,17 @@ class Service {
                 /**
                 批量刪除 COS 对象的方法.
 
-                COS 支持批量刪除指定 Bucket 中 对象，单次请求最大支持批量刪除 1000 个 对象. 请求中刪除一个不存在的对象，仍然认为是成功的. 对于响应结果，COS提供 Verbose 和 Quiet 两种模式：Verbose 模式将返回每个对象的刪除结果;Quiet 模式只返回刪除报错的对象信息. 请求必须携带 Content-MD5 用来校验请求Body 的完整性.
+                COS 支持批量刪除指定 Bucket 中 对象，单次请求最大支持批量刪除 1000 个 对象. 请求中刪除一个不存在的对象，仍然认为是成功的. 对于响应结果，COS提供 Verbose 和 Quiet 两种模式：Verbose 模式将返回每个对象的刪除结果;Quiet 模式只返回刪除报错的对象訊息. 请求必须携带 Content-MD5 用来校验请求Body 的完整性.
 
                 关于批量刪除 COS 对象接口的描述，请查看https://cloud.tencent.com/document/product/436/8289.
 
                 cos php SDK 中批量刪除 COS 对象的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 DeleteObjects 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则刪除成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则刪除成功。
 
                 示例：
                 $result = $cosClient->deleteObjects(array(
@@ -717,11 +717,11 @@ class Service {
 
                 cos php SDK 中刪除 Bucket 的生命周期配置的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 DeleteBucketLifeCycle 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，刪除成功。
+                3. 接收该接口的返回資料，若没有抛出异常，刪除成功。
 
                 示例：
                 $result = $cosClient->deleteBucketLifecycle(array(
@@ -750,11 +750,11 @@ class Service {
 
                 cos php SDK 中刪除跨区域複製配置的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 DeleteBucketReplication 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，取得成功。
 
                  */
                 'DeleteBucketReplication' => array(
@@ -856,19 +856,19 @@ class Service {
                             'reason' => 'The specified key does not exist.',
                             'class' => 'NoSuchKeyException'))),
                 /**
-                取得 COS 对象的访问权限信息（Access Control List, ACL）的方法.
+                取得 COS 对象的访问权限訊息（Access Control List, ACL）的方法.
 
-                Bucket 的持有者可取得该 Bucket 下的某个对象的 ACL 信息，如被授权者以及被授权的信息. ACL 权限包括读、写、读写权限.
+                Bucket 的持有者可取得该 Bucket 下的某个对象的 ACL 訊息，如被授权者以及被授权的訊息. ACL 权限包括读、写、读写权限.
 
                 关于取得 COS 对象的 ACL 接口的具体描述，请查看https://cloud.tencent.com/document/product/436/7744.
 
                 cos php SDK 中取得 COS 对象的 ACL 的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetObjectAcl 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则取得成功。
 
                 示例：
                 $result = $cosClient->getObjectAcl(array(
@@ -918,7 +918,7 @@ class Service {
                     ),
                 ),
                 /**
-                取得存储桶（Bucket) 的访问权限信息（Access Control List, ACL）的方法.
+                取得存储桶（Bucket) 的访问权限訊息（Access Control List, ACL）的方法.
 
                 ACL 权限包括读、写、读写权限. COS 中 Bucket 是有访问权限控制的.可以通过取得 Bucket 的 ACL 表(putBucketACL(PutBucketACLRequest))，来查看那些使用者拥有 Bucket 访 问权限.
 
@@ -926,11 +926,11 @@ class Service {
 
                 cos php SDK 中取得 Bucket 的 ACL 的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetBucketACL 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则取得成功。
 
 
                 示例：
@@ -952,19 +952,19 @@ class Service {
                             'static' => true,
                             'default' => 'application/xml'))),
                 /**
-                查詢存储桶（Bucket) 跨域访问配置信息的方法.
+                查詢存储桶（Bucket) 跨域访问配置訊息的方法.
 
-                COS 支持查詢当前 Bucket 跨域访问配置信息，以確定是否配置跨域信息.当跨域访问配置不存在时，请求 返回403 Forbidden. 跨域访问配置可以通过 putBucketCORS(PutBucketCORSRequest) 或者 putBucketCORSAsync(PutBucketCORSRequest, CosXmlResultListener) 方法来開啟 Bucket 的跨域访问 支持.
+                COS 支持查詢当前 Bucket 跨域访问配置訊息，以確定是否配置跨域訊息.当跨域访问配置不存在时，请求 返回403 Forbidden. 跨域访问配置可以通过 putBucketCORS(PutBucketCORSRequest) 或者 putBucketCORSAsync(PutBucketCORSRequest, CosXmlResultListener) 方法来開啟 Bucket 的跨域访问 支持.
 
-                关于查詢 Bucket 跨域访问配置信息接口的具体描述， 请查看 https://cloud.tencent.com/document/product/436/8274.
+                关于查詢 Bucket 跨域访问配置訊息接口的具体描述， 请查看 https://cloud.tencent.com/document/product/436/8274.
 
-                cos php SDK 中查詢 Bucket 跨域访问配置信息的方法具体步骤如下：
+                cos php SDK 中查詢 Bucket 跨域访问配置訊息的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetBucketCORS 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则取得成功。
 
 
                 示例：
@@ -1000,11 +1000,11 @@ class Service {
 
                 cos php SDK 中查詢 Bucket 的生命周期配置的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetBucketLifecycle 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则取得成功。
 
 
                 示例：
@@ -1031,17 +1031,17 @@ class Service {
                     ),
                 ),
                 /**
-                取得存储桶（Bucket）版本控制信息的方法.
+                取得存储桶（Bucket）版本控制訊息的方法.
 
-                通过查詢版本控制信息，可以得知该 Bucket 的版本控制功能是处于禁用狀態还是启用狀態（Enabled 或者 Suspended）, 開啟版本控制功能，可参考putBucketVersioning(PutBucketVersioningRequest).
+                通过查詢版本控制訊息，可以得知该 Bucket 的版本控制功能是处于禁用狀態还是启用狀態（Enabled 或者 Suspended）, 開啟版本控制功能，可参考putBucketVersioning(PutBucketVersioningRequest).
 
-                cos php SDK 中取得 Bucket 版本控制信息的方法具体步骤如下：
+                cos php SDK 中取得 Bucket 版本控制訊息的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetBucketVersioning 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，取得成功。
 
                 示例：
                 $result = $cosClient->getBucketVersioning(
@@ -1066,17 +1066,17 @@ class Service {
                     ),
                 ),
                 /**
-                取得跨区域複製配置信息的方法.
+                取得跨区域複製配置訊息的方法.
 
                 跨区域複製是支持不同区域 Bucket 自动複製对象, 请查阅putBucketReplication(PutBucketReplicationRequest).
 
-                cos php SDK 中取得跨区域複製配置信息的方法具体步骤如下：
+                cos php SDK 中取得跨区域複製配置訊息的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetBucketReplication 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，设置成功。
 
                  */
                 'GetBucketReplication' => array(
@@ -1098,21 +1098,21 @@ class Service {
                     ),
                 ),
                 /**
-                取得存储桶（Bucket) 所在的地域信息的方法.
+                取得存储桶（Bucket) 所在的地域訊息的方法.
 
-                在创建 Bucket 时，需要指定所属该 Bucket 所属地域信息.
+                在创建 Bucket 时，需要指定所属该 Bucket 所属地域訊息.
 
-                COS 支持的地域信息，可查看https://cloud.tencent.com/document/product/436/6224.
+                COS 支持的地域訊息，可查看https://cloud.tencent.com/document/product/436/6224.
 
-                关于取得 Bucket 所在的地域信息接口的具体描述，请查看https://cloud.tencent.com/document/product/436/8275.
+                关于取得 Bucket 所在的地域訊息接口的具体描述，请查看https://cloud.tencent.com/document/product/436/8275.
 
-                cos php SDK 中取得 Bucket 所在的地域信息的方法具体步骤如下：
+                cos php SDK 中取得 Bucket 所在的地域訊息的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 GetBucketLocation 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则取得成功。
 
 
                 示例：
@@ -1335,19 +1335,19 @@ class Service {
                             'additionalProperties' => true,
                         ))),
                 /**
-                设置 COS 对象的访问权限信息（Access Control List, ACL）的方法.
+                设置 COS 对象的访问权限訊息（Access Control List, ACL）的方法.
 
-                ACL权限包括读、写、读写权限. COS 对象的 ACL 可以通过 header头部："x-cos-acl"，"x-cos-grant-read"，"x-cos-grant-write"， "x-cos-grant-full-control" 传入 ACL 信息，或者通过 Body 以 XML 格式传入 ACL 信息.这两种方式只 能选择其中一种，否则引起冲突. 传入新的 ACL 将覆盖原有 ACL信息.ACL策略数上限1000，建议使用者不要每个上传文件都设置 ACL.
+                ACL权限包括读、写、读写权限. COS 对象的 ACL 可以通过 header头部："x-cos-acl"，"x-cos-grant-read"，"x-cos-grant-write"， "x-cos-grant-full-control" 传入 ACL 訊息，或者通过 Body 以 XML 格式传入 ACL 訊息.这两种方式只 能選擇其中一种，否则引起冲突. 传入新的 ACL 将覆盖原有 ACL訊息.ACL策略数上限1000，建议使用者不要每个上传文件都设置 ACL.
 
                 关于设置 COS 对象的ACL接口的具体描述，请查看https://cloud.tencent.com/document/product/436/7748.
 
                 cos PHP SDK 中设置 COS 对象的 ACL 的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 PutObjectAcl 对象中的方法发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则设置成功。
 
                 示例：
                 $cosClient->PutObjectAcl(array(
@@ -1485,17 +1485,17 @@ class Service {
                 /**
                 设置存储桶（Bucket） 的访问权限（Access Control List, ACL)的方法.
 
-                ACL 权限包括读、写、读写权限. 写入 Bucket 的 ACL 可以通过 header头部："x-cos-acl"，"x-cos-grant-read"，"x-cos-grant-write"， "x-cos-grant-full-control" 传入 ACL 信息，或者通过 Body 以 XML 格式传入 ACL 信息.这两种方式只 能选择其中一种，否则引起冲突. 传入新的 ACL 将覆盖原有 ACL信息. 私有 Bucket 可以下可以给某个文件夹设置成公有，那么该文件夹下的文件都是公有；但是把文件夹设置成私有后，在该文件夹下的文件设置 的公有属性，不会生效.
+                ACL 权限包括读、写、读写权限. 写入 Bucket 的 ACL 可以通过 header头部："x-cos-acl"，"x-cos-grant-read"，"x-cos-grant-write"， "x-cos-grant-full-control" 传入 ACL 訊息，或者通过 Body 以 XML 格式传入 ACL 訊息.这两种方式只 能選擇其中一种，否则引起冲突. 传入新的 ACL 将覆盖原有 ACL訊息. 私有 Bucket 可以下可以给某个文件夹设置成公有，那么该文件夹下的文件都是公有；但是把文件夹设置成私有后，在该文件夹下的文件设置 的公有属性，不会生效.
 
                 关于设置 Bucket 的ACL接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/7737.
 
                 cos php SDK 中设置 Bucket 的ACL的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 PutObjectAcl 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，设置成功。
 
 
                 示例：
@@ -1624,21 +1624,21 @@ class Service {
                     ),
                 ),
                 /**
-                设置存储桶（Bucket） 的跨域配置信息的方法.
+                设置存储桶（Bucket） 的跨域配置訊息的方法.
 
-                跨域访问配置的预请求是指在发送跨域请求之前会发送一个 OPTIONS 请求并带上特定的来源域，HTTP 方 法和 header 信息等给 COS，以决定是否可以发送真正的跨域请求. 当跨域访问配置不存在时，请求返回403 Forbidden.
+                跨域访问配置的预请求是指在发送跨域请求之前会发送一个 OPTIONS 请求并带上特定的来源域，HTTP 方 法和 header 訊息等给 COS，以决定是否可以发送真正的跨域请求. 当跨域访问配置不存在时，请求返回403 Forbidden.
 
-                默认情况下，Bucket的持有者可以直接配置 Bucket的跨域信息 ，Bucket 持有者也可以将配置权限授予其他使用者.新的配置是覆盖当前的所有配置信 息，而不是新增一條配置.可以通过传入 XML 格式的配置文件来实现配置，文件大小限制为64 KB.
+                默认情况下，Bucket的持有者可以直接配置 Bucket的跨域訊息 ，Bucket 持有者也可以将配置权限授予其他使用者.新的配置是覆盖当前的所有配置信 息，而不是新增一條配置.可以通过传入 XML 格式的配置文件来实现配置，文件大小限制为64 KB.
 
-                关于设置 Bucket 的跨域配置信息接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/8279.
+                关于设置 Bucket 的跨域配置訊息接口的具体描述，请查看 https://cloud.tencent.com/document/product/436/8279.
 
-                cos php SDK 中设置 Bucket 的跨域配置信息的方法具体步骤如下：
+                cos php SDK 中设置 Bucket 的跨域配置訊息的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 PutBucketCORS 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，设置成功。
 
                 示例：
                 $result = $cosClient->putBucketCors(array(
@@ -1750,7 +1750,7 @@ class Service {
 
                 COS 支持以生命周期配置的方式来管理 Bucket 中对象的生命周期. 如果该 Bucket 已配置生命周期，新的配置的同时则会覆盖原有的配置. 生命周期配置包含一个或多个将应用于一组对象规则的规则集 (其中每个规则为 COS 定义一个操作)。这些操作分为以下两种：转换操作，过期操作.
 
-                转换操作,定义对象转换为另一个存储类的时间(例如，您可以选择在对象创建 30 天后将其转换为低频存储类别，同 时也支持将数据沉降到归档存储类别.
+                转换操作,定义对象转换为另一个存储类的时间(例如，您可以選擇在对象创建 30 天后将其转换为低频存储类别，同 时也支持将資料沉降到归档存储类别.
 
                 过期操作，指定 Object 的过期时间，COS 将会自动为使用者刪除过期的 Object.
 
@@ -1758,11 +1758,11 @@ class Service {
 
                 cos php SDK 中Bucket 生命周期配置的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 PutBucketLifecycle 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，设置成功。
 
                 示例：
                 $result = $cosClient->putBucketLifecycle(array(
@@ -1922,11 +1922,11 @@ class Service {
 
                 cos php SDK 中 Bucket 版本控制启用或者暂停的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 PutBucketVersioning 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，设置成功。
 
                 示例：
                 $result = $cosClient->putBucketVersioning(
@@ -1973,11 +1973,11 @@ class Service {
 
                 cos php SDK 中配置跨区域複製的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 PutBucketRelication 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，设置成功。
+                3. 接收该接口的返回資料，若没有抛出异常，设置成功。
 
                 示例：
 
@@ -2201,11 +2201,11 @@ class Service {
 
                 cos php SDK 中查詢 Bucket 中正在进行中的分块上传对象的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 ListParts 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，取得成功。
 
                  */
                 'ListParts' => array(
@@ -2249,7 +2249,7 @@ class Service {
 
                 每次默认返回的最大條目数为 1000 條.
 
-                如果无法一次返回所有的对象，则返回结果中的 IsTruncated 为 true，同时会附加一个 NextMarker 字段，提示下 一个條目的起点.
+                如果無法一次返回所有的对象，则返回结果中的 IsTruncated 为 true，同时会附加一个 NextMarker 字段，提示下 一个條目的起点.
 
                 若一次请求，已经返回了全部对象，则不会有 NextMarker 这个字段，同时 IsTruncated 为 false.
 
@@ -2261,11 +2261,11 @@ class Service {
 
                 cos php SDK 中查詢 Bucket 下的部分或者全部对象的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 ListObjects 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，则list成功。
+                3. 接收该接口的返回資料，若没有抛出异常，则list成功。
 
                 示例：
                 $result = $cosClient->ListObjects(array(
@@ -2318,11 +2318,11 @@ class Service {
 
                 cos php SDK 中取得所属账户的所有存储空间列表的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 ListBuckets 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，取得成功。
 
                 示例：
                 $result = $cosClient->listBuckets();
@@ -2533,11 +2533,11 @@ class Service {
 
                 cos php SDK 中Bucket 是否存在的方法具体步骤如下：
 
-                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。
+                1. 初始化客户端cosClient，填入存储桶名，和一些额外需要的参数，如授权的具体訊息等。
 
                 2. 调用 HeadBucket 接口发出请求。
 
-                3. 接收该接口的返回数据，若没有抛出异常，取得成功。
+                3. 接收该接口的返回資料，若没有抛出异常，取得成功。
 
                 示例：
                 $result = $cosClient->headObject(array(

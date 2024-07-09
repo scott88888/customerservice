@@ -64,7 +64,7 @@ class BaiduGateway extends Gateway
             'x-bce-date' => $datetime,
             'x-bce-content-sha256' => hash('sha256', json_encode($params)),
         ];
-        //获得需要签名的数据
+        //获得需要签名的資料
         $signHeaders = $this->getHeadersToSign($headers, ['host', 'x-bce-content-sha256']);
 
         $headers['Authorization'] = $this->generateSign($signHeaders, $datetime, $config);

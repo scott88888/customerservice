@@ -253,7 +253,7 @@ class Ask
     }
 
     /**
-     * 显示问题的提示信息
+     * 显示问题的提示訊息
      */
     protected function writePrompt()
     {

@@ -296,7 +296,7 @@
             getchat();
         });
 
-        // 认领后取得访客信息
+        // 认领后取得访客訊息
         var channelme = pusher.subscribe("ud" + config.service_id);
         channelme.bind("on_notice", function (data) {
             getwait();

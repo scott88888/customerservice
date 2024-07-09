@@ -16,11 +16,11 @@ window.onload = function () {
 
     //未找到表格， 显示错误頁面
     if ( !editorTable ) {
-        document.body.innerHTML = "<div class='edui-charts-not-data'>未找到数据</div>";
+        document.body.innerHTML = "<div class='edui-charts-not-data'>未找到資料</div>";
         return;
     }
 
-    //初始化图表类型选择
+    //初始化图表类型選擇
     initChartsTypeView();
     renderTable( editorTable );
     initEvent();
@@ -60,12 +60,12 @@ function initChartsTypeView () {
 
 }
 
-//渲染table， 以便使用者修改数据
+//渲染table， 以便使用者修改資料
 function renderTable ( table ) {
 
     var tableHtml = [];
 
-    //构造数据
+    //构造資料
     for ( var i = 0, row; row = table.rows[ i ]; i++ ) {
 
         tableData[ i ] = [];
@@ -266,7 +266,7 @@ function collectData () {
         data = getSeriesAndCategories();
         $.extend( data, getUserConfig() );
 
-    //饼图数据格式
+    //饼图資料格式
     } else {
         data = getSeriesForPieChart();
         data.title = form[ 'title' ].value;
@@ -278,7 +278,7 @@ function collectData () {
 }
 
 /**
- * 取得使用者配置信息
+ * 取得使用者配置訊息
  */
 function getUserConfig () {
 
@@ -289,7 +289,7 @@ function getUserConfig () {
             xTitle: form[ 'x-title' ].value,
             yTitle: form[ 'y-title' ].value,
             suffix: form[ 'unit' ].value,
-            //数据对齐方式
+            //資料对齐方式
             tableDataFormat: getTableDataFormat (),
             //饼图提示文字
             tip: $( "#tipInput" ).val()
@@ -322,7 +322,7 @@ function getSeriesAndCategories () {
         tmp = [],
         tableData = getTableData();
 
-    //反转数据
+    //反转資料
     if ( getTableDataFormat() === "-1" ) {
 
         for ( var i = 0, len = tableData.length; i < len; i++ ) {
@@ -362,7 +362,7 @@ function getSeriesAndCategories () {
 }
 
 /*
- * 取得数据源数据对齐方式
+ * 取得資料源資料对齐方式
  */
 function getTableDataFormat () {
 
@@ -414,8 +414,8 @@ function updateConfigItem ( value ) {
 }
 
 /*
- * 取得饼图数据
- * 饼图的数据只取第一行的
+ * 取得饼图資料
+ * 饼图的資料只取第一行的
  **/
 function getSeriesForPieChart () {
 
@@ -484,14 +484,14 @@ function getCellValue ( cell ) {
 //dialog确认事件
 dialog.onok = function () {
 
-    //收集信息
+    //收集訊息
     var form = document.forms[ 'data-form' ],
         info = getUserConfig();
 
     //新增图表类型
     info.chartType = currentChartType;
 
-    //同步表格数据到編輯器
+    //同步表格資料到編輯器
     syncTableData();
 
     //执行图表命令
@@ -500,7 +500,7 @@ dialog.onok = function () {
 };
 
 /*
- * 同步图表編輯视图的表格数据到編輯器里的原始表格
+ * 同步图表編輯视图的表格資料到編輯器里的原始表格
  */
 function syncTableData () {
 

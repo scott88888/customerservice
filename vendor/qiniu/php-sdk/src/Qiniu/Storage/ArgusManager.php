@@ -30,7 +30,7 @@ final class ArgusManager
     /**
      * 视频鉴黄
      *
-     * @param $body     body信息
+     * @param $body     body訊息
      * @param $vid      videoID
      *
      * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error

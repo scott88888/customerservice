@@ -33,7 +33,7 @@ final class ResumeUploader
      * @param $inputStream 上传二进制流
      * @param $size       上传流的大小
      * @param $params     自定义变量
-     * @param $mime       上传数据的mimeType
+     * @param $mime       上传資料的mimeType
      *
      * @link http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
      */

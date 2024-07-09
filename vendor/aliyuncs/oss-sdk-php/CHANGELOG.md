@@ -58,12 +58,12 @@
 
 ## v2.0.2
 
-* 修复multipart上传时无法指定Content-Type的问题
+* 修复multipart上传时無法指定Content-Type的问题
 
 ## v2.0.1
 
 * 增加对ListObjects/ListMultipartUploads时特殊字符的处理
-* 提供接口取得OssException中的详细信息
+* 提供接口取得OssException中的详细訊息
 
 
 ## 2015.11.25
@@ -79,7 +79,7 @@
 * 引入命名空间
 * 接口命名修正，采用驼峰式命名
 * 接口入参修改，把常用参数从Options参数中提出来
-* 接口返回结果修改，对返回结果进行处理，使用者可以直接得到容易处理的数据结构　
+* 接口返回结果修改，对返回结果进行处理，使用者可以直接得到容易处理的資料结构　
 * OssClient的构造函数变更
 * 支持CNAME和IP格式的Endpoint地址
 * 重新整理sample文件组织结构，使用function组织功能点

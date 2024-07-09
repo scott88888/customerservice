@@ -109,9 +109,9 @@
     </div>
     {/if}
     <div class="card-header new-account">
-        <span class="new-account-title">新增子账户信息</span>
+        <span class="new-account-title">新增子账户訊息</span>
         <div class="account-info">
-            当前子账户数量 <span>{$account_count}</span>，最大子账户数量 <span>{$account_max == -1 ? '无限制':$account_max}</span>
+            当前子账户数量 <span>{$account_count}</span>，最大子账户数量 <span>{$account_max == -1 ? '無限制':$account_max}</span>
         </div>
     </div>
     <div class="card-body" style="padding-left: 15%;">
@@ -183,7 +183,7 @@
                 <div class="form-inline">
                     {if condition="isset($model->id) && $model->id == 1"}
                     <input type="hidden" name="no_expire_time" value="on">
-                    <div class="text-muted" style="padding-top: calc(.5rem - 1px * 2);">总管理员账户此项无法修改</div>
+                    <div class="text-muted" style="padding-top: calc(.5rem - 1px * 2);">总管理员账户此项無法修改</div>
                     {else/}
                     <input id="expire_time" class="form-control" value="{:date('Y-m-d', time())}"
                            name="expire_time" {$model['expire_time'] ? '' : 'readonly'}>
@@ -206,7 +206,7 @@
             <div class="col-sm-6" style="padding-top: calc(.5rem - 1px * 2);">
                 {if condition="isset($model->id) && $model->id == 1"}
                 <input type="hidden"  name="permission[]" value="copyright">
-                <div class="text-muted" style="padding-top: calc(.5rem - 1px * 2);">总管理员账户此项无法修改</div>
+                <div class="text-muted" style="padding-top: calc(.5rem - 1px * 2);">总管理员账户此项無法修改</div>
                 {else/}
                 <label class="custom-control custom-checkbox mr-5">
                     <input type="checkbox"
@@ -282,7 +282,7 @@
         let url = window.location.pathname;
         let index = url.indexOf('id');
         if(index > 0) {
-            $('.new-account-title').text('編輯账户信息')
+            $('.new-account-title').text('編輯账户訊息')
         }
     })
 

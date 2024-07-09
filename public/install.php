@@ -285,27 +285,27 @@ foreach ($dirarray as $key => $dir) {
             <div class="col-md-4">
                 <fieldset>
                     <legend>
-                        <small>填写数据库信息</small>
+                        <small>填写資料库訊息</small>
                     </legend>
                     <div class="form-group">
-                        <label class="control-label" for="dbHost">数据库地址</label>
+                        <label class="control-label" for="dbHost">資料库地址</label>
                         <input type="text" class="form-control" id="dbHost" name="dbHost"
                                value="<?php if (isset($_POST['dbHost'])) echo $_POST['dbHost']; else echo '127.0.0.1'; ?>">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbName">数据库名</label>
+                        <label class="control-label" for="dbName">資料库名</label>
                         <input type="text" class="form-control" id="dbName" name="dbName"
                                value="<?php if (isset($_POST['dbName'])) echo $_POST['dbName']; ?>"
                                placeholder="Database Name">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbUser">数据库账号</label>
+                        <label class="control-label" for="dbUser">資料库账号</label>
                         <input type="text" class="form-control" id="dbUser" name="dbUser"
                                value="<?php if (isset($_POST['dbUser'])) echo $_POST['dbUser']; ?>"
                                placeholder="Database Username">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbPass">数据库密碼</label>
+                        <label class="control-label" for="dbPass">資料库密碼</label>
                         <input type="text" class="form-control" id="dbPass" name="dbPass"
                                value="<?php if (isset($_POST['dbPass'])) echo $_POST['dbPass']; ?>"
                                placeholder="Database Password">
@@ -427,7 +427,7 @@ foreach ($dirarray as $key => $dir) {
         if (empty($dbHost) || empty($dbUser) || empty($dbName) || empty($dbPass) || empty($adminUser) || empty($adminPass) || empty($secret) || empty($app_key) || empty($app_id) || empty($whost) || empty($wport) || empty($ahost) || empty($aport) || empty($registToken)
         ): ?>
 
-            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 请把表單数据填完</div>
+            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 请把表單資料填完</div>
 
             <center style="margin-bottom: 20px;">
                 <a href="javascript:history.go(-1)" style="display: inline-block;width: 90px;" class="btn btn-default">返回上一步</a>
@@ -504,7 +504,7 @@ foreach ($dirarray as $key => $dir) {
             session_destroy();
             mysqli_close($link);
             ?>
-            <div class="alert alert-success"><strong>数据已经匯入!</strong>安装已经成功!</div>
+            <div class="alert alert-success"><strong>資料已经匯入!</strong>安装已经成功!</div>
             <?php sleep(2); ?>
 
             <center style="margin-bottom: 20px;">
@@ -528,7 +528,7 @@ foreach ($dirarray as $key => $dir) {
 // +----------------------------------------------------------------------
 
 return [
-    // 数据库调试模式
+    // 資料库调试模式
     'debug'          => false,
     // 是否严格檢查字段是否存在
     'fields_strict'  => true,
@@ -537,11 +537,11 @@ return [
     // 是否需要进行SQL性能分析
     'sql_explain'    => false,
 
-    // 数据库类型
+    // 資料库类型
     'type'           => 'mysql',
     // 服务器地址
     'hostname'       => '{$dbHost}',
-    // 数据库名
+    // 資料库名
     'database'       => '{$dbName}',
     // 使用者名稱
     'username'       => '{$dbUser}',
@@ -549,11 +549,11 @@ return [
     'password'       => '{$dbPass}',
     // 端口
     'hostport'       => '',
-    // 数据库表前缀
+    // 資料库表前缀
     'prefix'         => '',
-    // 数据库编码默认采用utf8
+    // 資料库编码默认采用utf8
     'charset'        => 'utf8',
-    // 数据库连接参数
+    // 資料库连接参数
     'params'         => [],
 ];
 ");

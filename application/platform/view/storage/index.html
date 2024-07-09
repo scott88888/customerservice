@@ -96,7 +96,7 @@
                 <div class="col-sm-6">
                     <select class="form-control" name="storage_type" v-model="storage_type">
                         {if condition="in_array('Local',$permission)"}
-                        <option value="1">无（当前服务器）</option>
+                        <option value="1">無（当前服务器）</option>
                         {/if}
                         {if condition="in_array('AliOss',$permission)"}
                         <option value="2">阿里云OSS</option>

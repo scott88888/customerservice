@@ -74,7 +74,7 @@ class OssClient
      *
      * @param string $accessKeyId 从OSS获得的AccessKeyId
      * @param string $accessKeySecret 从OSS获得的AccessKeySecret
-     * @param string $endpoint 您选定的OSS数据中心访问域名，例如oss-cn-hangzhou.aliyuncs.com
+     * @param string $endpoint 您选定的OSS資料中心访问域名，例如oss-cn-hangzhou.aliyuncs.com
      * @param boolean $isCName 是否对Bucket做了域名绑定，并且Endpoint参数填写的是自己的域名
      * @param string $securityToken
      * @param string $requestProxy 新增代理支持
@@ -153,7 +153,7 @@ class OssClient
 
     /**
      * 刪除bucket
-     * 如果Bucket不为空（Bucket中有Object，或者有分块上传的碎片），则Bucket无法刪除，
+     * 如果Bucket不为空（Bucket中有Object，或者有分块上传的碎片），则Bucket無法刪除，
      * 必须刪除Bucket中的所有Object以及碎片后，Bucket才能成功刪除。
      *
      * @param string $bucket
@@ -191,7 +191,7 @@ class OssClient
     }
     
     /**
-     * 取得bucket所属的数据中心位置信息
+     * 取得bucket所属的資料中心位置訊息
      *
      * @param string $bucket
      * @param array $options
@@ -211,7 +211,7 @@ class OssClient
     }
     
     /**
-     * 取得Bucket的Meta信息
+     * 取得Bucket的Meta訊息
      *
      * @param string $bucket
      * @param array $options 具体参考SDK文档
@@ -634,7 +634,7 @@ class OssClient
     }
 
     /**
-     * 取得LiveChannel信息
+     * 取得LiveChannel訊息
      *
      * @param string $bucket bucket名稱
      * @param string channelName $channelName
@@ -656,7 +656,7 @@ class OssClient
     }
 
     /**
-     * 取得LiveChannel狀態信息
+     * 取得LiveChannel狀態訊息
      *
      * @param string $bucket bucket名稱
      * @param string channelName $channelName
@@ -814,7 +814,7 @@ class OssClient
 
     /**
      * 检验跨域资源请求, 发送跨域请求之前会发送一个preflight请求（OPTIONS）并带上特定的来源域，
-     * HTTP方法和header信息等给OSS以决定是否发送真正的请求。 OSS可以通过putBucketCors接口
+     * HTTP方法和header訊息等给OSS以决定是否发送真正的请求。 OSS可以通过putBucketCors接口
      * 来開啟Bucket的CORS支持，開啟CORS功能之后，OSS在收到浏览器preflight请求时会根据设定的
      * 规则评估是否允许本次请求
      *
@@ -1294,7 +1294,7 @@ class OssClient
     }
 
     /**
-     * 取得Object的Meta信息
+     * 取得Object的Meta訊息
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
@@ -1400,7 +1400,7 @@ class OssClient
 
     /**
      * 检测Object是否存在
-     * 通过取得Object的Meta信息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
+     * 通过取得Object的Meta訊息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
@@ -1591,7 +1591,7 @@ class OssClient
     }
 
     /**
-     * 在将所有数据Part都上传完成后，调用此接口完成本次分块上传
+     * 在将所有資料Part都上传完成后，调用此接口完成本次分块上传
      *
      * @param string $bucket Bucket名稱
      * @param string $object Object名稱
@@ -1657,7 +1657,7 @@ class OssClient
     }
 
     /**
-     * 从一个已存在的Object中拷贝数据来上传一个Part
+     * 从一个已存在的Object中拷贝資料来上传一个Part
      *
      * @param string $fromBucket 源bucket名稱
      * @param string $fromObject 源object名稱
@@ -2711,7 +2711,7 @@ class OssClient
         self::OSS_ACL_TYPE_PUBLIC_READ,
         self::OSS_ACL_TYPE_PUBLIC_READ_WRITE
     );
-    // OssClient版本信息
+    // OssClient版本訊息
     const OSS_NAME = "aliyun-sdk-php";
     const OSS_VERSION = "2.3.0";
     const OSS_BUILD = "20180105";

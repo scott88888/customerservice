@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //編輯视频时初始化相关信息
+        //編輯视频时初始化相关訊息
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依据传入的align值更新按钮信息
+     * 依据传入的align值更新按钮訊息
      * @param align
      */
     function updateAlignButton( align ) {
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 将单个视频信息插入編輯器中
+     * 将单个视频訊息插入編輯器中
      */
     function insertSingle(){
         var width = $G("videoWidth"),
@@ -210,7 +210,7 @@
     }
 
     /**
-      * 创建图片浮动选择按钮
+      * 创建图片浮动選擇按钮
       * @param ids
       */
      function createAlignButton( ids ) {
@@ -230,7 +230,7 @@
      }
 
     /**
-     * 选择切换
+     * 選擇切换
      * @param selectParentId
      */
     function switchSelect( selectParentId ) {
@@ -338,7 +338,7 @@
                 $queue = $wrap.find('.filelist'),
             // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件总体选择信息。
+            // 文件总体選擇訊息。
                 $info = $statusBar.find('.info'),
             // 上传按钮
                 $upload = $wrap.find('.uploadBtn'),
@@ -346,7 +346,7 @@
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
             // 上传按钮
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
-            // 没选择文件之前的内容。
+            // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
@@ -361,7 +361,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度信息，key为file id
+            // 所有文件的进度訊息，key为file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -581,7 +581,7 @@
 
                     switch (val) {
 
-                        /* 未选择文件 */
+                        /* 未選擇文件 */
                         case 'pedding':
                             $queue.addClass('element-invisible');
                             $statusBar.addClass('element-invisible');

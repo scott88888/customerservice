@@ -84,9 +84,9 @@ abstract class Rest
     }
 
     /**
-     * 输出返回数据
+     * 输出返回資料
      * @access protected
-     * @param mixed     $data 要返回的数据
+     * @param mixed     $data 要返回的資料
      * @param String    $type 返回类型 JSON XML
      * @param integer   $code HTTP狀態码
      * @return Response

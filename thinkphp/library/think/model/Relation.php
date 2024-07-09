@@ -91,9 +91,9 @@ abstract class Relation
     }
 
     /**
-     * 封装关联数据集
+     * 封装关联資料集
      * @access public
-     * @param array $resultSet 数据集
+     * @param array $resultSet 資料集
      * @return mixed
      */
     protected function resultSetBuild($resultSet)

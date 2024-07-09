@@ -22,7 +22,7 @@ return [
     'extra_file_list'        => [THINK_PATH . 'helper' . EXT],
     // 默认输出类型
     'default_return_type'    => 'html',
-    // 默认AJAX 数据返回格式,可选json xml ...
+    // 默认AJAX 資料返回格式,可选json xml ...
     'default_ajax_return'    => 'json',
     // 默认JSONP格式返回的处理方法
     'default_jsonp_handler'  => 'jsonpReturn',
@@ -30,11 +30,11 @@ return [
     'var_jsonp_handler'      => 'callback',
     // 默认时区
     'default_timezone'       => 'PRC',
-    // 是否開啟多语言
+    // 是否開啟多語言
     'lang_switch_on'         => false,
     // 默认全局过滤方法 用逗号分隔多个
     'default_filter'         => '',
-    // 默认语言
+    // 默认語言
     'default_lang'           => 'zh-cn',
     // 应用类库后缀
     'class_suffix'           => false,
@@ -151,13 +151,13 @@ return [
     // 异常頁面的模板文件
     'exception_tmpl'         => THINK_PATH . 'tpl' . DS . 'think_exception.tpl',
 
-    // 错误显示信息,非调试模式有效
+    // 错误显示訊息,非调试模式有效
     'error_message'          => '頁面错误！请稍后再试～',
-    // 显示错误信息
+    // 显示错误訊息
     'show_error_msg'         => false,
     // 异常处理handle类 留空使用 \think\exception\Handle
     'exception_handle'       => '',
-    // 是否记录trace信息到日志
+    // 是否记录trace訊息到日志
     'record_trace'           => false,
 
     // +----------------------------------------------------------------------
@@ -235,35 +235,35 @@ return [
     ],
 
     // +----------------------------------------------------------------------
-    // | 数据库设置
+    // | 資料库设置
     // +----------------------------------------------------------------------
 
     'database'               => [
-        // 数据库类型
+        // 資料库类型
         'type'            => 'mysql',
-        // 数据库连接DSN配置
+        // 資料库连接DSN配置
         'dsn'             => '',
         // 服务器地址
         'hostname'        => '127.0.0.1',
-        // 数据库名
+        // 資料库名
         'database'        => '',
-        // 数据库使用者名稱
+        // 資料库使用者名稱
         'username'        => 'root',
-        // 数据库密碼
+        // 資料库密碼
         'password'        => '',
-        // 数据库连接端口
+        // 資料库连接端口
         'hostport'        => '',
-        // 数据库连接参数
+        // 資料库连接参数
         'params'          => [],
-        // 数据库编码默认采用utf8
+        // 資料库编码默认采用utf8
         'charset'         => 'utf8',
-        // 数据库表前缀
+        // 資料库表前缀
         'prefix'          => '',
-        // 数据库调试模式
+        // 資料库调试模式
         'debug'           => false,
-        // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+        // 資料库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
         'deploy'          => 0,
-        // 数据库读写是否分离 主从式有效
+        // 資料库读写是否分离 主从式有效
         'rw_separate'     => false,
         // 读写分离后 主服务器数量
         'master_num'      => 1,
@@ -271,7 +271,7 @@ return [
         'slave_no'        => '',
         // 是否严格檢查字段是否存在
         'fields_strict'   => true,
-        // 数据集返回类型
+        // 資料集返回类型
         'resultset_type'  => 'array',
         // 自动写入时间戳字段
         'auto_timestamp'  => false,

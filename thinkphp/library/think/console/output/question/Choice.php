@@ -85,7 +85,7 @@ class Choice extends Question
     }
 
     /**
-     * 设置错误提示信息
+     * 设置错误提示訊息
      * @param string $errorMessage
      * @return self
      */

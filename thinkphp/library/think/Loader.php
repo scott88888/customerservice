@@ -557,9 +557,9 @@ class Loader
     }
 
     /**
-     * 数据库初始化 并取得数据库类实例
+     * 資料库初始化 并取得資料库类实例
      * @access public
-     * @param  mixed       $config 数据库配置
+     * @param  mixed       $config 資料库配置
      * @param  bool|string $name   连接标识 true 强制重新连接
      * @return \think\db\Connection
      */

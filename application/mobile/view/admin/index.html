@@ -472,7 +472,7 @@
                     <!-- //1、）wolive主頁-->
                     <div class="swiper-slide" data-history="index">
                         <div class="wc__scrolling-panel">
-                            <!-- //聊天记录信息 -->
+                            <!-- //聊天记录訊息 -->
                             <div class="wc__recordChat-list" id="J__recordChatList">
                                 <ul class="clearfix">
 
@@ -1021,7 +1021,7 @@
                 $("#J__addrFriendList .msg").empty();
             } else {
                 $(".wechat__tabBar .layui-icon-group .wc__badge").remove();
-                $("#J__addrFriendList .msg").html('<div class="nothing">无数据<div>');
+                $("#J__addrFriendList .msg").html('<div class="nothing">無資料<div>');
             }
         }
 
@@ -1111,7 +1111,7 @@
                 getchat();
             });
 
-            // 认领后取得访客信息
+            // 认领后取得访客訊息
             var channelme = pusher.subscribe("ud" + config.service_id);
             channelme.bind("on_notice", function (data) {
                 getwait();

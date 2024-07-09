@@ -19,7 +19,7 @@ use think\response\Xml as XmlResponse;
 
 class Response
 {
-    // 原始数据
+    // 原始資料
     protected $data;
 
     // 当前的contentType
@@ -41,7 +41,7 @@ class Response
     /**
      * 构造函数
      * @access   public
-     * @param mixed $data    输出数据
+     * @param mixed $data    输出資料
      * @param int   $code
      * @param array $header
      * @param array $options 输出参数
@@ -60,7 +60,7 @@ class Response
     /**
      * 创建Response对象
      * @access public
-     * @param mixed  $data    输出数据
+     * @param mixed  $data    输出資料
      * @param string $type    输出类型
      * @param int    $code
      * @param array  $header
@@ -80,7 +80,7 @@ class Response
     }
 
     /**
-     * 发送数据到客户端
+     * 发送資料到客户端
      * @access public
      * @return mixed
      * @throws \InvalidArgumentException
@@ -90,7 +90,7 @@ class Response
         // 监听response_send
         Hook::listen('response_send', $this);
 
-        // 处理输出数据
+        // 处理输出資料
         $data = $this->getContent();
 
         // Trace调试注入
@@ -111,7 +111,7 @@ class Response
         if (!headers_sent() && !empty($this->header)) {
             // 发送狀態码
             http_response_code($this->code);
-            // 发送头部信息
+            // 发送头部訊息
             foreach ($this->header as $name => $val) {
                 if (is_null($val)) {
                     header($name);
@@ -131,16 +131,16 @@ class Response
         // 监听response_end
         Hook::listen('response_end', $this);
 
-        // 清空当次请求有效的数据
+        // 清空当次请求有效的資料
         if (!($this instanceof RedirectResponse)) {
             Session::flush();
         }
     }
 
     /**
-     * 处理数据
+     * 处理資料
      * @access protected
-     * @param mixed $data 要处理的数据
+     * @param mixed $data 要处理的資料
      * @return mixed
      */
     protected function output($data)
@@ -161,9 +161,9 @@ class Response
     }
 
     /**
-     * 输出数据设置
+     * 输出資料设置
      * @access public
-     * @param mixed $data 输出数据
+     * @param mixed $data 输出資料
      * @return $this
      */
     public function data($data)
@@ -277,7 +277,7 @@ class Response
     }
 
     /**
-     * 取得头部信息
+     * 取得头部訊息
      * @param string $name 头部名稱
      * @return mixed
      */
@@ -291,7 +291,7 @@ class Response
     }
 
     /**
-     * 取得原始数据
+     * 取得原始資料
      * @return mixed
      */
     public function getData()
@@ -300,7 +300,7 @@ class Response
     }
 
     /**
-     * 取得输出数据
+     * 取得输出資料
      * @return mixed
      */
     public function getContent()

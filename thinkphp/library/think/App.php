@@ -94,13 +94,13 @@ class App
 
             $request->filter($config['default_filter']);
 
-            // 默认语言
+            // 默认語言
             Lang::range($config['default_lang']);
-            // 開啟多语言机制 检测当前语言
+            // 開啟多語言机制 检测当前語言
             $config['lang_switch_on'] && Lang::detect();
             $request->langset(Lang::range());
 
-            // 加载系统语言包
+            // 加载系统語言包
             Lang::load([
                 THINK_PATH . 'lang' . DS . $request->langset() . EXT,
                 APP_PATH . 'lang' . DS . $request->langset() . EXT,
@@ -108,18 +108,18 @@ class App
 
             // 监听 app_dispatch
             Hook::listen('app_dispatch', self::$dispatch);
-            // 取得应用调度信息
+            // 取得应用调度訊息
             $dispatch = self::$dispatch;
 
-            // 未设置调度信息则进行 URL 路由检测
+            // 未设置调度訊息则进行 URL 路由检测
             if (empty($dispatch)) {
                 $dispatch = self::routeCheck($request, $config);
             }
 
-            // 记录当前调度信息
+            // 记录当前调度訊息
             $request->dispatch($dispatch);
 
-            // 记录路由和请求信息
+            // 记录路由和请求訊息
             if (self::$debug) {
                 Log::record('[ ROUTE ] ' . var_export($dispatch, true), 'info');
                 Log::record('[ HEADER ] ' . var_export($request->header(), true), 'info');
@@ -144,7 +144,7 @@ class App
         // 清空类的实例化
         Loader::clearInstance();
 
-        // 输出数据到客户端
+        // 输出資料到客户端
         if ($data instanceof Response) {
             $response = $data;
         } elseif (!is_null($data)) {
@@ -165,7 +165,7 @@ class App
     }
 
     /**
-     * 初始化应用，并返回配置信息
+     * 初始化应用，并返回配置訊息
      * @access public
      * @return array
      */
@@ -248,7 +248,7 @@ class App
             // 加载模块配置
             $config = Config::load(CONF_PATH . $module . 'config' . CONF_EXT);
 
-            // 读取数据库配置文件
+            // 读取資料库配置文件
             $filename = CONF_PATH . $module . 'database' . CONF_EXT;
             Config::load($filename, 'database');
 
@@ -280,7 +280,7 @@ class App
                 include $path . 'common' . EXT;
             }
 
-            // 加载当前模块语言包
+            // 加载当前模块語言包
             if ($module) {
                 Lang::load($path . 'lang' . DS . Request::instance()->langset() . EXT);
             }
@@ -290,9 +290,9 @@ class App
     }
 
     /**
-     * 设置当前请求的调度信息
+     * 设置当前请求的调度訊息
      * @access public
-     * @param array|string  $dispatch 调度信息
+     * @param array|string  $dispatch 调度訊息
      * @param string        $type     调度类型
      * @return void
      */
@@ -313,7 +313,7 @@ class App
         $reflect = new \ReflectionFunction($function);
         $args    = self::bindParams($reflect, $vars);
 
-        // 记录执行信息
+        // 记录执行訊息
         self::$debug && Log::record('[ RUN ] ' . $reflect->__toString(), 'info');
 
         return $reflect->invokeArgs($args);
@@ -437,8 +437,8 @@ class App
     /**
      * 执行调用分发
      * @access protected
-     * @param array $dispatch 调用信息
-     * @param array $config   配置信息
+     * @param array $dispatch 调用訊息
+     * @param array $config   配置訊息
      * @return Response|mixed
      * @throws \InvalidArgumentException
      */
@@ -615,7 +615,7 @@ class App
      * URL路由检测（根据PATH_INFO)
      * @access public
      * @param  \think\Request $request 请求实例
-     * @param  array          $config  配置信息
+     * @param  array          $config  配置訊息
      * @return array
      * @throws \think\Exception
      */
@@ -649,12 +649,12 @@ class App
             $must   = !is_null(self::$routeMust) ? self::$routeMust : $config['url_route_must'];
 
             if ($must && false === $result) {
-                // 路由无效
+                // 路由無效
                 throw new RouteNotFoundException();
             }
         }
 
-        // 路由无效 解析模块/控制器/操作/参数... 支持控制器自动搜索
+        // 路由無效 解析模块/控制器/操作/参数... 支持控制器自动搜索
         if (false === $result) {
             $result = Route::parseUrl($path, $depr, $config['controller_auto_search']);
         }

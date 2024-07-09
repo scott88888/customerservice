@@ -29,7 +29,7 @@ class BelongsToMany extends Relation
     protected $pivotName;
     // 中间表模型对象
     protected $pivot;
-    // 中间表数据名稱
+    // 中间表資料名稱
     protected $pivotDataName = 'pivot';
 
     /**
@@ -73,7 +73,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 设置中间表数据名稱
+     * 设置中间表資料名稱
      * @access public
      * @param  string $name
      * @return $this
@@ -151,7 +151,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 延迟取得关联数据
+     * 延迟取得关联資料
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包查詢條件
      * @return false|\PDOStatement|string|\think\Collection
@@ -270,9 +270,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 预载入关联查詢（数据集）
+     * 预载入关联查詢（資料集）
      * @access public
-     * @param array    $resultSet   数据集
+     * @param array    $resultSet   資料集
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -293,7 +293,7 @@ class BelongsToMany extends Relation
         }
 
         if (!empty($range)) {
-            // 查詢关联数据
+            // 查詢关联資料
             $data = $this->eagerlyManyToMany([
                 'pivot.' . $localKey => [
                     'in',
@@ -302,7 +302,7 @@ class BelongsToMany extends Relation
             ], $relation, $subRelation);
             // 关联属性名
             $attr = Loader::parseName($relation);
-            // 关联数据封装
+            // 关联資料封装
             foreach ($resultSet as $result) {
                 if (!isset($data[$result->$pk])) {
                     $data[$result->$pk] = [];
@@ -314,9 +314,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 预载入关联查詢（单个数据）
+     * 预载入关联查詢（单个資料）
      * @access public
-     * @param Model    $result      数据对象
+     * @param Model    $result      資料对象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -327,10 +327,10 @@ class BelongsToMany extends Relation
         $pk = $result->getPk();
         if (isset($result->$pk)) {
             $pk = $result->$pk;
-            // 查詢管理数据
+            // 查詢管理資料
             $data = $this->eagerlyManyToMany(['pivot.' . $this->localKey => $pk], $relation, $subRelation);
 
-            // 关联数据封装
+            // 关联資料封装
             if (!isset($data[$pk])) {
                 $data[$pk] = [];
             }
@@ -341,7 +341,7 @@ class BelongsToMany extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  数据对象
+     * @param Model    $result  資料对象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -360,7 +360,7 @@ class BelongsToMany extends Relation
      * 取得关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
-     * @param string   $name    统计数据别名
+     * @param string   $name    统计資料别名
      * @return string
      */
     public function getRelationCountQuery($closure, &$name = null)
@@ -393,7 +393,7 @@ class BelongsToMany extends Relation
         // 预载入关联查詢 支持嵌套预载入
         $list = $this->belongsToManyQuery($this->foreignKey, $this->localKey, $where)->with($subRelation)->select();
 
-        // 组装模型数据
+        // 组装模型資料
         $data = [];
         foreach ($list as $set) {
             $pivot = [];
@@ -439,24 +439,24 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 保存（新增）当前关联数据对象
+     * 保存（新增）当前关联資料对象
      * @access public
-     * @param mixed $data  数据 可以使用数组 关联模型对象 和 关联对象的主键
-     * @param array $pivot 中间表额外数据
+     * @param mixed $data  資料 可以使用数组 关联模型对象 和 关联对象的主键
+     * @param array $pivot 中间表额外資料
      * @return integer
      */
     public function save($data, array $pivot = [])
     {
-        // 保存关联表/中间表数据
+        // 保存关联表/中间表資料
         return $this->attach($data, $pivot);
     }
 
     /**
-     * 批量保存当前关联数据对象
+     * 批量保存当前关联資料对象
      * @access public
-     * @param array $dataSet   数据集
-     * @param array $pivot     中间表额外数据
-     * @param bool  $samePivot 额外数据是否相同
+     * @param array $dataSet   資料集
+     * @param array $pivot     中间表额外資料
+     * @param bool  $samePivot 额外資料是否相同
      * @return integer
      */
     public function saveAll(array $dataSet, array $pivot = [], $samePivot = false)
@@ -474,10 +474,10 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 附加关联的一个中间表数据
+     * 附加关联的一个中间表資料
      * @access public
-     * @param mixed $data  数据 可以使用数组、关联模型对象 或者 关联对象的主键
-     * @param array $pivot 中间表额外数据
+     * @param mixed $data  資料 可以使用数组、关联模型对象 或者 关联对象的主键
+     * @param array $pivot 中间表额外資料
      * @return array|Pivot
      * @throws Exception
      */
@@ -487,7 +487,7 @@ class BelongsToMany extends Relation
             if (key($data) === 0) {
                 $id = $data;
             } else {
-                // 保存关联表数据
+                // 保存关联表資料
                 $model = new $this->model;
                 $model->save($data);
                 $id = $model->getLastInsID();
@@ -502,7 +502,7 @@ class BelongsToMany extends Relation
         }
 
         if ($id) {
-            // 保存中间表数据
+            // 保存中间表資料
             $pk                     = $this->parent->getPk();
             $pivot[$this->localKey] = $this->parent->$pk;
             $ids                    = (array) $id;
@@ -522,9 +522,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 判断是否存在关联数据
+     * 判断是否存在关联資料
      * @access public
-     * @param  mixed $data  数据 可以使用关联模型对象 或者 关联对象的主键
+     * @param  mixed $data  資料 可以使用关联模型对象 或者 关联对象的主键
      * @return Pivot
      * @throws Exception
      */
@@ -545,10 +545,10 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 解除关联的一个中间表数据
+     * 解除关联的一个中间表資料
      * @access public
-     * @param integer|array $data        数据 可以使用关联对象的主键
-     * @param bool          $relationDel 是否同时刪除关联表数据
+     * @param integer|array $data        資料 可以使用关联对象的主键
+     * @param bool          $relationDel 是否同时刪除关联表資料
      * @return integer
      */
     public function detach($data = null, $relationDel = false)
@@ -563,14 +563,14 @@ class BelongsToMany extends Relation
             $relationFk = $data->getPk();
             $id         = $data->$relationFk;
         }
-        // 刪除中间表数据
+        // 刪除中间表資料
         $pk                     = $this->parent->getPk();
         $pivot[$this->localKey] = $this->parent->$pk;
         if (isset($id)) {
             $pivot[$this->foreignKey] = is_array($id) ? ['in', $id] : $id;
         }
         $this->pivot->where($pivot)->delete();
-        // 刪除关联表数据
+        // 刪除关联表資料
         if (isset($id) && $relationDel) {
             $model = $this->model;
             $model::destroy($id);
@@ -578,7 +578,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 数据同步
+     * 資料同步
      * @param array $ids
      * @param bool  $detaching
      * @return array

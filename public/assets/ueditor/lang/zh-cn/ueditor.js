@@ -15,12 +15,12 @@ UE.I18N['zh-cn'] = {
         'unlink':'取消連結', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合并单元格', 'mergedown':'下合并单元格',
         'deleterow':'刪除行', 'deletecol':'刪除列', 'splittorows':'拆分成行',
         'splittocols':'拆分成列', 'splittocells':'完全拆分单元格','deletecaption':'刪除表格标题','inserttitle':'插入标题',
-        'mergecells':'合并多个单元格', 'deletetable':'刪除表格', 'cleardoc':'清空文档','insertparagraphbeforetable':"表格前插入行",'insertcode':'代码语言',
+        'mergecells':'合并多个单元格', 'deletetable':'刪除表格', 'cleardoc':'清空文档','insertparagraphbeforetable':"表格前插入行",'insertcode':'代码語言',
         'fontfamily':'字体', 'fontsize':'字号', 'paragraph':'段落格式', 'simpleupload':'单图上传', 'insertimage':'多图上传','edittable':'表格属性','edittd':'单元格属性', 'link':'超連結',
         'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查詢替换', 'map':'Baidu地图', 'gmap':'Google地图',
         'insertvideo':'视频', 'help':'帮助', 'justifyleft':'居左对齐', 'justifyright':'居右对齐', 'justifycenter':'居中对齐',
         'justifyjustify':'两端对齐', 'forecolor':'字体颜色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
-        'insertunorderedlist':'无序列表', 'fullscreen':'全屏', 'directionalityltr':'从左向右输入', 'directionalityrtl':'从右向左输入',
+        'insertunorderedlist':'無序列表', 'fullscreen':'全屏', 'directionalityltr':'从左向右输入', 'directionalityrtl':'从右向左输入',
         'rowspacingtop':'段前距', 'rowspacingbottom':'段后距',  'pagebreak':'分頁', 'insertframe':'插入Iframe', 'imagenone':'默认',
         'imageleft':'左浮动', 'imageright':'右浮动', 'attachment':'附件', 'imagecenter':'居中', 'wordimage':'图片转存',
         'lineheight':'行间距','edittip' :'編輯提示','customstyle':'自定义标题', 'autotypeset':'自动排版',
@@ -97,7 +97,7 @@ UE.I18N['zh-cn'] = {
     'loadconfigHttpError': '请求后台配置项http错误，上传功能将不能正常使用！',
     'snapScreen_plugin':{
         'browserMsg':"仅支持IE浏览器！",
-        'callBackErrorMsg':"服务器返回数据有误，请檢查配置项之后重试。",
+        'callBackErrorMsg':"服务器返回資料有误，请檢查配置项之后重试。",
         'uploadErrorMsg':"截图上传失敗，请檢查服务器端环境! "
     },
     'insertcode':{
@@ -210,7 +210,7 @@ UE.I18N['zh-cn'] = {
     'anchorMsg':'锚点',
     'delete':'刪除',
     'clickToUpload':"点击上传",
-    'unset':'尚未设置语言文件',
+    'unset':'尚未设置語言文件',
     't_row':'行',
     't_col':'列',
     'more':'更多',
@@ -240,7 +240,7 @@ UE.I18N['zh-cn'] = {
             'lang_background_normal':'背景设置',
             'lang_background_local':'線上图片',
             'lang_background_set':'选项',
-            'lang_background_none':'无背景色',
+            'lang_background_none':'無背景色',
             'lang_background_colored':'有背景色',
             'lang_background_color':'颜色设置',
             'lang_background_netimg':'网络图片',
@@ -271,15 +271,15 @@ UE.I18N['zh-cn'] = {
             'lang_start_upload':"开始上传",
             'lock':{'title':"锁定宽高比例"}, //属性
             'searchType':{'title':"图片类型", 'options':["新闻", "壁纸", "表情", "头像"]}, //select的option
-            'searchTxt':{'value':"請輸入搜索关键词"},
+            'searchTxt':{'value':"請輸入搜索關鍵字"},
             'searchBtn':{'value':"百度一下"},
             'searchReset':{'value':"清空搜索"},
-            'noneAlign':{'title':'无浮动'},
+            'noneAlign':{'title':'無浮动'},
             'leftAlign':{'title':'左浮动'},
             'rightAlign':{'title':'右浮动'},
             'centerAlign':{'title':'居中独占一行'}
         },
-        'uploadSelectFile':'点击选择图片',
+        'uploadSelectFile':'点击選擇图片',
         'uploadAddFile':'继续新增',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
@@ -306,7 +306,7 @@ UE.I18N['zh-cn'] = {
         'numError':"請輸入正确的长度或者宽度值！例如：123，400",
         'imageUrlError':"不允许的图片格式或者图片域！",
         'imageLoadError':"图片加载失敗！请檢查連結地址或网络狀態！",
-        'searchRemind':"請輸入搜索关键词",
+        'searchRemind':"請輸入搜索關鍵字",
         'searchLoading':"图片加载中，请稍后……",
         'searchRetry':" :( ，抱歉，没有找到图片！请重试一次！"
     },
@@ -317,7 +317,7 @@ UE.I18N['zh-cn'] = {
             'lang_start_upload':"开始上传",
             'lang_drop_remind':"可以将文件拖到这里，单次最多可选100个文件"
         },
-        'uploadSelectFile':'点击选择文件',
+        'uploadSelectFile':'点击選擇文件',
         'uploadAddFile':'继续新增',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
@@ -350,7 +350,7 @@ UE.I18N['zh-cn'] = {
             'lang_videoW':"宽度",
             'lang_videoH':"高度",
             'lang_alignment':"对齐方式",
-            'videoSearchTxt':{'value':"請輸入搜索关键字！"},
+            'videoSearchTxt':{'value':"請輸入搜索關鍵字！"},
             'videoType':{'options':["全部", "热门", "娱乐", "搞笑", "体育", "科技", "综艺"]},
             'videoSearchBtn':{'value':"百度一下"},
             'videoSearchReset':{'value':"清空结果"},
@@ -385,11 +385,11 @@ UE.I18N['zh-cn'] = {
         'flashLoadingError':'Flash加载失敗!请檢查路径或网络狀態',
         'fileUploadReady':'等待上传……',
         'delUploadQueue':'从上传队列中移除',
-        'limitPrompt1':'单次不能选择超过',
-        'limitPrompt2':'个文件！请重新选择！',
+        'limitPrompt1':'单次不能選擇超过',
+        'limitPrompt2':'个文件！请重新選擇！',
         'delFailFile':'移除失敗文件',
         'fileSizeLimit':'文件大小超出限制！',
-        'emptyFile':'空文件无法上传！',
+        'emptyFile':'空文件無法上传！',
         'fileTypeError':'文件类型不允许！',
         'unknownError':'未知错误！',
         'fileUploading':'上传中，请等待……',
@@ -397,13 +397,13 @@ UE.I18N['zh-cn'] = {
         'netError':'网络错误',
         'failUpload':'上传失敗!',
         'serverIOError':'服务器IO错误！',
-        'noAuthority':'无权限！',
+        'noAuthority':'無权限！',
         'fileNumLimit':'上传个数限制',
         'failCheck':'驗證失敗，本次上传被跳过！',
         'fileCanceling':'取消中，请等待……',
         'stopUploading':'上传已停止……',
 
-        'uploadSelectFile':'点击选择文件',
+        'uploadSelectFile':'点击選擇文件',
         'uploadAddFile':'继续新增',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
@@ -436,7 +436,7 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_template_bkcolor':'背景颜色',
             'lang_template_clear' : '保留原有内容',
-            'lang_template_select' : '选择模板'
+            'lang_template_select' : '選擇模板'
         },
         'blank':"空白文档",
         'blog':"博客文章",
@@ -467,7 +467,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_tips':"输入歌手/歌曲/专辑，搜索您感兴趣的音乐！",
             'J_searchBtn':{value:'搜索歌曲'}
         },
-        'emptyTxt':'未搜索到相关音乐结果，请换一个关键词试试。',
+        'emptyTxt':'未搜索到相关音乐结果，请换一个關鍵字试试。',
         'chapter':'歌曲',
         'singer':'歌手',
         'special':'专辑',
@@ -480,11 +480,11 @@ UE.I18N['zh-cn'] = {
     },
     'charts':{
         'static':{
-            'lang_data_source':'数据源：',
+            'lang_data_source':'資料源：',
             'lang_chart_format': '图表格式：',
-            'lang_data_align': '数据对齐方式',
-            'lang_chart_align_same': '数据源与图表X轴Y轴一致',
-            'lang_chart_align_reverse': '数据源与图表X轴Y轴相反',
+            'lang_data_align': '資料对齐方式',
+            'lang_chart_align_same': '資料源与图表X轴Y轴一致',
+            'lang_chart_align_reverse': '資料源与图表X轴Y轴相反',
             'lang_chart_title': '图表标题',
             'lang_chart_main_title': '主标题：',
             'lang_chart_sub_title': '子标题：',
@@ -493,9 +493,9 @@ UE.I18N['zh-cn'] = {
             'lang_chart_tip': '提示文字',
             'lang_cahrt_tip_prefix': '提示文字前缀：',
             'lang_cahrt_tip_description': '仅饼图有效， 当鼠标移动到饼图中相应的块上时，提示框内的文字的前缀',
-            'lang_chart_data_unit': '数据单位',
+            'lang_chart_data_unit': '資料单位',
             'lang_chart_data_unit_title': '单位：',
-            'lang_chart_data_unit_description': '显示在每个数据点上的数据的单位， 比如： 温度的单位 ℃',
+            'lang_chart_data_unit_description': '显示在每个資料点上的資料的单位， 比如： 温度的单位 ℃',
             'lang_chart_type': '图表类型：',
             'lang_prev_btn': '上一个',
             'lang_next_btn': '下一个'
@@ -518,7 +518,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_search':'搜索',
             'address':{value:"北京"}
         },
-        searchError:'无法定位到该地址!'
+        searchError:'無法定位到该地址!'
     },
     'help':{
         'static':{
@@ -570,7 +570,7 @@ UE.I18N['zh-cn'] = {
             lang_search:"搜索",
             lang_dynamicmap:"插入动态地图"
         },
-        cityMsg:"请选择城市",
+        cityMsg:"请選擇城市",
         errorMsg:"抱歉，找不到该位置！"
     },
     'searchreplace':{
@@ -654,7 +654,7 @@ UE.I18N['zh-cn'] = {
             lang_resave:"转存步骤",
             uploadBtn:{src:"upload.png",alt:"上传"},
             clipboard:{style:"background: url(copy.png) -153px -1px no-repeat;"},
-            lang_step:"1、点击顶部複製按钮，将地址複製到剪贴板；2、点击新增照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后选择图片上传流程。"
+            lang_step:"1、点击顶部複製按钮，将地址複製到剪贴板；2、点击新增照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后選擇图片上传流程。"
         },
         'fileType':"图片",
         'flashError':"FLASH初始化失敗，请檢查FLASH插件是否正确安装！",

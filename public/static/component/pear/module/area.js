@@ -156,7 +156,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
         232700: '大兴安岭地区',
         310100: '上海市',
         320100: '南京市',
-        320200: '无锡市',
+        320200: '無锡市',
         320300: '徐州市',
         320400: '常州市',
         320500: '苏州市',
@@ -504,7 +504,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
         130127: '高邑县',
         130128: '深泽县',
         130129: '赞皇县',
-        130130: '无极县',
+        130130: '無极县',
         130131: '平山县',
         130132: '元氏县',
         130133: '赵县',
@@ -1404,7 +1404,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
         340221: '芜湖县',
         340222: '繁昌县',
         340223: '南陵县',
-        340225: '无为县',
+        340225: '無为县',
         340302: '龙子湖区',
         340303: '蚌山区',
         340304: '禹会区',
@@ -1814,7 +1814,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
         371603: '沾化区',
         371621: '惠民县',
         371622: '阳信县',
-        371623: '无棣县',
+        371623: '無棣县',
         371625: '博兴县',
         371626: '邹平县',
         371702: '牡丹区',
@@ -3941,7 +3941,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
   
       //查找province
       function renderProvince(){
-        let tpl = '<option value="">--选择省--</option>';
+        let tpl = '<option value="">--選擇省--</option>';
         let provinceList = getList("province");
         let currentCode = '';
         let currentName = '';
@@ -3963,7 +3963,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
       }
   
       function renderCity(provinceCode){
-        let tpl = '<option value="">--选择市--</option>';
+        let tpl = '<option value="">--選擇市--</option>';
         let cityList = getList('city', provinceCode.slice(0, 2));
         let currentCode = '';
         let currentName = '';
@@ -3986,7 +3986,7 @@ layui.define(['layer', 'form', 'laytpl'], function (exports) {
       }
   
       function renderCounty(cityCode){
-        let tpl = '<option value="">--选择区--</option>';
+        let tpl = '<option value="">--選擇区--</option>';
         let countyList = getList('county', cityCode.slice(0, 4));
         let currentCode = '';
         let currentName = '';

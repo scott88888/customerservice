@@ -21,7 +21,7 @@ try {
 } catch (\Exception $e) {
     // 请求失敗
     $statusCode = $e->getStatusCode(); // 取得错误码
-    $errorMessage = $e->getMessage(); // 取得错误信息
+    $errorMessage = $e->getMessage(); // 取得错误訊息
     $requestId = $e->getRequestId(); // 取得错误的requestId
     $errorCode = $e->getCosErrorCode(); // 取得错误名稱
     $request = $e->getRequest(); // 取得完整的请求

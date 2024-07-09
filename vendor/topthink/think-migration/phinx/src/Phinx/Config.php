@@ -52,7 +52,7 @@ class Config
     {
         // 加载配置
         $this->values = include APP_PATH . 'config' . EXT;
-        //加载数据库配置
+        //加载資料库配置
         $config = include $configFile;
 
         if ($config['deploy'] == 0) {

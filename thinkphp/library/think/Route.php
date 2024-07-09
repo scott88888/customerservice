@@ -55,7 +55,7 @@ class Route
     private static $subDomain = '';
     // 域名绑定
     private static $bind = [];
-    // 当前分組信息
+    // 当前分組訊息
     private static $group = [];
     // 当前子域名绑定
     private static $domainBind;
@@ -121,7 +121,7 @@ class Route
     /**
      * 设置路由绑定
      * @access public
-     * @param mixed  $bind 绑定信息
+     * @param mixed  $bind 绑定訊息
      * @param string $type 绑定类型 默认为module 支持 namespace class controller
      * @return mixed
      */
@@ -134,7 +134,7 @@ class Route
      * 设置或者取得路由标识
      * @access public
      * @param string|array $name  路由命名标识 数组表示批量设置
-     * @param array        $value 路由地址及变量信息
+     * @param array        $value 路由地址及变量訊息
      * @return array
      */
     public static function name($name = '', $value = null)
@@ -346,9 +346,9 @@ class Route
     }
 
     /**
-     * 设置当前执行的参数信息
+     * 设置当前执行的参数訊息
      * @access public
-     * @param array $options 参数信息
+     * @param array $options 参数訊息
      * @return mixed
      */
     protected static function setOption($options = [])
@@ -357,7 +357,7 @@ class Route
     }
 
     /**
-     * 取得当前执行的所有参数信息
+     * 取得当前执行的所有参数訊息
      * @access public
      * @return array
      */
@@ -367,9 +367,9 @@ class Route
     }
 
     /**
-     * 取得当前的分組信息
+     * 取得当前的分組訊息
      * @access public
-     * @param string $type 分組信息名稱 name option pattern
+     * @param string $type 分組訊息名稱 name option pattern
      * @return mixed
      */
     public static function getGroup($type)
@@ -1037,7 +1037,7 @@ class Route
         if (!empty(self::$bind)) {
             $type = self::$bind['type'];
             $bind = self::$bind[$type];
-            // 记录绑定信息
+            // 记录绑定訊息
             App::$debug && Log::record('[ BIND ] ' . var_export($bind, true), 'info');
             // 如果有URL绑定 则进行绑定检测
             switch ($type) {
@@ -1437,7 +1437,7 @@ class Route
             }
         }
 
-        // 绑定模型数据
+        // 绑定模型資料
         if (isset($option['bind_model'])) {
             $bind = [];
             foreach ($option['bind_model'] as $key => $val) {
@@ -1481,7 +1481,7 @@ class Route
 
         // 解析额外参数
         self::parseUrlParams(empty($paths) ? '' : implode('|', $paths), $matches);
-        // 记录匹配的路由信息
+        // 记录匹配的路由訊息
         $request->routeInfo(['rule' => $rule, 'route' => $route, 'option' => $option, 'var' => $matches]);
 
         // 检测路由after行为

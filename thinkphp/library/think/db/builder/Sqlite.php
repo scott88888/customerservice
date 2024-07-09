@@ -14,7 +14,7 @@ namespace think\db\builder;
 use think\db\Builder;
 
 /**
- * Sqlite数据库驱动
+ * Sqlite資料库驱动
  */
 class Sqlite extends Builder
 {

@@ -4432,7 +4432,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UI.collapse = Collapse;
 
-	// TODO: 更好的 target 选择方式
+	// TODO: 更好的 target 選擇方式
 	//       折叠的容器必须没有 border/padding 才能正常处理，否则动画会有一些小问题
 	//       寻找更好的未知高度 transition 动画解决方案，max-height 之类的就算了
 
@@ -10792,7 +10792,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  dropUp: 0,
 	  maxHeight: null,
 	  maxChecked: null,
-	  placeholder: '点击选择...',
+	  placeholder: '点击選擇...',
 	  selectedClass: 'am-checked',
 	  disabledClass: 'am-disabled',
 	  searchBox: false,
@@ -10907,8 +10907,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  if (min || max) {
-	    min && hint.push('至少选择 ' + min + ' 项');
-	    max && hint.push('至多选择 ' + max + ' 项');
+	    min && hint.push('至少選擇 ' + min + ' 项');
+	    max && hint.push('至多選擇 ' + max + ' 项');
 	  }
 
 	  this.$hint.text(hint.join('，'));
@@ -10937,7 +10937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $optgroup = $element.find('optgroup');
 	  this.$originalOptions = this.$element.find('option');
 
-	  // 单选框使用 JS 禁用已经选择的 option 以后，
+	  // 单选框使用 JS 禁用已经選擇的 option 以后，
 	  // 浏览器会重新选定第一个 option，但有一定延迟，致使 JS 取得 value 时返回 null
 	  if (!this.multiple && ($element.val() === null)) {
 	    this.$originalOptions.length &&
@@ -11763,7 +11763,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 二维码算法实现
-	 * @param {string} data              要编码的信息字符串
+	 * @param {string} data              要编码的訊息字符串
 	 * @param {num} errorCorrectLevel 纠错等级
 	 */
 	function QRCodeAlg(data, errorCorrectLevel) {
@@ -11771,9 +11771,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.errorCorrectLevel = errorCorrectLevel;
 	  this.modules = null;  // 二维矩阵，存放最终结果
 	  this.moduleCount = 0; // 矩阵大小
-	  this.dataCache = null; // 数据缓存
-	  this.rsBlocks = null; // 版本数据信息
-	  this.totalDataCount = -1; // 可使用的数据量
+	  this.dataCache = null; // 資料缓存
+	  this.rsBlocks = null; // 版本資料訊息
+	  this.totalDataCount = -1; // 可使用的資料量
 	  this.data = data;
 	  this.utf8bytes = getUTF8Bytes(data);
 	  this.make();
@@ -11927,7 +11927,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置版本信息（7以上版本才有）
+	   * 设置版本訊息（7以上版本才有）
 	   * @param  {bool} test 是否处于判断最佳掩膜阶段
 	   * @return {[type]}      [description]
 	   */
@@ -11942,7 +11942,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置格式信息（纠错等级和掩膜版本）
+	   * 设置格式訊息（纠错等级和掩膜版本）
 	   * @param  {bool} test
 	   * @param  {num} maskPattern 掩膜版本
 	   * @return {}
@@ -11982,7 +11982,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 数据编码
+	   * 資料编码
 	   * @return {[type]} [description]
 	   */
 	  createData: function() {
@@ -12019,7 +12019,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  /**
 	   * 纠错码编码
-	   * @param  {buffer} buffer 数据编码
+	   * @param  {buffer} buffer 資料编码
 	   * @return {[type]}
 	   */
 	  createBytes: function(buffer) {
@@ -12096,7 +12096,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 布置模块，构建最终信息
+	   * 布置模块，构建最终訊息
 	   * @param  {} data
 	   * @param  {} maskPattern
 	   * @return {}
@@ -12237,7 +12237,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  G15_MASK: (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1),
 
 	  /*
-	   BCH编码格式信息
+	   BCH编码格式訊息
 	   */
 	  getBCHTypeInfo: function(data) {
 	    var d = data << 10;
@@ -12247,7 +12247,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ((data << 10) | d) ^ QRUtil.G15_MASK;
 	  },
 	  /*
-	   BCH编码版本信息
+	   BCH编码版本訊息
 	   */
 	  getBCHTypeNumber: function(data) {
 	    var d = data << 12;
@@ -12257,7 +12257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return (data << 12) | d;
 	  },
 	  /*
-	   取得BCH位信息
+	   取得BCH位訊息
 	   */
 	  getBCHDigit: function(data) {
 
@@ -12564,7 +12564,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// RS_BLOCK_TABLE
 	//---------------------------------------------------------------------
 	/*
-	 二维码各个版本信息[块数, 每块中的数据块数, 每块中的信息块数]
+	 二维码各个版本訊息[块数, 每块中的資料块数, 每块中的訊息块数]
 	 */
 	var RS_BLOCK_TABLE = [
 
@@ -12815,7 +12815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 	/**
-	 * 根据数据取得对应版本
+	 * 根据資料取得对应版本
 	 * @return {[type]} [description]
 	 */
 	QRCodeAlg.prototype.getRightType = function() {
@@ -12921,7 +12921,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 二维码算法实现
-	 * @param {string} data              要编码的信息字符串
+	 * @param {string} data              要编码的訊息字符串
 	 * @param {num} errorCorrectLevel 纠错等级
 	 */
 	function QRCodeAlg(data, errorCorrectLevel) {
@@ -12929,9 +12929,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.errorCorrectLevel = errorCorrectLevel;
 	  this.modules = null;  //二维矩阵，存放最终结果
 	  this.moduleCount = 0; //矩阵大小
-	  this.dataCache = null; //数据缓存
-	  this.rsBlocks = null; //版本数据信息
-	  this.totalDataCount = -1; //可使用的数据量
+	  this.dataCache = null; //資料缓存
+	  this.rsBlocks = null; //版本資料訊息
+	  this.totalDataCount = -1; //可使用的資料量
 	  this.data = data;
 	  this.utf8bytes = getUTF8Bytes(data);
 	  this.make();
@@ -13085,7 +13085,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置版本信息（7以上版本才有）
+	   * 设置版本訊息（7以上版本才有）
 	   * @param  {bool} test 是否处于判断最佳掩膜阶段
 	   * @return {[type]}      [description]
 	   */
@@ -13100,7 +13100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置格式信息（纠错等级和掩膜版本）
+	   * 设置格式訊息（纠错等级和掩膜版本）
 	   * @param  {bool} test
 	   * @param  {num} maskPattern 掩膜版本
 	   * @return {}
@@ -13140,7 +13140,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 数据编码
+	   * 資料编码
 	   * @return {[type]} [description]
 	   */
 	  createData: function() {
@@ -13177,7 +13177,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  /**
 	   * 纠错码编码
-	   * @param  {buffer} buffer 数据编码
+	   * @param  {buffer} buffer 資料编码
 	   * @return {[type]}
 	   */
 	  createBytes: function(buffer) {
@@ -13254,7 +13254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 布置模块，构建最终信息
+	   * 布置模块，构建最终訊息
 	   * @param  {} data
 	   * @param  {} maskPattern
 	   * @return {}
@@ -13395,7 +13395,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  G15_MASK: (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1),
 
 	  /*
-	   BCH编码格式信息
+	   BCH编码格式訊息
 	   */
 	  getBCHTypeInfo: function(data) {
 	    var d = data << 10;
@@ -13405,7 +13405,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ((data << 10) | d) ^ QRUtil.G15_MASK;
 	  },
 	  /*
-	   BCH编码版本信息
+	   BCH编码版本訊息
 	   */
 	  getBCHTypeNumber: function(data) {
 	    var d = data << 12;
@@ -13415,7 +13415,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return (data << 12) | d;
 	  },
 	  /*
-	   取得BCH位信息
+	   取得BCH位訊息
 	   */
 	  getBCHDigit: function(data) {
 
@@ -13722,7 +13722,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// RS_BLOCK_TABLE
 	//---------------------------------------------------------------------
 	/*
-	 二维码各个版本信息[块数, 每块中的数据块数, 每块中的信息块数]
+	 二维码各个版本訊息[块数, 每块中的資料块数, 每块中的訊息块数]
 	 */
 	RS_BLOCK_TABLE = [
 
@@ -13973,7 +13973,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 	/**
-	 * 根据数据取得对应版本
+	 * 根据資料取得对应版本
 	 * @return {[type]} [description]
 	 */
 	QRCodeAlg.prototype.getRightType = function() {
@@ -14738,11 +14738,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Validator.validationMessages = {
 	  zh_CN: {
-	    valueMissing: '请填写（选择）此字段',
+	    valueMissing: '请填写（選擇）此字段',
 	    customError: {
 	      tooShort: '至少填写 %s 个字符',
-	      checkedOverflow: '至多选择 %s 项',
-	      checkedUnderflow: '至少选择 %s 项'
+	      checkedOverflow: '至多選擇 %s 项',
+	      checkedUnderflow: '至少選擇 %s 项'
 	    },
 	    patternMismatch: '请按照要求的格式填写',
 	    rangeOverflow: '请填写小于等于 %s 的值',
@@ -14764,7 +14764,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// TODO: 考虑表單元素不是 form 子元素的情形
 	// TODO: change/click/focusout 同时触发时处理重复
-	// TODO: 显示提示信息
+	// TODO: 显示提示訊息
 
 	Validator.prototype.init = function() {
 	  var _this = this;
@@ -16042,8 +16042,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function addBdMap() {
-	  // 如果使用 $ 选择符，minify 以后会报错: $ is undefined
-	  // 即使传入 $ 也无效，改为使用原生方法
+	  // 如果使用 $ 選擇符，minify 以后会报错: $ is undefined
+	  // 即使传入 $ 也無效，改为使用原生方法
 	  // 这个函数作为 callback 会插入到 body 以后才执行，应该是 $ 引用错误导致
 	  var content = document.querySelector('.am-map');
 	  var defaultLng = 116.331398; // 经度默认值
@@ -16080,12 +16080,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  var opts = {
-	    width: 200,     // 信息窗口宽度
-	    // height: 'auto',     // 信息窗口高度
-	    title: name // 信息窗口标题
+	    width: 200,     // 訊息窗口宽度
+	    // height: 'auto',     // 訊息窗口高度
+	    title: name // 訊息窗口标题
 	  };
 
-	  // 创建信息窗口对象
+	  // 创建訊息窗口对象
 	  var infoWindow = new BMap.InfoWindow('地址：' + address, opts);
 
 	  // 创建地址解析器实例
@@ -16100,7 +16100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        map.centerAndZoom(point, setZoom);
 	        marker.setPosition(point);
 	        map.addOverlay(marker);
-	        map.openInfoWindow(infoWindow, point); // 開啟信息窗口
+	        map.openInfoWindow(infoWindow, point); // 開啟訊息窗口
 	      }
 	    }, '');
 
@@ -16111,9 +16111,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      marker.setPosition(point);
 	      map.addOverlay(marker);
 	      if (address) {
-	        map.openInfoWindow(infoWindow, point); // 開啟信息窗口
+	        map.openInfoWindow(infoWindow, point); // 開啟訊息窗口
 	      } else {
-	        map.openInfoWindow(new BMap.InfoWindow(address, opts), point); // 開啟信息窗口
+	        map.openInfoWindow(new BMap.InfoWindow(address, opts), point); // 開啟訊息窗口
 	      }
 	    });
 	  }

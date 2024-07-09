@@ -860,7 +860,7 @@ $(document).on('click','.outer-left .service img,.outer-right .customer img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存数据
+    // 如果图片被缓存，则直接返回缓存資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;

@@ -42,7 +42,7 @@ class Token
                 '\\app\\common\\lib\\token\\driver\\' . ucwords($type) :
                 $type;
 
-            // 记录初始化信息
+            // 记录初始化訊息
             App::$debug && Log::record('[ TOKEN ] INIT ' . $type, 'info');
 
             if (true === $name) {
@@ -115,7 +115,7 @@ class Token
      * 写入Token
      * @access public
      * @param  string $token Token标识
-     * @param  mixed $user_id 存储数据
+     * @param  mixed $user_id 存储資料
      * @param  int|null $expire 有效时间 0为永久
      * @return boolean
      */

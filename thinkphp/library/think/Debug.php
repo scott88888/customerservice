@@ -17,12 +17,12 @@ use think\response\Redirect;
 class Debug
 {
     /**
-     * @var array 区间时间信息
+     * @var array 区间时间訊息
      */
     protected static $info = [];
 
     /**
-     * @var array 区间内存信息
+     * @var array 区间内存訊息
      */
     protected static $mem = [];
 
@@ -154,7 +154,7 @@ class Debug
     }
 
     /**
-     * 取得文件加载信息
+     * 取得文件加载訊息
      * @access public
      * @param  bool $detail 是否显示详细
      * @return integer|array
@@ -212,7 +212,7 @@ class Debug
     }
 
     /**
-     * 调试信息注入到响应中
+     * 调试訊息注入到响应中
      * @access public
      * @param  Response $response 响应实例
      * @param  string   $content  返回的字符串
@@ -239,7 +239,7 @@ class Debug
             $output = $trace->output($response, Log::getLog());
 
             if (is_string($output)) {
-                // trace 调试信息注入
+                // trace 调试訊息注入
                 $pos = strripos($content, '</body>');
                 if (false !== $pos) {
                     $content = substr($content, 0, $pos) . $output . substr($content, $pos);

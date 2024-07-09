@@ -555,7 +555,7 @@ _p[2] = {
      * @method kity.requestFrame
      * @catalog animate
      * @grammar kity.requestFrame(action) => {frame}
-     * @description 请求一个帧，执行指定的动作。动作回调提供一些有用的信息
+     * @description 请求一个帧，执行指定的动作。动作回调提供一些有用的訊息
      *
      * @param {Function} action
      *
@@ -896,7 +896,7 @@ _p[5] = {
          *
          * @grammar new kity.Path.Animator(path)
          *
-         * @param  {String|PathSegment} path 目标形状的路径数据
+         * @param  {String|PathSegment} path 目标形状的路径資料
          *
          */
             constructor: function(path) {
@@ -1343,7 +1343,7 @@ _p[8] = {
          * @grammar repeat(repeat, rollback) => {this}
          *
          * @param  {Number|Boolean} repeat
-         *     是否重复播放，设置为 true 无限循环播放，设置数值则循环指定的次数
+         *     是否重复播放，设置为 true 無限循环播放，设置数值则循环指定的次数
          * @param  {Boolean} rollback
          *     指示是否要回滚播放。
          *     如果设置为真，一次事件到 duration 则一个来回算一次循环次数，否则播放完成一次算一次循环次数
@@ -1433,7 +1433,7 @@ _p[10] = {
      * @class kity.Browser
      * @catalog core
      * @static
-     * @description 提供浏览器信息
+     * @description 提供浏览器訊息
      */
         var browser = function() {
             var agent = navigator.userAgent.toLowerCase(), opera = window.opera, browser;
@@ -1539,8 +1539,8 @@ _p[10] = {
             if (browser.opera) version = parseFloat(opera.version());
             // WebKit 522+ (Safari 3+)
             if (browser.webkit) version = parseFloat(agent.match(/ applewebkit\/(\d+)/)[1]);
-            // 搜狗版本号无从得知
-            // 猎豹版本号无从得知
+            // 搜狗版本号無从得知
+            // 猎豹版本号無从得知
             // 百度
             if (browser.bd) version = parseFloat(agent.match(/bidubrowser\/(\d+)/)[1]);
             // Opera 9.50+
@@ -4206,9 +4206,9 @@ _p[30] = {
                 return centerPoints;
             },
             /*
-             * 对getCenterPoints()接口取得到的数据做处理， 计算出各个顶点对应的平移线数据
+             * 对getCenterPoints()接口取得到的資料做处理， 计算出各个顶点对应的平移线資料
              * @param length 集合中点的个数
-             * @param points 点集合， 该集合应该是getCenterPoints()接口返回的数据
+             * @param points 点集合， 该集合应该是getCenterPoints()接口返回的資料
              */
             getPanLine: function(length, points) {
                 var result = {}, //顶点索引
@@ -5369,13 +5369,13 @@ _p[34] = {
             return segmentRanges.totalLength;
         });
         /**
-     * 求一段路径的关键点
+     * 求一段路径的關鍵点
      *
      * @param  {string|Array} path
      *     要求的路径
      *
      * @return {Array}
-     *     关键点的集合
+     *     關鍵点的集合
      */
         g.pathKeyPoints = cacher(function(path) {
             var i, ii, command, keyPoints;
@@ -5389,7 +5389,7 @@ _p[34] = {
             }
             return keyPoints;
         });
-        // 对比两个路径的关键位置，在合适的位置切割合适的路径，使得两个路径的段数一致
+        // 对比两个路径的關鍵位置，在合适的位置切割合适的路径，使得两个路径的段数一致
         // TODO: 使用插值算法，使对应点更合理
         var alignCurve = cacher(function(path1, path2) {
             if (!path1.isCurve) path1 = g.pathToCurve(path1);
@@ -7033,8 +7033,8 @@ _p[56] = {
          * @method setBox
          * @for kity.Rect
          * @grammar setBox(box) => kity.Rect
-         * @description 使用一个 kity 的盒子数据，
-         * @param {kity.Box} box 盒子数据
+         * @description 使用一个 kity 的盒子資料，
+         * @param {kity.Box} box 盒子資料
          */
             setBox: function(box) {
                 this.x = box.x;

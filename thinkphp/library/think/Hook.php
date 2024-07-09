@@ -48,7 +48,7 @@ class Hook
     /**
      * 批量匯入插件
      * @access public
-     * @param  array   $tags      插件信息
+     * @param  array   $tags      插件訊息
      * @param  boolean $recursive 是否递归合并
      * @return void
      */
@@ -64,7 +64,7 @@ class Hook
     }
 
     /**
-     * 取得插件信息
+     * 取得插件訊息
      * @access public
      * @param  string $tag 插件位置(留空取得全部)
      * @return array

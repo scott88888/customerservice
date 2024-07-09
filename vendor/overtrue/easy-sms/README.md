@@ -20,7 +20,7 @@
 1. 简单配置即可灵活增减服务商
 1. 内置多种服务商轮询策略、支持自定义轮询策略
 1. 统一的返回值格式，便于日志与监控
-1. 自动轮询选择可用的服务商
+1. 自动轮询選擇可用的服务商
 1. 更多等你去发现与改进...
 
 ## 平台支持
@@ -30,16 +30,16 @@
 - [Submail](https://www.mysubmail.com)
 - [螺丝帽](https://luosimao.com/)
 - [容联云通讯](http://www.yuntongxun.com)
-- [互亿无线](http://www.ihuyi.com)
-- [聚合数据](https://www.juhe.cn)
+- [互亿無线](http://www.ihuyi.com)
+- [聚合資料](https://www.juhe.cn)
 - [SendCloud](http://www.sendcloud.net/)
 - [百度云](https://cloud.baidu.com/)
 - [华信短信平台](http://www.ipyy.com/)
 - [253云通讯（创蓝）](https://www.253.com/)
 - [融云](http://www.rongcloud.cn)
-- [天毅无线](http://www.85hu.com/)
+- [天毅無线](http://www.85hu.com/)
 - [腾讯云 SMS](https://cloud.tencent.com/product/sms)
-- [阿凡达数据](http://www.avatardata.cn/)
+- [阿凡达資料](http://www.avatardata.cn/)
 - [华为云](https://www.huaweicloud.com/product/msgsms.html)
 
 ## 环境需求
@@ -346,7 +346,7 @@ $easySms->send(13188888888, $message);
 ```php
     'yunpian' => [
         'api_key' => '',
-        'signature' => '【默认签名】', // 内容中无签名时使用
+        'signature' => '【默认签名】', // 内容中無签名时使用
     ],
 ```
 
@@ -385,7 +385,7 @@ $easySms->send(13188888888, $message);
     ],
 ```
 
-### [互亿无线](http://www.ihuyi.com)
+### [互亿無线](http://www.ihuyi.com)
 
 短信内容使用 `content`
 
@@ -397,7 +397,7 @@ $easySms->send(13188888888, $message);
     ],
 ```
 
-### [聚合数据](https://www.juhe.cn)
+### [聚合資料](https://www.juhe.cn)
 
 短信内容使用 `template` + `data`
 
@@ -458,7 +458,7 @@ $easySms->send(13188888888, $message);
         // \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_PROMOTION_CODE => 会员营销通道
         'channel'  => \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_VALIDATE_CODE, 
 
-        // 会员营销通道 特定参数。创蓝规定：api送出营销短信的时候，需要自己加短信的签名及退订信息
+        // 会员营销通道 特定参数。创蓝规定：api送出营销短信的时候，需要自己加短信的签名及退订訊息
         'sign' => '【通讯云】',
         'unsubscribe' => '回TD退订', 
     ],
@@ -475,7 +475,7 @@ $easySms->send(13188888888, $message);
     ]
 ```
 
-### [天毅无线](http://www.85hu.com/)
+### [天毅無线](http://www.85hu.com/)
 
 短信内容使用 `content`
 
@@ -512,7 +512,7 @@ $easySms->send(13188888888, $message);
     ],
 ```
 
-### [阿凡达数据](http://www.avatardata.cn/)
+### [阿凡达資料](http://www.avatardata.cn/)
 
 短信内容使用 `template` + `data`
 

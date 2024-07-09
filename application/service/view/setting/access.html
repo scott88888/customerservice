@@ -474,7 +474,7 @@
     var is_bind_wechat = 1;
     if (!is_bind_wechat) {
         var index = layer.open({
-            content: '您还未绑定微信，无法接受模板消息'
+            content: '您还未绑定微信，無法接受模板消息'
             ,btn: ['前去绑定','忽略']
             ,yes: function(index, layero){
                 $.ajax({
@@ -560,7 +560,7 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label" style="width: 120px">悬浮條背景色</label>
                             <div class="layui-input-inline">
-                                <input type="hidden" name="m_kfbtbg" placeholder="请选择颜色" class="layui-input" id="m_kfbtbg" value="#{$business['header']}">
+                                <input type="hidden" name="m_kfbtbg" placeholder="请選擇颜色" class="layui-input" id="m_kfbtbg" value="#{$business['header']}">
                             </div>
                             <div class="layui-inline">
                                 <div id="test-form"></div>
@@ -572,7 +572,7 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label" style="width: 120px">主题颜色</label>
                             <div class="layui-input-inline">
-                                <input type="hidden" name="theme" placeholder="请选择颜色" class="layui-input" id="theme" value="#{$business['theme']}">
+                                <input type="hidden" name="theme" placeholder="请選擇颜色" class="layui-input" id="theme" value="#{$business['theme']}">
                             </div>
                             <div class="layui-inline">
                                 <div id="test-form-theme"></div>
@@ -607,14 +607,14 @@
                             </div>
                      </pre>
                      <pre id="minjs" class="copy-js-content hide" style="margin-bottom: 50px">
-                        如果需要新增自身网站使用者数据，请部署到上面代码之前，按注释要求新增：
+                        如果需要新增自身网站使用者資料，请部署到上面代码之前，按注释要求新增：
                          <div class="layui-code">
                               &lt;script type="text/javascript">
                             &nbsp;&nbsp;var ai_service={};
                             &nbsp;&nbsp;ai_service.visiter_id='';//访客id
                             &nbsp;&nbsp;ai_service.visiter_name='';//访客暱稱
                             &nbsp;&nbsp;ai_service.avatar='';//访客头像绝对路径
-                            &nbsp;&nbsp;ai_service.product='{}';//json数据字符串
+                            &nbsp;&nbsp;ai_service.product='{}';//json資料字符串
                             &lt;/script>
                          </div>
                         /**

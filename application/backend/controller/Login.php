@@ -41,7 +41,7 @@ class Login extends Controller
                 ->where('password', $pass)
                 ->find();
             if (!$admin) $this->error('登入使用者名稱或密碼错误');
-            // 取得登入数据
+            // 取得登入資料
             $login = $admin->getData();
             // 设置session标识狀態
             session('admin_user_name', $login['username']);

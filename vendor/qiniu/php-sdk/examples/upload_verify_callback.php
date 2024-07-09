@@ -9,13 +9,13 @@ $bucket = getenv('QINIU_TEST_BUCKET');
 
 $auth = new Auth($accessKey, $secretKey);
 
-//取得回调的body信息
+//取得回调的body訊息
 $callbackBody = file_get_contents('php://input');
 
 //回调的contentType
 $contentType = 'application/x-www-form-urlencoded';
 
-//回调的签名信息，可以驗證该回调是否来自七牛
+//回调的签名訊息，可以驗證该回调是否来自七牛
 $authorization = $_SERVER['HTTP_AUTHORIZATION'];
 
 //七牛回调的url，具体可以参考：http://developer.qiniu.com/docs/v6/api/reference/security/put-policy.html

@@ -34,13 +34,13 @@ Class Index extends Base
           }
           $cdata['is_recycle'] = $web['is_recycle'];
           $cdata['is_delete'] = $web['is_delete'];
-          // 正在谈话人数
+          // 正在谈话人數
           $talknum =Admins::table('wolive_queue')->where(['business_id'=>$v])->where('state','normal')->where("service_id",'<>',0)->count();
-          // 線上客服人数
+          // 線上客服人數
           $services=Admins::table("wolive_service")->where(['business_id'=>$v,'state'=>'online'])->count();
-          // 正在排队人数
+          // 正在排队人數
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$v])->where("service_id",0)->count();
-          // 接入总人数
+          // 接入总人數
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$v)->count();
           // 今日会话量
           $nowchat = Admins::table("wolive_chats")->where('business_id',$v)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();
@@ -83,13 +83,13 @@ Class Index extends Base
       foreach ($res as $vg) {
           $v =$vg['id'];
           $cdata=[];
-          // 正在谈话人数
+          // 正在谈话人數
          $talknum =Admins::table('wolive_queue')->where(['business_id'=>$login['business_id']])->where('state','normal')->where("service_id",'<>',0)->count();
-          // 線上客服人数
+          // 線上客服人數
           $services=Admins::table("wolive_service")->where(['business_id'=>$login['business_id'],'state'=>'online'])->count();
-          // 正在排队人数
+          // 正在排队人數
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$login['business_id']])->where("service_id",0)->count();
-          // 接入总人数
+          // 接入总人數
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$login['business_id'])->count();
           // 今日会话量
           $nowchat = Admins::table("wolive_chats")->where('business_id',$login['business_id'])->where('timestamp','like',"{$time}%")->count();    

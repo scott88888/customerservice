@@ -19,7 +19,7 @@ use think\exception\ClassNotFoundException;
  *
  * @method void log($msg) static 记录一般日志
  * @method void error($msg) static 记录错误日志
- * @method void info($msg) static 记录一般信息日志
+ * @method void info($msg) static 记录一般訊息日志
  * @method void sql($msg) static 记录 SQL 查詢日志
  * @method void notice($msg) static 记录提示日志
  * @method void alert($msg) static 记录报警日志
@@ -35,7 +35,7 @@ class Log
     const DEBUG  = 'debug';
 
     /**
-     * @var array 日志信息
+     * @var array 日志訊息
      */
     protected static $log = [];
 
@@ -79,14 +79,14 @@ class Log
             throw new ClassNotFoundException('class not exists:' . $class, $class);
         }
 
-        // 记录初始化信息
+        // 记录初始化訊息
         App::$debug && Log::record('[ LOG ] INIT ' . $type, 'info');
     }
 
     /**
-     * 取得日志信息
+     * 取得日志訊息
      * @access public
-     * @param  string $type 信息类型
+     * @param  string $type 訊息类型
      * @return array|string
      */
     public static function getLog($type = '')
@@ -95,10 +95,10 @@ class Log
     }
 
     /**
-     * 记录调试信息
+     * 记录调试訊息
      * @access public
-     * @param  mixed  $msg  调试信息
-     * @param  string $type 信息类型
+     * @param  mixed  $msg  调试訊息
+     * @param  string $type 訊息类型
      * @return void
      */
     public static function record($msg, $type = 'log')
@@ -110,7 +110,7 @@ class Log
     }
 
     /**
-     * 清空日志信息
+     * 清空日志訊息
      * @access public
      * @return void
      */
@@ -142,7 +142,7 @@ class Log
     }
 
     /**
-     * 保存调试信息
+     * 保存调试訊息
      * @access public
      * @return bool
      */
@@ -186,10 +186,10 @@ class Log
     }
 
     /**
-     * 实时写入日志信息 并支持行为
+     * 实时写入日志訊息 并支持行为
      * @access public
-     * @param  mixed  $msg   调试信息
-     * @param  string $type  信息类型
+     * @param  mixed  $msg   调试訊息
+     * @param  string $type  訊息类型
      * @param  bool   $force 是否强制写入
      * @return bool
      */
@@ -197,12 +197,12 @@ class Log
     {
         $log = self::$log;
 
-        // 如果不是强制写入，而且信息类型不在可记录的类别中则直接返回 false 不做记录
+        // 如果不是强制写入，而且訊息类型不在可记录的类别中则直接返回 false 不做记录
         if (true !== $force && !empty(self::$config['level']) && !in_array($type, self::$config['level'])) {
             return false;
         }
 
-        // 封装日志信息
+        // 封装日志訊息
         $log[$type][] = $msg;
 
         // 监听 log_write

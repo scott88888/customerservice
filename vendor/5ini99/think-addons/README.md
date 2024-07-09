@@ -8,9 +8,9 @@ The ThinkPHP5 Addons Package
 ### 公共配置
 ```
 'addons'=>[
-    // 是否自动读取取插件钩子配置信息（默认是關閉）
+    // 是否自动读取取插件钩子配置訊息（默认是關閉）
     'autoload' => false,
-    // 当關閉自动取得配置时需要手动配置hooks信息
+    // 当關閉自动取得配置时需要手动配置hooks訊息
     'hooks' => [
 	    // 可以定义多个钩子
         'testhook'=>'test' // 键为钩子名稱，用于在业务中自定义钩子处理，值为实现该钩子的插件，
@@ -22,9 +22,9 @@ The ThinkPHP5 Addons Package
 ```
 <?php
 return [
-	// 是否自动读取取插件钩子配置信息（默认是關閉）
+	// 是否自动读取取插件钩子配置訊息（默认是關閉）
     'autoload' => false,
-    // 当關閉自动取得配置时需要手动配置hooks信息
+    // 当關閉自动取得配置时需要手动配置hooks訊息
     'hooks' => [
         // 可以定义多个钩子
         'testhook'=>'test' // 键为钩子名稱，用于在业务中自定义钩子处理，值为实现该钩子的插件，
@@ -58,7 +58,7 @@ use think\Addons;
  */
 class Test extends Addons	// 需继承think\addons\Addons类
 {
-	// 该插件的基础信息
+	// 该插件的基础訊息
     public $info = [
         'name' => 'test',	// 插件标识
         'title' => '插件测试',	// 插件名稱
@@ -92,9 +92,9 @@ class Test extends Addons	// 需继承think\addons\Addons类
      */
     public function testhook($param)
     {
-		// 调用钩子时候的参数信息
+		// 调用钩子时候的参数訊息
         print_r($param);
-		// 当前插件的配置信息，配置信息存在当前目录的config.php文件中，见下方
+		// 当前插件的配置訊息，配置訊息存在当前目录的config.php文件中，见下方
         print_r($this->getConfig());
 		// 可以返回模板，模板文件默认读取的为插件目录中的文件。模板名不能为空！
         return $this->fetch('info');
@@ -127,7 +127,7 @@ return [
 ```
 <h1>hello tpl</h1>
 
-如果插件中需要有連結或送出数据的业务，可以在插件中创建controller业务文件，
+如果插件中需要有連結或送出資料的业务，可以在插件中创建controller业务文件，
 要访问插件中的controller时使用addon_url生成url連結。
 如下：
 <a href="{:addon_url('test://Action/link')}">link test</a>

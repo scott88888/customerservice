@@ -14,7 +14,7 @@
 							<label class="layui-form-label">使用者狀態</label>
 							<div class="layui-input-inline">
 								<select name="state">
-									<option value="">请选择使用者狀態</option>
+									<option value="">請選擇使用者狀態</option>
 									<option value="normal">正常</option>
 									<option value="in_black_list">黑名单</option>
 								</select>
@@ -24,7 +24,7 @@
 							<label class="layui-form-label">使用者分組</label>
 							<div class="layui-input-inline">
 								<select name="groupid">
-									<option value="">请选择使用者分組</option>
+									<option value="">请選擇使用者分組</option>
 									{foreach $group as $v}
 									<option value="{$v.id}">{$v.group_name|default=''}</option>
 									{/foreach}
@@ -64,12 +64,12 @@
 		</script>
 
 		<script type="text/html" id="tool-bar">
-			<button class="pear-btn pear-btn-success pear-btn-xs" lay-event="lang"><i class="layui-icon layui-icon-website"></i>语言</button>
+			<button class="pear-btn pear-btn-success pear-btn-xs" lay-event="lang"><i class="layui-icon layui-icon-website"></i>語言</button>
 			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>分組</button>
 			{{#if (d.state == 'normal') { }}
-			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="blacklist"><i class="layui-icon layui-icon-group"></i>拉黑</button>
+			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="blacklist"><i class="layui-icon layui-icon-group"></i>黑名單</button>
 			{{# }else{ }}
-			<button class="pear-btn pear-btn-warn pear-btn-xs" lay-event="white"><i class="layui-icon layui-icon-user"></i>取消拉黑</button>
+			<button class="pear-btn pear-btn-warn pear-btn-xs" lay-event="white"><i class="layui-icon layui-icon-user"></i>取消黑名單</button>
 			{{# } }}
 
 		</script>
@@ -99,23 +99,23 @@
                                 align: 'left',
                             }, {
                                 field: 'ip',
-                                title: 'IP信息',
+                                title: 'IP訊息',
                                 unresize: true,
                                 align: 'left',
                             },  {
 								field: 'lang',
-								title: '语言',
+								title: '語言',
 								unresize: true,
 								align: 'left',
 							},{
                             	field: 'os',
-                            	title: '操作系统',
+                            	title: '作業系統',
                                 unresize: true,
                                 align: 'left',
                             	templet: '#os-enable'
                             },{
 								field: 'timestamp',
-								title: '最近访问时间',
+								title: '最近訪問時間',
 								unresize: true,
 								align: 'left',
 							},
@@ -191,7 +191,7 @@
                 window.lang = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '使用者语言',
+                        title: '使用者語言',
                         shade: 0.1,
                         area: ['500px', '300px'],
                         content: MODULE_PATH + 'visitors/lang?id='+obj.data.visiter_id
@@ -199,7 +199,7 @@
                 };
 
                 window.blacklist = function(obj) {
-                    layer.confirm('確定要拉黑该使用者', {
+                    layer.confirm('確定要黑名單该使用者', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {
@@ -230,7 +230,7 @@
                 };
 
                 window.white = function(obj) {
-                    layer.confirm('確定要取消拉黑该使用者吗', {
+                    layer.confirm('確定要取消黑名單该使用者吗', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

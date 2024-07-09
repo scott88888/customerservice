@@ -84,10 +84,10 @@ class Template
     }
 
     /**
-     * 读取文件信息
+     * 读取文件訊息
      * @access private
      * @param string $filename  文件名
-     * @param string $name  信息名 mtime或者content
+     * @param string $name  訊息名 mtime或者content
      * @return boolean
      */
     private function get($filename, $name)

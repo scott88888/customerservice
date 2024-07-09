@@ -56,7 +56,7 @@ class App extends Base
         if (!$business) {
             return [
                 'code' => 1,
-                'msg' => '数据错误，请刷新頁面后重试',
+                'msg' => '資料错误，请刷新頁面后重试',
             ];
         }
 
@@ -117,7 +117,7 @@ class App extends Base
 
             if ($is_copyright == false ) {
                 if ((isset($post['logo']) || isset($post['copyright']))) {
-                    return ['code'=>1,'msg'=>'您无此权限'];
+                    return ['code'=>1,'msg'=>'您無此权限'];
                 }
                 $post['logo'] = $this->option['logo'];
                 $post['copyright'] = $this->option['copyright'];
@@ -166,7 +166,7 @@ class App extends Base
                 } else {
                     $business = Business::get(['id'=>$id,'admin_id'=>$this->admin['id']]);
                     if (empty($business)) {
-                        $this->error('您无此权限,请刷新');
+                        $this->error('您無此权限,请刷新');
                     }
                 }
                 $url = url('edit',['id'=>$id]);
@@ -373,10 +373,10 @@ class App extends Base
             if ($this->request->isPost()) {
                 return [
                     'code'=>1,
-                    'msg' => '您无此权限',
+                    'msg' => '您無此权限',
                 ];
             } else {
-                $this->error('您无此权限');
+                $this->error('您無此权限');
             }
         }
         if ($this->request->isPost()) {

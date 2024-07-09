@@ -95,9 +95,9 @@ class Login extends Controller
             $this->record_log('登入失敗');
             $this->error('登入使用者名稱或密碼错误');
         }
-        // 取得登入数据
+        // 取得登入資料
         $login = $admin->getData();
-        // 删掉登入使用者的敏感信息
+        // 删掉登入使用者的敏感訊息
         unset($login['password']);
         $res = Admins::table('wolive_service')->where('service_id', $login['service_id'])->update(['state' => 'online']);
         $_SESSION['Msg'] = $login;

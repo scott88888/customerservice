@@ -36,9 +36,9 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 对提供的数据进行urlsafe的base64编码。
+     * 对提供的資料进行urlsafe的base64编码。
      *
-     * @param string $data 待编码的数据，一般为字符串
+     * @param string $data 待编码的資料，一般为字符串
      *
      * @return string 编码后的字符串
      * @link http://developer.qiniu.com/docs/v6/api/overview/appendix.html#urlsafe-base64
@@ -51,9 +51,9 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 对提供的urlsafe的base64编码的数据进行解码
+     * 对提供的urlsafe的base64编码的資料进行解码
      *
-     * @param string $str 待解码的数据，一般为字符串
+     * @param string $str 待解码的資料，一般为字符串
      *
      * @return string 解码后的字符串
      */
@@ -106,12 +106,12 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 计算七牛API中的数据格式
+     * 计算七牛API中的資料格式
      *
      * @param $bucket 待操作的空间名
      * @param $key 待操作的文件名
      *
-     * @return string  符合七牛API规格的数据格式
+     * @return string  符合七牛API规格的資料格式
      * @link http://developer.qiniu.com/docs/v6/api/reference/data-formats.html
      */
     function entry($bucket, $key)
@@ -124,7 +124,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * array 辅助方法，无值时不set
+     * array 辅助方法，無值时不set
      *
      * @param $array 待操作array
      * @param $key key

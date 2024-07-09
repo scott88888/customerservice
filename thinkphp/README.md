@@ -15,7 +15,7 @@ ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PH
  + 核心功能组件化
  + 强化路由功能
  + 更灵活的控制器
- + 重构的模型和数据库类
+ + 重构的模型和資料库类
  + 配置文件可分离
  + 重写的自动驗證和完成
  + 简化扩展机制
@@ -55,7 +55,7 @@ www  WEB部署目录（或者子目录）
 │  ├─config.php         公共配置文件
 │  ├─route.php          路由配置文件
 │  ├─tags.php           应用行为扩展定义文件
-│  └─database.php       数据库配置文件
+│  └─database.php       資料库配置文件
 │
 ├─public                WEB目录（对外访问目录）
 │  ├─index.php          入口文件
@@ -63,7 +63,7 @@ www  WEB部署目录（或者子目录）
 │  └─.htaccess          用于apache的重写
 │
 ├─thinkphp              框架系统目录
-│  ├─lang               语言文件目录
+│  ├─lang               語言文件目录
 │  ├─library            框架类库目录
 │  │  ├─think           Think类库包目录
 │  │  └─traits          系统Trait目录
@@ -99,16 +99,16 @@ ThinkPHP5的命名规范遵循`PSR-2`规范以及`PSR-4`自动加载规范。
 
 更多细节参阅 [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## 版权信息
+## 版权訊息
 
 ThinkPHP遵循Apache2开源协议发布，并提供免费使用。
 
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
+本项目包含的第三方源码和二进制文件之版权訊息另行标注。
 
 版权所有Copyright © 2006-2018 by ThinkPHP (http://thinkphp.cn)
 
 All rights reserved。
 
-ThinkPHP® 商标和著作权所有者为上海顶想信息科技有限公司。
+ThinkPHP® 商标和著作权所有者为上海顶想訊息科技有限公司。
 
 更多细节参阅 [LICENSE.txt](LICENSE.txt)

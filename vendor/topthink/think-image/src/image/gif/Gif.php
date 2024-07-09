@@ -29,8 +29,8 @@ class Gif
     /**
      * 构造方法，用于解码GIF图片
      *
-     * @param string $src GIF图片数据
-     * @param string $mod 图片数据类型
+     * @param string $src GIF图片資料
+     * @param string $mod 图片資料类型
      * @throws \Exception
      */
     public function __construct($src = null, $mod = 'url')
@@ -51,10 +51,10 @@ class Gif
     }
 
     /**
-     * 设置或取得当前帧的数据
+     * 设置或取得当前帧的資料
      *
-     * @param  string $stream 二进制数据流
-     * @return mixed        取得到的数据
+     * @param  string $stream 二进制資料流
+     * @return mixed        取得到的資料
      */
     public function image($stream = null)
     {
@@ -68,7 +68,7 @@ class Gif
     /**
      * 将当前帧移动到下一帧
      *
-     * @return string 当前帧数据
+     * @return string 当前帧資料
      */
     public function nextImage()
     {

@@ -41,7 +41,7 @@
 
         //,imagePopup:true      //图片操作的浮层开关，默认打开
 
-        //,autoSyncData:true //自动同步編輯器要送出的数据
+        //,autoSyncData:true //自动同步編輯器要送出的資料
         //,emotionLocalization:false //是否開啟表情本地化，默认關閉。若要開啟请确保emotion文件夹下包含官网提供的images表情文件夹
 
         //粘贴只保留标签，去除标签所有属性
@@ -76,10 +76,10 @@
         //    }
         //}()
 
-        //,allHtmlEnabled:false //送出到后台的数据是否包含整个html字符串
+        //,allHtmlEnabled:false //送出到后台的資料是否包含整个html字符串
 
         //insertorderedlist
-        //有序列表的下拉配置,值留空时支持多语言自动识别，若配置值，则以此值为准
+        //有序列表的下拉配置,值留空时支持多語言自动识别，若配置值，则以此值为准
         //,'insertorderedlist':{
         //      //自定的样式
         //        'num':'1,2,3...',
@@ -97,7 +97,7 @@
         //}
 
         //insertunorderedlist
-        //无序列表的下拉配置，值留空时支持多语言自动识别，若配置值，则以此值为准
+        //無序列表的下拉配置，值留空时支持多語言自动识别，若配置值，则以此值为准
         //,insertunorderedlist : { //自定的样式
         //    'dash' :'— 破折号', //-破折号
         //    'dot':' 。 小圆圈', //系统自带
@@ -112,7 +112,7 @@
         //,autoTransWordToList:false  //禁止word中粘贴进来的列表自动变成列表标签
 
         //fontfamily
-        //字体设置 label留空支持多语言自动切换，若配置，则以配置值为准
+        //字体设置 label留空支持多語言自动切换，若配置，则以配置值为准
         //,'fontfamily':[
         //    { label:'',name:'songti',val:'宋体,SimSun'},
         //    { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
@@ -132,7 +132,7 @@
         //,'fontsize':[10, 11, 12, 14, 16, 18, 20, 24, 36]
 
         //paragraph
-        //段落格式 值留空时支持多语言自动识别，若配置，则以配置值为准
+        //段落格式 值留空时支持多語言自动识别，若配置，则以配置值为准
         //,'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}
 
         //rowspacingtop
@@ -188,9 +188,9 @@
         //wordCount
         ,wordCount:false          //是否開啟字数统计
         //,maximumWords:10000       //允许的最大字符数
-        //字数统计提示，{#count}代表当前字数，{#leave}代表还可以输入多少字符数,留空支持多语言自动切换，否则按此配置显示
+        //字数统计提示，{#count}代表当前字数，{#leave}代表还可以输入多少字符数,留空支持多語言自动切换，否则按此配置显示
         //,wordCountMsg:''   //当前已输入 {#count} 个字符，您还可以输入{#leave} 个字符
-        //超出字数限制提示  留空支持多语言自动切换，否则按此配置显示
+        //超出字数限制提示  留空支持多語言自动切换，否则按此配置显示
         //,wordOverFlowMsg:''    //<span style="color:red;">你输入的字符个数已经超出最大允许值，服务器可能会拒绝保存！</span>
 
         //tab
@@ -220,7 +220,7 @@
 
 
         //,topOffset:30
-        //編輯器底部距离工具栏高度(如果参数大于等于編輯器高度，则设置无效)
+        //編輯器底部距离工具栏高度(如果参数大于等于編輯器高度，则设置無效)
         //,toolbarTopOffset:400
 
         //设置远程图片是否抓取到本地保存
@@ -277,7 +277,7 @@
 
         //默认过滤规则相关配置项目
         //,disabledTableInTable:true  //禁止表格嵌套
-        //,rgb2Hex:true               //默认产出的数据中的color自动从rgb格式变成16进制格式
+        //,rgb2Hex:true               //默认产出的資料中的color自动从rgb格式变成16进制格式
 
 		// xss 过滤是否開啟,inserthtml等操作
 		,xssFilterRules: true

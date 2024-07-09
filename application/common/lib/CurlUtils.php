@@ -11,13 +11,13 @@ class CurlUtils {
     /**
      * 构造方法
      * @param string $url 请求的地址
-     * @param int $responseHeader 是否需要响应头信息
+     * @param int $responseHeader 是否需要响应头訊息
      */
     public function __construct($url,$responseHeader = 0,$timeout = 5){
         $this->ch = curl_init($url);
         curl_setopt($this->ch,CURLOPT_RETURNTRANSFER,1);//设置以文件流的形式返回
-        curl_setopt($this->ch,CURLOPT_HEADER,$responseHeader);//设置响应头信息是否返回
-        curl_setopt($this->ch,CURLOPT_TIMEOUT,$timeout);//设置响应头信息是否返回
+        curl_setopt($this->ch,CURLOPT_HEADER,$responseHeader);//设置响应头訊息是否返回
+        curl_setopt($this->ch,CURLOPT_TIMEOUT,$timeout);//设置响应头訊息是否返回
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false); //不驗證证书
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, false); //不驗證证书
     }
@@ -39,7 +39,7 @@ class CurlUtils {
 
     /**
      * 发送请求
-     * @return string 返回的数据
+     * @return string 返回的資料
      */
     private function exec(){
         return curl_exec($this->ch);
@@ -47,7 +47,7 @@ class CurlUtils {
 
     /**
      * 发送get请求
-     * @return string 请求返回的数据
+     * @return string 请求返回的資料
      */
     public function get(){
         return $this->exec();
@@ -55,9 +55,9 @@ class CurlUtils {
 
     /**
      * 发送post请求
-     * @param  arr/string $value 准备发送post的数据
+     * @param  arr/string $value 准备发送post的資料
      * @param boolean $https 是否为https请求
-     * @return string        请求返回的数据
+     * @return string        请求返回的資料
      */
     public function post($value,$https=true){
         if($https){

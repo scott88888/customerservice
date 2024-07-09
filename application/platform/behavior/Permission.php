@@ -41,7 +41,7 @@ class Permission
         if (request()->isAjax) {
             return [
                 'code' => 1,
-                'msg' => '您不是超级管理员，无操作权限',
+                'msg' => '您不是超级管理员，無操作权限',
             ];
         } else {
             $url = url('platform/user/me','',true,true);

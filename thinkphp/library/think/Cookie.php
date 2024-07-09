@@ -115,7 +115,7 @@ class Cookie
     }
 
     /**
-     * 永久保存 Cookie 数据
+     * 永久保存 Cookie 資料
      * @access public
      * @param  string $name   cookie 名稱
      * @param  mixed  $value  cookie 值
@@ -134,7 +134,7 @@ class Cookie
     }
 
     /**
-     * 判断是否有 Cookie 数据
+     * 判断是否有 Cookie 資料
      * @access public
      * @param  string      $name   cookie 名稱
      * @param  string|null $prefix cookie 前缀

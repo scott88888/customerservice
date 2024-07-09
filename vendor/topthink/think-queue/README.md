@@ -9,7 +9,7 @@
 
 ```
 [
-    'connector'=>'sync' //驱动类型，可选择 sync(默认):同步执行，database:数据库驱动,redis:Redis驱动,topthink:Topthink驱动
+    'connector'=>'sync' //驱动类型，可選擇 sync(默认):同步执行，database:資料库驱动,redis:Redis驱动,topthink:Topthink驱动
                    //或其他自定义的完整的类名
 ]
 ```
@@ -19,7 +19,7 @@
 
 
 ## 使用 Database
-> 创建如下数据表
+> 创建如下資料表
 
 ```
 CREATE TABLE `prefix_jobs` (
@@ -41,9 +41,9 @@ CREATE TABLE `prefix_jobs` (
 > 也可以放在任意可以自动加载到的地方
 
 任务类不需继承任何类，如果这个类只有一个任务，那么就只需要提供一个`fire`方法就可以了，如果有多个小任务，就写多个方法，下面发布任务的时候会有区别  
-每个方法会传入两个参数 `think\queue\Job $job`（当前的任务对象） 和 `$data`（发布任务时自定义的数据）
+每个方法会传入两个参数 `think\queue\Job $job`（当前的任务对象） 和 `$data`（发布任务时自定义的資料）
 
-还有个可选的任务失敗执行的方法 `failed` 传入的参数为`$data`（发布任务时自定义的数据）
+还有个可选的任务失敗执行的方法 `failed` 传入的参数为`$data`（发布任务时自定义的資料）
 
 ### 下面写两个例子
 

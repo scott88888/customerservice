@@ -7,7 +7,7 @@ use OSS\Http\ResponseCore;
 
 
 /**
- * Class Result, 操作结果类的基类，不同的请求在处理返回数据的时候有不同的逻辑，
+ * Class Result, 操作结果类的基类，不同的请求在处理返回資料的时候有不同的逻辑，
  * 具体的解析逻辑推迟到子类实现
  *
  * @package OSS\Model
@@ -46,7 +46,7 @@ abstract class Result
     }
 
     /**
-     * 得到返回数据，不同的请求返回数据格式不同
+     * 得到返回資料，不同的请求返回資料格式不同
      *
      * $return mixed
      */
@@ -56,7 +56,7 @@ abstract class Result
     }
 
     /**
-     * 由子类实现，不同的请求返回数据有不同的解析逻辑，由子类实现
+     * 由子类实现，不同的请求返回資料有不同的解析逻辑，由子类实现
      *
      * @return mixed
      */
@@ -149,7 +149,7 @@ abstract class Result
     }
 
     /**
-     * 返回原始的返回数据
+     * 返回原始的返回資料
      *
      * @return ResponseCore
      */
@@ -163,7 +163,7 @@ abstract class Result
      */
     protected $isOk = false;
     /**
-     * 由子类解析过的数据
+     * 由子类解析过的資料
      */
     protected $parsedData = null;
     /**

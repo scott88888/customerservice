@@ -55,7 +55,7 @@
 		FORM_TEAM_PID = 'XM_PID_VALUE',
 		CZ = 'xm-cz',
 		CZ_GROUP = 'xm-cz-group',
-		TIPS = '请选择',
+		TIPS = '请選擇',
 		data = {},
 		events = {
 			on: {},
@@ -133,7 +133,7 @@
 						ipt.removeAttr('style');
 					}, 300);
 				},
-				init: null, //初始化的选择值,
+				init: null, //初始化的選擇值,
 				on: null, //select值发生变化
 				opened: null,
 				closed: null,
@@ -214,7 +214,7 @@
  					searchType: othis.attr(SEARCH_TYPE) == 'dl' ? 1 : 0,
  					showCount: othis.attr(SHOW_COUNT) - 0,
  				},
-				value = othis.find('option[selected]').toArray().map((option) => {//取得已选中的数据
+				value = othis.find('option[selected]').toArray().map((option) => {//取得已选中的資料
 					return {
 						name: option.innerHTML,
 						value: option.value,
@@ -336,7 +336,7 @@
 			}
 		}else{
 			reElem.find(`dl .${DD_HIDE}`).removeClass(DD_HIDE);
-			//遍历选项, 选择可以显示的值
+			//遍历选项, 選擇可以显示的值
 			reElem.find(`dl dd:not(.${FORM_SELECT_TIPS})`).each((idx, item) => {
 				let _item = $(item);
 				let searchFun = events.filter[id] || data[id].config.filter;
@@ -354,7 +354,7 @@
 			this.create(id, isCreate, inputValue);
 			let shows = reElem.find(`dl dd:not(.${FORM_SELECT_TIPS}):not(.${DD_HIDE})`);
 			if(!shows.length){
-				reElem.find(`dd.${FORM_NONE}`).addClass(FORM_EMPTY).text('无匹配项');
+				reElem.find(`dd.${FORM_NONE}`).addClass(FORM_EMPTY).text('無匹配项');
 			}else{
 				reElem.find(`dd.${FORM_NONE}`).removeClass(FORM_EMPTY);
 			}
@@ -830,7 +830,7 @@
 				//激活li
 				group.find('.xm-select-active').removeClass('xm-select-active');
 				othis.addClass('xm-select-active');
-				//激活下一个group, 激活前显示对应数据
+				//激活下一个group, 激活前显示对应資料
 				group.nextAll('.xm-select-linkage-group').addClass('xm-select-linkage-hide');
 				let nextGroup = group.next('.xm-select-linkage-group');
 				nextGroup.find('li').addClass('xm-select-linkage-hide');
@@ -898,7 +898,7 @@
 				arr.forEach(item => item.click());
 				return false;
 			}
-			//树状结构的选择
+			//树状结构的選擇
 			let treeId = dd.attr('tree-id');
 			if(treeId){
 				//忽略右边的图标
@@ -1138,7 +1138,7 @@
 			this.remove(vals, val)
 		);
 		if(!div[0]) return ;
-		//单选选完后直接關閉选择域
+		//单选选完后直接關閉選擇域
 		if(fs.config.radio){
 			this.changeShow(div, false);
 		}
@@ -1242,7 +1242,7 @@
 			top.find(`dl .${FORM_EMPTY}`).removeClass(FORM_EMPTY);
 			top.find(`dl dd.${DD_HIDE}`).removeClass(DD_HIDE);
 			top.find(`dl dd.${TEMP}`).remove();
-			//计算ajax数据是否为空, 然后重新请求数据
+			//计算ajax資料是否为空, 然后重新请求資料
 			if(id && data[id] && data[id].config.isEmpty){
 				this.triggerSearch(top);
 			}
@@ -1491,7 +1491,7 @@
 				isAdd = false;
 			}else if(isAppend == true){//追加模式
 				isAdd = true;
-			}else{//刪除原有的数据
+			}else{//刪除原有的資料
 				common.removeAll(id);
 			}
 			if(isAdd){

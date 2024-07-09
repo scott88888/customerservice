@@ -14,7 +14,7 @@ use OSS\Model\UploadInfo;
 class ListMultipartUploadResult extends Result
 {
     /**
-     * 解析从ListMultipartUpload接口的返回数据
+     * 解析从ListMultipartUpload接口的返回資料
      *
      * @return ListMultipartUploadInfo
      */

@@ -96,7 +96,7 @@ $.fn.datetimepicker.defaults = {
   toolbarPlacement: 'default', // -
   showTodayButton: false, // 显示返回今日按钮
   showClear: false, // 显示清除日期按钮
-  showClose: false, // 显示關閉按钮日期选择器按钮
+  showClose: false, // 显示關閉按钮日期選擇器按钮
   widgetPositioning: {
     horizontal: 'auto',
     vertical: 'auto'

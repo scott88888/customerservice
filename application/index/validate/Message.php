@@ -18,7 +18,7 @@ class Message extends Validate{
 
 
 	 /**
-    * 驗證失敗 信息
+    * 驗證失敗 訊息
     * [$message description]
     * @var array
     */

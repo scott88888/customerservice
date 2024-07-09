@@ -70,7 +70,7 @@ if (!count($files)) {
     ));
 }
 
-/* 返回数据 */
+/* 返回資料 */
 $result = json_encode(array(
     "state" => "SUCCESS",
     "list" => $files,

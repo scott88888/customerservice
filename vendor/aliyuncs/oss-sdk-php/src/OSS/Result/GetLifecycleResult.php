@@ -12,7 +12,7 @@ use OSS\Model\LifecycleConfig;
 class GetLifecycleResult extends Result
 {
     /**
-     *  解析Lifestyle数据
+     *  解析Lifestyle資料
      *
      * @return LifecycleConfig
      */

@@ -266,7 +266,7 @@ try {
     echo($e);
 }
 
-# 取得object信息
+# 取得object訊息
 ## headObject
 /*
  * 可代替isObjectExist接口，查詢object是否存在
@@ -311,7 +311,7 @@ try {
     echo($e);
 }
 
-# 取得bucket信息
+# 取得bucket訊息
 ## headBucket
 /*
  * 可代替isBucketExist接口，查詢bucket是否存在
@@ -535,7 +535,7 @@ try {
     echo($e);
 }
 
-## getBucketCors(取得bucket跨域信息)
+## getBucketCors(取得bucket跨域訊息)
 try {
     $result = $cosClient->getBucketCors(array());
     print_r($result);
@@ -579,7 +579,7 @@ try {
     echo($e);
 }
 
-## GetBucketReplication(取得bucket跨区域複製信息)
+## GetBucketReplication(取得bucket跨区域複製訊息)
 try {
     $result = $cosClient->getBucketReplication(array(
         'Bucket' => $bucket
@@ -589,7 +589,7 @@ try {
     echo($e);
 }
 
-## DeleteBucketReplication(刪除bucket跨区域複製信息)
+## DeleteBucketReplication(刪除bucket跨区域複製訊息)
 try {
     $result = $cosClient->deleteBucketReplication(array(
         'Bucket' => $bucket
@@ -667,7 +667,7 @@ try {
 # 複製
 ## copyobject(简单複製)
 /*
- * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实信息
+ * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实訊息
  */
 try {
     $result = $cosClient->copyObject(array(
@@ -682,7 +682,7 @@ try {
 
 ## Copy(分块并发複製)
 /*
- * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实信息
+ * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实訊息
  */
 try {
     $result = $cosClient->copy(

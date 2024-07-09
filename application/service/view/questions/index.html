@@ -11,16 +11,16 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">关键词</label>
+							<label class="layui-form-label">關鍵字</label>
 							<div class="layui-input-inline">
-								<input type="text" name="keyword" placeholder="請輸入关键词" class="layui-input">
+								<input type="text" name="keyword" placeholder="請輸入關鍵字" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">语言</label>
+							<label class="layui-form-label">語言</label>
 							<div class="layui-input-inline">
 								<select name="lang">
-									<option value="">选择语言</option>
+									<option value="">選擇語言</option>
 									{foreach name=":config('lang')" item="vo"}
 									<option value="{$key}">{$vo}</option>
 									{/foreach}
@@ -86,7 +86,7 @@
                                 align: 'left'
                             }, {
                                 field: 'keyword',
-                                title: '关键词',
+                                title: '關鍵字',
                                 unresize: true,
                                 align: 'left',
                             },  {
@@ -102,7 +102,7 @@
 								align: 'left',
 							},{
 								field: 'lang',
-								title: '语言',
+								title: '語言',
 								unresize: true,
 								align: 'left',
 							},

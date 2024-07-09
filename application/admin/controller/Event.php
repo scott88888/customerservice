@@ -289,7 +289,7 @@ class Event extends Controller
             
             if (!empty($service_id)) {
                 $rebot_int = $this->lang_array['robot_error'];
-                //机器人自动回复
+                //機器人自動回覆
                 $robot = Db::table('wolive_robot')
                     ->where('business_id', $arr['business_id'])
                     ->where('lang', $lang)
@@ -432,7 +432,7 @@ class Event extends Controller
             //改成離線狀態接收通知
             if (empty($sended) && $business['template_state']=='open') {
                 TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
-                    "first"  => "你有一條新的客户信息!",
+                    "first"  => "你有一條新的客户訊息!",
                     "keyword1"   => $visiter["visiter_name"] ?$visiter["visiter_name"]:'遊客'.$arr['visiter_id'],
                     "keyword2"  => date('Y-m-d H:i:s',time()),
                     "keyword3"  => $arr["content"],
@@ -441,7 +441,7 @@ class Event extends Controller
                 Admins::table('wolive_queue')->where('business_id', $arr['business_id'])->where('visiter_id', $arr['visiter_id'])->update(['remind_tpl'=>1]);
             }
 
-            //机器人自动回复
+            //機器人自動回覆
             $robot = Db::table('wolive_robot')
                 ->where('business_id', $arr['business_id'])
                 ->where('lang', $lang)
@@ -706,7 +706,7 @@ class Event extends Controller
                 $service_data = Admins::table("wolive_service")->field('avatar,business_id,email,open_id,groupid,nick_name,service_id,state')->where('service_id', $service_id)->where('groupid', $arr['groupid'])->find();
 
 
-                //如果被客服拉黑了
+                //如果被客服黑名單了
                 if ($service['state'] == 'in_black_list') {
                     $service_data = Admins::table("wolive_service")->field('avatar,business_id,email,open_id,groupid,nick_name,service_id,state')->where('service_id', $service_id)->find();
                     $service_data['content'] = $this->lang_array['hello'];
@@ -780,7 +780,7 @@ class Event extends Controller
                         $queue = Admins::table("wolive_queue")->insert($data);
                     }
 
-                    // 推送遊客信息
+                    // 推送遊客訊息
                     $pusher->trigger("ud" . $service_data['service_id'], 'on_notice', array('message' => $arr));
 
                     $words = Admins::table('wolive_sentence')->where("lang",$lang)->where("service_id", $service_data['service_id'])->where('state', 'using')->find();
@@ -833,7 +833,7 @@ class Event extends Controller
                     $queue = Admins::table("wolive_queue")->insert($data);
                 }
 
-                // 推送遊客信息
+                // 推送遊客訊息
                 $pusher->trigger("ud" . $service_data['service_id'], 'on_notice', array('message' => $arr));
 
                 $words = Admins::table('wolive_sentence')->where("lang",$lang)->where("service_id", $service_data['service_id'])->where('state', 'using')->find();
@@ -1018,7 +1018,7 @@ class Event extends Controller
 
 
     /**
-     * 取得最近对话信息.
+     * 取得最近对话訊息.
      *
      * @return string
      */
@@ -1070,7 +1070,7 @@ class Event extends Controller
 
 
     /**
-     * 刪除访客信息.
+     * 刪除访客訊息.
      *
      * @return boolAdmins
      */

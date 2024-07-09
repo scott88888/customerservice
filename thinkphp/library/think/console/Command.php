@@ -345,7 +345,7 @@ class Command
     }
 
     /**
-     * 设置帮助信息
+     * 设置帮助訊息
      * @param string $help
      * @return Command
      */
@@ -357,7 +357,7 @@ class Command
     }
 
     /**
-     * 取得帮助信息
+     * 取得帮助訊息
      * @return string
      */
     public function getHelp()
@@ -366,7 +366,7 @@ class Command
     }
 
     /**
-     * 描述信息
+     * 描述訊息
      * @return string
      */
     public function getProcessedHelp()

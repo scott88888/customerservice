@@ -15,7 +15,7 @@ use think\db\Builder;
 use think\Exception;
 
 /**
- * mysql数据库驱动
+ * mysql資料库驱动
  */
 class Mysql extends Builder
 {
@@ -26,7 +26,7 @@ class Mysql extends Builder
     /**
      * 生成insertall SQL
      * @access public
-     * @param array     $dataSet 数据集
+     * @param array     $dataSet 資料集
      * @param array     $options 表达式
      * @param bool      $replace 是否replace
      * @return string
@@ -53,10 +53,10 @@ class Mysql extends Builder
                 } elseif (is_scalar($val)) {
                     $data[$key] = $this->parseValue($val, $key);
                 } elseif (is_object($val) && method_exists($val, '__toString')) {
-                    // 对象数据写入
+                    // 对象資料写入
                     $data[$key] = $val->__toString();
                 } else {
-                    // 过滤掉非标量数据
+                    // 过滤掉非标量資料
                     unset($data[$key]);
                 }
             }

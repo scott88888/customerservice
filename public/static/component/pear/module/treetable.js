@@ -13,7 +13,7 @@ layui.define(['layer', 'table'], function (exports) {
             if (!treetable.checkParam(param)) {
                 return;
             }
-            // 取得数据
+            // 取得資料
             if (param.data) {
                 treetable.init(param, param.data);
             } else {
@@ -60,7 +60,7 @@ layui.define(['layer', 'table'], function (exports) {
                 }
             }
 
-            // 对数据进行排序
+            // 对資料进行排序
             var sort = function (s_pid, data) {
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].pid == s_pid) {

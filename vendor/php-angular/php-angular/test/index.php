@@ -63,7 +63,7 @@ $view->assign('page', function ($p) {
     return 'index.php?p=' . $p;
 });
 
-// 向模板引擎设置数据
+// 向模板引擎设置資料
 $view->assign($data);
 $view->assign('start_time', $start_time);
 $view->assign('menus', $menus);

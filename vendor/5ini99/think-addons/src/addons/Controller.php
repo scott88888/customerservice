@@ -27,7 +27,7 @@ class Controller extends \think\Controller
     protected $action = null;
     // 当前template
     protected $template;
-    // 模板配置信息
+    // 模板配置訊息
     protected $config = [
         'type' => 'Think',
         'view_path' => '',
@@ -49,7 +49,7 @@ class Controller extends \think\Controller
     {
         // 生成request对象
         $this->request = is_null($request) ? Request::instance() : $request;
-        // 初始化配置信息
+        // 初始化配置訊息
         $this->config = Config::get('template') ?: $this->config;
         // 处理路由参数
         $route = $this->request->param('route', '');

@@ -522,7 +522,7 @@ class Angular
     }
 
     /**
-     * 解析php-selected指令, 方便选择框做自动选中功能
+     * 解析php-selected指令, 方便選擇框做自动选中功能
      * @return string
      */
     public function parseSelected($content, $match)

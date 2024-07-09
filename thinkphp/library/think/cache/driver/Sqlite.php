@@ -85,7 +85,7 @@ class Sqlite extends Driver
         if (sqlite_num_rows($result)) {
             $content = sqlite_fetch_single($result);
             if (function_exists('gzcompress')) {
-                //启用数据压缩
+                //启用資料压缩
                 $content = gzuncompress($content);
             }
             return unserialize($content);
@@ -97,7 +97,7 @@ class Sqlite extends Driver
      * 写入缓存
      * @access public
      * @param string            $name 缓存变量名
-     * @param mixed             $value  存储数据
+     * @param mixed             $value  存储資料
      * @param integer|\DateTime $expire  有效时间（秒）
      * @return boolean
      */
@@ -114,7 +114,7 @@ class Sqlite extends Driver
             $expire = (0 == $expire) ? 0 : (time() + $expire); //缓存有效期为0表示永久缓存
         }
         if (function_exists('gzcompress')) {
-            //数据压缩
+            //資料压缩
             $value = gzcompress($value, 3);
         }
         if ($this->tag) {

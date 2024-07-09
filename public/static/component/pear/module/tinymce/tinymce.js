@@ -14,13 +14,13 @@ layui.define(['jquery'],function (exports) {
     var settings = {
         base_url: modPath
         , images_upload_url: ''//图片上传接口，可在option传入，也可在这里修改，option的值優先
-        , language: 'zh_CN'//语言，可在option传入，也可在这里修改，option的值優先
-        , response: {//后台返回数据格式设置
+        , language: 'zh_CN'//語言，可在option传入，也可在这里修改，option的值優先
+        , response: {//后台返回資料格式设置
             statusName: response.statusName || 'code'//返回狀態字段
             , msgName: response.msgName || 'msg'//返回消息字段
-            , dataName: response.dataName || 'data'//返回的数据
+            , dataName: response.dataName || 'data'//返回的資料
             , statusCode: response.statusCode || {
-                ok: 0//数据正常
+                ok: 0//資料正常
             }
         }
         , success: function (res, succFun, failFun) {//图片上传完成回调 根据自己需要修改
@@ -32,7 +32,7 @@ layui.define(['jquery'],function (exports) {
         }
     };
 
-    //  ----------------  以下代码无需修改  ----------------
+    //  ----------------  以下代码無需修改  ----------------
 
     var t = {};
 
@@ -100,7 +100,7 @@ layui.define(['jquery'],function (exports) {
 
         var file_field = form.name || 'edit' //文件字段名
 
-        var form_data = form.data || {} //其他表單数据 {key:value, ...}
+        var form_data = form.data || {} //其他表單資料 {key:value, ...}
 
         option.suffix= isset(option.suffix) ? option.suffix : (plugin_filename.indexOf('.min')>-1 ? '.min' : '')
 

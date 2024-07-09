@@ -177,7 +177,7 @@ class Template
         if ($template) {
             $cacheFile = $this->config['cache_path'] . $this->config['cache_prefix'] . md5($this->config['layout_name'] . $template) . '.' . ltrim($this->config['cache_suffix'], '.');
             if (!$this->checkCache($cacheFile)) {
-                // 缓存无效 重新模板编译
+                // 缓存無效 重新模板编译
                 $content = file_get_contents($template);
                 $this->compiler($content, $cacheFile);
             }
@@ -214,7 +214,7 @@ class Template
         }
         $cacheFile = $this->config['cache_path'] . $this->config['cache_prefix'] . md5($content) . '.' . ltrim($this->config['cache_suffix'], '.');
         if (!$this->checkCache($cacheFile)) {
-            // 缓存无效 模板编译
+            // 缓存無效 模板编译
             $this->compiler($content, $cacheFile);
         }
         // 读取编译存储
@@ -249,7 +249,7 @@ class Template
 
     /**
      * 檢查编译缓存是否有效
-     * 如果无效则需要重新编译
+     * 如果無效则需要重新编译
      * @access private
      * @param string $cacheFile 缓存文件名
      * @return boolean
@@ -390,14 +390,14 @@ class Template
                 }
             }
         }
-        // 预先加载的标签库 无需在每个模板中使用taglib标签加载 但必须使用标签库XML前缀
+        // 预先加载的标签库 無需在每个模板中使用taglib标签加载 但必须使用标签库XML前缀
         if ($this->config['taglib_pre_load']) {
             $tagLibs = explode(',', $this->config['taglib_pre_load']);
             foreach ($tagLibs as $tag) {
                 $this->parseTagLib($tag, $content);
             }
         }
-        // 内置标签库 无需使用taglib标签匯入就可以使用 并且不需使用标签库XML前缀
+        // 内置标签库 無需使用taglib标签匯入就可以使用 并且不需使用标签库XML前缀
         $tagLibs = explode(',', $this->config['taglib_build_in']);
         foreach ($tagLibs as $tag) {
             $this->parseTagLib($tag, $content, true);
@@ -419,7 +419,7 @@ class Template
      */
     private function parsePhp(&$content)
     {
-        // 短标签的情况要将<?标签用echo方式输出 否则无法正常输出xml标识
+        // 短标签的情况要将<?标签用echo方式输出 否则無法正常输出xml标识
         $content = preg_replace('/(<\?(?!php|=|$))/i', '<?php echo \'\\1\'; ?>' . "\n", $content);
         // PHP语法檢查
         if ($this->config['tpl_deny_php'] && false !== strpos($content, '<?php')) {
@@ -520,7 +520,7 @@ class Template
                 // 取得顶层模板block标签内容
                 $baseBlocks = $this->parseBlock($template, true);
                 if (empty($extend)) {
-                    // 无extend标签但有block标签的情况
+                    // 無extend标签但有block标签的情况
                     $extend = $template;
                 }
             }
@@ -825,7 +825,7 @@ class Template
      * 模板变量解析,支持使用函数
      * 格式： {$varname|function1|function2=arg1,arg2}
      * @access public
-     * @param  string $varStr 变量数据
+     * @param  string $varStr 变量資料
      * @return void
      */
     public function parseVar(&$varStr)
@@ -843,7 +843,7 @@ class Template
                         $vars  = explode('.', $match[0]);
                         $first = array_shift($vars);
                         if ('$Think' == $first) {
-                            // 所有以Think.打头的以特殊变量对待 无需模板赋值就可以输出
+                            // 所有以Think.打头的以特殊变量对待 無需模板赋值就可以输出
                             $parseStr = $this->parseThinkVar($vars);
                         } elseif ('$Request' == $first) {
                             // 取得Request请求对象参数

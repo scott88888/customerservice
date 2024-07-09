@@ -67,7 +67,7 @@ $config = [
 // 实例化
 $view = new PHPAngular/Angular($config);
 
-// 数据
+// 資料
 $data = array(
     'title' => 'Hello PHP Angular',
     'list'  => array(
@@ -79,7 +79,7 @@ $data = array(
     ),
 );
 
-// 向模板引擎设置数据
+// 向模板引擎设置資料
 $view->assign($data);
 
 // 输出解析结果

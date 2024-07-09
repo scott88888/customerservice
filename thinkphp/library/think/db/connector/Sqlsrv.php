@@ -15,7 +15,7 @@ use PDO;
 use think\db\Connection;
 
 /**
- * Sqlsrv数据库驱动
+ * Sqlsrv資料库驱动
  */
 class Sqlsrv extends Connection
 {
@@ -27,9 +27,9 @@ class Sqlsrv extends Connection
     ];
     protected $builder = '\\think\\db\\builder\\Sqlsrv';
     /**
-     * 解析pdo连接的dsn信息
+     * 解析pdo连接的dsn訊息
      * @access protected
-     * @param array $config 连接信息
+     * @param array $config 连接訊息
      * @return string
      */
     protected function parseDsn($config)
@@ -42,7 +42,7 @@ class Sqlsrv extends Connection
     }
 
     /**
-     * 取得数据表的字段信息
+     * 取得資料表的字段訊息
      * @access public
      * @param string $tableName
      * @return array
@@ -91,7 +91,7 @@ class Sqlsrv extends Connection
     }
 
     /**
-     * 取得数据表的字段信息
+     * 取得資料表的字段訊息
      * @access public
      * @param string $dbName
      * @return array

@@ -14,9 +14,9 @@
 
 ####Sea.js
 
-- ~~Raphael.js无法加载；~~
+- ~~Raphael.js無法加载；~~
 
 ####Require.js
 
-- ~~CodeMirror編輯器的代码无法高亮；~~
+- ~~CodeMirror編輯器的代码無法高亮；~~
 - ~~sequenceDiagram不支持: `Uncaught TypeError: Cannot call method 'isArray' of undefined.`~~

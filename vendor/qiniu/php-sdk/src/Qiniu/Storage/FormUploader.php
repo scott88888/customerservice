@@ -16,9 +16,9 @@ final class FormUploader
      * @param $config     上传配置
      * @param $params     自定义变量，规格参考
      *                    http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
-     * @param $mime       上传数据的mimeType
+     * @param $mime       上传資料的mimeType
      *
-     * @return array    包含已上传文件的信息，类似：
+     * @return array    包含已上传文件的訊息，类似：
      *                                              [
      *                                                  "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>"
@@ -73,9 +73,9 @@ final class FormUploader
      * @param $config     上传配置
      * @param $params     自定义变量，规格参考
      *                    http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
-     * @param $mime       上传数据的mimeType
+     * @param $mime       上传資料的mimeType
      *
-     * @return array    包含已上传文件的信息，类似：
+     * @return array    包含已上传文件的訊息，类似：
      *                                              [
      *                                                  "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>"

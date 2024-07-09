@@ -9,7 +9,7 @@ use Workerman\Connection\AsyncTcpConnection;
 class Pusher extends Worker 
 {
     /**
-     * 应用信息
+     * 应用訊息
      *
      * @var array
      */
@@ -343,7 +343,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 组装失敗信息
+     * 组装失敗訊息
      *
      * @param $code
      * @param $message

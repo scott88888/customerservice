@@ -21,7 +21,7 @@ class AppClient
     /*
      * hub: 直播空间名
      * title: app 的名稱  注意，Title 不是唯一标识，重复 create 动作将生成多个 app
-     * maxUsers：人数限制
+     * maxUsers：人數限制
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人（抢流）。默认为 false ，
        即同一个身份的 client (app/room/user) ，新的连麦请求可以成功，旧连接被關閉。
      */
@@ -44,9 +44,9 @@ class AppClient
      * appId: app 的唯一标识，创建的时候由系统生成。
      * Title: app 的名稱， 可选。
      * Hub: 绑定的直播 hub，可选，用于合流后 rtmp 推流。
-     * MaxUsers: int 类型，可选，连麦房间支持的最大線上人数。
+     * MaxUsers: int 类型，可选，连麦房间支持的最大線上人數。
      * NoAutoKickUser: bool 类型，可选，禁止自动踢人。
-     * MergePublishRtmp: 连麦合流转推 RTMP 的配置，可选择。其详细配置包括如下
+     * MergePublishRtmp: 连麦合流转推 RTMP 的配置，可選擇。其详细配置包括如下
             Enable: 布尔类型，用于開啟和關閉所有房间的合流功能。
             AudioOnly: 布尔类型，可选，指定是否只合成音频。
             Height, Width: int64，可选，指定合流输出的高和宽，默认为 640 x 480。
@@ -95,7 +95,7 @@ class AppClient
     }
 
     /*
-     * 取得房间的人数
+     * 取得房间的人數
      * appId: app 的唯一标识，创建的时候由系统生成。
      * roomName: 操作所查詢的连麦房间。
      */
@@ -120,7 +120,7 @@ class AppClient
     }
 
     /*
-     * 取得房间的人数
+     * 取得房间的人數
      * appId: app 的唯一标识，创建的时候由系统生成。
      * prefix: 所查詢房间名的前缀索引，可以为空。
      * offset: int 类型，分頁查詢的位移标记。

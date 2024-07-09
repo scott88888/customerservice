@@ -182,11 +182,11 @@ class Controller
     }
 
     /**
-     * 驗證数据
+     * 驗證資料
      * @access protected
-     * @param  array $data 数据
+     * @param  array $data 資料
      * @param  string|array $validate 驗證器名或者驗證规则数组
-     * @param  array $message 提示信息
+     * @param  array $message 提示訊息
      * @param  bool $batch 是否批量驗證
      * @param  mixed $callback 回调方法（闭包）
      * @return array|string|true
@@ -213,7 +213,7 @@ class Controller
             $v->batch(true);
         }
 
-        // 设置错误信息
+        // 设置错误訊息
         if (is_array($message)) {
             $v->message($message);
         }

@@ -81,7 +81,7 @@
 		"checkArr": "0"
 	}, {
 		"powerId": "442520236248403968",
-		"powerName": "数据监控",
+		"powerName": "資料监控",
 		"powerType": "1",
 		"powerCode": "/druid/index.html",
 		"powerUrl": "/druid/index.html",
@@ -125,7 +125,7 @@
 		"checkArr": "0"
 	}, {
 		"powerId": "442722702474743808",
-		"powerName": "数据字典",
+		"powerName": "資料字典",
 		"powerType": "1",
 		"powerCode": "system:dictType:main",
 		"powerUrl": "/system/dictType/main",

@@ -327,7 +327,7 @@ function puton() {
     var e_time = $("#my-endDate").text();
 
     if (s_time == "" || e_time == "") {
-        layer.msg("请选择正确的时间段", {icon: 2});
+        layer.msg("请選擇正确的时间段", {icon: 2});
     }
     var showtime;
 

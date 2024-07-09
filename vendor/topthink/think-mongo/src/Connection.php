@@ -31,23 +31,23 @@ use think\Log;
 use think\mongo\Query as Query;
 
 /**
- * Mongo数据库驱动
+ * Mongo資料库驱动
  */
 class Connection
 {
     protected $dbName = ''; // dbName
     /** @var string 当前SQL指令 */
     protected $queryStr = '';
-    // 查詢数据集类型
+    // 查詢資料集类型
     protected $resultSetType = 'array';
-    // 查詢数据类型
+    // 查詢資料类型
     protected $typeMap = 'array';
     protected $mongo; // MongoDb Object
     protected $cursor; // MongoCursor Object
 
     // 监听回调
     protected static $event = [];
-    /** @var PDO[] 数据库连接ID 支持多个连接 */
+    /** @var PDO[] 資料库连接ID 支持多个连接 */
     protected $links = [];
     /** @var PDO 当前连接ID */
     protected $linkID;
@@ -56,19 +56,19 @@ class Connection
 
     // 返回或者影响记录数
     protected $numRows = 0;
-    // 错误信息
+    // 错误訊息
     protected $error = '';
     // 查詢对象
     protected $query = [];
     // 查詢参数
     protected $options = [];
-    // 数据库连接参数配置
+    // 資料库连接参数配置
     protected $config = [
-        // 数据库类型
+        // 資料库类型
         'type'           => '',
         // 服务器地址
         'hostname'       => '',
-        // 数据库名
+        // 資料库名
         'database'       => '',
         // 使用者名稱
         'username'       => '',
@@ -78,19 +78,19 @@ class Connection
         'hostport'       => '',
         // 连接dsn
         'dsn'            => '',
-        // 数据库连接参数
+        // 資料库连接参数
         'params'         => [],
-        // 数据库编码默认采用utf8
+        // 資料库编码默认采用utf8
         'charset'        => 'utf8',
         // 主键名
         'pk'             => '_id',
-        // 数据库表前缀
+        // 資料库表前缀
         'prefix'         => '',
-        // 数据库调试模式
+        // 資料库调试模式
         'debug'          => false,
-        // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+        // 資料库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
         'deploy'         => 0,
-        // 数据库读写是否分离 主从式有效
+        // 資料库读写是否分离 主从式有效
         'rw_separate'    => false,
         // 读写分离后 主服务器数量
         'master_num'     => 1,
@@ -98,7 +98,7 @@ class Connection
         'slave_no'       => '',
         // 是否严格檢查字段是否存在
         'fields_strict'  => true,
-        // 数据集返回类型
+        // 資料集返回类型
         'resultset_type' => 'array',
         // 自动写入时间戳字段
         'auto_timestamp' => false,
@@ -113,9 +113,9 @@ class Connection
     ];
 
     /**
-     * 架构函数 读取数据库配置信息
+     * 架构函数 读取資料库配置訊息
      * @access public
-     * @param array $config 数据库配置数组
+     * @param array $config 資料库配置数组
      */
     public function __construct(array $config = [])
     {
@@ -128,7 +128,7 @@ class Connection
     }
 
     /**
-     * 连接数据库方法
+     * 连接資料库方法
      * @access public
      * @param array         $config 连接参数
      * @param integer       $linkNum 连接序号
@@ -145,7 +145,7 @@ class Connection
             }
             $this->dbName  = $config['database'];
             $this->typeMap = $config['type_map'];
-            // 记录数据集返回类型
+            // 记录資料集返回类型
             if (isset($config['resultset_type'])) {
                 $this->resultSetType = $config['resultset_type'];
             }
@@ -158,7 +158,7 @@ class Connection
             }
             $this->links[$linkNum] = new Manager($host, $this->config['params']);
             if ($config['debug']) {
-                // 记录数据库连接信息
+                // 记录資料库连接訊息
                 Log::record('[ DB ] CONNECT:[ UseTime:' . number_format(microtime(true) - $startTime, 6) . 's ] ' . $config['dsn'], 'sql');
             }
         }
@@ -198,7 +198,7 @@ class Connection
     }
 
     /**
-     * 取得数据库的配置参数
+     * 取得資料库的配置参数
      * @access public
      * @param string $config 配置名稱
      * @return mixed
@@ -209,7 +209,7 @@ class Connection
     }
 
     /**
-     * 设置数据库的配置参数
+     * 设置資料库的配置参数
      * @access public
      * @param string    $config 配置名稱
      * @param mixed     $value 配置值
@@ -255,7 +255,7 @@ class Connection
      * @param string            $namespace 当前查詢的collection
      * @param MongoQuery        $query 查詢对象
      * @param ReadPreference    $readPreference readPreference
-     * @param string|bool       $class 返回的数据集类型
+     * @param string|bool       $class 返回的資料集类型
      * @param string|array      $typeMap 指定返回的typeMap
      * @return mixed
      * @throws AuthenticationException
@@ -285,9 +285,9 @@ class Connection
      * 执行指令
      * @access public
      * @param Command           $command 指令
-     * @param string            $dbName 当前数据库名
+     * @param string            $dbName 当前資料库名
      * @param ReadPreference    $readPreference readPreference
-     * @param string|bool       $class 返回的数据集类型
+     * @param string|bool       $class 返回的資料集类型
      * @param string|array      $typeMap 指定返回的typeMap
      * @return mixed
      * @throws AuthenticationException
@@ -312,7 +312,7 @@ class Connection
     }
 
     /**
-     * 获得数据集
+     * 获得資料集
      * @access protected
      * @param bool|string       $class true 返回Mongo cursor对象 字符串用于指定返回的类名
      * @param string|array      $typeMap 指定返回的typeMap
@@ -323,14 +323,14 @@ class Connection
         if (true === $class) {
             return $this->cursor;
         }
-        // 设置结果数据类型
+        // 设置结果資料类型
         if (is_null($typeMap)) {
             $typeMap = $this->typeMap;
         }
         $typeMap = is_string($typeMap) ? ['root' => $typeMap] : $typeMap;
         $this->cursor->setTypeMap($typeMap);
 
-        // 取得数据集
+        // 取得資料集
         $result = $this->cursor->toArray();
         if ($this->getConfig('pk_convert_id')) {
             // 转换ObjectID 字段
@@ -340,10 +340,10 @@ class Connection
         }
         $this->numRows = count($result);
         if (!empty($class)) {
-            // 返回指定数据集对象类
+            // 返回指定資料集对象类
             $result = new $class($result);
         } elseif ('collection' == $this->resultSetType) {
-            // 返回数据集Collection对象
+            // 返回資料集Collection对象
             $result = new Collection($result);
         }
         return $result;
@@ -396,10 +396,10 @@ class Connection
     }
 
     /**
-     * 数据库日志记录（仅供参考）
+     * 資料库日志记录（仅供参考）
      * @access public
      * @param string $type 类型
-     * @param mixed  $data 数据
+     * @param mixed  $data 資料
      * @param array  $options 参数
      * @return void
      */
@@ -484,7 +484,7 @@ class Connection
     }
 
     /**
-     * 数据库调试 记录当前SQL及分析性能
+     * 資料库调试 记录当前SQL及分析性能
      * @access protected
      * @param boolean $start 调试开始标记 true 开始 false 结束
      * @param string  $sql 执行的SQL语句 留空自动取得
@@ -493,7 +493,7 @@ class Connection
     protected function debug($start, $sql = '')
     {
         if (!empty($this->config['debug'])) {
-            // 開啟数据库调试模式
+            // 開啟資料库调试模式
             if ($start) {
                 Debug::remark('queryStartTime', 'time');
             } else {
@@ -517,7 +517,7 @@ class Connection
     }
 
     /**
-     * 關閉数据库
+     * 關閉資料库
      * @access public
      */
     public function close()
@@ -529,7 +529,7 @@ class Connection
     }
 
     /**
-     * 初始化数据库连接
+     * 初始化資料库连接
      * @access protected
      * @param boolean $master 是否主服务器
      * @return void
@@ -537,7 +537,7 @@ class Connection
     protected function initConnect($master = true)
     {
         if (!empty($this->config['deploy'])) {
-            // 采用分布式数据库
+            // 采用分布式資料库
             if ($master) {
                 if (!$this->linkWrite) {
                     $this->linkWrite = $this->multiConnect(true);
@@ -550,7 +550,7 @@ class Connection
                 $this->mongo = $this->linkRead;
             }
         } elseif (!$this->mongo) {
-            // 默认单数据库
+            // 默认单資料库
             $this->mongo = $this->connect();
         }
     }
@@ -564,7 +564,7 @@ class Connection
     protected function multiConnect($master = false)
     {
         $_config = [];
-        // 分布式数据库配置解析
+        // 分布式資料库配置解析
         foreach (['username', 'password', 'hostname', 'hostport', 'database', 'dsn', 'charset'] as $name) {
             $_config[$name] = explode(',', $this->config[$name]);
         }
@@ -581,11 +581,11 @@ class Connection
                 // 指定服务器读
                 $r = $this->config['slave_no'];
             } else {
-                // 读操作连接从服务器 每次随机连接的数据库
+                // 读操作连接从服务器 每次随机连接的資料库
                 $r = floor(mt_rand($this->config['master_num'], count($_config['hostname']) - 1));
             }
         } else {
-            // 读写操作不区分服务器 每次随机连接的数据库
+            // 读写操作不区分服务器 每次随机连接的資料库
             $r = floor(mt_rand(0, count($_config['hostname']) - 1));
         }
         $dbConfig = [];

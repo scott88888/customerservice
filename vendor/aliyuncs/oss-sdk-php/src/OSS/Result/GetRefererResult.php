@@ -12,7 +12,7 @@ use OSS\Model\RefererConfig;
 class GetRefererResult extends Result
 {
     /**
-     * 解析RefererConfig数据
+     * 解析RefererConfig資料
      *
      * @return RefererConfig
      */

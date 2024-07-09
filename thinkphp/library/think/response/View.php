@@ -24,9 +24,9 @@ class View extends Response
     protected $contentType = 'text/html';
 
     /**
-     * 处理数据
+     * 处理資料
      * @access protected
-     * @param mixed $data 要处理的数据
+     * @param mixed $data 要处理的資料
      * @return mixed
      */
     protected function output($data)

@@ -1,6 +1,6 @@
 var container = 'login';
 $(function () {
-    // 送出表單数据
+    // 送出表單資料
     $("form").on("submit", function () {
         var $form = $(this);
         if ($form.validator('isFormValid')) {

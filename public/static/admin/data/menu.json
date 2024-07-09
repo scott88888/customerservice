@@ -13,7 +13,7 @@
 			"href": "view/console/console1.html"
 		}, {
 			"id": 13,
-			"title": "数据分析",
+			"title": "資料分析",
 			"icon": "layui-icon layui-icon-console",
 			"type": 1,
 			"openType": "_iframe",
@@ -89,7 +89,7 @@
 			"type": 0,
 			"children": [{
 				"id": 2031,
-				"title": "数据表格",
+				"title": "資料表格",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -178,7 +178,7 @@
 				"href": "view/document/tab.html"
 			},{
 				"id": 60132,
-				"title": "数据菜单",
+				"title": "資料菜单",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -199,7 +199,7 @@
 				},
 				{
 					"id": 2042,
-					"title": "图标选择",
+					"title": "图标選擇",
 					"icon": "layui-icon layui-icon-face-cry",
 					"type": 1,
 					"openType": "_iframe",
@@ -339,7 +339,7 @@
 				"href": "view/system/log.html"
 			}, {
 				"id": 606,
-				"title": "数据字典",
+				"title": "資料字典",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -371,7 +371,7 @@
 		}]
 	}, {
 		"id": "echarts",
-		"title": "数据图表",
+		"title": "資料图表",
 		"icon": "layui-icon layui-icon-chart",
 		"type": 0,
 		"href": "",

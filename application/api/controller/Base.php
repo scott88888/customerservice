@@ -21,7 +21,7 @@ class Base extends Controller
     }
 
     /**
-     * 檢查每次app请求的数据是否合法
+     * 檢查每次app请求的資料是否合法
      */
     public function checkRequestAuth() {
         // 首先需要取得headers

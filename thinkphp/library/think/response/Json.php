@@ -23,16 +23,16 @@ class Json extends Response
     protected $contentType = 'application/json';
 
     /**
-     * 处理数据
+     * 处理資料
      * @access protected
-     * @param mixed $data 要处理的数据
+     * @param mixed $data 要处理的資料
      * @return mixed
      * @throws \Exception
      */
     protected function output($data)
     {
         try {
-            // 返回JSON数据格式到客户端 包含狀態信息
+            // 返回JSON資料格式到客户端 包含狀態訊息
             $data = json_encode($data, $this->options['json_encode_param']);
 
             if ($data === false) {

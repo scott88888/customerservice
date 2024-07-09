@@ -54,7 +54,7 @@ $policy = array(
 $upToken = $auth->uploadToken($bucket, null, $expires, $policy, true);
 print($upToken . "\n");
 
-//带数据处理的凭证
+//带資料处理的凭证
 $saveMp4Entry = \Qiniu\base64_urlSafeEncode($bucket . ":avthumb_test_target.mp4");
 $saveJpgEntry = \Qiniu\base64_urlSafeEncode($bucket . ":vframe_test_target.jpg");
 $avthumbMp4Fop = "avthumb/mp4|saveas/" . $saveMp4Entry;

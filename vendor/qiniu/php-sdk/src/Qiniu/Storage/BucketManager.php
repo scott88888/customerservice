@@ -65,7 +65,7 @@ final class BucketManager
      * @param $limit      单次列举个数限制
      * @param $delimiter  指定目录分隔符
      *
-     * @return array    包含文件信息的数组，类似：[
+     * @return array    包含文件訊息的数组，类似：[
      *                                              {
      *                                                 "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>",
@@ -88,12 +88,12 @@ final class BucketManager
     }
 
     /**
-     * 取得资源的元信息，但不返回文件内容
+     * 取得资源的元訊息，但不返回文件内容
      *
-     * @param $bucket     待取得信息资源所在的空间
+     * @param $bucket     待取得訊息资源所在的空间
      * @param $key        待取得资源的文件名
      *
-     * @return array    包含文件信息的数组，类似：
+     * @return array    包含文件訊息的数组，类似：
      *                                              [
      *                                                  "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>",
@@ -250,7 +250,7 @@ final class BucketManager
      * @param $bucket     目标资源空间
      * @param $key        目标资源文件名
      *
-     * @return array    包含已拉取的文件信息。
+     * @return array    包含已拉取的文件訊息。
      *                         成功时：  [
      *                                          [
      *                                              "hash" => "<Hash string>",

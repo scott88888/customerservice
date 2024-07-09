@@ -12,7 +12,7 @@ if (is_file("./assets/ueditor/php/config.php")) {
 	$CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents(APP_PATH."./assets/ueditor/php/config.json")), true);
 } else {
 	echo json_encode(array(
-		'state'=> '无权限访问./assets/ueditor/php/config.php文件'
+		'state'=> '無权限访问./assets/ueditor/php/config.php文件'
 	), JSON_UNESCAPED_UNICODE);exit;
 }
 

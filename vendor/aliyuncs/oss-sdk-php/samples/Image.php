@@ -56,7 +56,7 @@ $options = array(
 $ossClient->getObject($bucketName, $object, $options);
 printImage("imageFormat", $download_file);
 
-// 取得图片信息
+// 取得图片訊息
 $options = array(
     OssClient::OSS_FILE_DOWNLOAD => $download_file,
     OssClient::OSS_PROCESS => "image/info", );

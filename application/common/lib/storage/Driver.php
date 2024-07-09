@@ -61,7 +61,7 @@ abstract class Driver
 
     public function save()
     {
-        //todo 保存到数据库
+        //todo 保存到資料库
         return [
             'url' => $this->url
         ];

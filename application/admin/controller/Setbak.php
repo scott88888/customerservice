@@ -81,7 +81,7 @@ class Set extends Base
             $wechat = WechatPlatform::get(['business_id'=>$arr['business_id']]);
             if ($visiter['state'] == 'offline' && trim($wechat['customer_tpl'])!='' && strlen($visiter['visiter_id'])>16) {
                 TplService::send($arr["business_id"],$visiter['visiter_id'],url('index/index/wechat',['business_id'=>$arr['business_id'],'groupid'=>$queue['groupid']],true,true),$wechat['customer_tpl'],[
-                    "first"  => "你有一條新的信息!",
+                    "first"  => "你有一條新的訊息!",
                     "keyword1"   => $arr["content"],
                     "keyword2"  => $login['nick_name'],
                     "remark" => $login['business']['business_name']."提示:客服有新的消息,快去看看吧~",
@@ -373,7 +373,7 @@ class Set extends Base
         $visiters = array_column(collection($visiters)->toArray(),'visiter_id');
 
         if (empty($visiters)) {
-            $data = ['code' => 1, 'msg' => '暂时没有数据！'];
+            $data = ['code' => 1, 'msg' => '暂时没有資料！'];
             return $data;
         }
 
@@ -522,14 +522,14 @@ class Set extends Base
             $data = ['code' => 0, 'data' => $chatarr,'all_unread_count'=>$result];
             return $data;
         } else {
-            $data = ['code' => 1, 'msg' => '暂时没有数据！'];
+            $data = ['code' => 1, 'msg' => '暂时没有資料！'];
             return $data;
         }
     }
 
 
     /**
-     * 取得当前聊天信息类.
+     * 取得当前聊天訊息类.
      *
      * @return string
      */
@@ -671,7 +671,7 @@ class Set extends Base
     }
 
     /**
-     * 标记已看信息.
+     * 标记已看訊息.
      *
      * @return mixed
      */
@@ -686,7 +686,7 @@ class Set extends Base
     }
 
     /**
-     * 取得未看信息條数类.
+     * 取得未看訊息條数类.
      *
      * @return mixed
      */
@@ -743,7 +743,7 @@ class Set extends Base
     }
 
     /**
-     * 取得该business_id下所用的黑名单信息.
+     * 取得该business_id下所用的黑名单訊息.
      *
      * @return bool|string
      */
@@ -942,7 +942,7 @@ class Set extends Base
     }
 
     /**
-     * 取得排队人数.
+     * 取得排队人數.
      *
      * @return mixed
      */
@@ -1015,7 +1015,7 @@ class Set extends Base
 
         if (!$visiter) {
 
-            $data = ['code' => 1, 'msg' => '该访客数据已被清理！'];
+            $data = ['code' => 1, 'msg' => '该访客資料已被清理！'];
 
             return $data;
         }
@@ -1435,7 +1435,7 @@ class Set extends Base
         } catch (StorageException $exception) {
             $data = ['code'=> -1,'msg'=>$exception->getMessage(),'data'=>''];
         } catch (\Exception $e) {
-            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置信息','data'=>$e];
+            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置訊息','data'=>$e];
         }
         return $data;
     }
@@ -1459,7 +1459,7 @@ class Set extends Base
         } catch (StorageException $exception) {
             $data = ['code'=> -1,'msg'=>$exception->getMessage(),'data'=>''];
         } catch (\Exception $e) {
-            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置信息'];
+            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置訊息'];
         }
         return $data;
     }
@@ -2029,7 +2029,7 @@ class Set extends Base
                 ]);
             } else {
                 TplService::send($login['business_id'],$open_id,url('weixin/login/callback',['business_id'=>$login['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
-                    "first"  => "你有一條新的信息!",
+                    "first"  => "你有一條新的訊息!",
                     "keyword1"   => "测试",
                     "keyword2"  => "测试发送新消息提醒模板消息",
                     "keyword3"  => "测试",
@@ -2083,7 +2083,7 @@ class Set extends Base
         if ($visiter['state'] == 'offline') {
             return json([
                 'code' => 1,
-                'msg' => '访客已離線,无法推送评价'
+                'msg' => '访客已離線,無法推送评价'
             ]);
         }
 
@@ -2151,10 +2151,10 @@ class Set extends Base
             $arr=Admins::table('wolive_chats')->where('unstr',$id)->find();
         }
         if(!$arr){
-            return ['code' =>1, 'msg' => '您所需撤销的信息不存在！'];
+            return ['code' =>1, 'msg' => '您所需撤销的訊息不存在！'];
         }
 if($arr['service_id']!=$_SESSION['Msg']['service_id']){
-    return ['code' =>1, 'msg' => '只能撤销自己发布的信息！'];
+    return ['code' =>1, 'msg' => '只能撤销自己发布的訊息！'];
 }
         $channel = bin2hex($arr['visiter_id'] . '/' . $arr['business_id']);
         $pusher->trigger("cu" . $channel, 'my-chexiao', array('message' => $arr));

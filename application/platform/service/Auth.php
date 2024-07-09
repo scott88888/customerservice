@@ -159,14 +159,14 @@ class Auth
         $params = array_merge($params, $extend);
         $params['password'] = $this->getEncryptPassword($password, $data['username']);
 
-        //账号注册时需要開啟事务,避免出现垃圾数据
+        //账号注册时需要開啟事务,避免出现垃圾資料
         Db::startTrans();
         try
         {
             $user = Admin::create($params,true);
             Db::commit();
 
-            // 此时的Model中只包含部分数据
+            // 此时的Model中只包含部分資料
             $this->_user = Admin::get($user->id);
 
             //设置Token
@@ -346,7 +346,7 @@ class Auth
     }
 
     /**
-     * 取得会员基本信息
+     * 取得会员基本訊息
      */
     public function getUserinfo()
     {
@@ -468,7 +468,7 @@ class Auth
     }
 
     /**
-     * 渲染使用者数据
+     * 渲染使用者資料
      * @param array     $datalist   二维数组
      * @param mixed     $fields     加载的字段列表
      * @param string    $fieldkey   渲染的字段
@@ -508,9 +508,9 @@ class Auth
     }
 
     /**
-     * 设置错误信息
+     * 设置错误訊息
      *
-     * @param $error 错误信息
+     * @param $error 错误訊息
      * @return Auth
      */
     public function setError($error)
@@ -520,7 +520,7 @@ class Auth
     }
 
     /**
-     * 取得错误信息
+     * 取得错误訊息
      * @return string
      */
     public function getError()

@@ -15846,17 +15846,17 @@
       toolbox: {
         brush: {
           title: {
-            rect: '矩形选择',
+            rect: '矩形選擇',
             polygon: '圈选',
-            lineX: '横向选择',
-            lineY: '纵向选择',
-            keep: '保持选择',
-            clear: '清除选择'
+            lineX: '横向選擇',
+            lineY: '纵向選擇',
+            keep: '保持選擇',
+            clear: '清除選擇'
           }
         },
         dataView: {
-          title: '数据视图',
-          lang: ['数据视图', '關閉', '刷新']
+          title: '資料视图',
+          lang: ['資料视图', '關閉', '刷新']
         },
         dataZoom: {
           title: {
@@ -15928,9 +15928,9 @@
           }
         },
         data: {
-          allData: '其数据是——',
+          allData: '其資料是——',
           partialData: '其中，前{displayCnt}项是——',
-          withName: '{name}的数据是{value}',
+          withName: '{name}的資料是{value}',
           withoutName: '{value}',
           separator: {
             middle: '，',
@@ -43626,7 +43626,7 @@
         minShowLabelAngle: 0,
         // 选中时扇区偏移量
         selectedOffset: 10,
-        // 选择模式，默认關閉，可选single，multiple
+        // 選擇模式，默认關閉，可选single，multiple
         // selectedMode: false,
         // 南丁格尔玫瑰图模式，'radius'（半径） | 'area'（面积）
         // roseType: null,
@@ -58933,7 +58933,7 @@
         bottom: 60,
         // width: {totalWidth} - left - right,
         // height: {totalHeight} - top - bottom,
-        // 默认取数据最小最大值
+        // 默认取資料最小最大值
         // min: 0,
         // max: 100,
         minSize: '0%',
@@ -83141,7 +83141,7 @@
             }
 
             if (isFunction(symbolSize)) {
-              // FIXME 这里不兼容 ECharts 2.x，2.x 貌似参数是整个数据？
+              // FIXME 这里不兼容 ECharts 2.x，2.x 貌似参数是整个資料？
               symbolSize = symbolSize(rawIdx, dataParams);
             }
 

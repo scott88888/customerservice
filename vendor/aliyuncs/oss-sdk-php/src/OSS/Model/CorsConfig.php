@@ -47,7 +47,7 @@ class CorsConfig implements XmlConfig
     }
 
     /**
-     * 从xml数据中解析出CorsConfig
+     * 从xml資料中解析出CorsConfig
      *
      * @param string $strXml
      * @throws OssException

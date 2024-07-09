@@ -23,7 +23,7 @@ var group = new Vue({
     },
 
     methods: {
-        // 请求使用者数据
+        // 请求使用者資料
         getList(page) {
             let that = this;
             $.ajax({
@@ -479,7 +479,7 @@ function getdata() {
                     $(".conversation").prepend(str);
                     if (res.length <= 2) {
                         $("#top_div").remove();
-                        $(".conversation").prepend("<div id='top_div' class='showtime'>已没有数据</div>");
+                        $(".conversation").prepend("<div id='top_div' class='showtime'>已没有資料</div>");
                         if (div) {
                             div.scrollTop = 0;
                         }
@@ -694,7 +694,7 @@ function put() {
 
     } else {
 
-        layer.msg("请选择图片", { icon: 2 });
+        layer.msg("请選擇图片", { icon: 2 });
     }
 }
 
@@ -808,7 +808,7 @@ var send = function() {
     }
 
     if (msg == "") {
-        layer.msg('請輸入信息');
+        layer.msg('請輸入訊息');
     } else {
 
         var se = $("#chatmsg_submit").attr('name');
@@ -982,7 +982,7 @@ $(document).on('click','.outer-left .customer img,.outer-right .service img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存数据
+    // 如果图片被缓存，则直接返回缓存資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;

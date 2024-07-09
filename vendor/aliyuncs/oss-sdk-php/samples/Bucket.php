@@ -83,7 +83,7 @@ function doesBucketExist($ossClient, $bucket)
 }
 
 /**
- * 刪除bucket，如果bucket不为空则bucket无法刪除成功， 不为空表示bucket既没有object，也没有未完成的multipart上传时的parts
+ * 刪除bucket，如果bucket不为空则bucket無法刪除成功， 不为空表示bucket既没有object，也没有未完成的multipart上传时的parts
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 待刪除的存储空间名稱

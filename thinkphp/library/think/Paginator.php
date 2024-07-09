@@ -23,7 +23,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     /** @var bool 是否为简洁模式 */
     protected $simple = false;
 
-    /** @var Collection 数据集 */
+    /** @var Collection 資料集 */
     protected $items;
 
     /** @var integer 当前頁 */
@@ -32,7 +32,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     /** @var  integer 最后一頁 */
     protected $lastPage;
 
-    /** @var integer|null 数据总数 */
+    /** @var integer|null 資料总数 */
     protected $total;
 
     /** @var  integer 每頁的数量 */
@@ -186,7 +186,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 数据是否足够分頁
+     * 資料是否足够分頁
      * @return boolean
      */
     public function hasPages()

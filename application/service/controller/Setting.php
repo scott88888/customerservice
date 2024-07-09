@@ -22,7 +22,7 @@ class Setting extends Base
             $post = $this->request->post();
             $update = ['lang' => $post['lang'], 'bd_trans_appid' => $post['bd_trans_appid'], 'bd_trans_secret' => $post['bd_trans_secret'],'google_trans_key' => $post['google_trans_key'],'trans_type' => $post['trans_type'], 'auto_trans' => $post['auto_trans'], 'auto_ip' => $post['auto_ip'], 'template_state' => $post['template_state']];
             Db::table('wolive_business')->where(['id' => $login['business_id']])->update($update);
-            $template_data = ['business_id' => $login['business_id'], 'wx_id' => $post['wx_id'], 'app_id' => $post['app_id'], 'app_secret' => $post['app_secret'], 'wx_token' => $post['wx_token'], 'wx_aeskey' => $post['wx_aeskey'], 'visitor_tpl' => $post['visitor_tpl'], 'customer_tpl' => $post['customer_tpl'], 'msg_tpl' => $post['msg_tpl'], 'desc' => '无','addtime'=>time()];
+            $template_data = ['business_id' => $login['business_id'], 'wx_id' => $post['wx_id'], 'app_id' => $post['app_id'], 'app_secret' => $post['app_secret'], 'wx_token' => $post['wx_token'], 'wx_aeskey' => $post['wx_aeskey'], 'visitor_tpl' => $post['visitor_tpl'], 'customer_tpl' => $post['customer_tpl'], 'msg_tpl' => $post['msg_tpl'], 'desc' => '無','addtime'=>time()];
             if($template){
                 model('wechat_platform')->save($template_data,['business_id' => $login['business_id']]);
             }else{
@@ -54,7 +54,7 @@ class Setting extends Base
         if ($this->request->isAjax()) {
             $post = $this->request->post();
             $check = Sentence::get(['service_id' => $_SESSION['Msg']['service_id'], 'lang' => $post['lang']]);
-            if ($check) $this->error('该语言已存在问候语！');
+            if ($check) $this->error('该語言已存在问候语！');
             $post['service_id'] = $_SESSION['Msg']['service_id'];
             $post['content'] = $this->request->post('content', '', '\app\Common::clearXSS');
             $res = Sentence::insert($post);

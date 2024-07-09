@@ -41,7 +41,7 @@ abstract class Driver
      * 写入缓存
      * @access public
      * @param string    $name 缓存变量名
-     * @param mixed     $value  存储数据
+     * @param mixed     $value  存储資料
      * @param int       $expire  有效时间 0为永久
      * @return boolean
      */
@@ -113,7 +113,7 @@ abstract class Driver
      * 如果不存在则写入缓存
      * @access public
      * @param string    $name 缓存变量名
-     * @param mixed     $value  存储数据
+     * @param mixed     $value  存储資料
      * @param int       $expire  有效时间 0为永久
      * @return mixed
      */

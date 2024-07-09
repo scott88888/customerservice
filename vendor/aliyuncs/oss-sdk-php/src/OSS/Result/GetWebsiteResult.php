@@ -11,7 +11,7 @@ use OSS\Model\WebsiteConfig;
 class GetWebsiteResult extends Result
 {
     /**
-     * 解析WebsiteConfig数据
+     * 解析WebsiteConfig資料
      *
      * @return WebsiteConfig
      */

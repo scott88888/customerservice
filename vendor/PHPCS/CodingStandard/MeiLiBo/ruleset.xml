@@ -67,10 +67,10 @@
         </properties>
     </rule>
 
-    <!-- PHP 关键字 和 true/false/null -->
-    <!-- PHP关键字必须使用小写。 -->
+    <!-- PHP 關鍵字 和 true/false/null -->
+    <!-- PHP關鍵字必须使用小写。 -->
     <rule ref="Generic.PHP.LowerCaseKeyword" />
-    <!-- 关键字 true, false 和 null 必须使用小写。 -->
+    <!-- 關鍵字 true, false 和 null 必须使用小写。 -->
     <rule ref="Generic.PHP.LowerCaseConstant"/>
     <!-- =、=> 等操作符的前后都必须有一个空格 -->
     <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
@@ -87,11 +87,11 @@
     <!-- 注释标记 // 或 # 之后必须有一个空格 -->
     <rule ref="MeiLiBo.Commenting.InlineComment"/>
 
-    <!-- 命名空间(namespace)和 use 关键字的使用 -->
+    <!-- 命名空间(namespace)和 use 關鍵字的使用 -->
     <!-- 在 namespace 声明之后必须有一个空行 -->
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
     <!-- 所有 use 声明必须出现在 namespace 声明的后面 -->
-    <!-- 每一行只允许出现一个 use 关键字 -->
+    <!-- 每一行只允许出现一个 use 關鍵字 -->
     <!-- 在 use 定义块之后必须有一个空行 -->
     <rule ref="PSR2.Namespaces.UseDeclaration"/>
 
@@ -112,8 +112,8 @@
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
 
     <!-- 扩展(extends)和实现(implements) -->
-    <!-- 关键字 public,function,extends,implements以及类名只用一个空格隔开,不能用两个或两个以上的空格. -->
-    <!-- 关键字 extends 和 implements 必须和类名在同一行 -->
+    <!-- 關鍵字 public,function,extends,implements以及类名只用一个空格隔开,不能用两个或两个以上的空格. -->
+    <!-- 關鍵字 extends 和 implements 必须和类名在同一行 -->
     <!-- 开始大括号必须在一个独立的行，结束大括号必须在下一行或代码块结束后的下一行。 -->
     <!-- 要实现的接口队列可以被写到多行，每一行都要有相同的缩进，第一个接口必须被写到新的一行，并且每一行只能有一个接口。 -->
     <rule ref="MeiLiBo.Classes.ClassDeclaration"/>
@@ -121,7 +121,7 @@
     <!-- 类属性 -->
     <!--
         所有类属性的前面必须定义其可见性。
-        不允许使用 var 关键字来定义一个类属性。
+        不允许使用 var 關鍵字来定义一个类属性。
         每一行只允许定义一个类属性。
         类属性名稱不允许使用单一下划线开头来表示其 protected 和 private 的可见性。
     -->
@@ -170,7 +170,7 @@
     <!-- 控制结构 -->
     <!--
         控制结构的一般样式规则如下：
-            在控制结构的关键字后面必须有一个空格
+            在控制结构的關鍵字后面必须有一个空格
             开始括号之后不能出现空格
             结束括号之前不能出现空格
             在结束括号和开始大括号之间必须有一个空格
@@ -179,12 +179,12 @@
             每个代码块必须被封装到一个大括号内，以标准化代码结构，同时减少在新增代码时间引入错误的可能性。
     -->
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
-    <!-- 必须用 elseif 代替 else if，让控制关键字看上去是一个单词，同时避免出现代码块逻辑错误。 -->
+    <!-- 必须用 elseif 代替 else if，让控制關鍵字看上去是一个单词，同时避免出现代码块逻辑错误。 -->
     <rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
 
     <!-- switch 和 case -->
     <!--
-        一个 case 声明相对于 switch 必须有一个缩进，关键字 break 必须和 case 代码块有相同的缩进。
+        一个 case 声明相对于 switch 必须有一个缩进，關鍵字 break 必须和 case 代码块有相同的缩进。
         当一个 case 代码块不需要 break 的时候必须加上注释描述，比如 // no break
     -->
     <!-- TODO switch后面的大括号不在同一行的情况还不能检测出来 -->

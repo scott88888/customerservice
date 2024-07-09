@@ -11,10 +11,10 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">语言</label>
+							<label class="layui-form-label">語言</label>
 							<div class="layui-input-inline">
 								<select name="lang">
-									<option value="">选择语言</option>
+									<option value="">選擇語言</option>
 									{foreach name=":config('lang')" item="vo"}
 									<option value="{$key}">{$vo}</option>
 									{/foreach}
@@ -92,7 +92,7 @@
                             	templet: '#statu'
 							},{
 								field: 'lang',
-								title: '语言',
+								title: '語言',
 								unresize: true,
 								align: 'left',
 							},

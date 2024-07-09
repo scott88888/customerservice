@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 本地数据库
+ Source Server         : 本地資料库
  Source Server Type    : MySQL
  Source Server Version : 50726
  Source Host           : localhost:3306
@@ -124,7 +124,7 @@ CREATE TABLE `wolive_business`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `business_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商家标识符',
   `logo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `copyright` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '底部版权信息',
+  `copyright` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '底部版权訊息',
   `admin_id` int(11) NOT NULL DEFAULT 0,
   `video_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟视频',
   `voice_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'open' COMMENT '是否開啟提示音',
@@ -144,7 +144,7 @@ CREATE TABLE `wolive_business`  (
   `bd_trans_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '百度翻译密钥',
   `google_trans_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '谷歌翻译KEY',
   `auto_trans` tinyint(1) NOT NULL DEFAULT 0 COMMENT '发送客服是否自动翻译',
-  `auto_ip` tinyint(1) NOT NULL DEFAULT 0 COMMENT '根据IP自动设置客户语言',
+  `auto_ip` tinyint(1) NOT NULL DEFAULT 0 COMMENT '根据IP自动设置客户語言',
   `trans_type` tinyint(1) NOT NULL DEFAULT 0 COMMENT '翻译接口：百度0；谷歌1',
   `theme` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '主题颜色',
   `header` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '悬浮條背景色',
@@ -272,7 +272,7 @@ CREATE TABLE `wolive_question`  (
   `qid` int(11) NOT NULL AUTO_INCREMENT,
   `business_id` int(11) NOT NULL DEFAULT 0,
   `question` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `keyword` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '关键词',
+  `keyword` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '關鍵字',
   `sort` int(11) NOT NULL DEFAULT 0,
   `answer` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `answer_read` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -338,7 +338,7 @@ DROP TABLE IF EXISTS `wolive_robot`;
 CREATE TABLE `wolive_robot`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `business_id` int(11) NOT NULL DEFAULT 0,
-  `keyword` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '关键词',
+  `keyword` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '關鍵字',
   `sort` int(11) NOT NULL DEFAULT 0,
   `reply` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 1 COMMENT '1显示 0不显示',
@@ -515,7 +515,7 @@ DROP TABLE IF EXISTS `wolive_banword`;
 CREATE TABLE `wolive_banword`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `business_id` int(11) NOT NULL DEFAULT 0,
-  `keyword` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '关键词',
+  `keyword` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '關鍵字',
   `lang` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'cn',
   `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 1 COMMENT '1显示 0不显示',
   PRIMARY KEY (`id`) USING BTREE
@@ -549,13 +549,13 @@ INSERT INTO `wolive_admin_permission` VALUES (10, 8, '客户分組', '/service/v
 INSERT INTO `wolive_admin_permission` VALUES (11, 0, '问候语设置', '/service/setting/sentence', 'layui-icon layui-icon-release', 6, 1, 1, 0);
 INSERT INTO `wolive_admin_permission` VALUES (12, 0, '消息记录', '/service/history/index', 'layui-icon layui-icon-form', 7, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (13, 0, '客服工作台', '/service/chat/index', 'layui-icon layui-icon-service', 1, 1, 1, 0);
-INSERT INTO `wolive_admin_permission` VALUES (14, 0, '机器人知识库', '/service/robots/index', 'layui-icon layui-icon-service', 4, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (14, 0, '機器人知识库', '/service/robots/index', 'layui-icon layui-icon-service', 4, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (15, 0, '如何接入', '', 'layui-icon layui-icon-unlink', 8, 0, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (16, 15, '接入配置', '/service/setting/access', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (17, 15, '接入教程', '/service/setting/course', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (18, 0, '商户设置', '/service/setting/index', 'layui-icon layui-icon-set', 1, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (23, 0, '登入日志', '/service/log/index', 'layui-icon layui-icon-layouts', 8, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (24, 0, '数据统计', '/service/log/data', 'layui-icon layui-icon-senior', 8, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (24, 0, '資料统计', '/service/log/data', 'layui-icon layui-icon-senior', 8, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (25, 0, '违禁词', '/service/banwords/index', 'layui-icon layui-icon-face-cry', 4, 1, 1, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

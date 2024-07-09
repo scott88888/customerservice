@@ -31,7 +31,7 @@ class Build
         if (!is_writable($lock)) {
             if (!touch($lock)) {
                 throw new Exception(
-                    '应用目录[' . APP_PATH . ']不可写，目录无法自动生成！<BR>请手动生成项目目录~',
+                    '应用目录[' . APP_PATH . ']不可写，目录無法自动生成！<BR>请手动生成项目目录~',
                     10006
                 );
             }

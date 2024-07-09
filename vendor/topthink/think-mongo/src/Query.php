@@ -39,29 +39,29 @@ use think\Paginator;
 
 class Query
 {
-    // 数据库Connection对象实例
+    // 資料库Connection对象实例
     protected $connection;
-    // 数据库驱动类型
+    // 資料库驱动类型
     protected $driver;
     // 当前模型类名稱
     protected $model;
-    // 当前数据表名稱（含前缀）
+    // 当前資料表名稱（含前缀）
     protected $table = '';
-    // 当前数据表名稱（不含前缀）
+    // 当前資料表名稱（不含前缀）
     protected $name = '';
-    // 当前数据表主键
+    // 当前資料表主键
     protected $pk;
-    // 当前数据表前缀
+    // 当前資料表前缀
     protected $prefix = '';
     // 查詢参数
     protected $options = [];
-    // 数据表信息
+    // 資料表訊息
     protected static $info = [];
 
     /**
      * 架构函数
      * @access public
-     * @param Connection    $connection 数据库对象实例
+     * @param Connection    $connection 資料库对象实例
      * @param string        $model 模型名
      */
     public function __construct(Connection $connection = null, $model = '')
@@ -99,7 +99,7 @@ class Query
     }
 
     /**
-     * 取得当前的数据库Connection对象
+     * 取得当前的資料库Connection对象
      * @access public
      * @return Connection
      */
@@ -109,7 +109,7 @@ class Query
     }
 
     /**
-     * 切换当前的数据库连接
+     * 切换当前的資料库连接
      * @access public
      * @param mixed $config
      * @return $this
@@ -121,7 +121,7 @@ class Query
     }
 
     /**
-     * 指定默认的数据表名（不含前缀）
+     * 指定默认的資料表名（不含前缀）
      * @access public
      * @param string $name
      * @return $this
@@ -133,7 +133,7 @@ class Query
     }
 
     /**
-     * 指定默认数据表名（含前缀）
+     * 指定默认資料表名（含前缀）
      * @access public
      * @param string $table 表名
      * @return $this
@@ -145,7 +145,7 @@ class Query
     }
 
     /**
-     * 得到当前或者指定名稱的数据表
+     * 得到当前或者指定名稱的資料表
      * @access public
      * @param string $name
      * @return string
@@ -165,7 +165,7 @@ class Query
     }
 
     /**
-     * 指定数据表主键
+     * 指定資料表主键
      * @access public
      * @param string $pk 主键
      * @return $this
@@ -194,12 +194,12 @@ class Query
     }
 
     /**
-     * 执行查詢 返回数据集
+     * 执行查詢 返回資料集
      * @access public
      * @param string $namespace
      * @param MongoQuery        $query 查詢对象
      * @param ReadPreference    $readPreference readPreference
-     * @param bool|string       $class 指定返回的数据集对象
+     * @param bool|string       $class 指定返回的資料集对象
      * @param string|array      $typeMap 指定返回的typeMap
      * @return mixed
      * @throws AuthenticationException
@@ -213,12 +213,12 @@ class Query
     }
 
     /**
-     * 执行指令 返回数据集
+     * 执行指令 返回資料集
      * @access public
      * @param Command           $command 指令
      * @param string            $dbName
      * @param ReadPreference    $readPreference readPreference
-     * @param bool|string       $class 指定返回的数据集对象
+     * @param bool|string       $class 指定返回的資料集对象
      * @param string|array      $typeMap 指定返回的typeMap
      * @return mixed
      * @throws AuthenticationException
@@ -274,7 +274,7 @@ class Query
     }
 
     /**
-     * 取得数据库的配置参数
+     * 取得資料库的配置参数
      * @access public
      * @param string $name 参数名稱
      * @return boolean
@@ -313,7 +313,7 @@ class Query
             $data      = isset($resultSet[0]) ? $resultSet[0] : null;
             $result    = $data[$field];
             if (isset($cache)) {
-                // 缓存数据
+                // 缓存資料
                 Cache::set($key, $result, $cache['expire']);
             }
         } else {
@@ -376,7 +376,7 @@ class Query
             }
 
             if (isset($cache) && isset($guid)) {
-                // 缓存数据
+                // 缓存資料
                 Cache::set($guid, $result, $cache['expire']);
             }
         } else {
@@ -391,7 +391,7 @@ class Query
      * @access public
      * @param string|array|object   $command 指令
      * @param mixed                 $extra 额外参数
-     * @param string                $db 数据库名
+     * @param string                $db 資料库名
      * @return array
      */
     public function cmd($command, $extra = null, $db = null)
@@ -423,9 +423,9 @@ class Query
     }
 
     /**
-     * 取得数据库的所有collection
+     * 取得資料库的所有collection
      * @access public
-     * @param string  $db 数据库名稱 留空为当前数据库
+     * @param string  $db 資料库名稱 留空为当前資料库
      * @throws Exception
      */
     public function listCollections($db = '')
@@ -451,7 +451,7 @@ class Query
 
     /**
      * 设置记录的某个字段值
-     * 支持使用数据库字段和方法
+     * 支持使用資料库字段和方法
      * @access public
      * @param string|array  $field 字段名
      * @param mixed         $value 字段值
@@ -533,19 +533,19 @@ class Query
     protected function lazyWrite($guid, $step, $lazyTime)
     {
         if (false !== ($value = Cache::get($guid))) {
-            // 存在缓存写入数据
+            // 存在缓存写入資料
             if ($_SERVER['REQUEST_TIME'] > Cache::get($guid . '_time') + $lazyTime) {
-                // 延时更新时间到了，刪除缓存数据 并实际写入数据库
+                // 延时更新时间到了，刪除缓存資料 并实际写入資料库
                 Cache::rm($guid);
                 Cache::rm($guid . '_time');
                 return $value + $step;
             } else {
-                // 追加数据到缓存
+                // 追加資料到缓存
                 Cache::set($guid, $value + $step, 0);
                 return false;
             }
         } else {
-            // 没有缓存数据
+            // 没有缓存資料
             Cache::set($guid, $step, 0);
             // 计时开始
             Cache::set($guid . '_time', $_SERVER['REQUEST_TIME'], 0);
@@ -737,7 +737,7 @@ class Query
     }
 
     /**
-     * 指定当前操作的数据表
+     * 指定当前操作的資料表
      * @access public
      * @param string $table 表名
      * @return $this
@@ -769,7 +769,7 @@ class Query
     }
 
     /**
-     * 不主动取得数据集
+     * 不主动取得資料集
      * @access public
      * @param bool $cursor 是否返回 Cursor 对象
      * @return $this
@@ -781,9 +781,9 @@ class Query
     }
 
     /**
-     * 指定数据集返回对象
+     * 指定資料集返回对象
      * @access public
-     * @param string $class 指定返回的数据集对象类名
+     * @param string $class 指定返回的資料集对象类名
      * @return $this
      */
     public function fetchClass($class)
@@ -805,7 +805,7 @@ class Query
     }
 
     /**
-     * 设置从主服务器读取数据
+     * 设置从主服务器读取資料
      * @access public
      * @return $this
      */
@@ -816,7 +816,7 @@ class Query
     }
 
     /**
-     * 设置查詢数据不存在是否抛出异常
+     * 设置查詢資料不存在是否抛出异常
      * @access public
      * @param bool $fail 是否严格檢查字段
      * @return $this
@@ -828,7 +828,7 @@ class Query
     }
 
     /**
-     * 设置查詢数据不存在是否抛出异常
+     * 设置查詢資料不存在是否抛出异常
      * @access public
      * @param bool $awaitData
      * @return $this
@@ -1075,7 +1075,7 @@ class Query
     }
 
     /**
-     * 取得当前数据表的主键
+     * 取得当前資料表的主键
      * @access public
      * @return string|array
      */
@@ -1122,7 +1122,7 @@ class Query
     /**
      * 把主键值转换为查詢條件 支持复合主键
      * @access public
-     * @param array|string  $data 主键数据
+     * @param array|string  $data 主键資料
      * @param mixed         $options 表达式参数
      * @return void
      * @throws Exception
@@ -1153,7 +1153,7 @@ class Query
     /**
      * 插入记录
      * @access public
-     * @param mixed $data 数据
+     * @param mixed $data 資料
      * @return WriteResult
      * @throws AuthenticationException
      * @throws InvalidArgumentException
@@ -1178,7 +1178,7 @@ class Query
     /**
      * 插入记录并取得自增ID
      * @access public
-     * @param mixed $data 数据
+     * @param mixed $data 資料
      * @return integer
      * @throws AuthenticationException
      * @throws InvalidArgumentException
@@ -1195,7 +1195,7 @@ class Query
     /**
      * 批量插入记录
      * @access public
-     * @param mixed $dataSet 数据集
+     * @param mixed $dataSet 資料集
      * @return integer
      * @throws AuthenticationException
      * @throws InvalidArgumentException
@@ -1221,7 +1221,7 @@ class Query
     /**
      * 更新记录
      * @access public
-     * @param mixed $data 数据
+     * @param mixed $data 資料
      * @return int
      * @throws Exception
      * @throws AuthenticationException
@@ -1235,7 +1235,7 @@ class Query
         $options = $this->parseExpress();
         if (empty($options['where'])) {
             $pk = $this->getPk();
-            // 如果存在主键数据 则自动作为更新條件
+            // 如果存在主键資料 则自动作为更新條件
             if (is_string($pk) && isset($data[$pk])) {
                 $where[$pk] = $data[$pk];
                 $key        = 'mongo:' . $options['table'] . '|' . $data[$pk];
@@ -1246,7 +1246,7 @@ class Query
                     if (isset($data[$field])) {
                         $where[$field] = $data[$field];
                     } else {
-                        // 如果缺少复合主键数据则不执行
+                        // 如果缺少复合主键資料则不执行
                         throw new Exception('miss complex primary data');
                     }
                     unset($data[$field]);
@@ -1364,14 +1364,14 @@ class Query
             }
 
             if (isset($cache)) {
-                // 缓存数据集
+                // 缓存資料集
                 Cache::set($key, $resultSet, $cache['expire']);
             }
         }
 
         // 返回结果处理
         if ($resultSet) {
-            // 数据列表读取后的处理
+            // 資料列表读取后的处理
             if (!empty($this->model)) {
                 // 生成模型对象
                 $model = $this->model;
@@ -1449,12 +1449,12 @@ class Query
             }
 
             if (isset($cache)) {
-                // 缓存数据
+                // 缓存資料
                 Cache::set($key, $result, $cache['expire']);
             }
         }
 
-        // 数据处理
+        // 資料处理
         if (!empty($result[0])) {
             $data = $result[0];
             if (!empty($this->model)) {
@@ -1530,9 +1530,9 @@ class Query
     }
 
     /**
-     * 分批数据返回处理
+     * 分批資料返回处理
      * @access public
-     * @param integer   $count 每次处理的数据数量
+     * @param integer   $count 每次处理的資料数量
      * @param callable  $callback 处理回调方法
      * @param string    $column 分批处理的字段名
      * @return boolean
@@ -1559,10 +1559,10 @@ class Query
     }
 
     /**
-     * 取得数据表信息
+     * 取得資料表訊息
      * @access public
-     * @param string $tableName 数据表名 留空自动取得
-     * @param string $fetch 取得信息类型 包括 fields type pk
+     * @param string $tableName 資料表名 留空自动取得
+     * @param string $fetch 取得訊息类型 包括 fields type pk
      * @return mixed
      */
     public function getTableInfo($tableName = '', $fetch = '')
@@ -1575,7 +1575,7 @@ class Query
         }
 
         if (strpos($tableName, ',')) {
-            // 多表不取得字段信息
+            // 多表不取得字段訊息
             return false;
         } else {
             $tableName = $this->parseSqlTable($tableName);
@@ -1612,7 +1612,7 @@ class Query
     {
         $options = $this->options;
 
-        // 取得数据表
+        // 取得資料表
         if (empty($options['table'])) {
             $options['table'] = $this->getTable();
         }

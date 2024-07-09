@@ -7,7 +7,7 @@ $view->assign('title', '图片');
 $category = load('pic_category');
 $view->assign('category', $category);
 
-// 数据列表
+// 資料列表
 $list = load('pic_list');
 $view->assign('list', $list);
 

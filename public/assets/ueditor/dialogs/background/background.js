@@ -73,12 +73,12 @@
         initColorPicker();
     }
 
-    /* 初始化颜色选择器 */
+    /* 初始化颜色選擇器 */
     function initColorPicker() {
         var me = editor,
             cp = $G("colorPicker");
 
-        /* 生成颜色选择器ui对象 */
+        /* 生成颜色選擇器ui对象 */
         var popup = new UE.ui.Popup({
             content: new UE.ui.ColorPicker({
                 noColorText: me.getLang("clearColor"),
@@ -99,7 +99,7 @@
             }
         });
 
-        /* 设置颜色选择器 */
+        /* 设置颜色選擇器 */
         domUtils.on(cp, "click", function () {
             popup.showAnchor(this);
         });
@@ -203,7 +203,7 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取数据 */
+        /* 初始化滚动事件,滚动到地步自动拉取資料 */
         initEvents: function () {
             var _this = this;
 
@@ -234,16 +234,16 @@
                 }
             });
         },
-        /* 初始化第一次的数据 */
+        /* 初始化第一次的資料 */
         initData: function () {
 
-            /* 拉取数据需要使用的值 */
+            /* 拉取資料需要使用的值 */
             this.state = 0;
             this.listSize = editor.getOpt('imageManagerListSize');
             this.listIndex = 0;
             this.listEnd = false;
 
-            /* 第一次拉取数据 */
+            /* 第一次拉取資料 */
             this.getImageData();
         },
         /* 重置界面 */
@@ -251,7 +251,7 @@
             this.initContainer();
             this.initData();
         },
-        /* 向后台拉取图片列表数据 */
+        /* 向后台拉取图片列表資料 */
         getImageData: function () {
             var _this = this;
 

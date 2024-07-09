@@ -52,7 +52,7 @@ var types=function(){
             e = e || window.event;
             if (e.ctrlKey && e.keyCode == 13) {
                 if ($('#text_in').html() == "" || $.cookie("service") == '' ) {
-                    layer.msg('請輸入信息');
+                    layer.msg('請輸入訊息');
                 } else {
                     send();
                 }
@@ -70,7 +70,7 @@ var chaton = function () {
     var height =document.body.clientHeight;
     $("#chat_list").css("height",(height -110)+"px");
     $("#wait_list").css("height",(height-110)+"px");
-    //判断当前有无排队人员
+    //判断当前有無排队人员
     getwait();
     getblacklist();
     $.cookie("hid","");
@@ -115,7 +115,7 @@ var chaton = function () {
 };
 window.onload = chaton();
 
-// 选择对象
+// 選擇对象
 
 function choose(vid) {
     var sdata = $.cookie("cu_com");
@@ -204,7 +204,7 @@ var send = function () {
         var img = json.avater;
     }
     if (msg == "") {
-        layer.msg('請輸入信息');
+        layer.msg('請輸入訊息');
     } else {
         var sid = $('#channel').text();
         var se = $("#chatmsg_submit").attr('name');
@@ -478,7 +478,7 @@ function put() {
 
     } else {
 
-        layer.msg("请选择图片", {icon: 2});
+        layer.msg("请選擇图片", {icon: 2});
     }
 }
 

@@ -45,11 +45,11 @@ class Index extends Base
         $getinall = Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id', $login['business_id'])->count();
         // 取得总会话量
         $chatsall = Admins::table("wolive_chats")->where($where)->count();
-        // 正在排队人数
+        // 正在排队人數
         $waiter = Admins::table("wolive_queue")->where(['business_id' => $login['business_id'], 'state' => 'normal'])->where("service_id", 0)->count();
         // 正在咨询的人
         $talking = Admins::table('wolive_queue')->where(['business_id' => $login['business_id']])->where('state', 'normal')->where("service_id", '<>', 0)->count();
-        // 線上客服人数
+        // 線上客服人數
         $services = Admins::table("wolive_service")->where($where)->where(['state' => 'online'])->count();
         // 今日会话量
         $nowchats = Admins::table("wolive_chats")->where($where)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();

@@ -55,7 +55,7 @@ class Cache
             '\\think\\cache\\driver\\' . ucwords($type) :
             $type;
 
-            // 记录初始化信息
+            // 记录初始化訊息
             App::$debug && Log::record('[ CACHE ] INIT ' . $type, 'info');
 
             if (true === $name) {
@@ -137,7 +137,7 @@ class Cache
      * 写入缓存
      * @access public
      * @param  string   $name   缓存标识
-     * @param  mixed    $value  存储数据
+     * @param  mixed    $value  存储資料
      * @param  int|null $expire 有效时间 0为永久
      * @return boolean
      */
@@ -220,7 +220,7 @@ class Cache
      * 如果不存在则写入缓存
      * @access public
      * @param  string $name   缓存变量名
-     * @param  mixed  $value  存储数据
+     * @param  mixed  $value  存储資料
      * @param  int    $expire 有效时间 0为永久
      * @return mixed
      */

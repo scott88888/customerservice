@@ -26,16 +26,16 @@ class Jsonp extends Response
     protected $contentType = 'application/javascript';
 
     /**
-     * 处理数据
+     * 处理資料
      * @access protected
-     * @param mixed $data 要处理的数据
+     * @param mixed $data 要处理的資料
      * @return mixed
      * @throws \Exception
      */
     protected function output($data)
     {
         try {
-            // 返回JSON数据格式到客户端 包含狀態信息 [当url_common_param为false时是无法取得到$_GET的数据的，故使用Request来取得<xiaobo.sun@qq.com>]
+            // 返回JSON資料格式到客户端 包含狀態訊息 [当url_common_param为false时是無法取得到$_GET的資料的，故使用Request来取得<xiaobo.sun@qq.com>]
             $var_jsonp_handler = Request::instance()->param($this->options['var_jsonp_handler'], "");
             $handler           = !empty($var_jsonp_handler) ? $var_jsonp_handler : $this->options['default_jsonp_handler'];
 

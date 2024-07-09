@@ -366,7 +366,7 @@ class Custom extends Base
             $vids = $this->request->post('vid/a',[]);
             $gid = $this->request->post('group_id',0);
             if (empty($vids) || empty($gid)) {
-                return json(['code'=>1,'msg'=>'请选择分組或客户']);
+                return json(['code'=>1,'msg'=>'请選擇分組或客户']);
             }
             if ($gid != -1) {
                 $group = Vgroup::get($gid);
@@ -424,7 +424,7 @@ class Custom extends Base
             $vids = $this->request->post('vid/a', []);
             $gid = $this->request->post('group_id', 0);
             if (empty($gid)) {
-                return json($data = ['code'=>1,'msg'=>'请选择分組']);
+                return json($data = ['code'=>1,'msg'=>'请選擇分組']);
             } elseif ($gid == -1) {
                 $result = Queue::alias('q')->where('q.business_id', $this->login['business_id'])
                     ->join('wolive_visiter v','q.visiter_id = v.visiter_id','left')

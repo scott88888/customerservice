@@ -27,7 +27,7 @@ trait SoftDelete
     }
 
     /**
-     * 查詢包含软刪除的数据
+     * 查詢包含软刪除的資料
      * @access public
      * @return Query
      */
@@ -37,7 +37,7 @@ trait SoftDelete
     }
 
     /**
-     * 只查詢软刪除数据
+     * 只查詢软刪除資料
      * @access public
      * @return Query
      */
@@ -71,7 +71,7 @@ trait SoftDelete
             $this->data[$name] = $this->autoWriteTimestamp($name);
             $result            = $this->isUpdate()->save();
         } else {
-            // 强制刪除当前模型数据
+            // 强制刪除当前模型資料
             $result = $this->getQuery()->where($this->getWhere())->delete();
         }
 
@@ -92,7 +92,7 @@ trait SoftDelete
 
         $this->trigger('after_delete', $this);
 
-        // 清空原始数据
+        // 清空原始資料
         $this->origin = [];
 
         return $result;
@@ -111,7 +111,7 @@ trait SoftDelete
             return 0;
         }
 
-        // 包含软刪除数据
+        // 包含软刪除資料
         $query = (new static())->db(false);
         if (is_array($data) && key($data) !== 0) {
             $query->where($data);
@@ -159,7 +159,7 @@ trait SoftDelete
     }
 
     /**
-     * 查詢默认不包含软刪除数据
+     * 查詢默认不包含软刪除資料
      * @access protected
      * @param Query $query 查詢对象
      * @return Query

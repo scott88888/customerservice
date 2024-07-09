@@ -37,7 +37,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 延迟取得关联数据
+     * 延迟取得关联資料
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包查詢條件
      * @return array|false|\PDOStatement|string|Model
@@ -112,9 +112,9 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 预载入关联查詢（数据集）
+     * 预载入关联查詢（資料集）
      * @access public
-     * @param array    $resultSet   数据集
+     * @param array    $resultSet   資料集
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -143,7 +143,7 @@ class HasOne extends OneToOne
             ], $foreignKey, $relation, $subRelation, $closure);
             // 关联属性名
             $attr = Loader::parseName($relation);
-            // 关联数据封装
+            // 关联資料封装
             foreach ($resultSet as $result) {
                 // 关联模型
                 if (!isset($data[$result->$localKey])) {
@@ -165,9 +165,9 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 预载入关联查詢（数据）
+     * 预载入关联查詢（資料）
      * @access public
-     * @param Model    $result      数据对象
+     * @param Model    $result      資料对象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包

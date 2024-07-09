@@ -264,9 +264,9 @@ class Manager extends Base
     public function registForService()
     {
 
-        // 取得 注册信息 数据
+        // 取得 注册訊息 資料
         $post = $this->request->post();
-        // 驗證 表單信息
+        // 驗證 表單訊息
         $result = $this->validate($post, 'Services');
         if ($result !== true) {
             
@@ -305,7 +305,7 @@ class Manager extends Base
         }
 
         unset($post['password2']);
-        // 子新增 数据
+        // 子新增 資料
         $post['parent_id'] = $_SESSION['Msg']['service_id'];
 
         // 新增字段
@@ -313,7 +313,7 @@ class Manager extends Base
 
         $pass = md5($post['user_name'] . "hjkj" . $post["password"]);
         $post['password'] = $pass;
-        // 保存 数据
+        // 保存 資料
         $debug = Admins::table('wolive_service')->insert($post);
 
         if ($debug) {
@@ -388,7 +388,7 @@ class Manager extends Base
         $post = $this->request->post();
 
         if ($post['id'] == 1) {
-            return ['code'=>1,'msg'=>'管理员账号无法刪除'];
+            return ['code'=>1,'msg'=>'管理员账号無法刪除'];
         }
 
         $data = Admins::table("wolive_service")->where('service_id', $post['id'])->delete();
@@ -579,7 +579,7 @@ class Manager extends Base
         $post['business_id']=$_SESSION['Msg']['business_id'];
          $post['answer']=$this->request->post('answer','','\app\Common::clearXSS');
          if (mb_strlen($post['keyword'],'UTF8') > 8) {
-             $data =['code'=>1,'msg'=>'关键词不能大于8个字！'];
+             $data =['code'=>1,'msg'=>'關鍵字不能大于8个字！'];
              return $data;
          }
          $sort = $this->request->post('sort/d',0);

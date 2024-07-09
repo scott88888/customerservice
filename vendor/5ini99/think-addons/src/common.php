@@ -47,7 +47,7 @@ Hook::add('app_init', function () {
         $base = get_class_methods("\\think\\Addons");
         // 读取插件目录中的php文件
         foreach (glob(ADDON_PATH . '*/*.php') as $addons_file) {
-            // 格式化路径信息
+            // 格式化路径訊息
             $info = pathinfo($addons_file);
             // 取得插件目录名
             $name = pathinfo($info['dirname'], PATHINFO_FILENAME);

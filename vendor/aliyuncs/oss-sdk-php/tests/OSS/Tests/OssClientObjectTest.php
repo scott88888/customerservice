@@ -276,7 +276,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 设置文件的meta信息
+         * 设置文件的meta訊息
          */
         $from_bucket = $this->bucket;
         $from_object = "oss-php-sdk-test/upload-test-object-name.txt";
@@ -295,7 +295,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 取得文件的meta信息
+         * 取得文件的meta訊息
          */
         $object = "oss-php-sdk-test/upload-test-object-name.txt";
         try {
@@ -428,7 +428,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 取得文件的meta信息
+         * 取得文件的meta訊息
          */
         try {
             $objectMeta = $this->ossClient->getObjectMeta($this->bucket, $object);
@@ -465,7 +465,7 @@ class OssClientObjectTest extends TestOssClientBase
     	$options = array(OssClient::OSS_CHECK_MD5 => true);
     	
     	/**
-    	 * 上传数据開啟MD5
+    	 * 上传資料開啟MD5
     	 */
     	try {
     		$this->ossClient->putObject($this->bucket, $object, $content, $options);

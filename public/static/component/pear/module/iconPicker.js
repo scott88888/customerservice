@@ -9,13 +9,13 @@ layui.define(['laypage', 'form'], function (exports) {
         laypage = layui.laypage,
         form = layui.form,
         BODY = 'body',
-        TIPS = '请选择图标';
+        TIPS = '请選擇图标';
 
     IconPicker.prototype.render = function(options){
         var opts = options,
-            // DOM选择器
+            // DOM選擇器
             elem = opts.elem,
-            // 数据类型：fontClass/unicode
+            // 資料类型：fontClass/unicode
             type = opts.type == null ? 'fontClass' : opts.type,
             // 是否分頁：true/false
             page = opts.page == null ? true : opts.page,
@@ -29,11 +29,11 @@ layui.define(['laypage', 'form'], function (exports) {
             click = opts.click,
             // 渲染成功后的回调
             success = opts.success,
-            // json数据
+            // json資料
             data = {},
             // 唯一标识
             tmp = new Date().getTime(),
-            // 是否使用的class数据
+            // 是否使用的class資料
             isFontClass = opts.type === 'fontClass',
             // 初始化时input的值
             ORIGINAL_ELEM_VALUE = $(elem).val(),
@@ -77,7 +77,7 @@ layui.define(['laypage', 'form'], function (exports) {
                 return a;
             },
             /**
-             * 绘制select下拉选择框
+             * 绘制select下拉選擇框
              */
             createSelect: function () {
                 var oriIcon = '<i class="layui-icon">';
@@ -136,7 +136,7 @@ layui.define(['laypage', 'form'], function (exports) {
              * 绘制主体部分
              */
             createBody: function () {
-                // 取得数据
+                // 取得資料
                 var searchHtml = '';
 
                 if (search) {
@@ -158,7 +158,7 @@ layui.define(['laypage', 'form'], function (exports) {
             },
             /**
              * 绘制图标列表
-             * @param text 模糊查詢关键字
+             * @param text 模糊查詢關鍵字
              * @returns {string}
              */
             createList: function (text) {
@@ -167,7 +167,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     pageHtml = '',
                     listHtml = $('<div class="layui-iconpicker-list">')//'<div class="layui-iconpicker-list">';
 
-                // 计算分頁数据
+                // 计算分頁資料
                 var _limit = limit, // 每頁显示数量
                     _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1), // 总计多少頁
                     _id = PAGE_ID;
@@ -215,9 +215,9 @@ layui.define(['laypage', 'form'], function (exports) {
                     listHtml.append(lm);
                 }
 
-                // 无数据
+                // 無資料
                 if (l === 0) {
-                    listHtml.append('<p class="layui-iconpicker-tips">无数据</p>');
+                    listHtml.append('<p class="layui-iconpicker-tips">無資料</p>');
                 }
 
                 // 判断是否分頁
@@ -260,7 +260,7 @@ layui.define(['laypage', 'form'], function (exports) {
                        // 点击时正在显示的頁码
                        current = parseInt($cur.html());
 
-                    // 分頁数据
+                    // 分頁資料
                     if (isPrev && current > 1) {
                         current=current-1;
                         $(icon + '[prev]').attr('data-index', current);
@@ -270,7 +270,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     }
                     $cur.html(current);
 
-                    // 图标数据
+                    // 图标資料
                     $('#'+ ICON_BODY + ' .layui-iconpicker-icon-limit').hide();
                     $('#layui-iconpicker-icon-limit-' + tmp + current).show();
                     e.stopPropagation();
@@ -348,7 +348,7 @@ layui.define(['laypage', 'form'], function (exports) {
                 }
             },
             /**
-             * 取得数据
+             * 取得資料
              */
             getData: {
                 fontClass: function () {

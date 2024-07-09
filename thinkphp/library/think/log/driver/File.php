@@ -40,8 +40,8 @@ class File
     /**
      * 日志写入接口
      * @access public
-     * @param  array    $log 日志信息
-     * @param  bool     $append 是否追加请求信息
+     * @param  array    $log 日志訊息
+     * @param  bool     $append 是否追加请求訊息
      * @return bool
      */
     public function save(array $log = [], $append = false)
@@ -139,10 +139,10 @@ class File
     /**
      * 日志写入
      * @access protected
-     * @param  array     $message 日志信息
+     * @param  array     $message 日志訊息
      * @param  string    $destination 日志文件
      * @param  bool      $apart 是否独立文件写入
-     * @param  bool      $append 是否追加请求信息
+     * @param  bool      $append 是否追加请求訊息
      * @return bool
      */
     protected function write($message, $destination, $apart = false, $append = false)
@@ -150,7 +150,7 @@ class File
         // 检测日志文件大小，超过配置大小则备份日志文件重新生成
         $this->checkLogSize($destination);
 
-        // 日志信息封装
+        // 日志訊息封装
         $info['timestamp'] = date($this->config['time_format']);
 
         foreach ($message as $type => $msg) {
@@ -188,7 +188,7 @@ class File
     /**
      * CLI日志解析
      * @access protected
-     * @param  array     $info 日志信息
+     * @param  array     $info 日志訊息
      * @return string
      */
     protected function parseCliLog($info)
@@ -210,7 +210,7 @@ class File
     /**
      * 解析日志
      * @access protected
-     * @param  array     $info 日志信息
+     * @param  array     $info 日志訊息
      * @return string
      */
     protected function parseLog($info)
@@ -239,7 +239,7 @@ class File
         if (App::$debug && $append) {
 
             if ($this->config['json']) {
-                // 取得基本信息
+                // 取得基本訊息
                 $runtime = round(microtime(true) - THINK_START_TIME, 10);
                 $reqs    = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
 
@@ -253,7 +253,7 @@ class File
                 ] + $info;
 
             } elseif (!$apart) {
-                // 增加额外的调试信息
+                // 增加额外的调试訊息
                 $runtime = round(microtime(true) - THINK_START_TIME, 10);
                 $reqs    = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
 

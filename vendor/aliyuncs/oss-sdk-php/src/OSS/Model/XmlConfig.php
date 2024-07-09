@@ -10,7 +10,7 @@ interface XmlConfig
 {
 
     /**
-     * 接口定义，实现此接口的类都需要实现从xml数据解析的函数
+     * 接口定义，实现此接口的类都需要实现从xml資料解析的函数
      *
      * @param string $strXml
      * @return null

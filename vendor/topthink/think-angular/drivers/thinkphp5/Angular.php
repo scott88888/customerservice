@@ -43,7 +43,7 @@ class Angular
     /**
      * 取得模版运行结果
      * @param string $template 模版地址
-     * @param array $data 模版数据
+     * @param array $data 模版資料
      * @param array $config 配置
      * @return string
      */
@@ -65,7 +65,7 @@ class Angular
     /**
      * fetch的别名
      * @param string $template 模版地址
-     * @param array $data 模版数据
+     * @param array $data 模版資料
      * @param array $config 配置
      * @return string
      */

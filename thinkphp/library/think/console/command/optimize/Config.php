@@ -56,7 +56,7 @@ class Config extends Command
             // 加载模块配置
             $config = ThinkConfig::load(CONF_PATH . $module . 'config' . CONF_EXT);
 
-            // 读取数据库配置文件
+            // 读取資料库配置文件
             $filename = CONF_PATH . $module . 'database' . CONF_EXT;
             ThinkConfig::load($filename, 'database');
 

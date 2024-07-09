@@ -4,7 +4,7 @@ function add(data,group) {
 
     var value = '';
     value += '<form id="info_form"><table>';
-    value += '<tr class="sp_line"><td>头像:</td><td class="am-form-group am-form-file"><img id="imgs" class="am-circle" src=' + '"' + data.avatar + '"' + ' width="50" height="50"><button type="button" class="am-btn am-btn-default am-btn-sm">选择图片</button><input type="file" name="img_head" id="img_head" multiple></td></tr>'
+    value += '<tr class="sp_line"><td>头像:</td><td class="am-form-group am-form-file"><img id="imgs" class="am-circle" src=' + '"' + data.avatar + '"' + ' width="50" height="50"><button type="button" class="am-btn am-btn-default am-btn-sm">選擇图片</button><input type="file" name="img_head" id="img_head" multiple></td></tr>'
     value += '<tr><td>使用者名稱:</td><td><span>'+data.user_name+'</span></td></tr>';
     value += '<tr><td>暱稱:</td><td><input type="text" class="am-form-field" id="nickname" name="nickname" value=' + '"' + data.nick_name + '"' + '></td></tr>';
     value += '<tr><td>手机:</td><td><input type="text" id="phone" name="phone" class="am-form-field"  value=' + '"' + data.phone + '"' + '></td></tr>';
@@ -30,7 +30,7 @@ function add(data,group) {
     value += '</script>';
     layer.open({
         type: 1,
-        title: '个人信息表',
+        title: '个人訊息表',
         area: ['600px', '500px'],
         content: value,
         btn: ['修改', '取消'],
@@ -61,7 +61,7 @@ function add(data,group) {
 
 
 /**
- * 个人信息 的弹窗
+ * 个人訊息 的弹窗
  */
 
 function showinfo(data,group) {
@@ -96,7 +96,7 @@ function showinfo(data,group) {
     value += '</script>';
     layer.open({
         type: 1,
-        title: '个人信息表',
+        title: '个人訊息表',
         area: ['600px', 'auto'],
         content: value,
         btn: ['修改', '取消'],

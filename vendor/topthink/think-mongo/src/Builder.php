@@ -37,8 +37,8 @@ class Builder
     /**
      * 架构函数
      * @access public
-     * @param Connection    $connection 数据库连接对象实例
-     * @param Query         $query 数据库查詢对象实例
+     * @param Connection    $connection 資料库连接对象实例
+     * @param Query         $query 資料库查詢对象实例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -76,9 +76,9 @@ class Builder
     }
 
     /**
-     * insert数据分析
+     * insert資料分析
      * @access protected
-     * @param array $data 数据
+     * @param array $data 資料
      * @param array $options 查詢参数
      * @return array
      */
@@ -105,9 +105,9 @@ class Builder
     }
 
     /**
-     * Set数据分析
+     * Set資料分析
      * @access protected
-     * @param array $data 数据
+     * @param array $data 資料
      * @param array $options 查詢参数
      * @return array
      */
@@ -308,13 +308,13 @@ class Builder
     /**
      * 生成insert BulkWrite对象
      * @access public
-     * @param array     $data 数据
+     * @param array     $data 資料
      * @param array     $options 表达式
      * @return BulkWrite
      */
     public function insert(array $data, $options = [])
     {
-        // 分析并处理数据
+        // 分析并处理資料
         $data = $this->parseData($data, $options);
         $bulk = new BulkWrite;
         if ($insertId = $bulk->insert($data)) {
@@ -327,7 +327,7 @@ class Builder
     /**
      * 生成insertall BulkWrite对象
      * @access public
-     * @param array     $dataSet 数据集
+     * @param array     $dataSet 資料集
      * @param array     $options 参数
      * @return BulkWrite
      */
@@ -335,7 +335,7 @@ class Builder
     {
         $bulk = new BulkWrite;
         foreach ($dataSet as $data) {
-            // 分析并处理数据
+            // 分析并处理資料
             $data = $this->parseData($data, $options);
             if ($insertId = $bulk->insert($data)) {
                 $this->insertId[] = $insertId;
@@ -348,7 +348,7 @@ class Builder
     /**
      * 生成update BulkWrite对象
      * @access public
-     * @param array     $data 数据
+     * @param array     $data 資料
      * @param array     $options 参数
      * @return BulkWrite
      */
@@ -462,7 +462,7 @@ class Builder
     }
 
     /**
-     * 查詢数据表的狀態信息
+     * 查詢資料表的狀態訊息
      * @access public
      * @return Command
      */

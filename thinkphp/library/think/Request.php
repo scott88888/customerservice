@@ -55,7 +55,7 @@ class Request
     protected $path;
 
     /**
-     * @var array 当前路由信息
+     * @var array 当前路由訊息
      */
     protected $routeInfo = [];
 
@@ -65,13 +65,13 @@ class Request
     protected $env;
 
     /**
-     * @var array 当前调度信息
+     * @var array 当前调度訊息
      */
     protected $dispatch = [];
     protected $module;
     protected $controller;
     protected $action;
-    // 当前语言集
+    // 当前語言集
     protected $langset;
 
     /**
@@ -394,7 +394,7 @@ class Request
     }
 
     /**
-     * 取得当前请求URL的pathinfo信息（含URL后缀）
+     * 取得当前请求URL的pathinfo訊息（含URL后缀）
      * @access public
      * @return string
      */
@@ -410,7 +410,7 @@ class Request
                 $_SERVER['PATH_INFO'] = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : '';
             }
 
-            // 分析PATHINFO信息
+            // 分析PATHINFO訊息
             if (!isset($_SERVER['PATH_INFO'])) {
                 foreach (Config::get('pathinfo_fetch') as $type) {
                     if (!empty($_SERVER[$type])) {
@@ -426,7 +426,7 @@ class Request
     }
 
     /**
-     * 取得当前请求URL的pathinfo信息(不含URL后缀)
+     * 取得当前请求URL的pathinfo訊息(不含URL后缀)
      * @access public
      * @return string
      */
@@ -659,7 +659,7 @@ class Request
             $this->mergeParam = true;
         }
         if (true === $name) {
-            // 取得包含文件上传信息的数组
+            // 取得包含文件上传訊息的数组
             $file = $this->file();
             $data = is_array($file) ? array_merge($this->param, $file) : $this->param;
             return $this->input($data, '', $default, $filter);
@@ -787,7 +787,7 @@ class Request
 
     /**
      * 取得request变量
-     * @param string       $name    数据名稱
+     * @param string       $name    資料名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -806,9 +806,9 @@ class Request
     }
 
     /**
-     * 取得session数据
+     * 取得session資料
      * @access public
-     * @param string|array $name    数据名稱
+     * @param string|array $name    資料名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -827,7 +827,7 @@ class Request
     /**
      * 取得cookie参数
      * @access public
-     * @param string|array $name    数据名稱
+     * @param string|array $name    資料名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -860,7 +860,7 @@ class Request
     /**
      * 取得server参数
      * @access public
-     * @param string|array $name    数据名稱
+     * @param string|array $name    資料名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -877,7 +877,7 @@ class Request
     }
 
     /**
-     * 取得上传的文件信息
+     * 取得上传的文件訊息
      * @access public
      * @param string|array $name 名稱
      * @return null|array|\think\File
@@ -938,7 +938,7 @@ class Request
 
     /**
      * 取得环境变量
-     * @param string|array $name    数据名稱
+     * @param string|array $name    資料名稱
      * @param string       $default 默认值
      * @param string|array $filter  过滤方法
      * @return mixed
@@ -996,7 +996,7 @@ class Request
 
     /**
      * 取得变量 支持过滤和默认值
-     * @param array        $data    数据源
+     * @param array        $data    資料源
      * @param string|false $name    字段名
      * @param mixed        $default 默认值
      * @param string|array $filter  过滤函数
@@ -1005,7 +1005,7 @@ class Request
     public function input($data = [], $name = '', $default = null, $filter = '')
     {
         if (false === $name) {
-            // 取得原始数据
+            // 取得原始資料
             return $data;
         }
         $name = (string) $name;
@@ -1021,7 +1021,7 @@ class Request
                 if (isset($data[$val])) {
                     $data = $data[$val];
                 } else {
-                    // 无输入数据，返回默认值
+                    // 無输入資料，返回默认值
                     return $default;
                 }
             }
@@ -1439,7 +1439,7 @@ class Request
     }
 
     /**
-     * 取得当前请求的路由信息
+     * 取得当前请求的路由訊息
      * @access public
      * @param array $route 路由名稱
      * @return array
@@ -1454,9 +1454,9 @@ class Request
     }
 
     /**
-     * 设置或者取得当前请求的调度信息
+     * 设置或者取得当前请求的调度訊息
      * @access public
-     * @param array $dispatch 调度信息
+     * @param array $dispatch 调度訊息
      * @return array
      */
     public function dispatch($dispatch = null)
@@ -1517,9 +1517,9 @@ class Request
     }
 
     /**
-     * 设置或者取得当前的语言
+     * 设置或者取得当前的語言
      * @access public
-     * @param string $lang 语言名
+     * @param string $lang 語言名
      * @return string|Request
      */
     public function langset($lang = null)

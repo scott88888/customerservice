@@ -29,7 +29,7 @@ abstract class Addons
      */
     protected $view = null;
 
-    // 当前错误信息
+    // 当前错误訊息
     protected $error;
 
     /**
@@ -54,7 +54,7 @@ abstract class Addons
     {
         // 取得当前插件目录
         $this->addons_path = ADDON_PATH . $this->getName() . DS;
-        // 读取当前插件配置信息
+        // 读取当前插件配置訊息
         if (is_file($this->addons_path . 'config.php')) {
             $this->config_file = $this->addons_path . 'config.php';
         }
@@ -118,7 +118,7 @@ abstract class Addons
     }
 
     /**
-     * 檢查配置信息是否完整
+     * 檢查配置訊息是否完整
      * @return bool
      */
     final public function checkInfo()
@@ -198,7 +198,7 @@ abstract class Addons
     }
 
     /**
-     * 取得当前错误信息
+     * 取得当前错误訊息
      * @return mixed
      */
     public function getError()

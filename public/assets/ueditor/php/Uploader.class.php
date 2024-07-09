@@ -9,14 +9,14 @@ class Uploader
 {
     private $rid; //存储标识
     private $watermark; //是否图片水印
-    private $attachment_info; //附件存储信息
+    private $attachment_info; //附件存储訊息
     private $attachment_model; //附件模型
     private $fileMd5; //文件md5
 
     private $fileField; //文件域名
     private $file; //文件上传对象
     private $base64; //文件上传对象
-    private $config; //配置信息
+    private $config; //配置訊息
     private $oriName; //原始文件名
     private $fileName; //新文件名
     private $fullName; //完整文件名,即从当前配置目录开始的URL
@@ -24,8 +24,8 @@ class Uploader
     private $fileUrl; //完整文件URL
     private $fileSize; //文件大小
     private $fileType; //文件类型
-    private $stateInfo; //上传狀態信息,
-    private $stateMap = array( //上传狀態映射表，国际化使用者需考虑此处数据的国际化
+    private $stateInfo; //上传狀態訊息,
+    private $stateMap = array( //上传狀態映射表，国际化使用者需考虑此处資料的国际化
         "SUCCESS", //上传成功标记，在UEditor中内不可改变，否则flash判断会出错
         "文件大小超出 upload_max_filesize 限制",
         "文件大小超出 MAX_FILE_SIZE 限制",
@@ -351,7 +351,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 取得当前上传成功文件的各项信息
+     * 取得当前上传成功文件的各项訊息
      * @return array
      */
     public function getFileInfo()

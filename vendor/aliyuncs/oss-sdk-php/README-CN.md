@@ -8,7 +8,7 @@
 
 ## 概述
 
-阿里云对象存储（Object Storage Service，简称OSS），是阿里云对外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通过调用API，在任何应用、任何时间、任何地点上传和下载数据，也可以通过使用者Web控制台对数据进行简单的管理。OSS适合存放任意文件类型，适合各种网站、开发企业及开发者使用。
+阿里云对象存储（Object Storage Service，简称OSS），是阿里云对外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通过调用API，在任何应用、任何时间、任何地点上传和下载資料，也可以通过使用者Web控制台对資料进行简单的管理。OSS适合存放任意文件类型，适合各种网站、开发企业及开发者使用。
 
 
 ## 运行环境
@@ -61,7 +61,7 @@ SDK的OSS操作通过OssClient类完成的，下面代码创建一个OssClient�
 <?php
 $accessKeyId = "<您从OSS获得的AccessKeyId>"; ;
 $accessKeySecret = "<您从OSS获得的AccessKeySecret>";
-$endpoint = "<您选定的OSS数据中心访问域名，例如oss-cn-hangzhou.aliyuncs.com>";
+$endpoint = "<您选定的OSS資料中心访问域名，例如oss-cn-hangzhou.aliyuncs.com>";
 try {
     $ossClient = new OssClient($accessKeyId, $accessKeySecret, $endpoint);
 } catch (OssException $e) {
@@ -71,7 +71,7 @@ try {
 
 ### 文件操作
 
-文件(又称对象,Object)是OSS中最基本的数据单元，您可以把它简单地理解为文件，用下面代码可以实现一个Object的上传：
+文件(又称对象,Object)是OSS中最基本的資料单元，您可以把它简单地理解为文件，用下面代码可以实现一个Object的上传：
 
 ```php
 <?php
@@ -101,10 +101,10 @@ try {
 
 ### 返回结果处理
 
-OssClient提供的接口返回返回数据分为两种：
+OssClient提供的接口返回返回資料分为两种：
 
 * Put，Delete类接口，接口返回null，如果没有OssException，即可认为操作成功
-* Get，List类接口，接口返回对应的数据，如果没有OssException，即可认为操作成功，举个例子：
+* Get，List类接口，接口返回对应的資料，如果没有OssException，即可认为操作成功，举个例子：
 
 ```php
 <?php
@@ -114,12 +114,12 @@ foreach($bucketList as $bucket) {
     print($bucket->getLocation() . "\t" . $bucket->getName() . "\t" . $bucket->getCreatedate() . "\n");
 }
 ```
-上面代码中的$bucketListInfo的数据类型是 `OSS\Model\BucketListInfo`
+上面代码中的$bucketListInfo的資料类型是 `OSS\Model\BucketListInfo`
 
 
 ### 运行Sample程序
 
-1. 修改 `samples/Config.php`， 补充配置信息
+1. 修改 `samples/Config.php`， 补充配置訊息
 2. 执行 `cd samples/ && php RunAll.php`
 
 ### 运行单元测试

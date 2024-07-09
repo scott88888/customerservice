@@ -56,7 +56,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 延迟取得关联数据
+     * 延迟取得关联資料
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包查詢條件
      * @return mixed
@@ -67,7 +67,7 @@ class MorphTo extends Relation
         $morphType = $this->morphType;
         // 多态模型
         $model = $this->parseModel($this->parent->$morphType);
-        // 主键数据
+        // 主键資料
         $pk            = $this->parent->$morphKey;
         $relationModel = (new $model)->relation($subRelation)->find($pk);
 
@@ -148,7 +148,7 @@ class MorphTo extends Relation
     /**
      * 预载入关联查詢
      * @access public
-     * @param array    $resultSet   数据集
+     * @param array    $resultSet   資料集
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -201,7 +201,7 @@ class MorphTo extends Relation
     /**
      * 预载入关联查詢
      * @access public
-     * @param Model    $result      数据对象
+     * @param Model    $result      資料对象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -219,7 +219,7 @@ class MorphTo extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  数据对象
+     * @param Model    $result  資料对象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -249,7 +249,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 新增关联数据
+     * 新增关联資料
      * @access public
      * @param Model     $model  关联模型对象
      * @param string    $type   多态类型
@@ -269,7 +269,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 注销关联数据
+     * 注销关联資料
      * @access public
      * @return Model
      */
@@ -289,7 +289,7 @@ class MorphTo extends Relation
      * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
-     * @param string   $name    统计数据别名
+     * @param string   $name    统计資料别名
      * @return string
      */
     public function getRelationCountQuery($closure, &$name = null)

@@ -21,7 +21,7 @@ abstract class Builder
     // 查詢对象实例
     protected $query;
 
-    // 数据库表达式
+    // 資料库表达式
     protected $exp = ['eq' => '=', 'neq' => '<>', 'gt' => '>', 'egt' => '>=', 'lt' => '<', 'elt' => '<=', 'notlike' => 'NOT LIKE', 'not like' => 'NOT LIKE', 'like' => 'LIKE', 'in' => 'IN', 'exp' => 'EXP', 'notin' => 'NOT IN', 'not in' => 'NOT IN', 'between' => 'BETWEEN', 'not between' => 'NOT BETWEEN', 'notbetween' => 'NOT BETWEEN', 'exists' => 'EXISTS', 'notexists' => 'NOT EXISTS', 'not exists' => 'NOT EXISTS', 'null' => 'NULL', 'notnull' => 'NOT NULL', 'not null' => 'NOT NULL', '> time' => '> TIME', '< time' => '< TIME', '>= time' => '>= TIME', '<= time' => '<= TIME', 'between time' => 'BETWEEN TIME', 'not between time' => 'NOT BETWEEN TIME', 'notbetween time' => 'NOT BETWEEN TIME'];
 
     // SQL表达式
@@ -34,8 +34,8 @@ abstract class Builder
     /**
      * 构造函数
      * @access public
-     * @param Connection    $connection 数据库连接对象实例
-     * @param Query         $query      数据库查詢对象实例
+     * @param Connection    $connection 資料库连接对象实例
+     * @param Query         $query      資料库查詢对象实例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -75,9 +75,9 @@ abstract class Builder
     }
 
     /**
-     * 数据分析
+     * 資料分析
      * @access protected
-     * @param array     $data 数据
+     * @param array     $data 資料
      * @param array     $options 查詢参数
      * @return array
      * @throws Exception
@@ -88,7 +88,7 @@ abstract class Builder
             return [];
         }
 
-        // 取得绑定信息
+        // 取得绑定訊息
         $bind = $this->query->getFieldsBind($options['table']);
         if ('*' == $options['field']) {
             $fields = array_keys($bind);
@@ -107,7 +107,7 @@ abstract class Builder
                 $result[$item] = $val->getValue();
                 continue;
             } elseif (is_object($val) && method_exists($val, '__toString')) {
-                // 对象数据写入
+                // 对象資料写入
                 $val = $val->__toString();
             }
             if (false === strpos($key, '.') && !in_array($key, $fields, true)) {
@@ -128,7 +128,7 @@ abstract class Builder
                         throw new Exception('not support data:[' . $val[0] . ']');
                 }
             } elseif (is_scalar($val)) {
-                // 过滤非标量数据
+                // 过滤非标量資料
                 if (0 === strpos($val, ':') && $this->query->isBind(substr($val, 1))) {
                     $result[$item] = $val;
                 } else {
@@ -356,7 +356,7 @@ abstract class Builder
         if ($value instanceof Expression) {
 
         } elseif (is_object($value) && method_exists($value, '__toString')) {
-            // 对象数据写入
+            // 对象資料写入
             $value = $value->__toString();
         }
 
@@ -732,14 +732,14 @@ abstract class Builder
     /**
      * 生成insert SQL
      * @access public
-     * @param array     $data 数据
+     * @param array     $data 資料
      * @param array     $options 表达式
      * @param bool      $replace 是否replace
      * @return string
      */
     public function insert(array $data, $options = [], $replace = false)
     {
-        // 分析并处理数据
+        // 分析并处理資料
         $data = $this->parseData($data, $options);
         if (empty($data)) {
             return 0;
@@ -763,7 +763,7 @@ abstract class Builder
     /**
      * 生成insertall SQL
      * @access public
-     * @param array     $dataSet 数据集
+     * @param array     $dataSet 資料集
      * @param array     $options 表达式
      * @param bool      $replace 是否replace
      * @return string
@@ -790,10 +790,10 @@ abstract class Builder
                 } elseif (is_scalar($val)) {
                     $data[$key] = $this->parseValue($val, $key);
                 } elseif (is_object($val) && method_exists($val, '__toString')) {
-                    // 对象数据写入
+                    // 对象資料写入
                     $data[$key] = $val->__toString();
                 } else {
-                    // 过滤掉非标量数据
+                    // 过滤掉非标量資料
                     unset($data[$key]);
                 }
             }
@@ -823,8 +823,8 @@ abstract class Builder
     /**
      * 生成select insert SQL
      * @access public
-     * @param array     $fields 数据
-     * @param string    $table 数据表
+     * @param array     $fields 資料
+     * @param string    $table 資料表
      * @param array     $options 表达式
      * @return string
      */
@@ -842,7 +842,7 @@ abstract class Builder
     /**
      * 生成update SQL
      * @access public
-     * @param array     $data 数据
+     * @param array     $data 資料
      * @param array     $options 表达式
      * @return string
      */

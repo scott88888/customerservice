@@ -31,10 +31,10 @@ final class UploadManager
      * @param $data       上传二进制流
      * @param $params     自定义变量，规格参考
      *                    http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
-     * @param $mime       上传数据的mimeType
+     * @param $mime       上传資料的mimeType
      * @param $checkCrc   是否校验crc32
      *
-     * @return array    包含已上传文件的信息，类似：
+     * @return array    包含已上传文件的訊息，类似：
      *                                              [
      *                                                  "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>"
@@ -70,10 +70,10 @@ final class UploadManager
      * @param $filePath   上传文件的路径
      * @param $params     自定义变量，规格参考
      *                    http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
-     * @param $mime       上传数据的mimeType
+     * @param $mime       上传資料的mimeType
      * @param $checkCrc   是否校验crc32
      *
-     * @return array    包含已上传文件的信息，类似：
+     * @return array    包含已上传文件的訊息，类似：
      *                                              [
      *                                                  "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>"

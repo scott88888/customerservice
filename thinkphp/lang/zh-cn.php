@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-// 核心中文语言包
+// 核心中文語言包
 return [
     // 系统错误提示
     'Undefined variable'                                        => '未定义变量',
@@ -33,10 +33,10 @@ return [
     'illegal action name'                                       => '非法的操作名稱',
     'url suffix deny'                                           => '禁止的URL后缀访问',
     'Route Not Found'                                           => '当前访问路由未定义',
-    'Undefined db type'                                         => '未定义数据库类型',
+    'Undefined db type'                                         => '未定义資料库类型',
     'variable type error'                                       => '变量类型错误',
     'PSR-4 error'                                               => 'PSR-4 规范错误',
-    'not support total'                                         => '简洁模式下不能取得数据总数',
+    'not support total'                                         => '简洁模式下不能取得資料总数',
     'not support last'                                          => '简洁模式下不能取得最后一頁',
     'error session handler'                                     => '错误的SESSION处理器类',
     'not allow php tag'                                         => '模板不允许使用PHP语法',
@@ -46,17 +46,17 @@ return [
     'must run at sae'                                           => '必须在SAE运行',
     'memcache init error'                                       => '未开通Memcache服务，请在SAE管理平台初始化Memcache服务',
     'KVDB init error'                                           => '没有初始化KVDB，请在SAE管理平台初始化KVDB服务',
-    'fields not exists'                                         => '数据表字段不存在',
+    'fields not exists'                                         => '資料表字段不存在',
     'where express error'                                       => '查詢表达式错误',
-    'not support data'                                          => '不支持的数据表达式',
-    'no data to update'                                         => '没有任何数据需要更新',
-    'miss data to insert'                                       => '缺少需要写入的数据',
-    'miss complex primary data'                                 => '缺少复合主键数据',
+    'not support data'                                          => '不支持的資料表达式',
+    'no data to update'                                         => '没有任何資料需要更新',
+    'miss data to insert'                                       => '缺少需要写入的資料',
+    'miss complex primary data'                                 => '缺少复合主键資料',
     'miss update condition'                                     => '缺少更新條件',
-    'model data Not Found'                                      => '模型数据不存在',
-    'table data not Found'                                      => '表数据不存在',
+    'model data Not Found'                                      => '模型資料不存在',
+    'table data not Found'                                      => '表資料不存在',
     'delete without condition'                                  => '没有條件不会执行刪除操作',
-    'miss relation data'                                        => '缺少关联表数据',
+    'miss relation data'                                        => '缺少关联表資料',
     'tag attr must'                                             => '模板标签属性必须',
     'tag error'                                                 => '模板标签错误',
     'cache write error'                                         => '缓存写入失敗',
@@ -64,12 +64,12 @@ return [
     'route name not exists'                                     => '路由标识不存在（或参数不够）',
     'invalid request'                                           => '非法请求',
     'bind attr has exists'                                      => '模型的属性已经存在',
-    'relation data not exists'                                  => '关联数据不存在',
+    'relation data not exists'                                  => '关联資料不存在',
     'relation not support'                                      => '关联不支持',
     'chunk not support order'                                   => 'Chunk不支持调用order方法',
     'closure not support cache(true)'                           => '使用闭包查詢不支持cache(true)，请指定缓存Key',
 
-    // 上传错误信息
+    // 上传错误訊息
     'unknown upload error'                                      => '未知上传错误！',
     'file write error'                                          => '文件写入失敗！',
     'upload temp dir not found'                                 => '找不到临时文件夹！',
@@ -130,7 +130,7 @@ return [
     ':attribute must equal :rule'                               => ':attribute必须等于 :rule',
     ':attribute has exists'                                     => ':attribute已存在',
     ':attribute not conform to the rules'                       => ':attribute不符合指定规则',
-    'invalid Request method'                                    => '无效的请求类型',
-    'invalid token'                                             => '令牌数据无效',
+    'invalid Request method'                                    => '無效的请求类型',
+    'invalid token'                                             => '令牌資料無效',
     'not conform to the rules'                                  => '规则错误',
 ];

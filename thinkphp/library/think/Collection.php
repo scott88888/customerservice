@@ -20,14 +20,14 @@ use JsonSerializable;
 class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
 {
     /**
-     * @var array 数据
+     * @var array 資料
      */
     protected $items = [];
 
     /**
      * Collection constructor.
      * @access public
-     * @param  array $items 数据
+     * @param  array $items 資料
      */
     public function __construct($items = [])
     {
@@ -37,7 +37,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     /**
      * 创建 Collection 实例
      * @access public
-     * @param  array $items 数据
+     * @param  array $items 資料
      * @return static
      */
     public static function make($items = [])
@@ -46,7 +46,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 判断数据是否为空
+     * 判断資料是否为空
      * @access public
      * @return bool
      */
@@ -56,7 +56,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将数据转成数组
+     * 将資料转成数组
      * @access public
      * @return array
      */
@@ -70,7 +70,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 取得全部的数据
+     * 取得全部的資料
      * @access public
      * @return array
      */
@@ -112,7 +112,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     /**
      * 合并数组并返回一个新的 Collection 实例
      * @access public
-     * @param  mixed $items 新的数据
+     * @param  mixed $items 新的資料
      * @return static
      */
     public function merge($items)
@@ -123,7 +123,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     /**
      * 比较数组，返回差集生成的新 Collection 实例
      * @access public
-     * @param  mixed $items 做比较的数据
+     * @param  mixed $items 做比较的資料
      * @return static
      */
     public function diff($items)
@@ -134,7 +134,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     /**
      * 比较数组，返回交集组成的 Collection 新实例
      * @access public
-     * @param  mixed $items 比较数据
+     * @param  mixed $items 比较資料
      * @return static
      */
     public function intersect($items)
@@ -143,7 +143,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回并刪除数据中的的最后一个元素（出栈）
+     * 返回并刪除資料中的的最后一个元素（出栈）
      * @access public
      * @return mixed
      */
@@ -153,7 +153,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回并刪除数据中首个元素
+     * 返回并刪除資料中首个元素
      * @access public
      * @return mixed
      */
@@ -217,10 +217,10 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 把数据分割为新的数组块
+     * 把資料分割为新的数组块
      * @access public
      * @param  int  $size         分隔长度
-     * @param  bool $preserveKeys 是否保持原数据索引
+     * @param  bool $preserveKeys 是否保持原資料索引
      * @return static
      */
     public function chunk($size, $preserveKeys = false)
@@ -235,7 +235,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 给数据中的每个元素执行回调
+     * 给資料中的每个元素执行回调
      * @access public
      * @param  callable $callback 回调函数
      * @return $this
@@ -258,7 +258,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 用回调函数过滤数据中的元素
+     * 用回调函数过滤資料中的元素
      * @access public
      * @param callable|null $callback 回调函数
      * @return static
@@ -269,7 +269,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回数据中指定的一列
+     * 返回資料中指定的一列
      * @access public
      * @param mixed $columnKey 键名
      * @param null  $indexKey  作为索引值的列
@@ -312,7 +312,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 对数据排序，并返回排序后的数据组成的新 Collection 实例
+     * 对資料排序，并返回排序后的資料组成的新 Collection 实例
      * @access public
      * @param  callable|null $callback 回调函数
      * @return static
@@ -329,7 +329,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将数据打乱后组成新的 Collection 实例
+     * 将資料打乱后组成新的 Collection 实例
      * @access public
      * @return static
      */
@@ -342,7 +342,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 截取数据并返回新的 Collection 实例
+     * 截取資料并返回新的 Collection 实例
      * @access public
      * @param  int  $offset       起始位置
      * @param  int  $length       截取长度
@@ -404,7 +404,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 统计数据的个数
+     * 统计資料的个数
      * @access public
      * @return int
      */
@@ -414,7 +414,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 取得数据的迭代器
+     * 取得資料的迭代器
      * @access public
      * @return ArrayIterator
      */
@@ -424,7 +424,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将数据反序列化成数组
+     * 将資料反序列化成数组
      * @access public
      * @return array
      */
@@ -434,7 +434,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 转换当前数据集为 JSON 字符串
+     * 转换当前資料集为 JSON 字符串
      * @access public
      * @param  integer $options json 参数
      * @return string
@@ -445,7 +445,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将数据转换成字符串
+     * 将資料转换成字符串
      * @access public
      * @return string
      */
@@ -455,9 +455,9 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将数据转换成数组
+     * 将資料转换成数组
      * @access protected
-     * @param  mixed $items 数据
+     * @param  mixed $items 資料
      * @return array
      */
     protected function convertToArray($items)

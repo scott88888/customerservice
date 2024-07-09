@@ -74,7 +74,7 @@ GFM a-tail link @pandao  信箱地址自动連結 test.test@gmail.com  www@vip.q
 
 > @pandao
 
-### 多语言代码高亮 Codes
+### 多語言代码高亮 Codes
 
 #### 行内代码 Inline code
 
@@ -180,19 +180,19 @@ Image:
 
 ### 列表 Lists
 
-#### 无序列表（减号）Unordered Lists (-)
+#### 無序列表（减号）Unordered Lists (-)
                 
 - 列表一
 - 列表二
 - 列表三
      
-#### 无序列表（星号）Unordered Lists (*)
+#### 無序列表（星号）Unordered Lists (*)
 
 * 列表一
 * 列表二
 * 列表三
 
-#### 无序列表（加号和嵌套）Unordered Lists (+)
+#### 無序列表（加号和嵌套）Unordered Lists (+)
                 
 + 列表一
 + 列表二

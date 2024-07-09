@@ -151,7 +151,7 @@ function put() {
 
     } else {
 
-        layer.msg("请选择图片", {icon: 2});
+        layer.msg("请選擇图片", {icon: 2});
     }
 }
 
@@ -320,7 +320,7 @@ function getdata(){
                     $(".conversation").prepend(str);
                     if(res.data.length <= 2){
                         $("#top_div").remove();
-                        $(".conversation").prepend("<div id='top_div' class='showtime'>已没有数据</div>");
+                        $(".conversation").prepend("<div id='top_div' class='showtime'>已没有資料</div>");
                         if(div){
                             div.scrollTop =0;
                         }
@@ -572,7 +572,7 @@ var send = function () {
 
 
     if (msg == '' || $.cookie("service") == '') {
-        layer.msg('請輸入信息');
+        layer.msg('請輸入訊息');
     } else {
         var time;
 

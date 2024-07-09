@@ -20,14 +20,14 @@ class Log
     /**
      * 日志写入接口
      * @access public
-     * @param array $log 日志信息
+     * @param array $log 日志訊息
      * @return bool
      */
     public function save(array $log = [])
     {
         static $is_debug = null;
         $now             = date($this->config['log_time_format']);
-        // 取得基本信息
+        // 取得基本訊息
         if (isset($_SERVER['HTTP_HOST'])) {
             $current_uri = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         } else {

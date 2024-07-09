@@ -53,7 +53,7 @@
 3. openssl 拓展
 4. fileinfo 拓展（素材管理模块需要用到）
 
-> SDK 对所使用的框架并无特别要求
+> SDK 对所使用的框架并無特别要求
 
 ## Installation
 

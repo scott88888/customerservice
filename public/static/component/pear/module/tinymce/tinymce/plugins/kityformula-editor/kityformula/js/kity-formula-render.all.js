@@ -4102,7 +4102,7 @@ _p[22] = {
 };
 
 /*!
- * 字体信息检测模板，用于检测浏览器的字体信息
+ * 字体訊息检测模板，用于检测浏览器的字体訊息
  */
 _p[23] = {
     value: function() {
@@ -4168,7 +4168,7 @@ _p[24] = {
             NODE_LIST.push(node);
         }
         /**
-     * 计算字体系统信息
+     * 计算字体系统訊息
      */
         function initFontSystemInfo(doc) {
             var tmpNode = doc.createElement("div");
@@ -5464,14 +5464,14 @@ _p[42] = {
             var w = operand.getWidth() + 2 * SHAPE_DATA_WIDTH;
             return new kity.Rect(w, 2 * SHAPE_DATA_WIDTH).fill("black");
         }
-        // 合并根号的各个部分， 并返回根号的关键点位置数据
+        // 合并根号的各个部分， 并返回根号的關鍵点位置資料
         function mergeShape(decoration, vLine, hLine) {
             var decoBox = decoration.getFixRenderBox(), vLineBox = vLine.getFixRenderBox();
             vLine.translate(decoBox.width - sin15 * SHAPE_DATA_WIDTH * 3, 0);
             decoration.translate(0, vLineBox.height - decoBox.height);
             vLineBox = vLine.getFixRenderBox();
             hLine.translate(vLineBox.x + vLineBox.width - SHAPE_DATA_WIDTH / cos15, 0);
-            // 返回关键点数据
+            // 返回關鍵点資料
             return {
                 x: vLineBox.x + vLineBox.width - SHAPE_DATA_WIDTH / cos15,
                 y: 0

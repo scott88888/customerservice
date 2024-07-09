@@ -97,7 +97,7 @@ $body$
 LANGUAGE 'plpgsql' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;
 
 COMMENT ON FUNCTION "public"."table_msg"(a_schema_name varchar, a_table_name varchar)
-IS '获得表信息';
+IS '获得表訊息';
 
 ---重载一个函数
 CREATE OR REPLACE FUNCTION "public"."table_msg" (a_table_name varchar) RETURNS SETOF "public"."tablestruct" AS
@@ -114,4 +114,4 @@ $body$
 LANGUAGE 'plpgsql' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;
 
 COMMENT ON FUNCTION "public"."table_msg"(a_table_name varchar)
-IS '获得表信息';
+IS '获得表訊息';

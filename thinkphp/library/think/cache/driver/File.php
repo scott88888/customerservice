@@ -120,7 +120,7 @@ class File extends Driver
             $this->expire = $expire;
             $content      = substr($content, 32);
             if ($this->options['data_compress'] && function_exists('gzcompress')) {
-                //启用数据压缩
+                //启用資料压缩
                 $content = gzuncompress($content);
             }
             $content = unserialize($content);
@@ -134,7 +134,7 @@ class File extends Driver
      * 写入缓存
      * @access public
      * @param string            $name 缓存变量名
-     * @param mixed             $value  存储数据
+     * @param mixed             $value  存储資料
      * @param integer|\DateTime $expire  有效时间（秒）
      * @return boolean
      */
@@ -152,7 +152,7 @@ class File extends Driver
         }
         $data = serialize($value);
         if ($this->options['data_compress'] && function_exists('gzcompress')) {
-            //数据压缩
+            //資料压缩
             $data = gzcompress($data, 3);
         }
         $data   = "<?php\n//" . sprintf('%012d', $expire) . "\n exit();?>\n" . $data;

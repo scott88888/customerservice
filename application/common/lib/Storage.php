@@ -61,7 +61,7 @@ class Storage
                 '\\app\\common\\lib\\storage\\driver\\' . ucwords(self::$storage) :
                 self::$storage;
 
-            // 记录初始化信息
+            // 记录初始化訊息
             App::$debug && Log::record('[ STORAGE ] INIT ' . self::$storage, 'info');
 
             if (true === $name) {

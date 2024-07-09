@@ -5,7 +5,7 @@ namespace OSS\Model;
 /**
  * Class ObjectListInfo
  *
- * ListObjects接口返回数据
+ * ListObjects接口返回資料
  *
  * @package OSS\Model
  * @link http://help.aliyun.com/document_detail/oss/api-reference/bucket/GetBucket.html
@@ -87,7 +87,7 @@ class ObjectListInfo
     }
 
     /**
-     * 返回ListObjects接口返回数据中的ObjectInfo列表
+     * 返回ListObjects接口返回資料中的ObjectInfo列表
      *
      * @return ObjectInfo[]
      */
@@ -97,7 +97,7 @@ class ObjectListInfo
     }
 
     /**
-     * 返回ListObjects接口返回数据中的PrefixInfo列表
+     * 返回ListObjects接口返回資料中的PrefixInfo列表
      *
      * @return PrefixInfo[]
      */

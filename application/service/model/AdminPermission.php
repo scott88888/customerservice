@@ -7,7 +7,7 @@ use think\Model;
 use traits\model\SoftDelete;
 
 /**
- * 数据模型类.
+ * 資料模型类.
  */
 class AdminPermission extends Model
 {

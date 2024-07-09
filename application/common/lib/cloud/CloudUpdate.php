@@ -48,7 +48,7 @@ class CloudUpdate extends Cloud
     {
         $versionData = self::info()['data'];
         if (!isset($versionData['next_version']) || !$versionData['next_version']) {
-            throw new CloudException('已无新版本。');
+            throw new CloudException('已無新版本。');
         }
         $version = $versionData['next_version']['version'];
         $src = $versionData['next_version']['src_file'];

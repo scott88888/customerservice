@@ -200,7 +200,7 @@ class Passport extends Controller
         return $this->fetch();
     }
 
-    //注册 数据驗證
+    //注册 資料驗證
     public function registerValidate()
     {
         $post = $this->request->param();

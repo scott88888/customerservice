@@ -99,7 +99,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     *  预载入关联查詢（数据集）
+     *  预载入关联查詢（資料集）
      * @param array    $resultSet
      * @param string   $relation
      * @param string   $subRelation
@@ -109,7 +109,7 @@ abstract class OneToOne extends Relation
     abstract protected function eagerlySet(&$resultSet, $relation, $subRelation, $closure);
 
     /**
-     * 预载入关联查詢（数据）
+     * 预载入关联查詢（資料）
      * @param Model    $result
      * @param string   $relation
      * @param string   $subRelation
@@ -119,9 +119,9 @@ abstract class OneToOne extends Relation
     abstract protected function eagerlyOne(&$result, $relation, $subRelation, $closure);
 
     /**
-     * 预载入关联查詢（数据集）
+     * 预载入关联查詢（資料集）
      * @access public
-     * @param array    $resultSet   数据集
+     * @param array    $resultSet   資料集
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -141,9 +141,9 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 预载入关联查詢（数据）
+     * 预载入关联查詢（資料）
      * @access public
-     * @param Model    $result      数据对象
+     * @param Model    $result      資料对象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -161,9 +161,9 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 保存（新增）当前关联数据对象
+     * 保存（新增）当前关联資料对象
      * @access public
-     * @param mixed $data 数据 可以使用数组 关联模型对象 和 关联对象的主键
+     * @param mixed $data 資料 可以使用数组 关联模型对象 和 关联对象的主键
      * @return Model|false
      */
     public function save($data)
@@ -172,7 +172,7 @@ abstract class OneToOne extends Relation
             $data = $data->getData();
         }
         $model = new $this->model;
-        // 保存关联表数据
+        // 保存关联表資料
         $data[$this->foreignKey] = $this->parent->{$this->localKey};
         return $model->save($data) ? $model : false;
     }
@@ -227,7 +227,7 @@ abstract class OneToOne extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  数据对象
+     * @param Model    $result  資料对象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -245,7 +245,7 @@ abstract class OneToOne extends Relation
      */
     protected function match($model, $relation, &$result)
     {
-        // 重新组装模型数据
+        // 重新组装模型資料
         foreach ($result->getData() as $key => $val) {
             if (strpos($key, '__')) {
                 list($name, $attr) = explode('__', $key, 2);
@@ -315,7 +315,7 @@ abstract class OneToOne extends Relation
         }
         $list = $model->where($where)->with($subRelation)->select();
 
-        // 组装模型数据
+        // 组装模型資料
         $data = [];
         foreach ($list as $set) {
             $data[$set->$key] = $set;
@@ -327,7 +327,7 @@ abstract class OneToOne extends Relation
      * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
-     * @param string   $name    统计数据别名
+     * @param string   $name    统计資料别名
      * @return string
      */
     public function getRelationCountQuery($closure, &$name = null)

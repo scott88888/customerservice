@@ -46,7 +46,7 @@ class MorphMany extends Relation
     }
 
     /**
-     * 延迟取得关联数据
+     * 延迟取得关联資料
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包查詢條件
      * @return false|\PDOStatement|string|\think\Collection
@@ -95,7 +95,7 @@ class MorphMany extends Relation
     /**
      * 预载入关联查詢
      * @access public
-     * @param array    $resultSet   数据集
+     * @param array    $resultSet   資料集
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -122,7 +122,7 @@ class MorphMany extends Relation
             ], $relation, $subRelation, $closure);
             // 关联属性名
             $attr = Loader::parseName($relation);
-            // 关联数据封装
+            // 关联資料封装
             foreach ($resultSet as $result) {
                 if (!isset($data[$result->$pk])) {
                     $data[$result->$pk] = [];
@@ -139,7 +139,7 @@ class MorphMany extends Relation
     /**
      * 预载入关联查詢
      * @access public
-     * @param Model    $result      数据对象
+     * @param Model    $result      資料对象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -170,7 +170,7 @@ class MorphMany extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  数据对象
+     * @param Model    $result  資料对象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -191,7 +191,7 @@ class MorphMany extends Relation
      * 创建关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
-     * @param string   $name    统计数据别名
+     * @param string   $name    统计資料别名
      * @return string
      */
     public function getRelationCountQuery($closure, &$name = null)
@@ -229,7 +229,7 @@ class MorphMany extends Relation
         }
         $list     = $this->query->where($where)->with($subRelation)->select();
         $morphKey = $this->morphKey;
-        // 组装模型数据
+        // 组装模型資料
         $data = [];
         foreach ($list as $set) {
             $data[$set->$morphKey][] = $set;
@@ -238,9 +238,9 @@ class MorphMany extends Relation
     }
 
     /**
-     * 保存（新增）当前关联数据对象
+     * 保存（新增）当前关联資料对象
      * @access public
-     * @param mixed $data 数据 可以使用数组 关联模型对象 和 关联对象的主键
+     * @param mixed $data 資料 可以使用数组 关联模型对象 和 关联对象的主键
      * @return Model|false
      */
     public function save($data)
@@ -249,7 +249,7 @@ class MorphMany extends Relation
             $data = $data->getData();
         }
 
-        // 保存关联表数据
+        // 保存关联表資料
         $pk = $this->parent->getPk();
 
         $data[$this->morphKey]  = $this->parent->$pk;
@@ -271,7 +271,7 @@ class MorphMany extends Relation
             $data = $data->getData();
         }
 
-        // 保存关联表数据
+        // 保存关联表資料
         $pk = $this->parent->getPk();
 
         $data[$this->morphKey]  = $this->parent->$pk;
@@ -281,9 +281,9 @@ class MorphMany extends Relation
     }
 
     /**
-     * 批量保存当前关联数据对象
+     * 批量保存当前关联資料对象
      * @access public
-     * @param array $dataSet 数据集
+     * @param array $dataSet 資料集
      * @return integer
      */
     public function saveAll(array $dataSet)

@@ -35,7 +35,7 @@ class Admin extends Validate
         'captcha_code' => '驗證碼',
     ];
     /**
-     * 驗證失敗信息.
+     * 驗證失敗訊息.
      * [$message description]
      * @var array
      */
@@ -49,7 +49,7 @@ class Admin extends Validate
         "mobile2.isMobile" => "手机格式不符合要求",
         "mobile.unique" => "该手機號碼已存在",
         'expire_time.isDate' => '有效期格式不正确',
-        'expire_time.afterTime' => '无法创建一个过期的应用',
+        'expire_time.afterTime' => '無法创建一个过期的应用',
         "app_max_count.require" => "请填写数量",
         "app_max_count.number" => "应用数量只能是数字",
     ];

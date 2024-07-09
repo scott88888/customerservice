@@ -249,7 +249,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					'" menu-title="' + item.title + '"  href="' + href + '"  ' + target + '><i class="' + item.icon +
 					'"></i><span>' + item.title + '</span></a>';
 			}
-			// 调 用 递 归 方 法 加 载 无 限 层 级 的 子 菜 单 
+			// 调 用 递 归 方 法 加 载 無 限 层 级 的 子 菜 单 
 			content += loadchild(item);
 			// 结 束 一 个 根 菜 单 项
 			content += '</li>';

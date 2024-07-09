@@ -26,7 +26,7 @@ class Services extends Validate
     ];
 
     /**
-     * 驗證失敗信息.
+     * 驗證失敗訊息.
      * [$message description]
      * @var array
      */

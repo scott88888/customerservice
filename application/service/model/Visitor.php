@@ -7,7 +7,7 @@ use think\Model;
 use app\service\iplocation\Ip;
 
 /**
- * 数据模型类.
+ * 資料模型类.
  */
 class Visitor extends Model
 {

@@ -273,7 +273,7 @@
             })( navigator.userAgent ),
     
             /**
-             * @description  操作系统檢查结果。
+             * @description  作業系統檢查结果。
              *
              * * `android`  如果在android浏览器环境下，此值为对应的android版本号，否则为`undefined`。
              * * `ios` 如果在ios浏览器环境下，此值为对应的ios版本号，否则为`undefined`。
@@ -804,11 +804,11 @@
             },
     
             /**
-             * 取得文件统计信息。返回一个包含一下信息的对象。
+             * 取得文件统计訊息。返回一个包含一下訊息的对象。
              * * `successNum` 上传成功的文件数
              * * `uploadFailNum` 上传失敗的文件数
              * * `cancelNum` 被刪除的文件数
-             * * `invalidNum` 无效的文件数
+             * * `invalidNum` 無效的文件数
              * * `queueNum` 还在队列中的文件数
              * @method getStats
              * @grammar getStats() => Object
@@ -879,7 +879,7 @@
         return Uploader;
     });
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器，负责Runtime的選擇, 连接
      */
     define('runtime/runtime',[
         'base',
@@ -990,7 +990,7 @@
     });
     
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器，负责Runtime的選擇, 连接
      */
     define('runtime/client',[
         'base',
@@ -1129,7 +1129,7 @@
         return RuntimeClient;
     });
     /**
-     * @fileOverview 错误信息
+     * @fileOverview 错误訊息
      */
     define('lib/dnd',[
         'base',
@@ -1217,7 +1217,7 @@
             init: Base.noop,
     
             // 类Backbone的事件监听声明，监听uploader实例上的事件
-            // widget直接无法监听事件，事件只能通过uploader来传递
+            // widget直接無法监听事件，事件只能通过uploader来传递
             invoke: function( apiName, args ) {
     
                 /*
@@ -1227,7 +1227,7 @@
                  */
                 var map = this.responseMap;
     
-                // 如果无API响应声明则忽略
+                // 如果無API响应声明则忽略
                 if ( !map || !(apiName in map) || !(map[ apiName ] in this) ||
                         !$.isFunction( this[ map[ apiName ] ] ) ) {
     
@@ -1406,7 +1406,7 @@
     });
     
     /**
-     * @fileOverview 错误信息
+     * @fileOverview 错误訊息
      */
     define('lib/filepaste',[
         'base',
@@ -1571,7 +1571,7 @@
     });
     
     /**
-     * @fileOverview 错误信息
+     * @fileOverview 错误訊息
      */
     define('lib/filepicker',[
         'base',
@@ -1704,7 +1704,7 @@
     });
     
     /**
-     * @fileOverview 文件选择相关
+     * @fileOverview 文件選擇相关
      */
     define('widgets/filepicker',[
         'base',
@@ -1720,12 +1720,12 @@
              * @property {Selector | Object} [pick=undefined]
              * @namespace options
              * @for Uploader
-             * @description 指定选择文件的按钮容器，不指定则不创建按钮。
+             * @description 指定選擇文件的按钮容器，不指定则不创建按钮。
              *
-             * * `id` {Seletor} 指定选择文件的按钮容器，不指定则不创建按钮。
+             * * `id` {Seletor} 指定選擇文件的按钮容器，不指定则不创建按钮。
              * * `label` {String} 请采用 `innerHTML` 代替
              * * `innerHTML` {String} 指定按钮文字。不指定时優先从指定的容器中看是否自带文字。
-             * * `multiple` {Boolean} 是否开起同时选择多个文件能力。
+             * * `multiple` {Boolean} 是否开起同时選擇多个文件能力。
              */
             pick: null,
     
@@ -1779,11 +1779,11 @@
              * @for Uploader
              * @grammar addButton( pick ) => Promise
              * @description
-             * 新增文件选择按钮，如果一个按钮不够，需要调用此方法来新增。参数跟[options.pick](#WebUploader:Uploader:options)一致。
+             * 新增文件選擇按钮，如果一个按钮不够，需要调用此方法来新增。参数跟[options.pick](#WebUploader:Uploader:options)一致。
              * @example
              * uploader.addButton({
              *     id: '#btnContainer',
-             *     innerHTML: '选择文件'
+             *     innerHTML: '選擇文件'
              * });
              */
             addButton: function( pick ) {
@@ -1856,7 +1856,7 @@
          * @class File
          * @constructor 构造函数
          * @grammar new File( source ) => File
-         * @param {Lib.File} source [lib.File](#Lib.File)实例, 此source对象是带有Runtime信息的。
+         * @param {Lib.File} source [lib.File](#Lib.File)实例, 此source对象是带有Runtime訊息的。
          */
         function WUFile( source ) {
     
@@ -1892,7 +1892,7 @@
             this.lastModifiedDate = source.lastModifiedDate || (new Date() * 1);
     
             /**
-             * 文件ID，每个对象具有唯一ID，与文件名无关
+             * 文件ID，每个对象具有唯一ID，与文件名無关
              * @property id
              * @type {string}
              */
@@ -1975,7 +1975,7 @@
             },
     
             /**
-             * 取得文件原始信息。
+             * 取得文件原始訊息。
              * @return {*}
              */
             getSource: function() {
@@ -2044,7 +2044,7 @@
              * * `numOfCancel` 被移除的文件数
              * * `numOfProgress` 正在上传中的文件数
              * * `numOfUploadFailed` 上传错误的文件数。
-             * * `numOfInvalid` 无效的文件数。
+             * * `numOfInvalid` 無效的文件数。
              * @property {Object} stats
              */
             this.stats = {
@@ -2524,7 +2524,7 @@
     
     });
     /**
-     * @fileOverview 新增取得Runtime相关信息的方法。
+     * @fileOverview 新增取得Runtime相关訊息的方法。
      */
     define('widgets/runtime',[
         'uploader',
@@ -2847,7 +2847,7 @@
     
                 this.runing = false;
     
-                // 记录当前正在传的数据，跟threads相关
+                // 记录当前正在传的資料，跟threads相关
                 this.pool = [];
     
                 // 缓存即将上传的文件。
@@ -3127,7 +3127,7 @@
                 me.remaning++;
     
                 // 如果没有分片，则直接使用原始的。
-                // 不会丢失content-type信息。
+                // 不会丢失content-type訊息。
                 block.blob = block.chunks === 1 ? file.source :
                         file.source.slice( block.start, block.end );
     
@@ -3172,7 +3172,7 @@
             /**
              * @event uploadAccept
              * @param {Object} object
-             * @param {Object} ret 服务端的返回数据，json格式，如果服务端不是json格式，从ret._raw中取数据，自行解析。
+             * @param {Object} ret 服务端的返回資料，json格式，如果服务端不是json格式，从ret._raw中取資料，自行解析。
              * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值为`false`, 则此文件将派送`server`类型的`uploadError`事件。
              * @for  Uploader
              */
@@ -3197,7 +3197,7 @@
             /**
              * @event uploadSuccess
              * @param {File} file File对象
-             * @param {Object} response 服务端返回的数据
+             * @param {Object} response 服务端返回的資料
              * @description 当文件上传成功时触发。
              * @for  Uploader
              */
@@ -3582,7 +3582,7 @@
     });
     
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器，负责Runtime的選擇, 连接
      */
     define('runtime/compbase',[],function() {
     
@@ -4413,7 +4413,7 @@
                 var copy = $.extend({}, opts ),
                     len, i;
     
-                // 修复Flash再没有设置title的情况下无法弹出flash文件选择框的bug.
+                // 修复Flash再没有设置title的情况下無法弹出flash文件選擇框的bug.
                 len = copy.accept && copy.accept.length;
                 for (  i = 0; i < len; i++ ) {
                     if ( !copy.accept[ i ].title ) {

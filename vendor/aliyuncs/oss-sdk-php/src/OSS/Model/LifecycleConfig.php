@@ -13,7 +13,7 @@ use OSS\Core\OssException;
 class LifecycleConfig implements XmlConfig
 {
     /**
-     * 从xml数据中解析出LifecycleConfig
+     * 从xml資料中解析出LifecycleConfig
      *
      * @param string $strXml
      * @throws OssException

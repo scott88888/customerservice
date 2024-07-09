@@ -34,7 +34,7 @@
     
 - 更新 `README.md` 等相关文档和示例；
 
-- 解决 Sea.js 环境下 Raphael.js 无法运行导致不支持流程图和时序图的问题，即必须先加载 Raphael.js ，后加载 Sea.js ；
+- 解决 Sea.js 环境下 Raphael.js 無法运行导致不支持流程图和时序图的问题，即必须先加载 Raphael.js ，后加载 Sea.js ；
 
 ### v1.1.x
 
@@ -47,7 +47,7 @@
 - 新增支持图片(跨域)上传；
 - 改用 `<textarea>` 来存放 Markdown 源文档；
 - 新增支持自定义工具栏；
-- 新增支持多语言；
+- 新增支持多語言；
 - 新增支持 Zepto.js；
 - 新增支持多个 Editor.md 并存和动态加载 Editor.md 及示例；
 - 新增支持智能识别和解析 HTML 标签及示例；
@@ -64,14 +64,14 @@
     - 原先使用 `<script type="text/markdown"></script>` 来存放 Markdown 源文档；
     - 创建 Editor.md 只需要写一个 `<div id="xxxx"></div>` ，如果没有新增 `class="editormd"` 属性会自动新增，另外如果不存在 `<textarea>` 标签，则也会自动新增 `<textarea>` ；
 
-- 新增支持智能识别和解析 HTML 标签，增强了 Markdown 语法的扩展性，几乎无限，例如：插入视频等等；
+- 新增支持智能识别和解析 HTML 标签，增强了 Markdown 语法的扩展性，几乎無限，例如：插入视频等等；
     - 新增配置项 `htmlDecode` ，表示是否開啟 HTML 标签识别和解析，但是为了安全性，默认不開啟；
     - 新增识别和解析 HTML 标签的示例；
     
 - 新增插入連結、锚点連結、预格式文本和代码块的弹出对话框层；
     - 弹出层改为使用固定定位；
     - 新增动态创建对话框的方法 `createDialog()`；
-    - 新增静态属性 `editormd.codeLanguages` ，用于存放代码语言列表；
+    - 新增静态属性 `editormd.codeLanguages` ，用于存放代码語言列表；
 
 - 开始支持图片上传；
     - 新增新增图片（上传）弹出对话框层；
@@ -89,9 +89,9 @@
 
 - 新增预览 HTML 内容窗口的關閉按钮，之前只能按 ESC 才能退出 HTML 全窗口预览；
 
-- 新增多语言（ l18n ）及动态加载语言包支持；
-    - 新增英语 `en` 和繁体中文 `zh-tw` 语言包模块；
-    - 修改一些方法的内部实现以支持动态语言加载:
+- 新增多語言（ l18n ）及动态加载語言包支持；
+    - 新增英语 `en` 和繁体中文 `zh-tw` 語言包模块；
+    - 修改一些方法的内部实现以支持动态語言加载:
         - `toolbarHandler()` 更为 `setToolbarHandler()` ；
         - `setToolbar()` 方法包含 `setToolbarHandler()` ；
         - 新建 `createInfoDialog()` 方法；
@@ -105,7 +105,7 @@
 
 - 解决 IE8 下加载出错的问题；
     - 新增两个静态成员属性 `isIE` 和 `isIE8` ，用于判断 IE8；
-    - 由于 IE8 不支持 FlowChart 和 SequenceDiagram，默认在 IE8 下不加载这两个组件，无论是否開啟；
+    - 由于 IE8 不支持 FlowChart 和 SequenceDiagram，默认在 IE8 下不加载这两个组件，無论是否開啟；
 
 - 新增 Zepto.js 的支持；
 	- 为了兼容 Zepto.js ，某些元素在操作处理上不再使用 `outerWidth()` 、 `outerHeight()` 、`hover()` 、`is()` 等方法；
@@ -172,7 +172,7 @@
     - 修改了 `setMarkdown()` 、 `clear()` 和 `loadedDisplay()` 方法的内部实现；
     - 新增了 `katexRender()` 、 `flowChartAndSequenceDiagramRender()` 、 `previewCodeHighlight()` 方法；
     
-- 修复有些情况下无法保存 Markdown 源文档到 textarea 的问题；
+- 修复有些情况下無法保存 Markdown 源文档到 textarea 的问题；
     - 修改了 `setCodeMirror()` 、 `recreateEditor()` 等方法；
 
 - 修改了以上 Bug 及部分相关示例文件；
@@ -204,7 +204,7 @@
 
 ##### v1.1.9
 
-- 修复无法解析 heading link 的 Bug [#29](https://github.com/pandao/editor.md/issues/29)；
+- 修复無法解析 heading link 的 Bug [#29](https://github.com/pandao/editor.md/issues/29)；
 
     - 修改了 `editormd.markedRenderer()` 方法的内部实现；
     - 新增了 `editormd.trim()` ，用于清除字符串两边的空格；
@@ -296,7 +296,7 @@ v1.2.0 主要更新：
     - 通过设置 `settings.htmlDecode = "style,script,iframe"` 来实现过滤指定标签的解析；
 
 - 改进 Require.js 支持；
-    - 修复 Require.js 下 CodeMirror 編輯器的代码无法高亮的问题；
+    - 修复 Require.js 下 CodeMirror 編輯器的代码無法高亮的问题；
     - 更新 `underscore` 版本至 `1.8.2` ；
     - 移除 `editormd.requirejsInit()` 和 `editormd.requireModules()` 方法；
     - 新增 `Require.js/AMD` 专用版本文件 `editormd.amd.js` ；
@@ -327,7 +327,7 @@ v1.2.0 主要更新：
     - 退出HTML全屏预览快捷键更改为 `Shift + ESC`；
     - 新增配置项 `disabledKeyMaps` ，用于屏蔽一些快捷键操作；
 - 更新 CodeMirror 版本为 `5.0`；
-    - 修改无法输入 `/` 的问题；
+    - 修改無法输入 `/` 的问题；
 - 更新 Marked 版本为 `0.3.3`；
 - 新增自动高度和工具栏固定定位（滚动條拖动时）模式；
     - 新增配置项 `settings.autoHeight` ；
@@ -341,10 +341,10 @@ v1.2.0 主要更新：
     - 新增方法 `editormd.ucfirst()` ，别名 `editormd.firstUpperCase()` ；
     - 新增两个成员方法 `getSelections()` 和 `getSelections()` ；
 
-- 修复 Font awesome 图标 emoji 部分无法解析的 Bug，[#39](https://github.com/pandao/editor.md/issues/39)
+- 修复 Font awesome 图标 emoji 部分無法解析的 Bug，[#39](https://github.com/pandao/editor.md/issues/39)
 - 改进 @link 功能 [#40](https://github.com/pandao/editor.md/issues/40)；
     - 新增配置项 `atLink` ，默认为 `true` ; 
-- 修复无法输入 `/` 的问题 [#42](https://github.com/pandao/editor.md/issues/42)；
+- 修复無法输入 `/` 的问题 [#42](https://github.com/pandao/editor.md/issues/42)；
 - 修改使用帮助说明的错误 [#43](https://github.com/pandao/editor.md/issues/43)；
 - 新增配置项 `pluginPath`，默认为空时，等于 `settings.path + "../plugins/"` ；
 
@@ -369,8 +369,8 @@ v1.2.0 主要更新：
 - 新增延迟解析预览的机制，解决输入太多太快出现的 “延迟卡顿” 问题；
     - 新增配置项 `delay` ，默认值为 `300`；
     - 修复当输入速度太快时，解析Flowchart会抛出错误的问题；
-- 修改 iPad 等移动终端的浏览器无法上传图片的问题 [#48](https://github.com/pandao/editor.md/issues/48)；
-- 修复单独引用 `editormd.preview.css` 时无法显示 Font Awesome 和 Editor.md logo 字体的问题；
+- 修改 iPad 等移动终端的浏览器無法上传图片的问题 [#48](https://github.com/pandao/editor.md/issues/48)；
+- 修复单独引用 `editormd.preview.css` 时無法显示 Font Awesome 和 Editor.md logo 字体的问题；
 - 更新和修改 Gulp 构建；
     - 修改了 `Gulpfile.js` ，并且 `gulp-ruby-sass` 升级到最新版本 `1.0.0-alpha.3` ; 
     - 編輯 SCSS 时，不再生成 CSS 的 Source map 文件；
@@ -379,8 +379,8 @@ v1.2.0 主要更新：
 - 改进部分预设快捷键功能，包括 F9 (watch)、F10 (preview)、F11 (fullscreen)等;
 - 修复自动高度模式下出现的几个问题；
     - 全屏退出时高度不正确的问题：修改了 `fullscreenExit()` 方法的内部实现；
-    - 当解析预览后的 HTML 内容高度高于 Markdown 源码編輯器高度时，无法正确预览的问题 [#49](https://github.com/pandao/editor.md/issues/49)；
-- 修改 `onscroll` 和 `onpreviewscroll` 无法访问 `this` 的问题；
+    - 当解析预览后的 HTML 内容高度高于 Markdown 源码編輯器高度时，無法正确预览的问题 [#49](https://github.com/pandao/editor.md/issues/49)；
+- 修改 `onscroll` 和 `onpreviewscroll` 無法访问 `this` 的问题；
 - 修改 `init()` 方法，可以只设置一个参数；
 - 新增插入 TeX (KaTeX) 公式的快捷键 `Ctrl + Shift + K` 和插入方法 `tex()` ；
 - 将锚点連結改为引用連結，引用的連結改为插入到頁尾；
@@ -407,7 +407,7 @@ v1.2.0 主要更新：
     - 新增配置项 `tocm` ，默认为 `true`，即可以使用 `[TOCM]` ；
     - 新增配置项 `tocDropdown` 和 `tocTitle` ；
     - 新增方法 `editormd.tocDropdownMenu()` ；
-    - 新增配置项 `tocContainer` ，值为 jQuery 选择器，默认为空；
+    - 新增配置项 `tocContainer` ，值为 jQuery 選擇器，默认为空；
 - 修改了配置项 `placeholder` 的默认值；
 - 改进对 IE8 的兼容支持；
 - 修复 Firefox 下因为 `Object.watch()` 而出现的问题；
@@ -427,7 +427,7 @@ v1.2.0 主要更新：
     - 新增测试用例`tests/katex-tests.html`；
     - 修改示例文件`examples/katex.html`； 
 - 修复 Bug [＃66](https://github.com/pandao/editor.md/issues/66)；
-- 修复編輯器工具栏按钮 `:hover` CSS3 transition 无效的问题； 
+- 修复編輯器工具栏按钮 `:hover` CSS3 transition 無效的问题； 
 - 修改了 `README.md`；
 
 #### v1.4.2
@@ -453,15 +453,15 @@ v1.2.0 主要更新：
 
 - 修复 Bug [#81](https://github.com/pandao/editor.md/issues/81)，即不支持 `:+1:` 的问题；
 - 修复 Bug [#85](https://github.com/pandao/editor.md/issues/85)，即图片上传返回结果不支持 `Content-Type=application/json` 的问题；
-- 修复图片上传无法显示 loading 的问题；
+- 修复图片上传無法显示 loading 的问题；
 
 #### v1.4.5
 
 - 规范项目的中英文混排；
 - 新增配置项 `name`，用于指定 Markdown textarea 的 `name="xxxx"` 属性；
-- 修复 Bug，即无法正确解析公式的 `<` 和 `>` 的问题 [#87](https://github.com/pandao/editor.md/issues/87);
-- 修复 Bug，即 `getHTML()` 无效的问题 [#95](https://github.com/pandao/editor.md/issues/95);
-- 修复 Bug，即火狐上传图片后无法返回值的问题 [#96](https://github.com/pandao/editor.md/issues/96);
+- 修复 Bug，即無法正确解析公式的 `<` 和 `>` 的问题 [#87](https://github.com/pandao/editor.md/issues/87);
+- 修复 Bug，即 `getHTML()` 無效的问题 [#95](https://github.com/pandao/editor.md/issues/95);
+- 修复 Bug，即火狐上传图片后無法返回值的问题 [#96](https://github.com/pandao/editor.md/issues/96);
     - 修改了图片上传插件；
     - 修改 PHP 上传类及示例；
 - 方法更名：`extends()` 更名为 `extend()`，以兼容 IE8；
@@ -509,7 +509,7 @@ v1.2.0 主要更新：
 
 - 新增：非編輯狀態下 ToC 自定义容器支持；
     - 新增配置项 `markdownSourceCode`，即解析后是否保留源码，默认为不保留 `false`；
-    - 新增配置项 `tocContainer`，值为自定义 ToC 容器的 ID 选择器 `#xxxxx`，默认为空；
+    - 新增配置项 `tocContainer`，值为自定义 ToC 容器的 ID 選擇器 `#xxxxx`，默认为空；
     - 新增和修改了相关示例文件；
 
 - 新增：新增加了 CSS 样式类 `editormd-preview-active`，可以控制全屏HTML预览时的内容层样式；
@@ -517,7 +517,7 @@ v1.2.0 主要更新：
     - 相关 issues [#103](https://github.com/pandao/editor.md/issues/103)；
     - 另外也调整了關閉按钮的位置；
 
-- 改进：修复插入 Emoji `:moon:` 无法显示的问题，修改为其是 `:waxing_gibbous_moon:` 的别名 [#94](https://github.com/pandao/editor.md/pull/94)；
+- 改进：修复插入 Emoji `:moon:` 無法显示的问题，修改为其是 `:waxing_gibbous_moon:` 的别名 [#94](https://github.com/pandao/editor.md/pull/94)；
 
 - 改进：修改了 CodeMirror 代码行的左右内间距，使其不会挨着左边的行号层；
     - 相关 issues [#97](https://github.com/pandao/editor.md/issues/97)；

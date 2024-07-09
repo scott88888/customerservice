@@ -14,7 +14,7 @@ namespace think\db\builder;
 use think\db\Builder;
 
 /**
- * Pgsql数据库驱动
+ * Pgsql資料库驱动
  */
 class Pgsql extends Builder
 {

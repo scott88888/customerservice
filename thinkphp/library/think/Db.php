@@ -17,8 +17,8 @@ use think\db\Query;
 /**
  * Class Db
  * @package think
- * @method Query table(string $table) static 指定数据表（含前缀）
- * @method Query name(string $name) static 指定数据表（不含前缀）
+ * @method Query table(string $table) static 指定資料表（含前缀）
+ * @method Query name(string $name) static 指定資料表（不含前缀）
  * @method Query where(mixed $field, string $op = null, mixed $condition = null) static 查詢條件
  * @method Query join(mixed $join, mixed $condition = null, string $type = 'INNER') static JOIN查詢
  * @method Query union(mixed $union, boolean $all = false) static UNION查詢
@@ -35,11 +35,11 @@ use think\db\Query;
  * @method integer insertAll(array $dataSet) static 插入多條记录
  * @method integer update(array $data) static 更新记录
  * @method integer delete(mixed $data = null) static 刪除记录
- * @method boolean chunk(integer $count, callable $callback, string $column = null) static 分块取得数据
+ * @method boolean chunk(integer $count, callable $callback, string $column = null) static 分块取得資料
  * @method mixed query(string $sql, array $bind = [], boolean $master = false, bool $pdo = false) static SQL查詢
  * @method integer execute(string $sql, array $bind = [], boolean $fetch = false, boolean $getLastInsID = false, string $sequence = null) static SQL执行
  * @method Paginator paginate(integer $listRows = 15, mixed $simple = null, array $config = []) static 分頁查詢
- * @method mixed transaction(callable $callback) static 执行数据库事务
+ * @method mixed transaction(callable $callback) static 执行資料库事务
  * @method void startTrans() static 启动事务
  * @method void commit() static 用于非自动送出狀態下面的查詢送出
  * @method void rollback() static 事务回滚
@@ -50,7 +50,7 @@ use think\db\Query;
 class Db
 {
     /**
-     * @var Connection[] 数据库连接实例
+     * @var Connection[] 資料库连接实例
      */
     private static $instance = [];
 
@@ -65,7 +65,7 @@ class Db
     public static $executeTimes = 0;
 
     /**
-     * 数据库初始化，并取得数据库类实例
+     * 資料库初始化，并取得資料库类实例
      * @access public
      * @param  mixed       $config 连接配置
      * @param  bool|string $name   连接标识 true 强制重新连接
@@ -90,7 +90,7 @@ class Db
             $options['type'] :
             '\\think\\db\\connector\\' . ucwords($options['type']);
 
-            // 记录初始化信息
+            // 记录初始化訊息
             if (App::$debug) {
                 Log::record('[ DB ] INIT ' . $options['type'], 'info');
             }
@@ -116,7 +116,7 @@ class Db
     }
 
     /**
-     * 数据库连接参数解析
+     * 資料库连接参数解析
      * @access private
      * @param  mixed $config 连接参数
      * @return array
@@ -136,7 +136,7 @@ class Db
      * DSN 解析
      * 格式： mysql://username:passwd@localhost:3306/DbName?param1=val1&param2=val2#utf8
      * @access private
-     * @param  string $dsnStr 数据库 DSN 字符串解析
+     * @param  string $dsnStr 資料库 DSN 字符串解析
      * @return array
      */
     private static function parseDsn($dsnStr)

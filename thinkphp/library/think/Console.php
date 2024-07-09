@@ -36,7 +36,7 @@ class Console
     private $commands = [];
 
     /**
-     * @var bool 是否需要帮助信息
+     * @var bool 是否需要帮助訊息
      */
     private $wantHelps = false;
 
@@ -215,7 +215,7 @@ class Console
      */
     public function doRun(Input $input, Output $output)
     {
-        // 取得版本信息
+        // 取得版本訊息
         if (true === $input->hasParameterOption(['--version', '-V'])) {
             $output->writeln($this->getLongVersion());
 
@@ -224,7 +224,7 @@ class Console
 
         $name = $this->getCommandName($input);
 
-        // 取得帮助信息
+        // 取得帮助訊息
         if (true === $input->hasParameterOption(['--help', '-h'])) {
             if (!$name) {
                 $name  = 'help';
@@ -266,7 +266,7 @@ class Console
     }
 
     /**
-     * 取得帮助信息
+     * 取得帮助訊息
      * @access public
      * @return string
      */
@@ -337,7 +337,7 @@ class Console
     /**
      * 设置版本
      * @access public
-     * @param  string $version 版本信息
+     * @param  string $version 版本訊息
      * @return $this
      */
     public function setVersion($version)

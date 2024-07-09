@@ -312,7 +312,7 @@
                 $queue = $wrap.find('.filelist'),
             // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件总体选择信息。
+            // 文件总体選擇訊息。
                 $info = $statusBar.find('.info'),
             // 上传按钮
                 $upload = $wrap.find('.uploadBtn'),
@@ -320,7 +320,7 @@
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
             // 上传按钮
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
-            // 没选择文件之前的内容。
+            // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
@@ -335,7 +335,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度信息，key为file id
+            // 所有文件的进度訊息，key为file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -386,7 +386,7 @@
                     allowMagnify: false,
                     // 是否允许裁剪。
                     crop: false,
-                    // 是否保留头部meta信息。
+                    // 是否保留头部meta訊息。
                     preserveHeaders: true
                 }:false
             });
@@ -567,7 +567,7 @@
 
                     switch (val) {
 
-                        /* 未选择文件 */
+                        /* 未選擇文件 */
                         case 'pedding':
                             $queue.addClass('element-invisible');
                             $statusBar.addClass('element-invisible');
@@ -810,7 +810,7 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取数据 */
+        /* 初始化滚动事件,滚动到地步自动拉取資料 */
         initEvents: function () {
             var _this = this;
 
@@ -835,16 +835,16 @@
                 }
             });
         },
-        /* 初始化第一次的数据 */
+        /* 初始化第一次的資料 */
         initData: function () {
 
-            /* 拉取数据需要使用的值 */
+            /* 拉取資料需要使用的值 */
             this.state = 0;
             this.listSize = editor.getOpt('imageManagerListSize');
             this.listIndex = 0;
             this.listEnd = false;
 
-            /* 第一次拉取数据 */
+            /* 第一次拉取資料 */
             this.getImageData();
         },
         /* 重置界面 */
@@ -852,7 +852,7 @@
             this.initContainer();
             this.initData();
         },
-        /* 向后台拉取图片列表数据 */
+        /* 向后台拉取图片列表資料 */
         getImageData: function () {
             var _this = this;
 

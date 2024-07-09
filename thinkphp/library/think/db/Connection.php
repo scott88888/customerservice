@@ -23,8 +23,8 @@ use think\Log;
 /**
  * Class Connection
  * @package think
- * @method Query table(string $table) 指定数据表（含前缀）
- * @method Query name(string $name) 指定数据表（不含前缀）
+ * @method Query table(string $table) 指定資料表（含前缀）
+ * @method Query name(string $name) 指定資料表（不含前缀）
  *
  */
 abstract class Connection
@@ -39,10 +39,10 @@ abstract class Connection
     protected $numRows = 0;
     // 事务指令数
     protected $transTimes = 0;
-    // 错误信息
+    // 错误訊息
     protected $error = '';
 
-    /** @var PDO[] 数据库连接ID 支持多个连接 */
+    /** @var PDO[] 資料库连接ID 支持多个连接 */
     protected $links = [];
 
     /** @var PDO 当前连接ID */
@@ -58,13 +58,13 @@ abstract class Connection
     protected static $event = [];
     // 使用Builder类
     protected $builder;
-    // 数据库连接参数配置
+    // 資料库连接参数配置
     protected $config = [
-        // 数据库类型
+        // 資料库类型
         'type'            => '',
         // 服务器地址
         'hostname'        => '',
-        // 数据库名
+        // 資料库名
         'database'        => '',
         // 使用者名稱
         'username'        => '',
@@ -74,17 +74,17 @@ abstract class Connection
         'hostport'        => '',
         // 连接dsn
         'dsn'             => '',
-        // 数据库连接参数
+        // 資料库连接参数
         'params'          => [],
-        // 数据库编码默认采用utf8
+        // 資料库编码默认采用utf8
         'charset'         => 'utf8',
-        // 数据库表前缀
+        // 資料库表前缀
         'prefix'          => '',
-        // 数据库调试模式
+        // 資料库调试模式
         'debug'           => false,
-        // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+        // 資料库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
         'deploy'          => 0,
-        // 数据库读写是否分离 主从式有效
+        // 資料库读写是否分离 主从式有效
         'rw_separate'     => false,
         // 读写分离后 主服务器数量
         'master_num'      => 1,
@@ -94,9 +94,9 @@ abstract class Connection
         'read_master'     => false,
         // 是否严格檢查字段是否存在
         'fields_strict'   => true,
-        // 数据返回类型
+        // 資料返回类型
         'result_type'     => PDO::FETCH_ASSOC,
-        // 数据集返回类型
+        // 資料集返回类型
         'resultset_type'  => 'array',
         // 自动写入时间戳字段
         'auto_timestamp'  => false,
@@ -125,9 +125,9 @@ abstract class Connection
     protected $bind = [];
 
     /**
-     * 构造函数 读取数据库配置信息
+     * 构造函数 读取資料库配置訊息
      * @access public
-     * @param array $config 数据库配置数组
+     * @param array $config 資料库配置数组
      */
     public function __construct(array $config = [])
     {
@@ -174,15 +174,15 @@ abstract class Connection
     }
 
     /**
-     * 解析pdo连接的dsn信息
+     * 解析pdo连接的dsn訊息
      * @access protected
-     * @param array $config 连接信息
+     * @param array $config 连接訊息
      * @return string
      */
     abstract protected function parseDsn($config);
 
     /**
-     * 取得数据表的字段信息
+     * 取得資料表的字段訊息
      * @access public
      * @param string $tableName
      * @return array
@@ -190,7 +190,7 @@ abstract class Connection
     abstract public function getFields($tableName);
 
     /**
-     * 取得数据库的表信息
+     * 取得資料库的表訊息
      * @access public
      * @param string $dbName
      * @return array
@@ -206,9 +206,9 @@ abstract class Connection
     abstract protected function getExplain($sql);
 
     /**
-     * 对返数据表字段信息进行大小写转换出来
+     * 对返資料表字段訊息进行大小写转换出来
      * @access public
-     * @param array $info 字段信息
+     * @param array $info 字段訊息
      * @return array
      */
     public function fieldCase($info)
@@ -229,7 +229,7 @@ abstract class Connection
     }
 
     /**
-     * 取得数据库的配置参数
+     * 取得資料库的配置参数
      * @access public
      * @param string $config 配置名稱
      * @return mixed
@@ -240,7 +240,7 @@ abstract class Connection
     }
 
     /**
-     * 设置数据库的配置参数
+     * 设置資料库的配置参数
      * @access public
      * @param string|array      $config 配置名稱
      * @param mixed             $value 配置值
@@ -256,11 +256,11 @@ abstract class Connection
     }
 
     /**
-     * 连接数据库方法
+     * 连接資料库方法
      * @access public
      * @param array         $config 连接参数
      * @param integer       $linkNum 连接序号
-     * @param array|bool    $autoConnection 是否自动连接主数据库（用于分布式）
+     * @param array|bool    $autoConnection 是否自动连接主資料库（用于分布式）
      * @return PDO
      * @throws Exception
      */
@@ -281,7 +281,7 @@ abstract class Connection
             // 记录当前字段属性大小写设置
             $this->attrCase = $params[PDO::ATTR_CASE];
 
-            // 数据返回类型
+            // 資料返回类型
             if (isset($config['result_type'])) {
                 $this->fetchType = $config['result_type'];
             }
@@ -297,7 +297,7 @@ abstract class Connection
                     $this->links[$linkNum]->exec('SET SQL_MODE="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"');
                 }
                 if ($config['debug']) {
-                    // 记录数据库连接信息
+                    // 记录資料库连接訊息
                     Log::record('[ DB ] CONNECT:[ UseTime:' . number_format(microtime(true) - $startTime, 6) . 's ] ' . $config['dsn'], 'sql');
                 }
             } catch (\PDOException $e) {
@@ -336,7 +336,7 @@ abstract class Connection
     }
 
     /**
-     * 执行查詢 返回数据集
+     * 执行查詢 返回資料集
      * @access public
      * @param string        $sql sql指令
      * @param array         $bind 参数绑定
@@ -562,7 +562,7 @@ abstract class Connection
     }
 
     /**
-     * 获得数据集数组
+     * 获得資料集数组
      * @access protected
      * @param bool   $pdo 是否返回PDOStatement
      * @param bool   $procedure 是否存储过程
@@ -584,7 +584,7 @@ abstract class Connection
     }
 
     /**
-     * 获得存储过程数据集
+     * 获得存储过程資料集
      * @access protected
      * @return array
      */
@@ -602,9 +602,9 @@ abstract class Connection
     }
 
     /**
-     * 执行数据库事务
+     * 执行資料库事务
      * @access public
-     * @param callable $callback 数据操作方法回调
+     * @param callable $callback 資料操作方法回调
      * @return mixed
      * @throws PDOException
      * @throws \Exception
@@ -784,7 +784,7 @@ abstract class Connection
     }
 
     /**
-     * 關閉数据库（或者重新连接）
+     * 關閉資料库（或者重新连接）
      * @access public
      * @return $this
      */
@@ -867,7 +867,7 @@ abstract class Connection
     }
 
     /**
-     * 取得最近的错误信息
+     * 取得最近的错误訊息
      * @access public
      * @return string
      */
@@ -899,7 +899,7 @@ abstract class Connection
     }
 
     /**
-     * 数据库调试 记录当前SQL及分析性能
+     * 資料库调试 记录当前SQL及分析性能
      * @access protected
      * @param boolean $start 调试开始标记 true 开始 false 结束
      * @param string  $sql 执行的SQL语句 留空自动取得
@@ -909,7 +909,7 @@ abstract class Connection
     protected function debug($start, $sql = '', $master = false)
     {
         if (!empty($this->config['debug'])) {
-            // 開啟数据库调试模式
+            // 開啟資料库调试模式
             if ($start) {
                 Debug::remark('queryStartTime', 'time');
             } else {
@@ -973,7 +973,7 @@ abstract class Connection
     }
 
     /**
-     * 初始化数据库连接
+     * 初始化資料库连接
      * @access protected
      * @param boolean $master 是否主服务器
      * @return void
@@ -981,7 +981,7 @@ abstract class Connection
     protected function initConnect($master = true)
     {
         if (!empty($this->config['deploy'])) {
-            // 采用分布式数据库
+            // 采用分布式資料库
             if ($master || $this->transTimes) {
                 if (!$this->linkWrite) {
                     $this->linkWrite = $this->multiConnect(true);
@@ -994,7 +994,7 @@ abstract class Connection
                 $this->linkID = $this->linkRead;
             }
         } elseif (!$this->linkID) {
-            // 默认单数据库
+            // 默认单資料库
             $this->linkID = $this->connect();
         }
     }
@@ -1008,7 +1008,7 @@ abstract class Connection
     protected function multiConnect($master = false)
     {
         $_config = [];
-        // 分布式数据库配置解析
+        // 分布式資料库配置解析
         foreach (['username', 'password', 'hostname', 'hostport', 'database', 'dsn', 'charset'] as $name) {
             $_config[$name] = explode(',', $this->config[$name]);
         }
@@ -1025,11 +1025,11 @@ abstract class Connection
                 // 指定服务器读
                 $r = $this->config['slave_no'];
             } else {
-                // 读操作连接从服务器 每次随机连接的数据库
+                // 读操作连接从服务器 每次随机连接的資料库
                 $r = floor(mt_rand($this->config['master_num'], count($_config['hostname']) - 1));
             }
         } else {
-            // 读写操作不区分服务器 每次随机连接的数据库
+            // 读写操作不区分服务器 每次随机连接的資料库
             $r = floor(mt_rand(0, count($_config['hostname']) - 1));
         }
         $dbMaster = false;

@@ -4,7 +4,7 @@ namespace OSS\Model;
 
 
 /**
- * Bucket信息，ListBuckets接口返回数据
+ * Bucket訊息，ListBuckets接口返回資料
  *
  * Class BucketInfo
  * @package OSS\Model

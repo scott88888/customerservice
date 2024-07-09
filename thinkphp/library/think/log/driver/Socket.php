@@ -57,7 +57,7 @@ class Socket
     /**
      * 调试输出接口
      * @access public
-     * @param array     $log 日志信息
+     * @param array     $log 日志訊息
      * @return bool
      */
     public function save(array $log = [], $append = false)
@@ -79,7 +79,7 @@ class Socket
             } else {
                 $current_uri = 'cmd:' . implode(' ', $_SERVER['argv']);
             }
-            // 基本信息
+            // 基本訊息
             $trace[] = [
                 'type' => 'group',
                 'msg'  => $current_uri . $time_str . $memory_str . $file_load,

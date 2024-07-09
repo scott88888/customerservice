@@ -12,7 +12,7 @@ use OSS\Model\LoggingConfig;
 class GetLoggingResult extends Result
 {
     /**
-     * 解析LoggingConfig数据
+     * 解析LoggingConfig資料
      *
      * @return LoggingConfig
      */

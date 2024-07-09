@@ -180,7 +180,7 @@ $(document).ready(function () {
 
     function uploader_init() {
         _pl_file_uploader.uploader = new plupload.Uploader({
-            browse_button: _pl_file_uploader.id, //触发文件选择对话框的按钮，为那个元素id
+            browse_button: _pl_file_uploader.id, //触发文件選擇对话框的按钮，为那个元素id
             url: _upload_url, //服务器端的上传頁面地址
         });
         _pl_file_uploader.uploader.bind('Init', function (uploader) {
@@ -247,7 +247,7 @@ $.upload_file = function (args) {
 };
 /*---- 文件上传 end ----*/
 
-/*---- 文件选择 start ----*/
+/*---- 文件選擇 start ----*/
 var _file_select = {
     success: null,
 };
@@ -331,7 +331,7 @@ $.select_file = function (args) {
         _file_select.success = args.success;
     }
 };
-/*---- 文件选择 end ----*/
+/*---- 文件選擇 end ----*/
 
 /*---- 表單自动送出 start ----*/
 $(document).ready(function () {
@@ -493,7 +493,7 @@ $(document).on('click', '.upload-group .file-item-delete', function () {
 });
 /*---- 快速上传组件 end ----*/
 
-/*---- 地区选择器 start ----*/
+/*---- 地区選擇器 start ----*/
 var districtPicker = null;
 $(document).ready(function () {
     var onSuccess = null;
@@ -546,15 +546,15 @@ $(document).ready(function () {
         $('#district_pick_modal').modal('hide');
         if (!districtPicker.province_id) {
             if (typeof onError == 'function')
-                onError('没有选择省份');
+                onError('没有選擇省份');
         }
         else if (!districtPicker.city_id) {
             if (typeof onError == 'function')
-                onError('没有选择城市');
+                onError('没有選擇城市');
         }
         else if (!districtPicker.district_id) {
             if (typeof onError == 'function')
-                onError('没有选择县/区');
+                onError('没有選擇县/区');
         } else if (typeof onSuccess == 'function') {
             onSuccess({
                 province_id: districtPicker.province_id,
@@ -572,7 +572,7 @@ $(document).ready(function () {
         onSuccess = args.success || null;
         onError = args.error || null;
         if (!district_list) {
-            $.loading({title: '加载地区数据'});
+            $.loading({title: '加载地区資料'});
             $.ajax({
                 url: _district_data_url,
                 dataType: 'json',
@@ -603,4 +603,4 @@ $(document).ready(function () {
         }
     };
 });
-/*---- 地区选择器 end ----*/
+/*---- 地区選擇器 end ----*/

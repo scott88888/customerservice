@@ -30,7 +30,7 @@ layui.define(['jquery', 'element'], function(exports) {
 
 		// 初始化，检索 session 是否開啟
 		if (option.session) {
-			// 替换 opt.data 数据
+			// 替换 opt.data 資料
 			if (sessionStorage.getItem(option.elem + "-pear-tab-data") != null) {
 				tabData = JSON.parse(sessionStorage.getItem(option.elem + "-pear-tab-data"));
 				option.data = JSON.parse(sessionStorage.getItem(option.elem + "-pear-tab-data"));

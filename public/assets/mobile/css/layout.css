@@ -169,7 +169,7 @@
 .wc__editor-panel .btn-emotion{background: url(../img/wchat/icon__emotion.png) no-repeat; background-size: cover;}
 .wc__editor-panel .btn-choose{background: url(../img/wchat/icon__choose.png) no-repeat; background-size: cover;}
 .wc__editor-panel .btn-submit{background: #ffd100; border: 0; border-radius: .05rem; color: #fff; font-size: .28rem; font-family: "Microsoft Yahei"; outline: none; margin-left: .2rem; margin-bottom: .04rem; padding: 0 .15rem; height: .6rem;}
-/* 选择区 */
+/* 選擇区 */
 .wc__choose-panel{height: 5.8rem;}
 .wc__choose-panel .wrap-emotion{height: 100%;}
 .wc__choose-panel .wrap-emotion .emotion__cells{height: 100%;}
@@ -299,7 +299,7 @@
 /* }}} */
 
 
-/* …… 我(个人信息、钱包、银行卡) {{{ …… */
+/* …… 我(个人訊息、钱包、银行卡) {{{ …… */
 .wc__ucinfo-personal ul li{margin-top: .35rem;}
 .wc__ucinfo-personal ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .15rem .3rem; min-height: 1rem; position: relative;}
 .wc__ucinfo-personal ul li .item:after{content: ''; border-bottom: 1px solid #d9d9d9; color: #d9d9d9; height: 1px; width: auto; position: absolute; left: .3rem; right: .3rem; bottom: 0; transform: scaleY(0.5); -webkit-transform: scaleY(0.5);}

@@ -3115,7 +3115,7 @@
          */
 
         /**
-         * 合并节点node的左右兄弟节点， 可以根据给定的條件选择是否忽略合并左节点。
+         * 合并节点node的左右兄弟节点， 可以根据给定的條件選擇是否忽略合并左节点。
          * @method mergeSibling
          * @param { Element } node 需要合并的目标节点
          * @param { Boolean } ignorePre 是否忽略合并左节点
@@ -3133,7 +3133,7 @@
          */
 
         /**
-         * 合并节点node的左右兄弟节点，可以根据给定的條件选择是否忽略合并左右节点。
+         * 合并节点node的左右兄弟节点，可以根据给定的條件選擇是否忽略合并左右节点。
          * @method mergeSibling
          * @param { Element } node 需要合并的目标节点
          * @param { Boolean } ignorePre 是否忽略合并左节点
@@ -6620,7 +6620,7 @@
          * @see UE.Editor:focus(Boolean)
          */
         /**
-         * 语言加载完成会触发该事件
+         * 語言加载完成会触发该事件
          * @module UE
          * @class Editor
          * @event langReady
@@ -6750,7 +6750,7 @@
             me.loadServerConfig();
 
             if(!utils.isEmptyObject(UE.I18N)){
-                //修改默认的语言类型
+                //修改默认的語言类型
                 me.options.lang = checkCurLang(UE.I18N);
                 UE.plugin.load(me);
                 langReadied(me);
@@ -6977,7 +6977,7 @@
                 me.iframe = me.window.frameElement;
                 me.body = doc.body;
                 me.selection = new dom.Selection(doc);
-                //gecko初始化就能得到range,无法判断isFocus了
+                //gecko初始化就能得到range,無法判断isFocus了
                 var geckoSel;
                 if (browser.gecko && (geckoSel = this.selection.getNative())) {
                     geckoSel.removeAllRanges();
@@ -7069,7 +7069,7 @@
                         }
                     });
                 }
-                //trace:1518 ff3.6body不够寛，会导致点击空白处无法获得焦点
+                //trace:1518 ff3.6body不够寛，会导致点击空白处無法获得焦点
                 if (browser.gecko && browser.version <= 10902) {
                     //修复ff3.6初始化进来，不能点击获得焦点
                     me.body.contentEditable = false;
@@ -7086,9 +7086,9 @@
             },
 
             /**
-             * 同步数据到編輯器所在的form
-             * 从編輯器的容器节点向上查找form元素，若找到，就同步編輯内容到找到的form里，为送出数据做准备，主要用于是手动送出的情况
-             * 后台取得数据的键值，使用你容器上的name属性，如果没有就使用参数里的textarea项
+             * 同步資料到編輯器所在的form
+             * 从編輯器的容器节点向上查找form元素，若找到，就同步編輯内容到找到的form里，为送出資料做准备，主要用于是手动送出的情况
+             * 后台取得資料的键值，使用你容器上的name属性，如果没有就使用参数里的textarea项
              * @method sync
              * @example
              * ```javascript
@@ -7098,10 +7098,10 @@
              */
 
             /**
-             * 根据传入的formId，在頁面上查找要同步数据的表單，若找到，就同步編輯内容到找到的form里，为送出数据做准备
-             * 后台取得数据的键值，该键值默认使用给定的編輯器容器的name属性，如果没有name属性则使用参数项里给定的“textarea”项
+             * 根据传入的formId，在頁面上查找要同步資料的表單，若找到，就同步編輯内容到找到的form里，为送出資料做准备
+             * 后台取得資料的键值，该键值默认使用给定的編輯器容器的name属性，如果没有name属性则使用参数项里给定的“textarea”项
              * @method sync
-             * @param { String } formID 指定一个要同步数据的form的id,編輯器的数据会同步到你指定form下
+             * @param { String } formID 指定一个要同步資料的form的id,編輯器的資料会同步到你指定form下
              */
             sync: function (formId) {
                 var me = this,
@@ -7115,7 +7115,7 @@
             /**
              * 设置編輯器高度
              * @method setHeight
-             * @remind 当配置项autoHeightEnabled为真时,该方法无效
+             * @remind 当配置项autoHeightEnabled为真时,该方法無效
              * @param { Number } number 设置的高度值，纯数值，不带单位
              * @example
              * ```javascript
@@ -7534,8 +7534,8 @@
                     if (!me.selection || !me.selection.getNative()) {
                         return;
                     }
-                    //修复一个IE下的bug: 鼠标点击一段已选择的文本中间时，可能在mouseup后的一段时间内取到的range是在selection的type为None下的错误值.
-                    //IE下如果使用者是拖拽一段已选择文本，则不会触发mouseup事件，所以这里的特殊处理不会对其有影响
+                    //修复一个IE下的bug: 鼠标点击一段已選擇的文本中间时，可能在mouseup后的一段时间内取到的range是在selection的type为None下的错误值.
+                    //IE下如果使用者是拖拽一段已選擇文本，则不会触发mouseup事件，所以这里的特殊处理不会对其有影响
                     var ieRange;
                     if (hackForMouseUp && me.selection.getNative().type == 'None') {
                         ieRange = me.document.body.createTextRange();
@@ -7879,10 +7879,10 @@
             },
 
             /**
-             * 根据指定的路径，取得对应的语言资源
+             * 根据指定的路径，取得对应的語言资源
              * @method getLang
-             * @param { String } path 路径根据的是lang目录下的语言文件的路径结构
-             * @return { Object | String } 根据路径返回语言资源的Json格式对象或者语言字符串
+             * @param { String } path 路径根据的是lang目录下的語言文件的路径结构
+             * @return { Object | String } 根据路径返回語言资源的Json格式对象或者語言字符串
              * @example
              * ```javascript
              * editor.getLang('contextMenu.delete'); //如果当前是中文，那返回是的是'刪除'
@@ -8346,7 +8346,7 @@
          *     //是否是异步请求。 true为异步请求， false为同步请求
          *     async: true,
          *
-         *     //请求携带的数据。如果请求为GET请求， data会经过stringify后附加到请求url之后。
+         *     //请求携带的資料。如果请求为GET请求， data会经过stringify后附加到请求url之后。
          *     data: {
          *         name: 'ueditor'
          *     },
@@ -8451,7 +8451,7 @@
                         return '';
                     }
                     try{
-                        //有可能是bitmap占为图，无用，直接过滤掉，主要体现在粘贴excel表格中
+                        //有可能是bitmap占为图，無用，直接过滤掉，主要体现在粘贴excel表格中
                         if(/Bitmap/i.test(str)){
                             return '';
                         }
@@ -12697,7 +12697,7 @@
                                 parent.style.padding && !para.style.padding && (para.style.padding = parent.style.padding);
                             }
 
-                            //trace:1706 选择的就是h1-6要刪除
+                            //trace:1706 選擇的就是h1-6要刪除
                             if(attrs && /h\d/i.test(parent.tagName) && !/h\d/i.test(para.tagName) ){
                                 domUtils.setAttributes(parent,attrs);
                                 if(sourceCmdName && sourceCmdName == 'customstyle' && attrs.style){
@@ -13207,7 +13207,7 @@
          * @command insertcode
          * @method execCommand
          * @param { String } cmd 命令字符串
-         * @param { String } lang 插入代码的语言
+         * @param { String } lang 插入代码的語言
          * @example
          * ```javascript
          * editor.execCommand( 'insertcode', 'javascript' );
@@ -13215,11 +13215,11 @@
          */
 
         /**
-         * 如果选区所在位置是插入插入代码区域，返回代码的语言
+         * 如果选区所在位置是插入插入代码区域，返回代码的語言
          * @command insertcode
          * @method queryCommandValue
          * @param { String } cmd 命令字符串
-         * @return { String } 返回代码的语言
+         * @return { String } 返回代码的語言
          * @example
          * ```javascript
          * editor.queryCommandValue( 'insertcode' );
@@ -13928,8 +13928,8 @@
          * @method execCommand
          * @param { String } cmd 命令字符串
          * @remind 在表格中插入分頁符会把表格切分成两部分
-         * @remind 取得編輯器内的数据时， 編輯器会把分頁符转换成“_ueditor_page_break_tag_”字符串，
-         *          以便于送出数据到服务器端后处理分頁。
+         * @remind 取得編輯器内的資料时， 編輯器会把分頁符转换成“_ueditor_page_break_tag_”字符串，
+         *          以便于送出資料到服务器端后处理分頁。
          * @example
          * ```javascript
          * editor.execCommand( 'pagebreak'); //插入一个hr标签，带有样式类名pagebreak
@@ -14930,7 +14930,7 @@
 
 // plugins/list.js
     /**
-     * 有序列表,无序列表插件
+     * 有序列表,無序列表插件
      * @file
      * @since 1.2.6.1
      */
@@ -15847,11 +15847,11 @@
          */
 
         /**
-         * 无序列表，与“insertorderedlist”命令互斥
+         * 無序列表，与“insertorderedlist”命令互斥
          * @command insertunorderedlist
          * @method execCommand
          * @param { String } command 命令字符串
-         * @param { String } style 插入的无序列表类型，值为：circle,disc,square,dash,dot
+         * @param { String } style 插入的無序列表类型，值为：circle,disc,square,dash,dot
          * @example
          * ```javascript
          * editor.execCommand( 'insertunorderedlist','circle');
@@ -15862,7 +15862,7 @@
          * @command insertunorderedlist
          * @method insertunorderedlist
          * @param { String } command 命令字符串
-         * @return { int } 如果当前选区是无序列表返回1，否则返回0
+         * @return { int } 如果当前选区是無序列表返回1，否则返回0
          * @example
          * ```javascript
          * editor.queryCommandState( 'insertunorderedlist' );
@@ -15873,7 +15873,7 @@
          * @command insertunorderedlist
          * @method queryCommandValue
          * @param { String } command 命令字符串
-         * @return { String } 返回当前无序列表的类型，值为null或circle,disc,square,dash,dot
+         * @return { String } 返回当前無序列表的类型，值为null或circle,disc,square,dash,dot
          * @example
          * ```javascript
          * editor.queryCommandValue( 'insertunorderedlist' );
@@ -16213,7 +16213,7 @@
                             range.collapse(true);
                             range.select();
                         } else {
-                            //todo: chrome下无法设置焦点
+                            //todo: chrome下無法设置焦点
                             textarea.setSelectionRange(0, 0);
                             textarea.focus();
                         }
@@ -16368,7 +16368,7 @@
                             });
                         });*/
 
-                        //重置getContent，源码模式下取值也能是最新的数据
+                        //重置getContent，源码模式下取值也能是最新的資料
                         oldGetContent = me.getContent;
                         me.getContent = function (){
                             return sourceEditor.getContent() || '<p>' + (browser.ie ? '' : '<br/>')+'</p>';
@@ -17879,7 +17879,7 @@
         };
 
         /**
-         * 根据当前选区取得相关的table信息
+         * 根据当前选区取得相关的table訊息
          * @return {Object}
          */
         UETable.getTableItemsByRange = function (editor) {
@@ -18242,7 +18242,7 @@
                 }
             },
             /**
-             * 取得单元格的索引信息
+             * 取得单元格的索引訊息
              */
             getCellInfo:function (cell) {
                 if (!cell) return;
@@ -18362,7 +18362,7 @@
              * 依据cellsRange取得对应的单元格集合
              */
             getCells:function (range) {
-                //每次取得cells之前必须先清除上次的选择，否则会对后续取得操作造成影响
+                //每次取得cells之前必须先清除上次的選擇，否则会对后续取得操作造成影响
                 this.clearSelected();
                 var beginRowIndex = range.beginRowIndex,
                     beginColIndex = range.beginColIndex,
@@ -18508,7 +18508,7 @@
              * 合并整个range中的内容
              */
             mergeRange:function () {
-                //由于合并操作可以在任意时刻进行，所以无法通过鼠标位置等信息实时生成range，只能通过缓存实例中的cellsRange对象来访问
+                //由于合并操作可以在任意时刻进行，所以無法通过鼠标位置等訊息实时生成range，只能通过缓存实例中的cellsRange对象来访问
                 var range = this.cellsRange,
                     leftTopCell = this.getCell(range.beginRowIndex, this.indexTable[range.beginRowIndex][range.beginColIndex].cellIndex);
 
@@ -18582,7 +18582,7 @@
                     }
                 }
 
-                //首行直接插入,无需考虑部分单元格被rowspan的情况
+                //首行直接插入,無需考虑部分单元格被rowspan的情况
                 if (rowIndex == 0 || rowIndex == this.rowsNum) {
                     for (var colIndex = 0; colIndex < numCols; colIndex++) {
                         cell = this.cloneCell(sourceCell, true);
@@ -18596,7 +18596,7 @@
                         cellIndex = 0;
                     for (colIndex = 0; colIndex < numCols; colIndex++) {
                         var cellInfo = infoRow[colIndex];
-                        //如果存在某个单元格的rowspan穿过待插入行的位置，则修改该单元格的rowspan即可，无需插入单元格
+                        //如果存在某个单元格的rowspan穿过待插入行的位置，则修改该单元格的rowspan即可，無需插入单元格
                         if (cellInfo.rowIndex < rowIndex) {
                             cell = this.getCell(cellInfo.rowIndex, cellInfo.cellIndex);
                             cell.rowSpan = cellInfo.rowSpan + 1;
@@ -19682,7 +19682,7 @@
                 }
             },
             /**
-             * 查詢当前点击的单元格的对齐狀態， 如果当前已经选择了多个单元格， 则会返回所有单元格经过统一协调过后的狀態
+             * 查詢当前点击的单元格的对齐狀態， 如果当前已经選擇了多个单元格， 则会返回所有单元格经过统一协调过后的狀態
              * @see UE.UETable.getTableCellAlignState
              */
             queryCommandValue: function (cmd) {
@@ -21392,7 +21392,7 @@
             var ut = getUETable(td);
             if (ut) {
                 var cells = ut.getSameEndPosCells(td, "y"),
-                    //备份需要连带变化的td的原始高度，否则后期无法取得正确的值
+                    //备份需要连带变化的td的原始高度，否则后期無法取得正确的值
                     backHeight = cells[0] ? cells[0].offsetHeight : 0;
                 for (var i = 0, cell; cell = cells[i++];) {
                     setCellHeight(cell, changeValue, backHeight);
@@ -23744,7 +23744,7 @@
 
         function sendAndInsertFile(file, editor) {
             var me  = editor;
-            //模拟数据
+            //模拟資料
             var fieldName, urlPrefix, maxSize, allowFiles, actionUrl,
                 loadingHtml, errorHandler, successHandler,
                 filetype = /image\/\w+/i.test(file.type) ? 'image':'file',
@@ -23917,7 +23917,7 @@
     UE.plugin.register('autosave', function (){
 
         var me = this,
-            //无限循环保护
+            //無限循环保护
             lastSaveTime = new Date(),
             //最小保存间隔时间
             MIN_TIME = 20,
@@ -24076,7 +24076,7 @@
                         config.yTitle = data.yTitle || '';
                         config.suffix = data.suffix || '';
                         config.tip = data.tip || '';
-                        //数据对齐方式
+                        //資料对齐方式
                         config.dataFormat = data.tableDataFormat || '';
                         //图表类型
                         config.chartType = data.chartType || 0;
@@ -24461,7 +24461,7 @@
 // plugins/simpleupload.js
     /**
      * @description
-     * 简单上传:点击按钮,直接选择文件上传
+     * 简单上传:点击按钮,直接選擇文件上传
      * @author Jinqn
      * @date 2014-03-31
      */
@@ -28046,7 +28046,7 @@
                             });
                             editorui.buttons[cmd] = ui;
                             editor.addListener('selectionchange', function () {
-                                //只存在于右键菜单而无工具栏按钮的ui不需要检测狀態
+                                //只存在于右键菜单而無工具栏按钮的ui不需要检测狀態
                                 var unNeedCheckState = {'edittable':1};
                                 if (cmd in unNeedCheckState)return;
 
@@ -28503,7 +28503,7 @@
                 }
             })(ri)
         }
-        //有序，无序列表
+        //有序，無序列表
         var lists = ['insertorderedlist', 'insertunorderedlist'];
         for (var l = 0, cl; cl = lists[l++];) {
             (function (cmd) {

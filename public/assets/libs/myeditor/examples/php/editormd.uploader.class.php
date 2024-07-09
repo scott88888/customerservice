@@ -28,7 +28,7 @@
         public $cover          = true;          // 是否覆盖同名文件, 1覆盖,0不覆盖
         public $redirect       = false;         // 是否进行URL跳转
         public $redirectURL    = "";            // 上传成功或出错后要转到的URL        
-        public $errors = array(                 // 错误信息
+        public $errors = array(                 // 错误訊息
             'empty'      => '上传文件不能为空',
             'format'     =>'上传的文件格式不符合规定',
             'maxsize'    => '上传的文件太大',
@@ -261,7 +261,7 @@
          }
 
         /**
-         * 取得保存的文件名，用于数据库存储
+         * 取得保存的文件名，用于資料库存储
          *
          * @access  public
          * @return  string

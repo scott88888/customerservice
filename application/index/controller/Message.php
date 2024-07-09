@@ -25,7 +25,7 @@ class Message extends Controller
     }
 
     /**
-     * 保存留言信息.
+     * 保存留言訊息.
      *
      * @return array|string|true
      */

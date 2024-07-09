@@ -14,44 +14,44 @@ namespace think;
 class Lang
 {
     /**
-     * @var array 语言数据
+     * @var array 語言資料
      */
     private static $lang = [];
 
     /**
-     * @var string 语言作用域
+     * @var string 語言作用域
      */
     private static $range = 'zh-cn';
 
     /**
-     * @var string 语言自动侦测的变量
+     * @var string 語言自动侦测的变量
      */
     protected static $langDetectVar = 'lang';
 
     /**
-     * @var string 语言 Cookie 变量
+     * @var string 語言 Cookie 变量
      */
     protected static $langCookieVar = 'think_var';
 
     /**
-     * @var int 语言 Cookie 的过期时间
+     * @var int 語言 Cookie 的过期时间
      */
     protected static $langCookieExpire = 3600;
 
     /**
-     * @var array 允许语言列表
+     * @var array 允许語言列表
      */
     protected static $allowLangList = [];
 
     /**
-     * @var array Accept-Language 转义为对应语言包名稱 系统默认配置
+     * @var array Accept-Language 转义为对应語言包名稱 系统默认配置
      */
     protected static $acceptLanguage = ['zh-hans-cn' => 'zh-cn'];
 
     /**
-     * 设定当前的语言
+     * 设定当前的語言
      * @access public
-     * @param  string $range 语言作用域
+     * @param  string $range 語言作用域
      * @return string
      */
     public static function range($range = '')
@@ -64,11 +64,11 @@ class Lang
     }
 
     /**
-     * 设置语言定义(不区分大小写)
+     * 设置語言定义(不区分大小写)
      * @access public
-     * @param  string|array  $name  语言变量
-     * @param  string        $value 语言值
-     * @param  string        $range 语言作用域
+     * @param  string|array  $name  語言变量
+     * @param  string        $value 語言值
+     * @param  string        $range 語言作用域
      * @return mixed
      */
     public static function set($name, $value = null, $range = '')
@@ -87,10 +87,10 @@ class Lang
     }
 
     /**
-     * 加载语言定义(不区分大小写)
+     * 加载語言定义(不区分大小写)
      * @access public
-     * @param  array|string $file 语言文件
-     * @param  string $range      语言作用域
+     * @param  array|string $file 語言文件
+     * @param  string $range      語言作用域
      * @return mixed
      */
     public static function load($file, $range = '')
@@ -106,7 +106,7 @@ class Lang
 
         foreach ($file as $_file) {
             if (is_file($_file)) {
-                // 记录加载信息
+                // 记录加载訊息
                 App::$debug && Log::record('[ LANG ] ' . $_file, 'info');
 
                 $_lang = include $_file;
@@ -125,10 +125,10 @@ class Lang
     }
 
     /**
-     * 取得语言定义(不区分大小写)
+     * 取得語言定义(不区分大小写)
      * @access public
-     * @param  string|null $name  语言变量
-     * @param  string      $range 语言作用域
+     * @param  string|null $name  語言变量
+     * @param  string      $range 語言作用域
      * @return mixed
      */
     public static function has($name, $range = '')
@@ -139,11 +139,11 @@ class Lang
     }
 
     /**
-     * 取得语言定义(不区分大小写)
+     * 取得語言定义(不区分大小写)
      * @access public
-     * @param  string|null $name  语言变量
+     * @param  string|null $name  語言变量
      * @param  array       $vars  变量替换
-     * @param  string      $range 语言作用域
+     * @param  string      $range 語言作用域
      * @return mixed
      */
     public static function get($name = null, $vars = [], $range = '')
@@ -184,7 +184,7 @@ class Lang
     }
 
     /**
-     * 自动侦测设置取得语言选择
+     * 自动侦测设置取得語言選擇
      * @access public
      * @return string
      */
@@ -193,13 +193,13 @@ class Lang
         $langSet = '';
 
         if (isset($_GET[self::$langDetectVar])) {
-            // url 中设置了语言变量
+            // url 中设置了語言变量
             $langSet = strtolower($_GET[self::$langDetectVar]);
         } elseif (isset($_COOKIE[self::$langCookieVar])) {
-            // Cookie 中设置了语言变量
+            // Cookie 中设置了語言变量
             $langSet = strtolower($_COOKIE[self::$langCookieVar]);
         } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-            // 自动侦测浏览器语言
+            // 自动侦测浏览器語言
             preg_match('/^([a-z\d\-]+)/i', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $matches);
             $langSet     = strtolower($matches[1]);
             $acceptLangs = Config::get('header_accept_lang');
@@ -211,7 +211,7 @@ class Lang
             }
         }
 
-        // 合法的语言
+        // 合法的語言
         if (empty(self::$allowLangList) || in_array($langSet, self::$allowLangList)) {
             self::$range = $langSet ?: self::$range;
         }
@@ -220,7 +220,7 @@ class Lang
     }
 
     /**
-     * 设置语言自动侦测的变量
+     * 设置語言自动侦测的变量
      * @access public
      * @param  string $var 变量名稱
      * @return void
@@ -231,7 +231,7 @@ class Lang
     }
 
     /**
-     * 设置语言的 cookie 保存变量
+     * 设置語言的 cookie 保存变量
      * @access public
      * @param  string $var 变量名稱
      * @return void
@@ -242,7 +242,7 @@ class Lang
     }
 
     /**
-     * 设置语言的 cookie 的过期时间
+     * 设置語言的 cookie 的过期时间
      * @access public
      * @param  string $expire 过期时间
      * @return void
@@ -253,9 +253,9 @@ class Lang
     }
 
     /**
-     * 设置允许的语言列表
+     * 设置允许的語言列表
      * @access public
-     * @param  array $list 语言列表
+     * @param  array $list 語言列表
      * @return void
      */
     public static function setAllowLangList($list)

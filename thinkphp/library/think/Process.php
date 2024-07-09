@@ -1126,7 +1126,7 @@ class Process
     }
 
     /**
-     * 重置数据
+     * 重置資料
      */
     private function resetProcessData()
 {

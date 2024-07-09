@@ -13,7 +13,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">有效期</label>
                     <div class="layui-input-block">
-                        <input type="text" name="expire_time" lay-verify="required" placeholder="请选择有效期" autocomplete="off" value="{if $business.expire_time != 0}{:date('Y-m-d H:i:s',$business.expire_time)}{else}0{/if}" class="layui-input" id="valid_time">
+                        <input type="text" name="expire_time" lay-verify="required" placeholder="请選擇有效期" autocomplete="off" value="{if $business.expire_time != 0}{:date('Y-m-d H:i:s',$business.expire_time)}{else}0{/if}" class="layui-input" id="valid_time">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -30,10 +30,10 @@
                 </div>
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">默认语言</label>
+                    <label class="layui-form-label">默认語言</label>
                     <div class="layui-input-block">
                         <select name="lang">
-                            <option value="">请选择默认语言</option>
+                            <option value="">请選擇默认語言</option>
                             {foreach name=":config('lang')" item="vo"}
                             <option value="{$key}" {if $business.lang == $key}selected{/if}>{$vo}</option>
                             {/foreach}

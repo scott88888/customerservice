@@ -28,7 +28,7 @@ class Robots extends Base
         if ($this->request->isAjax()) {
             $post = $this->request->post();
             $post['reply']=$this->request->post('reply','','\app\Common::clearXSS');
-            if (mb_strlen($post['keyword'],'UTF8') > 8) $this->error('关键词不能大于8个字！');
+            if (mb_strlen($post['keyword'],'UTF8') > 8) $this->error('關鍵字不能大于8个字！');
             $sort = $this->request->post('sort/d',0);
             if (!is_int($sort)) $this->error('排序字段必须是整数！');
             $status = $this->request->post('status/d',0);
@@ -49,7 +49,7 @@ class Robots extends Base
             $post=$this->request->post();
             $post['business_id']=$_SESSION['Msg']['business_id'];
             $post['reply']=$this->request->post('reply','','\app\Common::clearXSS');
-            if (mb_strlen($post['keyword'],'UTF8') > 8) $this->error('关键词不能大于8个字！');
+            if (mb_strlen($post['keyword'],'UTF8') > 8) $this->error('關鍵字不能大于8个字！');
             $sort = $this->request->post('sort/d',0);
             if (!is_int($sort)) $this->error('排序字段必须是整数！');
             $status = $this->request->post('status/d',0);

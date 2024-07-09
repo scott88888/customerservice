@@ -96,11 +96,11 @@ class Mapp extends Mbase
             $this->error('登入使用者名稱或密碼错误');
         }
 
-        // 取得登入数据
+        // 取得登入資料
 
         $login = $admin->getData();
 
-        // 删掉登入使用者的敏感信息
+        // 删掉登入使用者的敏感訊息
         unset($login['password']);
 
         $res = Admins::table('wolive_service')->where('service_id', $login['service_id'])->update(['state' => 'online']);
@@ -334,7 +334,7 @@ class Mapp extends Mbase
     $data = $userAdmin->where('business_id', $login['business_id'])->paginate(3, false, $pageParam);
     if($data->count() == 0){
     
-       $this->assign('content','暂时没有留言数据');
+       $this->assign('content','暂时没有留言資料');
     }else{
        $this->assign('content',"");
     }

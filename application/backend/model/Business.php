@@ -8,7 +8,7 @@ use think\Db;
 use think\Exception;
 
 /**
- * 数据模型类.
+ * 資料模型类.
  */
 class Business extends Model
 {
@@ -23,7 +23,7 @@ class Business extends Model
         $list = self::order('id','desc')->where($where)->paginate($limit)->each(function($item)use($lang){
             $item['service_count'] = self::table('wolive_service')->where(['business_id'=>$item['id']])->count();
             $item['lang'] = $lang[$item['lang']];
-            $item['max_count'] = $item['max_count']==0?'无限':$item['max_count'];
+            $item['max_count'] = $item['max_count']==0?'無限':$item['max_count'];
             $item['expire_time'] = $item['expire_time']>0?date('Y-m-d H:i:s',$item['expire_time']):'永久';
             return $item;
         });
@@ -32,7 +32,7 @@ class Business extends Model
 
     public static function addBusiness($post)
     {
-        //账号注册时需要開啟事务,避免出现垃圾数据
+        //账号注册时需要開啟事务,避免出现垃圾資料
         Db::startTrans();
         try
         {

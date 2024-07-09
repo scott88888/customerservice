@@ -82,7 +82,7 @@ class Think
             header("Location: /service/index/index");
 //            throw new TemplateNotFoundException('template not exists:' . $template, $template);
         }
-        // 记录视图信息
+        // 记录视图訊息
         App::$debug && Log::record('[ VIEW ] ' . $template . ' [ ' . var_export(array_keys($data), true) . ' ]', 'info');
         $this->template->fetch($template, $data, $config);
     }

@@ -16,7 +16,7 @@ use SplFileObject;
 class File extends SplFileObject
 {
     /**
-     * @var string 错误信息
+     * @var string 错误訊息
      */
     private $error = '';
 
@@ -46,12 +46,12 @@ class File extends SplFileObject
     protected $isTest;
 
     /**
-     * @var array 上传文件信息
+     * @var array 上传文件訊息
      */
     protected $info;
 
     /**
-     * @var array 文件 hash 信息
+     * @var array 文件 hash 訊息
      */
     protected $hash = [];
 
@@ -81,9 +81,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置上传信息
+     * 设置上传訊息
      * @access public
-     * @param  array $info 上传文件信息
+     * @param  array $info 上传文件訊息
      * @return $this
      */
     public function setUploadInfo($info)
@@ -94,9 +94,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得上传文件的信息
+     * 取得上传文件的訊息
      * @access public
-     * @param  string $name 信息名稱
+     * @param  string $name 訊息名稱
      * @return array|string
      */
     public function getInfo($name = '')
@@ -160,7 +160,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得文件类型信息
+     * 取得文件类型訊息
      * @access public
      * @return string
      */
@@ -416,7 +416,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得错误代码信息
+     * 取得错误代码訊息
      * @access private
      * @param  int $errorNo 错误号
      * @return $this
@@ -448,7 +448,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得错误信息（支持多语言）
+     * 取得错误訊息（支持多語言）
      * @access public
      * @return string
      */

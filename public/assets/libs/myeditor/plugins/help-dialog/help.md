@@ -27,7 +27,7 @@
 | Ctrl + I / Command + I                          | 插入斜体                          | Insert italic                                      |
 | Ctrl + K / Command + K                          | 插入行内代码                      | Insert inline code                                 |
 | Ctrl + L / Command + L                          | 插入連結                          | Insert link                                        |
-| Ctrl + U / Command + U                          | 插入无序列表                      | Insert unordered list                              |
+| Ctrl + U / Command + U                          | 插入無序列表                      | Insert unordered list                              |
 | Ctrl + Q                                        | 代码折叠切换                      | Switch code fold                                   |
 | Ctrl + Z / Command + Z                          | 撤销                              | Undo                                               |
 | Ctrl + Y / Command + Y                          | 重做                              | Redo                                               |

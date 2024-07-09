@@ -88,7 +88,7 @@ layui.define(['layer', 'form'], function(exports) {
 
 	function select(size) {
 		var html = '  <div class="layui-form-item">\n' +
-			'    <label class="layui-form-label">选择框</label>\n' +
+			'    <label class="layui-form-label">選擇框</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
 			'      <select name="' + key + '" lay-verify="required" lay-search>\n' +
 			'        <option value=""></option>\n' +

@@ -25,7 +25,7 @@ class Merge extends Model
     /**
      * 构造函数
      * @access public
-     * @param array|object $data 数据
+     * @param array|object $data 資料
      */
     public function __construct($data = [])
     {
@@ -87,7 +87,7 @@ class Merge extends Model
      */
     protected static function getModelField($query, $name, $table = '', $map = [], $fields = [])
     {
-        // 取得模型的字段信息
+        // 取得模型的字段訊息
         $fields = $fields ?: $query->getTableInfo($table, 'fields');
         $array  = [];
         foreach ($fields as $field) {
@@ -117,10 +117,10 @@ class Merge extends Model
     }
 
     /**
-     * 处理写入的模型数据
+     * 处理写入的模型資料
      * @access public
      * @param string $model  模型名稱
-     * @param array  $data   数据
+     * @param array  $data   資料
      * @return array
      */
     protected function parseData($model, $data)
@@ -140,9 +140,9 @@ class Merge extends Model
     }
 
     /**
-     * 保存模型数据 以及关联数据
+     * 保存模型資料 以及关联資料
      * @access public
-     * @param mixed  $data     数据
+     * @param mixed  $data     資料
      * @param array  $where    更新條件
      * @param string $sequence 自增序列名
      * @return false|int
@@ -151,11 +151,11 @@ class Merge extends Model
     public function save($data = [], $where = [], $sequence = null)
     {
         if (!empty($data)) {
-            // 数据自动驗證
+            // 資料自动驗證
             if (!$this->validateData($data)) {
                 return false;
             }
-            // 数据对象赋值
+            // 資料对象赋值
             foreach ($data as $key => $value) {
                 $this->setAttr($key, $value, $data);
             }
@@ -164,7 +164,7 @@ class Merge extends Model
             }
         }
 
-        // 数据自动完成
+        // 資料自动完成
         $this->autoCompleteData($this->auto);
 
         // 自动写入更新时间
@@ -193,15 +193,15 @@ class Merge extends Model
                     $where = $this->updateWhere;
                 }
 
-                // 取得有更新的数据
+                // 取得有更新的資料
                 $data = $this->getChangedData();
-                // 保留主键数据
+                // 保留主键資料
                 foreach ($this->data as $key => $val) {
                     if ($this->isPk($key)) {
                         $data[$key] = $val;
                     }
                 }
-                // 处理模型数据
+                // 处理模型資料
                 $data = $this->parseData($this->name, $data);
                 if (is_string($pk) && isset($data[$pk])) {
                     if (!isset($where[$pk])) {
@@ -210,14 +210,14 @@ class Merge extends Model
                     }
                     unset($data[$pk]);
                 }
-                // 写入主表数据
+                // 写入主表資料
                 $result = $db->strict(false)->where($where)->update($data);
 
-                // 写入附表数据
+                // 写入附表資料
                 foreach ($this->relationModel as $key => $model) {
                     $name  = is_int($key) ? $model : $key;
                     $table = is_int($key) ? $db->getTable($model) : $model;
-                    // 处理关联模型数据
+                    // 处理关联模型資料
                     $data = $this->parseData($name, $data);
                     if (Db::table($table)->strict(false)->where($this->fk, $this->data[$this->getPk()])->update($data)) {
                         $result = 1;
@@ -239,13 +239,13 @@ class Merge extends Model
                     return false;
                 }
 
-                // 处理模型数据
+                // 处理模型資料
                 $data = $this->parseData($this->name, $this->data);
-                // 写入主表数据
+                // 写入主表資料
                 $result = $db->name($this->name)->strict(false)->insert($data);
                 if ($result) {
                     $insertId = $db->getLastInsID($sequence);
-                    // 写入外键数据
+                    // 写入外键資料
                     if ($insertId) {
                         if (is_string($pk)) {
                             $this->data[$pk] = $insertId;
@@ -253,7 +253,7 @@ class Merge extends Model
                         $this->data[$this->fk] = $insertId;
                     }
 
-                    // 写入附表数据
+                    // 写入附表資料
                     $source = $this->data;
                     if ($insertId && is_string($pk) && isset($source[$pk]) && $this->fk != $pk) {
                         unset($source[$pk]);
@@ -261,7 +261,7 @@ class Merge extends Model
                     foreach ($this->relationModel as $key => $model) {
                         $name  = is_int($key) ? $model : $key;
                         $table = is_int($key) ? $db->getTable($model) : $model;
-                        // 处理关联模型数据
+                        // 处理关联模型資料
                         $data = $this->parseData($name, $source);
                         Db::table($table)->strict(false)->insert($data);
                     }
@@ -284,7 +284,7 @@ class Merge extends Model
     }
 
     /**
-     * 刪除当前的记录 并刪除关联数据
+     * 刪除当前的记录 并刪除关联資料
      * @access public
      * @return int
      * @throws \Exception
@@ -300,10 +300,10 @@ class Merge extends Model
         try {
             $result = $db->delete($this->data);
             if ($result) {
-                // 取得主键数据
+                // 取得主键資料
                 $pk = $this->data[$this->getPk()];
 
-                // 刪除关联数据
+                // 刪除关联資料
                 foreach ($this->relationModel as $key => $model) {
                     $table = is_int($key) ? $db->getTable($model) : $model;
                     $query = new Query;

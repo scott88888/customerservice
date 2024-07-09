@@ -10,18 +10,18 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 	
 	var defaultOption = {
 		elem: "#currentTableId",// 构建的模型
-		url: "",// 数据 url 连接
+		url: "",// 資料 url 连接
 		loading: true,//是否加载
 		limit: 0, //每頁数量默认是每行数量的双倍
 		linenum: 4, //每行数量 2,3,4,6
 		currentPage: 1,//当前頁
-		data:[],       //静态数据
+		data:[],       //静态資料
 		limits:[],     //頁码
 		page: true, //是否分頁
 		layout: ['count', 'prev', 'page', 'next','limit', 'skip'],//分頁控件
 		request: {
 			pageName: 'page' //頁码的参数名稱，默认：page
-			, limitName: 'limit' //每頁数据量的参数名，默认：limit
+			, limitName: 'limit' //每頁資料量的参数名，默认：limit
 			, idName: 'id'       //主键名稱，默认：id
 			, titleName: 'title' //标题名稱，默认：title
 			, imageName: 'image' //图片地址，默认：image
@@ -29,11 +29,11 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 			, timeName: 'time' //时间名稱，默认：time
 		},
 		response: {
-			statusName: 'code' //规定数据狀態的字段名稱，默认：code
+			statusName: 'code' //规定資料狀態的字段名稱，默认：code
 			, statusCode: 0 //规定成功的狀態码，默认：0
-			, msgName: 'msg' //规定狀態信息的字段名稱，默认：msg
-			, countName: 'count' //规定数据总数的字段名稱，默认：count
-			, dataName: 'data' //规定数据列表的字段名稱，默认：data
+			, msgName: 'msg' //规定狀態訊息的字段名稱，默认：msg
+			, countName: 'count' //规定資料总数的字段名稱，默认：count
+			, dataName: 'data' //规定資料列表的字段名稱，默认：data
 		},
 		clickItem: function(data){},
 		done: function () {
@@ -95,7 +95,7 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 					html += "<div id='cardpage'></div>";
 				}
 				else {
-					html = "<p>没有数据</p>";
+					html = "<p>没有資料</p>";
 				}
 				$(option.elem).html(html);
 				if (option.page) {
@@ -131,7 +131,7 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 				html += "<div id='cardpage'></div>";
 			}
 			else {
-				html = "<p>没有数据</p>";
+				html = "<p>没有資料</p>";
 			}
 			$(option.elem).html(html);
 			if (option.page) {

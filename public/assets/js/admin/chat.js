@@ -46,7 +46,7 @@ var types=function(){
             e = e || window.event;
             if (e.ctrlKey && e.keyCode == 13) {
                 if ($('#text_in').val() == "" || $.cookie("service") == '' ) {
-                    layer.msg('請輸入信息');
+                    layer.msg('請輸入訊息');
                 } else {
                     send();
                 }
@@ -64,7 +64,7 @@ var chaton = function () {
     var height =document.body.clientHeight;
     $("#chat_list").css("height",(height -110)+"px");
     $("#wait_list").css("height",(height-110)+"px");
-    //判断当前有无排队人员
+    //判断当前有無排队人员
     getwait();
     getblacklist();
     $.cookie("hid","");
@@ -136,7 +136,7 @@ function getreply(){
     })
 }
 
-// 选择对象
+// 選擇对象
 
 function choose(vid) {
     if (choose_lock) {
@@ -151,7 +151,7 @@ function choose(vid) {
     $("#v"+data.channel).addClass("onclick");
     $(".chatbox").removeClass('hide');
     $(".no_chats").addClass('hide');
-    //标记已看信息
+    //标记已看訊息
     getwatch(data.visiter_id);
     chaton();
     getchat();
@@ -230,7 +230,7 @@ var send = function () {
         var img = json.avater;
     }
     if (msg == "") {
-        layer.msg('請輸入信息');
+        layer.msg('請輸入訊息');
     } else {
         var sid = $('#channel').text();
         var se = $("#chatmsg_submit").attr('name');
@@ -559,7 +559,7 @@ function put() {
 
     } else {
 
-        layer.msg("请选择图片", {icon: 2});
+        layer.msg("请選擇图片", {icon: 2});
     }
 }
 
@@ -634,7 +634,7 @@ $(document).on('click','.outer-left .customer img,.outer-right .service img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存数据
+    // 如果图片被缓存，则直接返回缓存資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;

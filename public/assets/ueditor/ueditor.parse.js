@@ -567,7 +567,7 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * 提取数据
+     * 提取資料
      */
     function extractChartData ( rootNode ) {
 
@@ -594,7 +594,7 @@ UE.parse.register('charts',function( utils ){
             metaConfig = {},
             data = [];
 
-        //提取table数据
+        //提取table資料
         for ( var i = 0, row; row = tableNode.rows[ i ]; i++ ) {
 
             var rowData = [];
@@ -610,7 +610,7 @@ UE.parse.register('charts',function( utils ){
 
         }
 
-        //解析元信息
+        //解析元訊息
         meta = meta.split( ";" );
         for ( var i = 0, metaData; metaData = meta[ i ]; i++ ) {
 
@@ -793,17 +793,17 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //根据config解析出正确的类别和图表数据信息
+    //根据config解析出正确的类别和图表資料訊息
     function analysisConfig ( config ) {
 
         var series = [],
-        //数据类别
+        //資料类别
             categories = [],
             result = [],
             data = config.data,
             meta = config.meta;
 
-        //数据对齐方式为相反的方式， 需要反转数据
+        //資料对齐方式为相反的方式， 需要反转資料
         if ( meta.dataFormat != "1" ) {
 
             for ( var i = 0, len = data.length; i < len ; i++ ) {

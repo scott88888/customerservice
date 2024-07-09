@@ -104,7 +104,7 @@ baidu.each = baidu.array.forEach = baidu.array.each = function (source, iterator
 };
 
 /**
- * 对语言层面的封装，包括类型判断、模块扩展、继承基类以及对象自定义事件的支持。
+ * 对語言层面的封装，包括类型判断、模块扩展、继承基类以及对象自定义事件的支持。
  * @namespace baidu.lang
  */
 baidu.lang = baidu.lang || {};
@@ -173,7 +173,7 @@ baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.
  * @function
  * @grammar baidu.dom.insertHTML(element, position, html)
  * @param {HTMLElement|string} element 目标元素或目标元素的id
- * @param {string} position 插入html的位置信息，取值为beforeBegin,afterBegin,beforeEnd,afterEnd
+ * @param {string} position 插入html的位置訊息，取值为beforeBegin,afterBegin,beforeEnd,afterEnd
  * @param {string} html 要插入的html
  * @remark
  * 
@@ -303,7 +303,7 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信权限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许设置执行無缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
  * @param {boolean} options.devicefont 			设置静态文本对象是否以设备字体呈现。允许值：true/false
  * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object} 	options.vars 				要传递给flash的参数，支持JSON或string类型。
@@ -446,7 +446,7 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信权限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置执行无缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许设置执行無缝跳格，从而使使用者能跳出flash应用程序。该参数只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
  * @param {boolean} options.devicefont 			设置静态文本对象是否以设备字体呈现。允许值：true/false
  * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object} 	options.vars 				要传递给flash的参数，支持JSON或string类型。
@@ -687,7 +687,7 @@ baidu.flash._Base = (function(){
          * 调用flash接口的统一入口
          * @param {String} fnName 调用的函数名
          * @param {Array} params 传入的参数组成的数组,若不许要参数，需传入空数组
-         * @param {Function} [callBack] 异步调用后将返回值作为参数的调用回调函数，如无返回值，可以不传入此参数
+         * @param {Function} [callBack] 异步调用后将返回值作为参数的调用回调函数，如無返回值，可以不传入此参数
          * @return {Null}
         */
         me.call = function(fnName, params, callBack){
@@ -761,7 +761,7 @@ baidu.flash._Base = (function(){
  * @config {Number} vars.gridHeight 每一个预览图片所占的高度，应该为flash高的整除
  * @config {Number} vars.picWidth 单张预览图片的宽度
  * @config {Number} vars.picHeight 单张预览图片的高度
- * @config {String} vars.uploadDataFieldName POST请求中图片数据的key,默认值'picdata'
+ * @config {String} vars.uploadDataFieldName POST请求中图片資料的key,默认值'picdata'
  * @config {String} vars.picDescFieldName POST请求中图片描述的key,默认值'picDesc'
  * @config {Number} vars.maxSize 文件的最大体积,单位'MB'
  * @config {Number} vars.compressSize 上传前如果图片体积超过该值，会先压缩
@@ -773,7 +773,7 @@ baidu.flash._Base = (function(){
  * @param {String} backgroundUrl 背景图片路径
  * @param {String} listBacgroundkUrl 布局控件背景
  * @param {String} buttonUrl 按钮图片不背景
- * @param {String|Function} selectFileCallback 选择文件的回调
+ * @param {String|Function} selectFileCallback 選擇文件的回调
  * @param {String|Function} exceedFileCallback文件超出限制的最大体积时的回调
  * @param {String|Function} deleteFileCallback 刪除文件的回调
  * @param {String|Function} startUploadCallback 开始上传某个文件时的回调
@@ -918,7 +918,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
      * 执行上传操作
      * @param {String} url 上传的url
      * @param {String} fieldName 上传的表單字段名
-     * @param {Object} postData 键值对，上传的POST数据
+     * @param {Object} postData 键值对，上传的POST資料
      * @param {Number|Array|null|-1} [index]上传的文件序列
      *                            Int值上传该文件
      *                            Array一次串行上传该序列文件
@@ -1010,7 +1010,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     /**
      * 设置可选文件大小限制，以兆M为单位
      * @public
-     * @param {Number} num,0为无限制
+     * @param {Number} num,0为無限制
      * @return {Null}
      */
     me.setMaxSize = function(num){
@@ -1085,19 +1085,19 @@ baidu.sio._removeScriptTag = function(scr){
 
 
 /**
- * 通过script标签加载数据，加载完成由浏览器端触发回调
+ * 通过script标签加载資料，加载完成由浏览器端触发回调
  * @name baidu.sio.callByBrowser
  * @function
  * @grammar baidu.sio.callByBrowser(url, opt_callback, opt_options)
- * @param {string} url 加载数据的url
- * @param {Function|string} opt_callback 数据加载结束时调用的函数或函数名
+ * @param {string} url 加载資料的url
+ * @param {Function|string} opt_callback 資料加载结束时调用的函数或函数名
  * @param {Object} opt_options 其他可选项
  * @config {String} [charset] script的字符集
  * @config {Integer} [timeOut] 超时时间，超过这个时间将不再响应本请求，并触发onfailure函数
  * @config {Function} [onfailure] timeOut设定后才生效，到达超时时间时触发本函数
  * @remark
  * 1、与callByServer不同，callback参数只支持Function类型，不支持string。
- * 2、如果请求了一个不存在的頁面，callback函数在IE/opera下也会被调用，因此使用者需要在onsuccess函数中判断数据是否正确加载。
+ * 2、如果请求了一个不存在的頁面，callback函数在IE/opera下也会被调用，因此使用者需要在onsuccess函数中判断資料是否正确加载。
  * @meta standard
  * @see baidu.sio.callByServer
  */
@@ -1141,13 +1141,13 @@ baidu.sio.callByBrowser = function (url, opt_callback, opt_options) {
 };
 
 /**
- * 通过script标签加载数据，加载完成由服务器端触发回调
+ * 通过script标签加载資料，加载完成由服务器端触发回调
  * @name baidu.sio.callByServer
  * @function
  * @grammar baidu.sio.callByServer(url, callback[, opt_options])
- * @param {string} url 加载数据的url.
+ * @param {string} url 加载資料的url.
  * @param {Function|string} callback 服务器端调用的函数或函数名。如果没有指定本参数，将在URL中寻找options['queryField']做为callback的方法名.
- * @param {Object} opt_options 加载数据时的选项.
+ * @param {Object} opt_options 加载資料时的选项.
  * @config {string} [charset] script的字符集
  * @config {string} [queryField] 服务器端callback请求字段名，默认为callback
  * @config {Integer} [timeOut] 超时时间(单位：ms)，超过这个时间将不再响应本请求，并触发onfailure函数

@@ -12,7 +12,7 @@ if (is_null($ossClient)) exit(1);
 
 /**
     创建一个直播频道
-    频道的名稱是test_rtmp_live。直播生成的m3u8文件叫做test.m3u8，该索引文件包含3片ts文件，每片ts文件的时长为5秒（这只是一个建议值，具体的时长取决于关键帧）。
+    频道的名稱是test_rtmp_live。直播生成的m3u8文件叫做test.m3u8，该索引文件包含3片ts文件，每片ts文件的时长为5秒（这只是一个建议值，具体的时长取决于關鍵帧）。
  */
 $config = new LiveChannelConfig(array(
             'description' => 'live channel test',
@@ -63,7 +63,7 @@ Common::println("bucket $bucket rtmp url: \n" . $play_url);
 $resp = $ossClient->putLiveChannelStatus($bucket, "test_rtmp_live", "enabled");
 
 /**
-    创建好直播频道之后调用getLiveChannelInfo可以得到频道相关的信息
+    创建好直播频道之后调用getLiveChannelInfo可以得到频道相关的訊息
  */
 $info = $ossClient->getLiveChannelInfo($bucket, 'test_rtmp_live');
 Common::println("bucket $bucket LiveChannelInfo:\n" . 
@@ -90,9 +90,9 @@ if (count($history->getLiveRecordList()) != 0)
 }
 
 /**
-    对于正在推流的频道调用get_live_channel_stat可以获得流的狀態信息。
+    对于正在推流的频道调用get_live_channel_stat可以获得流的狀態訊息。
     如果频道正在推流，那么stat_result中的所有字段都有意义。
-    如果频道闲置或者处于“Disabled”狀態，那么status为“Idle”或“Disabled”，其他字段无意义。
+    如果频道闲置或者处于“Disabled”狀態，那么status为“Idle”或“Disabled”，其他字段無意义。
  */
 $status = $ossClient->getLiveChannelStatus($bucket, "test_rtmp_live");
 Common::println("bucket $bucket listLiveChannel:\n" . 

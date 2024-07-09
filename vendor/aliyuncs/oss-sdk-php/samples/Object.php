@@ -370,7 +370,7 @@ function getObjectToLocalFile($ossClient, $bucket)
 
 /**
  * 拷贝object
- * 当目的object和源object完全相同时，表示修改object的meta信息
+ * 当目的object和源object完全相同时，表示修改object的meta訊息
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名稱
@@ -396,7 +396,7 @@ function copyObject($ossClient, $bucket)
 
 /**
  * 修改Object Meta
- * 利用copyObject接口的特性：当目的object和源object完全相同时，表示修改object的meta信息
+ * 利用copyObject接口的特性：当目的object和源object完全相同时，表示修改object的meta訊息
  *
  * @param OssClient $ossClient OssClient实例
  * @param string $bucket 存储空间名稱

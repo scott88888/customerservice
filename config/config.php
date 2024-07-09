@@ -31,7 +31,7 @@ return [
     'extra_file_list' => [APP_PATH . 'helper.php', THINK_PATH . 'helper' . EXT],
     // 默认输出类型
     'default_return_type' => 'html',
-    // 默认AJAX 数据返回格式,可选json xml ...
+    // 默认AJAX 資料返回格式,可选json xml ...
     'default_ajax_return' => 'json',
     // 默认JSONP格式返回的处理方法
     'default_jsonp_handler' => 'jsonpReturn',
@@ -39,11 +39,11 @@ return [
     'var_jsonp_handler' => 'callback',
     // 默认时区
     'default_timezone' => 'PRC',
-    // 是否開啟多语言
+    // 是否開啟多語言
     'lang_switch_on' => false,
     // 默认全局过滤方法 用逗号分隔多个
     'default_filter' => 'htmlspecialchars,trim',
-    // 默认语言
+    // 默认語言
     'default_lang' => 'zh-cn',
     // 应用类库后缀
     'class_suffix' => false,
@@ -160,9 +160,9 @@ return [
     // 异常頁面的模板文件
     'exception_tmpl' => APP_PATH . 'common' . DS . 'tpl' . DS . 'think_exception.tpl',
 
-    // 错误显示信息,非调试模式有效
+    // 错误显示訊息,非调试模式有效
     'error_message' => '',
-    // 显示错误信息
+    // 显示错误訊息
     'show_error_msg' => true,
     // 异常处理handle类 留空使用 \think\exception\Handle
     'exception_handle' => '',

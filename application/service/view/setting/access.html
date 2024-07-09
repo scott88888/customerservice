@@ -62,7 +62,7 @@
                 return;
             }
 
-            setTimeout("titleBlink()",500);//调节时间，单位毫秒。
+            setTimeout("titleBlink()",500);//调节時間，單位毫秒。
         }
 
         layui.use('element', function () {
@@ -92,7 +92,7 @@
 
             channelme.bind("on_chat", function (data) {
                 $.cookie("cu_com",'');
-                layer.msg('该访客被刪除');
+                layer.msg('该訪客被刪除');
                 getchat();
             });
             // 公共平道
@@ -119,7 +119,7 @@
                 })
             });
 
-            // 接受视频请求
+            // 接受视频請求
             channel.bind("video",function (data) {
                 getchat();
                 var msg = data.message;
@@ -129,7 +129,7 @@
                 var username =data.username;
                 layer.open({
                     type: 1,
-                    title: '申请框',
+                    title: '申請框',
                     area: ['260px', '160px'],
                     shade: 0.01,
                     fixed: true,
@@ -199,7 +199,7 @@
                 getchat();
             });
 
-            // 接受拒绝视频请求
+            // 接受拒绝视频請求
             channel.bind("video-refuse",function (data) {
                 layer.alert(data.message);
                 layer.closeAll('page');
@@ -279,11 +279,11 @@
                 $("#notices-icon").removeClass('hide');
 
                 console.log(data);
-                notify(data.message.visiter_name || '新访客', {
+                notify(data.message.visiter_name || '新訪客', {
                     body: str,
                     icon: data.message.avatar
                 }, function(notification) {
-                    //可直接打开通知notification相关联的tab窗口
+                    //可直接打開通知notification相關联的tab視窗
                     window.focus();
                     notification.close();
                     console.log('#v'+data.message.channel+' .visit_content');
@@ -296,7 +296,7 @@
             // 通知 遊客離線
             channel.bind("logout", function (data) {
 
-                //表示访客離線
+                //表示訪客離線
                 var cdata = $.cookie("cu_com");
                 var chas;
                 if (cdata) {
@@ -305,7 +305,7 @@
                 }
 
                 if (chas == data.message.chas) {
-                    //头像变灰
+                    //圖示变灰
                     $("#v_state").text("離線");
                 }
 
@@ -316,7 +316,7 @@
 
             channel.bind("geton", function (data) {
 
-                //表示访客線上
+                //表示訪客線上
                 var cdata = $.cookie("cu_com");
                 var chas;
                 if (cdata) {
@@ -324,7 +324,7 @@
                     chas = jsondata.channel;
                 }
                 if (chas == data.message.chas) {
-                    //头像变亮
+                    //圖示变亮
                     $("#img" + data.message.chas).removeClass("icon_gray");
                     $("#v_state").text("線上");
                 }
@@ -493,7 +493,7 @@
             btn2: function(index, layero){
                 //按钮【按钮二】的回调
 
-                //return false 開啟该代码可禁止点击该按钮關閉
+                //return false 開啟该程式碼可禁止點擊该按钮關閉
             }
             ,cancel: function(){
 
@@ -506,79 +506,79 @@
         <div class="my-setting">
                 <div class="head">
                     <div class="title">
-                        部署网頁组件（推荐）：网頁咨询组件同时支持桌面网站和移动网站，提供强大的使用者行为采集能力和系统对接能力
+                        部署網頁元件（建議）：網頁諮詢元件同時支援桌面網站和行動網站，提供強大的使用者行為擷取能力和系統對接能力
                     </div>
                    
                 </div>
                 <br />
                 <div class="contents">
-                    聊天框样式：
+                    聊天框樣式：
                     <select name="type" id="type" onchange="swith()" style="margin-left:20px;padding: 3px;font-size: 14px;border-radius: 15px;border: 1px solid #e5e3e9;height: 32px;">
-                            <!--<option value="0" selected>标准窗口</option>
-                            <option value="1">迷你窗口</option>-->
-                            <option value="2" selected>底部浮动</option>
-                            <option value="3">右侧浮动</option>
+                            <!--<option value="0" selected>标准視窗</option>
+                            <option value="1">迷你視窗</option>-->
+                            <option value="2" selected>底部浮動</option>
+                            <option value="3">右側浮動</option>
 
                     </select>
 
                     <button class="layui-btn layui-btn-normal" onclick="build()">更新JS文件</button>
                     <!--<button id="bulidhtml" class="layui-btn layui-btn-normal" onclick="show()" style="margin-left:10px
-">生成html</button>
+">產生html</button>
                     <button id="buildwechat" class="layui-btn layui-btn-normal" style="margin-left:10px
-" onclick="buildmp()">生成微信公众号連結</button>
+" onclick="buildmp()">產生微信公众号連結</button>
                     <button id="buildpersonal" class="layui-btn layui-btn-normal" style="margin-left:10px
-" onclick="buildpersonal()">生成我的专属連結</button>-->
+" onclick="buildpersonal()">產生我的专属連結</button>-->
                     {:hook('generatelinkhook', ['id'=>1])}
                     {:hook('testhook', ['id'=>1])}
                 </div>
             <br/>
             <div class="layui-card" style="background-color: #F3F3F3;" id="diy-kf-site">
-                <div class="layui-card-header">自定义设置(请设置好再点击生成)</div>
+                <div class="layui-card-header">自訂設定(請設定好再點擊產生)</div>
                 <div class="layui-card-body">
                     <form class="layui-form" id="form-diy">
                         <div class="layui-form-item">
-                            <label class="layui-form-label" style="width: 120px">開啟弹窗</label>
+                            <label class="layui-form-label" style="width: 120px">開啟彈窗</label>
                             <div class="layui-input-inline">
-                                <input type="checkbox" checked name="isopen" lay-skin="switch" lay-filter="switchTest" lay-text="开|关">
+                                <input type="checkbox" checked name="isopen" lay-skin="switch" lay-filter="switchTest" lay-text="開|关">
                             </div>
-                            <div class="layui-form-mid layui-word-aux">只对自定义窗口生成js有效</div>
+                            <div class="layui-form-mid layui-word-aux">只對自訂視窗產生js有效</div>
                         </div>
                         <div class="layui-form-item">
-                            <label class="layui-form-label" style="width: 120px">弹窗延时</label>
+                            <label class="layui-form-label" style="width: 120px">彈窗延時</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="open_delay" placeholder="聊天窗口延时时间" class="layui-input">
+                                <input type="text" name="open_delay" placeholder="聊天視窗延時時間" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux">单位秒，開啟弹窗有效（只对自定义窗口生成js有效）</div>
+                            <div class="layui-form-mid layui-word-aux">單位秒，開啟彈窗有效（只對自訂視窗產生js有效）</div>
                         </div>
                         <div class="layui-form-item">
-                        <label class="layui-form-label" style="width: 120px">弹窗高度</label>
+                        <label class="layui-form-label" style="width: 120px">彈窗高度</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="m_height" placeholder="聊天窗口弹窗高度" class="layui-input">
+                            <input type="text" name="m_height" placeholder="聊天視窗彈窗高度" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">单位像素，只针对手机端有效（只对自定义窗口生成js有效）</div>
+                        <div class="layui-form-mid layui-word-aux">單位像素，只針對手机端有效（只對自訂視窗產生js有效）</div>
                     </div>
                         <div class="layui-form-item">
-                            <label class="layui-form-label" style="width: 120px">悬浮條背景色</label>
+                            <label class="layui-form-label" style="width: 120px">懸浮條背景色</label>
                             <div class="layui-input-inline">
-                                <input type="hidden" name="m_kfbtbg" placeholder="请選擇颜色" class="layui-input" id="m_kfbtbg" value="#{$business['header']}">
+                                <input type="hidden" name="m_kfbtbg" placeholder="請選擇颜色" class="layui-input" id="m_kfbtbg" value="#{$business['header']}">
                             </div>
                             <div class="layui-inline">
                                 <div id="test-form"></div>
                             </div>
                             <div class="layui-inline">
-                                <div class="layui-form-mid layui-word-aux">客服悬浮條背景色</div>
+                                <div class="layui-form-mid layui-word-aux">客服懸浮條背景色</div>
                             </div>
                         </div>
                         <div class="layui-form-item">
-                            <label class="layui-form-label" style="width: 120px">主题颜色</label>
+                            <label class="layui-form-label" style="width: 120px">主題顏色</label>
                             <div class="layui-input-inline">
-                                <input type="hidden" name="theme" placeholder="请選擇颜色" class="layui-input" id="theme" value="#{$business['theme']}">
+                                <input type="hidden" name="theme" placeholder="請選擇颜色" class="layui-input" id="theme" value="#{$business['theme']}">
                             </div>
                             <div class="layui-inline">
                                 <div id="test-form-theme"></div>
                             </div>
                             <div class="layui-inline">
-                                <div class="layui-form-mid layui-word-aux">聊天窗口主题色</div>
+                                <div class="layui-form-mid layui-word-aux">聊天視窗主题色</div>
                             </div>
 
                         </div>
@@ -595,25 +595,25 @@
 
                           </pre>
                         <pre id="wolive-js" class="copy-js-content" readonly>
-                            部署如下代码
+                            部署如下程式碼
                             <div class="layui-code">
 
                             </div>
                         </pre>
                         <pre id="frontjs" class="copy-js-content hide" style="height: 250px">
-                            部署如下代码
+                            部署如下程式碼
                             <div class="layui-code">
 
                             </div>
                      </pre>
                      <pre id="minjs" class="copy-js-content hide" style="margin-bottom: 50px">
-                        如果需要新增自身网站使用者資料，请部署到上面代码之前，按注释要求新增：
+                        如果需要新增自身網站使用者資料，請部署到上面程式碼之前，按注释要求新增：
                          <div class="layui-code">
                               &lt;script type="text/javascript">
                             &nbsp;&nbsp;var ai_service={};
-                            &nbsp;&nbsp;ai_service.visiter_id='';//访客id
-                            &nbsp;&nbsp;ai_service.visiter_name='';//访客暱稱
-                            &nbsp;&nbsp;ai_service.avatar='';//访客头像绝对路径
+                            &nbsp;&nbsp;ai_service.visiter_id='';//訪客id
+                            &nbsp;&nbsp;ai_service.visiter_name='';//訪客暱稱
+                            &nbsp;&nbsp;ai_service.avatar='';//訪客圖示绝對路径
                             &nbsp;&nbsp;ai_service.product='{}';//json資料字符串
                             &lt;/script>
                          </div>
@@ -717,7 +717,7 @@ var build =function(){
          url:ROOT_URL+'/admin/set/createMinjs',
          dataType:'json',
            data:$("#form-diy").serialize(),
-           type:"POST",   //请求方式
+           type:"POST",   //請求方式
          success:function(res){
           if(res.code == 0){
             layer.msg(res.msg,{icon:1,end:function(){
@@ -744,7 +744,7 @@ var build =function(){
              url:ROOT_URL+'/admin/set/createMinDiyjs?type='+$type,
              dataType:'json',
              data:$("#form-diy").serialize(),
-             type:"POST",   //请求方式
+             type:"POST",   //請求方式
              success:function(res){
                  if(res.code == 0){
                      layer.msg(res.msg,{icon:1,end:function(){
@@ -778,7 +778,7 @@ var buildmp = function(){
             url:"{:url('admin/set/createWechatUrl','',true,true)}",
             dataType:'json',
             data:$("#form-diy").serialize(),
-            type:"POST",   //请求方式
+            type:"POST",   //請求方式
             success:function(res){
                 if(res.code == 0){
                     layer.msg(res.msg,{icon:1,end:function(){
@@ -823,7 +823,7 @@ var show =function(){
            url:ROOT_URL+'/admin/set/createHtml',
            dataType:'json',
            data:$("#form-diy").serialize(),
-           type:"POST",   //请求方式
+           type:"POST",   //請求方式
            success:function(res){
                if(res.code == 0){
                    layer.msg(res.msg,{icon:1,end:function(){

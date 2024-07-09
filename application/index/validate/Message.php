@@ -23,8 +23,8 @@ class Message extends Validate{
     * @var array
     */
    protected $message =[
-        "username.require"       => "请填写使用者名稱称",
-        'content.require'        => '请填写留言',
+        "username.require"       => "請填写使用者名稱称",
+        'content.require'        => '請填写留言',
    ];
   
 }

@@ -26,9 +26,9 @@
 
     -->
     <!-- 文件 -->
-    <!-- 所有 PHP 文件都必须使用 UTF-8 编码，文件头不允许出现 BOM 标记。 -->
+    <!-- 所有 PHP 文件都必须使用 UTF-8 编碼，文件头不允许出现 BOM 标记。 -->
     <rule ref="Generic.Files.ByteOrderMark"/>
-    <!-- 所有 PHP 文件都必须使用 Unix LF 格式作为行的结尾。 -->
+    <!-- 所有 PHP 文件都必须使用 Unix LF 格式作為行的结尾。 -->
     <rule ref="Generic.Files.LineEndings">
         <properties>
             <property name="eolChar" value="\n"/>
@@ -36,14 +36,14 @@
     </rule>
     <!-- 所有 PHP 文件都必须以一个空行结束。 -->
     <rule ref="Generic.Files.EndFileNewline"/>
-    <!-- 在只包含有 PHP 代码的文件中不允许使用 ?> 作为结束标签。 -->
+    <!-- 在只包含有 PHP 程式碼的文件中不允许使用 ?> 作為结束标签。 -->
     <rule ref="Zend.Files.ClosingTag"/>
-    <!-- 不允许使用short tag"<?"开头,必须使用"<?php"开头. -->
+    <!-- 不允许使用short tag"<?"開头,必须使用"<?php"開头. -->
     <rule ref="Generic.PHP.DisallowShortOpenTag"/>
     
 
     <!-- 缩进 -->
-    <!-- 代码缩进统一为 4 个空格，不允许使用 tab。 -->
+    <!-- 程式碼缩进统一為 4 个空格，不允许使用 tab。 -->
     <rule ref="Generic.WhiteSpace.ScopeIndent"/>
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
 
@@ -58,7 +58,7 @@
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
         <severity>0</severity>
     </rule>
-    <!-- 每一行代码只允许一條语句。 -->
+    <!-- 每一行程式碼只允许一條语句。 -->
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <!-- 方法与方法之间，都至少有一个空行。 -->
     <rule ref="Squiz.WhiteSpace.FunctionSpacing">
@@ -76,31 +76,31 @@
     <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
 
     <!-- 字符串 -->
-    <!-- 不带任何变量转换的字符串必须使用单引号。 -->
+    <!-- 不带任何变量转换的字符串必须使用單引号。 -->
     <!--rule ref="MeiLiBo.Strings.DoubleQuoteUsage"/-->
-    <!-- 不允许对两个不带变量的字符串使用连接符,应该用一个字符串表示. -->
+    <!-- 不允许對两个不带变量的字符串使用連結符,应该用一个字符串表示. -->
     <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
 
     <!-- 注释 -->
-    <!-- 行尾注释和结束代码的分号之间至少有一个空格 -->
-    <!-- 不允许试用#做为注释标记. -->
+    <!-- 行尾注释和结束程式碼的分号之间至少有一个空格 -->
+    <!-- 不允许试用#做為注释标记. -->
     <!-- 注释标记 // 或 # 之后必须有一个空格 -->
     <rule ref="MeiLiBo.Commenting.InlineComment"/>
 
-    <!-- 命名空间(namespace)和 use 關鍵字的使用 -->
+    <!-- 命名空間(namespace)和 use 關鍵字的使用 -->
     <!-- 在 namespace 声明之后必须有一个空行 -->
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
-    <!-- 所有 use 声明必须出现在 namespace 声明的后面 -->
+    <!-- 所有 use 声明必须出现在 namespace 声明的後面 -->
     <!-- 每一行只允许出现一个 use 關鍵字 -->
     <!-- 在 use 定义块之后必须有一个空行 -->
     <rule ref="PSR2.Namespaces.UseDeclaration"/>
 
     <!-- 类、类属性和类方法 -->
-    <!-- 类、接口和特征的名稱必须以大写开头，如：PartnerInfo、Partner_Info -->
+    <!-- 类、接口和特征的名稱必须以大写開头，如：PartnerInfo、Partner_Info -->
     <rule ref="MeiLiBo.Classes.ValidClassName"/>
     <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
-    <!-- 类方法的名稱和变量的名稱定义必须由小写开头，如：getBrandName, queryAll, $lastSql、$sqlQueries -->
-    <!-- 方法名不允许使用单一下划线开头来表示其 protected 和 private 的可见性 -->
+    <!-- 类方法的名稱和变量的名稱定义必须由小写開头，如：getBrandName, queryAll, $lastSql、$sqlQueries -->
+    <!-- 方法名不允许使用單一下划线開头来表示其 protected 和 private 的可见性 -->
     <rule ref="MeiLiBo.Classes.ValidMethodName"/>
     <!-- 一个文件中只能包含类、接口和特征中的一个,不允许出现多个. -->
     <rule ref="Generic.Files.OneClassPerFile"/>
@@ -108,14 +108,14 @@
     <rule ref="Generic.Files.OneInterfacePerFile"/>
 
     <!-- 类常量 -->
-    <!-- 类的常量定义必须全部为大写，并用下划线分割每个单词，如：BRAND_DRAFT、BRAND_DELETED -->
+    <!-- 类的常量定义必须全部為大写，并用下划线分割每个單词，如：BRAND_DRAFT、BRAND_DELETED -->
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
 
-    <!-- 扩展(extends)和实现(implements) -->
-    <!-- 關鍵字 public,function,extends,implements以及类名只用一个空格隔开,不能用两个或两个以上的空格. -->
+    <!-- 扩展(extends)和實現(implements) -->
+    <!-- 關鍵字 public,function,extends,implements以及类名只用一个空格隔開,不能用两个或两个以上的空格. -->
     <!-- 關鍵字 extends 和 implements 必须和类名在同一行 -->
-    <!-- 开始大括号必须在一个独立的行，结束大括号必须在下一行或代码块结束后的下一行。 -->
-    <!-- 要实现的接口队列可以被写到多行，每一行都要有相同的缩进，第一个接口必须被写到新的一行，并且每一行只能有一个接口。 -->
+    <!-- 開始大括号必须在一个独立的行，结束大括号必须在下一行或程式碼块结束后的下一行。 -->
+    <!-- 要實現的接口队列可以被写到多行，每一行都要有相同的缩进，第一个接口必须被写到新的一行，并且每一行只能有一个接口。 -->
     <rule ref="MeiLiBo.Classes.ClassDeclaration"/>
 
     <!-- 类属性 -->
@@ -123,26 +123,26 @@
         所有类属性的前面必须定义其可见性。
         不允许使用 var 關鍵字来定义一个类属性。
         每一行只允许定义一个类属性。
-        类属性名稱不允许使用单一下划线开头来表示其 protected 和 private 的可见性。
+        类属性名稱不允许使用單一下划线開头来表示其 protected 和 private 的可见性。
     -->
     <rule ref="PSR2.Classes.PropertyDeclaration"/>
 
     <!-- 类方法 -->
     <!--
         所有类方法都必须定义其可见性(public/protected/private)。
-        方法名不允许使用单一下划线开头来表示其 protected 和 private 的可见性。
-        类方法定义的名稱后面不允许出现空格。开始大括号和方法名稱必须在同一行，
-        结束大括号必须在下一行或代码块结束后的下一行。在开始括号的后面和结束括号的前面都不允许出现空格。
+        方法名不允许使用單一下划线開头来表示其 protected 和 private 的可见性。
+        类方法定义的名稱後面不允许出现空格。開始大括号和方法名稱必须在同一行，
+        结束大括号必须在下一行或程式碼块结束后的下一行。在開始括号的後面和结束括号的前面都不允许出现空格。
     -->
     <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
     <rule ref="Squiz.Functions.FunctionDeclaration"/>
-    <!-- 类方法的参数 -->
+    <!-- 类方法的参數 -->
     <!--
-        在参数队列中，逗号之前不允许出现空格，逗号之后必须有一个空格。
-        在方法的参数队列中定义带默认值的参数时，必须放到队列的末尾。 
-        参数队列可以被写到多行，每一行都需要用一个同样的缩进，
-        第一个参数必须被写到新的一行，并且每一行只能有一个参数。
-        当参数队列被写到多行时，结束括号和开始大括号必须被写到一行，两者之间必须有一个空格。
+        在参數队列中，逗号之前不允许出现空格，逗号之后必须有一个空格。
+        在方法的参數队列中定义带默认值的参數时，必须放到队列的末尾。 
+        参數队列可以被写到多行，每一行都需要用一个同样的缩进，
+        第一个参數必须被写到新的一行，并且每一行只能有一个参數。
+        当参數队列被写到多行时，结束括号和開始大括号必须被写到一行，两者之间必须有一个空格。
     -->
     <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
         <properties>
@@ -156,38 +156,38 @@
     -->
     <!-- 已在MeiLiBo.Classes.ValidMethodName中处理了 -->
 
-    <!-- 类方法和一般函数(function)的调用 -->
+    <!-- 类方法和一般函數(function)的调用 -->
     <!-- 
-        当调用一个类方法或者一般函数时，方法或函数名稱和开始括号之间不允许出现空格，
-        在开始括号之后和结束括号之前都不允许出现空格。
-        在参数队列里，逗号之前不允许出现空格，逗号之后必须有一个空格。
-        参数队列可以被写到多行，每一行都需要用一个同样的缩进，
-        第一个参数必须被写到新的一行，并且每一行只能有一个参数。
+        当调用一个类方法或者一般函數时，方法或函數名稱和開始括号之间不允许出现空格，
+        在開始括号之后和结束括号之前都不允许出现空格。
+        在参數队列里，逗号之前不允许出现空格，逗号之后必须有一个空格。
+        参數队列可以被写到多行，每一行都需要用一个同样的缩进，
+        第一个参數必须被写到新的一行，并且每一行只能有一个参數。
     -->
     <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
     <rule ref="PEAR.Functions.FunctionCallSignature"/>
     
     <!-- 控制结构 -->
     <!--
-        控制结构的一般样式规则如下：
-            在控制结构的關鍵字后面必须有一个空格
-            开始括号之后不能出现空格
+        控制结构的一般樣式规则如下：
+            在控制结构的關鍵字後面必须有一个空格
+            開始括号之后不能出现空格
             结束括号之前不能出现空格
-            在结束括号和开始大括号之间必须有一个空格
-            代码块(结构体)必须有一个缩进
-            结束大括号必须在代码块结束后的下一行
-            每个代码块必须被封装到一个大括号内，以标准化代码结构，同时减少在新增代码时间引入错误的可能性。
+            在结束括号和開始大括号之间必须有一个空格
+            程式碼块(结构体)必须有一个缩进
+            结束大括号必须在程式碼块结束后的下一行
+            每个程式碼块必须被封装到一个大括号内，以标准化程式碼结构，同时减少在新增程式碼時間引入錯誤的可能性。
     -->
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
-    <!-- 必须用 elseif 代替 else if，让控制關鍵字看上去是一个单词，同时避免出现代码块逻辑错误。 -->
+    <!-- 必须用 elseif 代替 else if，让控制關鍵字看上去是一个單词，同时避免出现程式碼块逻辑錯誤。 -->
     <rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
 
     <!-- switch 和 case -->
     <!--
-        一个 case 声明相对于 switch 必须有一个缩进，關鍵字 break 必须和 case 代码块有相同的缩进。
-        当一个 case 代码块不需要 break 的时候必须加上注释描述，比如 // no break
+        一个 case 声明相對于 switch 必须有一个缩进，關鍵字 break 必须和 case 程式碼块有相同的缩进。
+        当一个 case 程式碼块不需要 break 的时候必须加上注释描述，比如 // no break
     -->
-    <!-- TODO switch后面的大括号不在同一行的情况还不能检测出来 -->
+    <!-- TODO switch後面的大括号不在同一行的情况还不能检测出来 -->
     <rule ref="PSR2.ControlStructures.SwitchDeclaration"/>
     <!-- 文档注释 -->
     <rule ref="MeiLiBo.Commenting.FileComment" />

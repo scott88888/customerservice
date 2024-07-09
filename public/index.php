@@ -41,7 +41,7 @@ define('registToken','41851672');
 define('AIKF_SALT','5g3j7hcawccxgfq4k1');
 define('AKF_VERSION','AI_KF');
 
-// 自定义一个 入口 目录
+// 自訂一个 入口 目录
 define('PUBLIC_PATH',__DIR__);
 // 定义 类的文件路径
 define('EXTEND_PATH','../extend/');

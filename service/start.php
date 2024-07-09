@@ -7,9 +7,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/Pusher.php';
 require_once __DIR__ . '/config.php';
 
-//WSS证书', '一般为fullchain.pem，宝塔默认位置：/www/server/panel/vhost/ssl/YOU DOMAIN/fullchain.pem'
+//WSS证书', '一般為fullchain.pem，宝塔默认位置：/www/server/panel/vhost/ssl/YOU DOMAIN/fullchain.pem'
 $ws_ssl_cert='';
-//WSS私钥', '一般为privkey.pem，宝塔默认位置：/www/server/panel/vhost/ssl/YOU DOMAIN/privkey.pem'
+//WSS私钥', '一般為privkey.pem，宝塔默认位置：/www/server/panel/vhost/ssl/YOU DOMAIN/privkey.pem'
 $ws_ssl_pk='';
 //&& strpos($whost,'wss://')!==false
 if(trim($ws_ssl_cert) && trim($ws_ssl_pk)){

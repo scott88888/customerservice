@@ -29,7 +29,7 @@ class File
         'json'        => false,
     ];
 
-    // 实例化并传入参数
+    // 实例化并传入参數
     public function __construct($config = [])
     {
         if (is_array($config)) {
@@ -41,7 +41,7 @@ class File
      * 日志写入接口
      * @access public
      * @param  array    $log 日志訊息
-     * @param  bool     $append 是否追加请求訊息
+     * @param  bool     $append 是否追加請求訊息
      * @return bool
      */
     public function save(array $log = [], $append = false)
@@ -142,12 +142,12 @@ class File
      * @param  array     $message 日志訊息
      * @param  string    $destination 日志文件
      * @param  bool      $apart 是否独立文件写入
-     * @param  bool      $append 是否追加请求訊息
+     * @param  bool      $append 是否追加請求訊息
      * @return bool
      */
     protected function write($message, $destination, $apart = false, $append = false)
     {
-        // 检测日志文件大小，超过配置大小则备份日志文件重新生成
+        // 检测日志文件大小，超过配置大小则备份日志文件重新產生
         $this->checkLogSize($destination);
 
         // 日志訊息封装
@@ -170,7 +170,7 @@ class File
     }
 
     /**
-     * 檢查日志文件大小并自动生成备份文件
+     * 檢查日志文件大小并自動產生备份文件
      * @access protected
      * @param  string    $destination 日志文件
      * @return void
@@ -259,7 +259,7 @@ class File
 
                 $memory_use = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
 
-                $time_str   = '[运行时间：' . number_format($runtime, 6) . 's] [吞吐率：' . $reqs . 'req/s]';
+                $time_str   = '[运行時間：' . number_format($runtime, 6) . 's] [吞吐率：' . $reqs . 'req/s]';
                 $memory_str = ' [内存消耗：' . $memory_use . 'kb]';
                 $file_load  = ' [文件加载：' . count(get_included_files()) . ']';
 

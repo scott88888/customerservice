@@ -23,10 +23,10 @@ class Token
     public static $handler;
 
     /**
-     * 连接Token驱动
+     * 連結Token驱動
      * @access public
-     * @param  array $options 配置数组
-     * @param  bool|string $name Token连接标识 true 强制重新连接
+     * @param  array $options 配置數组
+     * @param  bool|string $name Token連結標識 true 强制重新連結
      * @return Driver
      */
     public static function connect(array $options = [], $name = false)
@@ -56,9 +56,9 @@ class Token
     }
 
     /**
-     * 自动初始化Token
+     * 自動初始化Token
      * @access public
-     * @param  array $options 配置数组
+     * @param  array $options 配置數组
      * @return Driver
      */
     public static function init(array $options = [])
@@ -66,7 +66,7 @@ class Token
         if (is_null(self::$handler)) {
             if (empty($options) && 'complex' == Config::get('token.type')) {
                 $default = Config::get('token.default');
-                // 取得默认Token配置，并连接
+                // 取得默认Token配置，并連結
                 $options = Config::get('token.' . $default['type']) ?: $default;
             } elseif (empty($options)) {
                 $options = Config::get('token');
@@ -81,7 +81,7 @@ class Token
     /**
      * 判断Token是否可用(check别名)
      * @access public
-     * @param  string $token Token标识
+     * @param  string $token Token標識
      * @return bool
      */
     public static function has($token, $user_id)
@@ -91,7 +91,7 @@ class Token
 
     /**
      * 判断Token是否可用
-     * @param string $token Token标识
+     * @param string $token Token標識
      * @return bool
      */
     public static function check($token, $user_id)
@@ -102,7 +102,7 @@ class Token
     /**
      * 读取Token
      * @access public
-     * @param  string $token Token标识
+     * @param  string $token Token標識
      * @param  mixed $default 默认值
      * @return mixed
      */
@@ -114,9 +114,9 @@ class Token
     /**
      * 写入Token
      * @access public
-     * @param  string $token Token标识
+     * @param  string $token Token標識
      * @param  mixed $user_id 存储資料
-     * @param  int|null $expire 有效时间 0为永久
+     * @param  int|null $expire 有效時間 0為永久
      * @return boolean
      */
     public static function set($token, $user_id, $expire = null)
@@ -127,7 +127,7 @@ class Token
     /**
      * 刪除Token(delete别名)
      * @access public
-     * @param  string $token Token标识
+     * @param  string $token Token標識
      * @return boolean
      */
     public static function rm($token)

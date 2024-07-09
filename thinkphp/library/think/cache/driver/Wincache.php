@@ -14,7 +14,7 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * Wincache缓存驱动
+ * Wincache缓存驱動
  * @author    liu21st <liu21st@gmail.com>
  */
 class Wincache extends Driver
@@ -25,8 +25,8 @@ class Wincache extends Driver
     ];
 
     /**
-     * 构造函数
-     * @param array $options 缓存参数
+     * 构造函數
+     * @param array $options 缓存参數
      * @throws \BadFunctionCallException
      * @access public
      */
@@ -70,7 +70,7 @@ class Wincache extends Driver
      * @access public
      * @param string            $name 缓存变量名
      * @param mixed             $value  存储資料
-     * @param integer|\DateTime $expire  有效时间（秒）
+     * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
      */
     public function set($name, $value, $expire = null)
@@ -93,10 +93,10 @@ class Wincache extends Driver
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function inc($name, $step = 1)
@@ -106,10 +106,10 @@ class Wincache extends Driver
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function dec($name, $step = 1)

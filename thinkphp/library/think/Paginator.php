@@ -20,7 +20,7 @@ use Traversable;
 
 abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
 {
-    /** @var bool 是否为简洁模式 */
+    /** @var bool 是否為简洁模式 */
     protected $simple = false;
 
     /** @var Collection 資料集 */
@@ -32,10 +32,10 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     /** @var  integer 最后一頁 */
     protected $lastPage;
 
-    /** @var integer|null 資料总数 */
+    /** @var integer|null 資料总數 */
     protected $total;
 
-    /** @var  integer 每頁的数量 */
+    /** @var  integer 每頁的數量 */
     protected $listRows;
 
     /** @var bool 是否有下一頁 */
@@ -105,7 +105,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 取得頁码对应的連結
+     * 取得頁碼對应的連結
      *
      * @param $page
      * @return string
@@ -134,7 +134,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 自动取得当前頁码
+     * 自動取得当前頁碼
      * @param string $varPage
      * @param int    $default
      * @return int
@@ -151,7 +151,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 自动取得当前的path
+     * 自動取得当前的path
      * @return string
      */
     public static function getCurrentPath()
@@ -195,7 +195,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 创建一组分頁連結
+     * 建立一组分頁連結
      *
      * @param  int $start
      * @param  int $end
@@ -213,7 +213,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 设置URL锚点
+     * 設定URL锚點
      *
      * @param  string|null $fragment
      * @return $this
@@ -225,7 +225,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 新增URL参数
+     * 新增URL参數
      *
      * @param  array|string $key
      * @param  string|null  $value
@@ -249,7 +249,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 构造锚点字符串
+     * 构造锚點字符串
      *
      * @return string
      */

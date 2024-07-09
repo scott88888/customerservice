@@ -34,7 +34,7 @@ Class Index extends Base
           }
           $cdata['is_recycle'] = $web['is_recycle'];
           $cdata['is_delete'] = $web['is_delete'];
-          // 正在谈话人數
+          // 正在谈話人數
           $talknum =Admins::table('wolive_queue')->where(['business_id'=>$v])->where('state','normal')->where("service_id",'<>',0)->count();
           // 線上客服人數
           $services=Admins::table("wolive_service")->where(['business_id'=>$v,'state'=>'online'])->count();
@@ -42,7 +42,7 @@ Class Index extends Base
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$v])->where("service_id",0)->count();
           // 接入总人數
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$v)->count();
-          // 今日会话量
+          // 今日会話量
           $nowchat = Admins::table("wolive_chats")->where('business_id',$v)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();
           // 對話總數
           $totalchat =Admins::table('wolive_chats')->where('business_id',$v)->count();
@@ -83,7 +83,7 @@ Class Index extends Base
       foreach ($res as $vg) {
           $v =$vg['id'];
           $cdata=[];
-          // 正在谈话人數
+          // 正在谈話人數
          $talknum =Admins::table('wolive_queue')->where(['business_id'=>$login['business_id']])->where('state','normal')->where("service_id",'<>',0)->count();
           // 線上客服人數
           $services=Admins::table("wolive_service")->where(['business_id'=>$login['business_id'],'state'=>'online'])->count();
@@ -91,7 +91,7 @@ Class Index extends Base
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$login['business_id']])->where("service_id",0)->count();
           // 接入总人數
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$login['business_id'])->count();
-          // 今日会话量
+          // 今日会話量
           $nowchat = Admins::table("wolive_chats")->where('business_id',$login['business_id'])->where('timestamp','like',"{$time}%")->count();    
           // 對話總數
           $totalchat =Admins::table('wolive_chats')->where('business_id',$v)->count();
@@ -198,7 +198,7 @@ Class Index extends Base
  //            if ($res !== false) {
  //                return ['code'=>0,'msg'=>'操作成功'];
  //            } else {
- //                return ['code'=>1,'msg'=>'操作失敗，请重试'];
+ //                return ['code'=>1,'msg'=>'操作失敗，請重试'];
  //            }
  //        } else {
  //            $model = Business::get($id);

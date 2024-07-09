@@ -24,8 +24,8 @@ class Redis extends SessionHandler
         'password'     => '', // 密碼
         'select'       => 0, // 操作库
         'expire'       => 3600, // 有效期(秒)
-        'timeout'      => 0, // 超时时间(秒)
-        'persistent'   => true, // 是否长连接
+        'timeout'      => 0, // 超时時間(秒)
+        'persistent'   => true, // 是否長連結
         'session_name' => '', // sessionkey前缀
     ];
 
@@ -35,7 +35,7 @@ class Redis extends SessionHandler
     }
 
     /**
-     * 打开Session
+     * 打開Session
      * @access public
      * @param string $savePath
      * @param mixed  $sessName
@@ -50,7 +50,7 @@ class Redis extends SessionHandler
         }
         $this->handler = new \Redis;
 
-        // 建立连接
+        // 建立連結
         $func = $this->config['persistent'] ? 'pconnect' : 'connect';
         $this->handler->$func($this->config['host'], $this->config['port'], $this->config['timeout']);
 

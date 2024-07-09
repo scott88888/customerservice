@@ -8,9 +8,9 @@ $ossClient = Common::getOssClient();
 if (is_null($ossClient)) exit(1);
 $bucket = Common::getBucketName();
 
-//******************************* 简单使用 ****************************************************************
+//******************************* 简單使用 ****************************************************************
 
-//创建bucket
+//建立bucket
 $ossClient->createBucket($bucket, OssClient::OSS_ACL_TYPE_PUBLIC_READ_WRITE);
 Common::println("bucket $bucket created");
 
@@ -21,7 +21,7 @@ Common::println("bucket $bucket exist? " . ($doesExist ? "yes" : "no"));
 // 取得Bucket列表
 $bucketListInfo = $ossClient->listBuckets();
 
-// 设置bucket的ACL
+// 設定bucket的ACL
 $ossClient->putBucketAcl($bucket, OssClient::OSS_ACL_TYPE_PUBLIC_READ_WRITE);
 Common::println("bucket $bucket acl put");
 // 取得bucket的ACL
@@ -29,7 +29,7 @@ $acl = $ossClient->getBucketAcl($bucket);
 Common::println("bucket $bucket acl get: " . $acl);
 
 
-//******************************* 完整用法参考下面函数 ****************************************************
+//******************************* 完整用法参考下面函數 ****************************************************
 
 createBucket($ossClient, $bucket);
 doesBucketExist($ossClient, $bucket);
@@ -39,13 +39,13 @@ getBucketAcl($ossClient, $bucket);
 listBuckets($ossClient);
 
 /**
- * 创建一个存储空间
- * acl 指的是bucket的访问控制权限，有三种，私有读写，公共读私有写，公共读写。
+ * 建立一个存储空間
+ * acl 指的是bucket的訪問控制权限，有三种，私有读写，公共读私有写，公共读写。
  * 私有读写就是只有bucket的拥有者或授权使用者才有权限操作
- * 三种权限分别对应 (OssClient::OSS_ACL_TYPE_PRIVATE，OssClient::OSS_ACL_TYPE_PUBLIC_READ, OssClient::OSS_ACL_TYPE_PUBLIC_READ_WRITE)
+ * 三种权限分别對应 (OssClient::OSS_ACL_TYPE_PRIVATE，OssClient::OSS_ACL_TYPE_PUBLIC_READ, OssClient::OSS_ACL_TYPE_PUBLIC_READ_WRITE)
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 要创建的存储空间名稱
+ * @param string $bucket 要建立的存储空間名稱
  * @return null
  */
 function createBucket($ossClient, $bucket)
@@ -64,7 +64,7 @@ function createBucket($ossClient, $bucket)
  *  判断Bucket是否存在
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  */
 function doesBucketExist($ossClient, $bucket)
 {
@@ -83,10 +83,10 @@ function doesBucketExist($ossClient, $bucket)
 }
 
 /**
- * 刪除bucket，如果bucket不为空则bucket無法刪除成功， 不为空表示bucket既没有object，也没有未完成的multipart上传时的parts
+ * 刪除bucket，如果bucket不為空则bucket無法刪除成功， 不為空表示bucket既没有object，也没有未完成的multipart上传时的parts
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 待刪除的存储空间名稱
+ * @param string $bucket 待刪除的存储空間名稱
  * @return null
  */
 function deleteBucket($ossClient, $bucket)
@@ -102,10 +102,10 @@ function deleteBucket($ossClient, $bucket)
 }
 
 /**
- * 设置bucket的acl配置
+ * 設定bucket的acl配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function putBucketAcl($ossClient, $bucket)
@@ -126,7 +126,7 @@ function putBucketAcl($ossClient, $bucket)
  * 取得bucket的acl配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function getBucketAcl($ossClient, $bucket)

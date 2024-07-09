@@ -14,26 +14,26 @@ namespace think\exception;
 use think\Exception;
 
 /**
- * ThinkPHP错误异常
- * 主要用于封装 set_error_handler 和 register_shutdown_function 得到的错误
- * 除开从 think\Exception 继承的功能
+ * ThinkPHP錯誤异常
+ * 主要用于封装 set_error_handler 和 register_shutdown_function 得到的錯誤
+ * 除開从 think\Exception 继承的功能
  * 其他和PHP系统\ErrorException功能基本一样
  */
 class ErrorException extends Exception
 {
     /**
-     * 用于保存错误级别
+     * 用于保存錯誤级别
      * @var integer
      */
     protected $severity;
 
     /**
-     * 错误异常构造函数
-     * @param integer $severity 错误级别
-     * @param string  $message  错误详细訊息
+     * 錯誤异常构造函數
+     * @param integer $severity 錯誤级别
+     * @param string  $message  錯誤详细訊息
      * @param string  $file     出错文件路径
      * @param integer $line     出错行号
-     * @param array   $context  错误上下文，会包含错误触发处作用域内所有变量的数组
+     * @param array   $context  錯誤上下文，会包含錯誤触发处作用域内所有变量的數组
      */
     public function __construct($severity, $message, $file, $line, array $context = [])
     {
@@ -47,8 +47,8 @@ class ErrorException extends Exception
     }
 
     /**
-     * 取得错误级别
-     * @return integer 错误级别
+     * 取得錯誤级别
+     * @return integer 錯誤级别
      */
     final public function getSeverity()
     {

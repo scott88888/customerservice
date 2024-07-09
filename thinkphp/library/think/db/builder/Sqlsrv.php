@@ -15,7 +15,7 @@ use think\db\Builder;
 use think\db\Expression;
 
 /**
- * Sqlsrv資料库驱动
+ * Sqlsrv資料库驱動
  */
 class Sqlsrv extends Builder
 {

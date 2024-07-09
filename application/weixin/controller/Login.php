@@ -27,9 +27,9 @@ class Login extends Controller
             $wechat = WechatPlatform::get(['business_id' => $this->business_id]);
             $appid = $wechat['app_id'];
             $appsecret = $wechat['app_secret'];
-            $weixin = file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$appsecret&code=$code&grant_type=authorization_code");//通过code换取网頁授权access_token
-            $jsondecode = json_decode($weixin); //对JSON格式的字符串进行编码
-            $array = get_object_vars($jsondecode);//转换成数组
+            $weixin = file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$appsecret&code=$code&grant_type=authorization_code");//通過code换取網頁授权access_token
+            $jsondecode = json_decode($weixin); //對JSON格式的字符串进行编碼
+            $array = get_object_vars($jsondecode);//转换成數组
             $openid = $array['openid'];//输出openid
             $service = Service::get(['open_id' => $openid,'business_id' => $this->business_id ]);
             empty($service) && $this->redirect('admin/login/index',['business_id'=>$this->business_id]);

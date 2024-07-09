@@ -87,7 +87,7 @@ class Cx extends Taglib
         $mod    = isset($tag['mod']) ? $tag['mod'] : '2';
         $offset = !empty($tag['offset']) && is_numeric($tag['offset']) ? intval($tag['offset']) : 0;
         $length = !empty($tag['length']) && is_numeric($tag['length']) ? intval($tag['length']) : 'null';
-        // 允许使用函数设定資料集 <volist name=":fun('arg')" id="vo">{$vo.name}</volist>
+        // 允许使用函數设定資料集 <volist name=":fun('arg')" id="vo">{$vo.name}</volist>
         $parseStr = '<?php ';
         $flag     = substr($name, 0, 1);
         if (':' == $flag) {
@@ -99,7 +99,7 @@ class Cx extends Taglib
         }
 
         $parseStr .= 'if(is_array(' . $name . ') || ' . $name . ' instanceof \think\Collection || ' . $name . ' instanceof \think\Paginator): $' . $key . ' = 0;';
-        // 设置了输出数组长度
+        // 設定了输出數组長度
         if (0 != $offset || 'null' != $length) {
             $parseStr .= '$__LIST__ = is_array(' . $name . ') ? array_slice(' . $name . ',' . $offset . ',' . $length . ', true) : ' . $name . '->slice(' . $offset . ',' . $length . ', true); ';
         } else {
@@ -149,7 +149,7 @@ class Cx extends Taglib
         $length = !empty($tag['length']) && is_numeric($tag['length']) ? intval($tag['length']) : 'null';
 
         $parseStr = '<?php ';
-        // 支持用函数传数组
+        // 支持用函數传數组
         if (':' == substr($name, 0, 1)) {
             $var  = '$_' . uniqid();
             $name = $this->autoBuildVar($name);
@@ -159,7 +159,7 @@ class Cx extends Taglib
             $name = $this->autoBuildVar($name);
         }
         $parseStr .= 'if(is_array(' . $name . ') || ' . $name . ' instanceof \think\Collection || ' . $name . ' instanceof \think\Paginator): ';
-        // 设置了输出数组长度
+        // 設定了输出數组長度
         if (0 != $offset || 'null' != $length) {
             if (!isset($var)) {
                 $var = '$_' . uniqid();
@@ -172,13 +172,13 @@ class Cx extends Taglib
         $parseStr .= 'if( count(' . $var . ')==0 ) : echo "' . $empty . '" ;';
         $parseStr .= 'else: ';
 
-        // 设置了索引项
+        // 設定了索引项
         if (isset($tag['index'])) {
             $index = $tag['index'];
             $parseStr .= '$' . $index . '=0; ';
         }
         $parseStr .= 'foreach(' . $var . ' as $' . $key . '=>$' . $item . '): ';
-        // 设置了索引项
+        // 設定了索引项
         if (isset($tag['index'])) {
             $index = $tag['index'];
             if (isset($tag['mod'])) {
@@ -386,7 +386,7 @@ class Cx extends Taglib
 
     /**
      * present标签解析
-     * 如果某个变量已经设置 则输出内容
+     * 如果某个变量已经設定 则输出内容
      * 格式： {present name="" }content{/present}
      * @access public
      * @param array $tag 标签属性
@@ -403,7 +403,7 @@ class Cx extends Taglib
 
     /**
      * notpresent标签解析
-     * 如果某个变量没有设置，则输出内容
+     * 如果某个变量没有設定，则输出内容
      * 格式： {notpresent name="" }content{/notpresent}
      * @access public
      * @param array $tag 标签属性
@@ -420,7 +420,7 @@ class Cx extends Taglib
 
     /**
      * empty标签解析
-     * 如果某个变量为empty 则输出内容
+     * 如果某个变量為empty 则输出内容
      * 格式： {empty name="" }content{/empty}
      * @access public
      * @param array $tag 标签属性
@@ -437,7 +437,7 @@ class Cx extends Taglib
 
     /**
      * notempty标签解析
-     * 如果某个变量不为empty 则输出内容
+     * 如果某个变量不為empty 则输出内容
      * 格式： {notempty name="" }content{/notempty}
      * @access public
      * @param array $tag 标签属性
@@ -494,7 +494,7 @@ class Cx extends Taglib
         $type     = isset($tag['type']) ? strtolower($tag['type']) : '';
         $parseStr = '';
         $endStr   = '';
-        // 判断是否存在加载條件 允许使用函数判断(默认为isset)
+        // 判断是否存在加载條件 允许使用函數判断(默认為isset)
         if (isset($tag['value'])) {
             $name = $tag['value'];
             $name = $this->autoBuildVar($name);
@@ -579,13 +579,13 @@ class Cx extends Taglib
      */
     public function tagFor($tag, $content)
     {
-        //设置默认值
+        //設定默认值
         $start      = 0;
         $end        = 0;
         $step       = 1;
         $comparison = 'lt';
         $name       = 'i';
-        $rand       = rand(); //新增随机数，防止嵌套变量冲突
+        $rand       = rand(); //新增随机數，防止嵌套变量冲突
         //取得属性
         foreach ($tag as $key => $value) {
             $value = trim($value);
@@ -621,8 +621,8 @@ class Cx extends Taglib
     }
 
     /**
-     * url函数的tag标签
-     * 格式：{url link="模块/控制器/方法" vars="参数" suffix="true或者false 是否带有后缀" domain="true或者false 是否携带域名" /}
+     * url函數的tag标签
+     * 格式：{url link="模块/控制器/方法" vars="参數" suffix="true或者false 是否带有后缀" domain="true或者false 是否携带域名" /}
      * @access public
      * @param array $tag 标签属性
      * @param string $content 标签内容
@@ -638,7 +638,7 @@ class Cx extends Taglib
     }
 
     /**
-     * function标签解析 匿名函数，可实现递归
+     * function标签解析 匿名函數，可實現递归
      * 使用：
      * {function name="func" vars="$data" call="$list" use="&$a,&$b"}
      *      {if is_array($data)}

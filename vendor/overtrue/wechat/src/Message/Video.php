@@ -52,7 +52,7 @@ class Video extends AbstractMessage
                             ];
 
     /**
-     * 设置视频消息.
+     * 設定视频消息.
      *
      * @param string $mediaId
      *
@@ -66,7 +66,7 @@ class Video extends AbstractMessage
     }
 
     /**
-     * 设置视频封面.
+     * 設定视频封面.
      *
      * @param string $mediaId
      *

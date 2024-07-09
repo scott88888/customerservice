@@ -1,7 +1,7 @@
 <?php
 defined('UEDITORPATH') OR exit('No direct script access allowed');
 
-header('Access-Control-Allow-Origin:*'); //临时处理，后面在强化它
+header('Access-Control-Allow-Origin:*'); //临时处理，後面在强化它
 header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');
 
 //chdir(__DIR__);
@@ -12,7 +12,7 @@ if (is_file("./assets/ueditor/php/config.php")) {
 	$CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents(APP_PATH."./assets/ueditor/php/config.json")), true);
 } else {
 	echo json_encode(array(
-		'state'=> '無权限访问./assets/ueditor/php/config.php文件'
+		'state'=> '無权限訪問./assets/ueditor/php/config.php文件'
 	), JSON_UNESCAPED_UNICODE);exit;
 }
 
@@ -23,7 +23,7 @@ if (isset($CONFIG['imageAltValue']) && $CONFIG['imageAltValue'] == 'name') {
 }
 if(!isset($_GET['action'])){
     echo json_encode(array(
-        'state'=> '参数非法'
+        'state'=> '参數非法'
     ), JSON_UNESCAPED_UNICODE);exit;
 }
 
@@ -67,7 +67,7 @@ $action = $_GET['action'];
 
         default:
             $result = json_encode(array(
-                'state'=> '请求地址出错'
+                'state'=> '請求地址出错'
             ), JSON_UNESCAPED_UNICODE);
             break;
     }
@@ -79,7 +79,7 @@ if (isset($_GET["callback"])) {
         echo htmlspecialchars($_GET["callback"]) . '(' . $result . ')';
     } else {
         echo json_encode(array(
-            'state'=> 'callback参数不合法'
+            'state'=> 'callback参數不合法'
         ), JSON_UNESCAPED_UNICODE);
     }
 } else {

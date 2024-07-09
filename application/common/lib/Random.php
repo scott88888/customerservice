@@ -3,15 +3,15 @@
 namespace app\common\lib;
 
 /**
- * 随机生成类
+ * 随机產生类
  */
 class Random
 {
 
     /**
-     * 生成数字和字母
+     * 產生數字和字母
      *
-     * @param int $len 长度
+     * @param int $len 長度
      * @return string
      */
     public static function alnum($len = 6)
@@ -20,9 +20,9 @@ class Random
     }
 
     /**
-     * 仅生成字符
+     * 仅產生字符
      *
-     * @param int $len 长度
+     * @param int $len 長度
      * @return string
      */
     public static function alpha($len = 6)
@@ -31,9 +31,9 @@ class Random
     }
 
     /**
-     * 生成指定长度的随机数字
+     * 產生指定長度的随机數字
      *
-     * @param int $len 长度
+     * @param int $len 長度
      * @return string
      */
     public static function numeric($len = 4)
@@ -42,9 +42,9 @@ class Random
     }
 
     /**
-     * 数字和字母组合的随机字符串
+     * 數字和字母组合的随机字符串
      *
-     * @param int $len 长度
+     * @param int $len 長度
      * @return string
      */
     public static function nozero($len = 4)
@@ -53,9 +53,9 @@ class Random
     }
 
     /**
-     * 能用的随机数生成
+     * 能用的随机數產生
      * @param string $type 类型 alpha/alnum/numeric/nozero/unique/md5/encrypt/sha1
-     * @param int $len 长度
+     * @param int $len 長度
      * @return string
      */
     public static function build($type = 'alnum', $len = 8)
@@ -92,12 +92,12 @@ class Random
     }
 
     /**
-     * 根据数组元素的概率获得键名
+     * 根據數组元素的概率获得键名
      *
      * @param array $ps array('p1'=>20, 'p2'=>30, 'p3'=>50);
-     * @param array $num 默认为1,即随机出来的数量
-     * @param array $unique 默认为true,即当num>1时,随机出的数量是否唯一
-     * @return mixed 当num为1时返回键名,反之返回一维数组
+     * @param array $num 默认為1,即随机出来的數量
+     * @param array $unique 默认為true,即当num>1时,随机出的數量是否唯一
+     * @return mixed 当num為1时返回键名,反之返回一维數组
      */
     public static function lottery($ps, $num = 1, $unique = true)
     {
@@ -169,7 +169,7 @@ class Random
     }
 
     /**
-     * 取得全球唯一标识
+     * 取得全球唯一標識
      * @return string
      */
     public static function uuid()

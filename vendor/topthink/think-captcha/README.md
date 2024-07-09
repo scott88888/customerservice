@@ -25,7 +25,7 @@ $this->validate($data,[
     'captcha|驗證碼'=>'required|captcha'
 ]);
 ~~~
-或者手动驗證
+或者手動驗證
 ~~~
 if(!captcha_check($captcha)){
  //驗證失敗

@@ -216,9 +216,9 @@
         </form>
     </div>
     <span class="app-info">
-        <span>可创建客服系统数量 <span style="color: #1E9FFF;">{$admin['app_max_count'] ?$admin['app_max_count']:'無限制'}</span></span>
+        <span>可建立客服系统數量 <span style="color: #1E9FFF;">{$admin['app_max_count'] ?$admin['app_max_count']:'無限制'}</span></span>
         {if condition="$admin['app_max_count'] != 0 "}
-            <span>，剩余创建个数 <span style="color: #1E9FFF;">{$admin['app_max_count'] - $app_count}</span></span>
+            <span>，剩余建立个數 <span style="color: #1E9FFF;">{$admin['app_max_count'] - $app_count}</span></span>
         {/if}
     </span>
 </div>
@@ -237,7 +237,7 @@
     <tr>
         <td colspan="5" class="text-center p-5">
             <!--<a href="javascript:" class="add-app">新增客服系统商城</a>-->
-            <span class="text-muted">暂無相关客服系统</>
+            <span class="text-muted">暫無相關客服系統</>
         </td>
     </tr>
     {/if}
@@ -269,7 +269,7 @@
             <a href="#" data-toggle="modal" class="edit-app" id="{:url('platform/app/edit', ['id' => $vo['id']])}" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="編輯" title="編輯"></a>
             <a class="modify-password"
                href="{:url('app/modifypassword', ['id' => $vo['id']])}"><img src="__image__/admin/A/change.png" alt="" title="重置密碼"></a>
-            <a href="#" data-toggle="modal" class="clean-app" id="{:url('platform/app/truncate', ['id' => $vo['id']])}" data-target="#clean-modal"><img src="__image__/platform/truncate.png" alt="清理磁盘" title="清理磁盘"></a>
+            <a href="#" data-toggle="modal" class="clean-app" id="{:url('platform/app/truncate', ['id' => $vo['id']])}" data-target="#clean-modal"><img src="__image__/platform/truncate.png" alt="清理磁碟" title="清理磁碟"></a>
             <input type="hidden" value="{:url('admin/login/index',['business_id'=>$vo['id']])}" id="link">
             <a class="recycle-btn"
                href="{:url('app/setRecycle', ['id' => $vo['id'],'action'=>1])}"><img src="__image__/admin/A/delete.png" alt="放入回收站" title="放入回收站"></a>
@@ -296,7 +296,7 @@
         <div class="modal-content">
             <!-- 标题 -->
             <div class="modal-header">
-                <div class="modal-title" id="myModalLabel"><b>清理磁盘空间</b><b style="color: red;">無法找回,请谨慎操作！！！</b></div>
+                <div class="modal-title" id="myModalLabel"><b>清理磁碟空間</b><b style="color: red;">無法找回,請谨慎操作！！！</b></div>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="clean-modal-body modal-body">
@@ -318,7 +318,7 @@
     });
     clipboard.on('error', function(e) {
         $.alert({
-            content:'複製失敗,请手动複製'
+            content:'複製失敗,請手動複製'
         });
     });
 
@@ -330,7 +330,7 @@
             confirm: function (val) {
                 if (!val) {
                     $.myToast({
-                        content: "密碼不能为空",
+                        content: "密碼不能為空",
                     });
                     return;
                 }

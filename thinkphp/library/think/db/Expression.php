@@ -21,7 +21,7 @@ class Expression
     protected $value;
 
     /**
-     * 创建一个查詢表达式
+     * 建立一个查詢表达式
      *
      * @param  string  $value
      * @return void

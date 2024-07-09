@@ -3,23 +3,23 @@ header('Content-Type: text/html; charset=utf-8;');
 ini_set("display_errors", "On");
 error_reporting(E_ALL | E_STRICT);
 
-// 开始时间
+// 開始時間
 $start_time = microtime(true);
 
 require '../src/Angular.php';
 
 // 配置
 $config = [
-    'debug'            => true, // 是否開啟调试, 開啟调试会实时生成缓存
+    'debug'            => true, // 是否開啟调试, 開啟调试会实时產生缓存
     'tpl_path'         => './view/', // 模板根目录
     'tpl_suffix'       => '.html', // 模板后缀
     'tpl_cache_path'   => './cache/', // 模板缓存目录
     'tpl_cache_suffix' => '.php', // 模板后缀
     'attr'             => 'php-', // 标签前缀
-    'max_tag'          => 10000, // 标签的最大解析次数
+    'max_tag'          => 10000, // 标签的最大解析次數
 ];
 
-// 自定义扩展, 列印变量的值
+// 自訂扩展, 列印变量的值
 \PHPAngular\Angular::extend('dump', function ($content, $param, $angular) {
     $old = $param['html'];
     $new = '<pre>';
@@ -30,7 +30,7 @@ $config = [
     return str_replace($old, $new, $content);
 });
 
-// 自定义扩展, 变量+1
+// 自訂扩展, 变量+1
 \PHPAngular\Angular::extend('inc', function ($content, $param, $angular) {
     $old = $param['html'];
     $new = '<?php ' . $param['value'] . '++; ?>';
@@ -38,7 +38,7 @@ $config = [
     return str_replace($old, $new, $content);
 });
 
-// 自定义扩展, 变量-1
+// 自訂扩展, 变量-1
 \PHPAngular\Angular::extend('dec', function ($content, $param, $angular) {
     $old = $param['html'];
     $new = '<?php ' . $param['value'] . '--; ?>';

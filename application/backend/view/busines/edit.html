@@ -13,11 +13,11 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">有效期</label>
                     <div class="layui-input-block">
-                        <input type="text" name="expire_time" lay-verify="required" placeholder="请選擇有效期" autocomplete="off" value="{if $business.expire_time != 0}{:date('Y-m-d H:i:s',$business.expire_time)}{else}0{/if}" class="layui-input" id="valid_time">
+                        <input type="text" name="expire_time" lay-verify="required" placeholder="請選擇有效期" autocomplete="off" value="{if $business.expire_time != 0}{:date('Y-m-d H:i:s',$business.expire_time)}{else}0{/if}" class="layui-input" id="valid_time">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">坐席数量</label>
+                    <label class="layui-form-label">坐席數量</label>
                     <div class="layui-input-block">
                         <input type="number" name="max_count" value="{$business.max_count}" lay-verify="required"  placeholder="請輸入坐席數量" class="layui-input" autocomplete="off">
                     </div>
@@ -25,7 +25,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">登入密碼</label>
                     <div class="layui-input-block">
-                        <input type="password" name="password" value=""  placeholder="输入则为重置密碼" class="layui-input" autocomplete="off">
+                        <input type="password" name="password" value=""  placeholder="输入则為重置密碼" class="layui-input" autocomplete="off">
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                     <label class="layui-form-label">默认語言</label>
                     <div class="layui-input-block">
                         <select name="lang">
-                            <option value="">请選擇默认語言</option>
+                            <option value="">請選擇默认語言</option>
                             {foreach name=":config('lang')" item="vo"}
                             <option value="{$key}" {if $business.lang == $key}selected{/if}>{$vo}</option>
                             {/foreach}
@@ -80,7 +80,7 @@ layui.use(['form','jquery','laydate'],function(){
                         icon: 1
                     });
                     setTimeout(function() {
-                        var index = parent.layer.getFrameIndex(window.name); //取得窗口索引
+                        var index = parent.layer.getFrameIndex(window.name); //取得視窗索引
                         parent.layer.close(index);
                         parent.layui.table.reload("dataTable");
                     }, 2000)

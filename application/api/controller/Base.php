@@ -21,13 +21,13 @@ class Base extends Controller
     }
 
     /**
-     * 檢查每次app请求的資料是否合法
+     * 檢查每次app請求的資料是否合法
      */
     public function checkRequestAuth() {
         // 首先需要取得headers
         $headers = request()->header();
 
-        // 基础参数校验
+        // 基础参數校验
 //        if(empty($headers['sign'])) {
 //            throw new ApiException([
 //                'msg' => 'sign不正确',

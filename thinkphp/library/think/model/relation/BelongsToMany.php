@@ -27,15 +27,15 @@ class BelongsToMany extends Relation
     protected $middle;
     // 中间表模型名稱
     protected $pivotName;
-    // 中间表模型对象
+    // 中间表模型對象
     protected $pivot;
     // 中间表資料名稱
     protected $pivotDataName = 'pivot';
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param Model  $parent     上级模型对象
+     * @param Model  $parent     上级模型對象
      * @param string $model      模型名
      * @param string $table      中间表名
      * @param string $foreignKey 关联模型外键
@@ -62,7 +62,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 设置中间表模型
+     * 設定中间表模型
      * @param $pivot
      * @return $this
      */
@@ -73,7 +73,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 设置中间表資料名稱
+     * 設定中间表資料名稱
      * @access public
      * @param  string $name
      * @return $this
@@ -137,7 +137,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 创建关联查詢Query对象
+     * 建立关联查詢Query對象
      * @return Query
      */
     protected function buildQuery()
@@ -218,7 +218,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 查找单條记录 如果不存在则抛出异常
+     * 查找單條记录 如果不存在则抛出异常
      * @access public
      * @param array|string|Query|\Closure $data
      * @return array|\PDOStatement|string|Model
@@ -229,10 +229,10 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
-     * @param integer $count    个数
+     * @param integer $count    个數
      * @param string  $id       关联表的统计字段
      * @param string  $joinType JOIN类型
      * @return Query
@@ -243,9 +243,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查詢條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      * @throws Exception
@@ -256,7 +256,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 设置中间表的查詢條件
+     * 設定中间表的查詢條件
      * @param      $field
      * @param null $op
      * @param null $condition
@@ -314,9 +314,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 预载入关联查詢（单个資料）
+     * 预载入关联查詢（單个資料）
      * @access public
-     * @param Model    $result      資料对象
+     * @param Model    $result      資料對象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -341,7 +341,7 @@ class BelongsToMany extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  資料对象
+     * @param Model    $result  資料對象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -381,7 +381,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 多对多 关联模型预查詢
+     * 多對多 关联模型预查詢
      * @access public
      * @param array  $where       关联预查詢條件
      * @param string $relation    关联名
@@ -439,9 +439,9 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 保存（新增）当前关联資料对象
+     * 保存（新增）当前关联資料對象
      * @access public
-     * @param mixed $data  資料 可以使用数组 关联模型对象 和 关联对象的主键
+     * @param mixed $data  資料 可以使用數组 关联模型對象 和 关联對象的主键
      * @param array $pivot 中间表额外資料
      * @return integer
      */
@@ -452,7 +452,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * 批量保存当前关联資料对象
+     * 批量保存当前关联資料對象
      * @access public
      * @param array $dataSet   資料集
      * @param array $pivot     中间表额外資料
@@ -476,7 +476,7 @@ class BelongsToMany extends Relation
     /**
      * 附加关联的一个中间表資料
      * @access public
-     * @param mixed $data  資料 可以使用数组、关联模型对象 或者 关联对象的主键
+     * @param mixed $data  資料 可以使用數组、关联模型對象 或者 关联對象的主键
      * @param array $pivot 中间表额外資料
      * @return array|Pivot
      * @throws Exception
@@ -493,10 +493,10 @@ class BelongsToMany extends Relation
                 $id = $model->getLastInsID();
             }
         } elseif (is_numeric($data) || is_string($data)) {
-            // 根据关联表主键直接写入中间表
+            // 根據关联表主键直接写入中间表
             $id = $data;
         } elseif ($data instanceof Model) {
-            // 根据关联表主键直接写入中间表
+            // 根據关联表主键直接写入中间表
             $relationFk = $data->getPk();
             $id         = $data->$relationFk;
         }
@@ -512,7 +512,7 @@ class BelongsToMany extends Relation
                 $result[] = $this->newPivot($pivot, true);
             }
             if (count($result) == 1) {
-                // 返回中间表模型对象
+                // 返回中间表模型對象
                 $result = $result[0];
             }
             return $result;
@@ -524,7 +524,7 @@ class BelongsToMany extends Relation
     /**
      * 判断是否存在关联資料
      * @access public
-     * @param  mixed $data  資料 可以使用关联模型对象 或者 关联对象的主键
+     * @param  mixed $data  資料 可以使用关联模型對象 或者 关联對象的主键
      * @return Pivot
      * @throws Exception
      */
@@ -547,7 +547,7 @@ class BelongsToMany extends Relation
     /**
      * 解除关联的一个中间表資料
      * @access public
-     * @param integer|array $data        資料 可以使用关联对象的主键
+     * @param integer|array $data        資料 可以使用关联對象的主键
      * @param bool          $relationDel 是否同时刪除关联表資料
      * @return integer
      */
@@ -556,10 +556,10 @@ class BelongsToMany extends Relation
         if (is_array($data)) {
             $id = $data;
         } elseif (is_numeric($data) || is_string($data)) {
-            // 根据关联表主键直接写入中间表
+            // 根據关联表主键直接写入中间表
             $id = $data;
         } elseif ($data instanceof Model) {
-            // 根据关联表主键直接写入中间表
+            // 根據关联表主键直接写入中间表
             $relationFk = $data->getPk();
             $id         = $data->$relationFk;
         }

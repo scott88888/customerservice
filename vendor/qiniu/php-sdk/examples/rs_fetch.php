@@ -23,7 +23,7 @@ if ($err !== null) {
     print_r($ret);
 }
 
-// 不指定key时，以文件内容的hash作为文件名
+// 不指定key时，以文件内容的hash作為文件名
 $key = null;
 list($ret, $err) = $bucketManager->fetch($url, $bucket, $key);
 echo "=====> fetch $url to bucket: $bucket  key: $(etag)\n";

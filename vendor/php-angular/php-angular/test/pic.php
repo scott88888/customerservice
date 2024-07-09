@@ -24,5 +24,5 @@ $view->display('pic');
 // $html = $view->fetch('index');
 // echo $html;
 
-// 取得混编代码
+// 取得混编程式碼
 // $php_code = $view->compiler('index');

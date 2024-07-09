@@ -46,7 +46,7 @@ class Choice extends Question
     }
 
     /**
-     * 设置可否多选
+     * 設定可否多选
      * @param bool $multiselect
      * @return self
      */
@@ -73,7 +73,7 @@ class Choice extends Question
     }
 
     /**
-     * 设置提示
+     * 設定提示
      * @param string $prompt
      * @return self
      */
@@ -85,7 +85,7 @@ class Choice extends Question
     }
 
     /**
-     * 设置错误提示訊息
+     * 設定錯誤提示訊息
      * @param string $errorMessage
      * @return self
      */

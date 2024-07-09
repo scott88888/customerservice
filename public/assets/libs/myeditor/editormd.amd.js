@@ -121,7 +121,7 @@
      * 
      * @param   {String} id           編輯器的ID
      * @param   {Object} options      配置选项 Key/Value
-     * @returns {Object} editormd     返回editormd对象
+     * @returns {Object} editormd     返回editormd對象
      */
     
     var editormd         = function (id, options) {
@@ -298,7 +298,7 @@
         
         lang : {
             name        : "zh-cn",
-            description : "开源線上Markdown編輯器<br/>Open source online Markdown editor.",
+            description : "開源線上Markdown編輯器<br/>Open source online Markdown editor.",
             tocTitle    : "目录",
             toolbar     : {
                 undo             : "撤销（Ctrl+Z）",
@@ -307,7 +307,7 @@
                 del              : "刪除线",
                 italic           : "斜体",
                 quote            : "引用",
-                ucwords          : "将每个单词首字母转成大写",
+                ucwords          : "将每个單词首字母转成大写",
                 uppercase        : "将所选转换成大写",
                 lowercase        : "将所选转换成小写",
                 h1               : "标题1",
@@ -322,18 +322,18 @@
                 link             : "連結",
                 "reference-link" : "引用連結",
                 image            : "新增图片",
-                code             : "行内代码",
-                "preformatted-text" : "预格式文本 / 代码块（缩进风格）",
-                "code-block"     : "代码块（多語言风格）",
+                code             : "行内程式碼",
+                "preformatted-text" : "预格式文本 / 程式碼块（缩进风格）",
+                "code-block"     : "程式碼块（多語言风格）",
                 table            : "新增表格",
-                datetime         : "日期时间",
+                datetime         : "日期時間",
                 emoji            : "Emoji表情",
                 "html-entities"  : "HTML实体字符",
                 pagebreak        : "插入分頁符",
                 "goto-line"      : "跳转到行",
                 watch            : "關閉实时预览",
                 unwatch          : "開啟实时预览",
-                preview          : "全窗口预览HTML（按 Shift + ESC还原）",
+                preview          : "全視窗预览HTML（按 Shift + ESC还原）",
                 fullscreen       : "全屏（按ESC还原）",
                 clear            : "清空",
                 search           : "搜索",
@@ -350,7 +350,7 @@
                     title    : "新增連結",
                     url      : "連結地址",
                     urlTitle : "連結标题",
-                    urlEmpty : "错误：请填写連結地址。"
+                    urlEmpty : "錯誤：請填写連結地址。"
                 },
                 referenceLink : {
                     title    : "新增引用連結",
@@ -358,9 +358,9 @@
                     url      : "連結地址",
                     urlId    : "連結ID",
                     urlTitle : "連結标题",
-                    nameEmpty: "错误：引用連結的名稱不能为空。",
-                    idEmpty  : "错误：请填写引用連結的ID。",
-                    urlEmpty : "错误：请填写引用連結的URL地址。"
+                    nameEmpty: "錯誤：引用連結的名稱不能為空。",
+                    idEmpty  : "錯誤：請填写引用連結的ID。",
+                    urlEmpty : "錯誤：請填写引用連結的URL地址。"
                 },
                 image : {
                     title    : "新增图片",
@@ -368,21 +368,21 @@
                     link     : "图片連結",
                     alt      : "图片描述",
                     uploadButton     : "本地上传",
-                    imageURLEmpty    : "错误：图片地址不能为空。",
-                    uploadFileEmpty  : "错误：上传的图片不能为空。",
-                    formatNotAllowed : "错误：只允许上传图片文件，允许上传的图片文件格式有："
+                    imageURLEmpty    : "錯誤：图片地址不能為空。",
+                    uploadFileEmpty  : "錯誤：上传的图片不能為空。",
+                    formatNotAllowed : "錯誤：只允许上传图片文件，允许上传的图片文件格式有："
                 },
                 preformattedText : {
-                    title             : "新增预格式文本或代码块", 
-                    emptyAlert        : "错误：请填写预格式文本或代码的内容。"
+                    title             : "新增预格式文本或程式碼块", 
+                    emptyAlert        : "錯誤：請填写预格式文本或程式碼的内容。"
                 },
                 codeBlock : {
-                    title             : "新增代码块",                    
-                    selectLabel       : "代码語言：",
-                    selectDefaultText : "请選擇代码語言",
+                    title             : "新增程式碼块",                    
+                    selectLabel       : "程式碼語言：",
+                    selectDefaultText : "請選擇程式碼語言",
                     otherLanguage     : "其他語言",
-                    unselectedLanguageAlert : "错误：请選擇代码所属的語言类型。",
-                    codeEmptyAlert    : "错误：请填写代码内容。"
+                    unselectedLanguageAlert : "錯誤：請選擇程式碼所属的語言类型。",
+                    codeEmptyAlert    : "錯誤：請填写程式碼内容。"
                 },
                 htmlEntities : {
                     title : "HTML 实体字符"
@@ -416,12 +416,12 @@
         },
         
         /**
-         * 构造函数/实例初始化
+         * 构造函數/实例初始化
          * Constructor / instance initialization
          * 
          * @param   {String}   id            編輯器的ID
          * @param   {Object}   [options={}]  配置选项 Key/Value
-         * @returns {editormd}               返回editormd的实例对象
+         * @returns {editormd}               返回editormd的实例對象
          */
         
         init : function (id, options) {
@@ -559,7 +559,7 @@
          * 所需组件加载队列
          * Required components loading queue
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         loadQueues : function() {
@@ -673,10 +673,10 @@
         },
         
         /**
-         * 设置 Editor.md 的整体主题，主要是工具栏
+         * 設定 Editor.md 的整体主题，主要是工具栏
          * Setting Editor.md theme
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setTheme : function(theme) {
@@ -692,10 +692,10 @@
         },
         
         /**
-         * 设置 CodeMirror（編輯区）的主题
+         * 設定 CodeMirror（編輯区）的主题
          * Setting CodeMirror (Editor area) theme
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setEditorTheme : function(theme) {  
@@ -716,7 +716,7 @@
          * setEditorTheme() 的别名
          * setEditorTheme() alias
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setCodeMirrorTheme : function (theme) {            
@@ -726,10 +726,10 @@
         },
         
         /**
-         * 设置 Editor.md 的主题
+         * 設定 Editor.md 的主题
          * Setting Editor.md theme
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setPreviewTheme : function(theme) {  
@@ -748,7 +748,7 @@
          * 配置和初始化CodeMirror组件
          * CodeMirror initialization
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setCodeMirror : function() { 
@@ -829,7 +829,7 @@
          * 配置和重配置CodeMirror的选项
          * CodeMirror setting options / resettings
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setCodeMirrorOption : function(key, value) {
@@ -843,7 +843,7 @@
          * 新增 CodeMirror 键盘快捷键
          * Add CodeMirror keyboard shortcuts key map
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         addKeyMap : function(map, bottom) {
@@ -856,7 +856,7 @@
          * 移除 CodeMirror 键盘快捷键
          * Remove CodeMirror keyboard shortcuts key map
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         removeKeyMap : function(map) {
@@ -870,7 +870,7 @@
          * Goto CodeMirror line
          * 
          * @param   {String|Intiger}   line      line number or "first"|"last"
-         * @returns {editormd}                   返回editormd的实例对象
+         * @returns {editormd}                   返回editormd的实例對象
          */
         
         gotoLine : function (line) {
@@ -950,7 +950,7 @@
         },
         
         /**
-         * 扩展当前实例对象，可同时设置多个或者只设置一个
+         * 扩展当前实例對象，可同时設定多个或者只設定一个
          * Extend editormd instance object, can mutil setting.
          * 
          * @returns {editormd}                  this(editormd instance object.)
@@ -976,7 +976,7 @@
         },
         
         /**
-         * 设置或扩展当前实例对象，单个设置
+         * 設定或扩展当前实例對象，單个設定
          * Extend editormd instance object, one by one
          * 
          * @param   {String|Object}   key       option key
@@ -1029,7 +1029,7 @@
          * Bind editor event handle
          * 
          * @param   {String}     eventType      event type
-         * @param   {Function}   callback       回调函数
+         * @param   {Function}   callback       回调函數
          * @returns {editormd}                  this(editormd instance object.)
          */
         
@@ -1067,8 +1067,8 @@
          * 显示工具栏
          * Display toolbar
          * 
-         * @param   {Function} [callback=function(){}] 回调函数
-         * @returns {editormd}  返回editormd的实例对象
+         * @param   {Function} [callback=function(){}] 回调函數
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         showToolbar : function(callback) {
@@ -1097,7 +1097,7 @@
          * 隐藏工具栏
          * Hide toolbar
          * 
-         * @param   {Function} [callback=function(){}] 回调函数
+         * @param   {Function} [callback=function(){}] 回调函數
          * @returns {editormd}                         this(editormd instance object.)
          */
         
@@ -1114,10 +1114,10 @@
         },
         
         /**
-         * 頁面滚动时工具栏的固定定位
+         * 頁面滚動时工具栏的固定定位
          * Set toolbar in window scroll auto fixed position
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setToolbarAutoFixed : function(fixed) {
@@ -1171,7 +1171,7 @@
          * 配置和初始化工具栏
          * Set toolbar and Initialization
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setToolbar : function() {
@@ -1270,12 +1270,12 @@
         },
         
         /**
-         * 工具栏图标事件处理对象序列
+         * 工具栏图标事件处理對象序列
          * Get toolbar icons event handlers
          * 
-         * @param   {Object}   cm    CodeMirror的实例对象
+         * @param   {Object}   cm    CodeMirror的实例對象
          * @param   {String}   name  要取得的事件处理器名稱
-         * @returns {Object}         返回处理对象序列
+         * @returns {Object}         返回处理對象序列
          */
             
         dialogLockScreen : function() {
@@ -1300,7 +1300,7 @@
          * 工具栏图标事件处理器
          * Bind toolbar icons event handle
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         setToolbarHandler : function() {
@@ -1356,11 +1356,11 @@
         },
         
         /**
-         * 动态创建对话框
+         * 動态建立對話框
          * Creating custom dialogs
          * 
-         * @param   {Object} options  配置项键值对 Key/Value
-         * @returns {dialog}          返回创建的dialog的jQuery实例对象
+         * @param   {Object} options  配置项键值對 Key/Value
+         * @returns {dialog}          返回建立的dialog的jQuery实例對象
          */
         
         createDialog : function(options) {            
@@ -1368,10 +1368,10 @@
         },
         
         /**
-         * 创建关于Editor.md的对话框
+         * 建立关于Editor.md的對話框
          * Create about Editor.md dialog
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         createInfoDialog : function() {
@@ -1407,10 +1407,10 @@
         },
         
         /**
-         * 关于Editor.md对话居中定位
+         * 关于Editor.md對話居中定位
          * Editor.md dialog position handle
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         infoDialogPosition : function() {
@@ -1434,7 +1434,7 @@
          * 显示关于Editor.md
          * Display about Editor.md dialog
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         showInfoDialog : function() {
@@ -1469,7 +1469,7 @@
          * 隐藏关于Editor.md
          * Hide about Editor.md dialog
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         hideInfoDialog : function() {            
@@ -1486,7 +1486,7 @@
          * lock screen
          * 
          * @param   {Boolean}    lock    Boolean 布尔值，是否锁屏
-         * @returns {editormd}           返回editormd的实例对象
+         * @returns {editormd}           返回editormd的实例對象
          */
         
         lockScreen : function(lock) {
@@ -1497,10 +1497,10 @@
         },
         
         /**
-         * 編輯器界面重建，用于动态語言包或模块加载等
+         * 編輯器界面重建，用于動态語言包或模块加载等
          * Recreate editor
          * 
-         * @returns {editormd}  返回editormd的实例对象
+         * @returns {editormd}  返回editormd的实例對象
          */
         
         recreate : function() {
@@ -1531,10 +1531,10 @@
         },
         
         /**
-         * 高亮预览HTML的pre代码部分
+         * 高亮预览HTML的pre程式碼部分
          * highlight of preview codes
          * 
-         * @returns {editormd}             返回editormd的实例对象
+         * @returns {editormd}             返回editormd的实例對象
          */
         
         previewCodeHighlight : function() {    
@@ -1558,7 +1558,7 @@
          * 解析TeX(KaTeX)科学公式
          * TeX(KaTeX) Renderer
          * 
-         * @returns {editormd}             返回editormd的实例对象
+         * @returns {editormd}             返回editormd的实例對象
          */
         
         katexRender : function() {
@@ -1582,7 +1582,7 @@
          * 解析和渲染流程图及时序图
          * FlowChart and SequenceDiagram Renderer
          * 
-         * @returns {editormd}             返回editormd的实例对象
+         * @returns {editormd}             返回editormd的实例對象
          */
         
         flowChartAndSequenceDiagramRender : function() {
@@ -1723,7 +1723,7 @@
         },
         
         /**
-         * 绑定同步滚动
+         * 绑定同步滚動
          * 
          * @returns {editormd} return this
          */
@@ -1858,8 +1858,8 @@
          * 加载队列完成之后的显示处理
          * Display handle of the module queues loaded after.
          * 
-         * @param   {Boolean}   recreate   是否为重建編輯器
-         * @returns {editormd}             返回editormd的实例对象
+         * @param   {Boolean}   recreate   是否為重建編輯器
+         * @returns {editormd}             返回editormd的实例對象
          */
         
         loadedDisplay : function(recreate) {
@@ -1879,7 +1879,7 @@
                 preview.show();
             }
             
-            editor.data("oldWidth", editor.width()).data("oldHeight", editor.height()); // 为了兼容Zepto
+            editor.data("oldWidth", editor.width()).data("oldHeight", editor.height()); // 為了兼容Zepto
             
             this.resize();
             this.registerKeyMaps();
@@ -1901,11 +1901,11 @@
         },
         
         /**
-         * 设置編輯器的宽度
+         * 設定編輯器的宽度
          * Set editor width
          * 
          * @param   {Number|String} width  編輯器宽度值
-         * @returns {editormd}             返回editormd的实例对象
+         * @returns {editormd}             返回editormd的实例對象
          */
         
         width : function(width) {
@@ -1917,11 +1917,11 @@
         },
         
         /**
-         * 设置編輯器的高度
+         * 設定編輯器的高度
          * Set editor height
          * 
          * @param   {Number|String} height  編輯器高度值
-         * @returns {editormd}              返回editormd的实例对象
+         * @returns {editormd}              返回editormd的实例對象
          */
         
         height : function(height) {
@@ -1938,7 +1938,7 @@
          * 
          * @param   {Number|String} [width=null]  編輯器宽度值
          * @param   {Number|String} [height=null] 編輯器高度值
-         * @returns {editormd}                    返回editormd的实例对象
+         * @returns {editormd}                    返回editormd的实例對象
          */
         
         resize : function(width, height) {
@@ -2027,10 +2027,10 @@
         },
         
         /**
-         * 解析和保存Markdown代码
+         * 解析和保存Markdown程式碼
          * Parse & Saving Markdown source code
          * 
-         * @returns {editormd}     返回editormd的实例对象
+         * @returns {editormd}     返回editormd的实例對象
          */
         
         save : function() {
@@ -2077,7 +2077,7 @@
                 tables      : true,
                 breaks      : true,
                 pedantic    : false,
-                sanitize    : (settings.htmlDecode) ? false : true,  // 關閉忽略HTML标签，即開啟识别HTML标签，默认为false
+                sanitize    : (settings.htmlDecode) ? false : true,  // 關閉忽略HTML标签，即開啟识别HTML标签，默认為false
                 smartLists  : true,
                 smartypants : true
             };
@@ -2171,7 +2171,7 @@
          * 聚焦光标位置
          * Focusing the cursor position
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         focus : function() {
@@ -2181,11 +2181,11 @@
         },
         
         /**
-         * 设置光标的位置
+         * 設定光标的位置
          * Set cursor position
          * 
-         * @param   {Object}    cursor 要设置的光标位置键值对象，例：{line:1, ch:0}
-         * @returns {editormd}         返回editormd的实例对象
+         * @param   {Object}    cursor 要設定的光标位置键值對象，例：{line:1, ch:0}
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         setCursor : function(cursor) {
@@ -2198,7 +2198,7 @@
          * 取得当前光标的位置
          * Get the current position of the cursor
          * 
-         * @returns {Cursor}         返回一个光标Cursor对象
+         * @returns {Cursor}         返回一个光标Cursor對象
          */
         
         getCursor : function() {
@@ -2206,12 +2206,12 @@
         },
         
         /**
-         * 设置光标选中的范围
+         * 設定光标选中的范围
          * Set cursor selected ranges
          * 
-         * @param   {Object}    from   开始位置的光标键值对象，例：{line:1, ch:0}
-         * @param   {Object}    to     结束位置的光标键值对象，例：{line:1, ch:0}
-         * @returns {editormd}         返回editormd的实例对象
+         * @param   {Object}    from   開始位置的光标键值對象，例：{line:1, ch:0}
+         * @param   {Object}    to     结束位置的光标键值對象，例：{line:1, ch:0}
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         setSelection : function(from, to) {
@@ -2233,7 +2233,7 @@
         },
         
         /**
-         * 设置光标选中的文本范围
+         * 設定光标选中的文本范围
          * Set the cursor selection ranges
          * 
          * @param   {Array}    ranges  cursor selection ranges array
@@ -2262,7 +2262,7 @@
          * Replace the text at the current cursor selected or insert a new character at the current cursor position
          * 
          * @param   {String}    value  要插入的字符值
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         replaceSelection : function(value) {
@@ -2279,7 +2279,7 @@
          * With the replaceSelection() method
          * 
          * @param   {String}    value  要插入的字符值
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         insertValue : function(value) {
@@ -2293,7 +2293,7 @@
          * append Markdown to editor
          * 
          * @param   {String}    md     要追加的markdown源文档
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         appendMarkdown : function(md) {
@@ -2306,11 +2306,11 @@
         },
         
         /**
-         * 设置和传入編輯器的markdown源文档
+         * 設定和传入編輯器的markdown源文档
          * Set Markdown source document
          * 
          * @param   {String}    md     要传入的markdown源文档
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         setMarkdown : function(md) {
@@ -2323,7 +2323,7 @@
          * 取得編輯器的markdown源文档
          * Set Editor.md markdown/CodeMirror value
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         getMarkdown : function() {
@@ -2334,7 +2334,7 @@
          * 取得編輯器的源文档
          * Get CodeMirror value
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         getValue : function() {
@@ -2342,11 +2342,11 @@
         },
         
         /**
-         * 设置編輯器的源文档
+         * 設定編輯器的源文档
          * Set CodeMirror value
          * 
          * @param   {String}     value   set code/value/string/text
-         * @returns {editormd}           返回editormd的实例对象
+         * @returns {editormd}           返回editormd的实例對象
          */
         
         setValue : function(value) {
@@ -2359,7 +2359,7 @@
          * 清空編輯器
          * Empty CodeMirror editor container
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         clear : function() {
@@ -2369,10 +2369,10 @@
         },
         
         /**
-         * 取得解析后存放在Textarea的HTML源码
+         * 取得解析后存放在Textarea的HTML源碼
          * Get parsed html code from Textarea
          * 
-         * @returns {String}               返回HTML源码
+         * @returns {String}               返回HTML源碼
          */
         
         getHTML : function() {
@@ -2390,7 +2390,7 @@
          * getHTML()的别名
          * getHTML (alias)
          * 
-         * @returns {String}           Return html code 返回HTML源码
+         * @returns {String}           Return html code 返回HTML源碼
          */
         
         getTextareaSavedHTML : function() {
@@ -2398,10 +2398,10 @@
         },
         
         /**
-         * 取得预览窗口的HTML源码
+         * 取得预览視窗的HTML源碼
          * Get html from preview container
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         getPreviewedHTML : function() {
@@ -2419,7 +2419,7 @@
          * 開啟实时预览
          * Enable real-time watching
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         watch : function(callback) {     
@@ -2463,7 +2463,7 @@
          * 關閉实时预览
          * Disable real-time watching
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         unwatch : function(callback) {
@@ -2499,8 +2499,8 @@
          * 显示編輯器
          * Show editor
          * 
-         * @param   {Function} [callback=function()] 回调函数
-         * @returns {editormd}                       返回editormd的实例对象
+         * @param   {Function} [callback=function()] 回调函數
+         * @returns {editormd}                       返回editormd的实例對象
          */
         
         show : function(callback) {
@@ -2518,8 +2518,8 @@
          * 隐藏編輯器
          * Hide editor
          * 
-         * @param   {Function} [callback=function()] 回调函数
-         * @returns {editormd}                       返回editormd的实例对象
+         * @param   {Function} [callback=function()] 回调函數
+         * @returns {editormd}                       返回editormd的实例對象
          */
         
         hide : function(callback) {
@@ -2537,7 +2537,7 @@
          * 隐藏編輯器部分，只预览HTML
          * Enter preview html state
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         previewing : function() {
@@ -2567,7 +2567,7 @@
                 }
             };
 
-            if (codeMirror.css("display") === "none") // 为了兼容Zepto，而不使用codeMirror.is(":hidden")
+            if (codeMirror.css("display") === "none") // 為了兼容Zepto，而不使用codeMirror.is(":hidden")
             {
                 this.state.preview = true;
 
@@ -2615,7 +2615,7 @@
          * 显示編輯器部分，退出只预览HTML
          * Exit preview html state
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         previewed : function() {
@@ -2666,7 +2666,7 @@
          * 編輯器全屏显示
          * Fullscreen show
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         fullscreen : function() {
@@ -2723,7 +2723,7 @@
          * 編輯器退出全屏显示
          * Exit fullscreen state
          * 
-         * @returns {editormd}         返回editormd的实例对象
+         * @returns {editormd}         返回editormd的实例對象
          */
         
         fullscreenExit : function() {
@@ -2759,7 +2759,7 @@
          * 
          * @param   {String}     name    plugin name / function name
          * @param   {String}     path    plugin load path
-         * @returns {editormd}           返回editormd的实例对象
+         * @returns {editormd}           返回editormd的实例對象
          */
         
         executePlugin : function(name, path) {
@@ -3383,7 +3383,7 @@
     editormd.trim = trim;
     
     /**
-     * 所有单词首字母大写
+     * 所有單词首字母大写
      * Words first to uppercase
      * 
      * @param   {String}    str            string
@@ -3445,11 +3445,11 @@
     };
 
     /**
-     * 自定义marked的解析器
+     * 自訂marked的解析器
      * Custom Marked renderer rules
      * 
-     * @param   {Array}    markdownToC     传入用于接收TOC的数组
-     * @returns {Renderer} markedRenderer  返回marked的Renderer自定义对象
+     * @param   {Array}    markdownToC     传入用于接收TOC的數组
+     * @returns {Renderer} markedRenderer  返回marked的Renderer自訂對象
      */
 
     editormd.markedRenderer = function(markdownToC, options) {
@@ -3735,13 +3735,13 @@
     
     /**
      *
-     * 生成TOC(Table of Contents)
+     * 產生TOC(Table of Contents)
      * Creating ToC (Table of Contents)
      * 
-     * @param   {Array}    toc             从marked取得的TOC数组列表
+     * @param   {Array}    toc             从marked取得的TOC數组列表
      * @param   {Element}  container       插入TOC的容器元素
      * @param   {Integer}  startLevel      Hx 起始层级
-     * @returns {Object}   tocContainer    返回ToC列表容器层的jQuery对象元素
+     * @returns {Object}   tocContainer    返回ToC列表容器层的jQuery對象元素
      */
     
     editormd.markdownToCRenderer = function(toc, container, tocDropdown, startLevel) {
@@ -3803,10 +3803,10 @@
     
     /**
      *
-     * 生成TOC下拉菜单
+     * 產生TOC下拉選單
      * Creating ToC dropdown menu
      * 
-     * @param   {Object}   container       插入TOC的容器jQuery对象元素
+     * @param   {Object}   container       插入TOC的容器jQuery對象元素
      * @param   {String}   tocTitle        ToC title
      * @returns {Object}                   return toc-menu object
      */
@@ -3868,7 +3868,7 @@
     };
     
     /**
-     * 简单地过滤指定的HTML标签
+     * 简單地过滤指定的HTML标签
      * Filter custom html tags
      * 
      * @param   {String}   html          要过滤HTML
@@ -3953,12 +3953,12 @@
     };
     
     /**
-     * 将Markdown文档解析为HTML用于前台显示
+     * 将Markdown文档解析為HTML用于前台显示
      * Parse Markdown to HTML for Font-end preview.
      * 
-     * @param   {String}   id            用于显示HTML的对象ID
+     * @param   {String}   id            用于显示HTML的對象ID
      * @param   {Object}   [options={}]  配置选项，可选
-     * @returns {Object}   div           返回jQuery对象元素
+     * @returns {Object}   div           返回jQuery對象元素
      */
     
     editormd.markdownToHTML = function(id, options) {
@@ -4021,7 +4021,7 @@
             tables      : true,
             breaks      : true,
             pedantic    : false,
-            sanitize    : (settings.htmlDecode) ? false : true, // 是否忽略HTML标签，即是否開啟HTML标签解析，为了安全性，默认不開啟
+            sanitize    : (settings.htmlDecode) ? false : true, // 是否忽略HTML标签，即是否開啟HTML标签解析，為了安全性，默认不開啟
             smartLists  : true,
             smartypants : true
         };
@@ -4146,11 +4146,11 @@
     };
     
     /**
-     * 动态加载Editor.md插件，但不立即执行
+     * 動态加载Editor.md插件，但不立即执行
      * Load editor.md plugins
      * 
      * @param {String}   fileName              插件文件路径
-     * @param {Function} [callback=function()] 加载成功后执行的回调函数
+     * @param {Function} [callback=function()] 加载成功后执行的回调函數
      * @param {String}   [into="head"]         嵌入頁面的位置
      */
     
@@ -4164,11 +4164,11 @@
     };
     
     /**
-     * 动态加载CSS文件的方法
+     * 動态加载CSS文件的方法
      * Load css file method
      * 
      * @param {String}   fileName              CSS文件名
-     * @param {Function} [callback=function()] 加载成功后执行的回调函数
+     * @param {Function} [callback=function()] 加载成功后执行的回调函數
      * @param {String}   [into="head"]         嵌入頁面的位置
      */
     
@@ -4197,11 +4197,11 @@
     editormd.isIE8   = (editormd.isIE && navigator.appVersion.match(/8./i) == "8.");
 
     /**
-     * 动态加载JS文件的方法
+     * 動态加载JS文件的方法
      * Load javascript file method
      * 
      * @param {String}   fileName              JS文件名
-     * @param {Function} [callback=function()] 加载成功后执行的回调函数
+     * @param {Function} [callback=function()] 加载成功后执行的回调函數
      * @param {String}   [into="head"]         嵌入頁面的位置
      */
 
@@ -4245,7 +4245,7 @@
         }
     };
     
-    // 使用国外的CDN，加载速度有时会很慢，或者自定义URL
+    // 使用国外的CDN，加载速度有时会很慢，或者自訂URL
     // You can custom KaTeX load url.
     editormd.katexURL  = {
         css : "//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min",
@@ -4258,7 +4258,7 @@
      * 加载KaTeX文件
      * load KaTeX files
      * 
-     * @param {Function} [callback=function()]  加载成功后执行的回调函数
+     * @param {Function} [callback=function()]  加载成功后执行的回调函數
      */
     
     editormd.loadKaTeX = function (callback) {
@@ -4280,11 +4280,11 @@
     };
         
     /**
-     * 动态创建对话框
+     * 動态建立對話框
      * Creating custom dialogs
      * 
-     * @param   {Object} options 配置项键值对 Key/Value
-     * @returns {dialog} 返回创建的dialog的jQuery实例对象
+     * @param   {Object} options 配置项键值對 Key/Value
+     * @returns {dialog} 返回建立的dialog的jQuery实例對象
      */
 
     editormd.createDialog = function(options) {
@@ -4549,11 +4549,11 @@
     };
     
     /**
-     * 日期时间的格式化方法
+     * 日期時間的格式化方法
      * Datetime format method
      * 
-     * @param   {String}   [format=""]  日期时间的格式，类似PHP的格式
-     * @returns {String}   datefmt      返回格式化后的日期时间字符串
+     * @param   {String}   [format=""]  日期時間的格式，类似PHP的格式
+     * @returns {String}   datefmt      返回格式化后的日期時間字符串
      */
     
     editormd.dateFormat = function(format) {                

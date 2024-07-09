@@ -26,19 +26,19 @@ abstract class Server
     protected $processes = 4;
 
     /**
-     * 架构函数
+     * 架构函數
      * @access public
      */
     public function __construct()
     {
         // 实例化 Websocket 服务
         $this->worker = new Worker($this->socket ?: $this->protocol . '://' . $this->host . ':' . $this->port);
-        // 设置进程数
+        // 設定进程數
         $this->worker->count = $this->processes;
         // 初始化
         $this->init();
 
-        // 设置回调
+        // 設定回调
         foreach (['onWorkerStart', 'onConnect', 'onMessage', 'onClose', 'onError', 'onBufferFull', 'onBufferDrain', 'onWorkerStop', 'onWorkerReload'] as $event) {
             if (method_exists($this, $event)) {
                 $this->worker->$event = [$this, $event];

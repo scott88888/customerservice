@@ -43,7 +43,7 @@ class Index extends Base
         
         // 接入总量
         $getinall = Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id', $login['business_id'])->count();
-        // 取得总会话量
+        // 取得总会話量
         $chatsall = Admins::table("wolive_chats")->where($where)->count();
         // 正在排队人數
         $waiter = Admins::table("wolive_queue")->where(['business_id' => $login['business_id'], 'state' => 'normal'])->where("service_id", 0)->count();
@@ -51,11 +51,11 @@ class Index extends Base
         $talking = Admins::table('wolive_queue')->where(['business_id' => $login['business_id']])->where('state', 'normal')->where("service_id", '<>', 0)->count();
         // 線上客服人數
         $services = Admins::table("wolive_service")->where($where)->where(['state' => 'online'])->count();
-        // 今日会话量
+        // 今日会話量
         $nowchats = Admins::table("wolive_chats")->where($where)->where('timestamp', '>', "{$t}")->where('timestamp', '<=', time())->count();
         //今日評價人數
         $nowcomments = Admins::table("wolive_comment")->where($where)->where('add_time', '>', "{$time}")->where('add_time', '<=', $times)->count();
-        //评价总数
+        //評價总數
         $allcomments = Admins::table("wolive_comment")->where($where)->count();
         
         $days = Common::getDays(15);
@@ -125,7 +125,7 @@ class Index extends Base
     }
 
     /**
-     * 后台对话頁面.
+     * 后台對話頁面.
      *
      * @return mixed
      */
@@ -153,14 +153,14 @@ class Index extends Base
         $page = $data->render();
         $this->assign('page', $page);
         $this->assign('lister', $data);
-        $this->assign('title', "问候语设置");
-        $this->assign('part', "设置");
+        $this->assign('title', "問候語設定");
+        $this->assign('part', "設定");
 
         return $this->fetch();
     }
 
     /**
-     * 常見問題设置.
+     * 常見問題設定.
      *
      * @return mixed
      */
@@ -177,14 +177,14 @@ class Index extends Base
         $page = $data->render();
         $this->assign('page', $page);
         $this->assign('lister', $data);
-        $this->assign('title', "常見問題设置");
-        $this->assign('part', "设置");
+        $this->assign('title', "常見問題設定");
+        $this->assign('part', "設定");
         return $this->fetch();
     }
 
 
     /**
-     * 生成前台文件頁面.
+     * 產生前台文件頁面.
      *
      * @return mixed
      */
@@ -320,7 +320,7 @@ class Index extends Base
         );
         $channel = bin2hex($post['visiter_id'] . '/' . $login['business_id']);
         $pusher->trigger("cu" . $channel, 'getswitch', array('message' => $admin));
-        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  转接访客给你"));
+        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  转接訪客给你"));
         $result = Admins::table('wolive_queue')->where("visiter_id", $post['visiter_id'])->where('business_id', $login['business_id'])->where('state', 'normal')->update(['service_id' => $post['id']]);
         if ($result) {
             $arr = ['code' => 0, 'msg' => '转接成功！'];
@@ -450,15 +450,15 @@ $content='';
     }
 
     /**
-     * 设置頁面
+     * 設定頁面
      * [set description]
      */
     public function set()
     {
 
         $this->assign('user', $_SESSION['Msg']);
-        $this->assign('title', '系统设置');
-        $this->assign('part', '系统设置');
+        $this->assign('title', '系统設定');
+        $this->assign('part', '系统設定');
         return $this->fetch();
     }
 
@@ -479,8 +479,8 @@ $content='';
         $this->assign('template', $res['template_state']);
         $this->assign('method', $res['distribution_rule']);
         $this->assign('push_url',$res['push_url']);
-        $this->assign('title', '通用设置');
-        $this->assign('part', '设置');
+        $this->assign('title', '通用設定');
+        $this->assign('part', '設定');
 
         return $this->fetch();
     }
@@ -505,7 +505,7 @@ $content='';
         $this->assign('tablist', $res);
 
         $this->assign('title', '編輯前端tab面版');
-        $this->assign('part', '设置');
+        $this->assign('part', '設定');
 
         return $this->fetch();
     }
@@ -545,8 +545,8 @@ $content='';
             $protocol=$common->isHTTPS()?'https://':'http://';
             $this->assign('template',$template);
             $this->assign('protocol',$protocol);
-            $this->assign('title', '公众号与模板消息设置');
-            $this->assign('part', "设置");
+            $this->assign('title', '公众号与模板消息設定');
+            $this->assign('part', "設定");
             return $this->fetch();
         }
     }
@@ -600,7 +600,7 @@ $content='';
                     $this->error('翻译失敗');
                 }
             }else{
-                if(empty($business['bd_trans_appid'])||empty($business['bd_trans_secret'])) $this->error('请先配置百度翻译API接口');
+                if(empty($business['bd_trans_appid'])||empty($business['bd_trans_secret'])) $this->error('請先配置百度翻译API接口');
                 if(isset($post['to'])&&$post['to']) $to = config('lang_trans')[$post['to']];
                 $salt = time();
                 $sign = md5($business['bd_trans_appid'].$text.$salt.$business['bd_trans_secret']);
@@ -622,6 +622,6 @@ $content='';
                 }
             }
         }
-        $this->error('未知参数');
+        $this->error('未知参數');
     }
 }

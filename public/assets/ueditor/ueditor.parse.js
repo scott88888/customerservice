@@ -382,7 +382,7 @@ UE.parse.register('table', function (utils) {
         tables = root.getElementsByTagName('table');
     if (tables.length) {
         var selector = this.selector;
-        //追加默认的表格样式
+        //追加默认的表格樣式
         utils.cssRule('table',
             selector + ' table.noBorderTable td,' +
                 selector + ' table.noBorderTable th,' +
@@ -399,7 +399,7 @@ UE.parse.register('table', function (utils) {
                 selector + ' tr.ue-table-interlace-color-double td{ background: #f7faff; }' +
                 selector + ' td p{margin:0;padding:0;}',
             document);
-        //填充空的单元格
+        //填充空的單元格
 
         utils.each('td th caption'.split(' '), function (tag) {
             var cells = root.getElementsByTagName(tag);
@@ -429,7 +429,7 @@ UE.parse.register('table', function (utils) {
             }
         });
 
-        //按照标签名查找父节点
+        //按照标签名查找父节點
         function findParentByTagName(target, tagNames) {
             var i, current = target;
             tagNames = utils.isArray(tagNames) ? tagNames:[tagNames];
@@ -482,7 +482,7 @@ UE.parse.register('table', function (utils) {
                 }
             };
 
-            //对表格设置排序的标记data-sort-type
+            //對表格設定排序的标记data-sort-type
             table.setAttribute('data-sort-type', compareFn && typeof compareFn === "string" && Fn[compareFn] ? compareFn:'');
 
             //th不参与排序
@@ -527,7 +527,7 @@ UE.parse.register('table', function (utils) {
         }
         //更新表格
         function updateTable(table) {
-            //给第一行设置firstRow的样式名稱,在排序图标的样式上使用到
+            //给第一行設定firstRow的樣式名稱,在排序图标的樣式上使用到
             if(!utils.hasClass(table.rows[0], "firstRow")) {
                 for(var i = 1; i< table.rows.length; i++) {
                     utils.removeClass(table.rows[i], "firstRow");
@@ -723,7 +723,7 @@ UE.parse.register('charts',function( utils ){
 
     /**
      * 渲染图表
-     * @param container 图表容器节点对象
+     * @param container 图表容器节點對象
      * @param typeConfig 图表类型配置
      * @param config 图表通用配置
      * */
@@ -779,8 +779,8 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * 创建图表的容器
-     * 新创建的容器会替换掉对应的table对象
+     * 建立图表的容器
+     * 新建立的容器会替换掉對应的table對象
      * */
     function createContainer ( tableNode ) {
 
@@ -793,7 +793,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //根据config解析出正确的类别和图表資料訊息
+    //根據config解析出正确的类别和图表資料訊息
     function analysisConfig ( config ) {
 
         var series = [],
@@ -803,7 +803,7 @@ UE.parse.register('charts',function( utils ){
             data = config.data,
             meta = config.meta;
 
-        //資料对齐方式为相反的方式， 需要反转資料
+        //資料對齐方式為相反的方式， 需要反转資料
         if ( meta.dataFormat != "1" ) {
 
             for ( var i = 0, len = data.length; i < len ; i++ ) {
@@ -887,7 +887,7 @@ UE.parse.register('background', function (utils) {
         }
     }
 
-    //追加默认的表格样式
+    //追加默认的表格樣式
     styles && utils.cssRule('ueditor_background', me.selector + '{' + styles + '}', document);
 });
 UE.parse.register('list',function(utils){

@@ -44,12 +44,12 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">排序</label>
                 <div class="layui-input-block">
-                    <input type="number" name="sort" value="0" lay-verify="required" placeholder="請輸入排序字段(数字越大,越靠前)："
+                    <input type="number" name="sort" value="0" lay-verify="required" placeholder="請輸入排序字段(數字越大,越靠前)："
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">問題回复</label>
+                <label class="layui-form-label">問題回覆</label>
                 <div class="layui-input-block">
                     <textarea class="editormd-markdown-textarea" name="answer" id="a_editormd" style="height: 260px;"></textarea>
                 </div>
@@ -109,7 +109,7 @@
                             icon: 1
                         });
                         setTimeout(function () {
-                            var index = parent.layer.getFrameIndex(window.name); //取得窗口索引
+                            var index = parent.layer.getFrameIndex(window.name); //取得視窗索引
                             parent.layer.close(index);
                             parent.layui.table.reload("dataTable");
                         }, 2000)

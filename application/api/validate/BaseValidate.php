@@ -18,22 +18,22 @@ use think\Validate;
 class BaseValidate extends Validate
 {
     /**
-     * 检测所有客户端发来的参数是否符合驗證类规则
-     * 基类定义了很多自定义驗證方法
-     * 这些自定义驗證方法其实，也可以直接调用
+     * 检测所有客户端发来的参數是否符合驗證类规则
+     * 基类定义了很多自訂驗證方法
+     * 这些自訂驗證方法其实，也可以直接调用
      * @throws ParameterException
      * @return true
      */
     public function goCheck()
     {
-        //必须设置contetn-type:application/json
+        //必须設定contetn-type:application/json
         $request = Request::instance();
         $params = $request->param();
 
         if (!$this->check($params)) {
             throw new ApiException(
                 [
-                    // $this->error有一个問題，并不是一定返回数组，需要判断
+                    // $this->error有一个問題，并不是一定返回數组，需要判断
                     'msg' => is_array($this->error) ? implode(
                         ';', $this->error) : $this->error,
                 ]);
@@ -44,7 +44,7 @@ class BaseValidate extends Validate
     protected function isNotEmpty($value, $rule='', $data='', $field='')
     {
         if (empty($value)) {
-            return $field . '不允许为空';
+            return $field . '不允许為空';
         } else {
             return true;
         }

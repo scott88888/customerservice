@@ -13,7 +13,7 @@ namespace think\helper;
 class Time
 {
     /**
-     * 返回今日开始和结束的时间戳
+     * 返回今日開始和结束的時間戳
      *
      * @return array
      */
@@ -26,7 +26,7 @@ class Time
     }
 
     /**
-     * 返回昨日开始和结束的时间戳
+     * 返回昨日開始和结束的時間戳
      *
      * @return array
      */
@@ -40,7 +40,7 @@ class Time
     }
 
     /**
-     * 返回本周开始和结束的时间戳
+     * 返回本周開始和结束的時間戳
      *
      * @return array
      */
@@ -54,7 +54,7 @@ class Time
     }
 
     /**
-     * 返回上周开始和结束的时间戳
+     * 返回上周開始和结束的時間戳
      *
      * @return array
      */
@@ -68,7 +68,7 @@ class Time
     }
 
     /**
-     * 返回本月开始和结束的时间戳
+     * 返回本月開始和结束的時間戳
      *
      * @return array
      */
@@ -81,7 +81,7 @@ class Time
     }
 
     /**
-     * 返回上个月开始和结束的时间戳
+     * 返回上个月開始和结束的時間戳
      *
      * @return array
      */
@@ -94,7 +94,7 @@ class Time
     }
 
     /**
-     * 返回今年开始和结束的时间戳
+     * 返回今年開始和结束的時間戳
      *
      * @return array
      */
@@ -107,7 +107,7 @@ class Time
     }
 
     /**
-     * 返回去年开始和结束的时间戳
+     * 返回去年開始和结束的時間戳
      *
      * @return array
      */
@@ -126,10 +126,10 @@ class Time
     }
 
     /**
-     * 取得几天前零点到现在/昨日结束的时间戳
+     * 取得几天前零點到现在/昨日结束的時間戳
      *
-     * @param int $day 天数
-     * @param bool $now 返回现在或者昨天结束时间戳
+     * @param int $day 天數
+     * @param bool $now 返回现在或者昨天结束時間戳
      * @return array
      */
     public static function dayToNow($day = 1, $now = true)
@@ -146,7 +146,7 @@ class Time
     }
 
     /**
-     * 返回几天前的时间戳
+     * 返回几天前的時間戳
      *
      * @param int $day
      * @return int
@@ -158,7 +158,7 @@ class Time
     }
 
     /**
-     * 返回几天后的时间戳
+     * 返回几天后的時間戳
      *
      * @param int $day
      * @return int
@@ -170,7 +170,7 @@ class Time
     }
 
     /**
-     * 天数转换成秒数
+     * 天數转换成秒數
      *
      * @param int $day
      * @return int
@@ -181,7 +181,7 @@ class Time
     }
 
     /**
-     * 周数转换成秒数
+     * 周數转换成秒數
      *
      * @param int $week
      * @return int

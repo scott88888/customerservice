@@ -398,7 +398,7 @@ div[xm-hg] .xm-select-label {
 	padding-left: 10px;
 }
 
-/* 颜色相关 */
+/* 颜色相關 */
 div[xm-select-skin] .xm-select-title div.xm-select-label>span {
 	border: 1px solid #67c23a
 }
@@ -535,7 +535,7 @@ div[xm-select-skin=danger].xm-form-selected .xm-select:hover {
 }
 
 
-/* 多选联动  */
+/* 多选联動  */
 .xm-select-parent .layui-form-danger+.xm-select-title .xm-select {
 	border-color: #f56c6c!important
 }

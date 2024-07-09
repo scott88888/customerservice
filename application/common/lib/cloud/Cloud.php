@@ -173,14 +173,14 @@ class Cloud
     {
         if (!is_dir(dirname($file))) {
             if (!make_dir(dirname($file))) {
-                Log::error(dirname($file).'無法创建目录，请檢查文件写入权限。');
-                throw new CloudException('無法创建目录，请檢查文件写入权限。');
+                Log::error(dirname($file).'無法建立目录，請檢查文件写入权限。');
+                throw new CloudException('無法建立目录，請檢查文件写入权限。');
             }
         }
         $fp = fopen($file, 'w+');
         if ($fp === false) {
-            Log::error('無法保存文件，请檢查文件写入权限。');
-            throw new CloudException('無法保存文件，请檢查文件写入权限。');
+            Log::error('無法保存文件，請檢查文件写入权限。');
+            throw new CloudException('無法保存文件，請檢查文件写入权限。');
         }
 
         $client = new Client([

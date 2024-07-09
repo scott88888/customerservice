@@ -1,5 +1,5 @@
 /**
-	重置样式
+	重置樣式
 	reset.css
 	Created by Andy on 2018-03-21
  */
@@ -47,12 +47,12 @@ th, td {
 	padding: 0;
 }
 
-/* 去除android上a、button、input标签点击产生的边框 */
+/* 去除android上a、button、input标签點擊产生的边框 */
 a,button,input,label,li{-webkit-tap-highlight-color: transparent; outline:none;}
 
-/* __ 清除浮动 */
+/* __ 清除浮動 */
 .clearfix:after{content:""; clear:both; display:block;}
-/* 不占位清除浮动 */
+/* 不占位清除浮動 */
 .cls{content: "";clear: both;height: 0px!important;line-height: 0px!important;font-size: 0px!important;overflow: hidden;}
 
 /* __ css3文字截取 */
@@ -87,7 +87,7 @@ a,button,input,label,li{-webkit-tap-highlight-color: transparent; outline:none;}
 .align-r{text-align:right!important;}
 
 
-/* __ 字号设置 */
+/* __ 字号設定 */
 .fs-20{font-size:.2rem!important;}
 .fs-24{font-size:.24rem!important;}
 .fs-26{font-size:.26rem!important;}
@@ -96,7 +96,7 @@ a,button,input,label,li{-webkit-tap-highlight-color: transparent; outline:none;}
 .fs-32{font-size:.32rem!important;}
 .fs-36{font-size:.36rem!important;}
 .fs-40{font-size:.4rem!important;}
-/* __ 字体设置 */
+/* __ 字体設定 */
 .ff-vd{font-family:Verdana;}
 .ff-gg{font-family:Georgia;}
 .ff-hv{font-family:Helvetica;}
@@ -140,7 +140,7 @@ a,button,input,label,li{-webkit-tap-highlight-color: transparent; outline:none;}
 ::-moz-placeholder {color:#999;}
 :-ms-input-placeholder {color:#999;}
 
-/* …… 重置系统滚动條 …… */
+/* …… 重置系统滚動條 …… */
 ::-webkit-scrollbar {background:rgba(50,50,50,.5);border-radius:0;height:3px;width:3px; transition:all .3s ease-in-out;}
 ::-webkit-scrollbar-track {background-color: #f8f8f8;}
 ::-webkit-scrollbar-track-piece {background: #f8f8f8;}
@@ -170,7 +170,7 @@ a,button,input,label,li{-webkit-tap-highlight-color: transparent; outline:none;}
 }
 
 
-/* …… 自定义checkbox …… */
+/* …… 自訂checkbox …… */
 .cp__checkbox-switch {
 	background: #fff;border: .03rem solid #dedede; border-radius: .3rem;-webkit-border-radius: .3rem;-moz-border-radius: .3rem;
 	cursor: pointer;font-size: .24rem;font-family: Helvetica;outline: 0;height: .61rem;width: 1rem; position: relative;top: 0;right: 0;bottom: 0;left: 0; vertical-align: middle;appearance: none;-webkit-appearance: none;
@@ -188,7 +188,7 @@ a,button,input,label,li{-webkit-tap-highlight-color: transparent; outline:none;}
 .cp__checkbox-switch::after {content: ""; color: #999; text-transform: uppercase; position: absolute; right: .02rem; top: .02rem;}
 .cp__checkbox-switch.checked::after{content: ""; color: #fff; text-transform: uppercase; left: .05rem;}
 
-/* …… 自定义button …… */
+/* …… 自訂button …… */
 .wc__btn-primary{background-color:#ffd100; border-radius:.07rem; box-sizing: border-box; color:#fff;display:block;font-size:.28rem;font-family:"Microsoft Yahei";text-align:center;outline:none;overflow:hidden;padding:0 .2rem;text-decoration:none;line-height:.9rem; position: relative;}
 .wc__btn-primary:active{background-color: #f1c500;}
 .wc__btn-primary:after{border: 1px solid rgba(0,0,0,.2); border-radius: .14rem; box-sizing: border-box; content: ''; height: 200%; width: 200%; position: absolute; left: 0; top: 0; transform: scale(.5);-webkit-transform: scale(.5); transform-origin: 0 0; -webkit-transform-origin: 0 0;}

@@ -43,8 +43,8 @@ class Socket
     protected $allowForceClientIds = []; //配置强制推送且被授权的client_id
 
     /**
-     * 构造函数
-     * @param array $config 缓存参数
+     * 构造函數
+     * @param array $config 缓存参數
      * @access public
      */
     public function __construct(array $config = [])
@@ -69,7 +69,7 @@ class Socket
         if (App::$debug) {
             $runtime    = round(microtime(true) - THINK_START_TIME, 10);
             $reqs       = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
-            $time_str   = ' [运行时间：' . number_format($runtime, 6) . 's][吞吐率：' . $reqs . 'req/s]';
+            $time_str   = ' [运行時間：' . number_format($runtime, 6) . 's][吞吐率：' . $reqs . 'req/s]';
             $memory_use = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
             $memory_str = ' [内存消耗：' . $memory_use . 'kb]';
             $file_load  = ' [文件加载：' . count(get_included_files()) . ']';
@@ -168,7 +168,7 @@ class Socket
             'force_client_id' => $force_client_id,
         ];
         $msg     = @json_encode($logs);
-        $address = '/' . $client_id; //将client_id作为地址， server端通过地址判断将日志发布给谁
+        $address = '/' . $client_id; //将client_id作為地址， server端通過地址判断将日志发布给谁
         $this->send($this->config['host'], $msg, $address);
     }
 
@@ -182,7 +182,7 @@ class Socket
         //使用者认证
         $allow_client_ids = $this->config['allow_client_ids'];
         if (!empty($allow_client_ids)) {
-            //通过数组交集得出授权强制推送的client_id
+            //通過數组交集得出授权强制推送的client_id
             $this->allowForceClientIds = array_intersect($allow_client_ids, $this->config['force_client_ids']);
             if (!$tabid && count($this->allowForceClientIds)) {
                 return true;
@@ -243,7 +243,7 @@ class Socket
         $headers = [
             "Content-Type: application/json;charset=UTF-8",
         ];
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); //设置header
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); //設定header
         return curl_exec($ch);
     }
 

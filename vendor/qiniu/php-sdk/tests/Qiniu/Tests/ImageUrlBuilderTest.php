@@ -28,7 +28,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($url, $imageUrlBuilder->thumbnail($url, 1, 0, 0));
         $this->assertEquals($url, \Qiniu\thumbnail($url, 1, 0, 0));
 
-        // 简单缩略测试
+        // 简單缩略测试
         $this->assertEquals(
             $url . '?imageView2/1/w/200/h/200/ignore-error/1/',
             $imageUrlBuilder->thumbnail($url, 1, 200, 200)
@@ -68,7 +68,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
             \Qiniu\thumbnail($url, 1, 200, 200, 'png', 1, 101)
         );
 
-        // 多参数测试
+        // 多参數测试
         $this->assertEquals(
             $url2 . '|imageView2/1/w/200/h/200/ignore-error/1/',
             $imageUrlBuilder->thumbnail($url2, 1, 200, 200)
@@ -94,7 +94,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
         $url2 = $url . '?imageView2/1/w/200/h/200/format/png/ignore-error/1/';
         $image = 'http://developer.qiniu.com/resource/logo-2.jpg';
 
-        // 水印简单测试
+        // 水印简單测试
         $this->assertEquals(
             $url . '?watermark/1/image/aHR0cDovL2RldmVsb3Blci5xaW5pdS5jb20vcmVzb3VyY2UvbG9nby0yLmpwZw=='
             . '/dissolve/100/gravity/SouthEast/',
@@ -151,7 +151,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
             \Qiniu\waterImg($url, $image, 100, 'SouthEast', 'sad', 'asdf', 2)
         );
 
-        // 多参数测试
+        // 多参數测试
         $this->assertEquals(
             $url2 . '|watermark/1/image/aHR0cDovL2RldmVsb3Blci5xaW5pdS5jb20vcmVzb3VyY2UvbG9nby0yLmpwZw=='
             . '/dissolve/100/gravity/SouthEast/',
@@ -181,7 +181,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
         $font = '微软雅黑';
         $fontColor = '#FF0000';
 
-        // 水印简单测试
+        // 水印简單测试
         $this->assertEquals($url . '?watermark/2/text/5rWL6K-V5LiA5LiL/font/5b6u6L2v6ZuF6buR/'
             . 'fontsize/500/dissolve/100/gravity/SouthEast/', $imageUrlBuilder->waterText($url, $text, $font, 500));
         $this->assertEquals(
@@ -246,7 +246,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
             $url . '?watermark/2/text/5rWL6K-V5LiA5LiL/font/5b6u6L2v6ZuF6buR/fill/I0ZGMDAwMA==/',
             \Qiniu\waterText($url, $text, $font, 'sdf', $fontColor, 101, 'sdfsdf', 'sdfs', 'ssdf')
         );
-        // 多参数测试
+        // 多参數测试
         $this->assertEquals(
             $url2 . '|watermark/2/text/5rWL6K-V5LiA5LiL/font/5b6u6L2v6ZuF6buR/'
             . 'fontsize/500/dissolve/100/gravity/SouthEast/',

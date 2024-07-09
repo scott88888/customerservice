@@ -31,7 +31,7 @@
         }
     }
 
-    /* 初始化颜色设置 */
+    /* 初始化颜色設定 */
     function initColorSelector () {
         var obj = editor.queryCommandValue('background');
         if (obj) {
@@ -78,7 +78,7 @@
         var me = editor,
             cp = $G("colorPicker");
 
-        /* 生成颜色選擇器ui对象 */
+        /* 產生颜色選擇器ui對象 */
         var popup = new UE.ui.Popup({
             content: new UE.ui.ColorPicker({
                 noColorText: me.getLang("clearColor"),
@@ -99,7 +99,7 @@
             }
         });
 
-        /* 设置颜色選擇器 */
+        /* 設定颜色選擇器 */
         domUtils.on(cp, "click", function () {
             popup.showAnchor(this);
         });
@@ -117,7 +117,7 @@
         onlineImage = onlineImage || new OnlineImage('imageList');
     }
 
-    /* 更新背景色设置面板 */
+    /* 更新背景色設定面板 */
     function updateFormState (radio, color, url, align, x, y) {
         var nocolorRadio = $G('nocolorRadio'),
             coloredRadio = $G('coloredRadio');
@@ -203,11 +203,11 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取資料 */
+        /* 初始化滚動事件,滚動到地步自動拉取資料 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取图片 */
+            /* 滚動拉取图片 */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {

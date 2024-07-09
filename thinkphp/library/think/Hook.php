@@ -19,11 +19,11 @@ class Hook
     private static $tags = [];
 
     /**
-     * 动态新增行为扩展到某个标签
+     * 動态新增行為扩展到某个标签
      * @access public
      * @param  string $tag      标签名稱
-     * @param  mixed  $behavior 行为名稱
-     * @param  bool   $first    是否放到开头执行
+     * @param  mixed  $behavior 行為名稱
+     * @param  bool   $first    是否放到開头执行
      * @return void
      */
     public static function add($tag, $behavior, $first = false)
@@ -79,11 +79,11 @@ class Hook
     }
 
     /**
-     * 监听标签的行为
+     * 监听标签的行為
      * @access public
      * @param  string $tag    标签名稱
-     * @param  mixed  $params 传入参数
-     * @param  mixed  $extra  额外参数
+     * @param  mixed  $params 传入参數
+     * @param  mixed  $extra  额外参數
      * @param  bool   $once   只取得一个有效返回值
      * @return mixed
      */
@@ -94,7 +94,7 @@ class Hook
         foreach (static::get($tag) as $key => $name) {
             $results[$key] = self::exec($name, $tag, $params, $extra);
 
-            // 如果返回 false，或者仅取得一个有效返回则中断行为执行
+            // 如果返回 false，或者仅取得一个有效返回则中断行為执行
             if (false === $results[$key] || (!is_null($results[$key]) && $once)) {
                 break;
             }
@@ -104,12 +104,12 @@ class Hook
     }
 
     /**
-     * 执行某个行为
+     * 执行某个行為
      * @access public
-     * @param  mixed  $class  要执行的行为
+     * @param  mixed  $class  要执行的行為
      * @param  string $tag    方法名（标签名）
-     * @param  mixed  $params 传人的参数
-     * @param  mixed  $extra  额外参数
+     * @param  mixed  $params 传人的参數
+     * @param  mixed  $extra  额外参數
      * @return mixed
      */
     public static function exec($class, $tag = '', &$params = null, $extra = null)

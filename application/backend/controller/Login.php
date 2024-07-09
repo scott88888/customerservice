@@ -40,10 +40,10 @@ class Login extends Controller
                 ->where('username', $post['username'])
                 ->where('password', $pass)
                 ->find();
-            if (!$admin) $this->error('登入使用者名稱或密碼错误');
+            if (!$admin) $this->error('登入使用者名稱或密碼錯誤');
             // 取得登入資料
             $login = $admin->getData();
-            // 设置session标识狀態
+            // 設定session標識狀態
             session('admin_user_name', $login['username']);
             session('admin_user_id', $login['id']);
             $this->success('登入成功', url("/backend/index/index"));

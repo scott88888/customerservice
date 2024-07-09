@@ -41,27 +41,27 @@ class Controller extends \think\Controller
     ];
 
     /**
-     * 架构函数
-     * @param Request $request Request对象
+     * 架构函數
+     * @param Request $request Request對象
      * @access public
      */
     public function __construct(Request $request = null)
     {
-        // 生成request对象
+        // 產生request對象
         $this->request = is_null($request) ? Request::instance() : $request;
         // 初始化配置訊息
         $this->config = Config::get('template') ?: $this->config;
-        // 处理路由参数
+        // 处理路由参數
         $route = $this->request->param('route', '');
         $param = explode('-', $route);
-        // 是否自动转换控制器和操作名
+        // 是否自動转换控制器和操作名
         $convert = \think\Config::get('url_convert');
         // 格式化路由的插件位置
         $this->action = $convert ? strtolower(array_pop($param)) : array_pop($param);
         $this->controller = $convert ? strtolower(array_pop($param)) : array_pop($param);
         $this->addon = $convert ? strtolower(array_pop($param)) : array_pop($param);
 
-        // 生成view_path
+        // 產生view_path
         $view_path = $this->config['view_path'] ?: 'view';
 
         // 重置配置
@@ -76,7 +76,7 @@ class Controller extends \think\Controller
      * @param string $template 模板文件名
      * @param array $vars 模板输出变量
      * @param array $replace 模板替换
-     * @param array $config 模板参数
+     * @param array $config 模板参數
      * @return mixed
      */
     protected function fetch($template = '', $vars = [], $replace = [], $config = [])
@@ -86,7 +86,7 @@ class Controller extends \think\Controller
             $depr = $this->config['view_depr'];
             $template = str_replace(['/', ':'], $depr, $template);
             if ('' == $template) {
-                // 如果模板文件名为空 按照默认规则定位
+                // 如果模板文件名為空 按照默认规则定位
                 $template = str_replace('.', DS, $controller) . $depr . $this->action;
             } elseif (false === strpos($template, $depr)) {
                 $template = str_replace('.', DS, $controller) . $depr . $template;

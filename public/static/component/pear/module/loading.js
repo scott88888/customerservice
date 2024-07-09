@@ -1935,7 +1935,7 @@ layui.define(['table', 'jquery', 'element'], function (exports) {
     
 	
 	/*
-	 * 侧边滑出弹层插件 mSlider.js
+	 * 側边滑出弹层插件 mSlider.js
 	 * DH (https://denghao.me)
 	 * 2018-07
 	 */
@@ -1976,7 +1976,7 @@ layui.define(['table', 'jquery', 'element'], function (exports) {
 			init: function() {
 				var g = this;
 				if (!g.dom) {
-					console.log("未正确绑定弹窗容器");
+					console.log("未正确绑定彈窗容器");
 					return
 				}
 				var d = document.createElement("div");

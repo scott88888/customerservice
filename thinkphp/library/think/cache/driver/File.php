@@ -30,7 +30,7 @@ class File extends Driver
     protected $expire;
 
     /**
-     * 构造函数
+     * 构造函數
      * @param array $options
      */
     public function __construct($options = [])
@@ -51,7 +51,7 @@ class File extends Driver
      */
     private function init()
     {
-        // 创建项目缓存目录
+        // 建立项目缓存目录
         if (!is_dir($this->options['path'])) {
             if (mkdir($this->options['path'], 0755, true)) {
                 return true;
@@ -64,7 +64,7 @@ class File extends Driver
      * 取得变量的存储文件名
      * @access protected
      * @param  string $name 缓存变量名
-     * @param  bool   $auto 是否自动创建目录
+     * @param  bool   $auto 是否自動建立目录
      * @return string
      */
     protected function getCacheKey($name, $auto = false)
@@ -135,7 +135,7 @@ class File extends Driver
      * @access public
      * @param string            $name 缓存变量名
      * @param mixed             $value  存储資料
-     * @param integer|\DateTime $expire  有效时间（秒）
+     * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
      */
     public function set($name, $value, $expire = null)
@@ -167,10 +167,10 @@ class File extends Driver
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function inc($name, $step = 1)
@@ -187,10 +187,10 @@ class File extends Driver
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function dec($name, $step = 1)

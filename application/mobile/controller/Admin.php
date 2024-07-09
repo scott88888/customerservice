@@ -151,7 +151,7 @@ class Admin extends Base
   }
 
     /**
-     * .对话頁面
+     * .對話頁面
      * [chat description]
      * @return [type] [description]
      */
@@ -220,7 +220,7 @@ class Admin extends Base
     $data = $userAdmin->where('business_id', $login['business_id'])->paginate(3, false, $pageParam);
     if($data->count() == 0){
     
-       $this->assign('content','暂时没有留言資料');
+       $this->assign('content','暫时没有留言資料');
     }else{
        $this->assign('content',"");
     }

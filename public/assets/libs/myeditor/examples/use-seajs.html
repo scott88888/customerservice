@@ -59,7 +59,7 @@
                 }
             });
                 
-            //seajs.use("./js/seajs-main"); //使用main.js时 editormd 路径要改为 "../../editormd"
+            //seajs.use("./js/seajs-main"); //使用main.js时 editormd 路径要改為 "../../editormd"
             
             var deps = [
                 "jquery", 
@@ -90,19 +90,19 @@
                         codeFold : true,
                         searchReplace : true,
                         saveHTMLToTextarea : true,      // 保存 HTML 到 Textarea
-                        htmlDecode : "style,script,iframe|on*",            // 開啟 HTML 标签解析，为了安全性，默认不開啟
+                        htmlDecode : "style,script,iframe|on*",            // 開啟 HTML 标签解析，為了安全性，默认不開啟
                         emoji : true,
                         taskList : true,
                         tocm            : true,          // Using [TOCM]
                         tex : true,                      // 開啟科学公式 TeX 語言支持，默认關閉
-                        //previewCodeHighlight : false,  // 關閉预览窗口的代码高亮，默认開啟
+                        //previewCodeHighlight : false,  // 關閉预览視窗的程式碼高亮，默认開啟
                         flowChart : true,                // 疑似 Sea.js与 Raphael.js 有冲突，必须先加载 Raphael.js ，Editor.md 才能在 Sea.js 下正常进行；
                         sequenceDiagram : true,          // 同上
-                        //dialogLockScreen : false,      // 设置弹出层对话框不锁屏，全局通用，默认为 true
-                        //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为 true
-                        //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为 true
-                        //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为 0.1
-                        //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为 #fff
+                        //dialogLockScreen : false,      // 設定弹出层對話框不锁屏，全局通用，默认為 true
+                        //dialogShowMask : false,     // 設定弹出层對話框显示透明遮罩层，全局通用，默认為 true
+                        //dialogDraggable : false,    // 設定弹出层對話框不可拖動，全局通用，默认為 true
+                        //dialogMaskOpacity : 0.4,    // 設定透明遮罩层的透明度，全局通用，默认值為 0.1
+                        //dialogMaskBgColor : "#000", // 設定透明遮罩层的背景颜色，全局通用，默认為 #fff
                         imageUpload : true,
                         imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
                         imageUploadURL : "./php/upload.php",

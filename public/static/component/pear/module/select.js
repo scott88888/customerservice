@@ -55,7 +55,7 @@
 		FORM_TEAM_PID = 'XM_PID_VALUE',
 		CZ = 'xm-cz',
 		CZ_GROUP = 'xm-cz-group',
-		TIPS = '请選擇',
+		TIPS = '請選擇',
 		data = {},
 		events = {
 			on: {},
@@ -171,14 +171,14 @@
  			}
 		};
 	
-	//一些简单的处理方法
+	//一些简單的处理方法
 	let Common = function(){
 		this.appender();
 		this.on();
 		this.onreset();
 	};
 	
-	Common.prototype.appender = function(){//针对IE做的一些拓展
+	Common.prototype.appender = function(){//針對IE做的一些拓展
 		//拓展Array map方法
 		if(!Array.prototype.map){Array.prototype.map=function(i,h){var b,a,c,e=Object(this),f=e.length>>>0;if(h){b=h}a=new Array(f);c=0;while(c<f){var d,g;if(c in e){d=e[c];g=i.call(b,d,c,e);a[c]=g}c++}return a}};
 		
@@ -245,7 +245,7 @@
 
 			data[id] = fs;
 
-			//先取消layui对select的渲染
+			//先取消layui對select的渲染
 			hasLayuiRender[0] && hasLayuiRender.remove();
 			hasRender[0] && hasRender.remove();
 
@@ -286,7 +286,7 @@
 				$(document).on('input', `div.${PNAME}[FS_ID="${id}"] .${INPUT}`, (e) => {
 					this.search(id, e, fs.config.searchUrl);
 				});
-				if(fs.config.searchUrl){//触发第一次请求事件
+				if(fs.config.searchUrl){//触发第一次請求事件
 					this.triggerSearch(reElem, true);
 				}
 			}else{//隐藏第二个dl
@@ -330,7 +330,7 @@
 				clearTimeout(fs.clearid);
 				fs.clearid = setTimeout(() => {
 					reElem.find(`dl > *:not(.${FORM_SELECT_TIPS})`).remove();
-					reElem.find(`dd.${FORM_NONE}`).addClass(FORM_EMPTY).text('请求中');
+					reElem.find(`dd.${FORM_NONE}`).addClass(FORM_EMPTY).text('請求中');
 					this.ajax(id, searchUrl, inputValue, false, null, true);
 				}, delay);
 			}
@@ -350,7 +350,7 @@
 					$(item).addClass(DD_HIDE);
 				}
 			});
-			//动态创建
+			//動态建立
 			this.create(id, isCreate, inputValue);
 			let shows = reElem.find(`dl dd:not(.${FORM_SELECT_TIPS}):not(.${DD_HIDE})`);
 			if(!shows.length){
@@ -389,7 +389,7 @@
 		let ajaxConfig = ajaxs[id] ? ajaxs[id] : ajax;
 		let ajaxData = $.extend(true, {}, ajaxConfig.data);
 		ajaxData[ajaxConfig.searchName] = inputValue;
-		//是否需要对ajax新增随机时间
+		//是否需要對ajax新增随机時間
 		//ajaxData['_'] = Date.now();
 		$.ajax({
 			type: ajaxConfig.type,
@@ -427,7 +427,7 @@
 	}
 	
 	Common.prototype.renderData = function(id, dataArr, linkage, linkageWidth, isSearch, isReplace){
-		if(linkage){//渲染多级联动
+		if(linkage){//渲染多级联動
 			this.renderLinkage(id, dataArr, linkageWidth);
 			return;
 		}
@@ -523,7 +523,7 @@
 		html.push('<div style="clear: both; height: 288px;"></div>');
 		html.push('</div>');
 		reElem.find('dl').html(html.join(''));
-		reElem.find(`.${INPUT}`).css('display', 'none');//联动暂时不支持搜索
+		reElem.find(`.${INPUT}`).css('display', 'none');//联動暫时不支持搜索
 	}
 	
 	Common.prototype.renderReplace = function(id, dataArr){
@@ -596,7 +596,7 @@
 					tdd = item;
 				}
 			});
-			if(!tdd){//如果不存在, 则创建
+			if(!tdd){//如果不存在, 则建立
 				let val = fs.config.create(id, inputValue);
 				if(temp[0]){
 					temp.attr('lay-value', val);
@@ -669,7 +669,7 @@
 				`</dd>`,
 				`<dd lay-value="" class="${FORM_SELECT_TIPS} ${FORM_DL_INPUT}" style="background-color: #FFF!important;">`,
 					`<i class="xm-iconfont icon-sousuo"></i>`,
-					`<input type="text" class="${FORM_INPUT} ${INPUT}" placeholder="请搜索"/>`,
+					`<input type="text" class="${FORM_INPUT} ${INPUT}" placeholder="請搜索"/>`,
 				`</dd>`
 			].join(''));
 		}else{
@@ -778,12 +778,12 @@
 			if(title.hasClass(DIS)){
 				return false;
 			}
-			//如果点击的是右边的三角或者只读的input
+			//如果點擊的是右边的三角或者只读的input
 			if(othis.is(`.${SANJIAO}`) || othis.is(`.${INPUT}[readonly]`)){
 				this.changeShow(title, !title.parents(`.${FORM_SELECT}`).hasClass(FORM_SELECTED));
 				return false;
 			}
-			//如果点击的是input的右边, focus一下
+			//如果點擊的是input的右边, focus一下
 			if(title.find(`.${INPUT}:not(readonly)`)[0]){
 				let input = title.find(`.${INPUT}`),
 					epos = {x: e.pageX, y: e.pageY},
@@ -799,12 +799,12 @@
 				}
 			}
 			
-			//如果点击的是可搜索的input
+			//如果點擊的是可搜索的input
 			if(othis.is(`.${INPUT}`)){
 				this.changeShow(title, true);
 				return false;
 			}
-			//如果点击的是x按钮
+			//如果點擊的是x按钮
 			if(othis.is(`i[fsw="${NAME}"]`)){
 				let val = this.getItem(id, othis),
 				dd = dl.find(`dd[lay-value='${val.value}']`);
@@ -830,12 +830,12 @@
 				//激活li
 				group.find('.xm-select-active').removeClass('xm-select-active');
 				othis.addClass('xm-select-active');
-				//激活下一个group, 激活前显示对应資料
+				//激活下一个group, 激活前显示對应資料
 				group.nextAll('.xm-select-linkage-group').addClass('xm-select-linkage-hide');
 				let nextGroup = group.next('.xm-select-linkage-group');
 				nextGroup.find('li').addClass('xm-select-linkage-hide');
 				nextGroup.find(`li[pid="${othis.attr('xm-value')}"]`).removeClass('xm-select-linkage-hide');
-				//如果没有下一个group, 或没有对应的值
+				//如果没有下一个group, 或没有對应的值
 				if(!nextGroup[0] || nextGroup.find(`li:not(.xm-select-linkage-hide)`).length == 0){
 					let vals = [],
 						index = 0,
@@ -888,7 +888,7 @@
 				return false;
 			}
 			
-			//菜单功效
+			//選單功效
 			if(othis.is('i.icon-caidan')){
 				let opens = [], closes = [];
 				othis.parents('dl').find('dd[tree-folder="true"]').each((index, item) => {
@@ -1138,7 +1138,7 @@
 			this.remove(vals, val)
 		);
 		if(!div[0]) return ;
-		//单选选完后直接關閉選擇域
+		//單选选完后直接關閉選擇域
 		if(fs.config.radio){
 			this.changeShow(div, false);
 		}
@@ -1242,7 +1242,7 @@
 			top.find(`dl .${FORM_EMPTY}`).removeClass(FORM_EMPTY);
 			top.find(`dl dd.${DD_HIDE}`).removeClass(DD_HIDE);
 			top.find(`dl dd.${TEMP}`).remove();
-			//计算ajax資料是否为空, 然后重新请求資料
+			//计算ajax資料是否為空, 然后重新請求資料
 			if(id && data[id] && data[id].config.isEmpty){
 				this.triggerSearch(top);
 			}
@@ -1333,7 +1333,7 @@
 		if(!dl[0]){
 			return ;
 		}
-		if(dl.find('.xm-select-linkage')[0]){//针对多级联动的处理
+		if(dl.find('.xm-select-linkage')[0]){//針對多级联動的处理
 			data[id].values.concat([]).forEach((item, idx) => {
 				let vs = item.value.split('/');
 				let pid, li, index = 0;
@@ -1487,7 +1487,7 @@
 				temp = {},
 				dd,
 				isAdd = true;
-			if(isAppend == false){//刪除传入的数组
+			if(isAppend == false){//刪除传入的數组
 				isAdd = false;
 			}else if(isAppend == true){//追加模式
 				isAdd = true;

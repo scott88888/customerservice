@@ -23,13 +23,13 @@ use think\Db;
 abstract class Addons
 {
     /**
-     * 视图实例对象
+     * 视图实例對象
      * @var view
      * @access protected
      */
     protected $view = null;
 
-    // 当前错误訊息
+    // 当前錯誤訊息
     protected $error;
 
     /**
@@ -47,7 +47,7 @@ abstract class Addons
     public $config_file = '';
 
     /**
-     * 架构函数
+     * 架构函數
      * @access public
      */
     public function __construct()
@@ -71,7 +71,7 @@ abstract class Addons
     }
 
     /**
-     * 取得插件的配置数组
+     * 取得插件的配置數组
      * @param string $name 可选模块名
      * @return array|mixed|null
      */
@@ -138,7 +138,7 @@ abstract class Addons
      * @param string $template 模板文件名或者内容
      * @param array $vars 模板输出变量
      * @param array $replace 替换内容
-     * @param array $config 模板参数
+     * @param array $config 模板参數
      * @return mixed
      * @throws \Exception
      */
@@ -159,7 +159,7 @@ abstract class Addons
      * @param string $content 内容
      * @param array $vars 模板输出变量
      * @param array $replace 替换内容
-     * @param array $config 模板参数
+     * @param array $config 模板参數
      * @return mixed
      */
     public function display($content, $vars = [], $replace = [], $config = [])
@@ -198,7 +198,7 @@ abstract class Addons
     }
 
     /**
-     * 取得当前错误訊息
+     * 取得当前錯誤訊息
      * @return mixed
      */
     public function getError()
@@ -206,7 +206,7 @@ abstract class Addons
         return $this->error;
     }
 
-    //必须实现安装
+    //必须實現安装
     abstract public function install();
 
     //必须卸载插件方法

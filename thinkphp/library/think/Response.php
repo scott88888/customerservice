@@ -31,20 +31,20 @@ class Response
     //狀態
     protected $code = 200;
 
-    // 输出参数
+    // 输出参數
     protected $options = [];
-    // header参数
+    // header参數
     protected $header = [];
 
     protected $content = null;
 
     /**
-     * 构造函数
+     * 构造函數
      * @access   public
      * @param mixed $data    输出資料
      * @param int   $code
      * @param array $header
-     * @param array $options 输出参数
+     * @param array $options 输出参數
      */
     public function __construct($data = '', $code = 200, array $header = [], $options = [])
     {
@@ -58,13 +58,13 @@ class Response
     }
 
     /**
-     * 创建Response对象
+     * 建立Response對象
      * @access public
      * @param mixed  $data    输出資料
      * @param string $type    输出类型
      * @param int    $code
      * @param array  $header
-     * @param array  $options 输出参数
+     * @param array  $options 输出参數
      * @return Response|JsonResponse|ViewResponse|XmlResponse|RedirectResponse|JsonpResponse
      */
     public static function create($data = '', $type = '', $code = 200, array $header = [], $options = [])
@@ -109,7 +109,7 @@ class Response
         }
 
         if (!headers_sent() && !empty($this->header)) {
-            // 发送狀態码
+            // 发送狀態碼
             http_response_code($this->code);
             // 发送头部訊息
             foreach ($this->header as $name => $val) {
@@ -131,7 +131,7 @@ class Response
         // 监听response_end
         Hook::listen('response_end', $this);
 
-        // 清空当次请求有效的資料
+        // 清空当次請求有效的資料
         if (!($this instanceof RedirectResponse)) {
             Session::flush();
         }
@@ -149,9 +149,9 @@ class Response
     }
 
     /**
-     * 输出的参数
+     * 输出的参數
      * @access public
-     * @param mixed $options 输出参数
+     * @param mixed $options 输出参數
      * @return $this
      */
     public function options($options = [])
@@ -161,7 +161,7 @@ class Response
     }
 
     /**
-     * 输出資料设置
+     * 输出資料設定
      * @access public
      * @param mixed $data 输出資料
      * @return $this
@@ -173,10 +173,10 @@ class Response
     }
 
     /**
-     * 设置响应头
+     * 設定响应头
      * @access public
-     * @param string|array $name  参数名
-     * @param string       $value 参数值
+     * @param string|array $name  参數名
+     * @param string       $value 参數值
      * @return $this
      */
     public function header($name, $value = null)
@@ -190,7 +190,7 @@ class Response
     }
 
     /**
-     * 设置頁面输出内容
+     * 設定頁面输出内容
      * @param $content
      * @return $this
      */
@@ -211,7 +211,7 @@ class Response
 
     /**
      * 发送HTTP狀態
-     * @param integer $code 狀態码
+     * @param integer $code 狀態碼
      * @return $this
      */
     public function code($code)
@@ -255,7 +255,7 @@ class Response
 
     /**
      * 頁面缓存控制
-     * @param string $cache 狀態码
+     * @param string $cache 狀態碼
      * @return $this
      */
     public function cacheControl($cache)
@@ -267,7 +267,7 @@ class Response
     /**
      * 頁面输出类型
      * @param string $contentType 输出类型
-     * @param string $charset     输出编码
+     * @param string $charset     输出编碼
      * @return $this
      */
     public function contentType($contentType, $charset = 'utf-8')
@@ -322,7 +322,7 @@ class Response
     }
 
     /**
-     * 取得狀態码
+     * 取得狀態碼
      * @return integer
      */
     public function getCode()

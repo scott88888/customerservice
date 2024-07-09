@@ -16,7 +16,7 @@ class Plugin implements PluginInterface
         //框架核心
         $manager->addInstaller(new ThinkFramework($io, $composer));
 
-        //单元测试
+        //單元测试
         $manager->addInstaller(new ThinkTesting($io, $composer));
 
         //扩展

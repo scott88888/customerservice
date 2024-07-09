@@ -75,12 +75,12 @@ class WeWorkProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        // 网頁授权登入
+        // 網頁授权登入
         if (!empty($this->scopes)) {
             return $this->getOAuthUrl($state);
         }
 
-        // 第三方网頁应用登入（扫码登入）
+        // 第三方網頁应用登入（扫碼登入）
         return $this->getQrConnectUrl($state);
     }
 

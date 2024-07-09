@@ -18,7 +18,7 @@ abstract class Yar
 {
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
      */
     public function __construct()
@@ -35,7 +35,7 @@ abstract class Yar
 
         //实例化Yar_Server
         $server = new \Yar_Server($this);
-        // 启动server
+        // 启動server
         $server->handle();
     }
 
@@ -43,7 +43,7 @@ abstract class Yar
      * 魔术方法 有不存在的操作的时候执行
      * @access public
      * @param string $method 方法名
-     * @param array $args 参数
+     * @param array $args 参數
      * @return mixed
      */
     public function __call($method, $args)

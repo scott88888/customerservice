@@ -499,7 +499,7 @@
             var ol    = $('ol', $('.prettyprint')[0]);
             var li    = $('li', ol[0]);   
 
-            // 短路径和长路径变换
+            // 短路径和長路径变换
             for(var i = 0; i < files.length; i++){
                 files[i].ondblclick = function(){
                     var title = this.title;
@@ -509,7 +509,7 @@
                 }
             }
 
-            // 设置出错行
+            // 設定出错行
             var err_line = $('.line-' + LINE, ol[0])[0];
             err_line.className = err_line.className + ' line-error';
 
@@ -517,7 +517,7 @@
                 prettyPrint();
 
                 // 解决Firefox浏览器一个很诡异的問題
-                // 当代码高亮后，ol的行号莫名其妙的错位
+                // 当程式碼高亮后，ol的行号莫名其妙的错位
                 // 但是只要刷新li里面的html重新渲染就没有問題了
                 if(window.navigator.userAgent.indexOf('Firefox') >= 0){
                     ol[0].innerHTML = ol[0].innerHTML;

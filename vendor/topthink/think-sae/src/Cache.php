@@ -14,7 +14,7 @@ namespace think\sae;
 use think\Exception;
 
 /**
- * SAE Memcache缓存驱动
+ * SAE Memcache缓存驱動
  * @author    liu21st <liu21st@gmail.com>
  */
 class Cache
@@ -30,8 +30,8 @@ class Cache
     ];
 
     /**
-     * 架构函数
-     * @param array $options 缓存参数
+     * 架构函數
+     * @param array $options 缓存参數
      * @access public
      */
     public function __construct($options = [])
@@ -64,7 +64,7 @@ class Cache
      * @access public
      * @param string    $name 缓存变量名
      * @param mixed     $value  存储資料
-     * @param integer   $expire  有效时间（秒）
+     * @param integer   $expire  有效時間（秒）
      * @return bool
      */
     public function set($name, $value, $expire = null)
@@ -104,7 +104,7 @@ class Cache
     }
 
     /**
-     * 获得SaeKv对象
+     * 获得SaeKv對象
      */
     private function getKv()
     {

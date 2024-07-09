@@ -147,7 +147,7 @@ class Libevent implements EventInterface
                 break;
             case self::EV_TIMER:
             case self::EV_TIMER_ONCE:
-                // 这里 fd 为timerid 
+                // 这里 fd 為timerid 
                 if (isset($this->_eventTimer[$fd])) {
                     event_del($this->_eventTimer[$fd][2]);
                     unset($this->_eventTimer[$fd]);

@@ -40,8 +40,8 @@ class Definition
     }
 
     /**
-     * 设置指令的定义
-     * @param array $definition 定义的数组
+     * 設定指令的定义
+     * @param array $definition 定义的數组
      */
     public function setDefinition(array $definition)
     {
@@ -60,8 +60,8 @@ class Definition
     }
 
     /**
-     * 设置参数
-     * @param Argument[] $arguments 参数数组
+     * 設定参數
+     * @param Argument[] $arguments 参數數组
      */
     public function setArguments($arguments = [])
     {
@@ -73,8 +73,8 @@ class Definition
     }
 
     /**
-     * 新增参数
-     * @param Argument[] $arguments 参数数组
+     * 新增参數
+     * @param Argument[] $arguments 参數數组
      * @api
      */
     public function addArguments($arguments = [])
@@ -87,8 +87,8 @@ class Definition
     }
 
     /**
-     * 新增一个参数
-     * @param Argument $argument 参数
+     * 新增一个参數
+     * @param Argument $argument 参數
      * @throws \LogicException
      */
     public function addArgument(Argument $argument)
@@ -119,9 +119,9 @@ class Definition
     }
 
     /**
-     * 根据名稱或者位置取得参数
-     * @param string|int $name 参数名或者位置
-     * @return Argument 参数
+     * 根據名稱或者位置取得参數
+     * @param string|int $name 参數名或者位置
+     * @return Argument 参數
      * @throws \InvalidArgumentException
      */
     public function getArgument($name)
@@ -136,8 +136,8 @@ class Definition
     }
 
     /**
-     * 根据名稱或位置檢查是否具有某个参数
-     * @param string|int $name 参数名或者位置
+     * 根據名稱或位置檢查是否具有某个参數
+     * @param string|int $name 参數名或者位置
      * @return bool
      * @api
      */
@@ -149,8 +149,8 @@ class Definition
     }
 
     /**
-     * 取得所有的参数
-     * @return Argument[] 参数数组
+     * 取得所有的参數
+     * @return Argument[] 参數數组
      */
     public function getArguments()
     {
@@ -158,7 +158,7 @@ class Definition
     }
 
     /**
-     * 取得参数数量
+     * 取得参數數量
      * @return int
      */
     public function getArgumentCount()
@@ -167,7 +167,7 @@ class Definition
     }
 
     /**
-     * 取得必填的参数的数量
+     * 取得必填的参數的數量
      * @return int
      */
     public function getArgumentRequiredCount()
@@ -176,7 +176,7 @@ class Definition
     }
 
     /**
-     * 取得参数默认值
+     * 取得参數默认值
      * @return array
      */
     public function getArgumentDefaults()
@@ -190,8 +190,8 @@ class Definition
     }
 
     /**
-     * 设置选项
-     * @param Option[] $options 选项数组
+     * 設定选项
+     * @param Option[] $options 选项數组
      */
     public function setOptions($options = [])
     {
@@ -202,7 +202,7 @@ class Definition
 
     /**
      * 新增选项
-     * @param Option[] $options 选项数组
+     * @param Option[] $options 选项數组
      * @api
      */
     public function addOptions($options = [])
@@ -243,7 +243,7 @@ class Definition
     }
 
     /**
-     * 根据名稱取得选项
+     * 根據名稱取得选项
      * @param string $name 选项名
      * @return Option
      * @throws \InvalidArgumentException
@@ -259,7 +259,7 @@ class Definition
     }
 
     /**
-     * 根据名稱檢查是否有这个选项
+     * 根據名稱檢查是否有这个选项
      * @param string $name 选项名
      * @return bool
      * @api
@@ -280,7 +280,7 @@ class Definition
     }
 
     /**
-     * 根据名稱檢查某个选项是否有短名稱
+     * 根據名稱檢查某个选项是否有短名稱
      * @param string $name 短名稱
      * @return bool
      */
@@ -290,7 +290,7 @@ class Definition
     }
 
     /**
-     * 根据短名稱取得选项
+     * 根據短名稱取得选项
      * @param string $shortcut 短名稱
      * @return Option
      */
@@ -314,7 +314,7 @@ class Definition
     }
 
     /**
-     * 根据短名稱取得选项名
+     * 根據短名稱取得选项名
      * @param string $shortcut 短名稱
      * @return string
      * @throws \InvalidArgumentException

@@ -96,7 +96,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 创建卡券.
+     * 建立卡券.
      *
      * @param string $cardType
      * @param array  $baseInfo
@@ -118,7 +118,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 创建二维码.
+     * 建立二维碼.
      *
      * @param array $cards
      *
@@ -130,7 +130,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * ticket 换取二维码图片.
+     * ticket 换取二维碼图片.
      *
      * @param string $ticket
      *
@@ -157,7 +157,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 通过ticket换取二维码 連結.
+     * 通過ticket换取二维碼 連結.
      *
      * @param string $ticket
      *
@@ -207,7 +207,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 生成 js新增到卡包 需要的 card_list 项.
+     * 產生 js新增到卡包 需要的 card_list 项.
      *
      * @param string $cardId
      * @param array  $extension
@@ -242,7 +242,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 生成签名.
+     * 產生签名.
      *
      * @return string
      */
@@ -255,13 +255,13 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 创建货架接口.
+     * 建立货架接口.
      *
      * @param string $banner
      * @param string $pageTitle
      * @param bool   $canShare
-     * @param string $scene     [SCENE_NEAR_BY 附近,SCENE_MENU 自定义菜单,SCENE_QRCODE 二维码,SCENE_ARTICLE 公众号文章,
-     *                          SCENE_H5 h5頁面,SCENE_IVR 自動回覆,SCENE_CARD_CUSTOM_CELL 卡券自定义cell]
+     * @param string $scene     [SCENE_NEAR_BY 附近,SCENE_MENU 自訂選單,SCENE_QRCODE 二维碼,SCENE_ARTICLE 公众号文章,
+     *                          SCENE_H5 h5頁面,SCENE_IVR 自動回覆,SCENE_CARD_CUSTOM_CELL 卡券自訂cell]
      * @param array  $cardList
      *
      * @return \EasyWeChat\Support\Collection
@@ -298,7 +298,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 查詢匯入code数目.
+     * 查詢匯入code數目.
      *
      * @param string $cardId
      *
@@ -377,7 +377,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * Code解码接口.
+     * Code解碼接口.
      *
      * @param string $encryptedCode
      *
@@ -409,7 +409,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 设置测试白名单.
+     * 設定测试白名單.
      *
      * @param array $openids
      *
@@ -425,7 +425,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 设置测试白名单(by username).
+     * 設定测试白名單(by username).
      *
      * @param array $usernames
      *
@@ -495,7 +495,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 更改卡券訊息接口 and 设置跟随推荐接口.
+     * 更改卡券訊息接口 and 設定跟随推荐接口.
      *
      * @param string $cardId
      * @param string $type
@@ -521,8 +521,8 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 设置微信买单接口.
-     * 设置买单的 card_id 必须已经配置了门店，否则会报错.
+     * 設定微信买單接口.
+     * 設定买單的 card_id 必须已经配置了门店，否则会报错.
      *
      * @param string $cardId
      * @param bool   $isOpen
@@ -622,7 +622,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 设置卡券失效.
+     * 設定卡券失效.
      *
      * @param string $code
      * @param string $cardId
@@ -656,7 +656,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 设置开卡字段接口.
+     * 設定開卡字段接口.
      *
      * @param string $cardId
      * @param array  $requiredForm
@@ -800,7 +800,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 卡券开放类目查詢接口.
+     * 卡券開放类目查詢接口.
      *
      * @return \EasyWeChat\Support\Collection
      */

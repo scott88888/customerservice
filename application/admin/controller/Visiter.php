@@ -13,7 +13,7 @@ use think\Paginator;
 use app\Common;
 /**
  *
- * 访客控制器
+ * 訪客控制器
  */
 class Visiter extends Base
 {
@@ -21,7 +21,7 @@ class Visiter extends Base
        $istop=$this->request->param('istop','');
        $visiter_id=$this->request->param('visiter_id','');
        if( $istop === '' || $visiter_id === ''){
-           $this->error('参数非法');
+           $this->error('参數非法');
        }
        $res=Db::table('wolive_visiter')->where('visiter_id',$visiter_id)->update(['istop'=>$istop]);
        if($res){

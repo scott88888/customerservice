@@ -14,7 +14,7 @@ return [
     'debug'          => false,
     // 是否严格檢查字段是否存在
     'fields_strict'  => true,
-    // 是否自动写入时间戳字段
+    // 是否自動写入時間戳字段
     'auto_timestamp' => false,
     // 是否需要进行SQL性能分析
     'sql_explain'    => false,
@@ -33,8 +33,8 @@ return [
     'hostport'       => '',
     // 資料库表前缀
     'prefix'         => '',
-    // 資料库编码默认采用utf8
+    // 資料库编碼默认采用utf8
     'charset'        => 'utf8',
-    // 資料库连接参数
+    // 資料库連結参數
     'params'         => [],
 ];

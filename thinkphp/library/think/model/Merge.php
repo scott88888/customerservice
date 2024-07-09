@@ -19,11 +19,11 @@ class Merge extends Model
 {
 
     protected $relationModel = []; // HAS ONE 关联的模型列表
-    protected $fk            = ''; //  外键名 默认为主表名_id
+    protected $fk            = ''; //  外键名 默认為主表名_id
     protected $mapFields     = []; //  需要处理的模型映射字段，避免混淆 array( id => 'user.id'  )
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
      * @param array|object $data 資料
      */
@@ -31,14 +31,14 @@ class Merge extends Model
     {
         parent::__construct($data);
 
-        // 设置默认外键名 仅支持单一外键
+        // 設定默认外键名 仅支持單一外键
         if (empty($this->fk)) {
             $this->fk = strtolower($this->name) . '_id';
         }
     }
 
     /**
-     * 查找单條记录
+     * 查找單條记录
      * @access public
      * @param mixed        $data  主键值或者查詢條件（闭包）
      * @param string|array $with  关联预查詢
@@ -55,7 +55,7 @@ class Merge extends Model
     /**
      * 附加查詢表达式
      * @access protected
-     * @param \think\db\Query $query 查詢对象
+     * @param \think\db\Query $query 查詢對象
      * @return \think\db\Query
      */
     protected static function attachQuery($query)
@@ -78,7 +78,7 @@ class Merge extends Model
     /**
      * 取得关联模型的字段 并解决混淆
      * @access protected
-     * @param \think\db\Query $query  查詢对象
+     * @param \think\db\Query $query  查詢對象
      * @param string          $name   模型名稱
      * @param string          $table  关联表名稱
      * @param array           $map    字段映射
@@ -151,11 +151,11 @@ class Merge extends Model
     public function save($data = [], $where = [], $sequence = null)
     {
         if (!empty($data)) {
-            // 資料自动驗證
+            // 資料自動驗證
             if (!$this->validateData($data)) {
                 return false;
             }
-            // 資料对象赋值
+            // 資料對象赋值
             foreach ($data as $key => $value) {
                 $this->setAttr($key, $value, $data);
             }
@@ -164,10 +164,10 @@ class Merge extends Model
             }
         }
 
-        // 資料自动完成
+        // 資料自動完成
         $this->autoCompleteData($this->auto);
 
-        // 自动写入更新时间
+        // 自動写入更新時間
         if ($this->autoWriteTimestamp && $this->updateTime && !isset($this->data[$this->updateTime])) {
             $this->setAttr($this->updateTime, null);
         }
@@ -182,7 +182,7 @@ class Merge extends Model
         $pk = $this->getPk();
         try {
             if ($this->isUpdate) {
-                // 自动写入
+                // 自動写入
                 $this->autoCompleteData($this->update);
 
                 if (false === $this->trigger('before_update', $this)) {
@@ -227,10 +227,10 @@ class Merge extends Model
                 // 新增回调
                 $this->trigger('after_update', $this);
             } else {
-                // 自动写入
+                // 自動写入
                 $this->autoCompleteData($this->insert);
 
-                // 自动写入创建时间
+                // 自動写入建立時間
                 if ($this->autoWriteTimestamp && $this->createTime && !isset($this->data[$this->createTime])) {
                     $this->setAttr($this->createTime, null);
                 }
@@ -266,7 +266,7 @@ class Merge extends Model
                         Db::table($table)->strict(false)->insert($data);
                     }
                 }
-                // 标记为更新
+                // 标记為更新
                 $this->isUpdate = true;
                 // 新增回调
                 $this->trigger('after_insert', $this);

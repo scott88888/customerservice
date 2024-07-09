@@ -8,7 +8,7 @@ $accessKey = 'Access_Key';
 $secretKey = 'Secret_Key';
 $auth = new Auth($accessKey, $secretKey);
 
-//要持久化处理的文件所在的空间和文件名。
+//要持久化处理的文件所在的空間和文件名。
 $bucket = 'Bucket_Name';
 
 //持久化处理使用的队列名稱。 https://portal.qiniu.com/mps/pipeline

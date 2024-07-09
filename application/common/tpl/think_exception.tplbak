@@ -45,7 +45,7 @@
 <body>
 <div class="page-404">
     <p class="text-404">error</p>
-    <p>您可以把错误訊息反馈给我们:<?=$message?></p>
+    <p>您可以把錯誤訊息反馈给我们:<?=$message?></p>
 </div>
 
 

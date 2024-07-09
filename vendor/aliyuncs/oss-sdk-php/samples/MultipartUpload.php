@@ -9,13 +9,13 @@ $bucket = Common::getBucketName();
 $ossClient = Common::getOssClient();
 if (is_null($ossClient)) exit(1);
 
-//*******************************简单使用***************************************************************
+//*******************************简單使用***************************************************************
 
 /**
- * 查看完整用法中的 "putObjectByRawApis"函数，查看使用基础的分片上传api进行文件上传，使用者可以基于这个自行实现断点续传等功能
+ * 查看完整用法中的 "putObjectByRawApis"函數，查看使用基础的分片上传api进行文件上传，使用者可以基于这个自行實現断點续传等功能
  */
 
-// 使用分片上传接口上传文件, 接口会根据文件大小决定是使用普通上传还是分片上传
+// 使用分片上传接口上传文件, 接口会根據文件大小决定是使用普通上传还是分片上传
 $ossClient->multiuploadFile($bucket, "file.php", __FILE__, array());
 Common::println("local file " . __FILE__ . " is uploaded to the bucket $bucket, file.php");
 
@@ -29,7 +29,7 @@ Common::println("local dir " . __DIR__ . " is uploaded to the bucket $bucket, ta
 $listMultipartUploadInfo = $ossClient->listMultipartUploads($bucket, array());
 
 
-//******************************* 完整用法参考下面函数 ****************************************************
+//******************************* 完整用法参考下面函數 ****************************************************
 
 multiuploadFile($ossClient, $bucket);
 putObjectByRawApis($ossClient, $bucket);
@@ -37,10 +37,10 @@ uploadDir($ossClient, $bucket);
 listMultipartUploads($ossClient, $bucket);
 
 /**
- * 通过multipart上传文件
+ * 通過multipart上传文件
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function multiuploadFile($ossClient, $bucket)
@@ -63,7 +63,7 @@ function multiuploadFile($ossClient, $bucket)
  * 使用基本的api分阶段进行分片上传
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @throws OssException
  */
 function putObjectByRawApis($ossClient, $bucket)
@@ -138,7 +138,7 @@ function putObjectByRawApis($ossClient, $bucket)
  * 按照目录上传文件
  *
  * @param OssClient $ossClient OssClient
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  *
  */
 function uploadDir($ossClient, $bucket)

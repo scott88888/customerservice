@@ -11,37 +11,37 @@ layui.define(['jquery','layer','form'], function(exports) {
         layer = layui.layer,
         form = layui.form;
 
-    // 树的公共定义样式汇总
+    // 树的公共定义樣式汇总
     var LI_NAV_CHILD = "dtree-nav-ul-sid", LI_NAV_ITEM = "dtree-nav-item",
         LI_DIV_ITEM = "dtree-nav-div",  DTREEFONTSPECIAL="dtreefont-special", NONETITLE="dtree-none-text",
         LI_DIV_MENUBAR = "dtree-menubar",
         LI_DIV_TOOLBAR = "dtree-toolbar", TOOLBAR_TOOL = "dtree-toolbar-tool",  TOOLBAR_TOOL_EM = "dtree-toolbar-fixed",
         LI_DIV_CHECKBAR = "dtree-nav-checkbox-div",
-        LI_CLICK_CHECKBAR = "d-click-checkbar",		//绑定点击复选框时需要用到
+        LI_CLICK_CHECKBAR = "d-click-checkbar",		//绑定點擊复选框时需要用到
         LI_DIV_TEXT_CLASS = "t-click", UL_ROOT="dtree",
         LI_NAV_FIRST_LINE = "dtree-nav-first-line", LI_NAV_LINE = "dtree-nav-line", LI_NAV_LAST_LINE = "dtree-nav-last-line";
 
 
     // 树的公共指定
-    var NAV_THIS = "dtree-nav-this",	//当前节点
-        NAV_SHOW = "dtree-nav-show",	//显示子节点
-        NAV_HIDE = "dtree-nav-hide",	//隐藏节点
-        NAV_DIS = "dtree-disabled",		//禁用节点
+    var NAV_THIS = "dtree-nav-this",	//当前节點
+        NAV_SHOW = "dtree-nav-show",	//显示子节點
+        NAV_HIDE = "dtree-nav-hide",	//隐藏节點
+        NAV_DIS = "dtree-disabled",		//禁用节點
         ICON_HIDE = "dtree-icon-hide",  //隐藏图标
         $BODY = $("body"),				//body選擇器
-        $WIN = $(window),				//window窗口
+        $WIN = $(window),				//window視窗
         $DOC = $(document),				//当前文档
         MOD_NAME = "dtree",				//模块名稱
         VERSION = "v2.5.6",				//版本
         OPTIONS = {},					//全局属性配置
         DTrees = {};				    //当前被实例化的树的集合
 
-    // 树的自定义图标
+    // 树的自訂图标
     var DTREEFONT = "dtreefont",									//默认使用图标字体
         LI_DIV_CHECKBAR_ON = "dtree-icon-fuxuankuangxuanzhong", 	//复选框选中图标
         LI_DIV_CHECKBAR_OUT = "dtree-icon-fuxuankuang", 			//复选框未选中图标
         LI_DIV_CHECKBAR_NOALL = "dtree-icon-fuxuankuang-banxuan",	//复选框半选图标
-        LI_DIV_MENUBAR_DOWN = "dtree-icon-move-down", 				//menubar的展开全部的图标
+        LI_DIV_MENUBAR_DOWN = "dtree-icon-move-down", 				//menubar的展開全部的图标
         LI_DIV_MENUBAR_UP = "dtree-icon-move-up", 					//menubar的收缩全部的图标
         LI_DIV_MENUBAR_REFRESH = "dtree-icon-refresh",				//menubar的刷新图标
         LI_DIV_MENUBAR_CHECKALL = "dtree-icon-roundcheckfill", 		//menubar的全选图标
@@ -49,21 +49,21 @@ layui.define(['jquery','layer','form'], function(exports) {
         LI_DIV_MENUBAR_INVERTALL = "dtree-icon-roundcheck", 		//menubar的反选图标
         LI_DIV_MENUBAR_DELETE = "dtree-icon-delete1", 				//menubar的刪除图标
         LI_DIV_MENUBAR_SEARCH = "dtree-icon-search_list_light",		//menubar的搜索图标
-        LI_DIV_TOOLBAR_PULLDOWN = "dtree-icon-pulldown", 			//toolbar的展开图标
+        LI_DIV_TOOLBAR_PULLDOWN = "dtree-icon-pulldown", 			//toolbar的展開图标
         LI_DIV_TOOLBAR_PULLUP = "dtree-icon-pullup", 				//toolbar的收缩图标
         LI_DIV_TOOLBAR_ADD = "dtree-icon-roundadd", 				//toolbar的新增图标
         LI_DIV_TOOLBAR_EDIT = "dtree-icon-bianji", 					//toolbar的編輯图标
         LI_DIV_TOOLBAR_DEL = "dtree-icon-roundclose";				//toolbar的刪除图标
 
-    // 树的非叶子节点图标集合
+    // 树的非叶子节點图标集合
     var nodeIconArray = {
         "-1": {"open": "dtree-icon-null-open", "close": "dtree-icon-null-close"},			//未指定
-        "0" : {"open": "dtree-icon-wenjianjiazhankai", "close": "dtree-icon-weibiaoti5"},	//文件夹(二级图标默认样式)
-        "1" : {"open": "dtree-icon-jian", "close": "dtree-icon-jia"},						//+-图标(一级图标默认样式)
+        "0" : {"open": "dtree-icon-wenjianjiazhankai", "close": "dtree-icon-weibiaoti5"},	//文件夹(二级图标默认樣式)
+        "1" : {"open": "dtree-icon-jian", "close": "dtree-icon-jia"},						//+-图标(一级图标默认樣式)
         "2" : {"open": "dtree-icon-xiangxia1", "close": "dtree-icon-xiangyou"}				//箭头图标
     };
 
-    // 树的叶子节点图标集合
+    // 树的叶子节點图标集合
     var leafIconArray = {
         "-1": "dtree-icon-null",				//未指定
         "0" : "dtree-icon-weibiaoti5", 			//文件夹
@@ -71,54 +71,54 @@ layui.define(['jquery','layer','form'], function(exports) {
         "2" : "dtree-icon-fenzhijigou",			//机构
         "3" : "dtree-icon-fenguangbaobiao",		//报表
         "4" : "dtree-icon-xinxipilu",			//訊息
-        "5" : "dtree-icon-shuye1",				//叶子(二级图标默认样式)
+        "5" : "dtree-icon-shuye1",				//叶子(二级图标默认樣式)
         "6" : "dtree-icon-caidan_xunzhang",	    //勋章
         "7" : "dtree-icon-normal-file",		    //文件
-        "8" : "dtree-icon-dian",				//小圆点（一级图标默认样式）
+        "8" : "dtree-icon-dian",				//小圆點（一级图标默认樣式）
         "9" : "dtree-icon-set-sm",				//齿轮
         "10" : "dtree-icon-rate"				//星星
     };
 
-    // 树的自定义样式
-    var DTREE = "dtree-",			//自定义样式前缀
-        ITEMTHIS = "-item-this",	//自定义样式当前行选中后缀
-        ITEM = "-item",				//自定义样式当前行后缀
-        DFONT = "-dtreefont",		//自定义样式图标样式后缀
-        FICON = "-ficon",			//自定义样式一级图标样式后缀
-        ICON = "-icon",				//自定义样式二级图标样式后缀
-        CBOX = "-checkbox",			//自定义样式复选框样式后缀
-        CHS = "-choose";			//自定义样式复选框选中样式后缀
+    // 树的自訂樣式
+    var DTREE = "dtree-",			//自訂樣式前缀
+        ITEMTHIS = "-item-this",	//自訂樣式当前行选中后缀
+        ITEM = "-item",				//自訂樣式当前行后缀
+        DFONT = "-dtreefont",		//自訂樣式图标樣式后缀
+        FICON = "-ficon",			//自訂樣式一级图标樣式后缀
+        ICON = "-icon",				//自訂樣式二级图标樣式后缀
+        CBOX = "-checkbox",			//自訂樣式复选框樣式后缀
+        CHS = "-choose";			//自訂樣式复选框选中樣式后缀
 
-    // 树自定义操作事件名稱集合	绑定dtree-click的事件
+    // 树自訂操作事件名稱集合	绑定dtree-click的事件
     var eventName = {
-        checkNodeClick: "checkNodeClick",				//点击复选框
-        itemNodeClick: "itemNodeClick"					//点击子节点div
+        checkNodeClick: "checkNodeClick",				//點擊复选框
+        itemNodeClick: "itemNodeClick"					//點擊子节點div
     };
 
     // 树默认toolbar提供的功能集合	绑定dtree-tool的事件
     var defaultTool = {
-        pulldown: "pulldown",							//点击展开当前节点下的全部节点
-        pullup: "pullup",								//点击收缩当前节点下的全部节点
-        addTool: "addToolbar",						//点击toolbar新增
-        editTool: "editToolbar",						//点击toolbar編輯
-        delTool: "delToolbar"						//点击toolbar刪除
+        pulldown: "pulldown",							//點擊展開当前节點下的全部节點
+        pullup: "pullup",								//點擊收缩当前节點下的全部节點
+        addTool: "addToolbar",						//點擊toolbar新增
+        editTool: "editToolbar",						//點擊toolbar編輯
+        delTool: "delToolbar"						//點擊toolbar刪除
     };
 
     // 树默认menubar提供的功能集合	绑定dtree-menu的事件
     var defaultMenu = {
-        moveDown: "moveDown",							//menubar展开全部节点
-        moveUp: "moveUp",								//menubar收缩全部节点
+        moveDown: "moveDown",							//menubar展開全部节點
+        moveUp: "moveUp",								//menubar收缩全部节點
         refresh: "refresh",								//menubar刷新树
         checkAll: "checkAll",							//menubar全选
         unCheckAll: "unCheckAll",						//menubar全不选
         invertAll: "invertAll",							//menubar反选
-        remove: "remove",								//menubar刪除选中节点
-        searchNode: "searchNode"						//menubar查詢节点
+        remove: "remove",								//menubar刪除选中节點
+        searchNode: "searchNode"						//menubar查詢节點
     };
 
     // 树的公共事件
     var event = {
-        getElemId: function(options){	// 根据传入的参数取得ID
+        getElemId: function(options){	// 根據传入的参數取得ID
             var elem = options.elem || "";
             var obj = options.obj || $(elem);
 
@@ -136,7 +136,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             if(typeof str !== 'string') return '';
             return str.replace(entityReg.unescape, function(match){return entityMap.unescape[match];});
         },
-        cloneObj: function (obj, filter) {  //深複製对象方法
+        cloneObj: function (obj, filter) {  //深複製對象方法
             var newObj = {};
             if (obj instanceof Array) {
                 newObj = [];
@@ -208,10 +208,10 @@ layui.define(['jquery','layer','form'], function(exports) {
                 },
                 statusCode : {
                     404 : function() {
-                        layer.msg('未找到指定请求，请檢查访问路径！',{icon:5, shift:6});
+                        layer.msg('未找到指定請求，請檢查訪問路径！',{icon:5, shift:6});
                     },
                     500 : function() {
-                        layer.msg('系统错误！',{icon:5, shift:6});
+                        layer.msg('系统錯誤！',{icon:5, shift:6});
                     }
                 },
                 complete : function(XMLHttpRequest, textStatus) {
@@ -239,62 +239,62 @@ layui.define(['jquery','layer','form'], function(exports) {
             title: false    // 文字，默认不開啟
         };
         this.response = {  // 树返回的json格式
-            statusName: "code",		//返回标识
-            statusCode: 200,		//返回码
+            statusName: "code",		//返回標識
+            statusCode: 200,		//返回碼
             message: "message",		//返回訊息
-            rootName: "data",		//根节点名稱
-            treeId: "id",			//节点ID
-            parentId: "parentId",	//父节点ID
-            title: "title",			//节点名稱
-            ficonClass: "ficonClass", //自定义一级图标
-            iconClass: "iconClass",	  //自定义二级图标
-            childName: "children",	//子节点名稱
-            last: "last",		//是否最后一级节点
+            rootName: "data",		//根节點名稱
+            treeId: "id",			//节點ID
+            parentId: "parentId",	//父节點ID
+            title: "title",			//节點名稱
+            ficonClass: "ficonClass", //自訂一级图标
+            iconClass: "iconClass",	  //自訂二级图标
+            childName: "children",	//子节點名稱
+            last: "last",		//是否最后一级节點
 //			level: "level",			//层级
-            spread: "spread",		//展开
+            spread: "spread",		//展開
             disabled: "disabled",	//禁用
             hide: "hide",		//隐藏
             checkArr: "checkArr",	//复选框列表
             checked: "checked", //是否选中
             type: "type",			//复选框标记
-            basicData: "basicData"	//表示使用者自定义需要存储在树节点中的資料
+            basicData: "basicData"	//表示使用者自訂需要存储在树节點中的資料
         };
-        this.defaultRequest = {  // 树的默认发起请求参数格式，最后会将value作为参数名稱传递
-            nodeId: "nodeId",		//节点ID
-            parentId: "parentId",	//父节点ID
-            context: "context",	//节点内容
-            leaf: "leaf",		//是否叶子节点
+        this.defaultRequest = {  // 树的默认发起請求参數格式，最后会将value作為参數名稱传递
+            nodeId: "nodeId",		//节點ID
+            parentId: "parentId",	//父节點ID
+            context: "context",	//节點内容
+            leaf: "leaf",		//是否叶子节點
             level: "level",		//层级
-            spread: "spread",		//节点展开狀態
-            dataType: "dataType",	//节点标记
-            checked: "checked",	//节点复选框选中狀態
-            initchecked: "initchecked",	//节点复选框初始狀態
-            basicData: "basicData",		//使用者自定义的记录节点資料
+            spread: "spread",		//节點展開狀態
+            dataType: "dataType",	//节點标记
+            checked: "checked",	//节點复选框选中狀態
+            initchecked: "initchecked",	//节點复选框初始狀態
+            basicData: "basicData",		//使用者自訂的记录节點資料
             recordData: "recordData",		//当前data資料（排除basicData和children字段）
         };
         this.toolbarFun = {
-            addTreeNode: function(param, $div) {	//新增树节点后调用的函数，用于使用者自定义，如未指定则树不会发生变化
+            addTreeNode: function(param, $div) {	//新增树节點后调用的函數，用于使用者自訂，如未指定则树不会发生变化
                 return ;
             },
-            editTreeNode: function(param, $div) {	//編輯树节点后调用的函数，用于使用者自定义，如未指定则树不会发生变化
+            editTreeNode: function(param, $div) {	//編輯树节點后调用的函數，用于使用者自訂，如未指定则树不会发生变化
                 return ;
             },
-            editTreeLoad: function(param){	// 編輯树的資料回显，用于打开編輯时，回填資料
+            editTreeLoad: function(param){	// 編輯树的資料回显，用于打開編輯时，回填資料
                 return ;
             },
-            delTreeNode: function(param, $div){	//刪除树后调用的函数，用于使用者自定义，如未指定则树不会发生变化
+            delTreeNode: function(param, $div){	//刪除树后调用的函數，用于使用者自訂，如未指定则树不会发生变化
                 return ;
             },
-            loadToolbarBefore: function(buttons, param, $div){  // 右键菜单加载前的函数
+            loadToolbarBefore: function(buttons, param, $div){  // 右键選單加载前的函數
                 return buttons;
             }
         };
         this.toolbarStyle = {
-            title: "节点",
+            title: "节點",
             area: ["60%","80%"]
         };
         this.menubarFun = {
-            remove: function(checkbarNodes){			//刪除复选框选中节点，需要使用者自定义，如未指定则树只是頁面上做了修改
+            remove: function(checkbarNodes){			//刪除复选框选中节點，需要使用者自訂，如未指定则树只是頁面上做了修改
                 return true;
             }
         };
@@ -304,62 +304,62 @@ layui.define(['jquery','layer','form'], function(exports) {
             freedom: []
         };
         this.checkbarFun = {
-            chooseBefore: function($i, node){	// 复选框点击前回调
+            chooseBefore: function($i, node){	// 复选框點擊前回调
                 return true;
             },
-            chooseDone: function(checkbarNodesParam) {	//复选框点击事件完毕后，返回该树关于复选框操作的全部訊息，用于使用者自定义，如未指定则树只是頁面上做了修改
+            chooseDone: function(checkbarNodesParam) {	//复选框點擊事件完毕后，返回该树关于复选框操作的全部訊息，用于使用者自訂，如未指定则树只是頁面上做了修改
                 return ;
             }
         };
-        this.iframeDefaultRequest = {  //iframe的默认参数,目的是与加载树的参数不一样
-            nodeId: "nodeId",		//节点ID
-            parentId: "parentId",	//父节点ID
-            context: "context",	//节点内容
-            leaf: "leaf",		//是否叶子节点
+        this.iframeDefaultRequest = {  //iframe的默认参數,目的是与加载树的参數不一样
+            nodeId: "nodeId",		//节點ID
+            parentId: "parentId",	//父节點ID
+            context: "context",	//节點内容
+            leaf: "leaf",		//是否叶子节點
             level: "level",		//层级
-            spread: "spread",		//节点展开狀態
-            dataType: "dataType",	//节点标记
-            checked: "checked",	//节点复选框选中狀態
-            initchecked: "initchecked",	//节点复选框初始狀態
-            basicData: "basicData",		//使用者自定义的记录节点資料
+            spread: "spread",		//节點展開狀態
+            dataType: "dataType",	//节點标记
+            checked: "checked",	//节點复选框选中狀態
+            initchecked: "initchecked",	//节點复选框初始狀態
+            basicData: "basicData",		//使用者自訂的记录节點資料
             recordData: "recordData",		//当前data資料（排除basicData和children字段）
         };
 
         this.iframeFun = {
-            iframeDone: function(iframeParam){	//iframe加载完毕后，用于使用者自定义事件
+            iframeDone: function(iframeParam){	//iframe加载完毕后，用于使用者自訂事件
                 return ;
             }
         };
-        this.style = {			//树最终使用的样式集合
-            item: "",			//每一项div的样式
-            itemThis: "",		//选中div的样式
-            dfont: "",			//一级图标的样式
-            icon: "",			//二级图标的样式
-            cbox: "",			//复选框的样式
-            chs: ""				//复选框选中的样式
+        this.style = {			//树最终使用的樣式集合
+            item: "",			//每一项div的樣式
+            itemThis: "",		//选中div的樣式
+            dfont: "",			//一级图标的樣式
+            icon: "",			//二级图标的樣式
+            cbox: "",			//复选框的樣式
+            chs: ""				//复选框选中的樣式
         };
         this.usefontStyle = {		//树最终使用的图标集合
-            fnode:{					//一级节点
-                node:{				//非叶子节点
-                    open:"",		//节点展开
-                    close:""		//节点關閉
+            fnode:{					//一级节點
+                node:{				//非叶子节點
+                    open:"",		//节點展開
+                    close:""		//节點關閉
                 },
-                leaf:""				//叶子节点
+                leaf:""				//叶子节點
             },
-            snode:{					//二级节点
-                node:{				//非叶子节点
-                    open:"",		//节点展开
-                    close:""		//节点關閉
+            snode:{					//二级节點
+                node:{				//非叶子节點
+                    open:"",		//节點展開
+                    close:""		//节點關閉
                 },
-                leaf:""				//叶子节点
+                leaf:""				//叶子节點
             },
             checkbox:{				//复选框
                 on:"",				//复选框选中
                 out:"",				//未选中
                 noall:""			//半选
             },
-            menubar:{				//菜单栏
-                movedown:"",		//全部展开
+            menubar:{				//選單栏
+                movedown:"",		//全部展開
                 moveup:"",			//全部收缩
                 refresh:"",			//刷新
                 checkAll:"",		//全选
@@ -368,10 +368,10 @@ layui.define(['jquery','layer','form'], function(exports) {
                 remove:"",			//刪除
                 search:""			//搜索
             },
-            menubarExt:"",			//扩展菜单栏
+            menubarExt:"",			//扩展選單栏
             toolbar:{				//工具栏
-                menubar:{			//依附在菜单栏的工具栏
-                    movedown:"",	//全部展开
+                menubar:{			//依附在選單栏的工具栏
+                    movedown:"",	//全部展開
                     moveup:"",		//全部收缩
                     refresh:"",		//刷新
                     checkAll:"",	//全选
@@ -380,8 +380,8 @@ layui.define(['jquery','layer','form'], function(exports) {
                     remove:"",		//刪除
                     search:""		//搜索
                 },
-                menubarExt:"",		//依附在菜单栏的扩展菜单栏
-                pulldown:"",		//展开
+                menubarExt:"",		//依附在選單栏的扩展選單栏
+                pulldown:"",		//展開
                 pullup:"",			//收缩
                 add:"",				//新增
                 edit:"",			//編輯
@@ -391,35 +391,35 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
 
         /** 資料绑定**/
-        this.node = {		// 树节点选中时，包含当前节点的全部訊息
-            nodeId: "",		//节点ID
-            parentId: "",	//父节点ID
-            context: "",	//节点内容
-            leaf: "",		//是否叶子节点
+        this.node = {		// 树节點选中时，包含当前节點的全部訊息
+            nodeId: "",		//节點ID
+            parentId: "",	//父节點ID
+            context: "",	//节點内容
+            leaf: "",		//是否叶子节點
             level: "",		//层级
-            spread: "",		//节点展开狀態
-            dataType: "",	//节点标记
-            checked: "",	//节点复选框选中狀態
-            initchecked: "",	//节点复选框初始狀態
-            basicData: "",		//使用者自定义的记录节点資料
+            spread: "",		//节點展開狀態
+            dataType: "",	//节點标记
+            checked: "",	//节點复选框选中狀態
+            initchecked: "",	//节點复选框初始狀態
+            basicData: "",		//使用者自訂的记录节點資料
             recordData: "",		//当前data資料（排除basicData和children字段）
         };
         
-        this.toolbarMenu = {};	// 工具栏右键菜单绑定的所有元素
-        this.checkbarNode = [];	// 复选框标记的全部节点資料
-        this.errData = [];		// 记录在渲染节点时有問題的資料
-        this.checkArrLen = 0;	//新增节点的时判断复选框个数
+        this.toolbarMenu = {};	// 工具栏右键選單绑定的所有元素
+        this.checkbarNode = [];	// 复选框标记的全部节點資料
+        this.errData = [];		// 记录在渲染节點时有問題的資料
+        this.checkArrLen = 0;	//新增节點的时判断复选框个數
         this.temp = [];	// 临时变量
         this.bak = "";	// 临时变量
         this.setting(options);
     };
 
-    /******************** 初始参数加载 ********************/
-    // 设置基本参数值
+    /******************** 初始参數加载 ********************/
+    // 設定基本参數值
     DTree.prototype.setting = function(options) {
         this.options = options || {};
 
-        /** 绑定元素参数（必填，2个参数项必填一个）**/
+        /** 绑定元素参數（必填，2个参數项必填一个）**/
         this.elem = this.options.elem || OPTIONS.elem ||  ""; //树绑定的元素ID：#elem
         if(typeof this.options.obj === 'undefined'){
             if(this.elem) {
@@ -428,28 +428,28 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
             }
         } else {
-            this.obj = this.options.obj || OPTIONS.obj || this.obj; //树绑定的jquery元素，用于当元素是延迟加载出来的话，可以用这个找到
+            this.obj = this.options.obj || OPTIONS.obj || this.obj; //树绑定的jquery元素，用于当元素是延迟加载出来的話，可以用这个找到
             this.elem = "#" + this.obj[0].id;
         }
 
-        /** 基本参数**/
-        this.scroll = this.options.scroll || OPTIONS.scroll || this.elem; //树的上级div容器，让树可以显示滚动條的div容器的ID
+        /** 基本参數**/
+        this.scroll = this.options.scroll || OPTIONS.scroll || this.elem; //树的上级div容器，让树可以显示滚動條的div容器的ID
         this.accordion = (typeof (this.options.accordion) === "boolean") ? this.options.accordion : (typeof (OPTIONS.accordion) === "boolean") ? OPTIONS.accordion : false; //手风琴加载， 默认false
         if(this.accordion) {
-            this.initLevel = 1; //默认展开节点  1节
+            this.initLevel = 1; //默认展開节點  1节
         } else {
-            this.initLevel = this.options.initLevel || OPTIONS.initLevel || 2; //默认展开节点  2节
+            this.initLevel = this.options.initLevel || OPTIONS.initLevel || 2; //默认展開节點  2节
         }
         this.type = this.options.type || OPTIONS.type || "load"; //树的加载方式  all，全量树，  load，增量树，默认load
         this.cache = (typeof (this.options.cache) === "boolean") ? this.options.cache : (typeof (OPTIONS.cache) === "boolean") ? OPTIONS.cache : true; //資料缓存，默认true
         this.record =  this.options.record || OPTIONS.record || false; //開啟資料记录模式，默认false
-        this.load = (typeof (this.options.load) === "boolean") ? this.options.load : (typeof (OPTIONS.load) === "boolean") ? OPTIONS.load : true; //開啟加载动画，默认true
+        this.load = (typeof (this.options.load) === "boolean") ? this.options.load : (typeof (OPTIONS.load) === "boolean") ? OPTIONS.load : true; //開啟加载動画，默认true
         this.none = this.options.none || OPTIONS.nont || "無資料";	 //初始加载無记录时显示文字
         this.tempHeight = this.options.height || OPTIONS.height; //临时转换高度变量
-        if(this.tempHeight) { // 设置高度
+        if(this.tempHeight) { // 設定高度
             if(/^full-\d+$/.test(this.tempHeight)) {
                 this.fullHeightGap = this.tempHeight.split('-')[1];
-                this.height = $WIN.height() - this.fullHeightGap; //设置高度
+                this.height = $WIN.height() - this.fullHeightGap; //設定高度
             } else {
                 this.fullHeightGap = this.tempHeight;
                 this.height = this.tempHeight;
@@ -461,92 +461,92 @@ layui.define(['jquery','layer','form'], function(exports) {
         this.width = this.options.width || OPTIONS.width  || "260"; //宽度
         this.obj.css("width", this.width);
 
-        /** 样式相关参数**/
+        /** 樣式相關参數**/
         this.iconfont = this.options.iconfont || OPTIONS.iconfont || DTREEFONT; //默认图标字体 dtreefont
-        this.iconfontStyle = this.options.iconfontStyle  || OPTIONS.iconfontStyle || {}; //用于自定义树的每个關鍵部位使用的图标
-        this.nodeIconArray = $.extend(nodeIconArray, this.options.nodeIconArray || OPTIONS.nodeIconArray) || nodeIconArray; //使用者自定义非叶子节点图标集合，node
-        this.leafIconArray = $.extend(leafIconArray, this.options.leafIconArray || OPTIONS.leafIconArray) || leafIconArray; //使用者自定义叶子节点图标集合，leaf
-        this.skin = this.options.skin || OPTIONS.skin || "theme"; // 自定义样式
+        this.iconfontStyle = this.options.iconfontStyle  || OPTIONS.iconfontStyle || {}; //用于自訂树的每个關鍵部位使用的图标
+        this.nodeIconArray = $.extend(nodeIconArray, this.options.nodeIconArray || OPTIONS.nodeIconArray) || nodeIconArray; //使用者自訂非叶子节點图标集合，node
+        this.leafIconArray = $.extend(leafIconArray, this.options.leafIconArray || OPTIONS.leafIconArray) || leafIconArray; //使用者自訂叶子节點图标集合，leaf
+        this.skin = this.options.skin || OPTIONS.skin || "theme"; // 自訂樣式
         if(this.skin == "layui"){ // layui主题
             this.line = (typeof (this.options.line) === "boolean") ? this.options.line : (typeof (OPTIONS.line) === "boolean") ? OPTIONS.line : true; //開啟树线，默认開啟
-            this.ficon = this.options.ficon || OPTIONS.ficon || "7"; //一级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示一级图标。默认'7'
-            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示一级图标，默认'1'
-            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1]; //一级图标中的leaf节点图标
-            this.icon = this.options.icon || OPTIONS.icon || "-1"; //二级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
-            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
-            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节点图标
+            this.ficon = this.options.ficon || OPTIONS.ficon || "7"; //一级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示一级图标。默认'7'
+            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示一级图标，默认'1'
+            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1]; //一级图标中的leaf节點图标
+            this.icon = this.options.icon || OPTIONS.icon || "-1"; //二级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
+            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
+            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节點图标
         } else if(this.skin == "laySimple"){ // laySimple主题
             this.line = this.options.line || OPTIONS.line || false; //開啟树线，默认不開啟
-            this.ficon = this.options.ficon || OPTIONS.ficon || ["2","-1"];	//一级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示一级图标。默认'-1'
-            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "2") : this.ficon[0]; //一级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示一级图标，默认'2'
-            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1];	// 一级图标中的leaf节点图标
-            this.icon = this.options.icon || OPTIONS.icon || "-1"; //二级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
-            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
-            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节点图标
-        } else { // 默认主题  或者自定义主题
+            this.ficon = this.options.ficon || OPTIONS.ficon || ["2","-1"];	//一级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示一级图标。默认'-1'
+            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "2") : this.ficon[0]; //一级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示一级图标，默认'2'
+            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1];	// 一级图标中的leaf节點图标
+            this.icon = this.options.icon || OPTIONS.icon || "-1"; //二级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
+            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
+            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节點图标
+        } else { // 默认主题  或者自訂主题
             this.line = this.options.line || OPTIONS.line || false; //開啟树线，默认不開啟
-            this.ficon = this.options.ficon || OPTIONS.ficon || "8"; //一级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示一级图标。默认'8'
-            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示一级图标，默认'1'
-            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1];	// 一级图标中的leaf节点图标
-            this.icon = this.options.icon || OPTIONS.icon || "5"; //二级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示二级图标。默认'5'
-            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "0") : this.icon[0]; //二级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'0'
-            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节点图标
+            this.ficon = this.options.ficon || OPTIONS.ficon || "8"; //一级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示一级图标。默认'8'
+            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示一级图标，默认'1'
+            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1];	// 一级图标中的leaf节點图标
+            this.icon = this.options.icon || OPTIONS.icon || "5"; //二级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示二级图标。默认'5'
+            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "0") : this.icon[0]; //二级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'0'
+            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节點图标
         }
 
-        /** 資料加载参数**/
-        this.url = this.options.url || OPTIONS.url || ""; //请求地址
+        /** 資料加载参數**/
+        this.url = this.options.url || OPTIONS.url || ""; //請求地址
         this.async = (typeof (this.options.async) === "boolean") ? this.options.async : (typeof (OPTIONS.async) === "boolean") ? OPTIONS.async : true; //异步同步加载,默认异步加载
         this.headers = this.options.headers || OPTIONS.headers || {}; //ajax header属性
-        this.method = this.options.method || OPTIONS.method || "post"; //请求类型
-        this.dataType = this.options.dataType || OPTIONS.dataType || "json"; //参数类型
-        this.contentType = this.options.contentType || OPTIONS.contentType || "application/x-www-form-urlencoded"; //发送訊息至服务器时内容编码类型
-        this.defaultRequest = $.extend(this.defaultRequest, this.options.defaultRequest || OPTIONS.defaultRequest) || this.defaultRequest; //默认请求参数
-        this.filterRequest = this.options.filterRequest || OPTIONS.filterRequest || [];	//过滤请求参数
-        this.request = this.options.request || OPTIONS.request || {}; //使用者自定义请求参数
+        this.method = this.options.method || OPTIONS.method || "post"; //請求类型
+        this.dataType = this.options.dataType || OPTIONS.dataType || "json"; //参數类型
+        this.contentType = this.options.contentType || OPTIONS.contentType || "application/x-www-form-urlencoded"; //发送訊息至服务器时内容编碼类型
+        this.defaultRequest = $.extend(this.defaultRequest, this.options.defaultRequest || OPTIONS.defaultRequest) || this.defaultRequest; //默认請求参數
+        this.filterRequest = this.options.filterRequest || OPTIONS.filterRequest || [];	//过滤請求参數
+        this.request = this.options.request || OPTIONS.request || {}; //使用者自訂請求参數
         this.response = $.extend(this.response, this.options.response || OPTIONS.response) || this.response; //返回json格式
-        this.data = this.options.data || OPTIONS.data || null; //初始化指定该参数，则不会访问异步接口
+        this.data = this.options.data || OPTIONS.data || null; //初始化指定该参數，则不会訪問异步接口
         this.dataFormat = this.options.dataFormat || OPTIONS.dataFormat || "levelRelationship"; //用于使用者配置的data資料格式，list：列表，  levelRelationship：层级关系，默认
         this.dataStyle = this.options.dataStyle || OPTIONS.dataStyle || "defaultStyle"; //用于使用者配置layui通用的json資料风格,layuiStyle:layui风格，defaultStyle：默认风格
-        this.errDataShow = this.options.errDataShow || OPTIONS.errDataShow || false; //是否在递归資料出现错误后，显示错误訊息，默认false
-        this.withCredentials = this.options.withCredentials || OPTIONS.withCredentials || false; //是否允许跨域请求，默认false
+        this.errDataShow = this.options.errDataShow || OPTIONS.errDataShow || false; //是否在递归資料出现錯誤后，显示錯誤訊息，默认false
+        this.withCredentials = this.options.withCredentials || OPTIONS.withCredentials || false; //是否允许跨域請求，默认false
         this.success = this.options.success || OPTIONS.success || function(data, obj){}; //树加载完毕后执行解析树之前的回调
         this.done = this.options.done || OPTIONS.done || function(data, obj){};	 //树加载完毕后的回调
         this.formatter = $.extend(this.formatter, this.options.formatter || OPTIONS.formatter) || this.formatter; //資料过滤
         this.error = this.options.error || OPTIONS.error || function(XMLHttpRequest, textStatus, errorThrown){}; // 异步加载异常回调
         this.complete = this.options.complete || OPTIONS.complete || function(XMLHttpRequest, textStatus){};	// 异步加载完成回调
 
-        /** 复选框参数**/
+        /** 复选框参數**/
         this.checkbar = this.options.checkbar || OPTIONS.checkbar || false; //是否開啟复选框模式
-        this.checkbarLoad = this.options.checkbarLoad || OPTIONS.checkbarLoad || "node"; //复选框作用范围，node：所有节点， leaf：最后一级；默认所有节点
+        this.checkbarLoad = this.options.checkbarLoad || OPTIONS.checkbarLoad || "node"; //复选框作用范围，node：所有节點， leaf：最后一级；默认所有节點
         this.checkbarType = this.options.checkbarType || OPTIONS.checkbarType || "all";	//复选框选中形式	all：子集选中父级也选中，  no-all：子集选中父级半选中，子集全选父级选中，p-casc：父级选中子集全选，子集無法改变父级选中狀態， self：没有任何级联关系，only：只能选中一个复选框。   默认all
         this.checkbarData = this.options.checkbarData || OPTIONS.checkbarData || "choose"; //复选框记录資料类型形式，  change表示记录变更資料，choose表示记录选中資料，all记录全部資料，halfChoose记录选中和半选中的資料，默认choose
         this.checkbarFun =  $.extend(this.checkbarFun, this.options.checkbarFun || OPTIONS.checkbarFun) || this.checkbarFun; //checkbar事件加载
 
-        /** 菜单栏参数**/
-        this.menubar = this.options.menubar || OPTIONS.menubar || false; //是否打开菜单栏
-        this.menubarTips = $.extend(this.menubarTips, this.options.menubarTips || OPTIONS.menubarTips) || this.menubarTips; //菜单栏吸附， toolbar：依附在工具栏，group：依附在按钮组，freedom，自由
+        /** 選單栏参數**/
+        this.menubar = this.options.menubar || OPTIONS.menubar || false; //是否打開選單栏
+        this.menubarTips = $.extend(this.menubarTips, this.options.menubarTips || OPTIONS.menubarTips) || this.menubarTips; //選單栏吸附， toolbar：依附在工具栏，group：依附在按钮组，freedom，自由
         this.menubarFun = $.extend(this.menubarFun, this.options.menubarFun || OPTIONS.menubarFun) || this.menubarFun; //menubar事件加载
 
-        /** 工具栏参数**/
+        /** 工具栏参數**/
         this.toolbar = this.options.toolbar || OPTIONS.toolbar || false; //是否開啟可編輯模式
-        this.toolbarWay = this.options.toolbarWay || OPTIONS.toolbarWay || "contextmenu"; //工具栏显示方式，contextmenu:右键，follow:跟随节点，fixed:固定在节点右侧
-        this.toolbarStyle = $.extend(this.toolbarStyle, this.options.toolbarStyle || OPTIONS.toolbarStyle) || this.toolbarStyle; //toolbar的自定义风格，标题，弹框大小
-        this.toolbarLoad = this.options.toolbarLoad || OPTIONS.toolbarLoad || "node"; //toolbar作用范围：node:所有节点，noleaf:非最后一级节点，leaf:最后一级
-        this.toolbarShow = this.options.toolbarShow || OPTIONS.toolbarShow || ["add","edit","delete"]; //toolbar三个按钮自定义加载
-        this.toolbarBtn = this.options.toolbarBtn || OPTIONS.toolbarBtn || null; //toolbar增删改中内容的自定义加载
+        this.toolbarWay = this.options.toolbarWay || OPTIONS.toolbarWay || "contextmenu"; //工具栏显示方式，contextmenu:右键，follow:跟随节點，fixed:固定在节點右側
+        this.toolbarStyle = $.extend(this.toolbarStyle, this.options.toolbarStyle || OPTIONS.toolbarStyle) || this.toolbarStyle; //toolbar的自訂风格，标题，弹框大小
+        this.toolbarLoad = this.options.toolbarLoad || OPTIONS.toolbarLoad || "node"; //toolbar作用范围：node:所有节點，noleaf:非最后一级节點，leaf:最后一级
+        this.toolbarShow = this.options.toolbarShow || OPTIONS.toolbarShow || ["add","edit","delete"]; //toolbar三个按钮自訂加载
+        this.toolbarBtn = this.options.toolbarBtn || OPTIONS.toolbarBtn || null; //toolbar增删改中内容的自訂加载
         this.toolbarExt = this.options.toolbarExt || OPTIONS.toolbarExt || []; //toolbar按钮扩展
         this.toolbarFun = $.extend(this.toolbarFun, this.options.toolbarFun || OPTIONS.toolbarFun) || this.toolbarFun; //toolbar事件加载
 
-        /** iframe模式参数**/
+        /** iframe模式参數**/
         this.useIframe = this.options.useIframe || OPTIONS.useIframe || false; //是否加载iframe 默认false，
         this.iframeElem = this.options.iframeElem || OPTIONS.iframeElem || ""; //iframe的ID
         this.iframeUrl = this.options.iframeUrl || OPTIONS.iframeUrl || ""; //树关联的iframe地址
-        this.iframeLoad = this.options.iframeLoad || OPTIONS.iframeLoad || "leaf"; //点击哪一层加载frame： node：所有节点， leaf：默认，最后一级
-        this.iframeDefaultRequest = $.extend(this.iframeDefaultRequest, this.options.iframeDefaultRequest || OPTIONS.iframeDefaultRequest) || this.iframeDefaultRequest; //iframe的默认传递参数
-        this.iframeRequest = $.extend(this.iframeRequest, this.options.iframeRequest) || $.extend(this.iframeRequest, OPTIONS.iframeRequest) || this.iframeRequest; //iframe的自定义参数
+        this.iframeLoad = this.options.iframeLoad || OPTIONS.iframeLoad || "leaf"; //點擊哪一层加载frame： node：所有节點， leaf：默认，最后一级
+        this.iframeDefaultRequest = $.extend(this.iframeDefaultRequest, this.options.iframeDefaultRequest || OPTIONS.iframeDefaultRequest) || this.iframeDefaultRequest; //iframe的默认传递参數
+        this.iframeRequest = $.extend(this.iframeRequest, this.options.iframeRequest) || $.extend(this.iframeRequest, OPTIONS.iframeRequest) || this.iframeRequest; //iframe的自訂参數
         this.iframeFun = $.extend(this.iframeFun, this.options.iframeFun) || $.extend(this.iframeFun, OPTIONS.iframeFun) || this.iframeFun;	//iframe事件加载
 
-        /** 下拉树模式参数**/
+        /** 下拉树模式参數**/
         this.select = this.options.select || false; 
         if(this.select) {
         	// 重置下拉树
@@ -557,11 +557,11 @@ layui.define(['jquery','layer','form'], function(exports) {
         this.ensureTheme();
     };
 
-    // 设置基本参数值
+    // 設定基本参數值
     DTree.prototype.reloadSetting = function(options) {
         this.options = $.extend(this.options, options) || this.options;
 
-        /** 绑定元素参数**/
+        /** 绑定元素参數**/
         this.elem = this.options.elem || this.elem;	  //树绑定的元素ID：#elem
         if(typeof this.options.obj === 'undefined'){
             if(this.elem) {
@@ -570,25 +570,25 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
             }
         } else {
-            this.obj = this.options.obj || this.obj; //树绑定的jquery元素，用于当元素是延迟加载出来的话，可以用这个找到
+            this.obj = this.options.obj || this.obj; //树绑定的jquery元素，用于当元素是延迟加载出来的話，可以用这个找到
             this.elem = "#" + this.obj[0].id;
         }
 
-        /** 基本参数**/
-        this.scroll = this.options.scroll || this.scroll; //树的上级div容器，让树可以显示滚动條的div容器
+        /** 基本参數**/
+        this.scroll = this.options.scroll || this.scroll; //树的上级div容器，让树可以显示滚動條的div容器
         this.accordion = (typeof (this.options.accordion) === "boolean") ? this.options.accordion : this.accordion; //開啟手风琴加载
         if(this.accordion) {
-            this.initLevel = 1; //默认展开节点  1节
+            this.initLevel = 1; //默认展開节點  1节
         } else {
-            this.initLevel = this.options.initLevel || this.initLevel; //默认展开节点  2节
+            this.initLevel = this.options.initLevel || this.initLevel; //默认展開节點  2节
         }
         this.type = this.options.type || this.type; //树的加载方式  all，全量树，  load，增量树，默认load
         this.cache = (typeof (this.options.cache) === "boolean") ? this.options.cache : this.cache; //開啟資料缓存
         this.record = (typeof (this.options.record) === "boolean") ? this.options.record : this.record; //開啟資料记录模式
-        this.load = (typeof (this.options.load) === "boolean") ? this.options.load : this.load; //開啟加载动画
-        this.none = this.options.none || this.none;  //初始节点加载無資料时显示文字
+        this.load = (typeof (this.options.load) === "boolean") ? this.options.load : this.load; //開啟加载動画
+        this.none = this.options.none || this.none;  //初始节點加载無資料时显示文字
         this.tempHeight = this.options.height || this.height; //临时转换高度变量
-        if(this.tempHeight) {  //设置高度
+        if(this.tempHeight) {  //設定高度
             if(/^full-\d+$/.test(this.tempHeight)) {
                 this.fullHeightGap = this.tempHeight.split('-')[1];
                 this.height = $WIN.height() - this.fullHeightGap;
@@ -600,93 +600,93 @@ layui.define(['jquery','layer','form'], function(exports) {
         this.width = this.options.width || this.width; //宽度
         this.obj.css("width", this.width);
 
-        /** 样式相关参数**/
+        /** 樣式相關参數**/
         this.line = (typeof (this.options.line) === "boolean") ? this.options.line : this.line; //開啟树线，默认不開啟
         this.iconfont = this.options.iconfont || this.iconfont; //默认图标字体 dtreefont
-        this.iconfontStyle = this.options.iconfontStyle || this.iconfontStyle; //用于自定义树的每个關鍵部位使用的图标
-        this.nodeIconArray = $.extend(nodeIconArray, this.options.nodeIconArray) || this.nodeIconArray;	//使用者自定义非叶子节点图标集合，node
-        this.leafIconArray = $.extend(leafIconArray, this.options.leafIconArray) || this.leafIconArray;	//使用者自定义叶子节点图标集合，leaf
-        this.skin = this.options.skin || this.skin;	//自定义样式
+        this.iconfontStyle = this.options.iconfontStyle || this.iconfontStyle; //用于自訂树的每个關鍵部位使用的图标
+        this.nodeIconArray = $.extend(nodeIconArray, this.options.nodeIconArray) || this.nodeIconArray;	//使用者自訂非叶子节點图标集合，node
+        this.leafIconArray = $.extend(leafIconArray, this.options.leafIconArray) || this.leafIconArray;	//使用者自訂叶子节點图标集合，leaf
+        this.skin = this.options.skin || this.skin;	//自訂樣式
         if(this.skin == "layui"){ //layui主题
             this.line = (typeof (this.options.line) === "boolean") ? this.options.line : true; //開啟树线，默认開啟
-            this.ficon = this.options.ficon || this.ficon; //一级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示一级图标。默认'7'
-            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'1'
-            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1]; //一级图标中的leaf节点图标
-            this.icon = this.options.icon || this.icon;	//二级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
-            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
-            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节点图标
+            this.ficon = this.options.ficon || this.ficon; //一级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示一级图标。默认'7'
+            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'1'
+            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1]; //一级图标中的leaf节點图标
+            this.icon = this.options.icon || this.icon;	//二级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
+            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
+            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节點图标
         } else if(this.skin == "laySimple"){ //laySimple主题
             this.line = (typeof (this.options.line) === "boolean") ? this.options.line : false; //開啟树线，默认不開啟
-            this.ficon = this.options.ficon || this.ficon; //一级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示一级图标。默认'-1'
-            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "2") : this.ficon[0]; //一级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'2'
-            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1];//一级图标中的leaf节点图标
-            this.icon = this.options.icon || this.icon;	//二级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
-            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
-            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节点图标
-        } else { // 默认主题  或者自定义主题
+            this.ficon = this.options.ficon || this.ficon; //一级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示一级图标。默认'-1'
+            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "2") : this.ficon[0]; //一级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'2'
+            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1];//一级图标中的leaf节點图标
+            this.icon = this.options.icon || this.icon;	//二级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示二级图标。默认'-1'
+            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "-1") : this.icon[0]; //二级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'-1'
+            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节點图标
+        } else { // 默认主题  或者自訂主题
             this.line = (typeof (this.options.line) === "boolean") ? this.options.line : false; //開啟树线，默认不開啟
-            this.ficon = this.options.ficon || this.ficon; //一级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示一级图标。默认'8'
-            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'1'
-            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1]; // 一级图标中的leaf节点图标
-            this.icon = this.options.icon || this.icon;	//二级图标样式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆点，9：齿轮，10：星星， -1：不显示二级图标。默认'5'
-            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "0") : this.icon[0]; //二级图标中的node节点图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'0'
-            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节点图标
+            this.ficon = this.options.ficon || this.ficon; //一级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示一级图标。默认'8'
+            this.fnodeIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? (this.ficon == "-1" ? "-1" : "1") : this.ficon[0]; //一级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'1'
+            this.fleafIcon = (typeof this.ficon === 'string' || typeof this.ficon === 'number') ? this.ficon : this.ficon[1]; // 一级图标中的leaf节點图标
+            this.icon = this.options.icon || this.icon;	//二级图标樣式，0：文件夹，1：人员，2：机构，3：报表，4：訊息，5：叶子，6：勋章，7：文件，8：小圆點，9：齿轮，10：星星， -1：不显示二级图标。默认'5'
+            this.nodeIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? (this.icon == "-1" ? "-1" : "0") : this.icon[0]; //二级图标中的node节點图标。0：文件夹，1：+、-，2：三角形， -1：不显示二级图标，默认'0'
+            this.leafIcon = (typeof this.icon === 'string' || typeof this.icon === 'number') ? this.icon : this.icon[1]; //二级图标中的leaf节點图标
         }
 
-        /** 資料加载参数**/
-        this.url = this.options.url || this.url; //请求地址
+        /** 資料加载参數**/
+        this.url = this.options.url || this.url; //請求地址
         this.async = (typeof (this.options.async) === "boolean") ? this.options.async : this.async;	//异步同步加载,默认异步加载
         this.headers = this.options.headers || this.headers; //ajax header属性
-        this.method = this.options.method || this.method; //请求类型
-        this.dataType = this.options.dataType || this.dataType; //参数类型
-        this.contentType = this.options.contentType || this.contentType; //发送訊息至服务器时内容编码类型
-        this.defaultRequest = $.extend(this.defaultRequest, this.options.defaultRequest) || this.defaultRequest; //默认请求参数
-        this.filterRequest = this.options.filterRequest || this.filterRequest; //过滤请求参数
-        this.request = this.options.request || this.request; //使用者自定义请求参数
+        this.method = this.options.method || this.method; //請求类型
+        this.dataType = this.options.dataType || this.dataType; //参數类型
+        this.contentType = this.options.contentType || this.contentType; //发送訊息至服务器时内容编碼类型
+        this.defaultRequest = $.extend(this.defaultRequest, this.options.defaultRequest) || this.defaultRequest; //默认請求参數
+        this.filterRequest = this.options.filterRequest || this.filterRequest; //过滤請求参數
+        this.request = this.options.request || this.request; //使用者自訂請求参數
         this.response = $.extend(this.response, this.options.response) || this.response; //返回json格式
-        this.data = this.options.data || this.data; //初始化指定该参数，则不会访问异步接口
+        this.data = this.options.data || this.data; //初始化指定该参數，则不会訪問异步接口
         this.dataFormat = this.options.dataFormat || this.dataFormat; //用于使用者配置的data資料格式，list：列表，  levelRelationship：层级关系，默认
         this.dataStyle = this.options.dataStyle || this.dataStyle; //用于使用者配置layui通用的json資料风格,layuiStyle:layui风格，defaultStyle：默认风格
-        this.errDataShow = (typeof (this.options.errDataShow) === "boolean") ? this.options.errDataShow : this.errDataShow; //是否在使用list模式递归資料出现错误时，显示错误訊息
-        this.withCredentials = (typeof (this.options.withCredentials) === "boolean") ? this.options.withCredentials : this.withCredentials; //是否允许跨域请求
+        this.errDataShow = (typeof (this.options.errDataShow) === "boolean") ? this.options.errDataShow : this.errDataShow; //是否在使用list模式递归資料出现錯誤时，显示錯誤訊息
+        this.withCredentials = (typeof (this.options.withCredentials) === "boolean") ? this.options.withCredentials : this.withCredentials; //是否允许跨域請求
         this.success = this.options.success || this.success; //树加载完毕后执行解析树之前的回调
         this.done = this.options.done || this.done; //树加载完毕后的回调
         this.formatter = $.extend(this.formatter, this.options.formatter)|| this.formatter; //資料过滤
         this.error = this.options.error || this.error; //异步加载异常回调
         this.complete = this.options.complete || this.complete; //异步加载完成回调
 
-        /** 复选框参数**/
+        /** 复选框参數**/
         this.checkbar = this.options.checkbar || this.checkbar; //是否開啟复选框模式
-        this.checkbarLoad = this.options.checkbarLoad || this.checkbarLoad; //复选框作用范围，node：所有节点， leaf：最后一级；默认所有节点
+        this.checkbarLoad = this.options.checkbarLoad || this.checkbarLoad; //复选框作用范围，node：所有节點， leaf：最后一级；默认所有节點
         this.checkbarType = this.options.checkbarType || this.checkbarType;	//复选框选中形式	all：子集选中父级也选中，  no-all：子集选中父级半选中，子集全选父级选中，p-casc：父级选中子集全选，子集無法改变父级选中狀態， self：没有任何级联关系，only：只能选中一个复选框。   默认all
         this.checkbarData = this.options.checkbarData || this.checkbarData; //复选框记录資料类型形式，  change表示记录变更資料，choose表示记录选中資料，all记录全部資料，halfChoose记录选中和半选中的資料，默认choose
         this.checkbarFun =  $.extend(this.checkbarFun, this.options.checkbarFun)|| this.checkbarFun; //checkbar事件加载
 
-        /** 菜单栏参数**/
-        this.menubar = this.options.menubar || this.menubar; //是否打开菜单栏
-        this.menubarTips = $.extend(this.menubarTips, this.options.menubarTips) || this.menubarTips; //菜单栏吸附， toolbar：依附在工具栏，group：依附在按钮组，freedom，自由
+        /** 選單栏参數**/
+        this.menubar = this.options.menubar || this.menubar; //是否打開選單栏
+        this.menubarTips = $.extend(this.menubarTips, this.options.menubarTips) || this.menubarTips; //選單栏吸附， toolbar：依附在工具栏，group：依附在按钮组，freedom，自由
         this.menubarFun = $.extend(this.menubarFun, this.options.menubarFun) || this.menubarFun; //menubar事件加载
 
-        /** 工具栏参数**/
+        /** 工具栏参數**/
         this.toolbar = this.options.toolbar || this.toolbar; //是否開啟工具栏
-        this.toolbarWay = this.options.toolbarWay || this.toolbarWay; //工具栏显示方式，contextmenu:右键，follow:跟随节点，fixed:固定在节点右侧
-        this.toolbarStyle = $.extend(this.toolbarStyle, this.options.toolbarStyle) || this.toolbarStyle; //toolbar的自定义风格，标题，弹框大小
-        this.toolbarLoad = this.options.toolbarLoad || this.toolbarLoad; //toolbar作用范围：node:所有节点，noleaf:非最后一级节点，leaf:最后一级
+        this.toolbarWay = this.options.toolbarWay || this.toolbarWay; //工具栏显示方式，contextmenu:右键，follow:跟随节點，fixed:固定在节點右側
+        this.toolbarStyle = $.extend(this.toolbarStyle, this.options.toolbarStyle) || this.toolbarStyle; //toolbar的自訂风格，标题，弹框大小
+        this.toolbarLoad = this.options.toolbarLoad || this.toolbarLoad; //toolbar作用范围：node:所有节點，noleaf:非最后一级节點，leaf:最后一级
         this.toolbarShow = this.options.toolbarShow || this.toolbarShow; //toolbar三个按钮
-        this.toolbarBtn = this.options.toolbarBtn || this.toolbarBtn; //toolbar增删改中内容的自定义加载
+        this.toolbarBtn = this.options.toolbarBtn || this.toolbarBtn; //toolbar增删改中内容的自訂加载
         this.toolbarExt = this.options.toolbarExt || this.toolbarExt; //toolbar按钮扩展
         this.toolbarFun = $.extend(this.toolbarFun, this.options.toolbarFun) || this.toolbarFun; //toolbar事件加载
 
-        /** iframe模式参数**/
+        /** iframe模式参數**/
         this.useIframe = this.options.useIframe || this.useIframe;//是否加载iframe 默认false
         this.iframeElem = this.options.iframeElem || this.iframeElem; //iframe的ID
         this.iframeUrl = this.options.iframeUrl || this.iframeUrl; //树关联的iframe地址
-        this.iframeLoad = this.options.iframeLoad || this.iframeLoad; //点击哪一层加载frame： node：所有节点， leaf：默认，最后一级
-        this.iframeDefaultRequest = $.extend(this.iframeDefaultRequest, this.options.iframeDefaultRequest) || this.iframeDefaultRequest; //iframe的默认传递参数
-        this.iframeRequest = $.extend(this.iframeRequest, this.options.iframeRequest) || this.iframeRequest; //iframe的自定义参数
+        this.iframeLoad = this.options.iframeLoad || this.iframeLoad; //點擊哪一层加载frame： node：所有节點， leaf：默认，最后一级
+        this.iframeDefaultRequest = $.extend(this.iframeDefaultRequest, this.options.iframeDefaultRequest) || this.iframeDefaultRequest; //iframe的默认传递参數
+        this.iframeRequest = $.extend(this.iframeRequest, this.options.iframeRequest) || this.iframeRequest; //iframe的自訂参數
         this.iframeFun = $.extend(this.iframeFun, this.options.iframeFun) || this.iframeFun; //iframe事件加载
 
-        /** 下拉树模式参数**/
+        /** 下拉树模式参數**/
         if(this.select) {
         	// 重置下拉树
         	this.reloadSelectSetting();
@@ -697,48 +697,48 @@ layui.define(['jquery','layer','form'], function(exports) {
         
     };
     
-    // 设置下拉树的基本参数值
+    // 設定下拉树的基本参數值
     DTree.prototype.selectSetting = function() {
-    	/** select模式参数*/
+    	/** select模式参數*/
         this.select = true; //配置成select模式
         
         this.selectInitVal = this.obj.attr("data-value") || this.options.selectInitVal || "";	//输入框的值
-        this.selectTreeDiv = this.obj[0].id + "_tree_div";		// 上级DIV节点
-        this.selectCardDiv = this.obj[0].id + "_select_card_div";	// 上级layui卡片节点
-        this.selectDiv = this.obj[0].id + "_select_div";		// 模拟的select节点
+        this.selectTreeDiv = this.obj[0].id + "_tree_div";		// 上级DIV节點
+        this.selectCardDiv = this.obj[0].id + "_select_card_div";	// 上级layui卡片节點
+        this.selectDiv = this.obj[0].id + "_select_div";		// 模拟的select节點
         this.selectTipsName = this.obj[0].id + "_select_input"; // select的提示输入框名稱
-        this.selectTips = this.options.selectTips || "请選擇";			// 输入框的提示语
+        this.selectTips = this.options.selectTips || "請選擇";			// 输入框的提示语
         this.selectInputName = this.options.selectInputName || {nodeId: this.obj[0].id + "_select_nodeId"};  // select表單中的元素
         
-        // 调取下拉树的特殊处理頁面元素标识
+        // 调取下拉树的特殊处理頁面元素標識
         this.renderSelectDom();
     }
     
-    // 重新设置下拉树的基本参数值
+    // 重新設定下拉树的基本参數值
     DTree.prototype.reloadSelectSetting = function() {
         
     	this.selectInitVal = this.obj.attr("data-value") || this.options.selectInitVal || this.selectInitVal;	//输入框的值
         this.selectTips = this.options.selectTips || this.selectTips;			// 输入框的提示语
         this.selectInputName = $.extend(this.selectInputName, this.options.selectInputName) || this.selectInputName;  // select表單中的元素
         
-        // 调取下拉树的特殊处理頁面元素标识
+        // 调取下拉树的特殊处理頁面元素標識
         this.reloadSelectDom();
     }
 
-    /******************** 下拉树设置区域 ********************/
+    /******************** 下拉树設定区域 ********************/
     // 渲染下拉树的Dom结构
     DTree.prototype.renderSelectDom = function() {
         var _this = this;
         var rootId = _this.obj[0].id;
         
-        // 设置自定义表單隐藏域
+        // 設定自訂表單隐藏域
         var selectInputName = _this.selectInputName;
         var selectInput = [];
         for(var key in selectInputName) {
         	selectInput.push('<input type="hidden" dtree-id="' + rootId + '" dtree-node="' + key + '" name="' + selectInputName[key] + '" value="" readonly>');
         }
 
-        // 设置html
+        // 設定html
         var prevHtml = ['<div class="layui-unselect layui-form-select" dtree-id="' + rootId + '" dtree-select="' + _this.selectDiv + '">',
 			            '<div class="layui-select-title">', selectInput.join(""), 
 			            '<input type="text" dtree-id="' + rootId + '" id="' +  _this.selectTipsName +'_id" name="' + _this.selectTipsName + '" placeholder="' + _this.selectTips + '" value="" readonly class="layui-input layui-unselect">',
@@ -756,7 +756,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         var _this = this;
         var rootId = _this.obj[0].id;
         
-        // 设置自定义表單隐藏域
+        // 設定自訂表單隐藏域
         var selectInputName = _this.selectInputName;
         var selectInput = [];
         for(var key in selectInputName) {
@@ -765,7 +765,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         
         $("div[dtree-id='"+rootId+"'][dtree-select='"+_this.selectDiv+"']").find("div.layui-select-title").html("");
 
-        // 设置html
+        // 設定html
         var prevHtml = [selectInput.join(""), 
 			            '<input type="text" dtree-id="' + rootId + '" id="' +  _this.selectTipsName +'_id" name="' + _this.selectTipsName + '" placeholder="' + _this.selectTips + '" value="" readonly class="layui-input layui-unselect">',
 			            '<i class="layui-edge"></i>'].join('');
@@ -774,7 +774,7 @@ layui.define(['jquery','layer','form'], function(exports) {
 
     }
 
-    // 设置输入框的值
+    // 設定输入框的值
     DTree.prototype.selectVal = function(param) {
         var _this = this;
         var rootId = _this.obj[0].id;
@@ -790,10 +790,10 @@ layui.define(['jquery','layer','form'], function(exports) {
         		selectValues[name] = val;
         	});
         } else {
-        	if(typeof param === 'undefined') { // 不传，则为当前树中记录的ID
+        	if(typeof param === 'undefined') { // 不傳，则為当前树中记录的ID
             	param = _this.getNowParam();
             }
-            if(typeof param === 'string') { // 传递ID，则查詢树节点ID对应的值
+            if(typeof param === 'string') { // 传递ID，则查詢树节點ID對应的值
             	param = _this.getParam(param);
             }
             
@@ -817,13 +817,13 @@ layui.define(['jquery','layer','form'], function(exports) {
         return selectValues;
     }
     
-    // 设置复选框模式中的下拉树的值
+    // 設定复选框模式中的下拉树的值
     DTree.prototype.selectCheckboxVal = function() {
     	var _this = this;
     	var rootId = _this.obj[0].id;
     	var selectInputName = _this.selectInputName;
     	
-    	// 取得全部复选框选中节点
+    	// 取得全部复选框选中节點
     	var param = _this.getCheckbarJsonArrParam();
     	
     	selectTipsNameValue = param["context"];
@@ -846,7 +846,7 @@ layui.define(['jquery','layer','form'], function(exports) {
     	var rootId = _this.obj[0].id;
     	// 表單清空
         $("input[dtree-id='"+rootId+"']").val("");
-        // 节点重置
+        // 节點重置
         _this.cancelNavThis();
         if(_this.checkbar) {
         	// 复选框重置
@@ -910,31 +910,31 @@ layui.define(['jquery','layer','form'], function(exports) {
         var tempLeaf = this.usefontStyle.fnode.leaf;
 
         if(typeof fnode === 'undefined'){
-            this.usefontStyle.fnode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["open"]) : tempOpen; // 一级图标中的node节点open图标
-            this.usefontStyle.fnode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["close"]) : tempClose; // 一级图标中的node节点close图标
-            this.usefontStyle.fnode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.fleafIcon]) : tempLeaf; // 一级图标中的node节点的leaf图标
+            this.usefontStyle.fnode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["open"]) : tempOpen; // 一级图标中的node节點open图标
+            this.usefontStyle.fnode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["close"]) : tempClose; // 一级图标中的node节點close图标
+            this.usefontStyle.fnode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.fleafIcon]) : tempLeaf; // 一级图标中的node节點的leaf图标
         } else {
             var node = fnode.node;
             var leaf = fnode.leaf;
             if(typeof node === 'undefined'){
-                this.usefontStyle.fnode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["open"]) : tempOpen; // 一级图标中的node节点open图标
-                this.usefontStyle.fnode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["close"]) : tempClose; // 一级图标中的node节点close图标
+                this.usefontStyle.fnode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["open"]) : tempOpen; // 一级图标中的node节點open图标
+                this.usefontStyle.fnode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["close"]) : tempClose; // 一级图标中的node节點close图标
             } else {
                 var open = node.open;
                 var close = node.close;
                 if(typeof open === 'undefined'){
-                    this.usefontStyle.fnode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["open"]) : tempOpen; // 一级图标中的node节点open图标
+                    this.usefontStyle.fnode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["open"]) : tempOpen; // 一级图标中的node节點open图标
                 } else {
                     this.usefontStyle.fnode.node.open = ifont + " " + open;
                 }
                 if(typeof close === 'undefined') {
-                    this.usefontStyle.fnode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["close"]) : tempClose; // 一级图标中的node节点close图标
+                    this.usefontStyle.fnode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.fnodeIcon]["close"]) : tempClose; // 一级图标中的node节點close图标
                 } else {
                     this.usefontStyle.fnode.node.close = ifont + " " + close;
                 }
             }
             if(typeof leaf === 'undefined'){
-                this.usefontStyle.fnode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.fleafIcon]) : tempLeaf; // 一级图标中的node节点的leaf图标
+                this.usefontStyle.fnode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.fleafIcon]) : tempLeaf; // 一级图标中的node节點的leaf图标
             } else {
                 this.usefontStyle.fnode.leaf = ifont + " " + leaf;
             }
@@ -949,31 +949,31 @@ layui.define(['jquery','layer','form'], function(exports) {
         var tempLeaf = this.usefontStyle.snode.leaf;
 
         if(typeof snode === 'undefined'){
-            this.usefontStyle.snode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["open"]) : tempOpen;  // 二级图标中的node节点open图标
-            this.usefontStyle.snode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["close"]) : tempClose; // 二级图标中的node节点close图标
-            this.usefontStyle.snode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.leafIcon]) : tempLeaf; // 二级图标中的leaf节点图标
+            this.usefontStyle.snode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["open"]) : tempOpen;  // 二级图标中的node节點open图标
+            this.usefontStyle.snode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["close"]) : tempClose; // 二级图标中的node节點close图标
+            this.usefontStyle.snode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.leafIcon]) : tempLeaf; // 二级图标中的leaf节點图标
         } else {
             var node = snode.node;
             var leaf = snode.leaf;
             if(typeof node === 'undefined') {
-                this.usefontStyle.snode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["open"]) : tempOpen;  // 二级图标中的node节点open图标
-                this.usefontStyle.snode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["close"]) : tempClose; // 二级图标中的node节点close图标
+                this.usefontStyle.snode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["open"]) : tempOpen;  // 二级图标中的node节點open图标
+                this.usefontStyle.snode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["close"]) : tempClose; // 二级图标中的node节點close图标
             } else {
                 var open = node.open;
                 var close = node.close;
                 if(typeof open === 'undefined'){
-                    this.usefontStyle.snode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["open"]) : tempOpen;  // 二级图标中的node节点open图标
+                    this.usefontStyle.snode.node.open = (tempOpen == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["open"]) : tempOpen;  // 二级图标中的node节點open图标
                 } else {
                     this.usefontStyle.snode.node.open = ifont + " " + open;
                 }
                 if(typeof close === 'undefined') {
-                    this.usefontStyle.snode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["close"]) : tempClose; // 二级图标中的node节点close图标
+                    this.usefontStyle.snode.node.close = (tempClose == "") ? (ifont + " " + this.nodeIconArray[this.nodeIcon]["close"]) : tempClose; // 二级图标中的node节點close图标
                 } else {
                     this.usefontStyle.snode.node.close = ifont + " " + close;
                 }
             }
             if(typeof leaf === 'undefined') {
-                this.usefontStyle.snode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.leafIcon]) : tempLeaf; // 二级图标中的leaf节点图标
+                this.usefontStyle.snode.leaf = (tempLeaf == "") ? (ifont + " " + this.leafIconArray[this.leafIcon]) : tempLeaf; // 二级图标中的leaf节點图标
             } else {
                 this.usefontStyle.snode.leaf = ifont + " " + leaf;
             }
@@ -1013,7 +1013,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 赋值菜单栏图标
+    // 赋值選單栏图标
     DTree.prototype.useDefaultOrUserDefineMenubarStyle = function(ifont, menubar){
         var _this = this;
         var tempMovedown = this.usefontStyle.menubar.movedown;
@@ -1086,7 +1086,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 赋值扩展菜单栏图标
+    // 赋值扩展選單栏图标
     DTree.prototype.useDefaultOrUserDefineMenubarExtStyle = function(ifont, menubarExt){
         var _this = this;
         var tempExt = this.usefontStyle.menubarExt;
@@ -1247,7 +1247,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 设置图标的展开關閉，以及展开时/關閉时是最后一级图标的处理
+    // 設定图标的展開關閉，以及展開时/關閉时是最后一级图标的处理
     DTree.prototype.operateIcon = function($i_spread, $i_node){
         var _this = this;
         var ficonClass = $i_spread.attr("data-iconClass");
@@ -1331,12 +1331,12 @@ layui.define(['jquery','layer','form'], function(exports) {
             $nextLi = $li.next("li"),
             $ul = $li.parent("ul");
         if($ul[0].id == _this.obj[0].id) {
-            // 根节点下的节点
+            // 根节點下的节點
             $li.removeClass(LI_NAV_LINE);
             $li.removeClass(LI_NAV_LAST_LINE);
             $li.addClass(LI_NAV_FIRST_LINE);
         } else {
-            // 非根节点下的节点
+            // 非根节點下的节點
             var $pnextLi = $ul.parent("li").next("li");
             if($pnextLi.length == 0) {
                 if($nextLi.length == 0){
@@ -1364,7 +1364,7 @@ layui.define(['jquery','layer','form'], function(exports) {
     }
 
     /******************** 初始化資料区域 ********************/
-    // 设置高度
+    // 設定高度
     DTree.prototype.autoHeight = function(){
         var _this = this;
         var height = _this.height;
@@ -1389,12 +1389,12 @@ layui.define(['jquery','layer','form'], function(exports) {
     DTree.prototype.init = function(){
         var _this = this;
         if (typeof _this !== "object") {
-            //_this.obj.html(_this.getNoneDom().errText("树组件未成功加载，请檢查配置"));
-            layer.msg("树组件未成功加载，请檢查配置", {icon:5});
+            //_this.obj.html(_this.getNoneDom().errText("树组件未成功加载，請檢查配置"));
+            layer.msg("树组件未成功加载，請檢查配置", {icon:5});
             return ;
         }
 
-        // 设置组件高度
+        // 設定组件高度
         _this.autoHeight();
 
         if(_this.data) {
@@ -1418,9 +1418,9 @@ layui.define(['jquery','layer','form'], function(exports) {
 
                 // 第一次解析树
                 if (_this.dataFormat == 'list'){
-                    //1.识别根节点ul中的data-id标签，判断顶级父节点
+                    //1.识别根节點ul中的data-id标签，判断顶级父节點
                     var pid = _this.obj.attr("data-id");
-                    //2.构建一个存放节点的树组
+                    //2.构建一个存放节點的树组
                     var rootListData = _this.queryListTreeByPid(pid, _this.data);
                     _this.loadListTree(rootListData, _this.data, 1);
                 } else {
@@ -1430,15 +1430,15 @@ layui.define(['jquery','layer','form'], function(exports) {
                 // 显示树线
                 _this.showLine();
 
-                // 这种情况下需要一开始就将toolbar显示在頁面上
+                // 这种情况下需要一開始就将toolbar显示在頁面上
                 if(_this.toolbar && _this.toolbarWay != 'contextmenu') {
                     _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
                 }
 
-                // 判断是否存在错误資料，并是否列印错误資料
+                // 判断是否存在錯誤資料，并是否列印錯誤資料
                 _this.msgErrData();
                 
-                // 设置复选框的初始值
+                // 設定复选框的初始值
                 if(_this.select){
                 	_this.selectVal(_this.selectInitVal);
                 }
@@ -1451,8 +1451,8 @@ layui.define(['jquery','layer','form'], function(exports) {
             }, 100);
         } else {
             if (!_this.url) {
-                //_this.obj.html(_this.getNoneDom().errText("資料请求异常，url参数未指定"));
-                layer.msg("資料请求异常，url参数未指定", {icon:5});
+                //_this.obj.html(_this.getNoneDom().errText("資料請求异常，url参數未指定"));
+                layer.msg("資料請求异常，url参數未指定", {icon:5});
                 return ;
             }
 
@@ -1501,9 +1501,9 @@ layui.define(['jquery','layer','form'], function(exports) {
 
                         // 第一次解析树
                         if (_this.dataFormat == 'list'){
-                            //1.识别根节点ul中的data-id标签，判断顶级父节点
+                            //1.识别根节點ul中的data-id标签，判断顶级父节點
                             var pid = _this.obj.attr("data-id");
-                            //2.构建一个存放节点的树组
+                            //2.构建一个存放节點的树组
                             var rootListData = _this.queryListTreeByPid(pid, d);
                             _this.loadListTree(rootListData, d, 1);
                         } else {
@@ -1513,15 +1513,15 @@ layui.define(['jquery','layer','form'], function(exports) {
                         // 显示树线
                         _this.showLine();
 
-                        // 这种情况下需要一开始就将toolbar显示在頁面上
+                        // 这种情况下需要一開始就将toolbar显示在頁面上
                         if(_this.toolbar && _this.toolbarWay != 'contextmenu') {
                             _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
                         }
 
-                        // 判断是否存在错误資料，并是否列印错误資料
+                        // 判断是否存在錯誤資料，并是否列印錯誤資料
                         _this.msgErrData();
                         
-                        // 设置复选框的初始值
+                        // 設定复选框的初始值
                         if(_this.select){
                         	_this.selectVal(_this.selectInitVal);
                         }
@@ -1532,7 +1532,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                         // 加载完毕后的回调
                         _this.done(result, _this.obj);
                     } else {
-                        // 如果列印不出任何訊息说明是在这里，用了错误的資料格式， 或返回码不正确
+                        // 如果列印不出任何訊息说明是在这里，用了錯誤的資料格式， 或返回碼不正确
                         if (_this.dataStyle == 'layuiStyle'){
                             _this.obj.html(_this.getNoneDom().errText(result[_this.response.message]));
                             _this.error(null, code, result[_this.response.message]);
@@ -1556,7 +1556,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 加载子节点
+    // 加载子节點
     DTree.prototype.getChild = function($div, data) {
         var _this = this, $ul = $div.next("ul");
 
@@ -1586,12 +1586,12 @@ layui.define(['jquery','layer','form'], function(exports) {
             // 显示树线
             _this.showLine();
 
-            // 这种情况下需要一开始就将toolbar显示在頁面上
+            // 这种情况下需要一開始就将toolbar显示在頁面上
             if(_this.toolbar && _this.toolbarWay != 'contextmenu') {
                 _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
             }
 
-            // 判断是否存在错误資料，并是否列印错误資料
+            // 判断是否存在錯誤資料，并是否列印錯誤資料
             _this.msgErrData();
             
             // 保存树副本
@@ -1599,8 +1599,8 @@ layui.define(['jquery','layer','form'], function(exports) {
 
         } else {
             if (!_this.url) {
-                //_this.obj.html(_this.getNoneDom().errText("資料请求异常，url参数未指定"));
-                layer.msg("資料请求异常，url参数未指定", {icon:5});
+                //_this.obj.html(_this.getNoneDom().errText("資料請求异常，url参數未指定"));
+                layer.msg("資料請求异常，url参數未指定", {icon:5});
                 return ;
             }
 
@@ -1639,12 +1639,12 @@ layui.define(['jquery','layer','form'], function(exports) {
                         // 显示树线
                         _this.showLine();
 
-                        // 这种情况下需要一开始就将toolbar显示在頁面上
+                        // 这种情况下需要一開始就将toolbar显示在頁面上
                         if(_this.toolbar && _this.toolbarWay != 'contextmenu') {
                             _this.setToolbarDom().setToolbarPlace(_this.toolbarMenu);
                         }
 
-                        // 判断是否存在错误資料，并是否列印错误資料
+                        // 判断是否存在錯誤資料，并是否列印錯誤資料
                         _this.msgErrData();
 
                         $ul.addClass(NAV_SHOW);
@@ -1678,18 +1678,18 @@ layui.define(['jquery','layer','form'], function(exports) {
     // 初始化树或者拼接树
     DTree.prototype.loadListTree = function(pListData, listData, level, $ul){
         var _this = this;
-        $ul = $ul || _this.getNodeDom().nowOrRootUl();	//当前选中的节点或根节点
+        $ul = $ul || _this.getNodeDom().nowOrRootUl();	//当前选中的节點或根节點
         if (pListData.length > 0){
             for (var i = 0; i < pListData.length; i++) {
-                // 1.取得已知节点的全部資料
+                // 1.取得已知节點的全部資料
                 var data = pListData[i];
                 if(typeof data !== "object") continue;
                 var parseData = _this.parseData(data);
-                var childListData = _this.queryListTreeByPid(parseData.treeId(), listData); // 根据已知資料的id判断该條資料是否还有子資料
+                var childListData = _this.queryListTreeByPid(parseData.treeId(), listData); // 根據已知資料的id判断该條資料是否还有子資料
 
                 // 3. 頁面元素加载資料
                 $ul.append(_this.getLiItemDom(parseData.treeId(), parseData.parentId(), parseData.title(), parseData.fmtTitle(), parseData.last(childListData.length), parseData.ficonClass(), parseData.iconClass(), parseData.checkArr(), level, parseData.spread(level), parseData.disabled(), parseData.hide(), parseData.basicData(), parseData.recordData(), ($ul.hasClass(UL_ROOT) ? "root" : "item")));
-                // 4.有子資料的元素加载子节点
+                // 4.有子資料的元素加载子节點
                 if(childListData.length > 0){
                     var cLevel = parseInt(level)+1;
                     _this.loadListTree(childListData, listData, cLevel, _this.obj.find("ul[data-id='"+parseData.treeId()+"']"));
@@ -1698,7 +1698,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 根据父ID查找list資料中匹配的元素
+    // 根據父ID查找list資料中匹配的元素
     DTree.prototype.queryListTreeByPid = function(pid, listData){
         var _this = this;
         var rootListData = [];
@@ -1726,8 +1726,8 @@ layui.define(['jquery','layer','form'], function(exports) {
     DTree.prototype.loadTree = function(root, level, $ul){
         var _this = this;
         if (root) {
-            $ul = $ul || _this.getNodeDom().nowOrRootUl();	//当前选中的节点或根节点
-            for (var i = 0; i < root.length; i++) {	// 遍历跟节点或追加的跟节点
+            $ul = $ul || _this.getNodeDom().nowOrRootUl();	//当前选中的节點或根节點
+            for (var i = 0; i < root.length; i++) {	// 遍历跟节點或追加的跟节點
                 var data = root[i];
                 if(typeof data !== "object") continue;
                 if(data[_this.response.treeId] == data[_this.response.parentId]) { _this.errData.push(data); }
@@ -1742,18 +1742,18 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 判断在資料加载时是否存在错误資料，并是否列印错误資料
+    // 判断在資料加载时是否存在錯誤資料，并是否列印錯誤資料
     DTree.prototype.msgErrData = function() {
         var _this = this;
         if(_this.errData.length > 0 && _this.errDataShow) {
             var title = "";
             for(var i=0; i<_this.errData.length; i++) {
                 var edata = _this.errData[i];
-                title += "資料：【"+edata[_this.response.title]+"】中节点id和上级id值一致！ \n";
+                title += "資料：【"+edata[_this.response.title]+"】中节點id和上级id值一致！ \n";
             }
             layer.msg(title, {icon:2,time:5000});
         }
-        // 显示之后，将错误資料制空
+        // 显示之后，将錯誤資料制空
         _this.errData = [];
     };
 
@@ -1824,7 +1824,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
 
                 if(checkArr.length > 0 && checkArr.length > _this.checkArrLen){
-                    _this.checkArrLen = checkArr.length;		// 取得复选框个数
+                    _this.checkArrLen = checkArr.length;		// 取得复选框个數
                 }
                 return checkArr;
 
@@ -1859,7 +1859,7 @@ layui.define(['jquery','layer','form'], function(exports) {
 
     };
 
-    //当無节点資料时显示dom
+    //当無节點資料时显示dom
     DTree.prototype.getNoneDom = function(){
         var _this = this,
             rootId = _this.obj[0].id,
@@ -1875,7 +1875,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    //新增节点的dom值
+    //新增节點的dom值
     DTree.prototype.getDom = function(treeId, parentId, title, fmtTitle, last, ficonClass, iconClass, checkArr, level, spread, disabled, hide) {
         var _this = this,
             rootId = _this.obj[0].id,
@@ -1925,7 +1925,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                         (spread ? "<i class='"+fnodeIconOpen+" "+_this.style.dfont+" "+_this.style.ficon+"' data-spread='open' data-id='"+treeId+"' dtree-id='"+rootId+"'></i>" : "<i class='"+fnodeIconClose+" "+_this.style.dfont+" "+_this.style.ficon+"' data-spread='close' data-id='"+treeId+"' dtree-id='"+rootId+"' data-iconClass='"+ficonClass+"'></i>");
                 }
             },
-            node: function() {	// 二级图标样式
+            node: function() {	// 二级图标樣式
                 // 取得图标的变量
                 var nodeIcon = _this.nodeIcon,
                     leafIcon = _this.leafIcon;
@@ -2001,14 +2001,14 @@ layui.define(['jquery','layer','form'], function(exports) {
                 if(disabled){disClass = NAV_DIS;}
                 return "<cite class='"+LI_DIV_TEXT_CLASS+" "+disClass+"' data-id='"+treeId+"' data-leaf='"+(last ? "leaf" : "node")+"' dtree-disabled='"+disabled+"' data-title='"+title+"' >"+fmtTitle+"</cite>";
             },
-            ul: function() {	//子节点ul
+            ul: function() {	//子节點ul
                 return last ? "<ul class='"+LI_NAV_CHILD+"' data-id='"+treeId+"' dtree-id='"+rootId+"'></ul>" :
                     (spread ? "<ul class='"+LI_NAV_CHILD+" "+NAV_SHOW+"' data-id='"+treeId+"' dtree-id='"+rootId+"'></ul>" : "<ul class='"+LI_NAV_CHILD+"' data-id='"+treeId+"' dtree-id='"+rootId+"'></ul>");
             }
         };
     };
 
-    //替换节点的dom值，或指定值
+    //替换节點的dom值，或指定值
     DTree.prototype.replaceDom = function($div, treeId, last, spread, disabled, hide) {
         var _this = this,
             rootId = _this.obj[0].id,
@@ -2055,7 +2055,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
                 if(fnode != ""){_this.getNodeDom($div).fnode().replaceWith($(fnode));}
             },
-            node: function(iconClass) {	// 二级图标样式
+            node: function(iconClass) {	// 二级图标樣式
                 var snode = "";
 
                 // 取得图标的变量
@@ -2127,7 +2127,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 var cite = "<cite class='"+LI_DIV_TEXT_CLASS+" "+disClass+"' data-id='"+treeId+"' data-leaf='"+(last ? "leaf" : "node")+"' dtree-disabled='"+disabled+"' >"+title+"</cite>"
                 _this.getNodeDom($div).cite().replaceWith($(cite));
             },
-            ul: function() {	//子节点ul
+            ul: function() {	//子节點ul
                 var ul = last ? "<ul class='"+LI_NAV_CHILD+"' data-id='"+treeId+"' dtree-id='"+rootId+"'></ul>" :
                     (spread ? "<ul class='"+LI_NAV_CHILD+" "+NAV_SHOW+"' data-id='"+treeId+"' dtree-id='"+rootId+"'></ul>" : "<ul class='"+LI_NAV_CHILD+"' data-id='"+treeId+"' dtree-id='"+rootId+"'></ul>");
                 _this.getNodeDom($div).nextUl().replaceWith($(ul));
@@ -2186,7 +2186,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return li;
     };
 
-    // 初始化节点，用于資料回显
+    // 初始化节點，用于資料回显
     DTree.prototype.dataInit = function(chooseId){
         var _this = this;
         var $div = _this.obj.find("div[data-id='"+chooseId+"']");
@@ -2195,7 +2195,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         $div.addClass(NAV_THIS);
         $div.addClass(_this.style.itemThis);
         _this.setNodeParam($div);
-        // 将该节点的父节点全部展开
+        // 将该节點的父节點全部展開
         var $li_parents = $div.parents("."+LI_NAV_ITEM);
         $li_parents.children("ul").addClass(NAV_SHOW);
         $li_parents.children("."+LI_DIV_ITEM).children("i[data-spread]."+event.trimToDot(_this.usefontStyle.fnode.node.close)).addClass(_this.usefontStyle.fnode.node.open);
@@ -2253,7 +2253,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     }
 
-    // 手风琴模式操作其他节点
+    // 手风琴模式操作其他节點
     DTree.prototype.accordionUL = function($ul) {
         var _this = this;
         if(_this.accordion) {
@@ -2273,7 +2273,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 展开或隐藏节点  作用点： div
+    // 展開或隐藏节點  作用點： div
     DTree.prototype.clickSpread = function($div) {
         var _this = this;
         var $i_spread = _this.getNodeDom($div).fnode(),
@@ -2289,7 +2289,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                         if ($ul.html()) {
                             $ul.addClass(NAV_SHOW);
                             _this.accordionUL($ul);
-                        } else {	//加载节点
+                        } else {	//加载节點
                             _this.getChild($div);
                             _this.accordionUL($ul);
                         }
@@ -2310,7 +2310,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 设置节点为disabled
+    // 設定节點為disabled
     DTree.prototype.setDisabledNodes = function(disabledIds){
         var _this = this;
         var disabledId = disabledIds.split(",");
@@ -2328,7 +2328,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
     
-    // 设置全部节点为disabled
+    // 設定全部节點為disabled
     DTree.prototype.setDisabledAllNodes = function(){
     	var _this = this;
     	_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"']").each(function(){
@@ -2345,7 +2345,7 @@ layui.define(['jquery','layer','form'], function(exports) {
     	});
     };
 
-    // 将节点的disabled取消
+    // 将节點的disabled取消
     DTree.prototype.cancelDisabledNodes = function(disabledIds){
         var _this = this;
         var disabledId = disabledIds.split(",");
@@ -2363,7 +2363,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 取得指定disabled节点的值
+    // 取得指定disabled节點的值
     DTree.prototype.getDisabledNodesParam = function(disabledIds){
         var _this = this;
         var disabledId = disabledIds.split(",");
@@ -2377,7 +2377,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return disabledNodes;
     };
 
-    // 取得全部disabled节点的值
+    // 取得全部disabled节點的值
     DTree.prototype.getAllDisabledNodesParam = function(){
         var _this = this;
         var disabledNodes = [];
@@ -2388,7 +2388,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return disabledNodes;
     };
 
-    // 设置节点为hide
+    // 設定节點為hide
     DTree.prototype.setHideNodes = function(hideIds){
         var _this = this;
         var hideId = hideIds.split(",");
@@ -2402,7 +2402,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             }
         }
     };
-    // 将节点的hide取消
+    // 将节點的hide取消
     DTree.prototype.cancelHideNodes = function(hideIds){
         var _this = this;
         var hideId = hideIds.split(",");
@@ -2417,7 +2417,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 取得指定hide节点的值
+    // 取得指定hide节點的值
     DTree.prototype.getHideNodesParam = function(hideIds){
         var _this = this;
         var hideId = hideIds.split(",");
@@ -2431,7 +2431,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return hideNodes;
     };
 
-    // 取得全部hide节点的值
+    // 取得全部hide节點的值
     DTree.prototype.getAllHideNodesParam = function(){
         var _this = this;
         var hideNodes = [];
@@ -2446,23 +2446,23 @@ layui.define(['jquery','layer','form'], function(exports) {
     DTree.prototype.refreshTree = function(){
         var _this = this;
         _this.obj.html("");	// 清空树结构
-        _this.initNodeParam(); // 清空参数
+        _this.initNodeParam(); // 清空参數
         _this.init(); //执行初始化方法
     }
 
-    // 局部刷新树--新增子节点时
+    // 局部刷新树--新增子节點时
     DTree.prototype.partialRefreshAdd = function($div, data){
         var _this = this;
         $ul = $div.next("ul");
 
-        // 判断当前点击的节点是否是最后一级节点，如果是，则需要修改节点的样式
+        // 判断当前點擊的节點是否是最后一级节點，如果是，则需要修改节點的樣式
         var $icon_i = $div.find("i[data-spread]");
         if ($icon_i.eq(0).attr("data-spread") == "last") {
             _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).openWithLeaf();
-        } else {	//如果不是，也要修改节点样式
+        } else {	//如果不是，也要修改节點樣式
             _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).open();
         }
-        $ul.addClass(NAV_SHOW);	//展开UL
+        $ul.addClass(NAV_SHOW);	//展開UL
         _this.accordionUL($ul);
 
         if(data) {
@@ -2481,7 +2481,7 @@ layui.define(['jquery','layer','form'], function(exports) {
 
                     _this.showLine($ul.find("li"));
                 } else {
-                    layer.msg("新增失敗,节点ID为undefined！",{icon:5});
+                    layer.msg("新增失敗,节點ID為undefined！",{icon:5});
                     // 重新赋值
                     _this.setNodeParam($div);
                 }
@@ -2491,7 +2491,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     }
 
-    // 局部刷新树--編輯当前节点选中节点时
+    // 局部刷新树--編輯当前节點选中节點时
     DTree.prototype.partialRefreshEdit = function($div, data){
         var _this = this;
         $ul = $div.next("ul"),
@@ -2514,13 +2514,13 @@ layui.define(['jquery','layer','form'], function(exports) {
                     var parentId = parseData.parentId();
                     var oldParentId = $p_li.attr("data-pid");
                     if(parentId && parentId != oldParentId) {
-                    	// 变更了父节点
+                    	// 变更了父节點
                     	$p_li = replaceDom.p_li(parentId);
                     	
-                    	// 根据parentId找到下挂节点的ul
+                    	// 根據parentId找到下挂节點的ul
                     	var $goto_div = _this.getNodeDom(parentId).div(), 
                     		$goto_ul = _this.getNodeDom(parentId).nextUl();
-                    	// 判断父级ul中是否还存在li,如果不存在，则需要修改节点的样式
+                    	// 判断父级ul中是否还存在li,如果不存在，则需要修改节點的樣式
                         if($goto_ul.children("li").length == 0){
                             var $icon_i = $goto_div.find("i[data-spread]");
                             _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).openWithLeaf();
@@ -2532,7 +2532,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     }
                     _this.setNodeParam($div);
                 } else {
-                    layer.msg("編輯失敗,节点ID为undefined！",{icon:5});
+                    layer.msg("編輯失敗,节點ID為undefined！",{icon:5});
                     // 重新赋值
                     _this.setNodeParam($div);
                 }
@@ -2542,7 +2542,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     }
 
-    // 局部刷新树--当前节点选中被刪除时
+    // 局部刷新树--当前节點选中被刪除时
     DTree.prototype.partialRefreshDel = function($div){
         var _this = this;
         $p_li = $div.parent("li");
@@ -2551,7 +2551,7 @@ layui.define(['jquery','layer','form'], function(exports) {
 
         $p_li.remove();
         _this.showLine($p_ul.find("li"));
-        // 判断父级ul中是否还存在li,如果不存在，则需要修改节点的样式
+        // 判断父级ul中是否还存在li,如果不存在，则需要修改节點的樣式
         if($p_ul.children("li").length == 0){
             var $icon_i = $p_div.find("i[data-spread]");
             _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).closeWithLeaf();
@@ -2571,7 +2571,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
             });
         }
-        // 展开选中节点的父节点
+        // 展開选中节點的父节點
         var $li_parents = _this.obj.find("i[dtree-click='"+eventName.checkNodeClick+"'][data-checked='1']").parents("."+LI_NAV_ITEM);
         $li_parents.children("ul").addClass(NAV_SHOW);
         $li_parents.children("."+LI_DIV_ITEM).children("i[data-spread]."+event.trimToDot(_this.usefontStyle.fnode.node.close)).addClass(_this.usefontStyle.fnode.node.open);
@@ -2581,25 +2581,25 @@ layui.define(['jquery','layer','form'], function(exports) {
         return _this.getCheckbarNodesParam();
     };
 
-    //实现复选框点击，子集选中父级也选中
+    //實現复选框點擊，子集选中父级也选中
     DTree.prototype.checkAllOrNot =  function($i) {
         var _this = this;
-        //$i 当前点击的checkbox
+        //$i 当前點擊的checkbox
         var dataPar = $i.attr("data-par"),
             dataType = $i.attr("data-type"),
-            $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-            $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+            $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+            $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
         if ($i.attr("data-checked") == "1") {
-            // 处理当前节点的选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).noCheck();
 
-            // 处理子级节点的选中狀態
+            // 处理子级节點的选中狀態
             var $child_li_i = $child_li.find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
             _this.checkStatus($child_li_i).noCheck();
 
-            // 处理父级节点的选中狀態
+            // 处理父级节點的选中狀態
             for (var i = 1, item = $parent_li; i < item.length; i++) {
                 var flag = item.eq(i).find(">."+LI_NAV_CHILD+" ."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"'][data-checked='1']").length;
                 if (flag == 0) {
@@ -2609,14 +2609,14 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
             }
         } else {
-            // 处理当前节点的选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).check();
 
-            // 处理子级节点的选中狀態
+            // 处理子级节點的选中狀態
             var $child_li_i = $child_li.find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
             _this.checkStatus($child_li_i).check();
 
-            // 处理父级节点的选中狀態
+            // 处理父级节點的选中狀態
             for (var i = 1, item = $parent_li; i < item.length; i++) {
                 var $item_i = item.eq(i).find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
                 //把父级选中
@@ -2625,26 +2625,26 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    //实现复选框点击， no-all 子集选中父级半选中，子集全选父级选中
+    //實現复选框點擊， no-all 子集选中父级半选中，子集全选父级选中
     DTree.prototype.checkAllOrNoallOrNot =  function($i) {
         var _this = this;
-        //$i 当前点击的checkbox
+        //$i 当前點擊的checkbox
         var $div = $i.closest("."+LI_DIV_ITEM),
             dataPar = $i.attr("data-par"),
             dataType = $i.attr("data-type"),
-            $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-            $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+            $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+            $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
-        if ($i.attr("data-checked") == "1") {	//当前复选框为选中狀態，点击后变为未选中狀態
-            // 处理当前节点的选中狀態
+        if ($i.attr("data-checked") == "1") {	//当前复选框為选中狀態，點擊后变為未选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).noCheck();
 
-            // 处理子级节点的选中狀態
+            // 处理子级节點的选中狀態
             var $child_li_i = $child_li.find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
             _this.checkStatus($child_li_i).noCheck();
 
-            // 处理父级节点的选中狀態
+            // 处理父级节點的选中狀態
             for (var i = 1, item = $parent_li; i < item.length; i++) {
                 var flag = item.eq(i).find(">."+LI_NAV_CHILD+" ."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"'][data-checked='1']").length;
                 var $item_i = item.eq(i).find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
@@ -2656,15 +2656,15 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.checkStatus($item_i).noallCheck();
                 }
             }
-        } else {		//当前复选框为未选中狀態，点击后变为选中狀態
-            // 处理当前节点的选中狀態
+        } else {		//当前复选框為未选中狀態，點擊后变為选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).check();
 
-            // 处理子级节点的选中狀態
+            // 处理子级节點的选中狀態
             var $child_li_i = $child_li.find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
             _this.checkStatus($child_li_i).check();
 
-            // 处理父级节点的选中狀態
+            // 处理父级节點的选中狀態
             for (var i = 1, item = $parent_li; i < item.length; i++) {
                 var flag1 = item.eq(i).find(">."+LI_NAV_CHILD+" ."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"'][data-checked='1']").length;
                 var flag2 = item.eq(i).find(">."+LI_NAV_CHILD+" ."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']").length;
@@ -2680,78 +2680,78 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    //实现复选框点击，p-casc：父级选中子集全选，子集無法改变父级选中狀態
+    //實現复选框點擊，p-casc：父级选中子集全选，子集無法改变父级选中狀態
     DTree.prototype.checkAllOrPcascOrNot = function($i) {
         var _this = this;
-        //$i 当前点击的checkbox
+        //$i 当前點擊的checkbox
         var $div = $i.closest("."+LI_DIV_ITEM),
             dataPar = $i.attr("data-par"),
             dataType = $i.attr("data-type"),
-            $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-            $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+            $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+            $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
-        if ($i.attr("data-checked") == "1") {	//当前复选框为选中狀態，点击后变为未选中狀態
-            // 处理当前节点的选中狀態
+        if ($i.attr("data-checked") == "1") {	//当前复选框為选中狀態，點擊后变為未选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).noCheck();
 
-            // 处理子级节点的选中狀態
+            // 处理子级节點的选中狀態
             var $child_li_i = $child_li.find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
             _this.checkStatus($child_li_i).noCheck();
 
-        } else {		//当前复选框为未选中狀態，点击后变为选中狀態
-            // 处理当前节点的选中狀態
+        } else {		//当前复选框為未选中狀態，點擊后变為选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).check();
 
-            // 处理子级节点的选中狀態
+            // 处理子级节點的选中狀態
             var $child_li_i = $child_li.find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
             _this.checkStatus($child_li_i).check();
         }
     };
 
-    //实现复选框点击，self：各自选中互不影响
+    //實現复选框點擊，self：各自选中互不影响
     DTree.prototype.checkOrNot = function($i) {
         var _this = this;
-        //$i 当前点击的checkbox
+        //$i 当前點擊的checkbox
         var $div = $i.closest("."+LI_DIV_ITEM),
             dataPar = $i.attr("data-par"),
             dataType = $i.attr("data-type"),
-            $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-            $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+            $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+            $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
-        if ($i.attr("data-checked") == "1") {	//当前复选框为选中狀態，点击后变为未选中狀態
-            // 处理当前节点的选中狀態
+        if ($i.attr("data-checked") == "1") {	//当前复选框為选中狀態，點擊后变為未选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).noCheck();
-        } else {		//当前复选框为未选中狀態，点击后变为选中狀態
-            // 处理当前节点的选中狀態
+        } else {		//当前复选框為未选中狀態，點擊后变為选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).check();
         }
     };
 
-    //实现复选框点击，only：只能选中1个复选框
+    //實現复选框點擊，only：只能选中1个复选框
     DTree.prototype.checkOnly = function($i) {
         var _this = this;
-        //$i 当前点击的checkbox
+        //$i 当前點擊的checkbox
         var $div = $i.closest("."+LI_DIV_ITEM),
             dataPar = $i.attr("data-par"),
             dataType = $i.attr("data-type"),
-            $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-            $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+            $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+            $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+            $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
         var checked = $i.attr("data-checked");
-        // 将全部节点全部设为未选中狀態
+        // 将全部节點全部设為未选中狀態
         var $all_i = _this.obj.find("i[data-checked]");
         _this.checkStatus($all_i).noCheck();
 
-        if (checked != "1") {	//当前复选框为未选中狀態，点击后变为选中狀態
-            // 处理当前节点的选中狀態
+        if (checked != "1") {	//当前复选框為未选中狀態，點擊后变為选中狀態
+            // 处理当前节點的选中狀態
             _this.checkStatus($i).check();
         }
     };
 
-    //实现复选框点击
+    //實現复选框點擊
     DTree.prototype.changeCheck = function($i) {
         var _this = this;
         var temp = _this.temp;
@@ -2774,34 +2774,34 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
 
         if(_this.select) {
-        	// 设置复选框模式中的下拉树的值
+        	// 設定复选框模式中的下拉树的值
         	_this.selectCheckboxVal();
         }
         
-        // 取得复选框选中节点的内容
+        // 取得复选框选中节點的内容
         var checkbarNodes = _this.setAndGetCheckbarNodesParam(true);
         
-        // 使用者自定义想做的事情
+        // 使用者自訂想做的事情
         _this.checkbarFun.chooseDone(checkbarNodes);
         layui.event.call(this, MOD_NAME, "chooseDone("+$(_this.obj)[0].id+")", {"checkbarParams": checkbarNodes});
         _this.temp = [];
     };
 
-    //复选框半选狀態初始化设置
+    //复选框半选狀態初始化設定
     DTree.prototype.initNoAllCheck = function(){
         var _this = this;
-        //1.取得所有选中节点
+        //1.取得所有选中节點
         var $is = _this.obj.find("i[data-checked='1']");
         if($is.length > 0){
             for ( var key = 0; key < $is.length; key++) {
                 var $i = $($is[key]),
                     dataPar = $i.attr("data-par"),
                     dataType = $i.attr("data-type"),
-                    $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-                    $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-                    $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+                    $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+                    $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+                    $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
-                // 处理父级节点的选中狀態
+                // 处理父级节點的选中狀態
                 for (var i = 1, item = $parent_li; i < item.length; i++) {
                     var flag1 = item.eq(i).find(">."+LI_NAV_CHILD+" ."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"'][data-checked='1']").length;
                     var flag2 = item.eq(i).find(">."+LI_NAV_CHILD+" ."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']").length;
@@ -2818,21 +2818,21 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    //复选框选中狀態初始化设置
+    //复选框选中狀態初始化設定
     DTree.prototype.initAllCheck = function(){
         var _this = this;
-        //1.取得所有选中节点
+        //1.取得所有选中节點
         var $is = _this.obj.find("i[data-checked='1']");
         if($is.length > 0){
             for ( var key = 0; key < $is.length; key++) {
                 var $i = $($is[key]),
                     dataPar = $i.attr("data-par"),
                     dataType = $i.attr("data-type"),
-                    $li = $i.closest(dataPar),		//当前checkbox的上级li节点
-                    $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节点
-                    $child_li = $li.find(dataPar);	//当前checkbox的上级li节点下的所有子级li节点
+                    $li = $i.closest(dataPar),		//当前checkbox的上级li节點
+                    $parent_li = $i.parents(dataPar),		//当前checkbox的所有父级li节點
+                    $child_li = $li.find(dataPar);	//当前checkbox的上级li节點下的所有子级li节點
 
-                // 处理父级节点的选中狀態
+                // 处理父级节點的选中狀態
                 for (var i = 1, item = $parent_li; i < item.length; i++) {
                     var $item_i = item.eq(i).find(">."+LI_DIV_ITEM+">."+LI_DIV_CHECKBAR+">i[data-type='"+dataType+"']");
                     // 父级复选框全选
@@ -2842,7 +2842,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 设置复选框选中/未选中/半选  _this.checkStatus($i).check();  _this.checkStatus($i).noCheck();   _this.checkStatus($i).noallCheck();
+    // 設定复选框选中/未选中/半选  _this.checkStatus($i).check();  _this.checkStatus($i).noCheck();   _this.checkStatus($i).noallCheck();
     DTree.prototype.checkStatus = function($i) {
         var _this = this;
         return {
@@ -2870,12 +2870,12 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 设置树的复选框操作值的全部参数,并取得
+    // 設定树的复选框操作值的全部参數,并取得
     DTree.prototype.setAndGetCheckbarNodesParam = function(requestParamFlag) {
         var _this = this;
         //操作前先清空
         _this.checkbarNode = [];
-        // 選擇所有复选框节点
+        // 選擇所有复选框节點
         if (_this.checkbarData == "change"){	//记录变更資料
             _this.obj.find("i[data-par][dtree-disabled='false']").each(function(){
                 var $i = $(this), $div = $i.closest("."+LI_DIV_ITEM);
@@ -2926,13 +2926,13 @@ layui.define(['jquery','layer','form'], function(exports) {
         return _this.checkbarNode;
     };
 
-    // 取得树的复选框操作值的全部参数
+    // 取得树的复选框操作值的全部参數
     DTree.prototype.getCheckbarNodesParam = function() {
         var _this = this;
         return _this.setAndGetCheckbarNodesParam(true);
     };
 
-    // 取得树的一个复选框的参数
+    // 取得树的一个复选框的参數
     DTree.prototype.getCheckbarNodeParam = function($div, $i){
         var _this = this;
         var temp_node = {};
@@ -2960,23 +2960,23 @@ layui.define(['jquery','layer','form'], function(exports) {
         return temp_node;
     };
     
-    // 取得基于返回参数的树的复选框参数
+    // 取得基于返回参數的树的复选框参數
     DTree.prototype.getCheckbarJsonArrParam = function(){
     	var _this = this;
     	var checkbarJsonArr = {
-			nodeId: [],		//节点ID
-            parentId: [],	//父节点ID
-            context: [],	//节点内容
-            leaf: [],		//是否叶子节点
+			nodeId: [],		//节點ID
+            parentId: [],	//父节點ID
+            context: [],	//节點内容
+            leaf: [],		//是否叶子节點
             level: [],		//层级
-            spread: [],		//节点展开狀態
-            dataType: [],	//节点标记
-            checked: [],	//节点复选框选中狀態
-            initchecked: [],	//节点复选框初始狀態
-            basicData: [],		//使用者自定义的记录节点資料
+            spread: [],		//节點展開狀態
+            dataType: [],	//节點标记
+            checked: [],	//节點复选框选中狀態
+            initchecked: [],	//节點复选框初始狀態
+            basicData: [],		//使用者自訂的记录节點資料
             recordData: [],		//当前data資料（排除basicData和children字段）
     	};
-    	// 取得全部复选框选中节点
+    	// 取得全部复选框选中节點
     	var params = _this.setAndGetCheckbarNodesParam(false);
     	if(params && params.length > 0) {
     		for(var i=0; i<params.length; i++) { 
@@ -3017,7 +3017,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return flag;
     };
     
-    //点击节点选中/不选 复选框
+    //點擊节點选中/不选 复选框
     DTree.prototype.clickNodeCheckbar = function(nodeId){
     	var _this = this;
     	var $checkbar = _this.getNodeDom(nodeId).checkbox();
@@ -3063,16 +3063,16 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     }
     
-    //刪除选中节点
+    //刪除选中节點
     DTree.prototype.removeCheckedNode = function(nodeId){
     	var _this = this;
     	var len = _this.obj.find("i[data-par][data-checked='1']").length;
         if(len == 0){
-            layer.msg("请至少选中一个节点",{icon:2});
+            layer.msg("請至少选中一个节點",{icon:2});
         }else{
             //操作前先清空
             _this.checkbarNode = [];
-            // 選擇所有复选框节点
+            // 選擇所有复选框节點
             var i_node = {};
             _this.obj.find("i[data-par][data-checked='1']").each(function(){
                 var $i = $(this), $div = $i.closest("."+LI_DIV_ITEM);
@@ -3080,7 +3080,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 _this.checkbarNode.push(_this.getRequestParam(_this.getCheckbarNodeParam($div, $i)));
             });
 
-            layer.confirm('確定要刪除选中节点？', {icon: 3, title:'刪除选中节点'}, function(index1){
+            layer.confirm('確定要刪除选中节點？', {icon: 3, title:'刪除选中节點'}, function(index1){
                 var flag = _this.menubarFun.remove(_this.checkbarNode);
                 if(flag){
                     _this.obj.find("i[data-par][data-checked='1']").closest("."+LI_DIV_ITEM).next("ul").remove();
@@ -3093,11 +3093,11 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     }
 
-    /******************** 工具栏及菜单栏区域 ********************/
-    // 初始化菜单栏和工具栏的div
+    /******************** 工具栏及選單栏区域 ********************/
+    // 初始化選單栏和工具栏的div
     DTree.prototype.initTreePlus = function(){
         var _this = this;
-        // 初始化菜单栏和工具栏的div
+        // 初始化選單栏和工具栏的div
         _this.obj.prevAll('div#dtree_menubar_'+_this.obj[0].id).remove();
         _this.toolbarMenu = {};
         if(_this.menubar && _this.menubarTips.group && _this.menubarTips.group.length > 0) _this.obj.before("<div class='"+LI_DIV_MENUBAR+"' id='dtree_menubar_"+_this.obj[0].id+"'><div class='layui-btn-group'></div></div>");
@@ -3110,10 +3110,10 @@ layui.define(['jquery','layer','form'], function(exports) {
 
     };
 
-    // 開啟工具栏和菜单栏
+    // 開啟工具栏和選單栏
     DTree.prototype.openTreePlus = function(){
         var _this = this;
-        // 先对工具栏做处理，因为菜单栏可能会与工具栏产生关联。
+        // 先對工具栏做处理，因為選單栏可能会与工具栏产生关联。
         var ggMenu = [];
         if(_this.toolbar) _this.getToolbarDom();
 
@@ -3123,7 +3123,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 group = menubarTips.group,
                 freedom = menubarTips.freedom;
             if(mtbar && mtbar.length > 0){
-                // 菜单栏吸附工具栏上
+                // 選單栏吸附工具栏上
                 for(var i=0; i<mtbar.length; i++){
                     var mt = mtbar[i];
                     if(typeof mt === 'string'){
@@ -3135,7 +3135,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
             }
             if(group && group.length > 0){
-                // 菜单栏吸附在上方的按钮组div中
+                // 選單栏吸附在上方的按钮组div中
                 for(var i=0; i<group.length; i++){
                     var gg = group[i];
                     if(typeof gg === 'string'){
@@ -3152,54 +3152,54 @@ layui.define(['jquery','layer','form'], function(exports) {
     };
 
 
-    /******************** 菜单栏区域 ********************/
-    // 取得菜单栏
+    /******************** 選單栏区域 ********************/
+    // 取得選單栏
     DTree.prototype.getMenubarDom = function(menu){
         var _this = this;
         var rootId = _this.obj[0].id;
         var gg = "";
         switch (menu) {
             case defaultMenu.moveDown:
-                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.moveDown+"' title='展开全部节点'><i class='"+_this.usefontStyle.menubar.movedown+"'></i></button>";
+                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.moveDown+"' title='展開全部节點'><i class='"+_this.usefontStyle.menubar.movedown+"'></i></button>";
                 break;
             case defaultMenu.moveUp:
-                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.moveUp+"' title='收缩全部节点'><i class='"+_this.usefontStyle.menubar.moveup+"'></i></button>";
+                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.moveUp+"' title='收缩全部节點'><i class='"+_this.usefontStyle.menubar.moveup+"'></i></button>";
                 break;
             case defaultMenu.refresh:
                 gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.refresh+"' title='刷新'><i class='"+_this.usefontStyle.menubar.refresh+"'></i></button>";
                 break;
             case defaultMenu.checkAll:
-                gg = (_this.checkbar && _this.checkbarType != 'only') ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.checkAll+"' title='全选节点'><i class='"+_this.usefontStyle.menubar.checkAll+"'></i></button>" : "";
+                gg = (_this.checkbar && _this.checkbarType != 'only') ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.checkAll+"' title='全选节點'><i class='"+_this.usefontStyle.menubar.checkAll+"'></i></button>" : "";
                 break;
             case defaultMenu.unCheckAll:
-                gg = (_this.checkbar && _this.checkbarType != 'only') ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.unCheckAll+"' title='全不选节点'><i class='"+_this.usefontStyle.menubar.unCheckAll+"'></i></button>" : "";
+                gg = (_this.checkbar && _this.checkbarType != 'only') ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.unCheckAll+"' title='全不选节點'><i class='"+_this.usefontStyle.menubar.unCheckAll+"'></i></button>" : "";
                 break;
             case defaultMenu.invertAll:
-                gg = (_this.checkbar && _this.checkbarType != 'only') ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.invertAll+"' title='反选节点'><i class='"+_this.usefontStyle.menubar.invertAll+"'></i></button>" : "";
+                gg = (_this.checkbar && _this.checkbarType != 'only') ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.invertAll+"' title='反选节點'><i class='"+_this.usefontStyle.menubar.invertAll+"'></i></button>" : "";
                 break;
             case defaultMenu.remove:
-                gg = (_this.checkbar) ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.remove+"' title='刪除选中节点'><i class='"+_this.usefontStyle.menubar.remove+"'></i></button>" : "";
+                gg = (_this.checkbar) ? "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.remove+"' title='刪除选中节點'><i class='"+_this.usefontStyle.menubar.remove+"'></i></button>" : "";
                 break;
             case defaultMenu.searchNode:
-                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.searchNode+"' title='查詢节点'><i class='"+_this.usefontStyle.menubar.search+"'></i></button>";
+                gg = "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+rootId+"' d-menu='"+defaultMenu.searchNode+"' title='查詢节點'><i class='"+_this.usefontStyle.menubar.search+"'></i></button>";
                 break;
         }
         return gg;
     };
 
-    // 取得扩展菜单栏
+    // 取得扩展選單栏
     DTree.prototype.getExtMenubarDom = function(menu){
         var _this = this;
         return "<button type='button' class='layui-btn layui-btn-sm layui-btn-primary' dtree-id='"+_this.obj[0].id+"' d-menu='"+menu.menubarId+"' title='"+menu.title+"'><i class='"+_this.usefontStyle.menubarExt+" "+menu.icon+"'></i></button>";
     };
 
-    // 取得依附在工具栏的菜单栏
+    // 取得依附在工具栏的選單栏
     DTree.prototype.getMenubarToolDom = function(menu){
         var _this = this;
         var rootId = _this.obj[0].id;
         switch (menu) {
             case defaultMenu.moveDown:
-                _this.toolbarMenu[defaultMenu.moveDown] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.moveDown, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.movedown, "展开全部");
+                _this.toolbarMenu[defaultMenu.moveDown] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.moveDown, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.movedown, "展開全部");
                 break;
             case defaultMenu.moveUp:
                 _this.toolbarMenu[defaultMenu.moveUp] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.moveUp, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.moveup, "收缩全部");
@@ -3209,15 +3209,15 @@ layui.define(['jquery','layer','form'], function(exports) {
                 break;
             case defaultMenu.checkAll:
                 if(_this.checkbar && _this.checkbarType != 'only')
-                    _this.toolbarMenu[defaultMenu.checkAll] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.checkAll, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.checkAll, "全选节点");
+                    _this.toolbarMenu[defaultMenu.checkAll] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.checkAll, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.checkAll, "全选节點");
                 break;
             case defaultMenu.unCheckAll:
                 if(_this.checkbar && _this.checkbarType != 'only')
-                    _this.toolbarMenu[defaultMenu.unCheckAll] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.unCheckAll, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.unCheckAll, "全不选节点");
+                    _this.toolbarMenu[defaultMenu.unCheckAll] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.unCheckAll, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.unCheckAll, "全不选节點");
                 break;
             case defaultMenu.invertAll:
                 if(_this.checkbar && _this.checkbarType != 'only')
-                    _this.toolbarMenu[defaultMenu.invertAll] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.invertAll, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.invertAll, "反选节点");
+                    _this.toolbarMenu[defaultMenu.invertAll] = _this.setToolbarDom().setMenuToolbarOption(defaultMenu.invertAll, _this.toolbarStyle.title, _this.usefontStyle.toolbar.menubar.invertAll, "反选节點");
                 break;
             case defaultMenu.remove:
                 if(_this.checkbar)
@@ -3229,7 +3229,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 取得依附在工具栏的扩展菜单栏
+    // 取得依附在工具栏的扩展選單栏
     DTree.prototype.getExtMenubarToolDom = function(menu){
         var _this = this;
         _this.toolbarMenu[menu.menubarId] = _this.setToolbarDom().setMenuToolbarOption(menu.menubarId, menu.title, _this.usefontStyle.toolbar.menubarExt+" "+menu.icon, "");
@@ -3239,11 +3239,11 @@ layui.define(['jquery','layer','form'], function(exports) {
     DTree.prototype.menubarMethod = function(){
         var _this = this;
         return {
-            openAllNode: function(obj){  // 展开所有节点
+            openAllNode: function(obj){  // 展開所有节點
                 var $ulNode = obj || _this.obj.children("li").children("ul");
-                // 遍历所有ul子节点
+                // 遍历所有ul子节點
                 for (var i = 0; i < $ulNode.length; i++) {
-                    // 取得当前节点的訊息
+                    // 取得当前节點的訊息
                     var $ul = $($ulNode[i]),
                         $div = $ul.prev("div"),
                         $i_spread = _this.getNodeDom($div).fnode(),
@@ -3255,13 +3255,13 @@ layui.define(['jquery','layer','form'], function(exports) {
                     if (leaf == "leaf") { continue;	}	// 说明是叶子了，则继续循环下一个
 
                     if (spread == "open") {
-                        // 说明该节点已经展开了，则进行子节点循环
+                        // 说明该节點已经展開了，则进行子节點循环
                     } else {
                         if (_this.type=="load") {	//是否全量加载
                             if (_this.cache) {	//是否開啟缓存
                                 if ($ul.html()) {
                                     $ul.addClass(NAV_SHOW);
-                                } else {	//加载节点
+                                } else {	//加载节點
                                     _this.getChild($div);
                                 }
                             }else {	//每次取新的資料
@@ -3278,9 +3278,9 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.menubarMethod().openAllNode($childUl);
                 }
             },
-            closeAllNode: function(){ //收缩所有节点
+            closeAllNode: function(){ //收缩所有节點
                 _this.obj.find("."+LI_NAV_CHILD).each(function(){
-                    // 取得当前节点的訊息
+                    // 取得当前节點的訊息
                     var $ul = $(this),
                         $div = $ul.prev("div"),
                         $i_spread = _this.getNodeDom($div).fnode(),
@@ -3296,31 +3296,31 @@ layui.define(['jquery','layer','form'], function(exports) {
             refreshTree: function(){// 刷新树
                 _this.refreshTree();
             },
-            checkAll: function(){ // 全选节点
+            checkAll: function(){ // 全选节點
             	_this.checkAllNode();
             },
-            unCheckAll: function(){ // 全不选节点
+            unCheckAll: function(){ // 全不选节點
                 _this.cancelCheckedNode();
             },
-            invertAll: function(){ // 反选节点
+            invertAll: function(){ // 反选节點
             	_this.invertCheckedNode();
             },
-            remove: function(){// 刪除选中节点
+            remove: function(){// 刪除选中节點
             	_this.removeCheckedNode();
             },
-            searchNode: function(){//模糊查詢该值，展开该值节点
+            searchNode: function(){//模糊查詢该值，展開该值节點
                 layer.prompt({
                     formType: 0,
                     value: "",
-                    title: '查詢节点'
+                    title: '查詢节點'
                 }, function(value, index1, elem){
                     if (value) {
                         var flag = _this.searchNode(value);
                         if (!flag) {
-                            layer.msg("该名稱节点不存在！", {icon:5});
+                            layer.msg("该名稱节點不存在！", {icon:5});
                         }
                     } else {
-                        layer.msg("未指定查詢节点名稱", {icon:5});
+                        layer.msg("未指定查詢节點名稱", {icon:5});
                     }
                     layer.close(index1);
                 });
@@ -3362,10 +3362,10 @@ layui.define(['jquery','layer','form'], function(exports) {
         var _this = this;
         var $div = _this.getNodeDom().nowDiv();
         switch (menuId) {
-            case defaultMenu.moveDown:	// 展开全部节点
+            case defaultMenu.moveDown:	// 展開全部节點
                 _this.menubarMethod().openAllNode();
                 break;
-            case defaultMenu.moveUp:	// 收缩全部节点
+            case defaultMenu.moveUp:	// 收缩全部节點
                 _this.menubarMethod().closeAllNode();
                 break;
             case defaultMenu.refresh:
@@ -3392,7 +3392,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    //模糊查詢该值，展开该值节点
+    //模糊查詢该值，展開该值节點
     DTree.prototype.searchNode = function(value){
         var _this = this;
         var b = false;
@@ -3402,7 +3402,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             var html = $nthis.html();
             if(html.indexOf(value) > -1){
                 if($nthis.attr("data-leaf") == "leaf") {
-                    // 叶子节点提供包含父节点的所有訊息
+                    // 叶子节點提供包含父节點的所有訊息
                     var title = "";
                     $nthis.parents("li").each(function(){
                         title = "-" + $(this).find("cite[data-leaf]").html() + title;
@@ -3428,9 +3428,9 @@ layui.define(['jquery','layer','form'], function(exports) {
         });
         if($lis.length > 0) {
             b = true;
-            // 1.将树节点清空
+            // 1.将树节點清空
             _this.obj.html("");
-            // 2.遍历所有cite节点，展开当前cite节点
+            // 2.遍历所有cite节點，展開当前cite节點
             for(var i=0; i<$lis.length; i++){
                 _this.obj.append($lis[i]);
             }
@@ -3451,7 +3451,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             for(var i=0; i<toolbarShow.length; i++){
                 var show = toolbarShow[i];
                 if(show == "pulldown"){
-                    _this.toolbarMenu[defaultTool.pulldown] = _this.setToolbarDom().setToolbarOption(defaultTool.pulldown, _this.toolbarStyle.title, _this.usefontStyle.toolbar.pulldown, "展开");
+                    _this.toolbarMenu[defaultTool.pulldown] = _this.setToolbarDom().setToolbarOption(defaultTool.pulldown, _this.toolbarStyle.title, _this.usefontStyle.toolbar.pulldown, "展開");
                 }
                 if(show == "pullup"){
                     _this.toolbarMenu[defaultTool.pullup] = _this.setToolbarDom().setToolbarOption(defaultTool.pullup, _this.toolbarStyle.title, _this.usefontStyle.toolbar.pullup, "收缩");
@@ -3475,7 +3475,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 设置工具栏按钮
+    // 設定工具栏按钮
     DTree.prototype.setToolbarDom = function(){
         var _this = this;
         var toolbarWay = _this.toolbarWay;
@@ -3514,7 +3514,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 在节点后动态绑定fixed和follow條件的工具栏
+    // 在节點后動态绑定fixed和follow條件的工具栏
     DTree.prototype.dynamicToolbarDom = function($cite){
         var _this = this;
         var toolbarWay = _this.toolbarWay;
@@ -3547,12 +3547,12 @@ layui.define(['jquery','layer','form'], function(exports) {
     DTree.prototype.toolbarMethod = function(){
         var _this = this;
         return {
-            pulldown: function(obj){ // 展开当前点击节点的下面全部节点
+            pulldown: function(obj){ // 展開当前點擊节點的下面全部节點
                 if(!obj) return;
                 var $ulNode = obj;
-                // 遍历所有ul子节点
+                // 遍历所有ul子节點
                 for (var i = 0; i < $ulNode.length; i++) {
-                    // 取得当前节点的訊息
+                    // 取得当前节點的訊息
                     var $ul = $($ulNode[i]),
                         $div = $ul.prev("div"),
                         $i_spread = _this.getNodeDom($div).fnode(),
@@ -3564,13 +3564,13 @@ layui.define(['jquery','layer','form'], function(exports) {
                     if (leaf == "leaf") { continue;	}	// 说明是叶子了，则继续循环下一个
 
                     if (spread == "open") {
-                        // 说明该节点已经展开了，则进行子节点循环
+                        // 说明该节點已经展開了，则进行子节點循环
                     } else {
                         if (_this.type=="load") {	//是否全量加载
                             if (_this.cache) {	//是否開啟缓存
                                 if ($ul.html()) {
                                     $ul.addClass(NAV_SHOW);
-                                } else {	//加载节点
+                                } else {	//加载节點
                                     _this.getChild($div);
                                 }
                             }else {	//每次取新的資料
@@ -3587,9 +3587,9 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.toolbarMethod().pulldown($childUl);
                 }
             },
-            pullup: function($li){ // 收缩当前点击节点的下面全部节点
+            pullup: function($li){ // 收缩当前點擊节點的下面全部节點
                 $li.find("."+LI_NAV_CHILD).each(function(){
-                    // 取得当前节点的訊息
+                    // 取得当前节點的訊息
                     var $ul = $(this),
                         $div = $ul.prev("div"),
                         $i_spread = _this.getNodeDom($div).fnode(),
@@ -3610,9 +3610,9 @@ layui.define(['jquery','layer','form'], function(exports) {
         var _this = this;
         var $cite = $div.children("cite[data-leaf]"),
             $ul = $div.next("ul"),
-            $p_li = $div.parent("li[data-index]"),	//当前选中节点的顶级li节点
-            $p_ul = $p_li.parent("ul"),	//当前选中节点的顶级li节点的父级ul
-            $p_div = $p_ul.prev("div"), //当前选中节点的顶级li节点的父级ul的前一个div
+            $p_li = $div.parent("li[data-index]"),	//当前选中节點的顶级li节點
+            $p_ul = $p_li.parent("ul"),	//当前选中节點的顶级li节點的父级ul
+            $p_div = $p_ul.prev("div"), //当前选中节點的顶级li节點的父级ul的前一个div
             title = $cite.html();
         switch (tool) {
             case defaultTool.pulldown:
@@ -3639,7 +3639,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                                 checked = "0",
                                 level = parseInt($p_li.attr("data-index"))+1;
 
-                            // 创建子节点的DOM，新增子节点
+                            // 建立子节點的DOM，新增子节點
                             var checkArr = [];
                             if (_this.checkArrLen > 0) {
                                 for (var i = 0; i < _this.checkArrLen; i++) {
@@ -3648,18 +3648,18 @@ layui.define(['jquery','layer','form'], function(exports) {
                             }
 
                             $ul.append(_this.getLiItemDom(id, parentId, data.addNodeName, data.addNodeName, true, "", "", checkArr, level, false, false, false, "", "", "item"));
-                            // 先将li节点隐藏
+                            // 先将li节點隐藏
                             $ul.find("li[data-id='"+id+"']").hide();
                             // 重新赋值
                             var $addDiv = $ul.find("div[data-id='"+id+"']");
                             node = _this.getNodeParam($addDiv);
 
-                            //取得组装后的requestNode,组合参数
+                            //取得组装后的requestNode,组合参數
                             var requestNode = _this.getRequestParam(node);
                             requestNode = $.extend(requestNode, data);
 
                             _this.temp = [id, $ul, $div, level];
-                            // 使用者自定义想做的事情
+                            // 使用者自訂想做的事情
                             _this.toolbarFun.addTreeNode(requestNode, $div);
 
                             layer.close(index);
@@ -3730,7 +3730,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     {"label": "新增"+_this.toolbarStyle.title, "name": "addNodeName", "type": "text", "value": "", "defElem": "nowChange", "verify": "required"},
                     {"type": "submit", "value": "确认新增", "defElem": "btn", "filter": "dtree_addNode_form"}];
 
-                //2. 使用者自定义的节点内容
+                //2. 使用者自訂的节點内容
                 var addNodeBar = ['<div class="'+TOOLBAR_TOOL+'"><form class="layui-form layui-form-pane" lay-filter="dtree_addNode_form">'];
 
                 if(nodeBarContents != null && nodeBarContents.length > 0){
@@ -3752,7 +3752,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     }
                 }
 
-                // 2. 遍历生成全部表單标签
+                // 2. 遍历產生全部表單标签
                 for(var j=0; j<addNodeBarDef.length; j++){
                     var type = addNodeBarDef[j].type;
                     if(!type){type = "text";}
@@ -3774,7 +3774,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
 
                 var addBtn = ['<div class="layui-form-item">', '<div class="layui-input-block" style="margin-left:0px;text-align:center;">'];
-                // 3.遍历生成按钮
+                // 3.遍历產生按钮
                 for(var j=0; j<addNodeBarDef.length; j++){
                     var type = addNodeBarDef[j].type;
                     if(!type){type = "text";}
@@ -3803,7 +3803,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     {"type": "submit", "value": "确认編輯", "defElem": "btn", "filter": "dtree_editNode_form"}];
 
                 var editNodeBar = ['<div class="'+TOOLBAR_TOOL+'"><form class="layui-form layui-form-pane" lay-filter="dtree_editNode_form">'];
-                //2. 使用者自定义的节点内容
+                //2. 使用者自訂的节點内容
                 if(nodeBarContents != null && nodeBarContents.length > 0){
 
                     if(nodeBarContents[1] != null && nodeBarContents[1] != undefined && nodeBarContents[1].length > 0){
@@ -3824,7 +3824,7 @@ layui.define(['jquery','layer','form'], function(exports) {
 
                     }
                 }
-                // 2. 遍历生成全部表單标签
+                // 2. 遍历產生全部表單标签
                 for(var j=0; j<editNodeBarDef.length; j++){
                     var type = editNodeBarDef[j].type;
                     if(!type){type = "text";}
@@ -3845,7 +3845,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
 
                 var editBtn = ['<div class="layui-form-item">', '<div class="layui-input-block" style="margin-left:0px;text-align:center;">'];
-                // 3.遍历生成按钮
+                // 3.遍历產生按钮
                 for(var j=0; j<editNodeBarDef.length; j++){
                     var type = editNodeBarDef[j].type;
                     if(!type){type = "text";}
@@ -3960,7 +3960,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 新增节点后改变节点内容
+    // 新增节點后改变节點内容
     DTree.prototype.changeTreeNodeAdd = function(returnID){
         var _this = this;
         var temp = _this.temp;
@@ -3980,8 +3980,8 @@ layui.define(['jquery','layer','form'], function(exports) {
                     $thisDiv = $ul.find("div[data-id='"+parseData.treeId()+"']");
                     _this.setNodeParam($thisDiv)
                 } else {
-                    layer.msg("新增失敗,节点ID为undefined！",{icon:5});
-                    // 将li节点刪除
+                    layer.msg("新增失敗,节點ID為undefined！",{icon:5});
+                    // 将li节點刪除
                     $ul.find("li[data-id='"+id+"']").remove();
                     // 重新赋值
                     _this.setNodeParam($div);
@@ -3990,37 +3990,37 @@ layui.define(['jquery','layer','form'], function(exports) {
                     return ;
                 }
             }else if(returnID == 'refresh'){
-                // 如果是设置为refresh参数，则向后台发送请求，取得新增节点下的真实参数，局部刷新树。
+                // 如果是設定為refresh参數，则向后台发送請求，取得新增节點下的真实参數，局部刷新树。
                 flag = true;
             } else if(typeof returnID === "string" || typeof returnID === 'number' || returnID == true){
                 $thisDiv.attr("data-id", returnID);
-                // 将li节点展示
+                // 将li节點展示
                 $ul.find("li[data-id='"+returnID+"']").show();
                 _this.setNodeParam($thisDiv)
             }
 
-            // 判断当前点击的节点是否是最后一级节点，如果是，则需要修改节点的样式
+            // 判断当前點擊的节點是否是最后一级节點，如果是，则需要修改节點的樣式
             var $icon_i = $div.find("i[data-spread]");
             if ($icon_i.eq(0).attr("data-spread") == "last") {
                 _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).openWithLeaf();
-            } else {	//如果不是，也要修改节点样式
+            } else {	//如果不是，也要修改节點樣式
                 _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).open();
             }
-            $ul.addClass(NAV_SHOW);	//展开UL
+            $ul.addClass(NAV_SHOW);	//展開UL
             _this.accordionUL($ul);
             if(flag) {
                 _this.getChild($div);
             } else {
                 //		_this.showLine();
                 _this.showLine($ul.find("li"));
-                // 这种情况下需要在新增节点后对节点新增工具栏
+                // 这种情况下需要在新增节點后對节點新增工具栏
                 if(_this.toolbar && _this.toolbarWay != 'contextmenu') {
                     _this.dynamicToolbarDom($thisDiv.find("cite[data-leaf]"));
                 }
             }
 
         } else {
-            // 将li节点刪除
+            // 将li节點刪除
             $ul.find("li[data-id='"+id+"']").remove();
             // 重新赋值
             _this.setNodeParam($div);
@@ -4030,14 +4030,14 @@ layui.define(['jquery','layer','form'], function(exports) {
 
     };
 
-    // 編輯頁打开后显示編輯頁内容
+    // 編輯頁打開后显示編輯頁内容
     DTree.prototype.changeTreeNodeDone = function(param){
         var _this = this;
         form.val('dtree_editNode_form', param);
         form.render();
     };
 
-    // 修改节点后改变节点内容
+    // 修改节點后改变节點内容
     DTree.prototype.changeTreeNodeEdit = function(returnID){
         var _this = this;
         var temp = _this.temp;
@@ -4057,7 +4057,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     replaceDom.recordData(parseData.recordData());
                     _this.setNodeParam($div);
                 } else {
-                    layer.msg("編輯失敗,节点ID为undefined！",{icon:5});
+                    layer.msg("編輯失敗,节點ID為undefined！",{icon:5});
                     // 重新赋值
                     _this.setNodeParam($div);
                 }
@@ -4070,7 +4070,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         _this.temp = []; // 临时变量制空
     };
 
-    // 刪除节点后改变节点内容
+    // 刪除节點后改变节點内容
     DTree.prototype.changeTreeNodeDel = function(flag){
         var _this = this;
         var temp = _this.temp;
@@ -4081,7 +4081,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         if(flag){
             $p_li.remove();
             _this.showLine($p_ul.find("li"));
-            // 判断父级ul中是否还存在li,如果不存在，则需要修改节点的样式
+            // 判断父级ul中是否还存在li,如果不存在，则需要修改节點的樣式
             if($p_ul.children("li").length == 0){
                 var $icon_i = $p_div.find("i[data-spread]");
                 _this.operateIcon($icon_i.eq(0), $icon_i.eq(1)).closeWithLeaf();
@@ -4109,7 +4109,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         if (flag) {
             if ($(iframeElem).length > 0) {		//iframe存在
                 if (!iframeUrl) {
-                    layer.msg("資料请求异常，iframeUrl参数未指定", {icon:5});
+                    layer.msg("資料請求异常，iframeUrl参數未指定", {icon:5});
                     return false;
                 }
                 var param = AjaxHelper.serialize(iframeParam);
@@ -4119,14 +4119,14 @@ layui.define(['jquery','layer','form'], function(exports) {
                 var url = iframeUrl + param;
                 $(iframeElem).attr("src", url);
             } else {
-                layer.msg("iframe绑定异常，请确认頁面中是否有iframe頁对应的容器", {icon:5});
+                layer.msg("iframe绑定异常，請确认頁面中是否有iframe頁對应的容器", {icon:5});
                 return false;
             }
         }
         return flag;
     };
 
-    // 取得传递出去的参数，根据iframe.iframeDefaultRequest、iframe.iframeRequest和node拼出发出请求的参数
+    // 取得传递出去的参數，根據iframe.iframeDefaultRequest、iframe.iframeRequest和node拼出发出請求的参數
     DTree.prototype.getIframeRequestParam = function(nodes){
         var _this = this;
         var request = _this.iframeRequest,
@@ -4134,7 +4134,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             node = nodes || _this.node,
             requestParam = {};
 
-        // 先拼使用者自定义的，在拼树生成的，这样的话使用者可以自定义当树未生成时的节点的初始值
+        // 先拼使用者自訂的，在拼树產生的，这样的話使用者可以自訂当树未產生时的节點的初始值
         for ( var key in request) {
             requestParam[key] = request[key];
         }
@@ -4150,7 +4150,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             }
         }
 
-        // 解决传递中文的乱码問題
+        // 解决传递中文的乱碼問題
         var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;	//正则匹配中文
         for(var key in requestParam){
             if(reg.test(requestParam[key])) {
@@ -4163,10 +4163,10 @@ layui.define(['jquery','layer','form'], function(exports) {
     };
 
     /******************** 資料回调区域 ********************/
-    // 根据具体的id取得基于当前id的div以及对应的其他dom元素
+    // 根據具体的id取得基于当前id的div以及對应的其他dom元素
     DTree.prototype.getNodeDom = function(id){
         var _this = this;
-        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则为null
+        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则為null
         var $div = (typeof id === 'object') ? id : (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']").length == 0) ? null : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']");
         return {
             div: function(){	// 取得当前div
@@ -4196,43 +4196,43 @@ layui.define(['jquery','layer','form'], function(exports) {
             parentDiv: function(){  // 取得基于当前$div的上级$div
                 return ($div == null) ? null : $div.parent("li").parent("ul").prev("div");
             },
-            nowDiv: function(){		// 取得当前选中节点，没有则返回null
+            nowDiv: function(){		// 取得当前选中节點，没有则返回null
                 return (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id]").parent().find("."+NAV_THIS).length == 0) ? null : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id]").parent().find("."+NAV_THIS);
             },
-            nowOrRootDiv: function(){	// 取得当前选中节点，没有则返回根节点下的第一个div
+            nowOrRootDiv: function(){	// 取得当前选中节點，没有则返回根节點下的第一个div
                 return (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id]").parent().find("."+NAV_THIS).length == 0) ? _this.obj.children("li").eq(0).children("div").eq(0) : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id]").parent().find("."+NAV_THIS);
             },
-            nowOrRootUl: function(){	// 取得当前选中节点下一个UL 或根节点。为了将新节点放入ul下
+            nowOrRootUl: function(){	// 取得当前选中节點下一个UL 或根节點。為了将新节點放入ul下
                 return (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id]").parent().find("."+NAV_THIS).length == 0) ? _this.obj : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id]").parent().find("."+NAV_THIS).next("ul");
             }
         }
     };
 
-    // 取得当前选中节点下一个UL 或根节点。为了将新节点放入ul下
+    // 取得当前选中节點下一个UL 或根节點。為了将新节點放入ul下
     DTree.prototype.getNowNodeUl =  function() {
         var _this = this;
         return _this.getNodeDom().nowOrRootUl();
     };
 
-    // 取得当前选中节点 或第一个根节点。
+    // 取得当前选中节點 或第一个根节點。
     DTree.prototype.getNowNode =  function() {
         var _this = this;
         return _this.getNodeDom().nowOrRootDiv();
     };
 
-    // 取得当前选中节点 無则返回null。
+    // 取得当前选中节點 無则返回null。
     DTree.prototype.getNowNodeOrNull =  function() {
         var _this = this;
         return _this.getNodeDom().nowDiv();
     };
 
-    // 取得指定节点。
+    // 取得指定节點。
     DTree.prototype.getNode =  function(id) {
         var _this = this;
         return _this.getNodeDom(id).div();
     };
 
-    // 设置当前选中节点的全部参数
+    // 設定当前选中节點的全部参數
     DTree.prototype.setNodeParam = function($div) {
         var _this = this;
         _this.node.nodeId = $div.attr("data-id");
@@ -4271,7 +4271,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 取得当前选中节点的全部参数
+    // 取得当前选中节點的全部参數
     DTree.prototype.getNodeParam = function($div) {
         var _this = this;
         if ($div) {
@@ -4284,7 +4284,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return this.node;
     };
 
-    // 取得一个临时的node参数
+    // 取得一个临时的node参數
     DTree.prototype.getTempNodeParam = function($div) {
         var _this = this;
         var temp_node = {};
@@ -4324,7 +4324,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         return temp_node;
     };
 
-    // 重置参数
+    // 重置参數
     DTree.prototype.initNodeParam = function(){
         var _this = this;
         _this.node.nodeId = "";
@@ -4344,7 +4344,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 取得传递出去的参数，根据defaultRequest、request和node拼出发出请求的参数
+    // 取得传递出去的参數，根據defaultRequest、request和node拼出发出請求的参數
     DTree.prototype.getRequestParam = function(nodes){
         var _this = this;
         var request = _this.request,
@@ -4352,7 +4352,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             node = nodes || _this.node,
             requestParam = {};
 
-        // 先拼使用者自定义的，在拼树生成的，这样的话使用者可以自定义当树未生成时的节点的初始值
+        // 先拼使用者自訂的，在拼树產生的，这样的話使用者可以自訂当树未產生时的节點的初始值
         for ( var key in request) {
             requestParam[key] = request[key];
         }
@@ -4385,32 +4385,32 @@ layui.define(['jquery','layer','form'], function(exports) {
         return _this.getRequestParam(_this.getNodeParam());
     };
 
-    // 取得指定节点选中值
+    // 取得指定节點选中值
     DTree.prototype.getParam = function(id){
         var _this = this;
 
-        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则为null
+        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则為null
         var $div = (typeof id === 'object') ? id : (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']").length == 0) ? null : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']");
         if($div != null){ return _this.callbackData().node(_this.getTempNodeParam($div)); } else { return {}; }
     };
 
-    // 取得参数的上级节点
+    // 取得参數的上级节點
     DTree.prototype.getParentParam = function(id){
         var _this = this;
-        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则为null
+        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则為null
         var $div = (typeof id === 'object') ? id : (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']").length == 0) ? null : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']");
         if($div != null){ return _this.callbackData().parentNode($div); } else { return {}; }
     };
 
-    // 取得参数的全部上级节点
+    // 取得参數的全部上级节點
     DTree.prototype.getAllParentParam = function(id){
         var _this = this;
-        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则为null
+        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则為null
         var $div = (typeof id === 'object') ? id : (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']").length == 0) ? null : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']");
         var arr = [];
         if($div != null){
             var level = _this.getTempNodeParam($div).level;
-            for(var i=1; i<level; i++){  // 从1开始遍历，如果level等于1说明是根节点
+            for(var i=1; i<level; i++){  // 从1開始遍历，如果level等于1说明是根节點
                 arr.unshift(_this.callbackData().parentNode($div));
                 $div = _this.getNodeDom($div).parentDiv();
             }
@@ -4418,10 +4418,10 @@ layui.define(['jquery','layer','form'], function(exports) {
         return arr;
     };
 
-    // 取得参数的下级节点
+    // 取得参數的下级节點
     DTree.prototype.getChildParam = function(id){
         var _this = this;
-        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则为null
+        // 取得当前div，如果id就是一个dom，则就是这个，如果不是则进行選擇。如果选不中则為null
         var $div = (typeof id === 'object') ? id : (_this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']").length == 0) ? null : _this.obj.find("div[dtree-click='"+eventName.itemNodeClick+"'][data-id='"+id+"']");
         if($div != null){ return _this.callbackData().childNode($div); } else { return []; }
     };
@@ -4433,10 +4433,10 @@ layui.define(['jquery','layer','form'], function(exports) {
             dom: function($dom){  // 取得dom
                 return $dom;
             },
-            node: function(node){	// 取得当前节点值
+            node: function(node){	// 取得当前节點值
                 return _this.getRequestParam(node);
             },
-            childNode: function($div){	// 取得下级节点值
+            childNode: function($div){	// 取得下级节點值
                 var $childDivs = $div.next("ul").find("li."+LI_NAV_ITEM+" div."+LI_DIV_ITEM);
                 var childNode = [];
                 if($childDivs && $childDivs.length > 0){
@@ -4447,7 +4447,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 }
                 return childNode;
             },
-            parentNode: function($div){	// 取得上级节点值
+            parentNode: function($div){	// 取得上级节點值
                 var pId = _this.getNodeDom($div).parentLi().attr("data-pid");
                 var $pdiv = _this.obj.find("div[data-id='"+pId+"']");
                 if($pdiv.length > 0) {return _this.getRequestParam(_this.getTempNodeParam($pdiv));} else {return {};}
@@ -4462,7 +4462,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         var _this = this;
         var rootId = _this.obj[0].id;
 
-        // 绑定文件夹展开/收缩的图标的点击事件，点击时给当前节点的div新增选中class
+        // 绑定文件夹展開/收缩的图标的點擊事件，點擊时给当前节點的div新增选中class
         _this.obj.on("click", "i[data-spread]", function(event) {
             event.stopPropagation();
             var $i = $(this),
@@ -4471,9 +4471,9 @@ layui.define(['jquery','layer','form'], function(exports) {
 
             _this.toolbarHide();
             _this.navThis($div);
-            _this.clickSpread($div);	// 展开或隐藏节点
+            _this.clickSpread($div);	// 展開或隐藏节點
 
-            // 树狀態改变后，使用者自定义想做的事情
+            // 树狀態改变后，使用者自訂想做的事情
             layui.event.call(this, MOD_NAME, "changeTree("+$(_this.obj)[0].id+")",  {
                 dom: _this.callbackData().dom($i),
                 param: _this.callbackData().node(node),
@@ -4481,7 +4481,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             });
         });
 
-        // 绑定所有子节点div的单击事件，点击时触发加载iframe或使用者自定义想做的事情
+        // 绑定所有子节點div的單击事件，點擊时触发加载iframe或使用者自訂想做的事情
         _this.obj.on("click", "div[dtree-click='"+eventName.itemNodeClick+"'][dtree-disabled='false']", function(event) {
             event.stopPropagation();
             var $div = $(this),
@@ -4499,7 +4499,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 var iframeParam = _this.getFilterRequestParam(_this.getIframeRequestParam(node));
                 var flag = _this.loadIframe($div, iframeParam);	// 加载iframe
                 if (flag) {
-                    // iframe加载完毕后，使用者自定义想做的事情
+                    // iframe加载完毕后，使用者自訂想做的事情
                     _this.iframeFun.iframeDone(iframeParam);
 
                     layui.event.call(this, MOD_NAME, "iframeDone("+$(_this.obj)[0].id+")",  {
@@ -4508,7 +4508,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     });
                 }
             } else {
-                // 单击事件执行完毕后，使用者自定义想做的事情
+                // 單击事件执行完毕后，使用者自訂想做的事情
                 layui.event.call(this, MOD_NAME, "node("+$(_this.obj)[0].id+")", {
                     param: _this.callbackData().node(node),
                     childParams: _this.callbackData().childNode($div),
@@ -4518,7 +4518,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             }
         });
 
-        // 绑定所有子节点div的双击事件，暴露on给使用者自定义
+        // 绑定所有子节點div的双击事件，暴露on给使用者自訂
         _this.obj.on("dblclick", "div[dtree-click='"+eventName.itemNodeClick+"'][dtree-disabled='false']", function(event) {
             event.stopPropagation();
             var $div = $(this),
@@ -4532,7 +4532,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 $("div[dtree-id='" + rootId + "'][dtree-select='"+_this.selectDiv+"']").click();
             }
 
-            // 双击事件执行完毕后，使用者自定义想做的事情
+            // 双击事件执行完毕后，使用者自訂想做的事情
             layui.event.call(this, MOD_NAME, "nodedblclick("+$(_this.obj)[0].id+")",  {
                 param: _this.callbackData().node(node),
                 childParams: _this.callbackData().childNode($div),
@@ -4542,7 +4542,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         });
 
         if(_this.checkbar) {
-            // 绑定cheboxbar的节点复选框
+            // 绑定cheboxbar的节點复选框
             _this.obj.on("click", "i[dtree-click='"+eventName.checkNodeClick+"'][dtree-disabled='false']", function(event) {
                 _this.toolbarHide();
                 var $i = $(this),
@@ -4558,21 +4558,21 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
 
         if(_this.menubar) {
-            // 绑定menubar的点击事件
+            // 绑定menubar的點擊事件
             _this.obj.prevAll('div#dtree_menubar_'+_this.obj[0].id).on("click", "button[d-menu]", function(event) {
                 event.stopPropagation();
                 _this.toolbarHide();
                 _this.menubarListener($(this).attr("d-menu"), "group");
             });
 
-            // 绑定menubar的点击事件
+            // 绑定menubar的點擊事件
             _this.obj.prevAll('div#dtree_toolbar_'+_this.obj[0].id).on("click", "a[d-menu]", function(event) {
                 event.stopPropagation();
                 _this.toolbarHide();
                 _this.menubarListener($(this).attr("d-menu"), "toolbar");
             });
 
-            // 绑定menubar的点击按钮事件
+            // 绑定menubar的點擊按钮事件
             _this.obj.closest('body').find("*[dtree-id='"+_this.obj[0].id+"'][dtree-menu]").on("click", function(event) {
                 event.stopPropagation();
                 _this.toolbarHide();
@@ -4582,13 +4582,13 @@ layui.define(['jquery','layer','form'], function(exports) {
 
         if(_this.toolbar) {
             if(_this.toolbarWay == "contextmenu") {
-                //绑定所有子节点div的右键点击事件，用于显示toolbar
+                //绑定所有子节點div的右键點擊事件，用于显示toolbar
                 _this.obj.on("contextmenu", "div[dtree-click='"+eventName.itemNodeClick+"'][d-contextmenu='true'][dtree-disabled='false']", function(e){
                     var $div = $(this),
                         node = _this.getNodeParam($div);
 
                     _this.toolbarHide();
-                    // toolbar加载前执行的方法，执行完毕之后创建按钮
+                    // toolbar加载前执行的方法，执行完毕之后建立按钮
                     _this.setToolbarDom().setToolbarPlace(_this.toolbarFun.loadToolbarBefore(event.cloneObj(_this.toolbarMenu), _this.getRequestParam(node), $div));
 
                     var e = e || window.event,
@@ -4604,12 +4604,12 @@ layui.define(['jquery','layer','form'], function(exports) {
                     return false;
                 });
 
-                // 绑定装载树的上层出现滚动條的容器，让toolbar隐藏
+                // 绑定装载树的上层出现滚動條的容器，让toolbar隐藏
                 _this.obj.closest(_this.scroll).scroll(function() {
                     _this.toolbarHide();
                 });
 
-                // 绑定toolbar的点击事件
+                // 绑定toolbar的點擊事件
                 _this.obj.prevAll('div#dtree_toolbar_'+_this.obj[0].id).on("click", "a[dtree-tool]", function(event) {
                     event.stopPropagation();
                     var $div = _this.getNodeDom().nowOrRootDiv(),
@@ -4619,11 +4619,11 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.toolbarListener(tool, $div);
                 });
             } else if(_this.toolbarWay == "fixed") {
-                // 绑定toolbar的点击事件
+                // 绑定toolbar的點擊事件
                 _this.obj.on("click", "a[dtree-tool]", function(event) {
                     event.stopPropagation();
                     var $a = $(this),
-                        $cite = $a.parent("em."+TOOLBAR_TOOL_EM).prev("cite"),	//当前选中节点的text
+                        $cite = $a.parent("em."+TOOLBAR_TOOL_EM).prev("cite"),	//当前选中节點的text
                         $div = $cite.parent("div"),
                         node = _this.getNodeParam($div);
                     var tool = $a.attr("dtree-tool");
@@ -4633,7 +4633,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                     _this.toolbarListener(tool, $div);
                 });
             } else if(_this.toolbarWay == "follow") {
-                //绑定所有子节点div的mouseover mouseout事件，用于显示或隐藏toolbar
+                //绑定所有子节點div的mouseover mouseout事件，用于显示或隐藏toolbar
                 _this.obj.on("mouseover mouseout", "div[dtree-click='"+eventName.itemNodeClick+"'][dtree-disabled='false']", function(event){
                     var $div = $(this),
                         $toolBarEm = $div.children("em."+TOOLBAR_TOOL_EM);
@@ -4646,11 +4646,11 @@ layui.define(['jquery','layer','form'], function(exports) {
                     }
                 });
 
-                // 绑定toolbar的点击事件
+                // 绑定toolbar的點擊事件
                 _this.obj.on("click", "a[dtree-tool]", function(event) {
                     event.stopPropagation();
                     var $a = $(this),
-                        $cite = $a.parent("em."+TOOLBAR_TOOL_EM).prev("cite"),	//当前选中节点的text
+                        $cite = $a.parent("em."+TOOLBAR_TOOL_EM).prev("cite"),	//当前选中节點的text
                         $div = $cite.parent("div"),
                         node = _this.getNodeParam($div);
                     var tool = $a.attr("dtree-tool");
@@ -4663,13 +4663,13 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
 
         if(_this.select) {
-            // 绑定select的点击事件
+            // 绑定select的點擊事件
             $("div[dtree-id='" + rootId + "'][dtree-select='"+_this.selectDiv+"']").on("click", function(event){
                 event.stopPropagation();
                 $(this).toggleClass("layui-form-selected");
                 $("div[dtree-id='" + rootId + "'][dtree-card='"+_this.selectCardDiv+"']").toggleClass("dtree-select-show layui-anim layui-anim-upbit");
             
-                // 下拉树面板开闭狀態改变后，使用者自定义想做的事情
+                // 下拉树面板開闭狀態改变后，使用者自訂想做的事情
                 layui.event.call(this, MOD_NAME, "changeSelect("+$(_this.obj)[0].id+")",  {
                 	show: $(this).hasClass("layui-form-selected"),
                     param: _this.selectVal()
@@ -4679,7 +4679,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         }
     };
 
-    // 绑定body的单击，让本頁面所有的toolbar隐藏
+    // 绑定body的單击，让本頁面所有的toolbar隐藏
     $BODY.on("click", function(event){
         $("div."+LI_DIV_TOOLBAR).find(".layui-show").removeClass('layui-anim-fadein layui-show');
        // $("div[dtree-id][dtree-select]").removeClass("layui-form-selected");
@@ -4693,7 +4693,7 @@ layui.define(['jquery','layer','form'], function(exports) {
 
         // 本身事件解绑
         _this.obj.unbind();
-        // 菜单栏解绑
+        // 選單栏解绑
         if(_this.menubar){
             _this.obj.prevAll('div#dtree_menubar_'+_this.obj[0].id).unbind();
             if(_this.obj.closest('body').find("*[dtree-id='"+_this.obj[0].id+"'][dtree-menu]").length > 0){
@@ -4713,7 +4713,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         
         // 下拉树解绑
         if(_this.select) {
-            // 解绑select的点击事件
+            // 解绑select的點擊事件
         	$("div[dtree-id='" + _this.obj[0].id + "'][dtree-select='"+_this.selectDiv+"']").removeClass("layui-form-selected");
             $("div[dtree-id='" + _this.obj[0].id + "'][dtree-card='"+_this.selectCardDiv+"']").removeClass("dtree-select-show layui-anim layui-anim-upbit");
             $("div[dtree-id='" + _this.obj[0].id + "'][dtree-select='"+_this.selectDiv+"']").unbind();
@@ -4721,9 +4721,9 @@ layui.define(['jquery','layer','form'], function(exports) {
     };
 
 
-    /** 外部访问 **/
+    /** 外部訪問 **/
     var dtree = {
-        set: function(options){ //设置全局属性
+        set: function(options){ //設定全局属性
             if(typeof options !== 'undefined') {
                 $.extend(OPTIONS, options);
             }
@@ -4738,9 +4738,9 @@ layui.define(['jquery','layer','form'], function(exports) {
                 if(typeof dTree === 'object'){
                     dTree.unbindBrowserEvent();
                 }
-                // 创建树
+                // 建立树
                 dTree = new DTree(options);
-                // 新增到树数组中去
+                // 新增到树數组中去
                 DTrees[id] = dTree;
                 dTree.initTreePlus();
                 dTree.openTreePlus();
@@ -4760,10 +4760,10 @@ layui.define(['jquery','layer','form'], function(exports) {
                 if(typeof dTree === 'object'){
                     dTree.unbindBrowserEvent();
                 }
-                // 创建下拉树
+                // 建立下拉树
                 dTree = new DTree(options);
                 dTree.selectSetting();
-                // 新增到树数组中去
+                // 新增到树數组中去
                 DTrees[id] = dTree;
                 dTree.initTreePlus();
                 dTree.openTreePlus();
@@ -4778,7 +4778,7 @@ layui.define(['jquery','layer','form'], function(exports) {
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             dTree.reloadSetting(options);
@@ -4798,12 +4798,12 @@ layui.define(['jquery','layer','form'], function(exports) {
             }
             return layui.onevent.call(this, MOD_NAME, events, callback);
         },
-        click: function(dTree, id) { // 模拟单击事件
+        click: function(dTree, id) { // 模拟單击事件
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             $("div[dtree-click='"+eventName.itemNodeClick+"'][dtree-id='"+dTree.obj[0].id+"'][data-id='"+id+"']").click();
@@ -4813,47 +4813,47 @@ layui.define(['jquery','layer','form'], function(exports) {
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.getNowParam();	// 取得当前选中值
         },
-        getParam: function(dTree, id){  // 取得指定节点值
+        getParam: function(dTree, id){  // 取得指定节點值
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
-            return dTree.getParam(id);	// 取得指定节点值
+            return dTree.getParam(id);	// 取得指定节點值
         },
-        getParentParam: function(dTree, id){  // 取得参数的上级节点
+        getParentParam: function(dTree, id){  // 取得参數的上级节點
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.getParentParam(id);
         },
-        getAllParentParam: function(dTree, id){  // 取得参数的全部上级节点
+        getAllParentParam: function(dTree, id){  // 取得参數的全部上级节點
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.getAllParentParam(id);
         },
-        getChildParam: function(dTree, id){  // 取得参数的全部下级节点
+        getChildParam: function(dTree, id){  // 取得参數的全部下级节點
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.getChildParam(id);
@@ -4863,29 +4863,29 @@ layui.define(['jquery','layer','form'], function(exports) {
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return {};
             }
             return dTree.getCheckbarNodesParam();	// 取得复选框选中值
         },
-        dataInit: function(dTree, chooseId){  // 初始化选中树，针对資料反选
+        dataInit: function(dTree, chooseId){  // 初始化选中树，針對資料反选
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             if(chooseId){
                 return dTree.dataInit(chooseId);
             }
         },
-        chooseDataInit: function(dTree, chooseIds){	// 初始化复选框选中，针对資料反选
+        chooseDataInit: function(dTree, chooseIds){	// 初始化复选框选中，針對資料反选
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             if(chooseIds){
@@ -4897,40 +4897,40 @@ layui.define(['jquery','layer','form'], function(exports) {
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.changeCheckbarNodes();
         },
-        initNoAllCheck: function(dTree) { //复选框半选狀態初始化设置
+        initNoAllCheck: function(dTree) { //复选框半选狀態初始化設定
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.initNoAllCheck();
         },
-        initAllCheck: function(dTree){ // 复选框选中狀態初始化设置
+        initAllCheck: function(dTree){ // 复选框选中狀態初始化設定
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
             return dTree.initAllCheck();
         },
-        selectVal: function(dTree, param){  // select模式设置输入框选中值
+        selectVal: function(dTree, param){  // select模式設定输入框选中值
             if(typeof dTree === "string"){
                 dTree = DTrees[dTree];
             }
             if(typeof dTree === "undefined"){
-                layer.msg("方法取得失敗，请檢查ID或对象传递是否正确",{icon:2});
+                layer.msg("方法取得失敗，請檢查ID或對象传递是否正确",{icon:2});
                 return ;
             }
-            return dTree.selectVal(param);	// select模式设置输入框选中值
+            return dTree.selectVal(param);	// select模式設定输入框选中值
         },
         escape: function(html){  // 字符串格式化
             return event.escape(html);

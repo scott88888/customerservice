@@ -17,17 +17,17 @@ use think\Response;
 
 class Xml extends Response
 {
-    // 输出参数
+    // 输出参數
     protected $options = [
-        // 根节点名
+        // 根节點名
         'root_node' => 'think',
-        // 根节点属性
+        // 根节點属性
         'root_attr' => '',
-        //数字索引的子节点名
+        //數字索引的子节點名
         'item_node' => 'item',
-        // 数字索引子节点key转换的属性名
+        // 數字索引子节點key转换的属性名
         'item_key'  => 'id',
-        // 資料编码
+        // 資料编碼
         'encoding'  => 'utf-8',
     ];
 
@@ -46,13 +46,13 @@ class Xml extends Response
     }
 
     /**
-     * XML编码
+     * XML编碼
      * @param mixed $data 資料
-     * @param string $root 根节点名
-     * @param string $item 数字索引的子节点名
-     * @param string $attr 根节点属性
-     * @param string $id   数字索引子节点key转换的属性名
-     * @param string $encoding 資料编码
+     * @param string $root 根节點名
+     * @param string $item 數字索引的子节點名
+     * @param string $attr 根节點属性
+     * @param string $id   數字索引子节點key转换的属性名
+     * @param string $encoding 資料编碼
      * @return string
      */
     protected function xmlEncode($data, $root, $item, $attr, $id, $encoding)
@@ -74,10 +74,10 @@ class Xml extends Response
     }
 
     /**
-     * 資料XML编码
+     * 資料XML编碼
      * @param mixed  $data 資料
-     * @param string $item 数字索引时的节点名稱
-     * @param string $id   数字索引key转换为的属性名
+     * @param string $item 數字索引时的节點名稱
+     * @param string $id   數字索引key转换為的属性名
      * @return string
      */
     protected function dataToXml($data, $item, $id)

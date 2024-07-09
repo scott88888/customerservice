@@ -29,9 +29,9 @@ class Login extends Validate
      * @var [type]
      */
     protected $messege = [
-        'username.require' => '请填写登入帐号',
-        'password.require' => '请填写登入密碼',
-        'captcha.require'  => '请填写驗證碼',
+        'username.require' => '請填写登入帐号',
+        'password.require' => '請填写登入密碼',
+        'captcha.require'  => '請填写驗證碼',
         'captcha.captcha'  => '驗證碼不正确'
     ];
 }

@@ -132,7 +132,7 @@ class Handle
     {
         // 收集异常資料
         if (App::$debug) {
-            // 调试模式，取得详细的错误訊息
+            // 调试模式，取得详细的錯誤訊息
             $data = [
                 'name'    => get_class($exception),
                 'file'    => $exception->getFile(),
@@ -161,7 +161,7 @@ class Handle
             ];
 
             if (!Config::get('show_error_msg')) {
-                // 不显示详细错误訊息
+                // 不显示详细錯誤訊息
                 $data['message'] = Config::get('error_message');
             }
         }
@@ -193,10 +193,10 @@ class Handle
     }
 
     /**
-     * 取得错误编码
-     * ErrorException则使用错误级别作为错误编码
+     * 取得錯誤编碼
+     * ErrorException则使用錯誤级别作為錯誤编碼
      * @param  \Exception $exception
-     * @return integer                错误编码
+     * @return integer                錯誤编碼
      */
     protected function getCode(Exception $exception)
     {
@@ -208,10 +208,10 @@ class Handle
     }
 
     /**
-     * 取得错误訊息
-     * ErrorException则使用错误级别作为错误编码
+     * 取得錯誤訊息
+     * ErrorException则使用錯誤级别作為錯誤编碼
      * @param  \Exception $exception
-     * @return string                错误訊息
+     * @return string                錯誤訊息
      */
     protected function getMessage(Exception $exception)
     {
@@ -234,9 +234,9 @@ class Handle
 
     /**
      * 取得出错文件内容
-     * 取得错误的前9行和后9行
+     * 取得錯誤的前9行和后9行
      * @param  \Exception $exception
-     * @return array                 错误文件内容
+     * @return array                 錯誤文件内容
      */
     protected function getSourceCode(Exception $exception)
     {

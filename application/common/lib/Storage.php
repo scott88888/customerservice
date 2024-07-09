@@ -48,7 +48,7 @@ class Storage
     public static $config;
 
     /**
-     * 连接Storage驱动
+     * 連結Storage驱動
      */
     public static function connect($name = false)
     {
@@ -75,7 +75,7 @@ class Storage
     }
 
     /**
-     * 自动初始化Storage
+     * 自動初始化Storage
      */
     public static function init(array $options = [])
     {
@@ -85,7 +85,7 @@ class Storage
         }
         if (is_null(self::$handler)) {
             if (empty($options)) {
-                //取得总帐号设置的存储位置，默认为Local
+                //取得总帐号設定的存储位置，默认為Local
                 $ops = \app\admin\model\Storage::get(['admin_id'=>1,'status'=>1]);
                 if (empty($ops)) {
                     self::$storage = 'Local';
@@ -111,7 +111,7 @@ class Storage
                                 self::$storage = 'Local';
                                 self::$config = [];
                             } else {
-                                throw new StorageException('未设置存储介质~');
+                                throw new StorageException('未設定存储介质~');
                             }
                         } else {
                             self::witchStorage($options['type']);

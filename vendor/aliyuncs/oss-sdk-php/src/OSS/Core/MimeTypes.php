@@ -5,14 +5,14 @@ namespace OSS\Core;
 /**
  * Class MimeTypes
  *
- * 在上传文件的时候，根据文件的缺省名，得到其对应的Content-type
+ * 在上传文件的时候，根據文件的缺省名，得到其對应的Content-type
  *
  * @package OSS\Core
  */
 class MimeTypes
 {
     /**
-     * 根据文件名，取得http协议header中的content-type应该填写的資料
+     * 根據文件名，取得http协议header中的content-type应该填写的資料
      *
      * @param string $name 缺省名
      * @return string content-type

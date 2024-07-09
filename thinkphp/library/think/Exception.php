@@ -19,8 +19,8 @@ class Exception extends \Exception
     protected $data = [];
 
     /**
-     * 设置异常额外的 Debug 資料
-     * 資料将会显示为下面的格式
+     * 設定异常额外的 Debug 資料
+     * 資料将会显示為下面的格式
      *
      * Exception Data
      * --------------------------------------------------
@@ -33,7 +33,7 @@ class Exception extends \Exception
      *
      * @access protected
      * @param  string $label 資料分类，用于异常頁面显示
-     * @param  array  $data  需要显示的資料，必须为关联数组
+     * @param  array  $data  需要显示的資料，必须為关联數组
      * @return void
      */
     final protected function setData($label, array $data)

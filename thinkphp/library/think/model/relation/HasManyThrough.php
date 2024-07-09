@@ -25,9 +25,9 @@ class HasManyThrough extends Relation
     protected $through;
 
     /**
-     * 构造函数
+     * 构造函數
      * @access   public
-     * @param Model  $parent     上级模型对象
+     * @param Model  $parent     上级模型對象
      * @param string $model      模型名
      * @param string $through    中间模型名
      * @param string $foreignKey 关联外键
@@ -61,10 +61,10 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
-     * @param integer $count    个数
+     * @param integer $count    个數
      * @param string  $id       关联表的统计字段
      * @param string  $joinType JOIN类型
      * @return Query
@@ -75,9 +75,9 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查詢條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -99,9 +99,9 @@ class HasManyThrough extends Relation
     {}
 
     /**
-     * 预载入关联查詢 返回模型对象
+     * 预载入关联查詢 返回模型對象
      * @access public
-     * @param Model    $result      資料对象
+     * @param Model    $result      資料對象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -113,7 +113,7 @@ class HasManyThrough extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  資料对象
+     * @param Model    $result  資料對象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -121,7 +121,7 @@ class HasManyThrough extends Relation
     {}
 
     /**
-     * 创建关联统计子查詢
+     * 建立关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计資料别名

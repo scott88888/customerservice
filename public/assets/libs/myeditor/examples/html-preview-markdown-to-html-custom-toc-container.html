@@ -50,7 +50,7 @@
     <body>
         <div id="layout">
             <header>
-                <h1>Markdown转HTML的显示处理之自定义 ToC 容器</h1> 
+                <h1>Markdown转HTML的显示处理之自訂 ToC 容器</h1> 
                 <p>即：非編輯情况下的HTML预览</p>
                 <p>HTML Preview (markdown to html and custom ToC container)</p>       
             </header>
@@ -85,7 +85,7 @@ $$X^2 > Y$$
 
 下标：O&lt;sub&gt;2&lt;/sub&gt;
 
-##### 代码块里包含的过滤标签及属性不会被过滤
+##### 程式碼块里包含的过滤标签及属性不会被过滤
 
 ```html
 &lt;style type="text/style"&gt;
@@ -122,7 +122,7 @@ alert("script");
         </div>
         <!-- <script src="js/zepto.min.js?v=__lkversion__"></script>
 		<script>		
-			var jQuery = Zepto;  // 为了避免修改flowChart.js和sequence-diagram.js的源码，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
+			var jQuery = Zepto;  // 為了避免修改flowChart.js和sequence-diagram.js的源碼，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
 		</script> -->
         <script src="js/jquery.min.js?v=__lkversion__"></script>
         <script src="../lib/marked.min.js?v=__lkversion__"></script>
@@ -143,14 +143,14 @@ alert("script");
                     
 				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
                         markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
-                        //htmlDecode      : true,       // 開啟 HTML 标签解析，为了安全性，默认不開啟
+                        //htmlDecode      : true,       // 開啟 HTML 标签解析，為了安全性，默认不開啟
                         htmlDecode      : "style,script,iframe",  // you can filter tags decode
                         //toc             : false,
                         tocm            : true,    // Using [TOCM]
-                        tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+                        tocContainer    : "#custom-toc-container", // 自訂 ToC 容器层
                         //gfm             : false,
                         //tocDropdown     : true,
-                        // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否刪除保存源码的 Textarea 标签
+                        // markdownSourceCode : true, // 是否保留 Markdown 源碼，即是否刪除保存源碼的 Textarea 标签
                         emoji           : true,
                         taskList        : true,
                         tex             : true,  // 默认不解析
@@ -160,7 +160,7 @@ alert("script");
                     
                     //console.log("返回一个 jQuery 实例 =>", testEditormdView);
                     
-                    // 取得Markdown源码
+                    // 取得Markdown源碼
                     //console.log(testEditormdView.getMarkdown());
                     
                     //alert(testEditormdView.getMarkdown());

@@ -21,12 +21,12 @@ use think\Log;
 use app\admin\iplocation\Ip;
 /**
  *
- * 设置控制器.
+ * 設定控制器.
  */
 class Set extends Base
 {
     /**
-     * 对话pusher类.
+     * 對話pusher类.
      *
      * @return void
      */
@@ -99,7 +99,7 @@ class Set extends Base
             $arr['cid'] = $cid;
             $pusher->trigger("cu" . $channel, 'my-event', array('message' => $arr));
             $key = "callback_".$_SESSION['Msg']['business_id']."_".$_SESSION['Msg']['service_id'];
-            //针对同一客户端的锁，防止同一客户端多次回调
+            //針對同一客户端的锁，防止同一客户端多次回调
             $_SESSION[$key] = md5(microtime(true));
             $businessInfo=Admins::table('wolive_business')->where('id', $login['business_id'])->field('push_url')->find();
             if(trim($businessInfo['push_url'])!=''){
@@ -118,7 +118,7 @@ class Set extends Base
     }
 
     /**
-     * 刪除访客类.
+     * 刪除訪客类.
      *
      * @return mixed
      */
@@ -221,7 +221,7 @@ class Set extends Base
 
         $pusher->trigger("cu" . $channel, 'getswitch', array('message' => $admin));
 
-        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  转接访客给你"));
+        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  转接訪客给你"));
 
         $result = Admins::table('wolive_queue')->where("visiter_id", $post['visiter_id'])->where('business_id', $login['business_id'])->where('state', 'normal')->update(['service_id' => $post['id']]);
 
@@ -238,7 +238,7 @@ class Set extends Base
 
 
     /**
-     * 认领访客类.
+     * 认领訪客类.
      *
      * @return mixed
      */
@@ -299,7 +299,7 @@ class Set extends Base
                 'content' => $words['content']
             );
 
-            $arr = ['msg' => '访客被认领', 'groupid' => $login['groupid']];
+            $arr = ['msg' => '訪客被认领', 'groupid' => $login['groupid']];
             $pusher->trigger("all" . $login['business_id'], 'on_notice', array('message' => $arr));
             $pusher->trigger("cu" . $channel, 'first_word', array('message' => $chats));
             $pusher->trigger("cu" . $channel, 'cu_notice', array('message' => $login));
@@ -360,7 +360,7 @@ class Set extends Base
     }
 
     /**
-     * 对话列表类.
+     * 對話列表类.
      *
      * @return mixed
      */
@@ -373,7 +373,7 @@ class Set extends Base
         $visiters = array_column(collection($visiters)->toArray(),'visiter_id');
 
         if (empty($visiters)) {
-            $data = ['code' => 1, 'msg' => '暂时没有資料！'];
+            $data = ['code' => 1, 'msg' => '暫时没有資料！'];
             return $data;
         }
 
@@ -391,7 +391,7 @@ class Set extends Base
         $chatonlineunread = [];
         $chatofflinearr = [];
         $chatofflineunread = [];
-//wolive_visiter 访客表
+//wolive_visiter 訪客表
         $data = Visiter::all(['business_id'=>$login['business_id'],'visiter_id'=>['in',$visiters]]);
 //wolive_chats 消息表
         $chatids = Chats::field('max(cid) as cid')
@@ -461,7 +461,7 @@ class Set extends Base
                     $newcontent = '[文件]';
                 } elseif (strpos($chats2['content'], '</audio>') !== false) {
 
-                    $newcontent = '[音频]';
+                    $newcontent = '[音訊]';
 
                 } elseif (strpos($chats2['content'], '</a>') !== false) {
                     $newcontent = '[超連結]';
@@ -522,7 +522,7 @@ class Set extends Base
             $data = ['code' => 0, 'data' => $chatarr,'all_unread_count'=>$result];
             return $data;
         } else {
-            $data = ['code' => 1, 'msg' => '暂时没有資料！'];
+            $data = ['code' => 1, 'msg' => '暫时没有資料！'];
             return $data;
         }
     }
@@ -686,7 +686,7 @@ class Set extends Base
     }
 
     /**
-     * 取得未看訊息條数类.
+     * 取得未看訊息條數类.
      *
      * @return mixed
      */
@@ -710,7 +710,7 @@ class Set extends Base
     }
 
     /**
-     * 拖到黑名单.
+     * 拖到黑名單.
      *
      * @return mixed
      */
@@ -727,7 +727,7 @@ class Set extends Base
     }
 
     /**
-     * 移出黑名单
+     * 移出黑名單
      *
      * @return array
      */
@@ -743,7 +743,7 @@ class Set extends Base
     }
 
     /**
-     * 取得该business_id下所用的黑名单訊息.
+     * 取得该business_id下所用的黑名單訊息.
      *
      * @return bool|string
      */
@@ -766,7 +766,7 @@ class Set extends Base
 
 
     /**
-     * 设置常用语默认值.
+     * 設定常用语默认值.
      *
      * @return mixed
      */
@@ -783,7 +783,7 @@ class Set extends Base
     }
 
     /**
-     * 设置客服離線優先
+     * 設定客服離線優先
      *
      * @return array
      */
@@ -873,7 +873,7 @@ class Set extends Base
     }
 
     /**
-     * 自定义查看历史对话记录类.
+     * 自訂查看历史對話记录类.
      *
      * @return mixed
      */
@@ -964,7 +964,7 @@ class Set extends Base
     }
 
     /**
-     * 取得访客的狀態
+     * 取得訪客的狀態
      *
      * @return array|false|\PDOStatement|string|\think\Model
      */
@@ -1015,7 +1015,7 @@ class Set extends Base
 
         if (!$visiter) {
 
-            $data = ['code' => 1, 'msg' => '该访客資料已被清理！'];
+            $data = ['code' => 1, 'msg' => '该訪客資料已被清理！'];
 
             return $data;
         }
@@ -1024,7 +1024,7 @@ class Set extends Base
 
         if ($type == -1) {
 
-            $data = ['code' => 1, 'msg' => '对方不線上'];
+            $data = ['code' => 1, 'msg' => '對方不線上'];
             return $data;
         }
 
@@ -1053,7 +1053,7 @@ class Set extends Base
             $port
         );
 
-        $pusher->trigger("cu" . $visiter['channel'], "video", array("message" => "申请视频连接", "channel" => $post['channel'], "avatar" => $post['avatar'], 'username' => $post['name']));
+        $pusher->trigger("cu" . $visiter['channel'], "video", array("message" => "申請视频連結", "channel" => $post['channel'], "avatar" => $post['avatar'], 'username' => $post['name']));
         $data = ['code' => 0, 'msg' => 'success'];
 
         return $data;
@@ -1093,7 +1093,7 @@ class Set extends Base
             $port
         );
 
-        $pusher->trigger("cu" . $post['channel'], "video-refuse", array("message" => "对方拒绝视频连接！"));
+        $pusher->trigger("cu" . $post['channel'], "video-refuse", array("message" => "對方拒绝视频連結！"));
     }
 
 
@@ -1435,7 +1435,7 @@ class Set extends Base
         } catch (StorageException $exception) {
             $data = ['code'=> -1,'msg'=>$exception->getMessage(),'data'=>''];
         } catch (\Exception $e) {
-            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置訊息','data'=>$e];
+            $data = ['code'=> -1,'msg'=>'請檢查存储介质配置訊息','data'=>$e];
         }
         return $data;
     }
@@ -1459,7 +1459,7 @@ class Set extends Base
         } catch (StorageException $exception) {
             $data = ['code'=> -1,'msg'=>$exception->getMessage(),'data'=>''];
         } catch (\Exception $e) {
-            $data = ['code'=> -1,'msg'=>'请檢查存储介质配置訊息'];
+            $data = ['code'=> -1,'msg'=>'請檢查存储介质配置訊息'];
         }
         return $data;
     }
@@ -1467,7 +1467,7 @@ class Set extends Base
         //        m_kfbtbg: #734b9c
 //theme: #422362
         if(!$this->request->isPost()){
-            exit('非法请求');
+            exit('非法請求');
         }
         $get=$this->request->post();
         $xfbg='';
@@ -1499,13 +1499,13 @@ class Set extends Base
         $str .= '<input type="hidden" name="product"  value="">';
         $str .= '<input type="submit" value="線上咨询">'."\r\n\t\t".'</form>' . $html."\r\n";
         $str .= '</div>';
-        $data = ['code' => 0, 'msg' => '生成html成功!', 'data' => $str];
+        $data = ['code' => 0, 'msg' => '產生html成功!', 'data' => $str];
         return $data;
     }
     public function createWechatUrl(){
 
         if(!$this->request->isPost()){
-            exit('非法请求');
+            exit('非法請求');
         }
         $get=$this->request->post();
         $theme='7571f9';
@@ -1527,7 +1527,7 @@ class Set extends Base
 
         $this->assign('wechat', $wechat);
         $html=$this->fetch();
-        $data = ['code' => 0, 'msg' => '生成微信公众号連結成功', 'data' => $html];
+        $data = ['code' => 0, 'msg' => '產生微信公众号連結成功', 'data' => $html];
         return $data;
     }
     /**
@@ -1571,7 +1571,7 @@ class Set extends Base
              
              /**
               *
-              * wolive 标准窗口,js代码
+              * wolive 标准視窗,js程式碼
               * 
               */
              
@@ -1619,11 +1619,11 @@ class Set extends Base
             if ($file) {
                 if ($js) {
                     $path = $url.$this->base_root . "/assets/front/ymwl_" . $login['business_id'] . ".js?v=" . time();
-                    $data = ['code' => 0, 'msg' => '新生成js成功!', 'data' => $path];
+                    $data = ['code' => 0, 'msg' => '新產生js成功!', 'data' => $path];
                     return $data;
                 } else {
                     $path = $url.$this->base_root . "/assets/front/ymwl_" . $login['business_id'] . ".js";
-                    $data = ['code' => 0, 'msg' => '生成js成功!', 'data' => $path];
+                    $data = ['code' => 0, 'msg' => '產生js成功!', 'data' => $path];
                     return $data;
                 }
             }
@@ -1644,7 +1644,7 @@ class Set extends Base
     {
 
         if(!$this->request->isPost()){
-            exit('非法请求');
+            exit('非法請求');
         }
         $get=$this->request->post();
         $xfbg='';
@@ -1749,11 +1749,11 @@ class Set extends Base
             if ($file) {
                 if ($js) {
                     $path = $url.$this->base_root . "/assets/layer/ymwl_" . $login['business_id'] . ".js?v=" . time();
-                    $data = ['code' => 0, 'msg' => '新生成js成功!', 'data' => $path];
+                    $data = ['code' => 0, 'msg' => '新產生js成功!', 'data' => $path];
                     return $data;
                 } else {
                     $path = $url.$this->base_root . "/assets/layer/ymwl_" . $login['business_id'] . ".js";
-                    $data = ['code' => 0, 'msg' => '生成js成功!', 'data' => $path];
+                    $data = ['code' => 0, 'msg' => '產生js成功!', 'data' => $path];
                     return $data;
                 }
             }
@@ -1768,14 +1768,14 @@ class Set extends Base
 
     /**
      *
-     * [自定义弹窗脚本 description]
+     * [自訂彈窗脚本 description]
      * @return [type] [description]
      */
     public function createMinDiyjs()
     {
 
         if(!$this->request->isPost()){
-            exit('非法请求');
+            exit('非法請求');
         }
         $http_type = ((isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
         $get=$this->request->post();
@@ -1813,7 +1813,7 @@ class Set extends Base
             $file = file_put_contents(ROOT_PATH . "/public/assets/layer/ymwl_diy_" . $login['business_id'] . ".js", "
             /**
              *
-             * 自定义版 客服咨询js
+             * 自訂版 客服咨询js
              * @return {[type]} [description]
              */
                 var head = document.getElementsByTagName('head')[0];
@@ -1892,11 +1892,11 @@ class Set extends Base
             if ($file) {
                 if ($js) {
                     $path = $url.$this->base_root . "/assets/layer/ymwl_diy_" . $login['business_id'] . ".js?v=" . time();
-                    $data = ['code' => 0, 'msg' => '新生成js成功!', 'data' => $path];
+                    $data = ['code' => 0, 'msg' => '新產生js成功!', 'data' => $path];
                     return $data;
                 } else {
                     $path = $url.$this->base_root . "/assets/layer/ymwl_diy_" . $login['business_id'] . ".js";
-                    $data = ['code' => 0, 'msg' => '生成js成功!', 'data' => $path];
+                    $data = ['code' => 0, 'msg' => '產生js成功!', 'data' => $path];
                     return $data;
                 }
             }
@@ -1942,7 +1942,7 @@ class Set extends Base
         $action = $web.request()->root();
         $url = $_SESSION['Msg']['business']['push_url'];
         if(trim($url)==''){
-            exit('推送url为空，退出');
+            exit('推送url為空，退出');
         }
         $data = $this->request->param();
         $message = $data['message'];
@@ -2017,13 +2017,13 @@ class Set extends Base
         if ($login['business']['template_state'] == 'close') {
             Log::error('Tpl is closed');
             Log::info("===============Test Tpl Message End===============");
-            return json(['code'=>1,'msg'=>'请先打开模板消息开关(设置-通用设置)']);
+            return json(['code'=>1,'msg'=>'請先打開模板消息開关(設定-通用設定)']);
         }
         try {
             if ($type == 'visitor_tpl') {
                 TplService::send($login['business_id'],$open_id,url('weixin/login/callback',['business_id'=>$login['business_id'],'service_id'=>$service_id],true,true),$wechat['visitor_tpl'],[
-                    "first"  => "您有新访客！",
-                    "keyword1"   => "测试发送新访客提醒模板消息",
+                    "first"  => "您有新訪客！",
+                    "keyword1"   => "测试发送新訪客提醒模板消息",
                     "keyword2"  => date('Y-m-d H:i:s',time()),
                     "remark" => $login['business']['business_name']."提示:有新客户啦,快去撩一把~",
                 ]);
@@ -2033,7 +2033,7 @@ class Set extends Base
                     "keyword1"   => "测试",
                     "keyword2"  => "测试发送新消息提醒模板消息",
                     "keyword3"  => "测试",
-                    "remark" => $login['business']['business_name']."提示:客户等不及啦,快去回复吧~",
+                    "remark" => $login['business']['business_name']."提示:客户等不及啦,快去回覆吧~",
                 ]);
             }
         }catch (\Exception $exception) {
@@ -2046,7 +2046,7 @@ class Set extends Base
     }
 
     /**
-     * 推送客服评价
+     * 推送客服評價
      */
     public function pushComment()
     {
@@ -2083,7 +2083,7 @@ class Set extends Base
         if ($visiter['state'] == 'offline') {
             return json([
                 'code' => 1,
-                'msg' => '访客已離線,無法推送评价'
+                'msg' => '訪客已離線,無法推送評價'
             ]);
         }
 
@@ -2095,7 +2095,7 @@ class Set extends Base
             } else {
                 return json([
                     'code' => 1,
-                    'msg' => '客服评价尚未设置'
+                    'msg' => '客服評價尚未設定'
                 ]);
             }
             $queue->save(['remind_comment'=>1]);
@@ -2109,7 +2109,7 @@ class Set extends Base
         } else {
             return json([
                 'code' => 1,
-                'msg' => '您已经推送过评价了'
+                'msg' => '您已经推送过評價了'
             ]);
         }
     }
@@ -2120,7 +2120,7 @@ class Set extends Base
         $type = $this->request->post('type','','trim');
 
         if($id=='' || $type==''){
-           return ['code' =>1, 'msg' => '参数缺失！'];
+           return ['code' =>1, 'msg' => '参數缺失！'];
         }
         $sarr = parse_url(ahost);
         if ($sarr['scheme'] == 'https') {

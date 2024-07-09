@@ -54,16 +54,16 @@ use OSS\Result\SymlinkResult;
 /**
  * Class OssClient
  *
- * Object Storage Service(OSS) 的客户端类，封装了使用者通过OSS API对OSS服务的各种操作，
- * 使用者通过OssClient实例可以进行Bucket，Object，MultipartUpload, ACL等操作，具体
+ * Object Storage Service(OSS) 的客户端类，封装了使用者通過OSS API對OSS服务的各种操作，
+ * 使用者通過OssClient实例可以进行Bucket，Object，MultipartUpload, ACL等操作，具体
  * 的接口规则可以参考官方OSS API文档
  */
 class OssClient
 {
     /**
-     * 构造函数
+     * 构造函數
      *
-     * 构造函数有几种情况：
+     * 构造函數有几种情况：
      * 1. 一般的时候初始化使用 $ossClient = new OssClient($id, $key, $endpoint)
      * 2. 如果使用CNAME的，比如使用的是www.testoss.com，在控制台上做了CNAME的绑定，
      * 初始化使用 $ossClient = new OssClient($id, $key, $endpoint, true)
@@ -74,8 +74,8 @@ class OssClient
      *
      * @param string $accessKeyId 从OSS获得的AccessKeyId
      * @param string $accessKeySecret 从OSS获得的AccessKeySecret
-     * @param string $endpoint 您选定的OSS資料中心访问域名，例如oss-cn-hangzhou.aliyuncs.com
-     * @param boolean $isCName 是否对Bucket做了域名绑定，并且Endpoint参数填写的是自己的域名
+     * @param string $endpoint 您选定的OSS資料中心訪問域名，例如oss-cn-hangzhou.aliyuncs.com
+     * @param boolean $isCName 是否對Bucket做了域名绑定，并且Endpoint参數填写的是自己的域名
      * @param string $securityToken
      * @param string $requestProxy 新增代理支持
      * @throws OssException
@@ -105,7 +105,7 @@ class OssClient
     }
 
     /**
-     * 列举使用者所有的Bucket[GetService], Endpoint类型为cname不能进行此操作
+     * 列举使用者所有的Bucket[GetService], Endpoint类型為cname不能进行此操作
      *
      * @param array $options
      * @throws OssException
@@ -126,7 +126,7 @@ class OssClient
     }
 
     /**
-     * 创建bucket，默认创建的bucket的ACL是OssClient::OSS_ACL_TYPE_PRIVATE
+     * 建立bucket，默认建立的bucket的ACL是OssClient::OSS_ACL_TYPE_PRIVATE
      *
      * @param string $bucket
      * @param string $acl
@@ -153,7 +153,7 @@ class OssClient
 
     /**
      * 刪除bucket
-     * 如果Bucket不为空（Bucket中有Object，或者有分块上传的碎片），则Bucket無法刪除，
+     * 如果Bucket不為空（Bucket中有Object，或者有分块上传的碎片），则Bucket無法刪除，
      * 必须刪除Bucket中的所有Object以及碎片后，Bucket才能成功刪除。
      *
      * @param string $bucket
@@ -249,11 +249,11 @@ class OssClient
     }
 
     /**
-     * 设置bucket的ACL配置情况
+     * 設定bucket的ACL配置情况
      *
      * @param string $bucket bucket名稱
      * @param string $acl 读写权限，可选值 ['private', 'public-read', 'public-read-write']
-     * @param array $options 可以为空
+     * @param array $options 可以為空
      * @throws OssException
      * @return null
      */
@@ -292,7 +292,7 @@ class OssClient
     }
 
     /**
-     * 设置object的ACL属性
+     * 設定object的ACL属性
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
@@ -314,10 +314,10 @@ class OssClient
     }
 
     /**
-     * 取得Bucket的访问日志配置情况
+     * 取得Bucket的訪問日志配置情况
      *
      * @param string $bucket bucket名稱
-     * @param array $options 可以为空
+     * @param array $options 可以為空
      * @throws OssException
      * @return LoggingConfig
      */
@@ -334,12 +334,12 @@ class OssClient
     }
 
     /**
-     * 開啟Bucket访问日志记录功能，只有Bucket的所有者才能更改
+     * 開啟Bucket訪問日志记录功能，只有Bucket的所有者才能更改
      *
      * @param string $bucket bucket名稱
      * @param string $targetBucket 日志文件存放的bucket
      * @param string $targetPrefix 日志的文件前缀
-     * @param array $options 可以为空
+     * @param array $options 可以為空
      * @throws OssException
      * @return null
      */
@@ -361,10 +361,10 @@ class OssClient
     }
 
     /**
-     * 關閉bucket访问日志记录功能
+     * 關閉bucket訪問日志记录功能
      *
      * @param string $bucket bucket名稱
-     * @param array $options 可以为空
+     * @param array $options 可以為空
      * @throws OssException
      * @return null
      */
@@ -381,11 +381,11 @@ class OssClient
     }
 
     /**
-     * 将bucket设置成静态网站托管模式
+     * 将bucket設定成静态網站托管模式
      *
      * @param string $bucket bucket名稱
      * @param WebsiteConfig $websiteConfig
-     * @param array $options 可以为空
+     * @param array $options 可以為空
      * @throws OssException
      * @return null
      */
@@ -404,7 +404,7 @@ class OssClient
     }
 
     /**
-     * 取得bucket的静态网站托管狀態
+     * 取得bucket的静态網站托管狀態
      *
      * @param string $bucket bucket名稱
      * @param array $options
@@ -424,7 +424,7 @@ class OssClient
     }
 
     /**
-     * 關閉bucket的静态网站托管模式
+     * 關閉bucket的静态網站托管模式
      *
      * @param string $bucket bucket名稱
      * @param array $options
@@ -470,7 +470,7 @@ class OssClient
      * 取得Bucket的CORS配置情况
      *
      * @param string $bucket bucket名稱
-     * @param array $options 可以为空
+     * @param array $options 可以為空
      * @throws OssException
      * @return CorsConfig
      */
@@ -487,7 +487,7 @@ class OssClient
     }
 
     /**
-     * 關閉指定Bucket对应的CORS功能并清空所有规则
+     * 關閉指定Bucket對应的CORS功能并清空所有规则
      *
      * @param string $bucket bucket名稱
      * @param array $options
@@ -507,7 +507,7 @@ class OssClient
     }
 
     /**
-     * 为指定Bucket增加CNAME绑定
+     * 為指定Bucket增加CNAME绑定
      *
      * @param string $bucket bucket名稱
      * @param string $cname
@@ -581,7 +581,7 @@ class OssClient
     }
 
     /**
-     * 为指定Bucket创建LiveChannel
+     * 為指定Bucket建立LiveChannel
      *
      * @param string $bucket bucket名稱
      * @param string channelName  $channelName
@@ -610,11 +610,11 @@ class OssClient
     }
 
     /**
-     * 设置LiveChannel的status
+     * 設定LiveChannel的status
      *
      * @param string $bucket bucket名稱
      * @param string channelName $channelName
-     * @param string channelStatus $channelStatus 为enabled或disabled
+     * @param string channelStatus $channelStatus 為enabled或disabled
      * @param array $options
      * @throws OssException
      * @return null 
@@ -730,12 +730,12 @@ class OssClient
     }
 
     /**
-     * 为指定LiveChannel生成播放列表
+     * 為指定LiveChannel產生播放列表
      *
      * @param string $bucket bucket名稱
      * @param string channelName $channelName 
-     * @param string $playlistName 指定生成的点播播放列表的名稱，必须以“.m3u8”结尾
-     * @param array $setTime  startTime和EndTime以unix时间戳格式给定,跨度不能超过一天
+     * @param string $playlistName 指定產生的點播播放列表的名稱，必须以“.m3u8”结尾
+     * @param array $setTime  startTime和EndTime以unix時間戳格式给定,跨度不能超过一天
      * @throws OssException
      * @return null
      */
@@ -777,11 +777,11 @@ class OssClient
     }
 
     /**
-     * 生成带签名的推流地址
+     * 產生带签名的推流地址
      *
      * @param string $bucket bucket名稱
      * @param string channelName $channelName
-     * @param int timeout 设置超时时间，单位为秒
+     * @param int timeout 設定超时時間，單位為秒
      * @param array $options
      * @throws OssException
      * @return 推流地址
@@ -813,16 +813,16 @@ class OssClient
     }
 
     /**
-     * 检验跨域资源请求, 发送跨域请求之前会发送一个preflight请求（OPTIONS）并带上特定的来源域，
-     * HTTP方法和header訊息等给OSS以决定是否发送真正的请求。 OSS可以通过putBucketCors接口
-     * 来開啟Bucket的CORS支持，開啟CORS功能之后，OSS在收到浏览器preflight请求时会根据设定的
-     * 规则评估是否允许本次请求
+     * 检验跨域资源請求, 发送跨域請求之前会发送一个preflight請求（OPTIONS）并带上特定的来源域，
+     * HTTP方法和header訊息等给OSS以决定是否发送真正的請求。 OSS可以通過putBucketCors接口
+     * 来開啟Bucket的CORS支持，開啟CORS功能之后，OSS在收到浏览器preflight請求时会根據设定的
+     * 规则评估是否允许本次請求
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
-     * @param string $origin 请求来源域
-     * @param string $request_method 表明实际请求中会使用的HTTP方法
-     * @param string $request_headers 表明实际请求中会使用的除了简单头部之外的headers
+     * @param string $origin 請求来源域
+     * @param string $request_method 表明实际請求中会使用的HTTP方法
+     * @param string $request_headers 表明实际請求中会使用的除了简單头部之外的headers
      * @param array $options
      * @return array
      * @throws OssException
@@ -845,7 +845,7 @@ class OssClient
     }
 
     /**
-     * 设置Bucket的Lifecycle配置
+     * 設定Bucket的Lifecycle配置
      *
      * @param string $bucket bucket名稱
      * @param LifecycleConfig $lifecycleConfig Lifecycle配置类
@@ -908,7 +908,7 @@ class OssClient
     }
 
     /**
-     * 设置一个bucket的referer访问白名单和是否允许referer字段为空的请求访问
+     * 設定一个bucket的referer訪問白名單和是否允许referer字段為空的請求訪問
      * Bucket Referer防盗链具体见OSS防盗链
      *
      * @param string $bucket bucket名稱
@@ -953,8 +953,8 @@ class OssClient
     }
     
     /**
-     * 设置bucket的容量大小，单位GB
-     * 当bucket的容量大于设置的容量时，禁止继续写入
+     * 設定bucket的容量大小，單位GB
+     * 当bucket的容量大于設定的容量时，禁止继续写入
      *
      * @param string $bucket bucket名稱
      * @param int $storageCapacity
@@ -978,7 +978,7 @@ class OssClient
     }
     
     /**
-     * 取得bucket的容量大小，单位GB
+     * 取得bucket的容量大小，單位GB
      *
      * @param string $bucket bucket名稱
      * @param array $options
@@ -1002,14 +1002,14 @@ class OssClient
      *
      * @param string $bucket
      * @param array $options
-     * 其中options中的参数如下
+     * 其中options中的参數如下
      * $options = array(
-     *      'max-keys'  => max-keys用于限定此次返回object的最大数，如果不设定，默认为100，max-keys取值不能大于1000。
-     *      'prefix'    => 限定返回的object key必须以prefix作为前缀。注意使用prefix查詢时，返回的key中仍会包含prefix。
-     *      'delimiter' => 是一个用于对Object名字进行分組的字符。所有名字包含指定的前缀且第一次出现delimiter字符之间的object作为一组元素
-     *      'marker'    => 使用者设定结果从marker之后按字母排序的第一个开始返回。
+     *      'max-keys'  => max-keys用于限定此次返回object的最大數，如果不设定，默认為100，max-keys取值不能大于1000。
+     *      'prefix'    => 限定返回的object key必须以prefix作為前缀。注意使用prefix查詢时，返回的key中仍会包含prefix。
+     *      'delimiter' => 是一个用于對Object名字进行分組的字符。所有名字包含指定的前缀且第一次出现delimiter字符之间的object作為一组元素
+     *      'marker'    => 使用者设定结果从marker之后按字母排序的第一个開始返回。
      *)
-     * 其中 prefix，marker用来实现分頁显示效果，参数的长度必须小于256字节。
+     * 其中 prefix，marker用来實現分頁显示效果，参數的長度必须小于256字节。
      * @throws OssException
      * @return ObjectListInfo
      */
@@ -1037,9 +1037,9 @@ class OssClient
     }
 
     /**
-     * 创建虚拟目录 (本函数会在object名稱后增加'/', 所以创建目录的object名稱不需要'/'结尾，否则，目录名稱会变成'//')
+     * 建立虚拟目录 (本函數会在object名稱后增加'/', 所以建立目录的object名稱不需要'/'结尾，否则，目录名稱会变成'//')
      *
-     * 暂不开放此接口
+     * 暫不開放此接口
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
@@ -1103,7 +1103,7 @@ class OssClient
     }
 
     /**
-     * 创建symlink
+     * 建立symlink
      * @param string $bucket bucket名稱
      * @param string $symlink symlink名稱
      * @param string $targetObject 目标object名稱
@@ -1371,7 +1371,7 @@ class OssClient
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
-     * @param array $options 该参数中必须设置ALIOSS::OSS_FILE_DOWNLOAD，ALIOSS::OSS_RANGE可选，可以根据实际情况设置；如果不设置，默认会下载全部内容
+     * @param array $options 该参數中必须設定ALIOSS::OSS_FILE_DOWNLOAD，ALIOSS::OSS_RANGE可选，可以根據实际情况設定；如果不設定，默认会下载全部内容
      * @return string
      */
     public function getObject($bucket, $object, $options = NULL)
@@ -1400,7 +1400,7 @@ class OssClient
 
     /**
      * 检测Object是否存在
-     * 通过取得Object的Meta訊息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
+     * 通過取得Object的Meta訊息来判断Object是否存在， 使用者需要自行解析ResponseCore判断object是否存在
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
@@ -1419,7 +1419,7 @@ class OssClient
     }
 
     /**
-     * 针对Archive类型的Object读取
+     * 針對Archive类型的Object读取
      * 需要使用Restore操作让服务端执行解冻任务
      *
      * @param string $bucket bucket名稱
@@ -1440,7 +1440,7 @@ class OssClient
     }
 
     /**
-     * 取得分片大小，根据使用者提供的part_size，重新计算一个更合理的partsize
+     * 取得分片大小，根據使用者提供的part_size，重新计算一个更合理的partsize
      *
      * @param int $partSize
      * @return int
@@ -1457,12 +1457,12 @@ class OssClient
     }
 
     /**
-     * 计算文件可以分成多少个part，以及每个part的长度以及起始位置
+     * 计算文件可以分成多少个part，以及每个part的長度以及起始位置
      * 方法必须在 <upload_part()>中调用
      *
      * @param integer $file_size 文件大小
      * @param integer $partSize part大小,默认5M
-     * @return array An array 包含 key-value 键值对. Key 为 `seekTo` 和 `length`.
+     * @return array An array 包含 key-value 键值對. Key 為 `seekTo` 和 `length`.
      */
     public function generateMultiuploadParts($file_size, $partSize = 5242880)
     {
@@ -1486,7 +1486,7 @@ class OssClient
      *
      * @param string $bucket Bucket名稱
      * @param string $object Object名稱
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @throws OssException
      * @return string 返回uploadid
      */
@@ -1516,7 +1516,7 @@ class OssClient
      * @param string $bucket Bucket名稱
      * @param string $object Object名稱
      * @param string $uploadId
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @return string eTag
      * @throws OssException
      */
@@ -1545,7 +1545,7 @@ class OssClient
      * @param string $bucket Bucket名稱
      * @param string $object Object名稱
      * @param string $uploadId uploadId
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @return ListPartsInfo
      * @throws OssException
      */
@@ -1574,7 +1574,7 @@ class OssClient
      * @param string $bucket Bucket名稱
      * @param string $object Object名稱
      * @param string $uploadId uploadId
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @return null
      * @throws OssException
      */
@@ -1597,7 +1597,7 @@ class OssClient
      * @param string $object Object名稱
      * @param string $uploadId uploadId
      * @param array $listParts array( array("PartNumber"=> int, "ETag"=>string))
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @throws OssException
      * @return null
      */
@@ -1627,7 +1627,7 @@ class OssClient
      * Complete或者Abort的Multipart Upload事件
      *
      * @param string $bucket bucket
-     * @param array $options 关联数组
+     * @param array $options 关联數组
      * @throws OssException
      * @return ListMultipartUploadInfo
      */
@@ -1665,7 +1665,7 @@ class OssClient
      * @param string $toObject 目标object名稱
      * @param int $partNumber 分块上传的块id
      * @param string $uploadId 初始化multipart upload返回的uploadid
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @return null
      * @throws OssException
      */
@@ -1674,7 +1674,7 @@ class OssClient
         $this->precheckCommon($fromBucket, $fromObject, $options);
         $this->precheckCommon($toBucket, $toObject, $options);
 
-        //如果没有设置$options['isFullCopy']，则需要强制判断copy的起止位置
+        //如果没有設定$options['isFullCopy']，则需要强制判断copy的起止位置
         $start_range = "0";
         if (isset($options['start'])) {
             $start_range = $options['start'];
@@ -1701,12 +1701,12 @@ class OssClient
     }
 
     /**
-     * multipart上传统一封装，从初始化到完成multipart，以及出错后中止动作
+     * multipart上传统一封装，从初始化到完成multipart，以及出错后中止動作
      *
      * @param string $bucket bucket名稱
      * @param string $object object名稱
      * @param string $file 需要上传的本地文件的路径
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @return null
      * @throws OssException
      */
@@ -1840,14 +1840,14 @@ class OssClient
     }
 
     /**
-     * 支持生成get和put签名, 使用者可以生成一个具有一定有效期的
+     * 支持產生get和put签名, 使用者可以產生一个具有一定有效期的
      * 签名过的url
      *
      * @param string $bucket
      * @param string $object
      * @param int $timeout
      * @param string $method
-     * @param array $options Key-Value数组
+     * @param array $options Key-Value數组
      * @return string
      * @throws OssException
      */
@@ -1872,7 +1872,7 @@ class OssClient
     }
 
     /**
-     * 检测options参数
+     * 检测options参數
      *
      * @param array $options
      * @throws OssException
@@ -1886,7 +1886,7 @@ class OssClient
     }
 
     /**
-     * 校验bucket参数
+     * 校验bucket参數
      *
      * @param string $bucket
      * @param string $errMsg
@@ -1898,7 +1898,7 @@ class OssClient
     }
 
     /**
-     * 校验object参数
+     * 校验object参數
      *
      * @param string $object
      * @throws OssException
@@ -1932,7 +1932,7 @@ class OssClient
     }
 
     /**
-     * 校验bucket,options参数
+     * 校验bucket,options参數
      *
      * @param string $bucket
      * @param string $object
@@ -1949,7 +1949,7 @@ class OssClient
     }
 
     /**
-     * 参数校验
+     * 参數校验
      *
      * @param array $options
      * @param string $param
@@ -2029,7 +2029,7 @@ class OssClient
     }
 
     /**
-     * 驗證并且执行请求，按照OSS Api协议，执行操作
+     * 驗證并且执行請求，按照OSS Api协议，执行操作
      *
      * @param array $options
      * @return ResponseCore
@@ -2043,20 +2043,20 @@ class OssClient
         $this->authPrecheckBucket($options);
         //驗證object
         $this->authPrecheckObject($options);
-        //Object名稱的编码必须是utf8
+        //Object名稱的编碼必须是utf8
         $this->authPrecheckObjectEncoding($options);
         //驗證ACL
         $this->authPrecheckAcl($options);
-        // 获得当次请求使用的协议头，是https还是http
+        // 获得当次請求使用的协议头，是https还是http
         $scheme = $this->useSSL ? 'https://' : 'http://';
-        // 获得当次请求使用的hostname，如果是公共域名或者专有域名，bucket拼在前面构成三级域名
+        // 获得当次請求使用的hostname，如果是公共域名或者专有域名，bucket拼在前面构成三级域名
         $hostname = $this->generateHostname($options[self::OSS_BUCKET]);
         $string_to_sign = '';
         $headers = $this->generateHeaders($options, $hostname);
         $signable_query_string_params = $this->generateSignableQueryStringParam($options);
         $signable_query_string = OssUtil::toQueryString($signable_query_string_params);
         $resource_uri = $this->generateResourceUri($options);
-        //生成请求URL
+        //產生請求URL
         $conjunction = '?';
         $non_signable_resource = '';
         if (isset($options[self::OSS_SUB_RESOURCE])) {
@@ -2073,7 +2073,7 @@ class OssClient
         }
         $this->requestUrl = $scheme . $hostname . $resource_uri . $signable_query_string . $non_signable_resource;
 
-        //创建请求
+        //建立請求
         $request = new RequestCore($this->requestUrl, $this->requestProxy);
         $request->set_useragent($this->generateUserAgent());
         // Streaming uploads
@@ -2157,11 +2157,11 @@ class OssClient
                 $string_to_sign .= strtolower($header_key) . ':' . $header_value . "\n";
             }
         }
-        // 生成 signable_resource
+        // 產生 signable_resource
         $signable_resource = $this->generateSignableResource($options);
         $string_to_sign .= rawurldecode($signable_resource) . urldecode($signable_query_string);
 
-        //对?后面的要签名的string字母序排序
+        //對?後面的要签名的string字母序排序
         $string_to_sign_ordered = $this->stringToSignSorted($string_to_sign);
 
         $signature = base64_encode(hash_hmac('sha1', $string_to_sign_ordered, $this->accessKeySecret, true));
@@ -2196,7 +2196,7 @@ class OssClient
         //retry if OSS Internal Error
         if ((integer)$request->get_response_code() === 500) {
             if ($this->redirects <= $this->maxRetries) {
-                //设置休眠
+                //設定休眠
                 $delay = (integer)(pow(4, $this->redirects) * 100000);
                 usleep($delay);
                 $this->redirects++;
@@ -2209,7 +2209,7 @@ class OssClient
     }
 
     /**
-     * 设置最大尝试次数
+     * 設定最大尝试次數
      *
      * @param int $maxRetries
      * @return void
@@ -2220,7 +2220,7 @@ class OssClient
     }
 
     /**
-     * 取得最大尝试次数
+     * 取得最大尝试次數
      *
      * @return int
      */
@@ -2230,7 +2230,7 @@ class OssClient
     }
 
     /**
-     * 打开sts enable标志，使使用者构造函数中传入的$sts生效
+     * 打開sts enable标志，使使用者构造函數中传入的$sts生效
      *
      * @param boolean $enable
      */
@@ -2287,9 +2287,9 @@ class OssClient
     }
 
     /**
-     * 檢查object的编码，如果是gbk或者gb2312则尝试将其转化为utf8编码
+     * 檢查object的编碼，如果是gbk或者gb2312则尝试将其转化為utf8编碼
      *
-     * @param mixed $options 参数
+     * @param mixed $options 参數
      */
     private function authPrecheckObjectEncoding(&$options)
     {
@@ -2325,8 +2325,8 @@ class OssClient
     }
 
     /**
-     * 获得档次请求使用的域名
-     * bucket在前的三级域名，或者二级域名，如果是cname或者ip的话，则是二级域名
+     * 获得档次請求使用的域名
+     * bucket在前的三级域名，或者二级域名，如果是cname或者ip的話，则是二级域名
      *
      * @param $bucket
      * @return string 剥掉协议头的域名
@@ -2338,14 +2338,14 @@ class OssClient
         } elseif ($this->hostType === self::OSS_HOST_TYPE_CNAME) {
             $hostname = $this->hostname;
         } else {
-            // 专有域或者官网endpoint
+            // 专有域或者官網endpoint
             $hostname = ($bucket == '') ? $this->hostname : ($bucket . '.') . $this->hostname;
         }
         return $hostname;
     }
 
     /**
-     * 获得当次请求的资源定位字段
+     * 获得当次請求的资源定位字段
      *
      * @param $options
      * @return string 资源定位字段
@@ -2375,7 +2375,7 @@ class OssClient
     }
 
     /**
-     * 生成signalbe_query_string_param, array类型
+     * 產生signalbe_query_string_param, array类型
      *
      * @param array $options
      * @return array
@@ -2416,7 +2416,7 @@ class OssClient
     }
 
     /**
-     *  生成用于签名resource段
+     *  產生用于签名resource段
      *
      * @param mixed $options
      * @return string
@@ -2427,7 +2427,7 @@ class OssClient
         $signableResource .= '/';
         if (isset($options[self::OSS_BUCKET]) && '' !== $options[self::OSS_BUCKET]) {
             $signableResource .= $options[self::OSS_BUCKET];
-            // 如果操作没有Object操作的话，这里最后是否有斜线有个trick，ip的域名下，不需要加'/'， 否则需要加'/'
+            // 如果操作没有Object操作的話，这里最后是否有斜线有个trick，ip的域名下，不需要加'/'， 否则需要加'/'
             if ($options[self::OSS_OBJECT] == '/') {
                 if ($this->hostType !== self::OSS_HOST_TYPE_IP) {
                     $signableResource .= "/";
@@ -2445,14 +2445,14 @@ class OssClient
     }
 
     /**
-     * 生成query_string
+     * 產生query_string
      *
      * @param mixed $options
      * @return string
      */
     private function generateQueryString($options)
     {
-        //请求参数
+        //請求参數
         $queryStringParams = array();
         if (isset($options[self::OSS_QUERY_STRING])) {
             $queryStringParams = array_merge($queryStringParams, $options[self::OSS_QUERY_STRING]);
@@ -2512,7 +2512,7 @@ class OssClient
     }
 
     /**
-     * 生成请求用的UserAgent
+     * 產生請求用的UserAgent
      *
      * @return string
      */
@@ -2524,7 +2524,7 @@ class OssClient
     /**
      * 檢查endpoint的种类
      * 如有有协议头，剥去协议头
-     * 并且根据参数 is_cname 和endpoint本身，判定域名类型，是ip，cname，还是专有域或者官网域名
+     * 并且根據参數 is_cname 和endpoint本身，判定域名类型，是ip，cname，还是专有域或者官網域名
      *
      * @param string $endpoint
      * @param boolean $isCName
@@ -2553,7 +2553,7 @@ class OssClient
     }
 
     /**
-     * 用来檢查sdk所以来的扩展是否打开
+     * 用来檢查sdk所以来的扩展是否打開
      *
      * @throws OssException
      */
@@ -2578,7 +2578,7 @@ class OssClient
     }
 
     /**
-     //* 设置http库的请求超时时间，单位秒
+     //* 設定http库的請求超时時間，單位秒
      *
      * @param int $timeout
      */
@@ -2588,7 +2588,7 @@ class OssClient
     }
 
     /**
-     * 设置http库的连接超时时间，单位秒
+     * 設定http库的連結超时時間，單位秒
      *
      * @param int $connectTimeout
      */
@@ -2597,7 +2597,7 @@ class OssClient
         $this->connectTimeout = $connectTimeout;
     }
 
-    // 生命周期相关常量
+    // 生命周期相關常量
     const OSS_LIFECYCLE_EXPIRATION = "Expiration";
     const OSS_LIFECYCLE_TIMING_DAYS = "Days";
     const OSS_LIFECYCLE_TIMING_DATE = "Date";
@@ -2705,7 +2705,7 @@ class OssClient
     const OSS_HOST_TYPE_IP = "ip";  //http://1.1.1.1/bucket/object
     const OSS_HOST_TYPE_SPECIAL = 'special'; //http://bucket.guizhou.gov/object
     const OSS_HOST_TYPE_CNAME = "cname";  //http://mydomain.com/object
-    //OSS ACL数组
+    //OSS ACL數组
     static $OSS_ACL_TYPES = array(
         self::OSS_ACL_TYPE_PRIVATE,
         self::OSS_ACL_TYPE_PUBLIC_READ,

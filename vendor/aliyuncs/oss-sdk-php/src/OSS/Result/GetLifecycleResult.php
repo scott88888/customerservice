@@ -25,7 +25,7 @@ class GetLifecycleResult extends Result
     }
 
     /**
-     * 根据返回http狀態码判断，[200-299]即认为是OK, 取得bucket相关配置的接口，404也认为是一种
+     * 根據返回http狀態碼判断，[200-299]即认為是OK, 取得bucket相關配置的接口，404也认為是一种
      * 有效响应
      *
      * @return bool

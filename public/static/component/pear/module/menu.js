@@ -42,7 +42,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 				});
 			}
 		} else {
-			//renderMenu中需要调用done事件，done事件中需要menu对象，但是此时还未返回menu对象，做个延时提前返回对象
+			//renderMenu中需要调用done事件，done事件中需要menu對象，但是此时还未返回menu對象，做个延時提前返回對象
 			window.setTimeout(function() { renderMenu(option);}, 500);
 		}
 		
@@ -249,15 +249,15 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					'" menu-title="' + item.title + '"  href="' + href + '"  ' + target + '><i class="' + item.icon +
 					'"></i><span>' + item.title + '</span></a>';
 			}
-			// 调 用 递 归 方 法 加 载 無 限 层 级 的 子 菜 单 
+			// 调 用 递 归 方 法 加 载 無 限 层 级 的 子 選 單 
 			content += loadchild(item);
-			// 结 束 一 个 根 菜 单 项
+			// 结 束 一 个 根 選 單 项
 			content += '</li>';
 			menuHtml += content;
 		});
-		// 结 束 菜 单 结 构 的 初 始 化
+		// 结 束 選 單 结 构 的 初 始 化
 		menuHtml += "</ul></div>";
-		// 将 菜 单 拼 接 到 初 始 化 容 器 中
+		// 将 選 單 拼 接 到 初 始 化 容 器 中
 		$("#" + option.elem).html(menuHtml);
 	}
 
@@ -266,7 +266,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		var controlPe = '<ul class="layui-nav pear-nav-control layui-hide-sm">';
 		// 声 明 头 部
 		var menu = '<div class="layui-side-scroll ' + option.theme + '">'
-		// 开 启 同 步 操 作
+		// 開 启 同 步 操 作
 		var index = 0;
 		var controlItemPe = '<dl class="layui-nav-child">';
 		$.each(option.data, function(i, item) {
@@ -277,7 +277,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					'" class="layui-this layui-nav-item"><a href="#">' + item.title + '</a></li>';
 				menuItem = '<ul  pear-id="' + item.id + '" lay-filter="' + option.elem +
 					'" class="layui-nav arrow layui-nav-tree pear-nav-tree">';
-				// 兼容移动端
+				// 兼容移動端
 				controlPe += '<li class="layui-nav-item"><a class="pe-title" href="javascript:;" >' + item.title + '</a>';
 				controlItemPe += '<dd  pear-href="' + item.href + '" pear-title="' + item.title + '" pear-id="' + item.id +
 					'"><a href="javascript:void(0);">' + item.title + '</a></dd>';
@@ -293,7 +293,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 			}
 			index++;
 			$.each(item.children, function(i, note) {
-				// 创 建 每 一 个 菜 单 项
+				// 创 建 每 一 个 選 單 项
 				var content = '<li class="layui-nav-item" >';
 				var href = "javascript:;";
 				var target = "";
@@ -303,14 +303,14 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					target = "target='_blank'";
 					className = "";
 				}
-				// 判 断 菜 单 类 型 0 是 不可跳转的目录 1 是 可 点 击 跳 转 的 菜 单
+				// 判 断 選 單 类 型 0 是 不可跳转的目录 1 是 可 點 击 跳 转 的 選 單
 				if (note.type == 0) {
 					// 创 建 目 录 结 构
 					content += '<a  href="' + href + '" ' + target + ' menu-type="' + note.type + '" menu-id="' + note.id +
 						'" ><i class="' + note.icon + '"></i><span>' + note.title +
 						'</span></a>';
 				} else if (note.type == 1) {
-					// 创 建 菜 单 结 构
+					// 创 建 選 單 结 构
 					content += '<a ' + target + ' class="' + className + '" menu-type="' + note.type + '" menu-url="' + note.href +
 						'" menu-id="' + note.id +
 						'" menu-title="' + note.title + '" href="' + href + '"><i class="' + note.icon +
@@ -341,13 +341,13 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		})
 	}
 
-	/** 加载子菜单 (递归)*/
+	/** 加载子選單 (递归)*/
 	function loadchild(obj) {
-		// 判 单 是 否 是 菜 单， 如 果 是 菜 单 直 接 返 回
+		// 判 單 是 否 是 選 單， 如 果 是 選 單 直 接 返 回
 		if (obj.type == 1) {
 			return "";
 		}
-		// 创 建 子 菜 单 结 构
+		// 创 建 子 選 單 结 构
 		var content = '<dl class="layui-nav-child">';
 		// 如 果 嵌 套 不 等 于 空 
 		if (obj.children != null && obj.children.length > 0) {
@@ -369,19 +369,19 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					content += '<a ' + target + '  href="' + href + '" menu-type="' + note.type + '" menu-id="' + note.id +
 						'"><i class="' + note.icon + '"></i><span>' + note.title + '</span></a>';
 				} else if (note.type == 1) {
-					// 创 建 菜 单 结 构
+					// 创 建 選 單 结 构
 					content += '<a ' + target + ' class="' + className + '" menu-type="' + note.type + '" menu-url="' + note.href +
 						'" menu-id="' + note.id + '" menu-title="' + note.title + '" menu-icon="' + note.icon + '" href="' + href +
 						'" ><i class="' + note.icon + '"></i><span>' + note.title + '</span></a>';
 				}
 				// 加 载 子 项 目 录
 				content += loadchild(note);
-				// 结 束 当 前 子 菜 单
+				// 结 束 当 前 子 選 單
 				content += '</dd>';
 			});
 			// 封 装
 		} else {
-			content += '<dd style="background-color: transparent!important;"><a style="background-color: transparent!important;margin-left: 26px">目录为空</a></dd>';
+			content += '<dd style="background-color: transparent!important;"><a style="background-color: transparent!important;margin-left: 26px">目录為空</a></dd>';
 		}
 		content += '</dl>';
 		return content;
@@ -422,7 +422,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		})
 	}
 
-	/** 二 级 悬 浮 菜 单*/
+	/** 二 级 悬 浮 選 單*/
 	function isHoverMenu(b, option) {
 		if (b) {
 			$("#" + option.elem + ".pear-nav-mini .layui-nav-item,#" + option.elem + ".pear-nav-mini dd").hover(function(e) {

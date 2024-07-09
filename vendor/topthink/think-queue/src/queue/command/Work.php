@@ -89,7 +89,7 @@ class Work extends Command
     }
 
     /**
-     * 启动一个守护进程执行任务.
+     * 启動一个守护进程执行任务.
      *
      * @param  string $queue
      * @param  int    $delay
@@ -136,7 +136,7 @@ class Work extends Command
     }
 
     /**
-     * 取得上次重启守护进程的时间
+     * 取得上次重启守护进程的時間
      *
      * @return int|null
      */

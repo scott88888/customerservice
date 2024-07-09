@@ -80,7 +80,7 @@ class Login extends Controller
     public function check()
     {
         $post = $this->request->post();
-        if (!isset($post['username']) || !isset($post['password'])) $this->error('参数不完整!', url("/service/login/index"));
+        if (!isset($post['username']) || !isset($post['password'])) $this->error('参數不完整!', url("/service/login/index"));
         $post['user_name'] = htmlspecialchars($post['username']);
         $post["password"] = htmlspecialchars($post['password']);
         unset($post['username']);
@@ -93,7 +93,7 @@ class Login extends Controller
             ->find();
         if (!$admin) {
             $this->record_log('登入失敗');
-            $this->error('登入使用者名稱或密碼错误');
+            $this->error('登入使用者名稱或密碼錯誤');
         }
         // 取得登入資料
         $login = $admin->getData();
@@ -119,7 +119,7 @@ class Login extends Controller
     public function reg_check(){
         if(!config('open_reg')) $this->error('禁止商户注册');
         $post = $this->request->post();
-        if (!isset($post['username']) || !isset($post['password'])) $this->error('参数不完整!', url("/service/login/reg"));
+        if (!isset($post['username']) || !isset($post['password'])) $this->error('参數不完整!', url("/service/login/reg"));
         $post['user_name'] = htmlspecialchars($post['username']);
         $post["password"] = htmlspecialchars($post['password']);
         unset($post['username']);

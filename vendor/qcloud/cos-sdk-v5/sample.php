@@ -10,7 +10,7 @@ $cosClient = new Qcloud\Cos\Client(array(
     ),
 ));
 
-// 若初始化 Client 时未填写 appId，则 bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名稱必须为此格式
+// 若初始化 Client 时未填写 appId，则 bucket 的命名规则為{name}-{appid} ，此处填写的存储桶名稱必须為此格式
 $bucket = 'test2-1252448703';
 $key = 'a.txt';
 $local_path = "E:/a.txt";
@@ -25,7 +25,7 @@ try {
         'Body' => 'Hello World!'
     ));
     print_r($result);
-    # 可以直接通过$result读出返回结果
+    # 可以直接通過$result读出返回结果
     echo ($result['ETag']);
 } catch (\Exception $e) {
     echo($e);
@@ -43,7 +43,7 @@ try {
     echo($e);
 }
 
-### 设置header和meta
+### 設定header和meta
 try {
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -95,7 +95,7 @@ try {
     echo($e);
 }
 
-### 设置header和meta
+### 設定header和meta
 try {
     $result = $cosClient->upload(
         $bucket = $bucket,
@@ -126,9 +126,9 @@ try {
 
 ## 预签名上传createPresignedUrl
 ## 取得带有签名的url
-### 简单上传预签名
+### 简單上传预签名
 try {
-    #此处可以替换为其他上传接口
+    #此处可以替换為其他上传接口
     $command = $cosClient->getCommand('putObject', array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -142,7 +142,7 @@ try {
 
 ### 分块上传预签名
 try {
-    #此处可以替换为其他上传接口
+    #此处可以替换為其他上传接口
     $command = $cosClient->getCommand('uploadPart', array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -158,7 +158,7 @@ try {
 
 ### 取得签名
 try {
-    #此处可以替换为其他上传接口
+    #此处可以替换為其他上传接口
     $command = $cosClient->getCommand('putObject', array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -197,7 +197,7 @@ try {
 
 ### 指定下载范围
 /*
- * Range 字段格式为 'bytes=a-b'
+ * Range 字段格式為 'bytes=a-b'
  */
 try {
     $result = $cosClient->getObject(array(
@@ -210,7 +210,7 @@ try {
     echo($e);
 }
 
-### 设置返回header
+### 設定返回header
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
@@ -291,7 +291,7 @@ try {
     echo($e);
 }
 
-# 创建bucket
+# 建立bucket
 ## createBucket
 try {
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
@@ -329,7 +329,7 @@ try {
 ## listObjects
 ### 列出所有object
 /*
- * 该接口一次最多列出1000个，需要列出所有请参考其他服务中的清空并刪除bucket接口
+ * 该接口一次最多列出1000个，需要列出所有請参考其他服务中的清空并刪除bucket接口
  */
 try {
     $result = $cosClient->listObjects(array(
@@ -365,7 +365,7 @@ try {
     echo($e);
 };
 
-# 多版本相关
+# 多版本相關
 ## putBucketVersioning(開啟關閉某个bucket的多版本)
 try {
     $result = $cosClient->putBucketVersioning(array(
@@ -400,8 +400,8 @@ try {
     echo($e);
 }
 
-# ACL相关
-## PutBucketAcl(设置bucketACL)
+# ACL相關
+## PutBucketAcl(設定bucketACL)
 try {
     $result = $cosClient->putBucketAcl(array(
         'Bucket' => $bucket,
@@ -434,7 +434,7 @@ try {
     echo($e);
 }
 
-## putObjectAcl(设置objectACL)
+## putObjectAcl(設定objectACL)
 try {
     $result = $cosClient->putObjectAcl(array(
         'Bucket' => $bucket,
@@ -469,8 +469,8 @@ try {
     echo($e);
 }
 
-# 生命周期相关
-## putBucketLifecycle(设置bucket生命周期)
+# 生命周期相關
+## putBucketLifecycle(設定bucket生命周期)
 try {
     $result = $cosClient->putBucketLifecycle(array(
         'Bucket' => $bucket,
@@ -516,8 +516,8 @@ try {
     echo($e);
 }
 
-# 跨域相关
-## putBucketCors(设置bucket跨域)
+# 跨域相關
+## putBucketCors(設定bucket跨域)
 try {
     $result = $cosClient->putBucketCors(array(
         'Bucket' => $bucket,
@@ -554,8 +554,8 @@ try {
     echo($e);
 }
 
-# 跨区域複製相关
-## PutBucketReplication(设置bucket跨区域複製)
+# 跨区域複製相關
+## PutBucketReplication(設定bucket跨区域複製)
 ### 注意：目标bucket和源bucket都需要開啟多版本
 try {
     $result = $cosClient->putBucketReplication(array(
@@ -599,7 +599,7 @@ try {
     echo($e);
 }
 
-# 回调相关
+# 回调相關
 ## PutBucketNotification
 try {
     $result = $cosClient->putBucketNotification(array(
@@ -665,7 +665,7 @@ try {
 }
 
 # 複製
-## copyobject(简单複製)
+## copyobject(简單複製)
 /*
  * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实訊息
  */
@@ -726,7 +726,7 @@ try {
         foreach ($result['Contents'] as $rt) {
             print_r($rt['Key'] . " ");
             /*
-             * 使用下面的代码可以刪除全部object
+             * 使用下面的程式碼可以刪除全部object
              */
             // try {
             //     $result = $cosClient->deleteobjects(array(
@@ -775,7 +775,7 @@ try {
     echo($e);
 }
 
-## 分块上传断点重传
+## 分块上传断點重传
 /*
  * 仅适用于分块上传失敗的情况
  * 需要填写上传失敗的uploadId
@@ -809,7 +809,7 @@ try {
                 $cosClient2 = new Qcloud\Cos\Client(array(
                     'region' => $region,
                     'credentials' => array(
-                        //getenv为取得本地环境变量，请替换为真实密钥
+                        //getenv為取得本地环境变量，請替换為真实密钥
                         'secretId' => getenv('COS_KEY'),
                         'secretKey' => getenv('COS_SECRET'))
                 ));

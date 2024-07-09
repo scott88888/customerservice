@@ -77,7 +77,7 @@ class Config extends Command
             }
         }
 
-        // 加载行为扩展文件
+        // 加载行為扩展文件
         if (is_file(CONF_PATH . $module . 'tags' . EXT)) {
             $content .= '\think\Hook::import(' . (var_export(include CONF_PATH . $module . 'tags' . EXT, true)) . ');' . PHP_EOL;
         }

@@ -15,7 +15,7 @@ $(function () {
     }).on('changeDate.datepicker.amui', function (event) {
         if (event.date.valueOf() > endDate.valueOf()) {
 
-            layer.msg('开始日期应小于结束日期！', {icon: 2});
+            layer.msg('開始日期应小于结束日期！', {icon: 2});
         } else {
             $alert.hide();
             startDate = new Date(event.date);
@@ -33,7 +33,7 @@ $(function () {
     }).on('changeDate.datepicker.amui', function (event) {
         if (event.date.valueOf() < startDate.valueOf()) {
 
-            layer.msg('结束日期应大于开始日期！', {icon: 2});
+            layer.msg('结束日期应大于開始日期！', {icon: 2});
         } else {
             $alert.hide();
             endDate = new Date(event.date);
@@ -327,7 +327,7 @@ function puton() {
     var e_time = $("#my-endDate").text();
 
     if (s_time == "" || e_time == "") {
-        layer.msg("请選擇正确的时间段", {icon: 2});
+        layer.msg("請選擇正确的時間段", {icon: 2});
     }
     var showtime;
 

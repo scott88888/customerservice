@@ -25,8 +25,8 @@ class Argument
 
     /**
      * 构造方法
-     * @param string $name        参数名
-     * @param int    $mode        参数类型: self::REQUIRED 或者 self::OPTIONAL
+     * @param string $name        参數名
+     * @param int    $mode        参數类型: self::REQUIRED 或者 self::OPTIONAL
      * @param string $description 描述
      * @param mixed  $default     默认值 (仅 self::OPTIONAL 类型有效)
      * @throws \InvalidArgumentException
@@ -47,7 +47,7 @@ class Argument
     }
 
     /**
-     * 取得参数名
+     * 取得参數名
      * @return string
      */
     public function getName()
@@ -65,7 +65,7 @@ class Argument
     }
 
     /**
-     * 该参数是否接受数组
+     * 该参數是否接受數组
      * @return bool
      */
     public function isArray()
@@ -74,7 +74,7 @@ class Argument
     }
 
     /**
-     * 设置默认值
+     * 設定默认值
      * @param mixed $default 默认值
      * @throws \LogicException
      */

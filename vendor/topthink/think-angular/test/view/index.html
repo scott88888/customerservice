@@ -3,10 +3,10 @@
     <div class="jumbotron">
         <h1>Hello Think Angular</h1>
         <p>
-            此模板引擎针对能够使用angularjs的 php开发者 或 前端开发者 编写, 主要特点是, 不需要额外的标签定义, 全部使用属性定义, 写好的模板文件后, 在开发工具中無需插件即可格式化为很整洁的代码, 因为套完的模板文件还是规范的html.
+            此模板引擎針對能够使用angularjs的 php開发者 或 前端開发者 编写, 主要特點是, 不需要额外的标签定义, 全部使用属性定义, 写好的模板文件后, 在開发工具中無需插件即可格式化為很整洁的程式碼, 因為套完的模板文件还是规范的html.
         </p>
         <p>
-            注: 一个标签上可以使用多个模板属性, 属性有前后顺序要求, 所以要注意属性的顺序, 在单标签上使用模板属性时一定要使用<code>/></code>结束, 
+            注: 一个标签上可以使用多个模板属性, 属性有前后顺序要求, 所以要注意属性的顺序, 在單标签上使用模板属性时一定要使用<code>/></code>结束, 
             <br>
             如: 
             <br>
@@ -14,7 +14,7 @@
             <br>
             <code><img php-literal="code" php-if="$article['pic']" src="{&dollar;article.pic}" /></code>
             <br>
-            具体可参考后面的解析结果.
+            具体可参考後面的解析结果.
         </p>
         <p>
             Github项目地址:
@@ -60,12 +60,12 @@
             </table>
             <nav php-include="page"></nav>
 
-            <h2>自动选中: php-selected</h2>
+            <h2>自動选中: php-selected</h2>
             <select class="form-control" php-init="$p = isset($_GET['p']) ? $_GET['p'] : 1">
                 <option php-for="$i = 1; $i <= 50; $i++" php-selected="$p == $i" value="{$i}">第{$i}頁</option>
             </select>
 
-            <h2>自动勾选: php-checked </h2>
+            <h2>自動勾选: php-checked </h2>
             <div
                 class="form-control"
                 php-init="$all_hobby = ['html','css','js','php', 'mysql', 'linux']"
@@ -90,7 +90,7 @@
                 </label>
             </div>
 
-            <h2>自定义解析规则</h2>
+            <h2>自訂解析规则</h2>
             <div php-dump="$navs"></div>
 
             <div php-init="$i = 0" php-inc="$i" php-inc="$i">{$i}</div>
@@ -102,7 +102,7 @@
             <br />
             <php php-literal="code">{title} {$content}</php>
 
-            <h2>input資料绑定，自动转义特殊字符</h2>
+            <h2>input資料绑定，自動转义特殊字符</h2>
             <div>
                 <form action="?" method="post">
                     <input type="text" name="name" php-model="$name" />
@@ -112,7 +112,7 @@
             <p><br ／></p>
         </div>
         <div class="col-md-4">
-            <h4>無限级菜单输出</h4>
+            <h4>無限级選單输出</h4>
             <ul php-init="echo_menu($menus)" php-function="echo_menu($menus)">
                 <li php-repeat="$menus as $menu">
                     {$menu.title}

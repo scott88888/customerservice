@@ -14,17 +14,17 @@ namespace think;
 class Config
 {
     /**
-     * @var array 配置参数
+     * @var array 配置参數
      */
     private static $config = [];
 
     /**
-     * @var string 参数作用域
+     * @var string 参數作用域
      */
     private static $range = '_sys_';
 
     /**
-     * 设定配置参数的作用域
+     * 设定配置参數的作用域
      * @access public
      * @param  string $range 作用域
      * @return void
@@ -41,7 +41,7 @@ class Config
      * @access public
      * @param  string $config 配置文件路径或内容
      * @param  string $type   配置解析类型
-     * @param  string $name   配置名（如设置即表示二级配置）
+     * @param  string $name   配置名（如設定即表示二级配置）
      * @param  string $range  作用域
      * @return mixed
      */
@@ -62,7 +62,7 @@ class Config
      * 加载配置文件（PHP格式）
      * @access public
      * @param  string $file  配置文件名
-     * @param  string $name  配置名（如设置即表示二级配置）
+     * @param  string $name  配置名（如設定即表示二级配置）
      * @param  string $range 作用域
      * @return mixed
      */
@@ -93,7 +93,7 @@ class Config
     /**
      * 检测配置是否存在
      * @access public
-     * @param  string $name 配置参数名（支持二级配置 . 号分割）
+     * @param  string $name 配置参數名（支持二级配置 . 号分割）
      * @param  string $range  作用域
      * @return bool
      */
@@ -105,15 +105,15 @@ class Config
             return isset(self::$config[$range][strtolower($name)]);
         }
 
-        // 二维数组设置和取得支持
+        // 二维數组設定和取得支持
         $name = explode('.', $name, 2);
         return isset(self::$config[$range][strtolower($name[0])][$name[1]]);
     }
 
     /**
-     * 取得配置参数 为空则取得所有配置
+     * 取得配置参數 為空则取得所有配置
      * @access public
-     * @param  string $name 配置参数名（支持二级配置 . 号分割）
+     * @param  string $name 配置参數名（支持二级配置 . 号分割）
      * @param  string $range  作用域
      * @return mixed
      */
@@ -121,7 +121,7 @@ class Config
     {
         $range = $range ?: self::$range;
 
-        // 無参数时取得所有
+        // 無参數时取得所有
         if (empty($name) && isset(self::$config[$range])) {
             return self::$config[$range];
         }
@@ -132,12 +132,12 @@ class Config
             return isset(self::$config[$range][$name]) ? self::$config[$range][$name] : null;
         }
 
-        // 二维数组设置和取得支持
+        // 二维數组設定和取得支持
         $name    = explode('.', $name, 2);
         $name[0] = strtolower($name[0]);
 
         if (!isset(self::$config[$range][$name[0]])) {
-            // 动态载入额外配置
+            // 動态载入额外配置
             $module = Request::instance()->module();
             $file   = CONF_PATH . ($module ? $module . DS : '') . 'extra' . DS . $name[0] . CONF_EXT;
 
@@ -150,9 +150,9 @@ class Config
     }
 
     /**
-     * 设置配置参数 name 为数组则为批量设置
+     * 設定配置参數 name 為數组则為批量設定
      * @access public
-     * @param  string|array $name  配置参数名（支持二级配置 . 号分割）
+     * @param  string|array $name  配置参數名（支持二级配置 . 号分割）
      * @param  mixed        $value 配置值
      * @param  string       $range 作用域
      * @return mixed
@@ -163,12 +163,12 @@ class Config
 
         if (!isset(self::$config[$range])) self::$config[$range] = [];
 
-        // 字符串则表示单个配置设置
+        // 字符串则表示單个配置設定
         if (is_string($name)) {
             if (!strpos($name, '.')) {
                 self::$config[$range][strtolower($name)] = $value;
             } else {
-                // 二维数组
+                // 二维數组
                 $name = explode('.', $name, 2);
                 self::$config[$range][strtolower($name[0])][$name[1]] = $value;
             }
@@ -176,7 +176,7 @@ class Config
             return $value;
         }
 
-        // 数组则表示批量设置
+        // 數组则表示批量設定
         if (is_array($name)) {
             if (!empty($value)) {
                 self::$config[$range][$value] = isset(self::$config[$range][$value]) ?
@@ -191,12 +191,12 @@ class Config
             );
         }
 
-        // 为空直接返回已有配置
+        // 為空直接返回已有配置
         return self::$config[$range];
     }
 
     /**
-     * 重置配置参数
+     * 重置配置参數
      * @access public
      * @param  string $range 作用域
      * @return void

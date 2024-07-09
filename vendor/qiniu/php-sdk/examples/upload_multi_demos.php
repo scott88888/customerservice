@@ -44,7 +44,7 @@ $policy = array(
     'callbackUrl' => 'http://172.30.251.210/upload_verify_callback.php',
     'callbackBody' => 'filename=$(fname)&filesize=$(fsize)'
 //  'callbackBodyType' => 'application/json',                       
-//  'callbackBody' => '{"filename":$(fname), "filesize": $(fsize)}'  //设置application/json格式回调
+//  'callbackBody' => '{"filename":$(fname), "filesize": $(fsize)}'  //設定application/json格式回调
 );
 $token = $auth->uploadToken($bucket, null, 3600, $policy);
 
@@ -59,14 +59,14 @@ if ($err !== null) {
 
 
 //----------------------------------------upload demo4 ----------------------------------------
-//上传视频，上传完成后进行m3u8的转码， 并给视频打水印
+//上传视频，上传完成后进行m3u8的转碼， 并给视频打水印
 $wmImg = Qiniu\base64_urlSafeEncode('http://devtools.qiniudn.com/qiniu.png');
 $pfop = "avthumb/m3u8/wmImage/$wmImg";
 
-//转码完成后回调到业务服务器。（公网可以访问，并相应200 OK）
+//转碼完成后回调到业务服务器。（公網可以訪問，并相应200 OK）
 $notifyUrl = 'http://notify.fake.com';
 
-//独立的转码队列：https://portal.qiniu.com/mps/pipeline
+//独立的转碼队列：https://portal.qiniu.com/mps/pipeline
 
 
 $policy = array(

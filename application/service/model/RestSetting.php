@@ -51,8 +51,8 @@ class RestSetting extends Model
     {
         $date= date('H:i');
         $curTime = strtotime($date);//当前时分
-        $assignTime1 = strtotime($this->start_time);//获得指定分钟时间戳，00:00
-        $assignTime2 = strtotime($this->end_time);//获得指定分钟时间戳，01:00
+        $assignTime1 = strtotime($this->start_time);//获得指定分钟時間戳，00:00
+        $assignTime2 = strtotime($this->end_time);//获得指定分钟時間戳，01:00
         if($curTime>$assignTime1&&$curTime<$assignTime2){
             return true;
         }

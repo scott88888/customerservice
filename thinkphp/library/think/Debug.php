@@ -17,7 +17,7 @@ use think\response\Redirect;
 class Debug
 {
     /**
-     * @var array 区间时间訊息
+     * @var array 区间時間訊息
      */
     protected static $info = [];
 
@@ -27,10 +27,10 @@ class Debug
     protected static $mem = [];
 
     /**
-     * 记录时间（微秒）和内存使用情况
+     * 记录時間（微秒）和内存使用情况
      * @access public
      * @param  string $name  标记位置
-     * @param  mixed  $value 标记值(留空则取当前 time 表示仅记录时间 否则同时记录时间和内存)
+     * @param  mixed  $value 标记值(留空则取当前 time 表示仅记录時間 否则同时记录時間和内存)
      * @return void
      */
     public static function remark($name, $value = '')
@@ -44,11 +44,11 @@ class Debug
     }
 
     /**
-     * 统计某个区间的时间（微秒）使用情况 返回值以秒为单位
+     * 统计某个区间的時間（微秒）使用情况 返回值以秒為單位
      * @access public
-     * @param  string  $start 开始标签
+     * @param  string  $start 開始标签
      * @param  string  $end   结束标签
-     * @param  integer $dec   小数位
+     * @param  integer $dec   小數位
      * @return string
      */
     public static function getRangeTime($start, $end, $dec = 6)
@@ -61,9 +61,9 @@ class Debug
     }
 
     /**
-     * 统计从开始到统计时的时间（微秒）使用情况 返回值以秒为单位
+     * 统计从開始到统计时的時間（微秒）使用情况 返回值以秒為單位
      * @access public
-     * @param  integer $dec 小数位
+     * @param  integer $dec 小數位
      * @return string
      */
     public static function getUseTime($dec = 6)
@@ -72,7 +72,7 @@ class Debug
     }
 
     /**
-     * 取得当前访问的吞吐率情况
+     * 取得当前訪問的吞吐率情况
      * @access public
      * @return string
      */
@@ -84,9 +84,9 @@ class Debug
     /**
      * 记录区间的内存使用情况
      * @access public
-     * @param  string  $start 开始标签
+     * @param  string  $start 開始标签
      * @param  string  $end   结束标签
-     * @param  integer $dec   小数位
+     * @param  integer $dec   小數位
      * @return string
      */
     public static function getRangeMem($start, $end, $dec = 2)
@@ -108,9 +108,9 @@ class Debug
     }
 
     /**
-     * 统计从开始到统计时的内存使用情况
+     * 统计从開始到统计时的内存使用情况
      * @access public
-     * @param  integer $dec 小数位
+     * @param  integer $dec 小數位
      * @return string
      */
     public static function getUseMem($dec = 2)
@@ -130,9 +130,9 @@ class Debug
     /**
      * 统计区间的内存峰值情况
      * @access public
-     * @param  string  $start 开始标签
+     * @param  string  $start 開始标签
      * @param  string  $end   结束标签
-     * @param  integer $dec   小数位
+     * @param  integer $dec   小數位
      * @return string
      */
     public static function getMemPeak($start, $end, $dec = 2)
@@ -180,8 +180,8 @@ class Debug
      * 浏览器友好的变量输出
      * @access public
      * @param  mixed       $var   变量
-     * @param  boolean     $echo  是否输出(默认为 true，为 false 则返回输出字符串)
-     * @param  string|null $label 标签(默认为空)
+     * @param  boolean     $echo  是否输出(默认為 true，為 false 则返回输出字符串)
+     * @param  string|null $label 标签(默认為空)
      * @param  integer     $flags htmlspecialchars 的标志
      * @return null|string
      */

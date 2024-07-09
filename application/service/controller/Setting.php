@@ -54,7 +54,7 @@ class Setting extends Base
         if ($this->request->isAjax()) {
             $post = $this->request->post();
             $check = Sentence::get(['service_id' => $_SESSION['Msg']['service_id'], 'lang' => $post['lang']]);
-            if ($check) $this->error('该語言已存在问候语！');
+            if ($check) $this->error('该語言已存在問候語！');
             $post['service_id'] = $_SESSION['Msg']['service_id'];
             $post['content'] = $this->request->post('content', '', '\app\Common::clearXSS');
             $res = Sentence::insert($post);

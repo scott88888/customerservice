@@ -23,7 +23,7 @@ abstract class Driver
      * 存储Token
      * @param   string $token Token
      * @param   int $user_id 会员ID
-     * @param   int $expire 过期时长,0表示無限,单位秒
+     * @param   int $expire 过期时長,0表示無限,單位秒
      * @return bool
      */
     abstract function set($token, $user_id, $expire = 0);
@@ -58,7 +58,7 @@ abstract class Driver
     abstract function clear($user_id);
 
     /**
-     * 返回句柄对象，可执行其它高级方法
+     * 返回句柄對象，可执行其它高级方法
      *
      * @access public
      * @return object
@@ -70,7 +70,7 @@ abstract class Driver
 
     /**
      * 取得加密后的Token
-     * @param string $token Token标识
+     * @param string $token Token標識
      * @return string
      */
     protected function getEncryptedToken($token)
@@ -80,7 +80,7 @@ abstract class Driver
     }
 
     /**
-     * 取得过期剩余时长
+     * 取得过期剩余时長
      * @param $expiretime
      * @return float|int|mixed
      */

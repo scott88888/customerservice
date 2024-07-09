@@ -15,23 +15,23 @@ use think\Exception;
 
 class Template
 {
-    // mc 对象
+    // mc 對象
     private $mc;
     // 编译缓存内容
     private $contents = [];
 
     /**
-     * 架构函数
+     * 架构函數
      * @access public
      */
     public function __construct()
     {
         if (!function_exists('sae_debug')) {
-            throw new Exception('请在SAE平台上运行代码。');
+            throw new Exception('請在SAE平台上运行程式碼。');
         }
         $this->mc = new \Memcached();
         if (!$this->mc) {
-            throw new Exception('您未开通Memcache服务，请在SAE管理平台初始化Memcache服务');
+            throw new Exception('您未開通Memcache服务，請在SAE管理平台初始化Memcache服务');
         }
     }
 
@@ -43,7 +43,7 @@ class Template
      */
     public function write($cacheFile, $content)
     {
-        // 新增写入时间
+        // 新增写入時間
         $content = $_SERVER['REQUEST_TIME'] . $content;
         if (!$this->mc->set($cacheFile, $content, 0)) {
             throw new Exception('sae mc write error:' . $cacheFile);
@@ -56,7 +56,7 @@ class Template
     /**
      * 读取编译编译
      * @param string  $cacheFile 缓存的文件名
-     * @param array   $vars 变量数组
+     * @param array   $vars 变量數组
      * @return void
      */
     public function read($cacheFile, $vars = [])
@@ -70,7 +70,7 @@ class Template
     /**
      * 檢查编译缓存是否有效
      * @param string  $cacheFile 缓存的文件名
-     * @param int     $cacheTime 缓存时间
+     * @param int     $cacheTime 缓存時間
      * @return boolean
      */
     public function check($cacheFile, $cacheTime)

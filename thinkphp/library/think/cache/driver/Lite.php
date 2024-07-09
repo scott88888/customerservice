@@ -26,7 +26,7 @@ class Lite extends Driver
     ];
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
      *
      * @param array $options
@@ -93,7 +93,7 @@ class Lite extends Driver
      * @access   public
      * @param string            $name 缓存变量名
      * @param mixed             $value  存储資料
-     * @param integer|\DateTime $expire  有效时间（秒）
+     * @param integer|\DateTime $expire  有效時間（秒）
      * @return bool
      */
     public function set($name, $value, $expire = null)
@@ -112,7 +112,7 @@ class Lite extends Driver
             $first = true;
         }
         $ret = file_put_contents($filename, ("<?php return " . var_export($value, true) . ";"));
-        // 通过设置修改时间实现有效期
+        // 通過設定修改時間實現有效期
         if ($ret) {
             isset($first) && $this->setTagItem($filename);
             touch($filename, $expire);
@@ -121,10 +121,10 @@ class Lite extends Driver
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function inc($name, $step = 1)
@@ -138,10 +138,10 @@ class Lite extends Driver
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function dec($name, $step = 1)

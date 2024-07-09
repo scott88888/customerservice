@@ -41,7 +41,7 @@ class Base extends Controller
         $route = $modulename.'/'.$controllername.'/'.$actionname;
         $token = $this->request->server('HTTP_TOKEN', $this->request->param('token', \think\Cookie::get('token')));
         $path = str_replace('.', '/', $controllername) . '/' . $actionname;
-        // 设置当前请求的URI
+        // 設定当前請求的URI
         $this->auth->setRequestUri($path);
 
         Hook::add('action_begin', 'app\\platform\\behavior\\Permission');
@@ -69,7 +69,7 @@ class Base extends Controller
         $this->assign('route',$route);
         $this->view->engine->layout('layout/' . $this->layout);
 
-        //设置seo
+        //設定seo
         $option = Option::getList('title,logo,copyright,max_login_error,passport_bg,open_register', 0, 'admin');
         $this->option = $option;
         $this->assign('option',$option);

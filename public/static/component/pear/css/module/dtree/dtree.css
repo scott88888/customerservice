@@ -36,7 +36,7 @@
 .dtree-laySimple-checkbox:hover{color:#01AAED!important;}
 .dtree-laySimple-choose{color:#01AAED!important;}
 /**************** 树基础  ****************/
-/* 菜单栏*/
+/* 選單栏*/
 .dtree-menubar {padding-left: 10px;}
 .dtree-menubar .layui-btn-group .layui-btn-sm{height: 20px;line-height: 20px;padding: 0 5px;font-size: 12px;}
 .dtree-menubar .layui-btn-group .layui-btn-sm i{font-size: 12px!important;}
@@ -102,7 +102,7 @@
 .dtree-select{position: absolute;max-height: 500px;height: 350px;overflow: auto;width: 99%;z-index: 123;display: none;border:1px solid silver;top: 42px;}
 .dtree-select-show{display: block!important;}
 
-/* 简单适配*/
+/* 简單适配*/
 @media screen and (max-width:1700px) and (min-width:1300px){	
 	.dtree-nav-item {padding-left: 15px;}
 }

@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传图片对话框逻辑代码,包括tab: 远程图片/上传图片/線上图片/搜索图片
+ * 上传图片對話框逻辑程式碼,包括tab: 远程图片/上传图片/線上图片/搜索图片
  */
 
 (function () {
@@ -118,7 +118,7 @@
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
-            // 新增的文件数量
+            // 新增的文件數量
                 fileCount = 0,
             // 新增的文件总大小
                 fileSize = 0,
@@ -129,7 +129,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度訊息，key为file id
+            // 所有文件的进度訊息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -177,7 +177,7 @@
 
             setState('pedding');
 
-            // 当有文件新增进来时执行，负责view的创建
+            // 当有文件新增进来时执行，负责view的建立
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -358,7 +358,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以开始上传 */
+                        /* 可以開始上传 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -374,7 +374,7 @@
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* 暂停上传 */
+                        /* 暫停上传 */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -471,7 +471,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 新增额外的GET参数 */
+                        /* 新增额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -484,7 +484,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象新增POST参数
+                //这里可以通過data對象新增POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -587,11 +587,11 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取資料 */
+        /* 初始化滚動事件,滚動到地步自動拉取資料 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取图片 */
+            /* 滚動拉取图片 */
             domUtils.on($G('fileList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {

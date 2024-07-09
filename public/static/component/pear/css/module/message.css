@@ -32,7 +32,7 @@
 	line-height: 45px!important;
 }
 
-/** 滚动條样式 */
+/** 滚動條樣式 */
 .pear-notice *::-webkit-scrollbar{width:0px;height:0px;}
 .pear-notice *::-webkit-scrollbar-track{background: white;border-radius:2px;}
 .pear-notice *::-webkit-scrollbar-thumb{background: #E6E6E6;border-radius:2px;}

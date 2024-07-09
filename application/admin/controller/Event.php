@@ -71,7 +71,7 @@ class Event extends Controller
      */
     public function index()
     {
-        // pusher 访问的 地址
+        // pusher 訪問的 地址
         $sarr = parse_url(ahost);
         if ($sarr['scheme'] == 'https') {
             $state = true;
@@ -116,7 +116,7 @@ class Event extends Controller
                         $res = Admins::table('wolive_service')->where('service_id', $id)->update(['state' => 'offline']);
 
                     } elseif (strpos($event['channel'], 'cu') === 0) {
-                        // 访客 離線
+                        // 訪客 離線
                         $channel = str_replace('cu', '', $event['channel']);
 
                         $newstr = pack("H*", $channel);
@@ -140,14 +140,14 @@ class Event extends Controller
                 if ($event["name"] == "channel_added") {
 
                     if (strpos($event['channel'], 'kefu') === 0) {
-                        // 通知 访客，客服線上
+                        // 通知 訪客，客服線上
                         $channel = str_replace('kefu', 'se', $event['channel']);
                         $id = str_replace('kefu', '', $event['channel']);
                         $res = Admins::table('wolive_service')->where('service_id', $id)->update(['state' => 'online']);
                         $pusher->trigger($channel, 'geton', array('message' => $this->lang_array['service_online']));
 
                     } elseif (strpos($event['channel'], 'cu') === 0) {
-                        // 通知 客服 ，访客線上
+                        // 通知 客服 ，訪客線上
                         $channel = str_replace('cu', '', $event['channel']);
 
                         $newstr = pack("H*", $channel);
@@ -227,7 +227,7 @@ class Event extends Controller
 
 
     /**
-     *  微信前台对话pusher类.
+     *  微信前台對話pusher类.
      *
      * @return void
      */
@@ -327,7 +327,7 @@ class Event extends Controller
                 $returndata = ['code' => 0, 'msg' => 'success'];
                 return $returndata;
             } else {
-                // 客服關閉了对话框，重新设置为打开
+                // 客服關閉了對話框，重新設定為打開
                 $data = ['state' => 'normal'];
                 $qid = Admins::table('wolive_queue')->where('business_id', $arr['business_id'])->where('visiter_id', $arr['visiter_id'])->where('state', 'complete')->order('qid', 'desc')->value('qid');
                 if ($qid) {
@@ -436,7 +436,7 @@ class Event extends Controller
                     "keyword1"   => $visiter["visiter_name"] ?$visiter["visiter_name"]:'遊客'.$arr['visiter_id'],
                     "keyword2"  => date('Y-m-d H:i:s',time()),
                     "keyword3"  => $arr["content"],
-                    "remark" => $business['business_name']."提示:客户等不及啦,快去回复吧~",
+                    "remark" => $business['business_name']."提示:客户等不及啦,快去回覆吧~",
                 ]);
                 Admins::table('wolive_queue')->where('business_id', $arr['business_id'])->where('visiter_id', $arr['visiter_id'])->update(['remind_tpl'=>1]);
             }
@@ -489,7 +489,7 @@ class Event extends Controller
 
 
     /**
-     * 前台寻求客服对话类.
+     * 前台寻求客服對話类.
      *
      * @return mixed
      */
@@ -606,7 +606,7 @@ class Event extends Controller
                 }
 
 
-                // 替换成最新头像
+                // 替换成最新圖示
                 $newvisiter = Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->update(array_filter(['avatar' => $arr['avatar'],'visiter_name' => $arr['visiter_name']]));
                 // 最后一次服务的客服id
                 $service_id = $service['service_id'];
@@ -697,7 +697,7 @@ class Event extends Controller
             $visiter = Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->find();
 
             if ($visiter) {
-                // 替换成最新头像 'login_times'=> ['exp','login_times+1']
+                // 替换成最新圖示 'login_times'=> ['exp','login_times+1']
                 Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->update(array_filter(['avatar' => $arr['avatar'],'login_times'=>Db::raw('login_times+1'),'visiter_name' => $arr['visiter_name']]));
                 // 老使用者
                 $service = Admins::table('wolive_queue')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->find();
@@ -852,7 +852,7 @@ class Event extends Controller
                 if($business['template_state'] == 'open'){
                     try {
                         TplService::send($arr["business_id"],$service_data['open_id'],url('weixin/login/callback',['business_id'=>$arr['business_id'],'service_id'=>$service_data['service_id']],true,true),$wechat['visitor_tpl'],[
-                            "first"  => "您有新访客！",
+                            "first"  => "您有新訪客！",
                             "keyword1"   => $arr["visiter_name"] ?$arr["visiter_name"]:'遊客'.$arr['visiter_id'],
                             "keyword2"  => date('Y-m-d H:i:s',time()),
                             "remark" => $business['business_name']."提示:有新客户啦,快去撩一把~",
@@ -1018,7 +1018,7 @@ class Event extends Controller
 
 
     /**
-     * 取得最近对话訊息.
+     * 取得最近對話訊息.
      *
      * @return string
      */
@@ -1070,7 +1070,7 @@ class Event extends Controller
 
 
     /**
-     * 刪除访客訊息.
+     * 刪除訪客訊息.
      *
      * @return boolAdmins
      */
@@ -1133,7 +1133,7 @@ class Event extends Controller
             $host,
             $port
         );
-        $pusher->trigger("kefu" . $post['id'], "video", array("message" => "申请视频连接", "channel" => $post['channel'], "avatar" => $post['avatar'], 'username' => $post['name'], "cid" => $post['cha']));
+        $pusher->trigger("kefu" . $post['id'], "video", array("message" => "申請视频連結", "channel" => $post['channel'], "avatar" => $post['avatar'], 'username' => $post['name'], "cid" => $post['cha']));
 
         $data = ['code' => 0, 'msg' => 'success'];
 
@@ -1175,7 +1175,7 @@ class Event extends Controller
             $port
         );
 
-        $pusher->trigger("kefu" . $post['id'], "video-refuse", array("message" => "对方拒绝视频连接！"));
+        $pusher->trigger("kefu" . $post['id'], "video-refuse", array("message" => "對方拒绝视频連結！"));
     }
 
     /**

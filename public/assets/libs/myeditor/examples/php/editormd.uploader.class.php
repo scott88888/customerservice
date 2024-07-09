@@ -14,40 +14,40 @@
 
     class EditorMdUploader
     {
-        public $files;                          // $_FILES数组
+        public $files;                          // $_FILES數组
         public $fileExit;                       // 文件扩展名
         public $saveName;                       // 最终保存的文件名
         public $saveURL;                        // 最终保存URL地址
         public $savePath;                       // 保存本地文件路径
-        public $randomLength   = '';            // 生成随机文件名的长度，当为日期时为日期的格式
-        public $randomNameType = 1;             // 生成随机的形式, NULL为保留原文件名, 1生成随机字符串, 2生成日期文件名
+        public $randomLength   = '';            // 產生随机文件名的長度，当為日期时為日期的格式
+        public $randomNameType = 1;             // 產生随机的形式, NULL為保留原文件名, 1產生随机字符串, 2產生日期文件名
         public $formats = array(                // 允许上传的文件格式
             'gif', 'jpg', 'jpeg', 'png', 'bmp'
         );
-        public $maxSize        = 1024;          // 最大上传文件大小，单位KB
+        public $maxSize        = 1024;          // 最大上传文件大小，單位KB
         public $cover          = true;          // 是否覆盖同名文件, 1覆盖,0不覆盖
         public $redirect       = false;         // 是否进行URL跳转
         public $redirectURL    = "";            // 上传成功或出错后要转到的URL        
-        public $errors = array(                 // 错误訊息
-            'empty'      => '上传文件不能为空',
+        public $errors = array(                 // 錯誤訊息
+            'empty'      => '上传文件不能為空',
             'format'     =>'上传的文件格式不符合规定',
             'maxsize'    => '上传的文件太大',
-            'unwritable' => '保存目录不可写，请更改权限',
+            'unwritable' => '保存目录不可写，請更改权限',
             'not_exist'  => '保存目录不存在',
             'same_file'  => '已经有相同的文件存在'
         );
 
         /**
-         * 构造函数，初始化对象
+         * 构造函數，初始化對象
          *
          * @access  public
          * @param   string          $savePath       最终保存的本地路径
          * @param   string          $saveURL        最终保存的URL地址
          * @param   string          $formats        允许上传的文件格式
-         * @param   Number          $randomNameType 是否生成随机文件名及形式
-         * @param   Intiger/string  $randomLength   生成随机文件名字符的长度
+         * @param   Number          $randomNameType 是否產生随机文件名及形式
+         * @param   Intiger/string  $randomLength   產生随机文件名字符的長度
          * @param   boolean         $cover          是否覆盖相同文件
-         * @param   Intiger         $maxSize        允许最大的上传文件大小，以KB为单位
+         * @param   Intiger         $maxSize        允许最大的上传文件大小，以KB為單位
          * @return  viod
          */
         
@@ -63,10 +63,10 @@
         }
 
         /**
-         * 配置参数函数
+         * 配置参數函數
          *
          * @access  public
-         * @param   array           $configs        配置项数组
+         * @param   array           $configs        配置项數组
          * @return  void
          */
         
@@ -88,7 +88,7 @@
 
         public function upload($name)
         {            
-            if(empty($_FILES[$name]['name'])) //上传文件为空时
+            if(empty($_FILES[$name]['name'])) //上传文件為空时
             {
                $this->message($this->errors['empty']);
                 
@@ -119,7 +119,7 @@
         }
 
         /**
-         * 檢查并移动上传文件
+         * 檢查并移動上传文件
          *
          * @access  private
          * @return  boolean
@@ -194,7 +194,7 @@
                     
                     case '999':
                     default:
-                        $message = "未知错误，请檢查文件是否损坏、是否超大等原因。";
+                        $message = "未知錯誤，請檢查文件是否损坏、是否超大等原因。";
                         break;
                 }
 
@@ -209,22 +209,22 @@
         }
 
         /**
-         * 生成随机文件名函数
+         * 產生随机文件名函數
          *
          * @access  private
-         * @return  string         $fileName      返回生成的文件名字符串
+         * @return  string         $fileName      返回產生的文件名字符串
          */
 
         private function randomFileName()
         {
-            if ($this->randomNameType == 1)        // 生成时间格式文件名
+            if ($this->randomNameType == 1)        // 產生時間格式文件名
             {
-                date_default_timezone_set('PRC');  //设置时区
+                date_default_timezone_set('PRC');  //設定时区
                 
                 $date     = date($this->randomLength);
                 $fileName = $date . "_" . mt_rand(10000, 99999);
             }
-            elseif ($this->randomNameType == 2)    // 生成随机字符文件名
+            elseif ($this->randomNameType == 2)    // 產生随机字符文件名
             {
                 $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
                 $max   = strlen($chars) - 1;
@@ -254,7 +254,7 @@
          {             
             $this->saveName = $this->randomFileName().".".$this->fileExt;
              
-            if($this->saveName == '') //如果没生成随机文件名，就保留原文件名
+            if($this->saveName == '') //如果没產生随机文件名，就保留原文件名
             {
                 $this->saveName = $this->files['name'];
             }
@@ -273,7 +273,7 @@
          }
 
         /**
-         * 取得文件后缀名函数
+         * 取得文件后缀名函數
          *
          * @access  public
          * @return  string
@@ -288,7 +288,7 @@
          * 上传成功或出错后跳转
          *
          * @access  public
-         * @param   array           $configs        配置项数组
+         * @param   array           $configs        配置项數组
          * @return  void
          */
         
@@ -298,7 +298,7 @@
         }
 
         /**
-         * 错误提示函数
+         * 錯誤提示函數
          *
          * @access  public
          * @return  void

@@ -13,15 +13,15 @@ namespace think;
 
 class Url
 {
-    // 生成URL地址的root
+    // 產生URL地址的root
     protected static $root;
     protected static $bindCheck;
 
     /**
-     * URL生成 支持路由反射
+     * URL產生 支持路由反射
      * @param string            $url 路由地址
-     * @param string|array      $vars 参数（支持数组和字符串）a=val&b=val2... ['a'=>'val1', 'b'=>'val2']
-     * @param string|bool       $suffix 伪静态后缀，默认为true表示取得配置值
+     * @param string|array      $vars 参數（支持數组和字符串）a=val&b=val2... ['a'=>'val1', 'b'=>'val2']
+     * @param string|bool       $suffix 伪静态后缀，默认為true表示取得配置值
      * @param boolean|string    $domain 是否显示域名 或者直接传入域名
      * @return string
      */
@@ -32,7 +32,7 @@ class Url
         }
         // 解析URL
         if (0 === strpos($url, '[') && $pos = strpos($url, ']')) {
-            // [name] 表示使用路由命名标识生成URL
+            // [name] 表示使用路由命名標識產生URL
             $name = substr($url, 1, $pos - 1);
             $url  = 'name' . substr($url, $pos + 1);
         }
@@ -40,10 +40,10 @@ class Url
             $info = parse_url($url);
             $url  = !empty($info['path']) ? $info['path'] : '';
             if (isset($info['fragment'])) {
-                // 解析锚点
+                // 解析锚點
                 $anchor = $info['fragment'];
                 if (false !== strpos($anchor, '?')) {
-                    // 解析参数
+                    // 解析参數
                     list($anchor, $info['query']) = explode('?', $anchor, 2);
                 }
                 if (false !== strpos($anchor, '@')) {
@@ -56,9 +56,9 @@ class Url
             }
         }
 
-        // 解析参数
+        // 解析参數
         if (is_string($vars)) {
-            // aaa=1&bbb=2 转换成数组
+            // aaa=1&bbb=2 转换成數组
             parse_str($vars, $vars);
         }
 
@@ -66,14 +66,14 @@ class Url
             $rule = Route::name(isset($name) ? $name : $url . (isset($info['query']) ? '?' . $info['query'] : ''));
             if (is_null($rule) && isset($info['query'])) {
                 $rule = Route::name($url);
-                // 解析地址里面参数 合并到vars
+                // 解析地址里面参數 合并到vars
                 parse_str($info['query'], $params);
                 $vars = array_merge($params, $vars);
                 unset($info['query']);
             }
         }
         if (!empty($rule) && $match = self::getRuleUrl($rule, $vars)) {
-            // 匹配路由命名标识
+            // 匹配路由命名標識
             $url = $match[0];
             // 替换可选分隔符
             $url = preg_replace(['/(\W)\?$/', '/(\W)\?/'], ['', '\1'], $url);
@@ -103,11 +103,11 @@ class Url
                 }
             }
             if (!$matchAlias) {
-                // 路由标识不存在 直接解析
+                // 路由標識不存在 直接解析
                 $url = self::parseUrl($url, $domain);
             }
             if (isset($info['query'])) {
-                // 解析地址里面参数 合并到vars
+                // 解析地址里面参數 合并到vars
                 parse_str($info['query'], $params);
                 $vars = array_merge($params, $vars);
             }
@@ -129,11 +129,11 @@ class Url
 
         // URL后缀
         $suffix = in_array($url, ['/', '']) ? '' : self::parseSuffix($suffix);
-        // 锚点
+        // 锚點
         $anchor = !empty($anchor) ? '#' . $anchor : '';
-        // 参数组装
+        // 参數组装
         if (!empty($vars)) {
-            // 新增参数
+            // 新增参數
             if (Config::get('url_common_param')) {
                 $vars = http_build_query($vars);
                 $url .= $suffix . '?' . $vars . $anchor;
@@ -167,7 +167,7 @@ class Url
     {
         $request = Request::instance();
         if (0 === strpos($url, '/')) {
-            // 直接作为路由地址解析
+            // 直接作為路由地址解析
             $url = substr($url, 1);
         } elseif (false !== strpos($url, '\\')) {
             // 解析到类
@@ -238,7 +238,7 @@ class Url
         $request    = Request::instance();
         $rootDomain = Config::get('url_domain_root');
         if (true === $domain) {
-            // 自动判断域名
+            // 自動判断域名
             $domain = Config::get('app_host') ?: $request->host();
 
             $domains = Route::rules('domain');
@@ -251,7 +251,7 @@ class Url
                             if (is_string($rule) && false === strpos($key, '*') && 0 === strpos($url, $rule)) {
                                 $url    = ltrim($url, $rule);
                                 $domain = $key;
-                                // 生成对应子域名
+                                // 產生對应子域名
                                 if (!empty($rootDomain)) {
                                     $domain .= $rootDomain;
                                 }
@@ -324,7 +324,7 @@ class Url
         return false;
     }
 
-    // 指定当前生成URL地址的root
+    // 指定当前產生URL地址的root
     public static function root($root)
     {
         self::$root = $root;

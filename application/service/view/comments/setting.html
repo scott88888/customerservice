@@ -30,18 +30,18 @@
 <div class="layui-row layui-col-space10" id="container">
     <div class="layui-col-md12">
         <div class="layui-card">
-            <div class="layui-card-header">评价设置</div>
+            <div class="layui-card-header">評價設定</div>
             <div class="layui-card-body layui-row layui-col-space10 layui-form" v-show="loading">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">评价说明</label>
+                    <label class="layui-form-label">評價说明</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title"  v-model="list.title" value=""  placeholder="請輸入评价说明" autocomplete="off" class="layui-input" style="width: 50%">
+                        <input type="text" name="title"  v-model="list.title" value=""  placeholder="請輸入評價说明" autocomplete="off" class="layui-input" style="width: 50%">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">评价條目<br><span>(最多限5條)</span></label>
+                    <label class="layui-form-label">評價條目<br><span>(最多限5條)</span></label>
                     <div class="layui-input-block comments" v-for="(item,index) in list.comments" :key="index">
-                        <input type="text"  placeholder="請輸入评价说明" autocomplete="off" class="layui-input" style="width: 30%;display: inline-block" v-model="list.comments[index]">
+                        <input type="text"  placeholder="請輸入評價说明" autocomplete="off" class="layui-input" style="width: 30%;display: inline-block" v-model="list.comments[index]">
                         <div class="star">
                             <img src="__image__/index/star-light.png" alt="">
                             <img src="__image__/index/star-light.png" alt="">
@@ -59,15 +59,15 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">文字评价</label>
+                    <label class="layui-form-label">文字評價</label>
                     <div class="layui-input-block">
                         <input id="word_switch" type="checkbox" name="switch" lay-skin="switch" lay-filter="switchTest">
                     </div>
                 </div>
                 <div class="layui-form-item text-evaluate" v-if="list.word_switch == 'open'">
-                    <label class="layui-form-label">评价说明</label>
+                    <label class="layui-form-label">評價说明</label>
                     <div class="layui-input-block">
-                        <input type="text" maxlength="6" v-model="list.word_title"  placeholder="請輸入评价说明（限6个）" autocomplete="off" class="layui-input" style="width: 30%">
+                        <input type="text" maxlength="6" v-model="list.word_title"  placeholder="請輸入評價说明（限6个）" autocomplete="off" class="layui-input" style="width: 30%">
                     </div>
                 </div>
                 <div class="layui-input-block" style="min-height: 80px;">

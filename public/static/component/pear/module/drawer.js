@@ -31,7 +31,7 @@ layui.define(['jquery', 'element'], function(exports) {
 });
 
 /**
- * 源码
+ * 源碼
  * */
 (function(b, c) {
 	function a(d) {
@@ -70,7 +70,7 @@ layui.define(['jquery', 'element'], function(exports) {
 		init: function() {
 			var g = this;
 			if (!g.dom) {
-				console.log("未正确绑定弹窗容器");
+				console.log("未正确绑定彈窗容器");
 				return
 			}
 			var d = document.createElement("div");

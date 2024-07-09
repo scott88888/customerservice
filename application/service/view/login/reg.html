@@ -77,7 +77,7 @@
 
                 <div id="validatePanel" class="item" style="width: 137px;">
                     <input type="text" name="captcha" placeholder="請輸入驗證碼" maxlength="4">
-                    <img id="refreshCaptcha" class="validateImg"  src="{:url('captcha')}" onclick="this.src='{:url('captcha')}?_r='+Math.random();" title="不清楚? 点击换一个">
+                    <img id="refreshCaptcha" class="validateImg"  src="{:url('captcha')}" onclick="this.src='{:url('captcha')}?_r='+Math.random();" title="不清楚? 點擊换一个">
                 </div>
 
             </div>
@@ -99,15 +99,15 @@
 
         form.on('submit(login)', function(data) {
             if (data.field.username == '') {
-                layer.msg('使用者名稱不能为空');
+                layer.msg('使用者名稱不能為空');
                 return false;
             }
             if (data.field.password == '') {
-                layer.msg('密碼不能为空');
+                layer.msg('密碼不能為空');
                 return false;
             }
             if (data.field.captcha == '') {
-                layer.msg('驗證碼不能为空');
+                layer.msg('驗證碼不能為空');
                 return false;
             }
             layer.load();

@@ -154,7 +154,7 @@ class Menu
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '设置回收站',
+                                'name' => '設定回收站',
                                 'route' => 'platform/app/setrecycle',
                                 'is_admin' => false,
                             ],
@@ -185,12 +185,12 @@ class Menu
                 ]
             ],
             [
-                'name' => '设置',
+                'name' => '設定',
                 'route' => '',
                 'icon' => 'icon-setup',
                 'children' => [
                     [
-                        'name' => '系统设置',
+                        'name' => '系统設定',
                         'route' => 'platform/setting/index',
                         'icon' => 'icon-settings',
                         'is_admin' => true,
@@ -202,7 +202,7 @@ class Menu
                         'is_admin' => false,
                     ],
                     [
-                        'name' => '上传设置',
+                        'name' => '上传設定',
                         'route' => 'platform/storage/index',
                         'icon' => 'icon-settings',
                         'is_admin' => false,

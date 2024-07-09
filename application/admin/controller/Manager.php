@@ -120,7 +120,7 @@ class Manager extends Base
         $this->assign('lister', $data);
         $this->assign('group',$groupjson);
         $this->assign('title', "客服列表");
-        $this->assign('part','设置');
+        $this->assign('part','設定');
         return $this->fetch();
     }
 
@@ -158,8 +158,8 @@ class Manager extends Base
         $group =Admins::table('wolive_group')->where('business_id',$login['business_id'])->order('sort desc')->paginate(8);
         $page = $group->render();
 
-        $this->assign('part','设置');
-        $this->assign('title','客服分組设置');
+        $this->assign('part','設定');
+        $this->assign('title','客服分組設定');
         $this->assign('group',$group);
         $this->assign('page',$page);
         
@@ -182,7 +182,7 @@ class Manager extends Base
   
    
     /**
-     * 上传头像.
+     * 上传圖示.
      *
      * @return mixed
      */
@@ -350,7 +350,7 @@ class Manager extends Base
         $post =$this->request->post();
          $post['id']=$post['id']+0;
         if(!$post['id']){
-            return ['code'=>1,'msg'=>'参数非法'];
+            return ['code'=>1,'msg'=>'参數非法'];
         }
         $post['business_id'] =$_SESSION['Msg']['business_id'];
         $post['sort'] =$post['sort']+0;
@@ -584,7 +584,7 @@ class Manager extends Base
          }
          $sort = $this->request->post('sort/d',0);
          if (!is_int($sort)) {
-             $data =['code'=>1,'msg'=>'排序字段必须是整数'];
+             $data =['code'=>1,'msg'=>'排序字段必须是整數'];
              return $data;
          }
         $status = $this->request->post('status/d',0);

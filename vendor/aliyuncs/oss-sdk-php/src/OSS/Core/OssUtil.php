@@ -20,9 +20,9 @@ class OssUtil
     const OSS_MIN_PART_SIZE = 102400; // 100KB
 
     /**
-     * 生成query params
+     * 產生query params
      *
-     * @param array $options 关联数组
+     * @param array $options 关联數组
      * @return string 返回诸如 key1=value1&key2=value2
      */
     public static function toQueryString($options = array())
@@ -51,7 +51,7 @@ class OssUtil
     }
 
     /**
-     * 檢查是否是中文编码
+     * 檢查是否是中文编碼
      *
      * @param $str
      * @return int
@@ -62,10 +62,10 @@ class OssUtil
     }
 
     /**
-     * 检测是否GB2312编码
+     * 检测是否GB2312编碼
      *
      * @param string $str
-     * @return boolean false UTF-8编码  TRUE GB2312编码
+     * @return boolean false UTF-8编碼  TRUE GB2312编碼
      */
     public static function isGb2312($str)
     {
@@ -87,7 +87,7 @@ class OssUtil
     }
 
     /**
-     * 检测是否GBK编码
+     * 检测是否GBK编碼
      *
      * @param string $str
      * @param boolean $gbk
@@ -116,9 +116,9 @@ class OssUtil
     /**
      * 检验bucket名稱是否合法
      * bucket的命名规范：
-     * 1. 只能包括小写字母，数字
-     * 2. 必须以小写字母或者数字开头
-     * 3. 长度必须在3-63字节之间
+     * 1. 只能包括小写字母，數字
+     * 2. 必须以小写字母或者數字開头
+     * 3. 長度必须在3-63字节之间
      *
      * @param string $bucket Bucket名稱
      * @return boolean
@@ -135,9 +135,9 @@ class OssUtil
     /**
      * 检验object名稱是否合法
      * object命名规范:
-     * 1. 规则长度必须在1-1023字节之间
-     * 2. 使用UTF-8编码
-     * 3. 不能以 "/" "\\"开头
+     * 1. 规则長度必须在1-1023字节之间
+     * 2. 使用UTF-8编碼
+     * 3. 不能以 "/" "\\"開头
      *
      * @param string $object Object名稱
      * @return boolean
@@ -155,7 +155,7 @@ class OssUtil
 
 
     /**
-     * 判断字符串$str是不是以$findMe开始
+     * 判断字符串$str是不是以$findMe開始
      *
      * @param string $str
      * @param string $findMe
@@ -171,7 +171,7 @@ class OssUtil
     }
 
     /**
-     * 生成createBucketXmlBody接口的xml消息
+     * 產生createBucketXmlBody接口的xml消息
      *
      * @param string $storageClass
      * @return string
@@ -212,7 +212,7 @@ class OssUtil
     }
 
     /**
-     * 校验BUCKET/OBJECT/OBJECT GROUP是否为空
+     * 校验BUCKET/OBJECT/OBJECT GROUP是否為空
      *
      * @param  string $name
      * @param  string $errMsg
@@ -227,7 +227,7 @@ class OssUtil
     }
 
     /**
-     * 仅供测试使用的接口,请勿使用
+     * 仅供测试使用的接口,請勿使用
      *
      * @param $filename
      * @param $size
@@ -268,7 +268,7 @@ BBB;
     }
 
     /**
-     * 得到文件的md5编码
+     * 得到文件的md5编碼
      *
      * @param $filename
      * @param $from_pos
@@ -318,7 +318,7 @@ BBB;
     }
 
     /**
-     * 检测是否windows系统，因为windows系统默认编码为GBK
+     * 检测是否windows系统，因為windows系统默认编碼為GBK
      *
      * @return bool
      */
@@ -328,7 +328,7 @@ BBB;
     }
 
     /**
-     * 主要是由于windows系统编码是gbk，遇到中文时候，如果不进行转换处理会出现找不到文件的問題
+     * 主要是由于windows系统编碼是gbk，遇到中文时候，如果不进行转换处理会出现找不到文件的問題
      *
      * @param $file_path
      * @return string
@@ -360,7 +360,7 @@ BBB;
     }
 
     /**
-     * 生成DeleteMultiObjects接口的xml消息
+     * 產生DeleteMultiObjects接口的xml消息
      *
      * @param string[] $objects
      * @param bool $quiet
@@ -379,7 +379,7 @@ BBB;
     }
 
     /**
-     * 生成CompleteMultipartUpload接口的xml消息
+     * 產生CompleteMultipartUpload接口的xml消息
      *
      * @param array[] $listParts
      * @return string

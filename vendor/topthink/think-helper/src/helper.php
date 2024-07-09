@@ -11,7 +11,7 @@
 
 if (!function_exists('class_basename')) {
     /**
-     * 取得类名(不包含命名空间)
+     * 取得类名(不包含命名空間)
      *
      * @param  string|object $class
      * @return string

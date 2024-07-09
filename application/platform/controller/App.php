@@ -56,7 +56,7 @@ class App extends Base
         if (!$business) {
             return [
                 'code' => 1,
-                'msg' => '資料错误，请刷新頁面后重试',
+                'msg' => '資料錯誤，請刷新頁面后重试',
             ];
         }
 
@@ -131,7 +131,7 @@ class App extends Base
                     'is_delete' => 0,
                 ])->count();
                 if ($count && $this->admin['app_max_count'] && $count>= $this->admin['app_max_count']) {
-                    return ['code'=>1,'msg'=>'客服系统创建数量超过上限'];
+                    return ['code'=>1,'msg'=>'客服系统建立數量超过上限'];
                 }
                 $business = Business::get(['admin_id'=>$post['admin_id'],'business_name'=>$post['business_name'],'is_delete'=>0]);
                 if ($business) {
@@ -156,7 +156,7 @@ class App extends Base
             if ($res !== false) {
                 return ['code'=>0,'msg'=>'操作成功'];
             } else {
-                return ['code'=>1,'msg'=>'操作失敗，请重试'];
+                return ['code'=>1,'msg'=>'操作失敗，請重试'];
             }
         } else {
             $business = null;
@@ -166,7 +166,7 @@ class App extends Base
                 } else {
                     $business = Business::get(['id'=>$id,'admin_id'=>$this->admin['id']]);
                     if (empty($business)) {
-                        $this->error('您無此权限,请刷新');
+                        $this->error('您無此权限,請刷新');
                     }
                 }
                 $url = url('edit',['id'=>$id]);

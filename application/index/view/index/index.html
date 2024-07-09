@@ -490,7 +490,7 @@
 
                 $(".conversation").append(msg);
             });
-            // 接受视频请求
+            // 接受视频請求
             channels.bind("video",function (data) {
                 var msg = data.message;
                 var cha = data.channel;
@@ -499,7 +499,7 @@
 
                 layer.open({
                     type: 1,
-                    title: '申请框',
+                    title: '申請框',
                     area: ['260px', '160px'],
                     shade: 0.01,
                     fixed: true,
@@ -551,7 +551,7 @@
                 });
             });
 
-            // 接受拒绝视频请求
+            // 接受拒绝视频請求
             channels.bind("video-refuse",function (data) {
                 layer.alert(data.message);
 
@@ -759,7 +759,7 @@
     </div>
 </div>
 <div style="width: 40%;height: 90%;min-height:500px;min-width:500px;margin: 2% auto;position: relative;    box-shadow: 0 0 24px 0 rgb(15 66 76 / 25%);">
-      <!--  对话框头部 -->
+      <!--  對話框头部 -->
      <div class="header grey12" style="background-color:#{$theme};">
         <span id="services" style="color: #ffffff;margin-left: 32px;"></span>
         <span id='service_icon' class="layui-badge-dot layui-bg-green hidden" style="display:inline-block;width: 8px;height: 8px;border-radius: 8px;margin-left: 5px;"></span>
@@ -772,7 +772,7 @@
     </script>
     <div id="container"  style="width: 100%;height: 90%;position: absolute;top:64px; ">
     <div class="workarea">
-        <!--  对话内容部分 -->
+        <!--  對話内容部分 -->
         <div class="content" id="wrap">
             <ul class="conversation">
             </ul>
@@ -1075,11 +1075,11 @@
      var sid =$.cookie('services');
      if(sid == service_id){
 
-         //音频先加载
+         //音訊先加载
                 var audio_context;
                 var recorder;
                 var wavBlob;
-                //创建音频
+                //建立音訊
                 try {
                     // webkit shim
                     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -1112,7 +1112,7 @@
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
-                                , time: 0 //20s后自动關閉
+                                , time: 0 //20s后自動關閉
                                 , btn: ['傳送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
@@ -1129,7 +1129,7 @@
                                             if (xhr.readyState == 4 && xhr.status == 200) {
                                                 jsonObject = JSON.parse(xhr.responseText);
 
-                                                voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音频消息</p></div>';
+                                                voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音訊消息</p></div>';
 
                                                     var sid = $('#channel').text();
 
@@ -1311,7 +1311,7 @@
                 url:'/admin/event/upload',
                 type: 'POST',
                 data: formData,
-                //这两个设置项必填
+                //这两个設定项必填
                 contentType: false,
                 processData: false,
                 success:function(res){
@@ -1321,7 +1321,7 @@
 
 
 
-            // 读取文件后将其显示在网頁中
+            // 读取文件后将其显示在網頁中
             reader.onload = function (e) {
                 var msg = '';
                 msg += '<img   src="' + e.target.result + '">';
@@ -1359,7 +1359,7 @@
             reader.readAsDataURL(blob);
         };
         document.getElementById('text_in').addEventListener('paste', function (e) {
-            // 新增到事件对象中的访问系统剪贴板的接口
+            // 新增到事件對象中的訪問系统剪贴板的接口
             var clipboardData = e.clipboardData,
                 i = 0,
                 items, item, types;
@@ -1378,7 +1378,7 @@
                         break;
                     }
                 }
-                // 判断是否为图片資料
+                // 判断是否為图片資料
                 if (item && item.kind === 'file' && item.type.match(/^image\//i)) {
                     imgReader(item);
                 }
@@ -1390,14 +1390,14 @@
       var element = layui.element;
     });
 
-    // 视频通话
+    // 视频通話
     var getvideo =function(){
 
         var times = (new Date()).valueOf();
         var sid =$.cookie('services');
         if(service_id == sid){
 
-            //申请
+            //申請
             $.ajax({
                 url:ROOT_URL+'/admin/event/apply',
                 type: 'post',

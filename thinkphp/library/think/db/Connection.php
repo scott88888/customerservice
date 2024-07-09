@@ -35,17 +35,17 @@ abstract class Connection
 
     /** @var string 当前SQL指令 */
     protected $queryStr = '';
-    // 返回或者影响记录数
+    // 返回或者影响记录數
     protected $numRows = 0;
-    // 事务指令数
+    // 事务指令數
     protected $transTimes = 0;
-    // 错误訊息
+    // 錯誤訊息
     protected $error = '';
 
-    /** @var PDO[] 資料库连接ID 支持多个连接 */
+    /** @var PDO[] 資料库連結ID 支持多个連結 */
     protected $links = [];
 
-    /** @var PDO 当前连接ID */
+    /** @var PDO 当前連結ID */
     protected $linkID;
     protected $linkRead;
     protected $linkWrite;
@@ -58,7 +58,7 @@ abstract class Connection
     protected static $event = [];
     // 使用Builder类
     protected $builder;
-    // 資料库连接参数配置
+    // 資料库連結参數配置
     protected $config = [
         // 資料库类型
         'type'            => '',
@@ -72,25 +72,25 @@ abstract class Connection
         'password'        => '',
         // 端口
         'hostport'        => '',
-        // 连接dsn
+        // 連結dsn
         'dsn'             => '',
-        // 資料库连接参数
+        // 資料库連結参數
         'params'          => [],
-        // 資料库编码默认采用utf8
+        // 資料库编碼默认采用utf8
         'charset'         => 'utf8',
         // 資料库表前缀
         'prefix'          => '',
         // 資料库调试模式
         'debug'           => false,
-        // 資料库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+        // 資料库部署方式:0 集中式(單一服务器),1 分布式(主从服务器)
         'deploy'          => 0,
         // 資料库读写是否分离 主从式有效
         'rw_separate'     => false,
-        // 读写分离后 主服务器数量
+        // 读写分离后 主服务器數量
         'master_num'      => 1,
         // 指定从服务器序号
         'slave_no'        => '',
-        // 模型写入后自动读取主服务器
+        // 模型写入后自動读取主服务器
         'read_master'     => false,
         // 是否严格檢查字段是否存在
         'fields_strict'   => true,
@@ -98,9 +98,9 @@ abstract class Connection
         'result_type'     => PDO::FETCH_ASSOC,
         // 資料集返回类型
         'resultset_type'  => 'array',
-        // 自动写入时间戳字段
+        // 自動写入時間戳字段
         'auto_timestamp'  => false,
-        // 时间字段取出后的默认时间格式
+        // 時間字段取出后的默认時間格式
         'datetime_format' => 'Y-m-d H:i:s',
         // 是否需要进行SQL性能分析
         'sql_explain'     => false,
@@ -112,7 +112,7 @@ abstract class Connection
         'break_reconnect' => false,
     ];
 
-    // PDO连接参数
+    // PDO連結参數
     protected $params = [
         PDO::ATTR_CASE              => PDO::CASE_NATURAL,
         PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
@@ -121,13 +121,13 @@ abstract class Connection
         PDO::ATTR_EMULATE_PREPARES  => false,
     ];
 
-    // 绑定参数
+    // 绑定参數
     protected $bind = [];
 
     /**
-     * 构造函数 读取資料库配置訊息
+     * 构造函數 读取資料库配置訊息
      * @access public
-     * @param array $config 資料库配置数组
+     * @param array $config 資料库配置數组
      */
     public function __construct(array $config = [])
     {
@@ -137,7 +137,7 @@ abstract class Connection
     }
 
     /**
-     * 取得新的查詢对象
+     * 取得新的查詢對象
      * @access protected
      * @return Query
      */
@@ -148,7 +148,7 @@ abstract class Connection
     }
 
     /**
-     * 取得当前连接器类对应的Builder类
+     * 取得当前連結器类對应的Builder类
      * @access public
      * @return string
      */
@@ -165,7 +165,7 @@ abstract class Connection
      * 调用Query类的查詢方法
      * @access public
      * @param string    $method 方法名稱
-     * @param array     $args 调用参数
+     * @param array     $args 调用参數
      * @return mixed
      */
     public function __call($method, $args)
@@ -174,9 +174,9 @@ abstract class Connection
     }
 
     /**
-     * 解析pdo连接的dsn訊息
+     * 解析pdo連結的dsn訊息
      * @access protected
-     * @param array $config 连接訊息
+     * @param array $config 連結訊息
      * @return string
      */
     abstract protected function parseDsn($config);
@@ -206,7 +206,7 @@ abstract class Connection
     abstract protected function getExplain($sql);
 
     /**
-     * 对返資料表字段訊息进行大小写转换出来
+     * 對返資料表字段訊息进行大小写转换出来
      * @access public
      * @param array $info 字段訊息
      * @return array
@@ -229,7 +229,7 @@ abstract class Connection
     }
 
     /**
-     * 取得資料库的配置参数
+     * 取得資料库的配置参數
      * @access public
      * @param string $config 配置名稱
      * @return mixed
@@ -240,7 +240,7 @@ abstract class Connection
     }
 
     /**
-     * 设置資料库的配置参数
+     * 設定資料库的配置参數
      * @access public
      * @param string|array      $config 配置名稱
      * @param mixed             $value 配置值
@@ -256,11 +256,11 @@ abstract class Connection
     }
 
     /**
-     * 连接資料库方法
+     * 連結資料库方法
      * @access public
-     * @param array         $config 连接参数
-     * @param integer       $linkNum 连接序号
-     * @param array|bool    $autoConnection 是否自动连接主資料库（用于分布式）
+     * @param array         $config 連結参數
+     * @param integer       $linkNum 連結序号
+     * @param array|bool    $autoConnection 是否自動連結主資料库（用于分布式）
      * @return PDO
      * @throws Exception
      */
@@ -272,13 +272,13 @@ abstract class Connection
             } else {
                 $config = array_merge($this->config, $config);
             }
-            // 连接参数
+            // 連結参數
             if (isset($config['params']) && is_array($config['params'])) {
                 $params = $config['params'] + $this->params;
             } else {
                 $params = $this->params;
             }
-            // 记录当前字段属性大小写设置
+            // 记录当前字段属性大小写設定
             $this->attrCase = $params[PDO::ATTR_CASE];
 
             // 資料返回类型
@@ -297,7 +297,7 @@ abstract class Connection
                     $this->links[$linkNum]->exec('SET SQL_MODE="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"');
                 }
                 if ($config['debug']) {
-                    // 记录資料库连接訊息
+                    // 记录資料库連結訊息
                     Log::record('[ DB ] CONNECT:[ UseTime:' . number_format(microtime(true) - $startTime, 6) . 's ] ' . $config['dsn'], 'sql');
                 }
             } catch (\PDOException $e) {
@@ -322,7 +322,7 @@ abstract class Connection
     }
 
     /**
-     * 取得PDO对象
+     * 取得PDO對象
      * @access public
      * @return \PDO|false
      */
@@ -339,9 +339,9 @@ abstract class Connection
      * 执行查詢 返回資料集
      * @access public
      * @param string        $sql sql指令
-     * @param array         $bind 参数绑定
+     * @param array         $bind 参數绑定
      * @param bool          $master 是否在主服务器读操作
-     * @param bool          $pdo 是否返回PDO对象
+     * @param bool          $pdo 是否返回PDO對象
      * @return mixed
      * @throws PDOException
      * @throws \Exception
@@ -361,15 +361,15 @@ abstract class Connection
 
         Db::$queryTimes++;
         try {
-            // 调试开始
+            // 调试開始
             $this->debug(true);
 
             // 预处理
             $this->PDOStatement = $this->linkID->prepare($sql);
 
-            // 是否为存储过程调用
+            // 是否為存储过程调用
             $procedure = in_array(strtolower(substr(trim($sql), 0, 4)), ['call', 'exec']);
-            // 参数绑定
+            // 参數绑定
             if ($procedure) {
                 $this->bindParam($bind);
             } else {
@@ -403,8 +403,8 @@ abstract class Connection
      * 执行语句
      * @access public
      * @param  string        $sql sql指令
-     * @param  array         $bind 参数绑定
-     * @param  Query         $query 查詢对象
+     * @param  array         $bind 参數绑定
+     * @param  Query         $query 查詢對象
      * @return int
      * @throws PDOException
      * @throws \Exception
@@ -424,15 +424,15 @@ abstract class Connection
 
         Db::$executeTimes++;
         try {
-            // 调试开始
+            // 调试開始
             $this->debug(true);
 
             // 预处理
             $this->PDOStatement = $this->linkID->prepare($sql);
 
-            // 是否为存储过程调用
+            // 是否為存储过程调用
             $procedure = in_array(strtolower(substr(trim($sql), 0, 4)), ['call', 'exec']);
-            // 参数绑定
+            // 参數绑定
             if ($procedure) {
                 $this->bindParam($bind);
             } else {
@@ -468,10 +468,10 @@ abstract class Connection
     }
 
     /**
-     * 根据参数绑定组装最终的SQL语句 便于调试
+     * 根據参數绑定组装最终的SQL语句 便于调试
      * @access public
-     * @param string    $sql 带参数绑定的sql语句
-     * @param array     $bind 参数绑定列表
+     * @param string    $sql 带参數绑定的sql语句
+     * @param array     $bind 参數绑定列表
      * @return string
      */
     public function getRealSql($sql, array $bind = [])
@@ -500,11 +500,11 @@ abstract class Connection
     }
 
     /**
-     * 参数绑定
-     * 支持 ['name'=>'value','id'=>123] 对应命名占位符
-     * 或者 ['value',123] 对应问号占位符
+     * 参數绑定
+     * 支持 ['name'=>'value','id'=>123] 對应命名占位符
+     * 或者 ['value',123] 對应问号占位符
      * @access public
-     * @param array $bind 要绑定的参数列表
+     * @param array $bind 要绑定的参數列表
      * @return void
      * @throws BindParamException
      */
@@ -533,9 +533,9 @@ abstract class Connection
     }
 
     /**
-     * 存储过程的输入输出参数绑定
+     * 存储过程的输入输出参數绑定
      * @access public
-     * @param array $bind 要绑定的参数列表
+     * @param array $bind 要绑定的参數列表
      * @return void
      * @throws BindParamException
      */
@@ -562,7 +562,7 @@ abstract class Connection
     }
 
     /**
-     * 获得資料集数组
+     * 获得資料集數组
      * @access protected
      * @param bool   $pdo 是否返回PDOStatement
      * @param bool   $procedure 是否存储过程
@@ -571,7 +571,7 @@ abstract class Connection
     protected function getResult($pdo = false, $procedure = false)
     {
         if ($pdo) {
-            // 返回PDOStatement对象处理
+            // 返回PDOStatement對象处理
             return $this->PDOStatement;
         }
         if ($procedure) {
@@ -630,7 +630,7 @@ abstract class Connection
     }
 
     /**
-     * 启动事务
+     * 启動事务
      * @access public
      * @return bool|mixed
      * @throws \Exception
@@ -668,7 +668,7 @@ abstract class Connection
     }
 
     /**
-     * 用于非自动送出狀態下面的查詢送出
+     * 用于非自動送出狀態下面的查詢送出
      * @access public
      * @return void
      * @throws PDOException
@@ -715,7 +715,7 @@ abstract class Connection
     }
 
     /**
-     * 生成定义保存点的SQL
+     * 產生定义保存點的SQL
      * @param $name
      * @return string
      */
@@ -725,7 +725,7 @@ abstract class Connection
     }
 
     /**
-     * 生成回滚到保存点的SQL
+     * 產生回滚到保存點的SQL
      * @param $name
      * @return string
      */
@@ -736,7 +736,7 @@ abstract class Connection
 
     /**
      * 批处理执行SQL语句
-     * 批处理的指令都认为是execute操作
+     * 批处理的指令都认為是execute操作
      * @access public
      * @param array $sqlArray SQL批处理指令
      * @return boolean
@@ -746,7 +746,7 @@ abstract class Connection
         if (!is_array($sqlArray)) {
             return false;
         }
-        // 自动启动事务支持
+        // 自動启動事务支持
         $this->startTrans();
         try {
             foreach ($sqlArray as $sql) {
@@ -763,7 +763,7 @@ abstract class Connection
     }
 
     /**
-     * 获得查詢次数
+     * 获得查詢次數
      * @access public
      * @param boolean $execute 是否包含所有查詢
      * @return integer
@@ -774,7 +774,7 @@ abstract class Connection
     }
 
     /**
-     * 获得执行次数
+     * 获得执行次數
      * @access public
      * @return integer
      */
@@ -784,7 +784,7 @@ abstract class Connection
     }
 
     /**
-     * 關閉資料库（或者重新连接）
+     * 關閉資料库（或者重新連結）
      * @access public
      * @return $this
      */
@@ -802,7 +802,7 @@ abstract class Connection
     /**
      * 是否断线
      * @access protected
-     * @param \PDOException|\Exception  $e 异常对象
+     * @param \PDOException|\Exception  $e 异常對象
      * @return bool
      */
     protected function isBreak($e)
@@ -857,7 +857,7 @@ abstract class Connection
     }
 
     /**
-     * 取得返回或者影响的记录数
+     * 取得返回或者影响的记录數
      * @access public
      * @return integer
      */
@@ -867,7 +867,7 @@ abstract class Connection
     }
 
     /**
-     * 取得最近的错误訊息
+     * 取得最近的錯誤訊息
      * @access public
      * @return string
      */
@@ -901,8 +901,8 @@ abstract class Connection
     /**
      * 資料库调试 记录当前SQL及分析性能
      * @access protected
-     * @param boolean $start 调试开始标记 true 开始 false 结束
-     * @param string  $sql 执行的SQL语句 留空自动取得
+     * @param boolean $start 调试開始标记 true 開始 false 结束
+     * @param string  $sql 执行的SQL语句 留空自動取得
      * @param boolean $master 主从标记
      * @return void
      */
@@ -913,7 +913,7 @@ abstract class Connection
             if ($start) {
                 Debug::remark('queryStartTime', 'time');
             } else {
-                // 记录操作结束时间
+                // 记录操作结束時間
                 Debug::remark('queryEndTime', 'time');
                 $runtime = Debug::getRangeTime('queryStartTime', 'queryEndTime');
                 $sql     = $sql ?: $this->getLastsql();
@@ -943,7 +943,7 @@ abstract class Connection
      * 触发SQL事件
      * @access protected
      * @param string    $sql SQL语句
-     * @param float     $runtime SQL运行时间
+     * @param float     $runtime SQL运行時間
      * @param mixed     $explain SQL分析
      * @param  bool     $master 主从标记
      * @return void
@@ -973,7 +973,7 @@ abstract class Connection
     }
 
     /**
-     * 初始化資料库连接
+     * 初始化資料库連結
      * @access protected
      * @param boolean $master 是否主服务器
      * @return void
@@ -994,13 +994,13 @@ abstract class Connection
                 $this->linkID = $this->linkRead;
             }
         } elseif (!$this->linkID) {
-            // 默认单資料库
+            // 默认單資料库
             $this->linkID = $this->connect();
         }
     }
 
     /**
-     * 连接分布式服务器
+     * 連結分布式服务器
      * @access protected
      * @param boolean $master 主服务器
      * @return PDO
@@ -1025,11 +1025,11 @@ abstract class Connection
                 // 指定服务器读
                 $r = $this->config['slave_no'];
             } else {
-                // 读操作连接从服务器 每次随机连接的資料库
+                // 读操作連結从服务器 每次随机連結的資料库
                 $r = floor(mt_rand($this->config['master_num'], count($_config['hostname']) - 1));
             }
         } else {
-            // 读写操作不区分服务器 每次随机连接的資料库
+            // 读写操作不区分服务器 每次随机連結的資料库
             $r = floor(mt_rand(0, count($_config['hostname']) - 1));
         }
         $dbMaster = false;
@@ -1056,7 +1056,7 @@ abstract class Connection
         if ($this->PDOStatement) {
             $this->free();
         }
-        // 關閉连接
+        // 關閉連結
         $this->close();
     }
 }

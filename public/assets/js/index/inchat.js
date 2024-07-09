@@ -567,7 +567,7 @@ var init = function () {
                     $("#img_head").addClass("icon_gray");
                 }
 
-                // 问候语
+                // 問候語
                 var msg = '';
                 msg += '<li class="chatmsg_no"><div style="position: absolute;top:0px;left:0px;">';
                 msg += '<img  class="my-circle" src="' + data.avatar + '" width="46px" height="46px"></div>';
@@ -714,7 +714,7 @@ function getanswer(id,question){
         }
     });
 }
-// 取得排队的数量
+// 取得排队的數量
 function getnums(id){
     var value ="";
     $.ajax({

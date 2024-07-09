@@ -70,7 +70,7 @@ class Mapp extends Mbase
     {
         $post = $this->request->post();
         if(!isset($post['username']) || !isset($post['password'])){
-            $this->error('参数不完整!', url("/Mobile/mapp/login"));
+            $this->error('参數不完整!', url("/Mobile/mapp/login"));
         }
 
         $post['user_name'] =htmlspecialchars($post['username']);
@@ -93,7 +93,7 @@ class Mapp extends Mbase
 
         if (!$admin) {
 
-            $this->error('登入使用者名稱或密碼错误');
+            $this->error('登入使用者名稱或密碼錯誤');
         }
 
         // 取得登入資料
@@ -265,7 +265,7 @@ class Mapp extends Mbase
   }
 
     /**
-     * .对话頁面
+     * .對話頁面
      * [chat description]
      * @return [type] [description]
      */
@@ -334,7 +334,7 @@ class Mapp extends Mbase
     $data = $userAdmin->where('business_id', $login['business_id'])->paginate(3, false, $pageParam);
     if($data->count() == 0){
     
-       $this->assign('content','暂时没有留言資料');
+       $this->assign('content','暫时没有留言資料');
     }else{
        $this->assign('content',"");
     }

@@ -34,7 +34,7 @@ abstract class OneToOne extends Relation
     protected $relation;
 
     /**
-     * 设置join类型
+     * 設定join类型
      * @access public
      * @param string $type JOIN类型
      * @return $this
@@ -48,7 +48,7 @@ abstract class OneToOne extends Relation
     /**
      * 预载入关联查詢（JOIN方式）
      * @access public
-     * @param Query    $query       查詢对象
+     * @param Query    $query       查詢對象
      * @param string   $relation    关联名
      * @param string   $subRelation 子关联
      * @param \Closure $closure     闭包條件
@@ -143,7 +143,7 @@ abstract class OneToOne extends Relation
     /**
      * 预载入关联查詢（資料）
      * @access public
-     * @param Model    $result      資料对象
+     * @param Model    $result      資料對象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -161,9 +161,9 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 保存（新增）当前关联資料对象
+     * 保存（新增）当前关联資料對象
      * @access public
-     * @param mixed $data 資料 可以使用数组 关联模型对象 和 关联对象的主键
+     * @param mixed $data 資料 可以使用數组 关联模型對象 和 关联對象的主键
      * @return Model|false
      */
     public function save($data)
@@ -178,7 +178,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 设置预载入方式
+     * 設定预载入方式
      * @access public
      * @param integer $type 预载入方式 0 JOIN查詢 1 IN查詢
      * @return $this
@@ -227,7 +227,7 @@ abstract class OneToOne extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  資料对象
+     * @param Model    $result  資料對象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -236,11 +236,11 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 一对一 关联模型预查詢拼装
+     * 一對一 关联模型预查詢拼装
      * @access public
      * @param string $model    模型名稱
      * @param string $relation 关联名
-     * @param Model  $result   模型对象实例
+     * @param Model  $result   模型對象实例
      * @return void
      */
     protected function match($model, $relation, &$result)
@@ -273,8 +273,8 @@ abstract class OneToOne extends Relation
     /**
      * 绑定关联属性到父模型
      * @access protected
-     * @param Model $model    关联模型对象
-     * @param Model $result   父模型对象
+     * @param Model $model    关联模型對象
+     * @param Model $result   父模型對象
      * @param array $bindAttr 绑定属性
      * @return void
      * @throws Exception
@@ -292,9 +292,9 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 一对一 关联模型预查詢（IN方式）
+     * 一對一 关联模型预查詢（IN方式）
      * @access public
-     * @param object        $model       关联模型对象
+     * @param object        $model       关联模型對象
      * @param array         $where       关联预查詢條件
      * @param string        $key         关联键名
      * @param string        $relation    关联名
@@ -324,7 +324,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 创建关联统计子查詢
+     * 建立关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计資料别名

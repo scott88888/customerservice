@@ -46,7 +46,7 @@ class Formatter
     }
 
     /**
-     * 设置外观标识
+     * 設定外观標識
      * @param bool $decorated 是否美化文字
      */
     public function setDecorated($decorated)
@@ -55,7 +55,7 @@ class Formatter
     }
 
     /**
-     * 取得外观标识
+     * 取得外观標識
      * @return bool
      */
     public function isDecorated()
@@ -64,9 +64,9 @@ class Formatter
     }
 
     /**
-     * 新增一个新样式
-     * @param string $name  样式名
-     * @param Style  $style 样式实例
+     * 新增一个新樣式
+     * @param string $name  樣式名
+     * @param Style  $style 樣式实例
      */
     public function setStyle($name, Style $style)
     {
@@ -74,7 +74,7 @@ class Formatter
     }
 
     /**
-     * 是否有这个样式
+     * 是否有这个樣式
      * @param string $name
      * @return bool
      */
@@ -84,7 +84,7 @@ class Formatter
     }
 
     /**
-     * 取得样式
+     * 取得樣式
      * @param string $name
      * @return Style
      * @throws \InvalidArgumentException
@@ -99,7 +99,7 @@ class Formatter
     }
 
     /**
-     * 使用所给的样式格式化文字
+     * 使用所给的樣式格式化文字
      * @param string $message 文字
      * @return string
      */
@@ -152,7 +152,7 @@ class Formatter
     }
 
     /**
-     * 根据字符串创建新的样式实例
+     * 根據字符串建立新的樣式实例
      * @param string $string
      * @return Style|bool
      */
@@ -187,7 +187,7 @@ class Formatter
     }
 
     /**
-     * 从堆栈应用样式到文字
+     * 从堆栈应用樣式到文字
      * @param string $text 文字
      * @return string
      */

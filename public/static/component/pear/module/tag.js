@@ -18,7 +18,7 @@ layui.define('jquery', function(exports){
     this.configs = {}
   };
   
-  //全局设置
+  //全局設定
   tag.prototype.set = function(options){
     var that = this;
     $.extend(true, that.config, options);
@@ -49,7 +49,7 @@ layui.define('jquery', function(exports){
 
   //基础事件体
   var call = {
-    //Tag点击
+    //Tag點擊
     tagClick: function(e, index, tagItemElem, options){
       options = options || {};
       var othis = tagItemElem || $(this)
@@ -156,7 +156,7 @@ layui.define('jquery', function(exports){
   var tag = new tag(), dom = $(document);
   tag.render();
 
-  dom.on('click', '.' + TAG_ITEM, call.tagClick); //tag 单击事件
+  dom.on('click', '.' + TAG_ITEM, call.tagClick); //tag 單击事件
   exports(MOD_NAME, tag);
 });
 

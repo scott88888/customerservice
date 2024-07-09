@@ -41,7 +41,7 @@ class Command
 
     /**
      * 构造方法
-     * @param string|null $name 命令名稱,如果没有设置则比如在 configure() 里设置
+     * @param string|null $name 命令名稱,如果没有設定则比如在 configure() 里設定
      * @throws \LogicException
      * @api
      */
@@ -61,7 +61,7 @@ class Command
     }
 
     /**
-     * 忽略驗證错误
+     * 忽略驗證錯誤
      */
     public function ignoreValidationErrors()
     {
@@ -69,7 +69,7 @@ class Command
     }
 
     /**
-     * 设置控制台
+     * 設定控制台
      * @param Console $console
      */
     public function setConsole(Console $console = null)
@@ -179,7 +179,7 @@ class Command
     }
 
     /**
-     * 设置执行代码
+     * 設定执行程式碼
      * @param callable $code callable(InputInterface $input, OutputInterface $output)
      * @return Command
      * @throws \InvalidArgumentException
@@ -204,7 +204,7 @@ class Command
     }
 
     /**
-     * 合并参数定义
+     * 合并参數定义
      * @param bool $mergeArgs
      */
     public function mergeConsoleDefinition($mergeArgs = true)
@@ -231,7 +231,7 @@ class Command
     }
 
     /**
-     * 设置参数定义
+     * 設定参數定义
      * @param array|Definition $definition
      * @return Command
      * @api
@@ -250,7 +250,7 @@ class Command
     }
 
     /**
-     * 取得参数定义
+     * 取得参數定义
      * @return Definition
      * @api
      */
@@ -260,7 +260,7 @@ class Command
     }
 
     /**
-     * 取得当前指令的参数定义
+     * 取得当前指令的参數定义
      * @return Definition
      */
     public function getNativeDefinition()
@@ -269,7 +269,7 @@ class Command
     }
 
     /**
-     * 新增参数
+     * 新增参數
      * @param string $name        名稱
      * @param int    $mode        类型
      * @param string $description 描述
@@ -300,7 +300,7 @@ class Command
     }
 
     /**
-     * 设置指令名稱
+     * 設定指令名稱
      * @param string $name
      * @return Command
      * @throws \InvalidArgumentException
@@ -324,7 +324,7 @@ class Command
     }
 
     /**
-     * 设置描述
+     * 設定描述
      * @param string $description
      * @return Command
      */
@@ -345,7 +345,7 @@ class Command
     }
 
     /**
-     * 设置帮助訊息
+     * 設定帮助訊息
      * @param string $help
      * @return Command
      */
@@ -386,7 +386,7 @@ class Command
     }
 
     /**
-     * 设置别名
+     * 設定别名
      * @param string[] $aliases
      * @return Command
      * @throws \InvalidArgumentException
@@ -417,7 +417,7 @@ class Command
 
     /**
      * 取得简介
-     * @param bool $short 是否简单的
+     * @param bool $short 是否简單的
      * @return string
      */
     public function getSynopsis($short = false)

@@ -21,12 +21,12 @@ class Cache
     public static $instance = [];
 
     /**
-     * @var int 缓存读取次数
+     * @var int 缓存读取次數
      */
     public static $readTimes = 0;
 
     /**
-     * @var int 缓存写入次数
+     * @var int 缓存写入次數
      */
     public static $writeTimes = 0;
 
@@ -36,10 +36,10 @@ class Cache
     public static $handler;
 
     /**
-     * 连接缓存驱动
+     * 連結缓存驱動
      * @access public
-     * @param  array       $options 配置数组
-     * @param  bool|string $name    缓存连接标识 true 强制重新连接
+     * @param  array       $options 配置數组
+     * @param  bool|string $name    缓存連結標識 true 强制重新連結
      * @return Driver
      */
     public static function connect(array $options = [], $name = false)
@@ -69,9 +69,9 @@ class Cache
     }
 
     /**
-     * 自动初始化缓存
+     * 自動初始化缓存
      * @access public
-     * @param  array $options 配置数组
+     * @param  array $options 配置數组
      * @return Driver
      */
     public static function init(array $options = [])
@@ -79,7 +79,7 @@ class Cache
         if (is_null(self::$handler)) {
             if (empty($options) && 'complex' == Config::get('cache.type')) {
                 $default = Config::get('cache.default');
-                // 取得默认缓存配置，并连接
+                // 取得默认缓存配置，并連結
                 $options = Config::get('cache.' . $default['type']) ?: $default;
             } elseif (empty($options)) {
                 $options = Config::get('cache');
@@ -92,9 +92,9 @@ class Cache
     }
 
     /**
-     * 切换缓存类型 需要配置 cache.type 为 complex
+     * 切换缓存类型 需要配置 cache.type 為 complex
      * @access public
-     * @param  string $name 缓存标识
+     * @param  string $name 缓存標識
      * @return Driver
      */
     public static function store($name = '')
@@ -122,7 +122,7 @@ class Cache
     /**
      * 读取缓存
      * @access public
-     * @param  string $name    缓存标识
+     * @param  string $name    缓存標識
      * @param  mixed  $default 默认值
      * @return mixed
      */
@@ -136,9 +136,9 @@ class Cache
     /**
      * 写入缓存
      * @access public
-     * @param  string   $name   缓存标识
+     * @param  string   $name   缓存標識
      * @param  mixed    $value  存储資料
-     * @param  int|null $expire 有效时间 0为永久
+     * @param  int|null $expire 有效時間 0為永久
      * @return boolean
      */
     public static function set($name, $value, $expire = null)
@@ -149,10 +149,10 @@ class Cache
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param  string $name 缓存变量名
-     * @param  int    $step 步长
+     * @param  int    $step 步長
      * @return false|int
      */
     public static function inc($name, $step = 1)
@@ -163,10 +163,10 @@ class Cache
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param  string $name 缓存变量名
-     * @param  int    $step 步长
+     * @param  int    $step 步長
      * @return false|int
      */
     public static function dec($name, $step = 1)
@@ -179,7 +179,7 @@ class Cache
     /**
      * 刪除缓存
      * @access public
-     * @param  string $name 缓存标识
+     * @param  string $name 缓存標識
      * @return boolean
      */
     public static function rm($name)
@@ -221,7 +221,7 @@ class Cache
      * @access public
      * @param  string $name   缓存变量名
      * @param  mixed  $value  存储資料
-     * @param  int    $expire 有效时间 0为永久
+     * @param  int    $expire 有效時間 0為永久
      * @return mixed
      */
     public static function remember($name, $value, $expire = null)
@@ -235,7 +235,7 @@ class Cache
      * 缓存标签
      * @access public
      * @param  string       $name    标签名
-     * @param  string|array $keys    缓存标识
+     * @param  string|array $keys    缓存標識
      * @param  bool         $overlay 是否覆盖
      * @return Driver
      */

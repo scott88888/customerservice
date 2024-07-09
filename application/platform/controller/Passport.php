@@ -57,7 +57,7 @@ class Passport extends Controller
             Cookie::delete('token');
         });
 
-        //设置seo
+        //設定seo
         $option = Option::getList('title,logo,copyright,max_login_error,passport_bg,open_register', 0, 'admin');
         $this->assign('option',$option);
         parent::_initialize();
@@ -169,7 +169,7 @@ class Passport extends Controller
                 SmsService::clearSession();
                 return [
                     'code' => 1,
-                    'msg' => '驗證碼错误次数过多，请重新发送',
+                    'msg' => '驗證碼錯誤次數过多，請重新发送',
                 ];
             }
             if ($data['sms_code'] != $verify['code']) {

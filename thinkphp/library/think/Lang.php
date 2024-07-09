@@ -24,7 +24,7 @@ class Lang
     private static $range = 'zh-cn';
 
     /**
-     * @var string 語言自动侦测的变量
+     * @var string 語言自動侦测的变量
      */
     protected static $langDetectVar = 'lang';
 
@@ -34,7 +34,7 @@ class Lang
     protected static $langCookieVar = 'think_var';
 
     /**
-     * @var int 語言 Cookie 的过期时间
+     * @var int 語言 Cookie 的过期時間
      */
     protected static $langCookieExpire = 3600;
 
@@ -44,7 +44,7 @@ class Lang
     protected static $allowLangList = [];
 
     /**
-     * @var array Accept-Language 转义为对应語言包名稱 系统默认配置
+     * @var array Accept-Language 转义為對应語言包名稱 系统默认配置
      */
     protected static $acceptLanguage = ['zh-hans-cn' => 'zh-cn'];
 
@@ -64,7 +64,7 @@ class Lang
     }
 
     /**
-     * 设置語言定义(不区分大小写)
+     * 設定語言定义(不区分大小写)
      * @access public
      * @param  string|array  $name  語言变量
      * @param  string        $value 語言值
@@ -150,7 +150,7 @@ class Lang
     {
         $range = $range ?: self::$range;
 
-        // 空参数返回所有定义
+        // 空参數返回所有定义
         if (empty($name)) {
             return self::$lang[$range];
         }
@@ -162,11 +162,11 @@ class Lang
         if (!empty($vars) && is_array($vars)) {
             /**
              * Notes:
-             * 为了检测的方便，数字索引的判断仅仅是参数数组的第一个元素的key为数字0
-             * 数字索引采用的是系统的 sprintf 函数替换，用法请参考 sprintf 函数
+             * 為了检测的方便，數字索引的判断仅仅是参數數组的第一个元素的key為數字0
+             * 數字索引采用的是系统的 sprintf 函數替换，用法請参考 sprintf 函數
              */
             if (key($vars) === 0) {
-                // 数字索引解析
+                // 數字索引解析
                 array_unshift($vars, $value);
                 $value = call_user_func_array('sprintf', $vars);
             } else {
@@ -184,7 +184,7 @@ class Lang
     }
 
     /**
-     * 自动侦测设置取得語言選擇
+     * 自動侦测設定取得語言選擇
      * @access public
      * @return string
      */
@@ -193,13 +193,13 @@ class Lang
         $langSet = '';
 
         if (isset($_GET[self::$langDetectVar])) {
-            // url 中设置了語言变量
+            // url 中設定了語言变量
             $langSet = strtolower($_GET[self::$langDetectVar]);
         } elseif (isset($_COOKIE[self::$langCookieVar])) {
-            // Cookie 中设置了語言变量
+            // Cookie 中設定了語言变量
             $langSet = strtolower($_COOKIE[self::$langCookieVar]);
         } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-            // 自动侦测浏览器語言
+            // 自動侦测浏览器語言
             preg_match('/^([a-z\d\-]+)/i', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $matches);
             $langSet     = strtolower($matches[1]);
             $acceptLangs = Config::get('header_accept_lang');
@@ -220,7 +220,7 @@ class Lang
     }
 
     /**
-     * 设置語言自动侦测的变量
+     * 設定語言自動侦测的变量
      * @access public
      * @param  string $var 变量名稱
      * @return void
@@ -231,7 +231,7 @@ class Lang
     }
 
     /**
-     * 设置語言的 cookie 保存变量
+     * 設定語言的 cookie 保存变量
      * @access public
      * @param  string $var 变量名稱
      * @return void
@@ -242,9 +242,9 @@ class Lang
     }
 
     /**
-     * 设置語言的 cookie 的过期时间
+     * 設定語言的 cookie 的过期時間
      * @access public
-     * @param  string $expire 过期时间
+     * @param  string $expire 过期時間
      * @return void
      */
     public static function setLangCookieExpire($expire)
@@ -253,7 +253,7 @@ class Lang
     }
 
     /**
-     * 设置允许的語言列表
+     * 設定允许的語言列表
      * @access public
      * @param  array $list 語言列表
      * @return void

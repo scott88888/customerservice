@@ -1,6 +1,6 @@
 [{
 		"id": 1,
-		"title": "工作空间",
+		"title": "工作空間",
 		"type": 0,
 		"icon": "layui-icon layui-icon-console",
 		"href": "",
@@ -75,7 +75,7 @@
 				"href": "view/document/select.html"
 			}, {
 				"id": 2013,
-				"title": "动态标签",
+				"title": "動态标签",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -177,7 +177,7 @@
 				"href": "view/document/tab.html"
 			},{
 				"id": 60132,
-				"title": "資料菜单",
+				"title": "資料選單",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -214,7 +214,7 @@
 				},
 				{
 					"id": 2044,
-					"title": "数字滚动",
+					"title": "數字滚動",
 					"icon": "layui-icon layui-icon-face-cry",
 					"type": 1,
 					"openType": "_iframe",
@@ -257,7 +257,7 @@
 	},
 	{
 		"id": "error",
-		"title": "错误頁面",
+		"title": "錯誤頁面",
 		"icon": "layui-icon layui-icon-face-cry",
 		"type": 0,
 		"href": "",
@@ -331,7 +331,7 @@
 			},
 			{
 				"id": 605,
-				"title": "行为日志",
+				"title": "行為日志",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",

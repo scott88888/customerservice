@@ -26,9 +26,9 @@ class MorphTo extends Relation
     protected $relation;
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param Model  $parent    上级模型对象
+     * @param Model  $parent    上级模型對象
      * @param string $morphType 多态字段名
      * @param string $morphKey  外键名
      * @param array  $alias     多态别名定义
@@ -78,10 +78,10 @@ class MorphTo extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
-     * @param integer $count    个数
+     * @param integer $count    个數
      * @param string  $id       关联表的统计字段
      * @param string  $joinType JOIN类型
      * @return Query
@@ -92,9 +92,9 @@ class MorphTo extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查詢條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -104,7 +104,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 解析模型的完整命名空间
+     * 解析模型的完整命名空間
      * @access protected
      * @param string $model 模型名（或者完整类名）
      * @return string
@@ -124,7 +124,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 设置多态别名
+     * 設定多态别名
      * @access public
      * @param array $alias 别名定义
      * @return $this
@@ -136,7 +136,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 移除关联查詢参数
+     * 移除关联查詢参數
      * @access public
      * @return $this
      */
@@ -201,7 +201,7 @@ class MorphTo extends Relation
     /**
      * 预载入关联查詢
      * @access public
-     * @param Model    $result      資料对象
+     * @param Model    $result      資料對象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -219,7 +219,7 @@ class MorphTo extends Relation
     /**
      * 关联统计
      * @access public
-     * @param Model    $result  資料对象
+     * @param Model    $result  資料對象
      * @param \Closure $closure 闭包
      * @return integer
      */
@@ -230,7 +230,7 @@ class MorphTo extends Relation
     /**
      * 多态MorphTo 关联模型预查詢
      * @access   public
-     * @param object $model       关联模型对象
+     * @param object $model       关联模型對象
      * @param string $relation    关联名
      * @param        $result
      * @param string $subRelation 子关联
@@ -251,7 +251,7 @@ class MorphTo extends Relation
     /**
      * 新增关联資料
      * @access public
-     * @param Model     $model  关联模型对象
+     * @param Model     $model  关联模型對象
      * @param string    $type   多态类型
      * @return Model
      */
@@ -286,7 +286,7 @@ class MorphTo extends Relation
     }
 
     /**
-     * 创建关联统计子查詢
+     * 建立关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计資料别名

@@ -4,7 +4,7 @@ $(function () {
             var msg = [];
             msg.push("[Error Code: " + xhr.status + "]");
             msg.push(xhr.statusText);
-            $.AMUI.message.error(msg.join("&nbsp;"), "请求出错")
+            $.AMUI.message.error(msg.join("&nbsp;"), "請求出错")
         }
     });
     layer.config({scrollbar: false, shift: 1, moveType: 1, closeBtn: false, maxWidth: 540});
@@ -32,7 +32,7 @@ $(function () {
             html.push('<li><i class="am-icon-home"></i> 首頁</li>');
             html.push('<li class="am-active">' + xhr.statusText + " " + xhr.status + "</li>");
             html.push('<li class="am-fr"><a href="javascript:;" onclick="$.AMUI.pjax.reload();" title="刷新"><i class="am-icon-refresh"></i>刷新(F5)</a></li>');
-            html.push('<li class="am-fr"><a href="javascript:;" onclick="window.open($.AMUI.pjax.location());" title="新窗口打开"><i class="am-icon-external-link"></i>新窗口打开</a></li>');
+            html.push('<li class="am-fr"><a href="javascript:;" onclick="window.open($.AMUI.pjax.location());" title="新視窗打開"><i class="am-icon-external-link"></i>新視窗打開</a></li>');
             html.push("</ol>");
             html.push('<iframe id="container" name="container" style="padding:0;width:100%;"></iframe>');
             $.AMUI.pjax.display({

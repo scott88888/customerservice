@@ -1,7 +1,7 @@
 /**
-	* @title 			数字输入法键盘插件【仿微信】wcKeyBoard-v1.0 beta (UTF-8)
+	* @title 			數字输入法键盘插件【仿微信】wcKeyBoard-v1.0 beta (UTF-8)
 	* @Create		hison
-	* @Timer		2018/04/27 15:30:45 GMT+0800 (中國标准时间)
+	* @Timer		2018/04/27 15:30:45 GMT+0800 (中國标准時間)
 */
 !function (win) {
 	var _doc = win.document, _docEle = _doc.documentElement,
@@ -18,7 +18,7 @@
 		wcKeyBoard = function (options) {
 			var that = this,
 				config = {
-					id: 'wcKeyBoard',				//弹窗ID标识 (不同ID对应不同弹窗)
+					id: 'wcKeyBoard',				//彈窗ID標識 (不同ID對应不同彈窗)
 					resId: '#wcKeyBoardRes'
 				};
 			if (!(that instanceof wcKeyBoard)) {
@@ -66,7 +66,7 @@
 		},
 		callback: function () {
 			var that = this, opt = that.opts, resObj = $(opt.resId);
-			// 处理数字
+			// 处理數字
 			$("#" + opt.id).on("click", ".number", function () {
 				if (resObj.text().indexOf(".") != -1 && resObj.text().substring(resObj.text().indexOf(".") + 1, resObj.text().length).length == 2) {
 					return;
@@ -80,7 +80,7 @@
 				resObj.text(resObj.text() + $(this).text());
 				resObj.val(resObj.text());
 			});
-			// 处理小数点
+			// 处理小數點
 			$("#" + opt.id).on("click", ".float", function () {
 				if ($.trim(resObj.text()) == "" || resObj.text().indexOf(".") != -1) {
 					return;
@@ -88,7 +88,7 @@
 				resObj.text(resObj.text() + $(this).text());
 				resObj.val(resObj.text());
 			});
-			// 处理数字0
+			// 处理數字0
 			$("#" + opt.id).on("click", ".zero", function () {
 				if (resObj.text().indexOf(".") != -1 && resObj.text().substring(resObj.text().indexOf(".") + 1, resObj.text().length).length == 2) {
 					return;

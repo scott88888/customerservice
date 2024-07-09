@@ -16,7 +16,7 @@ class Pusher extends Worker
     public $appInfo = array();
 
     /**
-     * 心跳时间
+     * 心跳時間
      *
      * @var int
      */
@@ -31,7 +31,7 @@ class Pusher extends Worker
 
 
     /**
-     * webhook 延迟设置
+     * webhook 延迟設定
      *
      * @var int
      */
@@ -43,7 +43,7 @@ class Pusher extends Worker
     protected $_globalDataSnapshot = array();
 
     /**
-     * 事件对应的客户端連結
+     * 事件對应的客户端連結
      *
      * @var array
      */
@@ -98,7 +98,7 @@ class Pusher extends Worker
     protected $_globalID = 1;
 
     /**
-     * 构造函数
+     * 构造函數
      *
      * @param string $socket_name
      * @param array $context
@@ -113,7 +113,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 进程启动后初始化事件分发器客户端
+     * 进程启動后初始化事件分发器客户端
      *
      * @return void
      */
@@ -127,14 +127,14 @@ class Pusher extends Worker
     }
 
     /**
-     * 客户端连接后
+     * 客户端連結后
      *
      * @param $connection
      */
     public function onClientConnect($connection) {
-        // 客户端有多少次没在规定时间发送心跳
+        // 客户端有多少次没在规定時間发送心跳
         $connection->clientNotSendPingCount = 0;
-        // 设置websocket握手事件回调
+        // 設定websocket握手事件回调
         $connection->onWebSocketConnect     = array($this, 'onWebSocketConnect');
     }
 
@@ -230,7 +230,7 @@ class Pusher extends Worker
             // {"event":"pusher:subscribe","data":{"channel":"my-channel"}}
             case 'pusher:subscribe':
                 $channel = $data['data']['channel'];
-                // private- 和 presence- 开头的channel需要驗證
+                // private- 和 presence- 開头的channel需要驗證
                 $channel_type = $this->getChannelType($channel);
                 if ($channel_type === 'presence') {
                     // {"event":"pusher:subscribe","data":{"auth":"b054014693241bcd9c26:10e3b628cb78e8bc4d1f44d47c9294551b446ae6ec10ef113d3d7e84e99763e6","channel_data":"{\"user_id\":100,\"user_info\":{\"name\":\"123\"}}","channel":"presence-channel"}}
@@ -314,12 +314,12 @@ class Pusher extends Worker
                 if (!isset($connection->channels[$channel])) {
                     return $connection->send($this->error(null, 'Client event rejected - you didn\'t subscribe this channel'));
                 }
-                // 事件必须以client-为前缀
+                // 事件必须以client-為前缀
                 if (strpos($event, 'client-') !== 0) {
                     return $connection->send($this->error(null, 'Client event rejected - client events must be prefixed by \'client-\''));
                 }
 
-                // @todo 檢查是否设置了可前端发布事件
+                // @todo 檢查是否設定了可前端发布事件
                 // {"event":"pusher:error","data":{"code":null,"message":"To send client events, you must enable this feature in the Settings page of your dashboard."}}
                 // 全局发布事件
                 $this->publishToClients($connection->appKey, $channel, $event, $data['data'], $connection->socketID);
@@ -567,7 +567,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 创建一个全局的客户端id
+     * 建立一个全局的客户端id
      *
      * @param $connection
      * @return string
@@ -579,7 +579,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 创建channel key，用于监听分发给该channel的事件
+     * 建立channel key，用于监听分发给该channel的事件
      *
      * @param $app_key
      * @param $channel
@@ -755,7 +755,7 @@ class Pusher extends Worker
         $user_events = $data['user_events'];
         $time_ms = microtime(true);
         foreach ($user_events as $app_key => $items) {
-            // 没设置user_event回调则忽略
+            // 没設定user_event回调则忽略
             if (empty($this->appInfo[$app_key]['user_event'])) {
                 continue;
             }
@@ -798,7 +798,7 @@ class Pusher extends Worker
         }
 
         foreach ($channel_events as $app_key => $item) {
-            // 没设置channel_event回调则忽略
+            // 没設定channel_event回调则忽略
             if (empty($this->appInfo[$app_key]['channel_hook'])) {
                 continue;
             }

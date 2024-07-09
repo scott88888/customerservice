@@ -276,7 +276,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         * 设置文件的meta訊息
+         * 設定文件的meta訊息
          */
         $from_bucket = $this->bucket;
         $from_object = "oss-php-sdk-test/upload-test-object-name.txt";
@@ -306,7 +306,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
 
         /**
-         *  刪除单个文件
+         *  刪除單个文件
          */
         $object = "oss-php-sdk-test/upload-test-object-name.txt";
 

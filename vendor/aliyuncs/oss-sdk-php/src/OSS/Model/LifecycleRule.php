@@ -40,7 +40,7 @@ class LifecycleRule
     }
 
     /**
-     * 设置文件前缀
+     * 設定文件前缀
      *
      * @param string $prefix 文件前缀
      */
@@ -60,7 +60,7 @@ class LifecycleRule
     }
 
     /**
-     * 设置Lifecycle规则狀態
+     * 設定Lifecycle规则狀態
      *
      * @param string $status
      */

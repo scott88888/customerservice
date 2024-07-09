@@ -20,7 +20,7 @@ class Angular
         'tpl_cache_path'   => './cache/', // 模板缓存目录
         'tpl_cache_suffix' => '.php', // 模板缓存后缀
         'directive_prefix' => 'php-', // 指令前缀
-        'directive_max'    => 10000, // 指令的最大解析次数
+        'directive_max'    => 10000, // 指令的最大解析次數
     ];
     public        $tpl_var     = []; // 模板变量列表
     public        $tpl_file    = ''; // 当前要解析的模板文件
@@ -54,7 +54,7 @@ class Angular
      */
     public function getTplContent($tpl_file)
     {
-        // 如果长度超过255, 直接当模板内容返回
+        // 如果長度超过255, 直接当模板内容返回
         if (strlen($tpl_file) > 255) {
             return $tpl_file;
         }
@@ -64,13 +64,13 @@ class Angular
             return file_get_contents($tpl_file);
         }
 
-        // 如果有模板后缀, 直接当绝对地址
+        // 如果有模板后缀, 直接当绝對地址
         if (strpos($tpl_file, $this->config['tpl_suffix']) > 0) {
             $this->tpl_file = $tpl_file;
             return file_get_contents($tpl_file);
         }
 
-        // 根据模板目录定位文件
+        // 根據模板目录定位文件
         $tpl_file_path = $this->config['tpl_path'] . $tpl_file . $this->config['tpl_suffix'];
         if (is_file($tpl_file_path)) {
             $this->tpl_file = $tpl_file_path;
@@ -88,21 +88,21 @@ class Angular
      */
     public function fetch($tpl_file, $tpl_var = [])
     {
-        // 缓存文件名文件路径连接上文件的修改时间, 然后计算md5值作为缓存文件名.
+        // 缓存文件名文件路径連結上文件的修改時間, 然后计算md5值作為缓存文件名.
         $cache_file = $this->config['tpl_cache_path'] . md5($tpl_file) . $this->config['tpl_cache_suffix'];
         if (!file_exists($cache_file) || $this->config['debug']) {
-            // 调试模式或换成不存在时, 重新生成编译缓存
+            // 调试模式或换成不存在时, 重新產生编译缓存
             $cache_dir = dirname($cache_file);
             if (!is_dir($cache_dir)) {
                 mkdir($cache_dir, 0777);
             }
 
-            // 编译生成缓存
+            // 编译產生缓存
             $content = $this->compiler($tpl_file, $tpl_var);
             file_put_contents($cache_file, $content);
         }
 
-        // 模板阵列变量分解成为独立变量
+        // 模板阵列变量分解成為独立变量
         if (!is_null($this->tpl_var)) {
             extract($this->tpl_var, EXTR_OVERWRITE);
         }
@@ -128,7 +128,7 @@ class Angular
     /**
      * 编译模板内容
      * @param string $tpl_file 模板内容
-     * @return string 编译后的php混编代码
+     * @return string 编译后的php混编程式碼
      */
     public function compiler($tpl_file, $tpl_var = [])
     {
@@ -143,8 +143,8 @@ class Angular
 
     /**
      * 解析模板标签属性
-     * @param string $content 要模板代码
-     * @return string 解析后的模板代码
+     * @param string $content 要模板程式碼
+     * @return string 解析后的模板程式碼
      */
     public function parse($content)
     {
@@ -162,13 +162,13 @@ class Angular
                     $content = $call($content, $sub, $this);
                 } else {
                     // 未找到解析规则
-                    throw new Exception("模板属性" . $this->config['directive_prefix'] . $sub['directive'] . '没有对应的解析规则');
+                    throw new Exception("模板属性" . $this->config['directive_prefix'] . $sub['directive'] . '没有對应的解析规则');
                 }
             } else {
                 break;
             }
             if ($num-- <= 0) {
-                throw new Exception('解析出错, 超过了最大属性数');
+                throw new Exception('解析出错, 超过了最大属性數');
             }
         }
         $content = $this->parseValue($content);
@@ -196,7 +196,7 @@ class Angular
             }
 
             if (false === strpos($tpl, $this->config['tpl_suffix'])) {
-                // 解析规则为 模块@主题/控制器/操作
+                // 解析规则為 模块@主题/控制器/操作
                 $tpl = $this->parseTemplateFile($tpl);
             }
             if (file_exists($tpl)) {
@@ -441,7 +441,7 @@ class Angular
     }
 
     /**
-     * 解析继承的代码块
+     * 解析继承的程式碼块
      * @return string
      */
     public function parseBlock($content, $match)
@@ -457,7 +457,7 @@ class Angular
     }
 
     /**
-     * 原样输出解析, 先把代码替换为 #xxx#的形式
+     * 原样输出解析, 先把程式碼替换為 #xxx#的形式
      * @return string
      */
     public function parseLiteral($content, $match)
@@ -478,7 +478,7 @@ class Angular
     }
 
     /**
-     * 原样输出反解析, 把代码还原
+     * 原样输出反解析, 把程式碼还原
      * @param type $content
      * @return type
      */
@@ -491,17 +491,17 @@ class Angular
     }
 
     /**
-     * 解析普通变量和函数{$title}{:function_name($var)}
+     * 解析普通变量和函數{$title}{:function_name($var)}
      * @param string $content 源模板内容
      * @return string 解析后的模板内容
      */
     public function parseValue($content)
     {
-        // {$vo.name} 转为 {$vo["name"]}
+        // {$vo.name} 转為 {$vo["name"]}
         $content = preg_replace('/\{(\$[\w\[\"\]]*)\.(\w*)([^\{\}]*)\}/', '{\1["\2"]\3}', $content);
         $content = preg_replace('/\{(\$[\w\[\"\]]*)\.(\w*)([^\{\}]*)\}/', '{\1["\2"]\3}', $content);
 
-        // {$var ?? 'xxx'} 转为 {$var ? $var : 'xxx'}
+        // {$var ?? 'xxx'} 转為 {$var ? $var : 'xxx'}
         $content = preg_replace('/\{(\$.*?)\?\s*\?(.*)\}/', '{\1?\1:\2}', $content);
 
         // {$var ?= 'xxx'} to {$var ? 'xxx':''}
@@ -509,7 +509,7 @@ class Angular
         $content = preg_replace('/\{(\$.*?)\}/', '<?php echo \1; ?>', $content);
         $content = preg_replace('/\{\:(.*?)\}/', '<?php echo \1; ?>', $content);
 
-        // 合并php代码结束符号和开始符号
+        // 合并php程式碼结束符号和開始符号
         $content = preg_replace('/\?>[\s\n]*<\?php/', '', $content);
 
         // 处理原样输出
@@ -522,7 +522,7 @@ class Angular
     }
 
     /**
-     * 解析php-selected指令, 方便選擇框做自动选中功能
+     * 解析php-selected指令, 方便選擇框做自動选中功能
      * @return string
      */
     public function parseSelected($content, $match)
@@ -539,7 +539,7 @@ class Angular
     }
 
     /**
-     * 解析php-checked指令, 方便复选框做自动选中功能
+     * 解析php-checked指令, 方便复选框做自動选中功能
      * @return string
      */
     public function parseChecked($content, $match)
@@ -556,7 +556,7 @@ class Angular
     }
 
     /**
-     * 解析php-model指令, 方便做内容編輯功能，value会自动转移特殊字符(htmlentities)， 保证 input的value正确输出
+     * 解析php-model指令, 方便做内容編輯功能，value会自動转移特殊字符(htmlentities)， 保证 input的value正确输出
      * @return string
      */
     public function parseModel($content, $match)
@@ -576,10 +576,10 @@ class Angular
     public static function extend($extends, $callback = null)
     {
         if (is_array($extends)) {
-            // 如果是数组, 就合并规则
+            // 如果是數组, 就合并规则
             self::$extends = array_merge(self::$extends, $extends);
         } else {
-            // 新增单个规则
+            // 新增單个规则
             self::$extends[$extends] = $callback;
         }
     }
@@ -588,7 +588,7 @@ class Angular
      * 从标签中移除指定属性表达式
      * @param string $tag   标签
      * @param string $exp   指令
-     * @param int    $limit 替换次数, 默认只替换一次
+     * @param int    $limit 替换次數, 默认只替换一次
      * @return string 替换后的标签
      */
     public static function removeExp($tag, $exp, $limit = 1)
@@ -601,7 +601,7 @@ class Angular
      * @param string $tag   标签
      * @param string $exp   指令
      * @param string $new   新的属性表达式
-     * @param int    $limit 替换次数, 默认只替换一次
+     * @param int    $limit 替换次數, 默认只替换一次
      * @return string 替换后的标签
      */
     public static function replaceExp($tag, $exp, $new, $limit = 1)
@@ -614,7 +614,7 @@ class Angular
      * @param string $content   要解析的模板内容
      * @param string $directive 指令名稱
      * @param string $val       属性值
-     * @return array 一个匹配的标签数组
+     * @return array 一个匹配的标签數组
      */
     public function match($content, $directive = '[\w]+', $val = '[^\4]*?')
     {
@@ -627,7 +627,7 @@ class Angular
         }
         $sub = $match[0];
         $tag = $match['tag'];
-        /* 如果是单标签, 就直接返回 */
+        /* 如果是單标签, 就直接返回 */
         if (substr($sub, -2) == '/>') {
             $match['html'] = $match[0];
             return $match;

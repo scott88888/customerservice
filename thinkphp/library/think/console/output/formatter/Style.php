@@ -47,7 +47,7 @@ class Style
     private $options = [];
 
     /**
-     * 初始化输出的样式
+     * 初始化输出的樣式
      * @param string|null $foreground 字体颜色
      * @param string|null $background 背景色
      * @param array       $options    格式
@@ -67,7 +67,7 @@ class Style
     }
 
     /**
-     * 设置字体颜色
+     * 設定字体颜色
      * @param string|null $color 颜色名
      * @throws \InvalidArgumentException
      * @api
@@ -88,7 +88,7 @@ class Style
     }
 
     /**
-     * 设置背景色
+     * 設定背景色
      * @param string|null $color 颜色名
      * @throws \InvalidArgumentException
      * @api
@@ -109,7 +109,7 @@ class Style
     }
 
     /**
-     * 设置字体格式
+     * 設定字体格式
      * @param string $option 格式名
      * @throws \InvalidArgumentException When the option name isn't defined
      * @api
@@ -143,7 +143,7 @@ class Style
     }
 
     /**
-     * 批量设置字体格式
+     * 批量設定字体格式
      * @param array $options
      */
     public function setOptions(array $options)
@@ -156,7 +156,7 @@ class Style
     }
 
     /**
-     * 应用样式到文字
+     * 应用樣式到文字
      * @param string $text 文字
      * @return string
      */

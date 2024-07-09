@@ -14,7 +14,7 @@ final class FormUploader
      * @param $key        上传文件名
      * @param $data       上传二进制流
      * @param $config     上传配置
-     * @param $params     自定义变量，规格参考
+     * @param $params     自訂变量，规格参考
      *                    http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
      * @param $mime       上传資料的mimeType
      *
@@ -71,7 +71,7 @@ final class FormUploader
      * @param $key        上传文件名
      * @param $filePath   上传文件的路径
      * @param $config     上传配置
-     * @param $params     自定义变量，规格参考
+     * @param $params     自訂变量，规格参考
      *                    http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
      * @param $mime       上传資料的mimeType
      *

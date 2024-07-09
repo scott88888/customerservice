@@ -2,7 +2,7 @@
 
 > 仿angularjs的php模板引擎
 
-## 目前实现了以下几种标签和用法
+## 目前實現了以下几种标签和用法
 **标签**  
 1. php-if  php-elseif  php-else  
 2. php-for  
@@ -29,23 +29,23 @@
 {$array['name']}  
 {$var ? '' : ''}  
 
-**函数调用**  
+**函數调用**  
 {:func()}  
 
 ## 结合框架使用
 
-> 具体的框架驱动可以在 https://github.com/php-angular 中找到
+> 具体的框架驱動可以在 https://github.com/php-angular 中找到
 
 ## 使用说明
 
-此模板引擎针对能够使用angularjs的php开发者编写, 主要特点是 不需要额外的标签定义, 全部使用属性定义, 写好模板文件在IDE中不会出现警告和错误, 格式化代码的时候很整洁, 因为套完的模板文件还是规范的html
+此模板引擎針對能够使用angularjs的php開发者编写, 主要特點是 不需要额外的标签定义, 全部使用属性定义, 写好模板文件在IDE中不会出现警告和錯誤, 格式化程式碼的时候很整洁, 因為套完的模板文件还是规范的html
 
-注: 一个标签上可以使用多个模板属性, 属性有前后顺序要求, 所以要注意属性的顺序, 在单标签上使用模板属性时一定要使用<code>/></code>结束, 如 <code>&lt;input php-if="$is_download" type="button" value="下载" />, &lt;img php-if="$article['pic']" src="{&dollar;article.pic}" /></code> 等等, 具体可参考后面章节的解析结果  
+注: 一个标签上可以使用多个模板属性, 属性有前后顺序要求, 所以要注意属性的顺序, 在單标签上使用模板属性时一定要使用<code>/></code>结束, 如 <code>&lt;input php-if="$is_download" type="button" value="下载" />, &lt;img php-if="$article['pic']" src="{&dollar;article.pic}" /></code> 等等, 具体可参考後面章节的解析结果  
 
 ## 文档
 看云文档托管平台: http://www.kancloud.cn/shuai/php-angular
 
-## 示例代码
+## 示例程式碼
 参考/test目录 
 
 ## 直接使用方法 /test/index.php
@@ -61,7 +61,7 @@ $config = [
     'tpl_cache_path'   => './cache/', // 模板缓存目录
     'tpl_cache_suffix' => '.php', // 模板后缀
     'attr'             => 'php-', // 标签前缀
-    'max_tag'          => 10000, // 标签的最大解析次数
+    'max_tag'          => 10000, // 标签的最大解析次數
 ];
 
 // 实例化
@@ -79,7 +79,7 @@ $data = array(
     ),
 );
 
-// 向模板引擎设置資料
+// 向模板引擎設定資料
 $view->assign($data);
 
 // 输出解析结果
@@ -111,7 +111,7 @@ $view->display('index');
     <body>
         <div class="box" php-show="$title">{$title}</div>
 
-        <div class="box" php-hide="$title">如果title的值为空, 则可以显示这條消息, 否则不显示</div>
+        <div class="box" php-hide="$title">如果title的值為空, 则可以显示这條消息, 否则不显示</div>
 
         <div class="box">
             <span>foreach by [1,2,3,4,5]</span>
@@ -156,7 +156,7 @@ $view->display('index');
         </div>
         
         <div class="box" php-if="$list">
-            <span>$list 不为空</span>
+            <span>$list 不為空</span>
         </div>
     </body>
 </html>
@@ -185,7 +185,7 @@ $view->display('index');
     <body>
         <?php if ($title) { ?><div class="box" ><?php echo $title; ?></div><?php } ?>
 
-        <?php if (!($title)) { ?><div class="box" >如果title的值为空, 则可以显示这條消息, 否则不显示</div><?php } ?>
+        <?php if (!($title)) { ?><div class="box" >如果title的值為空, 则可以显示这條消息, 否则不显示</div><?php } ?>
 
         <div class="box">
             <span>foreach by [1,2,3,4,5]</span>
@@ -230,7 +230,7 @@ $view->display('index');
         </div>
         
         <?php if ($list) { ?><div class="box" >
-            <span>$list 不为空</span>
+            <span>$list 不為空</span>
         </div><?php } ?>
     </body>
 </html>

@@ -16,7 +16,7 @@ $urls = array(
     "http://phpsdk.qiniudn.com/qiniu2.jpg",
 );
 
-//刷新目录需要联系七牛技术支持开通账户权限
+//刷新目录需要联系七牛技术支持開通账户权限
 $dirs = array(
     "http://phpsdk.qiniudn.com/test/"
 );
@@ -24,7 +24,7 @@ $dirs = array(
 $cdnManager = new CdnManager($auth);
 
 // 目前客户默认没有目录刷新权限，刷新会有400038报错，参考：https://developer.qiniu.com/fusion/api/1229/cache-refresh
-// 需要刷新目录请工单联系技术支持 https://support.qiniu.com/tickets/category
+// 需要刷新目录請工單联系技术支持 https://support.qiniu.com/tickets/category
 list($refreshResult, $refreshErr) = $cdnManager->refreshUrlsAndDirs($urls, $dirs);
 if ($refreshErr != null) {
     var_dump($refreshErr);

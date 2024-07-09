@@ -97,7 +97,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 					defaultMenu: 0,
 					accordion: param.menu.accordion,
 					url: param.menu.data,
-					data: param.menu.data, //async为false时，传入菜单数组
+					data: param.menu.data, //async為false时，传入選單數组
 					parseData: false,
 					change: function() {
 						compatible();
@@ -272,8 +272,8 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 					form + "</div><div class='layui-card-header' >标题 : &nbsp; " + title +
 					"</div><div class='layui-card-body' >内容 : &nbsp; " + context + "</div></div></div>", //支持取得DOM元素
 				btn: ['确认'], //按钮组
-				scrollbar: false, //屏蔽浏览器滚动條
-				yes: function(index) { //layer.msg('yes');    //点击確定回调
+				scrollbar: false, //屏蔽浏览器滚動條
+				yes: function(index) { //layer.msg('yes');    //點擊確定回调
 					layer.close(index);
 					showToast();
 				}
@@ -464,7 +464,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 		function buildLinkHtml() {
 			var links = "";
 			$.each(config.links, function(i, value) {
-				// value.target 存在，则为新窗口打开，增加 target="_blank" 属性
+				// value.target 存在，则為新視窗打開，增加 target="_blank" 属性
 				links += '<a class="more-menu-item" href="' + value.href + '" ' + (value.target ? ' target="_blank" ' : '') +
 					'>' +
 					'<i class="' + value.icon + '" style="font-size: 19px;"></i> ' + value.title +

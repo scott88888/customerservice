@@ -16,7 +16,7 @@ use think\db\Connection;
 use think\Log;
 
 /**
- * mysql資料库驱动
+ * mysql資料库驱動
  */
 class Mysql extends Connection
 {
@@ -24,9 +24,9 @@ class Mysql extends Connection
     protected $builder = '\\think\\db\\builder\\Mysql';
 
     /**
-     * 解析pdo连接的dsn訊息
+     * 解析pdo連結的dsn訊息
      * @access protected
-     * @param array $config 连接訊息
+     * @param array $config 連結訊息
      * @return string
      */
     protected function parseDsn($config)

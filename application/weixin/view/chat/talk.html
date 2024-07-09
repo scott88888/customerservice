@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <title>谈话頁面</title>
+    <title>谈話頁面</title>
     <script type="text/javascript" src="__libs__/jquery/jquery.min.js?v=__lkversion__"></script>
     <script src="__libs__/layui/layui.js?v=__lkversion__" type="text/javascript"></script>
     <script src="__libs__/jquery/jquery.cookie.js?v=__lkversion__" type="text/javascript"></script>
@@ -409,11 +409,11 @@
     
      var getaudio =function(){
 
-          //音频先加载
+          //音訊先加载
                 var audio_context;
                 var recorder;
                 var wavBlob;
-                //创建音频
+                //建立音訊
                 try {
                     // webkit shim
                     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -423,7 +423,7 @@
                     audio_context = new AudioContext;
 
                     if (!navigator.getUserMedia) {
-                        console.log('语音创建失敗');
+                        console.log('语音建立失敗');
                     }
                     ;
                 } catch (e) {
@@ -446,7 +446,7 @@
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
-                                , time: 0 //20s后自动關閉
+                                , time: 0 //20s后自動關閉
                                 , btn: ['发送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
@@ -463,7 +463,7 @@
                                             if (xhr.readyState == 4 && xhr.status == 200) {
                                                 jsonObject = JSON.parse(xhr.responseText);
 
-                                                voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音频消息</p></div>';
+                                                voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音訊消息</p></div>';
 
                                                     var sid = $('#channel').text();
                                                     var pic = $("#se_avatar").attr('src');
@@ -537,11 +537,11 @@
                         });
                     } else {
                         
-                       layer.msg('音频输入只支持https协议！');
+                       layer.msg('音訊输入只支持https协议！');
                     }
 
                 }, function (e) {
-                     layer.msg('音频输入只支持https协议！');
+                     layer.msg('音訊输入只支持https协议！');
                 });
     }
 
@@ -706,7 +706,7 @@ var getstate =function(obj){
     window.onload =init();
   
 
-   var e={'羊驼':'emo_01','神马':'emo_02','浮云':'emo_03','给力':'emo_04','围观':'emo_05','威武':'emo_06','熊猫':'emo_07','兔子':'emo_08','奥特曼':'emo_09','囧':'emo_10','互粉':'emo_11','礼物':'emo_12','微笑':'emo_13','嘻嘻':'emo_14','哈哈':'emo_15','可爱':'emo_16','可怜':'emo_17','抠鼻':'emo_18','吃惊':'emo_19','害羞':'emo_20','调皮':'emo_21','闭嘴':'emo_22','鄙视':'emo_23','爱你':'emo_24','流泪':'emo_25','偷笑':'emo_26','亲亲':'emo_27','生病':'emo_28','太开心':'emo_29','白眼':'emo_30','右哼哼':'emo_31','左哼哼':'emo_32','嘘':'emo_33','衰':'emo_34','委屈':'emo_35','呕吐':'emo_36','打哈欠':'emo_37','抱抱':'emo_38','怒':'emo_39','问号':'emo_40','馋':'emo_41','拜拜':'emo_42','思考':'emo_43','汗':'emo_44','打呼':'emo_45','睡':'emo_46','钱':'emo_47','失望':'emo_48','酷':'emo_49','好色':'emo_50','生气':'emo_51','鼓掌':'emo_52','晕':'emo_53','悲伤':'emo_54','抓狂':'emo_55','黑线':'emo_56','阴险':'emo_57','怒骂':'emo_58','心':'emo_59','伤心':'emo_60'};
+   var e={'羊驼':'emo_01','神马':'emo_02','浮云':'emo_03','给力':'emo_04','围观':'emo_05','威武':'emo_06','熊猫':'emo_07','兔子':'emo_08','奥特曼':'emo_09','囧':'emo_10','互粉':'emo_11','礼物':'emo_12','微笑':'emo_13','嘻嘻':'emo_14','哈哈':'emo_15','可爱':'emo_16','可怜':'emo_17','抠鼻':'emo_18','吃惊':'emo_19','害羞':'emo_20','调皮':'emo_21','闭嘴':'emo_22','鄙视':'emo_23','爱你':'emo_24','流泪':'emo_25','偷笑':'emo_26','亲亲':'emo_27','生病':'emo_28','太開心':'emo_29','白眼':'emo_30','右哼哼':'emo_31','左哼哼':'emo_32','嘘':'emo_33','衰':'emo_34','委屈':'emo_35','呕吐':'emo_36','打哈欠':'emo_37','抱抱':'emo_38','怒':'emo_39','问号':'emo_40','馋':'emo_41','拜拜':'emo_42','思考':'emo_43','汗':'emo_44','打呼':'emo_45','睡':'emo_46','钱':'emo_47','失望':'emo_48','酷':'emo_49','好色':'emo_50','生气':'emo_51','鼓掌':'emo_52','晕':'emo_53','悲伤':'emo_54','抓狂':'emo_55','黑线':'emo_56','阴险':'emo_57','怒骂':'emo_58','心':'emo_59','伤心':'emo_60'};
 
 var faceon = function () {
     $(".wl_faces_main").empty();
@@ -740,7 +740,7 @@ var faceon = function () {
     str +='<li><img title="偷笑" src="/upload/emoji/emo_26.gif" onclick="emoj(this)"/></li>';
     str +='<li><img title="亲亲"  src="/upload/emoji/emo_27.gif"  onclick="emoj(this)"/></li>';
     str +='<li><img title="生病" src="/upload/emoji/emo_28.gif" onclick="emoj(this)"/></li>';
-    str +='<li><img title="太开心" src="/upload/emoji/emo_29.gif" onclick="emoj(this)"/></li>';
+    str +='<li><img title="太開心" src="/upload/emoji/emo_29.gif" onclick="emoj(this)"/></li>';
     str +='<li><img title="白眼" src="/upload/emoji/emo_30.gif" onclick="emoj(this)"/></li>';
     str +='<li><img title="右哼哼" src="/upload/emoji/emo_31.gif" onclick="emoj(this)"/></li>';
     str +='<li><img title="左哼哼" src="/upload/emoji/emo_32.gif" onclick="emoj(this)"/></li>';

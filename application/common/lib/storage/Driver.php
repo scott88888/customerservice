@@ -44,14 +44,14 @@ abstract class Driver
             $type = 'images';
             if (isset($option['image_size']) && is_numeric($option['image_size'])) {
                 if (!$this->file->check(['size'=>1024*1024*$option['image_size']])) {
-                    throw new StorageException("图片大小受限，最大为:".$option['image_size']."MB");
+                    throw new StorageException("图片大小受限，最大為:".$option['image_size']."MB");
                 };
             }
         } else {
             $type = 'files';
             if (isset($option['file_size']) && is_numeric($option['file_size'])) {
                 if (!$this->file->check(['size'=>1024*1024*$option['file_size']])) {
-                    throw new StorageException("文件大小受限，最大为:".$option['file_size']."MB");
+                    throw new StorageException("文件大小受限，最大為:".$option['file_size']."MB");
                 };
             }
         }

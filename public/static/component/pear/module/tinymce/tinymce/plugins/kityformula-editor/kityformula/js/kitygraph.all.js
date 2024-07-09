@@ -41,7 +41,7 @@ var _p = {
 /**
  * @fileOverview
  *
- * 提供基本的动画支持
+ * 提供基本的動画支持
  */
 _p[0] = {
     value: function(require) {
@@ -63,7 +63,7 @@ _p[0] = {
         /**
      * @class kity.Animator
      * @catalog animate
-     * @description 表示一个动画启动器，可以作用于不同的对象进行动画
+     * @description 表示一个動画启動器，可以作用于不同的對象进行動画
      */
         var Animator = _p.r(11).createClass("Animator", {
             /**
@@ -75,16 +75,16 @@ _p[0] = {
          * @grammar new kity.Animator(option)
          *
          * @param  {any}      beginValue|opt.beginValue
-         *     动画的起始值，允许的类型有数字、数组、字面量、kity.Point、kity.Vector、kity.Box、kity.Matrix
+         *     動画的起始值，允许的类型有數字、數组、字面量、kity.Point、kity.Vector、kity.Box、kity.Matrix
          *
          * @param  {any}      finishValue|opt.beginValue
-         *     动画的结束值，类型应于起始值相同
+         *     動画的结束值，类型应于起始值相同
          *
          * @param  {Function} setter|opt.setter
-         *     值的使用函数，接受三个参数: function(target, value, timeline)
-         *         target   {object}        动画的目标
-         *         value    {any}           动画的当前值
-         *         timeline {kity.Timeline} 动画当前的时间线对象
+         *     值的使用函數，接受三个参數: function(target, value, timeline)
+         *         target   {object}        動画的目标
+         *         value    {any}           動画的当前值
+         *         timeline {kity.Timeline} 動画当前的時間线對象
          */
             constructor: function(beginValue, finishValue, setter) {
                 if (arguments.length == 1) {
@@ -101,25 +101,25 @@ _p[0] = {
             /**
          * @method start()
          * @for kity.Animator
-         * @description 使用当前的动画器启动在指定目标上启动动画
+         * @description 使用当前的動画器启動在指定目标上启動動画
          *
          * @grammar start(target, duration, easing, delay, callback) => {kity.Timeline}
          * @grammar start(target, option) => {kity.Timeline}
          *
          * @param  {object} target
-         *     启动动画的目标
+         *     启動動画的目标
          *
          * @param  {Number|String} duration|option.duration
-         *     [Optional] 动画的持续时间，如 300、"300ms"、"1.5min"
+         *     [Optional] 動画的持续時間，如 300、"300ms"、"1.5min"
          *
          * @param  {String|Function} easing|option.easing
-         *     [Optional] 动画使用的缓动函数，如 "ease"、"linear"、"swing"
+         *     [Optional] 動画使用的缓動函數，如 "ease"、"linear"、"swing"
          *
          * @param  {Number|String} delay|option.delay
-         *     [Optional] 动画的播放延迟时间
+         *     [Optional] 動画的播放延迟時間
          *
          * @param  {Function} callback|option.callback
-         *     [Optional] 动画结束后的回调函数
+         *     [Optional] 動画结束后的回调函數
          *
          * @example
          *
@@ -161,14 +161,14 @@ _p[0] = {
             /**
          * @method create()
          * @for kity.Animator
-         * @description 使用当前的动画器为指定目标创建时间线
+         * @description 使用当前的動画器為指定目标建立時間线
          *
          * @grammar create(target, duration, easing, callback) => {kity.Timeline}
          *
-         * @param  {object}            target   要创建的时间线的目标
-         * @param  {Number|String}     duration 要创建的时间线的长度，如 300、"5s"、"0.5min"
-         * @param  {String|Function}   easing   要创建的时间线的缓动函数，如 'ease'、'linear'、'swing'
-         * @param  {Function}          callback 时间线播放结束之后的回调函数
+         * @param  {object}            target   要建立的時間线的目标
+         * @param  {Number|String}     duration 要建立的時間线的長度，如 300、"5s"、"0.5min"
+         * @param  {String|Function}   easing   要建立的時間线的缓動函數，如 'ease'、'linear'、'swing'
+         * @param  {Function}          callback 時間线播放结束之后的回调函數
          *
          * @example
          *
@@ -206,7 +206,7 @@ _p[0] = {
          * @method reverse()
          * @for kity.Animator
          * @grammar reverse() => {kity.Animator}
-         * @description 创建一个与当前动画器相反的动画器
+         * @description 建立一个与当前動画器相反的動画器
          *
          * @example
          *
@@ -225,20 +225,20 @@ _p[0] = {
             /**
          * @method animate()
          * @for kity.Shape
-         * @description 在图形上播放使用指定的动画器播放动画，如果图形当前有动画正在播放，则会加入播放队列
+         * @description 在图形上播放使用指定的動画器播放動画，如果图形当前有動画正在播放，则会加入播放队列
          *
          * @grammar animate(animator, duration, easing, delay, callback)
          *
-         * @param  {object}            animator 播放动画使用的动画器
-         * @param  {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param  {Number|String}     delay    动画播放前的延时
-         * @param  {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param  {Function}          callback 播放结束之后的回调函数
+         * @param  {object}            animator 播放動画使用的動画器
+         * @param  {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param  {Number|String}     delay    動画播放前的延時
+         * @param  {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param  {Function}          callback 播放结束之后的回调函數
          *
          * @example
          *
          * ```js
-         * rect.animate(turnRed, 300); // turnRect 是一个动画器
+         * rect.animate(turnRed, 300); // turnRect 是一个動画器
          * rect.animate(expand, 500);  // turnRect 播放结束后播放 expand
          * ```
          */
@@ -264,7 +264,7 @@ _p[0] = {
             /**
          * @method timeline()
          * @for kity.Shape
-         * @description 获得当前正在播放的动画的时间线
+         * @description 获得当前正在播放的動画的時間线
          *
          * @grammar timeline() => {kity.Timeline}
          *
@@ -280,14 +280,14 @@ _p[0] = {
             /**
          * @method stop()
          * @for kity.Shape
-         * @description 停止当前正在播放的动画
+         * @description 停止当前正在播放的動画
          *
          * @grammar stop() => {this}
          *
          * @example
          *
          * ```js
-         * rect.stop(); // 停止 rect 上的动画
+         * rect.stop(); // 停止 rect 上的動画
          * ```
          */
             stop: function() {
@@ -517,23 +517,23 @@ _p[1] = {
 /**
  * @fileOverview
  *
- * 提供动画帧的基本支持
+ * 提供動画帧的基本支持
  */
 _p[2] = {
     value: function(require, exports) {
-        // 原生动画帧方法 polyfill
+        // 原生動画帧方法 polyfill
         var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(fn) {
             return setTimeout(fn, 1e3 / 60);
         };
         var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame || window.msCancelAnimationFrame || window.clearTimeout;
-        // 上一个请求的原生动画帧 id
+        // 上一个請求的原生動画帧 id
         var frameRequestId;
-        // 等待执行的帧动作的集合，这些帧的方法将在下个原生动画帧同步执行
+        // 等待执行的帧動作的集合，这些帧的方法将在下个原生動画帧同步执行
         var pendingFrames = [];
         /**
      * 新增一个帧到等待集合中
      *
-     * 如果新增的帧是序列的第一个，至少有一个帧需要被执行，则会请求一个原生动画帧来执行
+     * 如果新增的帧是序列的第一个，至少有一个帧需要被执行，则会請求一个原生動画帧来执行
      */
         function pushFrame(frame) {
             if (pendingFrames.push(frame) === 1) {
@@ -555,26 +555,26 @@ _p[2] = {
      * @method kity.requestFrame
      * @catalog animate
      * @grammar kity.requestFrame(action) => {frame}
-     * @description 请求一个帧，执行指定的动作。动作回调提供一些有用的訊息
+     * @description 請求一个帧，执行指定的動作。動作回调提供一些有用的訊息
      *
      * @param {Function} action
      *
-     *     要执行的动作，该动作回调有一个参数 frame，其中：
+     *     要执行的動作，该動作回调有一个参數 frame，其中：
      *
      *     frame.time {Number}
-     *         动作执行时的时间戳（ms）
+     *         動作执行时的時間戳（ms）
      *
      *     frame.index {Number}
-     *         当前执行的帧的编号（首帧为 0）
+     *         当前执行的帧的编号（首帧為 0）
      *
      *     frame.dur {Number}
-     *         上一帧至当前帧经过的时间，单位 ms
+     *         上一帧至当前帧经过的時間，單位 ms
      *
      *     frame.elapsed {Number}
-     *         从首帧开始到当前帧经过的时间，单位 ms
+     *         从首帧開始到当前帧经过的時間，單位 ms
      *
      *     frame.action {Number}
-     *         指向当前的帧处理函数
+     *         指向当前的帧处理函數
      *
      *     frame.next()
      *         表示下一帧继续执行。如果不调用该方法，将不会执行下一帧。
@@ -585,7 +585,7 @@ _p[2] = {
      * kity.requestFrame(function(frame) {
      *     console.log('平均帧率:' + frame.elapsed / (frame.index + 1));
      *
-     *     // 更新或渲染动作
+     *     // 更新或渲染動作
      *
      *     frame.next(); //继续执行下一帧
      * });
@@ -600,7 +600,7 @@ _p[2] = {
      * @method kity.releaseFrame
      * @catalog animate
      * @grammar kity.releaseFrame(frame)
-     * @description 释放一个已经请求过的帧，如果该帧在等待集合里，将移除，下个动画帧不会执行释放的帧
+     * @description 释放一个已经請求过的帧，如果该帧在等待集合里，将移除，下个動画帧不会执行释放的帧
      *
      * @param {frame} frame 使用 kity.requestFrame() 返回的帧
      *
@@ -636,17 +636,17 @@ _p[2] = {
             return frame;
         }
         /**
-     * 执行一个帧动作
+     * 执行一个帧動作
      */
         function executeFrame(frame) {
-            // 当前帧时间错
+            // 当前帧時間错
             var time = +new Date();
-            // 当上一帧到当前帧经过的时间
+            // 当上一帧到当前帧经过的時間
             var dur = time - frame.time;
             //
             // http://stackoverflow.com/questions/13133434/requestanimationframe-detect-stop
             // 浏览器最小化或切换标签，requestAnimationFrame 不会执行。
-            // 检测时间超过 200 ms（频率小于 5Hz ） 判定为计时器暂停，重置为一帧长度
+            // 检测時間超过 200 ms（频率小于 5Hz ） 判定為计时器暫停，重置為一帧長度
             //
             if (dur > 200) {
                 dur = 1e3 / 60;
@@ -667,7 +667,7 @@ _p[2] = {
 /**
  * @fileOverview
  *
- * 路径动画器，可以让一个物体沿着某个轨迹运动
+ * 路径動画器，可以让一个物体沿着某个轨迹运動
  */
 _p[3] = {
     value: function(require) {
@@ -679,7 +679,7 @@ _p[3] = {
      * @class kity.MotionAnimator
      * @catalog animate
      * @base kity.Animator
-     * @description 路径动画器，可以让一个物体沿着某个轨迹运动
+     * @description 路径動画器，可以让一个物体沿着某个轨迹运動
      *
      * @example
      *
@@ -694,8 +694,8 @@ _p[3] = {
          * @constructor
          * @for kity.MotionAnimator
          * @grammar new kity.MotionAnimator(path, doRotate)
-         * @param {kity.Path|String|PathSegment} path 运动的轨迹，或者是 kity.Path 对象
-         * @param {boolean} doRotate 是否让运动的目标沿着路径的切线方向旋转
+         * @param {kity.Path|String|PathSegment} path 运動的轨迹，或者是 kity.Path 對象
+         * @param {boolean} doRotate 是否让运動的目标沿着路径的切线方向旋转
          */
             constructor: function(path, doRotate) {
                 var me = this;
@@ -713,7 +713,7 @@ _p[3] = {
              * @property doRotate
              * @for kity.MotionAnimator
              * @type {boolean}
-             * @description 是否让运动的目标沿着路径的切线方向旋转
+             * @description 是否让运動的目标沿着路径的切线方向旋转
              *
              * @example
              *
@@ -726,7 +726,7 @@ _p[3] = {
              * @property motionPath
              * @for kity.MotionAnimator
              * @type  {kity.Path|String|PathSegment}
-             * @description 运动沿着的路径，可以在动画过程中更新
+             * @description 运動沿着的路径，可以在動画过程中更新
              */
                 this.motionPath = path;
             }
@@ -736,15 +736,15 @@ _p[3] = {
          * @method motion()
          * @catalog animate
          * @for kity.Shape
-         * @description 让图形沿着指定的路径运动
+         * @description 让图形沿着指定的路径运動
          *
          * @grammar motion(path, duration, easing, delay, callback) => this
          *
-         * @param {kity.Path|String|PathSegment} path 运动的轨迹，或者是 kity.Path 对象
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {kity.Path|String|PathSegment} path 运動的轨迹，或者是 kity.Path 對象
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             motion: function(path, duration, easing, delay, callback) {
                 return this.animate(new MotionAnimator(path), duration, easing, delay, callback);
@@ -758,7 +758,7 @@ _p[3] = {
 /**
  * @fileOverview
  *
- * 透明度动画器，让图形动画过度到指定的透明度。
+ * 透明度動画器，让图形動画过度到指定的透明度。
  */
 _p[4] = {
     value: function(require) {
@@ -767,7 +767,7 @@ _p[4] = {
      * @class kity.OpacityAnimator
      * @catalog animate
      * @base kity.Animator
-     * @description 透明度动画器，让图形动画过度到指定的透明度
+     * @description 透明度動画器，让图形動画过度到指定的透明度
      */
         var OpacityAnimator = _p.r(11).createClass("OpacityAnimator", {
             base: Animator,
@@ -796,15 +796,15 @@ _p[4] = {
          * @method fxOpacity()
          * @catalog animate
          * @for kity.Shape
-         * @description 让图形的透明度以动画的形式过渡到指定的值
+         * @description 让图形的透明度以動画的形式过渡到指定的值
          *
          * @grammar fxOpacity(opacity, duration, easing, delay, callback) => {this}
          *
-         * @param {Number}            opacity  动画的目标透明度
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number}            opacity  動画的目标透明度
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fxOpacity: function(opacity, duration, easing, delay, callback) {
                 return this.animate(new OpacityAnimator(opacity), duration, easing, delay, callback);
@@ -813,15 +813,15 @@ _p[4] = {
          * @method fadeTo()
          * @catalog animate
          * @for kity.Shape
-         * @description 让图形的透明度以动画的形式过渡到指定的值
+         * @description 让图形的透明度以動画的形式过渡到指定的值
          *
          * @grammar fadeTo(opacity, duration, easing, delay, callback) => {this}
          *
-         * @param {Number}            opacity  动画的目标透明度
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number}            opacity  動画的目标透明度
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fadeTo: function() {
                 return this.fxOpacity.apply(this, arguments);
@@ -834,10 +834,10 @@ _p[4] = {
          *
          * @grammar fadeIn(duration, easing, delay, callback) => {this}
          *
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fadeIn: function() {
                 return this.fxOpacity.apply(this, [ 1 ].concat([].slice.call(arguments)));
@@ -850,10 +850,10 @@ _p[4] = {
          *
          * @grammar fadeIn(duration, easing, delay, callback) => {this}
          *
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fadeOut: function() {
                 return this.fxOpacity.apply(this, [ 0 ].concat([].slice.call(arguments)));
@@ -867,7 +867,7 @@ _p[4] = {
 /**
  * @fileOverview
  *
- * 路径补间动画器，让图形从一个形状变为另一个形状
+ * 路径补间動画器，让图形从一个形状变為另一个形状
  */
 _p[5] = {
     value: function(require) {
@@ -878,7 +878,7 @@ _p[5] = {
      *
      * @class kity.PathAnimator
      * @base kity.Animator
-     * @description 路径补间动画器，让图形从一个形状变为另一个形状
+     * @description 路径补间動画器，让图形从一个形状变為另一个形状
      *
      * @example
      *
@@ -919,15 +919,15 @@ _p[5] = {
          *
          * @method fxPath()
          * @for kity.Shape
-         * @description 以动画的形式把路径变换为新路径
+         * @description 以動画的形式把路径变换為新路径
          *
          * @grammar fxPath(path, duration, easing, delay, callback) => {this}
          *
          * @param {String|PathSegment}   path     要变换新路径
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fxPath: function(path, duration, easing, delay, callback) {
                 return this.animate(new PathAnimator(path), duration, easing, delay, callback);
@@ -941,7 +941,7 @@ _p[5] = {
 /**
  * @fileOverview
  *
- * 提供支持目标旋转的动画器
+ * 提供支持目标旋转的動画器
  */
 _p[6] = {
     value: function(require) {
@@ -949,7 +949,7 @@ _p[6] = {
         /**
      * @class kity.RotateAnimator
      * @base Animator
-     * @description 提供支持目标旋转的动画器
+     * @description 提供支持目标旋转的動画器
      */
         var RotateAnimator = _p.r(11).createClass("RotateAnimator", {
             base: Animator,
@@ -977,15 +977,15 @@ _p[6] = {
             /**
          * @method fxRotate()
          * @for kity.Shape
-         * @description 让目标以动画旋转指定的角度
+         * @description 让目标以動画旋转指定的角度
          *
          * @grammar fxRotate(deg, duration, easing, delay) => {this}
          *
          * @param {Number}            deg      要旋转的角度
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fxRotate: function(deg, duration, easing, delay, callback) {
                 return this.animate(new RotateAnimator(deg), duration, easing, delay, callback);
@@ -999,7 +999,7 @@ _p[6] = {
 /**
  * @fileOverview
  *
- * 提供支持目标缩放的动画器
+ * 提供支持目标缩放的動画器
  */
 _p[7] = {
     value: function(require) {
@@ -1007,7 +1007,7 @@ _p[7] = {
         /**
      * @class kity.ScaleAnimator
      * @base kity.Animator
-     * @description 提供支持目标缩放的动画器
+     * @description 提供支持目标缩放的動画器
      */
         var ScaleAnimator = _p.r(11).createClass("ScaleAnimator", {
             base: Animator,
@@ -1037,16 +1037,16 @@ _p[7] = {
             /**
          * @method fxScale
          * @for kity.Shape
-         * @description 动画缩放当前的图形
+         * @description 動画缩放当前的图形
          *
          * @grammar fxScale(sx, sy, duration, easing, delay, callback) => {this}
          *
          * @param {Number} sx x 轴的缩放比例
          * @param {Number} sy y 轴的缩放比例
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fxScale: function(sx, sy, duration, easing, delay, callback) {
                 return this.animate(new ScaleAnimator(sx, sy), duration, easing, delay, callback);
@@ -1060,7 +1060,7 @@ _p[7] = {
 /**
  * @fileOverview
  *
- * 动画时间线的实现
+ * 動画時間线的實現
  */
 _p[8] = {
     value: function(require) {
@@ -1091,7 +1091,7 @@ _p[8] = {
      * @class kity.Timeline
      * @catalog animate
      * @mixins EventHandler
-     * @description 动画时间线
+     * @description 動画時間线
      */
         var Timeline = _p.r(11).createClass("Timeline", {
             mixins: [ EventHandler ],
@@ -1099,7 +1099,7 @@ _p[8] = {
          * @constructor
          * @for kity.Timeline
          * @private
-         * @description 时间线应该由动画器进行构造，不应手动创建
+         * @description 時間线应该由動画器进行构造，不应手動建立
          *
          */
             constructor: function(animator, target, duration, easing) {
@@ -1117,7 +1117,7 @@ _p[8] = {
             /**
          * @private
          *
-         * 让时间线进入下一帧
+         * 让時間线进入下一帧
          */
             nextFrame: function(frame) {
                 if (this.status != "playing") {
@@ -1134,7 +1134,7 @@ _p[8] = {
          * @method getPlayTime()
          * @for kity.Timeline
          * @grammar getPlayTime() => {Number}
-         * @description 获得当前播放的时间，取值区间为 [0, duration]
+         * @description 获得当前播放的時間，取值区间為 [0, duration]
          */
             getPlayTime: function() {
                 return this.rollbacking ? this.duration - this.time : this.time;
@@ -1143,7 +1143,7 @@ _p[8] = {
          * @method getTimeProportion()
          * @for kity.Timeline
          * @grammar getTimeProportion() => {Number}
-         * @description 获得当前播放时间的比例，取值区间为 [0, 1]
+         * @description 获得当前播放時間的比例，取值区间為 [0, 1]
          */
             getTimeProportion: function() {
                 return this.getPlayTime() / this.duration;
@@ -1152,7 +1152,7 @@ _p[8] = {
          * @method getValueProportion()
          * @for kity.Timeline
          * @grammar getValueProportion() => {Number}
-         * @description 获得当前播放时间对应值的比例，取值区间为 [0, 1]；该值实际上是时间比例值经过缓动函数计算之后的值。
+         * @description 获得当前播放時間對应值的比例，取值区间為 [0, 1]；该值实际上是時間比例值经过缓動函數计算之后的值。
          */
             getValueProportion: function() {
                 return this.easing(this.getPlayTime(), 0, 1, this.duration);
@@ -1161,7 +1161,7 @@ _p[8] = {
          * @method getValue()
          * @for kity.Timeline
          * @grammar getValue() => {any}
-         * @description 返回当前播放时间对应的值。
+         * @description 返回当前播放時間對应的值。
          */
             getValue: function() {
                 var b = this.beginValue;
@@ -1172,7 +1172,7 @@ _p[8] = {
             /**
          * @private
          *
-         * 把值通过动画器的 setter 设置到目标上
+         * 把值通過動画器的 setter 設定到目标上
          */
             setValue: function(value) {
                 this.lastValue = this.currentValue;
@@ -1193,7 +1193,7 @@ _p[8] = {
          * @method play()
          * @for kity.Timeline
          * @grammar play() => {this}
-         * @description 让时间线播放，如果时间线还没开始，或者已停止、已结束，则重头播放；如果是已暂停，从暂停的位置继续播放
+         * @description 让時間线播放，如果時間线还没開始，或者已停止、已结束，则重头播放；如果是已暫停，从暫停的位置继续播放
          */
             play: function() {
                 var lastStatus = this.status;
@@ -1223,10 +1223,10 @@ _p[8] = {
                 /**
              * @event play
              * @for kity.Timeline
-             * @description 在时间线播放后触发
+             * @description 在時間线播放后触发
              *
              * @param {String} event.lastStatus
-             *        表示播放前的上一个狀態，可能取值为 'ready'、'finished'、'stoped'、'paused'
+             *        表示播放前的上一个狀態，可能取值為 'ready'、'finished'、'stoped'、'paused'
              */
                 this.fire("play", new TimelineEvent(this, "play", {
                     lastStatus: lastStatus
@@ -1236,7 +1236,7 @@ _p[8] = {
             /**
          * @method pause()
          * @for kity.Timeline
-         * @description 暂停当前的时间线
+         * @description 暫停当前的時間线
          *
          * @grammar pause() => {this}
          */
@@ -1245,7 +1245,7 @@ _p[8] = {
                 /**
              * @event pause
              * @for kity.Timeline
-             * @description 暂停事件，在时间线暂停时触发
+             * @description 暫停事件，在時間线暫停时触发
              */
                 this.fire("pause", new TimelineEvent(this, "pause"));
                 frame.releaseFrame(this.frame);
@@ -1254,7 +1254,7 @@ _p[8] = {
             /**
          * @method stop()
          * @for kity.Timeline
-         * @description 停止当前时间线
+         * @description 停止当前時間线
          *
          * @grammar stop() => {this}
          */
@@ -1265,7 +1265,7 @@ _p[8] = {
                 /**
              * @event stop
              * @for kity.Timeline
-             * @description 停止时间，在时间线停止时触发
+             * @description 停止時間，在時間线停止时触发
              */
                 this.fire("stop", new TimelineEvent(this, "stop"));
                 frame.releaseFrame(this.frame);
@@ -1288,7 +1288,7 @@ _p[8] = {
                             /**
                          * @event rollback
                          * @for kity.Timeline
-                         * @description 回滚事件，在时间线回滚播放开始的时候触发
+                         * @description 回滚事件，在時間线回滚播放開始的时候触发
                          */
                             this.fire("rollback", new TimelineEvent(this, "rollback"));
                         }
@@ -1301,7 +1301,7 @@ _p[8] = {
                         /**
                      * @event repeat
                      * @for kity.Timeline
-                     * @description 循环事件，在时间线循环播放开始的时候触发
+                     * @description 循环事件，在時間线循环播放開始的时候触发
                      */
                         this.fire("repeat", new TimelineEvent(this, "repeat"));
                     }
@@ -1320,7 +1320,7 @@ _p[8] = {
                 /**
              * @event finish
              * @for kity.Timeline
-             * @description 结束事件，在时间线播放结束后触发（包括重复和回滚都结束）
+             * @description 结束事件，在時間线播放结束后触发（包括重复和回滚都结束）
              */
                 this.fire("finish", new TimelineEvent(this, "finish"));
                 frame.releaseFrame(this.frame);
@@ -1328,7 +1328,7 @@ _p[8] = {
             /**
          * @private
          *
-         *  循环次数递减
+         *  循环次數递减
          */
             decreaseRepeat: function() {
                 if (this.repeatOption !== true) {
@@ -1338,15 +1338,15 @@ _p[8] = {
             /**
          * @method repeat()
          * @for kity.Timeline
-         * @description 设置时间线的重复选项
+         * @description 設定時間线的重复选项
          *
          * @grammar repeat(repeat, rollback) => {this}
          *
          * @param  {Number|Boolean} repeat
-         *     是否重复播放，设置为 true 無限循环播放，设置数值则循环指定的次数
+         *     是否重复播放，設定為 true 無限循环播放，設定數值则循环指定的次數
          * @param  {Boolean} rollback
          *     指示是否要回滚播放。
-         *     如果设置为真，一次事件到 duration 则一个来回算一次循环次数，否则播放完成一次算一次循环次数
+         *     如果設定為真，一次事件到 duration 则一个来回算一次循环次數，否则播放完成一次算一次循环次數
          *
          */
             repeat: function(repeat, rollback) {
@@ -1365,7 +1365,7 @@ _p[8] = {
 /**
  * @fileOverview
  *
- * 提供让图形移动的动画器
+ * 提供让图形移動的動画器
  */
 _p[9] = {
     value: function(require) {
@@ -1373,7 +1373,7 @@ _p[9] = {
         /**
      * @class kity.TranslateAnimator
      * @base kity.Animator
-     * @description 提供让图形移动的动画器
+     * @description 提供让图形移動的動画器
      */
         var TranslateAnimator = _p.r(11).createClass("TranslateAnimator", {
             base: Animator,
@@ -1381,8 +1381,8 @@ _p[9] = {
          * @constructor
          * @for kity.TranslateAnimator
          * @grammar new kity.TranslateAnimator(x, y)
-         * @param  {Number} x x 方向上需要移动的距离
-         * @param  {Number} y y 方向上需要移动的距离
+         * @param  {Number} x x 方向上需要移動的距离
+         * @param  {Number} y y 方向上需要移動的距离
          */
             constructor: function(x, y) {
                 this.callBase({
@@ -1402,16 +1402,16 @@ _p[9] = {
             /**
          * @method fxTranslate()
          * @for kity.Shape
-         * @description 让目标以动画平移指定的距离
+         * @description 让目标以動画平移指定的距离
          *
          * @grammar fxTranslate(x, y, duration, easing, delay, callback) => {this}
          *
-         * @param {Number} x x 方向上需要移动的距离
-         * @param {Number} y y 方向上需要移动的距离
-         * @param {Number|String}     duration 动画的播放长度，如 300、"5s"、"0.5min"
-         * @param {Number|String}     delay    动画播放前的延时
-         * @param {String|Function}   easing   动画播放使用的缓动函数，如 'ease'、'linear'、'swing'
-         * @param {Function}          callback 播放结束之后的回调函数
+         * @param {Number} x x 方向上需要移動的距离
+         * @param {Number} y y 方向上需要移動的距离
+         * @param {Number|String}     duration 動画的播放長度，如 300、"5s"、"0.5min"
+         * @param {Number|String}     delay    動画播放前的延時
+         * @param {String|Function}   easing   動画播放使用的缓動函數，如 'ease'、'linear'、'swing'
+         * @param {Function}          callback 播放结束之后的回调函數
          */
             fxTranslate: function(x, y, duration, easing, delay, callback) {
                 return this.animate(new TranslateAnimator(x, y), duration, easing, delay, callback);
@@ -1437,7 +1437,7 @@ _p[10] = {
      */
         var browser = function() {
             var agent = navigator.userAgent.toLowerCase(), opera = window.opera, browser;
-            // 浏览器对象
+            // 浏览器對象
             browser = {
                 /**
              * @property platform
@@ -1473,28 +1473,28 @@ _p[10] = {
              */
                 edge: !!~agent.indexOf("edge"),
                 /**
-             * chrome初始化为false
+             * chrome初始化為false
              * @type {Boolean}
              */
                 chrome: false,
                 /**
              * @property opera
              * @for kity.Browser
-             * @description 判断是否为 Opera 浏览器
+             * @description 判断是否為 Opera 浏览器
              * @type {boolean}
              */
                 opera: !!opera && opera.version,
                 /**
              * @property webkit
              * @for kity.Browser
-             * @description 判断是否为 Webkit 内核的浏览器
+             * @description 判断是否為 Webkit 内核的浏览器
              * @type {boolean}
              */
                 webkit: agent.indexOf(" applewebkit/") > -1,
                 /**
              * @property mac
              * @for kity.Browser
-             * @description 判断是否为 Mac 下的浏览器
+             * @description 判断是否為 Mac 下的浏览器
              * @type {boolean}
              */
                 mac: agent.indexOf("macintosh") > -1
@@ -1502,7 +1502,7 @@ _p[10] = {
             /**
          * @property ie
          * @for kity.Browser
-         * @description 判断是否为 IE 浏览器
+         * @description 判断是否為 IE 浏览器
          * @type {boolean}
          */
             browser.ie = !browser.lb && /(msie\s|trident.*rv:)([\w.]+)/.test(agent);
@@ -1527,7 +1527,7 @@ _p[10] = {
                 /**
              * @property chrome
              * @for kity.Browser
-             * @description 判断是否为 Chrome 浏览器
+             * @description 判断是否為 Chrome 浏览器
              * @type {boolean}
              */
                 browser.chrome = +RegExp["$1"];
@@ -1583,9 +1583,9 @@ _p[11] = {
      * @for kity.Class
      * @protected
      * @grammar base(name, args...) => {any}
-     * @description 调用父类指定名稱的函数
-     * @param {string} name 函数的名稱
-     * @param {parameter} args... 传递给父类函数的参数
+     * @description 调用父类指定名稱的函數
+     * @param {string} name 函數的名稱
+     * @param {parameter} args... 传递给父类函數的参數
      *
      * @example
      *
@@ -1619,8 +1619,8 @@ _p[11] = {
      * @for kity.Class
      * @protected
      * @grammar callBase(args...) => {any}
-     * @description 调用父类同名函数
-     * @param {parameter} args... 传递到父类同名函数的参数
+     * @description 调用父类同名函數
+     * @param {parameter} args... 传递到父类同名函數的参數
      *
      * @example
      *
@@ -1682,8 +1682,8 @@ _p[11] = {
      * @method pipe()
      * @for kity.Class
      * @grammar pipe() => {this}
-     * @description 以当前对象为上线文以及管道函数的第一个参数，执行一个管道函数
-     * @param  {Function} fn 进行管道操作的函数
+     * @description 以当前對象為上线文以及管道函數的第一个参數，执行一个管道函數
+     * @param  {Function} fn 进行管道操作的函數
      *
      * @example
      *
@@ -1704,7 +1704,7 @@ _p[11] = {
      * @method getType()
      * @for kity.Class
      * @grammar getType() => {string}
-     * @description 获得对象的类型
+     * @description 获得對象的类型
      *
      * @example
      *
@@ -1723,7 +1723,7 @@ _p[11] = {
      * @method getClass()
      * @for kity.Class
      * @grammar getClass() => {Class}
-     * @description 获得对象的类
+     * @description 获得對象的类
      *
      * @example
      *
@@ -1737,12 +1737,12 @@ _p[11] = {
         Class.prototype.getClass = function() {
             return this.constructor;
         };
-        // 檢查基类是否调用了父类的构造函数
-        // 该檢查是弱檢查，假如调用的代码被注释了，同样能檢查成功（这个特性可用于知道建议调用，但是出于某些原因不想调用的情况）
+        // 檢查基类是否调用了父类的构造函數
+        // 该檢查是弱檢查，假如调用的程式碼被注释了，同样能檢查成功（这个特性可用于知道建议调用，但是出于某些原因不想调用的情况）
         function checkBaseConstructorCall(targetClass, classname) {
             var code = targetClass.toString();
             if (!/this\.callBase/.test(code)) {
-                throw new Error(classname + " : 类构造函数没有调用父类的构造函数！为了安全，请调用父类的构造函数");
+                throw new Error(classname + " : 类构造函數没有调用父类的构造函數！為了安全，請调用父类的构造函數");
             }
         }
         var KITY_INHERIT_FLAG = "__KITY_INHERIT_FLAG_" + +new Date();
@@ -1798,19 +1798,19 @@ _p[11] = {
         /**
      * @method kity.createClass()
      * @grammar kity.createClass(classname, defines) => {Class}
-     * @description 创建一个类
+     * @description 建立一个类
      * @param  {string} classname 类名，用于调试的时候查看，可选
      * @param  {object} defines   类定义
      *      defines.base {Class}
-     *          定义的类的基类，如果不配置，则表示基类为 kity.Class
+     *          定义的类的基类，如果不配置，则表示基类為 kity.Class
      *      defines.mixins {Class[]}
      *          定义的类要融合的类列表
      *      defines.constructor {Function}
-     *          定义类的构造函数，如果父类显式定义了构造函数，需要在构造函数中使用 callBase() 方法调用父类的构造函数
+     *          定义类的构造函數，如果父类显式定义了构造函數，需要在构造函數中使用 callBase() 方法调用父类的构造函數
      *      defines.* {Function}
-     *          定义类的其它函数
+     *          定义类的其它函數
      *
-     * @example 创建一个类
+     * @example 建立一个类
      *
      * ```js
      * var Animal = kity.createClass('Animal', {
@@ -1832,7 +1832,7 @@ _p[11] = {
      * var Cat = kity.createClass('Cat', {
      *     base: Animal,
      *     constructor: function(name, color) {
-     *         // 调用父类构造函数
+     *         // 调用父类构造函數
      *         this.callBase(name);
      *     },
      *     toString: function() {
@@ -1940,11 +1940,11 @@ _p[12] = {
          * @method each()
          * @for kity.Utils
          * @grammar each(obj, interator, context)
-         * @param  {Object|Array} obj 要迭代的对象或数组
-         * @param  {Function} iterator 迭代函数
-         * @param  {Any} context  迭代函数的上下文
+         * @param  {Object|Array} obj 要迭代的對象或數组
+         * @param  {Function} iterator 迭代函數
+         * @param  {Any} context  迭代函數的上下文
          *
-         * @example 迭代数组
+         * @example 迭代數组
          *
          * ```js
          * kity.Utils.each([1, 2, 3, 4, 5], function(value, index, array) {
@@ -1957,7 +1957,7 @@ _p[12] = {
          * // 5, 4
          * ```
          *
-         * @example 迭代对象
+         * @example 迭代對象
          *
          * ```js
          * var obj = {
@@ -1995,10 +1995,10 @@ _p[12] = {
          * @method extend()
          * @for kity.Utils
          * @grammar extend(target, sources..., notCover) => {object}
-         * @description 把源对象的属性合并到目标对象上
-         * @param {object} target 目标对象
-         * @param {parameter} sources 源对象
-         * @param {boolean} notCover 是否不要覆盖源对象已有的属性
+         * @description 把源對象的属性合并到目标對象上
+         * @param {object} target 目标對象
+         * @param {parameter} sources 源對象
+         * @param {boolean} notCover 是否不要覆盖源對象已有的属性
          *
          * @example
          *
@@ -2039,10 +2039,10 @@ _p[12] = {
          * @method deepExtend()
          * @for kity.Utils
          * @grammar deepExtend(target, sources..., notCover)
-         * @description 把源对象的属性合并到目标对象上，如果属性是对象，会递归合并
-         * @param {object} target 目标对象
-         * @param {parameter} sources 源对象
-         * @param {boolean} notCover 是否不要覆盖源对象已有的属性
+         * @description 把源對象的属性合并到目标對象上，如果属性是對象，会递归合并
+         * @param {object} target 目标對象
+         * @param {parameter} sources 源對象
+         * @param {boolean} notCover 是否不要覆盖源對象已有的属性
          */
             deepExtend: function(t, s) {
                 var a = arguments, notCover = this.isBoolean(a[a.length - 1]) ? a[a.length - 1] : false, len = this.isBoolean(a[a.length - 1]) ? a.length - 1 : a.length;
@@ -2064,8 +2064,8 @@ _p[12] = {
          * @method clone()
          * @for kity.Utils
          * @grammar clone(obj) => {object}
-         * @description 返回一个对象的克隆副本（非深度複製）
-         * @param  {object} obj 要克隆的对象
+         * @description 返回一个對象的克隆副本（非深度複製）
+         * @param  {object} obj 要克隆的對象
          *
          * @example
          *
@@ -2097,8 +2097,8 @@ _p[12] = {
          * @method copy()
          * @for kity.Utils
          * @grammar copy(obj) => {object}
-         * @description 返回一个对象的拷贝副本（深度複製）
-         * @param  {object} obj 要拷贝的对象
+         * @description 返回一个對象的拷贝副本（深度複製）
+         * @param  {object} obj 要拷贝的對象
          *
          * @example
          *
@@ -2114,7 +2114,7 @@ _p[12] = {
          *
          * console.log(target === source); // false
          * console.log(target.key1 === source.key1); // false
-         * console.log(target.key3 === source.key3); // true，因为是值类型
+         * console.log(target.key3 === source.key3); // true，因為是值类型
          * ```
          */
             copy: function copy(obj) {
@@ -2144,8 +2144,8 @@ _p[12] = {
          * @method flatten()
          * @for kity.Utils
          * @grammar flatten(arr) => {Array}
-         * @description 返回给定数组的扁平化版本
-         * @param  {Array} arr 要扁平化的数组
+         * @description 返回给定數组的扁平化版本
+         * @param  {Array} arr 要扁平化的數组
          *
          * @example
          *
@@ -2170,15 +2170,15 @@ _p[12] = {
          * @for kity.Utils
          * @grammar paralle() => {Any}
          *
-         * @description 平行地对 v1 和 v2 进行指定的操作
+         * @description 平行地對 v1 和 v2 进行指定的操作
          *
-         *    如果 v1 是数字，那么直接进行 op 操作
-         *    如果 v1 是对象，那么返回一个对象，其元素是 v1 和 v2 同键值的每个元素平行地进行 op 操作的结果
-         *    如果 v1 是数组，那么返回一个数组，其元素是 v1 和 v2 同索引的每个元素平行地进行 op 操作的结果
+         *    如果 v1 是數字，那么直接进行 op 操作
+         *    如果 v1 是對象，那么返回一个對象，其元素是 v1 和 v2 同键值的每个元素平行地进行 op 操作的结果
+         *    如果 v1 是數组，那么返回一个數组，其元素是 v1 和 v2 同索引的每个元素平行地进行 op 操作的结果
          *
-         * @param  {Number|Object|Array} v1 第一个操作数
-         * @param  {Number|Object|Array} v2 第二个操作数
-         * @param  {Function} op 操作函数
+         * @param  {Number|Object|Array} v1 第一个操作數
+         * @param  {Number|Object|Array} v2 第二个操作數
+         * @param  {Function} op 操作函數
          *
          *
          *
@@ -2209,7 +2209,7 @@ _p[12] = {
          */
             paralle: function paralle(v1, v2, op) {
                 var Class, field, index, name, value;
-                // 数组
+                // 數组
                 if (v1 instanceof Array) {
                     value = [];
                     for (index = 0; index < v1.length; index++) {
@@ -2217,7 +2217,7 @@ _p[12] = {
                     }
                     return value;
                 }
-                // 对象
+                // 對象
                 if (v1 instanceof Object) {
                     // 如果值是一个支持原始表示的实例，取得其原始表示
                     Class = v1.getClass && v1.getClass();
@@ -2236,14 +2236,14 @@ _p[12] = {
                     }
                     return value;
                 }
-                // 是否数字
+                // 是否數字
                 if (false === isNaN(parseFloat(v1))) {
                     return op(v1, v2);
                 }
                 return value;
             },
             /**
-         * 创建 op 操作的一个平行化版本
+         * 建立 op 操作的一个平行化版本
          */
             parallelize: function parallelize(op) {
                 return function(v1, v2) {
@@ -2255,49 +2255,49 @@ _p[12] = {
      * @method isString()
      * @for kity.Utils
      * @grammar isString(unknown) => {boolean}
-     * @description 判断一个值是否为字符串类型
+     * @description 判断一个值是否為字符串类型
      * @param  {any} unknown 要判断的值
      */
         /**
      * @method isFunction()
      * @for kity.Utils
      * @grammar isFunction(unknown) => {boolean}
-     * @description 判断一个值是否为函数类型
+     * @description 判断一个值是否為函數类型
      * @param  {any} unknown 要判断的值
      */
         /**
      * @method isArray()
      * @for kity.Utils
      * @grammar isArray(unknown) => {boolean}
-     * @description 判断一个值是否为数组类型
+     * @description 判断一个值是否為數组类型
      * @param  {any} unknown 要判断的值
      */
         /**
      * @method isNumber()
      * @for kity.Utils
      * @grammar isNumber(unknown) => {boolean}
-     * @description 判断一个值是否为数字类型
+     * @description 判断一个值是否為數字类型
      * @param  {any} unknown 要判断的值
      */
         /**
      * @method isRegExp()
      * @for kity.Utils
      * @grammar isRegExp(unknown) => {boolean}
-     * @description 判断一个值是否为正则表达式类型
+     * @description 判断一个值是否為正则表达式类型
      * @param  {any} unknown 要判断的值
      */
         /**
      * @method isObject()
      * @for kity.Utils
      * @grammar isObject(unknown) => {boolean}
-     * @description 判断一个值是否为对象类型
+     * @description 判断一个值是否為對象类型
      * @param  {any} unknown 要判断的值
      */
         /**
      * @method isBoolean()
      * @for kity.Utils
      * @grammar isBoolean(unknown) => {boolean}
-     * @description 判断一个值是否为布尔类型
+     * @description 判断一个值是否為布尔类型
      * @param  {any} unknown 要判断的值
      */
         utils.each([ "String", "Function", "Array", "Number", "RegExp", "Object", "Boolean" ], function(v) {
@@ -2398,7 +2398,7 @@ _p[15] = {
 //src/filter/effect/effect.js
 /*
  * 效果类
- * 该类型的对象不存储任何内部属性， 所有操作都是针对该类对象所维护的节点进行的
+ * 该类型的對象不存储任何内部属性， 所有操作都是針對该类對象所维护的节點进行的
  */
 _p[16] = {
     value: function(require, exports, module) {
@@ -2524,7 +2524,7 @@ _p[19] = {
             },
             handleAdd: function(effectItem, pos) {
                 var count = this.getEffects().length, nextEffectItem = this.getItem(pos + 1);
-                // 最后一个节点， 直接追加
+                // 最后一个节點， 直接追加
                 if (count === pos + 1) {
                     this.node.appendChild(effectItem.getNode());
                     return;
@@ -2633,7 +2633,7 @@ _p[22] = {
                 this.compositeEffect = new CompositeEffect(CompositeEffect.OPERATOR_OVER, Effect.INPUT_SOURCE_GRAPHIC, this.colorMatrixEffect);
                 this.addEffect(this.compositeEffect);
             },
-            // 设置投影颜色
+            // 設定投影颜色
             setColor: function(color) {
                 var matrix = null, originMatrix = null, colorValue = [];
                 if (Utils.isString(color)) {
@@ -2655,14 +2655,14 @@ _p[22] = {
                 this.colorMatrixEffect.set("values", matrix.join(" "));
                 return this;
             },
-            // 设置投影透明度
+            // 設定投影透明度
             setOpacity: function(opacity) {
                 var matrix = this.colorMatrixEffect.get("values").split(" ");
                 matrix[18] = opacity;
                 this.colorMatrixEffect.set("values", matrix.join(" "));
                 return this;
             },
-            // 设置阴影偏移量
+            // 設定阴影偏移量
             setOffset: function(dx, dy) {
                 this.setOffsetX(dx);
                 this.setOffsetY(dy);
@@ -2692,7 +2692,7 @@ _p[23] = {
      * @class kity.Bezier
      * @mixins kity.PointContainer
      * @base kity.Path
-     * @description 绘制和使用贝塞尔曲线。贝塞尔曲线作为一个贝塞尔点的容器，任何贝塞尔点的改变都会更改贝塞尔曲线的外观
+     * @description 绘制和使用贝塞尔曲线。贝塞尔曲线作為一个贝塞尔點的容器，任何贝塞尔點的改变都会更改贝塞尔曲线的外观
      */
         return _p.r(11).createClass("Bezier", {
             mixins: [ _p.r(51) ],
@@ -2703,7 +2703,7 @@ _p[23] = {
          *
          * @grammar new kity.Bezier(bezierPoints)
          *
-         * @param  {kity.BezierPoints[]} bezierPoints 贝塞尔点集合，每个元素应该是 {kity.BezierPoint} 类型
+         * @param  {kity.BezierPoints[]} bezierPoints 贝塞尔點集合，每个元素应该是 {kity.BezierPoint} 类型
          *
          * @example
          *
@@ -2723,7 +2723,7 @@ _p[23] = {
             /**
          * @method getBezierPoints()
          * @for kity.Bezier
-         * @description 返回当前贝塞尔曲线的贝塞尔点集合
+         * @description 返回当前贝塞尔曲线的贝塞尔點集合
          *
          * @grammar getBezierPoints() => {kity.BezierPoints[]}
          *
@@ -2734,16 +2734,16 @@ _p[23] = {
             /**
          * @method setBezierPoints()
          * @for kity.Bezier
-         * @description 设置当前贝塞尔曲线的贝塞尔点集合
+         * @description 設定当前贝塞尔曲线的贝塞尔點集合
          *
          * @grammar setBeizerPoints(bezierPoints) => {this}
          *
-         * @param {kity.BezierPoint[]} bezierPoints 贝塞尔点集合
+         * @param {kity.BezierPoint[]} bezierPoints 贝塞尔點集合
          */
             setBezierPoints: function(bezierPoints) {
                 return this.setPoints(bezierPoints);
             },
-            //当点集合发生变化时采取的动作
+            //当點集合发生变化时采取的動作
             onContainerChanged: function() {
                 if (this.changeable) {
                     this.update();
@@ -2751,7 +2751,7 @@ _p[23] = {
             },
             update: function() {
                 var drawer = null, bezierPoints = this.getBezierPoints();
-                //单独的一个点不画任何图形
+                //單独的一个點不画任何图形
                 if (bezierPoints.length < 2) {
                     return;
                 }
@@ -2775,7 +2775,7 @@ _p[23] = {
 /**
  * @fileOverview
  *
- * 表示一个贝塞尔点
+ * 表示一个贝塞尔點
  */
 _p[24] = {
     value: function(require, exports, module) {
@@ -2784,24 +2784,24 @@ _p[24] = {
         /**
      * @class kity.BezierPoint
      *
-     * @description 表示一个贝塞尔点
-     *              一个贝塞尔点由顶点坐标（曲线经过的点）、前方控制点、后方控制点表示
+     * @description 表示一个贝塞尔點
+     *              一个贝塞尔點由顶點坐标（曲线经过的點）、前方控制點、后方控制點表示
      */
         var BezierPoint = _p.r(11).createClass("BezierPoint", {
             /**
          * @constructor
          * @for kity.BezierPoint
          *
-         * @description 创建一个具有默认顶点坐标的贝塞尔点，两个控制点的坐标和顶点一致
+         * @description 建立一个具有默认顶點坐标的贝塞尔點，两个控制點的坐标和顶點一致
          *
-         * @param  {Number}  x        顶点的 x 坐标
-         * @param  {Number}  y        顶点的 y 坐标
-         * @param  {Boolean} isSmooth 指示当前贝塞尔点是否光滑，光滑会约束顶点和两个控制点共线
+         * @param  {Number}  x        顶點的 x 坐标
+         * @param  {Number}  y        顶點的 y 坐标
+         * @param  {Boolean} isSmooth 指示当前贝塞尔點是否光滑，光滑会约束顶點和两个控制點共线
          */
             constructor: function(x, y, isSmooth) {
-                //顶点
+                //顶點
                 this.vertex = new ShapePoint(x, y);
-                //控制点
+                //控制點
                 this.forward = new ShapePoint(x, y);
                 this.backward = new ShapePoint(x, y);
                 //是否平滑
@@ -2811,7 +2811,7 @@ _p[24] = {
             /**
          * @method clone()
          * @for kity.BezierPoint
-         * @description 返回贝塞尔点的一份拷贝
+         * @description 返回贝塞尔點的一份拷贝
          *
          * @grammar clone() => {kity.BezierPoint}
          */
@@ -2830,12 +2830,12 @@ _p[24] = {
             /**
          * @method setVertex()
          * @for kity.BezierPoint
-         * @description 设置贝塞尔点的顶点坐标，注意，控制点的坐标不会跟着变化。希望控制点的坐标跟着变化，请用 moveTo() 方法
+         * @description 設定贝塞尔點的顶點坐标，注意，控制點的坐标不会跟着变化。希望控制點的坐标跟着变化，請用 moveTo() 方法
          *
          * @grammar setVertex(x, y) => {this}
          *
-         * @param {Number} x 顶点的 x 坐标
-         * @param {Number} y 顶点的 y 坐标
+         * @param {Number} x 顶點的 x 坐标
+         * @param {Number} y 顶點的 y 坐标
          */
             setVertex: function(x, y) {
                 this.vertex.setPoint(x, y);
@@ -2845,16 +2845,16 @@ _p[24] = {
             /**
          * @method moveTo()
          * @for kity.BezierPoint
-         * @description 同步移动整个贝塞尔点，使顶点的移动到指定的坐标中。控制点的位置相对顶点坐标固定。
+         * @description 同步移動整个贝塞尔點，使顶點的移動到指定的坐标中。控制點的位置相對顶點坐标固定。
          *
          * @grammar moveTo() => {this}
          *
-         * @param  {Number} x 顶点的目标 x 坐标
-         * @param  {Number} y 顶点的目标 y 坐标
+         * @param  {Number} x 顶點的目标 x 坐标
+         * @param  {Number} y 顶點的目标 y 坐标
          *
          */
             moveTo: function(x, y) {
-                var oldForward = this.forward.getPoint(), oldBackward = this.backward.getPoint(), oldVertex = this.vertex.getPoint(), //移动距离
+                var oldForward = this.forward.getPoint(), oldBackward = this.backward.getPoint(), oldVertex = this.vertex.getPoint(), //移動距离
                 distance = {
                     left: x - oldVertex.x,
                     top: y - oldVertex.y
@@ -2868,16 +2868,16 @@ _p[24] = {
             /**
          * @method setForward()
          * @for kity.BezierPoint
-         * @description 设置前方控制点的位置，如果贝塞尔点光滑，后方控制点会跟着联动
+         * @description 設定前方控制點的位置，如果贝塞尔點光滑，后方控制點会跟着联動
          *
          * @grammar setForward(x, y) => {this}
          *
-         * @param {Number} x 前方控制点的 x 坐标
-         * @param {Number} y 前方控制点的 y 坐标
+         * @param {Number} x 前方控制點的 x 坐标
+         * @param {Number} y 前方控制點的 y 坐标
          */
             setForward: function(x, y) {
                 this.forward.setPoint(x, y);
-                //更新后置点
+                //更新后置點
                 if (this.smooth) {
                     this.updateAnother(this.forward, this.backward);
                 }
@@ -2888,16 +2888,16 @@ _p[24] = {
             /**
          * @method setBackward()
          * @for kity.BezierPoint
-         * @description 设置后方控制点的位置，如果贝塞尔点光滑，前方控制点会跟着联动
+         * @description 設定后方控制點的位置，如果贝塞尔點光滑，前方控制點会跟着联動
          *
          * @grammar setBackward(x, y) => {this}
          *
-         * @param {Number} x 后方控制点的 x 坐标
-         * @param {Number} y 后方控制点的 y 坐标
+         * @param {Number} x 后方控制點的 x 坐标
+         * @param {Number} y 后方控制點的 y 坐标
          */
             setBackward: function(x, y) {
                 this.backward.setPoint(x, y);
-                //更新前置点
+                //更新前置點
                 if (this.smooth) {
                     this.updateAnother(this.backward, this.forward);
                 }
@@ -2908,11 +2908,11 @@ _p[24] = {
             /**
          * @method setSymReflaction()
          * @for kity.BezierPoint
-         * @description 设定是否镜像两个控制点的位置
+         * @description 设定是否镜像两个控制點的位置
          *
          * @grammar setSymReflaction(value) => {this}
          *
-         * @param {boolean} value 如果设置为 true，且贝塞尔点光滑，两个控制点离顶点的距离相等
+         * @param {boolean} value 如果設定為 true，且贝塞尔點光滑，两个控制點离顶點的距离相等
          */
             setSymReflaction: function(value) {
                 this.symReflaction = value;
@@ -2922,7 +2922,7 @@ _p[24] = {
             /**
          * @method isSymReflaction()
          * @for kity.BezierPoint
-         * @description 当前贝塞尔点的两个控制点是否被镜像约束
+         * @description 当前贝塞尔點的两个控制點是否被镜像约束
          *
          * @grammar isSymReflaction() => {boolean}
          */
@@ -2932,7 +2932,7 @@ _p[24] = {
             /**
          * @private
          *
-         * 根据前方控制点或后方控制点更新另一方
+         * 根據前方控制點或后方控制點更新另一方
          */
             updateAnother: function(p, q) {
                 var v = this.getVertex(), pv = Vector.fromPoints(p.getPoint(), v), vq = Vector.fromPoints(v, q.getPoint());
@@ -2943,9 +2943,9 @@ _p[24] = {
             /**
          * @method setSmooth()
          * @for kity.BezierPoint
-         * @description 设置贝塞尔点是否光滑，光滑会约束顶点和两个控制点共线
+         * @description 設定贝塞尔點是否光滑，光滑会约束顶點和两个控制點共线
          *
-         * @param {Boolean} isSmooth 设置为 true 让贝塞尔点光滑
+         * @param {Boolean} isSmooth 設定為 true 让贝塞尔點光滑
          */
             setSmooth: function(isSmooth) {
                 var lc;
@@ -2958,7 +2958,7 @@ _p[24] = {
             /**
          * @method isSmooth()
          * @for kity.BezierPoint
-         * @description 判断贝塞尔点是否光滑
+         * @description 判断贝塞尔點是否光滑
          *
          * @grammar isSmooth() => {boolean}
          */
@@ -2968,7 +2968,7 @@ _p[24] = {
             /**
          * @method getVertex()
          * @for kity.BezierPoint
-         * @description 获得当前贝塞尔点的顶点
+         * @description 获得当前贝塞尔點的顶點
          *
          * @grammar getVertex() => {kity.ShapePoint}
          */
@@ -2978,7 +2978,7 @@ _p[24] = {
             /**
          * @method getForward()
          * @for kity.BezierPoint
-         * @description 获得当前贝塞尔点的前方控制点
+         * @description 获得当前贝塞尔點的前方控制點
          *
          * @grammar getForward() => {kity.ShapePoint}
          */
@@ -2988,7 +2988,7 @@ _p[24] = {
             /**
          * @method getBackward()
          * @for kity.BezierPoint
-         * @description 获得当前贝塞尔点的后方控制点
+         * @description 获得当前贝塞尔點的后方控制點
          *
          * @grammar getBackward() => {kity.ShapePoint}
          */
@@ -2998,13 +2998,13 @@ _p[24] = {
             /**
          * @private
          *
-         * 联动更新相关的贝塞尔曲线
+         * 联動更新相關的贝塞尔曲线
          */
             update: function() {
                 if (!this.container) {
                     return this;
                 }
-                //新增参数 this， 把当前引起变化的点传递过去， 以便有需要的地方可以取得到引起变化的源
+                //新增参數 this， 把当前引起变化的點传递过去， 以便有需要的地方可以取得到引起变化的源
                 if (this.container.update) this.container.update(this);
             }
         });
@@ -3095,7 +3095,7 @@ _p[25] = {
              * @for kity.Box
              * @type {Number}
              * @readOnly
-             * @description 矩形区域的最左侧坐标，等价于 x 的值
+             * @description 矩形区域的最左側坐标，等价于 x 的值
              */
                 this.left = this.x;
                 /**
@@ -3103,7 +3103,7 @@ _p[25] = {
              * @for kity.Box
              * @type {Number}
              * @readOnly
-             * @description 矩形区域的最右侧坐标，等价于 x + width 的值
+             * @description 矩形区域的最右側坐标，等价于 x + width 的值
              */
                 this.right = this.x + this.width;
                 /**
@@ -3111,7 +3111,7 @@ _p[25] = {
              * @for kity.Box
              * @type {Number}
              * @readOnly
-             * @description 矩形区域的最上侧坐标，等价于 y 的值
+             * @description 矩形区域的最上側坐标，等价于 y 的值
              */
                 this.top = this.y;
                 /**
@@ -3119,7 +3119,7 @@ _p[25] = {
              * @for kity.Box
              * @type {Number}
              * @readOnly
-             * @description 矩形区域的最下侧坐标，等价于 y + height 的值
+             * @description 矩形区域的最下側坐标，等价于 y + height 的值
              */
                 this.bottom = this.y + this.height;
                 /**
@@ -3224,22 +3224,22 @@ _p[25] = {
          * @description 扩展（或收缩）当前的盒子，返回新的盒子
          *
          * @param {Number} top
-         *     矩形区域的上边界往上扩展的值；如果是负数，则上边界往下收缩
+         *     矩形区域的上边界往上扩展的值；如果是负數，则上边界往下收缩
          *
          * @param {Number} right
          *     [Optional] 矩形区域的右边界往右拓展的值；
-         *                如果是负数，则右边界往左收缩；
-         *                如果不设置该值，使用和 top 同样的值。
+         *                如果是负數，则右边界往左收缩；
+         *                如果不設定该值，使用和 top 同样的值。
          *
          * @param {Number} bottom
          *     [Optional] 矩形区域的下边界往下拓展的值；
-         *                如果是负数，则下边界往上收缩；
-         *                如果不设置该值，使用和 top 同样的值。
+         *                如果是负數，则下边界往上收缩；
+         *                如果不設定该值，使用和 top 同样的值。
          *
          * @param {Number} left
          *     [Optional] 矩形区域的左边界往左拓展的值;
-         *                如果是负数，则左边界往右收缩;
-         *                如果不设置该值，使用和 right 同样的值。
+         *                如果是负數，则左边界往右收缩;
+         *                如果不設定该值，使用和 right 同样的值。
          *
          * @example
          *
@@ -3269,7 +3269,7 @@ _p[25] = {
             /**
          * @method valueOf()
          * @for kity.Box
-         * @description 返回当前盒子的数组表示
+         * @description 返回当前盒子的數组表示
          *
          * @grammar valueOf() => {Number[]}
          *
@@ -3320,11 +3320,11 @@ _p[25] = {
      * @method parse()
      * @static
      * @for kity.Box
-     * @description 解析一个字符串或数组为 kity.Box 对象
+     * @description 解析一个字符串或數组為 kity.Box 對象
      *
      * @grammar kity.Box.parse(any) => {kity.Box}
      *
-     * @param  {Number[]|String} any 要解析的字符串或数组
+     * @param  {Number[]|String} any 要解析的字符串或數组
      *
      * @example
      *
@@ -3388,7 +3388,7 @@ _p[26] = {
             /**
          * @method
          * @for kity.Circle
-         * @description 设置圆形的半径
+         * @description 設定圆形的半径
          *
          * @grammar setRadius() => {this}
          *
@@ -3416,7 +3416,7 @@ _p[27] = {
      * @base kity.Resource
      * @mixins kity.ShapeContainer
      *
-     * @description 创建图形裁切，用于裁切目标图形
+     * @description 建立图形裁切，用于裁切目标图形
      */
         var Clip = Class.createClass("Clip", {
             base: Shape,
@@ -3463,8 +3463,8 @@ _p[27] = {
          * @grammar clipWidth(clip) => {this}
          *
          * @param {kity.Clip|kity.Shape} clip 要用于裁切当前图形的图形；
-         *     如果 clip 本身是一个裁切对象（kity.Clip 类型），则直接裁切；
-         *     否则将创建新的裁切包含给定的图形，然后对当前图形进行裁切
+         *     如果 clip 本身是一个裁切對象（kity.Clip 类型），则直接裁切；
+         *     否则将建立新的裁切包含给定的图形，然后對当前图形进行裁切
          *
          * @example
          *
@@ -3540,7 +3540,7 @@ _p[28] = {
                         r: arguments[0] | 0,
                         g: arguments[1] | 0,
                         b: arguments[2] | 0,
-                        //alpha 默认为1
+                        //alpha 默认為1
                         a: arguments[3] === undefined ? 1 : parseFloat(arguments[3])
                     };
                     colorValue = ColorUtils.overflowFormat(colorValue);
@@ -3553,11 +3553,11 @@ _p[28] = {
              * @method set()
              * @for kity.Color
              *
-             * @description 设置当前颜色某个分量的值
+             * @description 設定当前颜色某个分量的值
              *
              * @grammar set(name, value) => {this}
              *
-             * @param {string} name  要设置的颜色通道的名稱
+             * @param {string} name  要設定的颜色通道的名稱
              *     r: 红色（Red），取值范围 [0, 255]
              *     g: 绿色（Green），取值范围 [0, 255]
              *     b: 蓝色（Blue），取值范围 [0, 255]
@@ -3565,12 +3565,12 @@ _p[28] = {
              *     h: 色环角度（Hue），取值范围 [0, 359]
              *     s: 饱和度（Saturation），取值范围 [0, 100]
              *     l: 亮度（Lightness），取值范围 [0, 100]
-             *     r、g、b 值和 h、s、l 值会联动修改
-             * @param {number} value 要设置的值
+             *     r、g、b 值和 h、s、l 值会联動修改
+             * @param {number} value 要設定的值
              */
             set: function(name, value) {
                 var values = null;
-                //设置的值非法
+                //設定的值非法
                 if (!Color._MAX_VALUE[name]) {
                     throw new Error("Color set(): Illegal parameter");
                 }
@@ -3595,7 +3595,7 @@ _p[28] = {
              *
              * @grammar inc(name, value) => {this}
              *
-             * @param  {string} name  要增加的通道的名稱，具体含义请查看 set 方法
+             * @param  {string} name  要增加的通道的名稱，具体含义請查看 set 方法
              * @param  {number} value 增量值
              */
             inc: function(name, value) {
@@ -3616,7 +3616,7 @@ _p[28] = {
              *
              * @grammar dec(name, value) => {this}
              *
-             * @param  {string} name  要减少值的通道的名稱，具体含义请查看 set 方法
+             * @param  {string} name  要减少值的通道的名稱，具体含义請查看 set 方法
              * @param  {number} value 减量值
              */
             dec: function(name, value) {
@@ -3656,7 +3656,7 @@ _p[28] = {
              *
              * @description 返回当前颜色的一个字面量表示
              *
-             * @return {plain} 颜色字面量，其结构为：
+             * @return {plain} 颜色字面量，其结构為：
              *     {
              *         r: 0,
              *         g: 0,
@@ -3674,7 +3674,7 @@ _p[28] = {
              * @method toRGB()
              * @for kity.Color
              *
-             * @description 返回当前颜色的 RGB 表示，如果颜色有透明度，将抛弃透明度属性（想要保留请使用 toRGBA()）方法。
+             * @description 返回当前颜色的 RGB 表示，如果颜色有透明度，将抛弃透明度属性（想要保留請使用 toRGBA()）方法。
              *
              * @grammar toRGB() => {string}
              */
@@ -3696,7 +3696,7 @@ _p[28] = {
              * @method toHEX()
              * @for kity.Color
              *
-             * @description 返回当前颜色的 HEX 表示，如果颜色有透明度，将抛弃透明度属性（想要保留请使用 toRGBA()）方法。
+             * @description 返回当前颜色的 HEX 表示，如果颜色有透明度，将抛弃透明度属性（想要保留請使用 toRGBA()）方法。
              *
              * @grammar toHEX() => {string}
              */
@@ -3707,7 +3707,7 @@ _p[28] = {
              * @method toHSL()
              * @for kity.Color
              *
-             * @description 返回当前颜色的 HSL 表示，如果颜色有透明度，将抛弃透明度属性（想要保留请使用 toHSLA()）方法。
+             * @description 返回当前颜色的 HSL 表示，如果颜色有透明度，将抛弃透明度属性（想要保留請使用 toHSLA()）方法。
              *
              * @grammar toHSL() => {string}
              */
@@ -3774,7 +3774,7 @@ _p[28] = {
          * @static
          * @for kity.Color
          *
-         * @description 解析一个颜色字符串为 kity.Color 对象
+         * @description 解析一个颜色字符串為 kity.Color 對象
          *
          * @grammar kity.Color.parse(valStr)
          *
@@ -3803,7 +3803,7 @@ _p[28] = {
          * @for kity.Color
          * @static
          *
-         * @description 创建一个 HSL 颜色
+         * @description 建立一个 HSL 颜色
          *
          * @grammar kity.Color.createHSL(h, s, l) => {kity.Color}
          *
@@ -3819,7 +3819,7 @@ _p[28] = {
          * @for kity.Color
          * @static
          *
-         * @description 创建一个 HSLA 颜色
+         * @description 建立一个 HSLA 颜色
          *
          * @grammar kity.Color.createHSLA(h, s, l, a) => {kity.Color}
          *
@@ -3840,7 +3840,7 @@ _p[28] = {
          * @for kity.Color
          * @static
          *
-         * @description 创建一个 RGB 颜色
+         * @description 建立一个 RGB 颜色
          *
          * @grammar kity.Color.createRGB(r, g, b) => {kity.Color}
          *
@@ -3856,7 +3856,7 @@ _p[28] = {
          * @for kity.Color
          * @static
          *
-         * @description 创建一个 RGBA 颜色
+         * @description 建立一个 RGBA 颜色
          *
          * @grammar kity.Color.createRGBA(r, g, b, a) => {kity.Color}
          *
@@ -3869,11 +3869,11 @@ _p[28] = {
                 return new Color(r, g, b, a);
             }
         });
-        //内部工具对象
+        //内部工具對象
         Utils.extend(ColorUtils, {
             parseToValue: function(valStr) {
                 var rgbaValue = {};
-                /* 優先检测在调色板中是否有对应的颜色 */
+                /* 優先检测在调色板中是否有對应的颜色 */
                 valStr = StandardColor.EXTEND_STANDARD[valStr] || StandardColor.COLOR_STANDARD[valStr] || valStr;
                 /* 颜色转换 */
                 //hex格式
@@ -3932,14 +3932,14 @@ _p[28] = {
                     result.l = hslaStr[2] | 0;
                     //转换出rgb值
                     result = Utils.extend(result, ColorUtils.hslValueToRGBValue(result));
-                    //hsl值转换为rgb值
+                    //hsl值转换為rgb值
                     result = ColorUtils.hslValueToRGBValue(result);
                     result.a = hasAlpha ? parseFloat(hslaStr[3]) : 1;
                     return result;
                 }
                 return null;
             },
-            //hsl值对象转换为rgb值对象
+            //hsl值對象转换為rgb值對象
             hslValueToRGBValue: function(hslValue) {
                 function trans(v1, v2, vH) {
                     if (vH < 0) {
@@ -3980,7 +3980,7 @@ _p[28] = {
                 result.b = Math.min(Math.round(result.b * 255), 255);
                 return result;
             },
-            //rgb值对象转换为hsl值对象
+            //rgb值對象转换為hsl值對象
             rgbValueToHslValue: function(rgbValue) {
                 var max = null, min = null, result = {};
                 rgbValue = Utils.extend({}, rgbValue);
@@ -4038,7 +4038,7 @@ _p[28] = {
                     return ("#" + vals.join("")).toLowerCase();
                 }
             },
-            //16进制的2个数字转化为10进制， 如果转化失敗， 返回0
+            //16进制的2个數字转化為10进制， 如果转化失敗， 返回0
             toNumber: function(value) {
                 return Number("0x" + value) | 0;
             },
@@ -4176,28 +4176,28 @@ _p[30] = {
     value: function(require, exports, module) {
         var Utils = _p.r(12), CurveUtil = {
             /*
-             * 取得由两个以上的点组成的曲线的平移线
-             * @param points 曲线上的点的集合， 集合中的点的数量必须大于2
-             * @return 平移线数组
+             * 取得由两个以上的點组成的曲线的平移线
+             * @param points 曲线上的點的集合， 集合中的點的數量必须大于2
+             * @return 平移线數组
              */
             getCurvePanLines: function(points, smoothFactor) {
-                //计算原始点的中点坐标
-                var centerPoints = CurveUtil.getCenterPoints(points), //注意：计算中点连线的中点坐标， 得出平移线
+                //计算原始點的中點坐标
+                var centerPoints = CurveUtil.getCenterPoints(points), //注意：计算中點连线的中點坐标， 得出平移线
                 panLines = CurveUtil.getPanLine(points.length, centerPoints);
-                //平移线移动到顶点
+                //平移线移動到顶點
                 return CurveUtil.getMovedPanLines(points, panLines, smoothFactor);
             },
             /*
-             * 计算给定点集合的连线的中点
+             * 计算给定點集合的连线的中點
              * @param points
              */
             getCenterPoints: function(points) {
                 var centerPoints = {}, key = null;
                 for (var i = 0, j = 0, len = points.length; i < len; i++) {
-                    //j是下一个点的索引
+                    //j是下一个點的索引
                     j = i === len - 1 ? 0 : i + 1;
                     key = i + "," + j;
-                    //计算中点坐标
+                    //计算中點坐标
                     centerPoints[key] = {
                         x: (points[i].x + points[j].y) / 2,
                         y: (points[i].x + points[j].y) / 2
@@ -4206,21 +4206,21 @@ _p[30] = {
                 return centerPoints;
             },
             /*
-             * 对getCenterPoints()接口取得到的資料做处理， 计算出各个顶点对应的平移线資料
-             * @param length 集合中点的个数
-             * @param points 点集合， 该集合应该是getCenterPoints()接口返回的資料
+             * 對getCenterPoints()接口取得到的資料做处理， 计算出各个顶點對应的平移线資料
+             * @param length 集合中點的个數
+             * @param points 點集合， 该集合应该是getCenterPoints()接口返回的資料
              */
             getPanLine: function(length, points) {
-                var result = {}, //顶点索引
+                var result = {}, //顶點索引
                 pointIndex = null;
                 for (var i = 0, j; i < length; i++) {
                     var point1 = null, point2 = null;
-                    //计算当前点
+                    //计算当前點
                     j = (i + 1) % length;
-                    //保存当前处理的顶点索引
+                    //保存当前处理的顶點索引
                     pointIndex = j;
                     point1 = points[i + "," + j];
-                    //计算下一个点
+                    //计算下一个點
                     i = j;
                     j = (i + 1) % length;
                     point2 = points[i + "," + j];
@@ -4243,16 +4243,16 @@ _p[30] = {
                 return result;
             },
             /*
-             * 计算平移线移动到顶点后的位置
-             * @param points 顶点集合
+             * 计算平移线移動到顶點后的位置
+             * @param points 顶點集合
              * @param panLines 平移线集合
              */
             getMovedPanLines: function(points, panLines, smoothFactor) {
                 var result = {};
                 Utils.each(points, function(point, index) {
                     //当前平移线
-                    var currentPanLine = panLines[index], //平移线中点
-                    center = currentPanLine.center, //移动距离
+                    var currentPanLine = panLines[index], //平移线中點
+                    center = currentPanLine.center, //移動距离
                     distance = {
                         x: center.x - point.x,
                         y: center.y - point.y
@@ -4264,7 +4264,7 @@ _p[30] = {
                             y: point.y
                         }
                     };
-                    //计算控制点到顶点的距离， 并且应用平滑系数到距离上
+                    //计算控制點到顶點的距离， 并且应用平滑系數到距离上
                     Utils.each(currentPanLine.points, function(controlPoint, index) {
                         var moved = {
                             x: controlPoint.x - distance.x,
@@ -4292,7 +4292,7 @@ _p[30] = {
                 this.smoothFactor = 1;
                 this.update();
             },
-            //当点集合发生变化时采取的动作
+            //当點集合发生变化时采取的動作
             onContainerChanged: function() {
                 if (this.changeable) {
                     this.update();
@@ -4321,22 +4321,22 @@ _p[30] = {
                     drawer.lineTo(points[1]);
                     return this;
                 }
-                //取得已转换过后的带控制点的所有点
+                //取得已转换过后的带控制點的所有點
                 withControlPoints = CurveUtil.getCurvePanLines(points, this.getSmoothFactor());
                 for (var i = 1, len = points.length; i < len; i++) {
-                    //当前顶点
+                    //当前顶點
                     curPoint = withControlPoints[i].center;
-                    //当前控制点
+                    //当前控制點
                     if (this.closeState || i != len - 1) {
                         curControlPoint = withControlPoints[i].points[0];
                     } else {
-                        //非闭合狀態下最后一个点的处理
+                        //非闭合狀態下最后一个點的处理
                         curControlPoint = withControlPoints[i].center;
                     }
                     if (this.closeState || i != 1) {
                         prevControlPoint = withControlPoints[i - 1].points[1];
                     } else {
-                        //非闭合狀態下第一个点的处理
+                        //非闭合狀態下第一个點的处理
                         prevControlPoint = withControlPoints[i - 1].center;
                     }
                     drawer.bezierTo(prevControlPoint.x, prevControlPoint.y, curControlPoint.x, curControlPoint.y, curPoint.x, curPoint.y);
@@ -4468,7 +4468,7 @@ _p[32] = {
 
 //src/graphic/eventhandler.js
 /*
- * kity event 实现
+ * kity event 實現
  */
 _p[33] = {
     value: function(require, exports, module) {
@@ -4526,7 +4526,7 @@ _p[33] = {
             }
             return this;
         }
-        // 执行绑定, 该方法context为shape或者mixin了eventhandler的对象
+        // 执行绑定, 该方法context為shape或者mixin了eventhandler的對象
         function listen(node, type, handler, isOnce) {
             var eid = this._EVNET_UID, targetObject = this;
             // 初始化内部监听器
@@ -4546,7 +4546,7 @@ _p[33] = {
                                 targetObject.off(type, fn);
                             }
                         }
-                        // 如果使用者handler里return了false， 则该节点上的此后的同类型事件将不再执行
+                        // 如果使用者handler里return了false， 则该节點上的此后的同类型事件将不再执行
                         return result;
                     }, targetObject);
                 };
@@ -4557,8 +4557,8 @@ _p[33] = {
             }
             if (!USER_HANDLER_CACHE[eid][type]) {
                 USER_HANDLER_CACHE[eid][type] = [ handler ];
-                // 绑定对应类型的事件
-                // dom对象利用dom event进行处理， 非dom对象， 由消息分发机制处理
+                // 绑定對应类型的事件
+                // dom對象利用dom event进行处理， 非dom對象， 由消息分发机制处理
                 if (!!node && "on" + type in node) {
                     bindDomEvent(node, type, INNER_HANDLER_CACHE[eid][type]);
                 }
@@ -4606,7 +4606,7 @@ _p[33] = {
             }, msg || {});
             handler.call(messageObj, event);
         }
-        // 对外接口
+        // 對外接口
         return _p.r(11).createClass("EventHandler", {
             constructor: function() {
                 this._EVNET_UID = ++guid;
@@ -4675,7 +4675,7 @@ _p[34] = {
             if (path.isCurve) result.isCurve = true;
             return result;
         }
-        // 缓存函数
+        // 缓存函數
         // from raphael.js
         function cacher(f, scope, postprocessor) {
             function repush(array, item) {
@@ -4768,10 +4768,10 @@ _p[34] = {
         /**
      * kity.g.pathToAbsolute(path)
      *
-     * 把路径转换为绝对路径的形式
+     * 把路径转换為绝對路径的形式
      *
      * @param {Array|String} path
-     *     要转换的 path 路径或者数组
+     *     要转换的 path 路径或者數组
      *
      * @return {Array}
      *     转换后的 Path Segment
@@ -4862,7 +4862,7 @@ _p[34] = {
             res.toString = g.pathToString;
             return res;
         });
-        // 把圆弧绘制的曲线转化为对应的三次贝塞尔形式
+        // 把圆弧绘制的曲线转化為對应的三次贝塞尔形式
         function a2c(x1, y1, rx, ry, angle, laf, sf, x2, y2, recursive) {
             // copy from raphael.js
             // for more information of where this math came from visit:
@@ -4950,7 +4950,7 @@ _p[34] = {
                 return newres;
             }
         }
-        // 把二次贝塞尔曲线参数转化为三次贝塞尔曲线参数
+        // 把二次贝塞尔曲线参數转化為三次贝塞尔曲线参數
         function q2c(x1, y1, ax, ay, x2, y2) {
             // copy from raphael.js
             var _13 = 1 / 3, _23 = 2 / 3;
@@ -4959,10 +4959,10 @@ _p[34] = {
         /**
      * kity.g.pathToCurve(path)
      *
-     * 把路径转换为贝塞尔路径
+     * 把路径转换為贝塞尔路径
      *
      * @param  {Array|String} path
-     *     要转换的 path 路径或数组
+     *     要转换的 path 路径或數组
      *
      * @return {Array}
      *     转换后的 PathSegment，每一段都是 'C'
@@ -4972,12 +4972,12 @@ _p[34] = {
             var initPoint, currentPoint, endPoint, shouldClose, lastControlPoint, aussumedControlPoint;
             var controlPoint1, controlPoint2;
             var res = [];
-            // 处理的路径要求是一个绝对路径
+            // 处理的路径要求是一个绝對路径
             if (!path.isAbsolute) path = g.pathToAbsolute(path);
             for (i = 0; i < path.length; i++) {
                 command = path[i][0];
                 param = path[i].slice(1);
-                // 画笔移动
+                // 画笔移動
                 if (command == "M") {
                     initPoint = lastControlPoint = currentPoint = param;
                     res.push(path[i]);
@@ -4991,22 +4991,22 @@ _p[34] = {
                 }
                 // 绘制命令的目的位置
                 endPoint = param.slice(param.length - 2);
-                // 对 'H' 命令的修正
+                // 對 'H' 命令的修正
                 if (command == "H") {
                     endPoint = [ param[0], currentPoint[1] ];
                     command = "L";
                 }
-                // 对 'V' 命令的修正
+                // 對 'V' 命令的修正
                 if (command == "V") {
                     endPoint = [ currentPoint[0], param[0] ];
                     command = "L";
                 }
-                // 对 'S' 命令求出隐含的控制点位置
+                // 對 'S' 命令求出隐含的控制點位置
                 if (command == "S" || command == "T") {
-                    // 隐含控制点是上一个控制点关于当前位置的镜像
+                    // 隐含控制點是上一个控制點关于当前位置的镜像
                     aussumedControlPoint = [ currentPoint[0] + (currentPoint[0] - lastControlPoint[0]), currentPoint[1] + (currentPoint[1] - lastControlPoint[1]) ];
                 }
-                // 针对不同的命令求控制点
+                // 針對不同的命令求控制點
                 switch (command) {
                   case "L":
                     controlPoint1 = currentPoint;
@@ -5053,9 +5053,9 @@ _p[34] = {
                     // 写入当前一段曲线
                     res.push([ "C" ].concat(controlPoint1).concat(controlPoint2).concat(endPoint));
                 }
-                // 为下次循环准备当前位置
+                // 為下次循环准备当前位置
                 currentPoint = endPoint;
-                // 二次贝塞尔曲线自己已经记录了上个控制点的位置，其它的记录控制点 2 的位置
+                // 二次贝塞尔曲线自己已经记录了上个控制點的位置，其它的记录控制點 2 的位置
                 if (command != "Q") {
                     lastControlPoint = controlPoint2;
                 }
@@ -5087,11 +5087,11 @@ _p[34] = {
         /**
      * kity.g.cutBezier(bezierArray, t)
      *
-     * 在指定位置把贝塞尔曲线切割为两部分
+     * 在指定位置把贝塞尔曲线切割為两部分
      *
      * @param {Array} bezierArray
-     *     表示贝塞尔曲线的一个数组 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
-     *     p1 和 p2 是贝塞尔曲线的起点和终点，c1 和 c2 是两个控制点
+     *     表示贝塞尔曲线的一个數组 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
+     *     p1 和 p2 是贝塞尔曲线的起點和终點，c1 和 c2 是两个控制點
      *
      * @param {Number} t
      *     切割的位置（0 到 1）
@@ -5108,34 +5108,34 @@ _p[34] = {
      * 求一段贝塞尔曲线的子段
      *
      * @param {Array} bezierArray
-     *     长度为 8 的数组，表示 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
+     *     長度為 8 的數组，表示 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
      *
      * @param {Number} t
      *     子段的结束位置（0 到 1）
      *
      * @param {Number} t0
-     *     字段的开始位置（0 到 t），可不传，默认为 0
+     *     字段的開始位置（0 到 t），可不傳，默认為 0
      *
      * @return {Array}
-     *     长度为 8 的数组，表示给定贝塞尔曲线的子段
+     *     長度為 8 的數组，表示给定贝塞尔曲线的子段
      */
         g.subBezier = function(bezierArray, t, t0) {
             var b2t = cutBezier(bezierArray, t)[0];
             return t0 ? cutBezier(b2t, t0 / t)[1] : b2t;
         };
         /**
-     * 求贝塞尔曲线上的一个点
+     * 求贝塞尔曲线上的一个點
      *
      * @param {Array} bezierArray
-     *     长度为 8 的数组，表示 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
+     *     長度為 8 的數组，表示 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
      *
      * @param {Number} t
-     *     所求点的开始位置（0 到 1）
+     *     所求點的開始位置（0 到 1）
      *
      * @return {Point} p
      *     p.x: x 坐标
      *     p.y: y 坐标
-     *     p.tan: 在 t 处的切线方向（类型为 kity.Vector，模为 1）
+     *     p.tan: 在 t 处的切线方向（类型為 kity.Vector，模為 1）
      */
         g.pointAtBezier = function(bezierArray, t) {
             var b2t = cutBezier(bezierArray, t)[0];
@@ -5148,18 +5148,18 @@ _p[34] = {
             return p;
         };
         /**
-     * 求贝塞尔曲线的长度
+     * 求贝塞尔曲线的長度
      *
      * @param {Array} bezierArray
-     *     长度为 8 的数组，表示 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
+     *     長度為 8 的數组，表示 [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y]
      *
      * @param {Number} tolerate
      *     允许的误差，默认是 0.1
      *
-     * @return {Number} 贝塞尔曲线的长度
+     * @return {Number} 贝塞尔曲线的長度
      */
         g.bezierLength = cacher(function bezierLength(bezierArray) {
-            // 表示（c[0]*t^4 + c[1]*t^3 + c[2]*t^2 + c[3]*t^1 + c[4])^(1/2)的函数
+            // 表示（c[0]*t^4 + c[1]*t^3 + c[2]*t^2 + c[3]*t^1 + c[4])^(1/2)的函數
             function f(x) {
                 var m = c0 * Math.pow(x, 4) + c1 * Math.pow(x, 3) + c2 * Math.pow(x, 2) + c3 * x + c4;
                 if (m < 0) {
@@ -5169,19 +5169,19 @@ _p[34] = {
             }
             // 用Newton-Cotes型求积公式
             var arr = bezierArray;
-            // 三次贝塞尔曲线函数求导后，求出对应的方程系数，用cx[],cy[]表示x`(t)和y`(t)的系数
+            // 三次贝塞尔曲线函數求导后，求出對应的方程系數，用cx[],cy[]表示x`(t)和y`(t)的系數
             var cx0, cx1, cx2;
             var cy0, cy1, cy2;
-            // 用c[]表示x`(t)^2 + y`(t)^2的结果的系数
+            // 用c[]表示x`(t)^2 + y`(t)^2的结果的系數
             var c0, c1, c2, c3, c4;
-            // 求x`(t) 和 y`(t)的系数
+            // 求x`(t) 和 y`(t)的系數
             cx0 = -3 * arr[0] + 9 * arr[2] - 9 * arr[4] + 3 * arr[6];
             cx1 = 6 * arr[0] - 12 * arr[2] + 6 * arr[4];
             cx2 = -3 * arr[0] + 3 * arr[2];
             cy0 = -3 * arr[1] + 9 * arr[3] - 9 * arr[5] + 3 * arr[7];
             cy1 = 6 * arr[1] - 12 * arr[3] + 6 * arr[5];
             cy2 = -3 * arr[1] + 3 * arr[3];
-            // 求x`(t)^2 + y`(t)^2的结果的系数 c[]
+            // 求x`(t)^2 + y`(t)^2的结果的系數 c[]
             c0 = Math.pow(cx0, 2) + Math.pow(cy0, 2);
             c1 = 2 * (cx0 * cx1 + cy0 * cy1);
             c2 = 2 * (cx0 * cx2 + cy0 * cy2) + Math.pow(cx1, 2) + Math.pow(cy1, 2);
@@ -5190,12 +5190,12 @@ _p[34] = {
             // 用cotes积分公式求值
             return (f(0) + f(1) + 4 * (f(.125) + f(.375) + f(.625) + f(.875)) + 2 * (f(.25) + f(.5) + f(.75))) / 24;
         });
-        // 计算一个 pathSegment 中每一段的在整体中所占的长度范围，以及总长度
+        // 计算一个 pathSegment 中每一段的在整体中所占的長度范围，以及总長度
         // 方法要求每一段都是贝塞尔曲线
         var getBezierPathSegmentRanges = cacher(function(pathSegment) {
             var i, ii, segment, position, bezierLength, segmentRanges, totalLength;
             segmentRanges = [];
-            // 总长度
+            // 总長度
             totalLength = 0;
             for (i = 0, ii = pathSegment.length; i < ii; i++) {
                 segment = pathSegment[i];
@@ -5227,7 +5227,7 @@ _p[34] = {
      *     要求的子路径的结束位置（0 到 1）
      *
      * @param  {Number} t0
-     *     要求的子路径的开始位置（0 到 t1），可不传，默认为 0
+     *     要求的子路径的開始位置（0 到 t1），可不傳，默认為 0
      *
      * @return {Array}
      *     子路径的 PathSegment
@@ -5245,15 +5245,15 @@ _p[34] = {
             if (!path.isCurve) {
                 path = g.pathToCurve(path);
             }
-            // path 每一段在整体中的长度区间
+            // path 每一段在整体中的長度区间
             var segmentRanges = getBezierPathSegmentRanges(path);
-            // path 总长度
+            // path 总長度
             var totalLength = segmentRanges.totalLength;
-            // t1 和 t0 位置命中的长度位置
+            // t1 和 t0 位置命中的長度位置
             var t1Length = totalLength * t1, t0Length = totalLength * (t0 || 0);
             // 产生的子路径
             var subPath = [];
-            // 迭代变量，a 是一段的长度区间左值，b 是右值，d 是区间长度
+            // 迭代变量，a 是一段的長度区间左值，b 是右值，d 是区间長度
             var i, ii, a, b, d;
             var position;
             var bezier, subBezier, stared;
@@ -5326,18 +5326,18 @@ _p[34] = {
             return subPath;
         };
         /**
-     * 求路径上的一个点
+     * 求路径上的一个點
      *
      * @param  {Array|String} path
-     *     要求点的路径
+     *     要求點的路径
      *
      * @param  {Number} t
-     *     要求的点的位置（0 到 1）
+     *     要求的點的位置（0 到 1）
      *
      * @return {Point} p
      *     p.x: x 坐标
      *     p.y: y 坐标
-     *     p.tan: 在 t 处的切线方向（类型为 kity.Vector，模为 1）
+     *     p.tan: 在 t 处的切线方向（类型為 kity.Vector，模為 1）
      */
         g.pointAtPath = function(path, t) {
             if (!path.isCurve) {
@@ -5345,37 +5345,37 @@ _p[34] = {
             }
             var subPath = g.subPath(path, t);
             var lastCurve = subPath[subPath.length - 1][0] == "Z" ? subPath[subPath.length - 2] : subPath[subPath.length - 1];
-            // 跳过 'C' 命令，只留参数
+            // 跳过 'C' 命令，只留参數
             lastCurve = lastCurve.slice(1);
             var p = Point.parse(lastCurve.slice(4)), c = Point.parse(lastCurve.slice(2, 4));
             p.tan = Vector.fromPoints(c, p).normalize();
             return p;
         };
         /**
-     * 求一段路径的长度
+     * 求一段路径的長度
      *
      * @param  {string|Array} path
      *     要求的路径
      *
      * @return {Number}
-     *     路径的长度
+     *     路径的長度
      */
         g.pathLength = cacher(function(path) {
             if (!path.isCurve) {
                 path = g.pathToCurve(path);
             }
-            // path 每一段在整体中的长度区间
+            // path 每一段在整体中的長度区间
             var segmentRanges = getBezierPathSegmentRanges(path);
             return segmentRanges.totalLength;
         });
         /**
-     * 求一段路径的關鍵点
+     * 求一段路径的關鍵點
      *
      * @param  {string|Array} path
      *     要求的路径
      *
      * @return {Array}
-     *     關鍵点的集合
+     *     關鍵點的集合
      */
         g.pathKeyPoints = cacher(function(path) {
             var i, ii, command, keyPoints;
@@ -5389,8 +5389,8 @@ _p[34] = {
             }
             return keyPoints;
         });
-        // 对比两个路径的關鍵位置，在合适的位置切割合适的路径，使得两个路径的段数一致
-        // TODO: 使用插值算法，使对应点更合理
+        // 對比两个路径的關鍵位置，在合适的位置切割合适的路径，使得两个路径的段數一致
+        // TODO: 使用插值算法，使對应點更合理
         var alignCurve = cacher(function(path1, path2) {
             if (!path1.isCurve) path1 = g.pathToCurve(path1);
             if (!path2.isCurve) path2 = g.pathToCurve(path2);
@@ -6081,29 +6081,29 @@ _p[43] = {
                 }
                 return matrix.multiply(target.getScreenCTM());
             }
-            // 根据参照坐标系选区的不一样，返回不同的结果
+            // 根據参照坐标系选区的不一样，返回不同的结果
             switch (refer) {
               case "screen":
-                // 以浏览器屏幕为参照坐标系
+                // 以浏览器屏幕為参照坐标系
                 ctm = node.getScreenCTM();
                 break;
 
               case "doc":
               case "paper":
-                // 以文档（Paper）为参照坐标系
+                // 以文档（Paper）為参照坐标系
                 ctm = node.getCTM();
                 break;
 
               case "view":
               case "top":
-                // 以顶层绘图容器（视野）为参照坐标系
+                // 以顶层绘图容器（视野）為参照坐标系
                 if (target.getPaper()) {
                     ctm = node.getTransformToElement !== undefined ? node.getTransformToElement(target.getPaper().shapeNode) : getTransformToElement(node, target.getPaper().shapeNode);
                 }
                 break;
 
               case "parent":
-                // 以父容器为参照坐标系
+                // 以父容器為参照坐标系
                 if (target.node.parentNode) {
                     ctm = node.getTransformToElement !== undefined ? node.getTransformToElement(target.node.parentNode) : getTransformToElement(node, target.node.parentNode);
                 }
@@ -6134,9 +6134,9 @@ _p[44] = {
                 this.color = {};
             },
             /*
-         * 取得颜色名稱所对应的颜色值的Color对象
+         * 取得颜色名稱所對应的颜色值的Color對象
          * @param name 需要取得的颜色名稱
-         * @return 对应颜色名稱的color对象， 如果未找到对应的名稱， 则返回null
+         * @return 對应颜色名稱的color對象， 如果未找到對应的名稱， 则返回null
          */
             get: function(name) {
                 var colorValue = this.color[name] || StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
@@ -6148,15 +6148,15 @@ _p[44] = {
             /*
          * 取得给定名稱的颜色的hex值表示
          * @param name 需要取得的颜色名稱
-         * @return 如果找到对应的名稱， 则返回该名稱所对应的hex格式的值， 否则， 返回一个空字符串
+         * @return 如果找到對应的名稱， 则返回该名稱所對应的hex格式的值， 否则， 返回一个空字符串
          */
             getColorValue: function(name) {
                 return this.color[name] || StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
             },
             /*
-         * 向调色板实例新增自己独有的颜色名稱，对已存在的颜色名稱， 将会覆盖掉
+         * 向调色板实例新增自己独有的颜色名稱，對已存在的颜色名稱， 将会覆盖掉
          * @param name 新新增的颜色名稱
-         * @param value 新新增的颜色名稱所对应的值， 可以是一个合法的颜色字符串或者是一个color对象
+         * @param value 新新增的颜色名稱所對应的值， 可以是一个合法的颜色字符串或者是一个color對象
          * @return 新新增的颜色的值
          */
             add: function(name, value) {
@@ -6189,18 +6189,18 @@ _p[44] = {
                 return null;
             },
             /*
-         * 通过给定的名字取得标准的颜色值表示， 返回的值以hex的方式提供
+         * 通過给定的名字取得标准的颜色值表示， 返回的值以hex的方式提供
          * @param name 需要取得的标准颜色名稱
-         * @return 名字所对应的颜色值的hex表示， 如果未找到对应名稱的值， 则返回一个空字符串
+         * @return 名字所對应的颜色值的hex表示， 如果未找到對应名稱的值， 则返回一个空字符串
          */
             getColorValue: function(name) {
                 return StandardColor.EXTEND_STANDARD[name] || StandardColor.COLOR_STANDARD[name] || "";
             },
             /*
-         * 向调色板新增颜色名稱，新新增的颜色对所有的调色板对象都可见
-         * 对已存在的颜色名稱， 将会覆盖掉
+         * 向调色板新增颜色名稱，新新增的颜色對所有的调色板對象都可见
+         * 對已存在的颜色名稱， 将会覆盖掉
          * @param name 新新增的颜色名稱
-         * @param value 新新增的颜色名稱所对于的值， 应该是一个hex格式的颜色字符串， 如： ”#ff0000“
+         * @param value 新新增的颜色名稱所對于的值， 应该是一个hex格式的颜色字符串， 如： ”#ff0000“
          * @return 新新增的颜色的值
          */
             addColor: function(name, value) {
@@ -6667,35 +6667,35 @@ _p[49] = {
 
 //src/graphic/point.js
 /*
- * 点对象抽象
+ * 點對象抽象
  */
 _p[50] = {
     value: function(require, exports, module) {
         /**
      * @class kity.Point
-     * @description 表示一个点
+     * @description 表示一个點
      */
         var Point = _p.r(11).createClass("Point", {
             /**
          * @constructor
          * @for kity.Point
-         * @description 指定默认的 x 和 y 创建一个点
+         * @description 指定默认的 x 和 y 建立一个點
          * 
-         * @param  {Number} x 点的 x 坐标
-         * @param  {Number} y 点的 y 坐标
+         * @param  {Number} x 點的 x 坐标
+         * @param  {Number} y 點的 y 坐标
          */
             constructor: function(x, y) {
                 /**
              * @property
              * @for kity.Point
-             * @description 表示点的 x 坐标
+             * @description 表示點的 x 坐标
              * @type {Number}
              */
                 this.x = x || 0;
                 /**
              * @property
              * @for kity.Point
-             * @description 表示点的 y 坐标
+             * @description 表示點的 y 坐标
              * @type {Number}
              */
                 this.y = y || 0;
@@ -6730,7 +6730,7 @@ _p[50] = {
      * @grammar kity.Point.fromPolar(radius, angle, unit) => kity.Point
      * @param  {Number} radius 极坐标中的半径
      * @param  {Number} angle  极坐标中的角度
-     * @param  {String} unit   角度使用的单位，默认为 'deg' (角度)，可以取值为 'rad'，表示传入的是弧度值
+     * @param  {String} unit   角度使用的單位，默认為 'deg' (角度)，可以取值為 'rad'，表示传入的是弧度值
      */
         Point.fromPolar = function(radius, angle, unit) {
             if (unit != "rad") {
@@ -6757,7 +6757,7 @@ _p[50] = {
 
 //src/graphic/pointcontainer.js
 /**
- * 点集合容器
+ * 點集合容器
  */
 _p[51] = {
     value: function(require, exports, module) {
@@ -6802,7 +6802,7 @@ _p[51] = {
 
 //src/graphic/poly.js
 /*
- * 通过点来决定图形的公共父类
+ * 通過點来决定图形的公共父类
  */
 _p[52] = {
     value: function(require, exports, module) {
@@ -6818,7 +6818,7 @@ _p[52] = {
                 this.changeable = true;
                 this.update();
             },
-            //当点集合发生变化时采取的动作
+            //当點集合发生变化时采取的動作
             onContainerChanged: function() {
                 if (this.changeable) {
                     this.update();
@@ -6918,7 +6918,7 @@ _p[56] = {
     value: function(require, exports, module) {
         var RectUtils = {}, Utils = _p.r(12), Point = _p.r(50), Box = _p.r(25);
         Utils.extend(RectUtils, {
-            //根据传递进来的width、height和radius属性，
+            //根據传递进来的width、height和radius属性，
             //取得最适合的radius值
             formatRadius: function(width, height, radius) {
                 var minValue = Math.floor(Math.min(width / 2, height / 2));
@@ -6983,7 +6983,7 @@ _p[56] = {
          * @method setWidth
          * @for kity.Rect
          * @grammar setWidth(width) => kity.Rect
-         * @description 设置矩形的宽度，设置后返回矩形实例本身
+         * @description 設定矩形的宽度，設定后返回矩形实例本身
          * @param {Number} width 宽度值
          *
          * @example
@@ -6999,7 +6999,7 @@ _p[56] = {
          * @method setHeight
          * @for  kity.Rect
          * @grammar setHeight(height) => kity.Rect
-         * @description 设置矩形的高度，设置后返回矩形实例本身
+         * @description 設定矩形的高度，設定后返回矩形实例本身
          * @param {Number} height 高度值
          *
          * @example
@@ -7015,7 +7015,7 @@ _p[56] = {
          * @method setSize
          * @for  kity.Rect
          * @grammar setSize(width, height) => kity.Rect
-         * @description 设置矩形的尺寸，设置后返回矩形本身
+         * @description 設定矩形的尺寸，設定后返回矩形本身
          * @param {Number} width  矩形的宽度值
          * @param {Number} height 矩形的高度值
          *
@@ -7142,7 +7142,7 @@ _p[57] = {
 /**
  * @fileOverview
  *
- * 资源节点基类
+ * 资源节點基类
  *
  * @author: techird
  * @copyright: Baidu FEX, 2014
@@ -7366,7 +7366,7 @@ _p[60] = {
                 if (pen && pen.stroke) {
                     pen.stroke(this);
                 } else if (pen) {
-                    // 字符串或重写了 toString 的对象
+                    // 字符串或重写了 toString 的對象
                     this.node.setAttribute("stroke", pen.toString());
                     if (width) {
                         this.node.setAttribute("stroke-width", width);
@@ -7377,7 +7377,7 @@ _p[60] = {
                 return this;
             },
             fill: function(brush) {
-                // 字符串或重写了 toString 的对象
+                // 字符串或重写了 toString 的對象
                 if (brush) {
                     this.node.setAttribute("fill", brush.toString());
                 }
@@ -7578,11 +7578,11 @@ _p[62] = {
         return _p.r(11).createClass("ShapeEvent", {
             constructor: function(event) {
                 var target = null;
-                // dom 事件封装对象
+                // dom 事件封装對象
                 if (!Utils.isObject(event.target)) {
                     this.type = event.type;
                     target = event.target;
-                    // use标签有特殊属性， 需要区别对待
+                    // use标签有特殊属性， 需要区别對待
                     if (target.correspondingUseElement) {
                         target = target.correspondingUseElement;
                     }
@@ -7608,7 +7608,7 @@ _p[62] = {
                     return true;
                 }
             },
-            //当前鼠标事件在使用者坐标系中点击的点的坐标位置
+            //当前鼠标事件在使用者坐标系中點擊的點的坐标位置
             getPosition: function(refer, touchIndex) {
                 if (!this.originEvent) {
                     return null;
@@ -7638,7 +7638,7 @@ _p[62] = {
 
 //src/graphic/shapepoint.js
 /*
- * 图形上的点抽象
+ * 图形上的點抽象
  */
 _p[63] = {
     value: function(require, exports, module) {
@@ -7899,7 +7899,7 @@ _p[65] = {
                 drawer.moveTo(Point.fromPolar(outerRadius, angleStart));
                 for (i = 1; i <= vertex * 2; i++) {
                     angle = angleStart + angleStep * i;
-                    // 绘制内点
+                    // 绘制内點
                     if (i % 2) {
                         drawer.lineTo(Point.fromPolar(innerRadius, angle + angleOffset).offset(offset));
                     } else {
@@ -8325,7 +8325,7 @@ _p[72] = {
                     this.node.setAttributeNS(Svg.xlink, "xlink:href", "#" + shapeId);
                 }
                 // by techird
-                // 作为 Use 的图形，如果没有 fill 和 stroke，移除默认的 'none' 值，用于 Use 覆盖
+                // 作為 Use 的图形，如果没有 fill 和 stroke，移除默认的 'none' 值，用于 Use 覆盖
                 if (shape.node.getAttribute("fill") === "none") {
                     shape.node.removeAttribute("fill");
                 }
@@ -8443,8 +8443,8 @@ _p[75] = {
                 var attr = this.node.getAttribute("viewBox");
                 if (attr === null) {
                     // firefox:
-                    // 1. viewBox 没有设置过的时候获得的是 null
-                    // 2. svg 标签没有指定绝对大小的时候 clientWidth 和 clientHeigt 为 0，需要在父容器上查找
+                    // 1. viewBox 没有設定过的时候获得的是 null
+                    // 2. svg 标签没有指定绝對大小的时候 clientWidth 和 clientHeigt 為 0，需要在父容器上查找
                     // TODO: 第 2 條取得的不准确（假如有 padding 之类的）
                     return {
                         x: 0,
@@ -8472,7 +8472,7 @@ _p[75] = {
 
 //src/kity.js
 /**
- * @fileOverview kity 暴露的方法或对象
+ * @fileOverview kity 暴露的方法或對象
  */
 _p[76] = {
     value: function(require, exports, module) {

@@ -1,5 +1,5 @@
 /*
- * 图片转换对话框脚本
+ * 图片转换對話框脚本
  **/
 
 var tableData = [],
@@ -14,7 +14,7 @@ window.onload = function () {
 
     editorTable = domUtils.findParentByTagName( editor.selection.getRange().startContainer, 'table', true);
 
-    //未找到表格， 显示错误頁面
+    //未找到表格， 显示錯誤頁面
     if ( !editorTable ) {
         document.body.innerHTML = "<div class='edui-charts-not-data'>未找到資料</div>";
         return;
@@ -99,7 +99,7 @@ function renderTable ( table ) {
 }
 
 /*
- * 根据表格已有的图表属性初始化当前图表属性
+ * 根據表格已有的图表属性初始化当前图表属性
  */
 function initUserConfig ( config ) {
 
@@ -125,7 +125,7 @@ function initUserConfig ( config ) {
 function initEvent () {
 
     var cacheValue = null,
-        //图表类型数
+        //图表类型數
         typeViewCount = chartsConfig.length- 1,
         $chartsTypeViewBox = $( '#scrollBed .view-box' );
 
@@ -289,7 +289,7 @@ function getUserConfig () {
             xTitle: form[ 'x-title' ].value,
             yTitle: form[ 'y-title' ].value,
             suffix: form[ 'unit' ].value,
-            //資料对齐方式
+            //資料對齐方式
             tableDataFormat: getTableDataFormat (),
             //饼图提示文字
             tip: $( "#tipInput" ).val()
@@ -362,7 +362,7 @@ function getSeriesAndCategories () {
 }
 
 /*
- * 取得資料源資料对齐方式
+ * 取得資料源資料對齐方式
  */
 function getTableDataFormat () {
 

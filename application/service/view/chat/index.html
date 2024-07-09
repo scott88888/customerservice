@@ -47,7 +47,7 @@
             return;
         }
 
-        setTimeout("titleBlink()",500);//调节时间，单位毫秒。
+        setTimeout("titleBlink()",500);//调节時間，單位毫秒。
     }
 
     layui.use('element', function () {
@@ -104,7 +104,7 @@
             })
         });
 
-        // 接受视频请求
+        // 接受视频請求
         channel.bind("video",function (data) {
             getchat();
             var msg = data.message;
@@ -184,7 +184,7 @@
             getchat();
         });
 
-        // 接受拒绝视频请求
+        // 接受拒绝视频請求
         channel.bind("video-refuse",function (data) {
             layer.alert(data.message);
             layer.closeAll('page');
@@ -267,7 +267,7 @@
                 body: str,
                 icon: data.message.avatar
             }, function(notification) {
-                //可直接打开通知notification相关联的tab窗口
+                //可直接打開通知notification相關联的tab視窗
                 window.focus();
                 notification.close();
                 console.log('#v'+data.message.channel+' .visit_content');
@@ -279,7 +279,7 @@
         // 通知 遊客離線
         channel.bind("logout", function (data) {
 
-            //表示访客離線
+            //表示訪客離線
             var cdata = $.cookie("cu_com");
             var chas;
             if (cdata) {
@@ -288,7 +288,7 @@
             }
 
             if (chas == data.message.chas) {
-                //头像变灰
+                //圖示变灰
                 $("#v_state").text("離線");
             }
 
@@ -298,7 +298,7 @@
         });
 
         channel.bind("geton", function (data) {
-            //表示访客線上
+            //表示訪客線上
             var cdata = $.cookie("cu_com");
             var chas;
             if (cdata) {
@@ -306,7 +306,7 @@
                 chas = jsondata.channel;
             }
             if (chas == data.message.chas) {
-                //头像变亮
+                //圖示变亮
                 $("#img" + data.message.chas).removeClass("icon_gray");
                 $("#v_state").text("線上");
             }
@@ -633,7 +633,7 @@
             success:function(res){
                 if(res.code == 0){
                     var str = '';
-                    str += "<div class='push-evaluation'>已推送评价</div>";
+                    str += "<div class='push-evaluation'>已推送評價</div>";
                     $(".conversation").append(str);
                     var div = document.getElementById("wrap");
                     div.scrollTop = div.scrollHeight;
@@ -844,7 +844,7 @@
         var imgReader = function (item) {
             var blob = item.getAsFile(),
                 reader = new FileReader();
-            // 读取文件后将其显示在网頁中
+            // 读取文件后将其显示在網頁中
             reader.onload = function (e) {
                 var msg = '';
                 msg += "<img   src='" + e.target.result + "'>";
@@ -929,7 +929,7 @@
             reader.readAsDataURL(blob);
         };
         document.getElementById('text_in').addEventListener('paste', function (e) {
-            // 新增到事件对象中的访问系统剪贴板的接口
+            // 新增到事件對象中的訪問系统剪贴板的接口
             var clipboardData = e.clipboardData,
                 i = 0,
                 items, item, types;
@@ -948,7 +948,7 @@
                         break;
                     }
                 }
-                // 判断是否为图片資料
+                // 判断是否為图片資料
                 if (item && item.kind === 'file' && item.type.match(/^image\//i)) {
                     imgReader(item);
                 }
@@ -957,7 +957,7 @@
     })();
 
 
-    // 视频通话
+    // 视频通話
     var getvideo =function(){
 
         var sid = $('#channel').text();
@@ -965,7 +965,7 @@
 
         var times = (new Date()).valueOf();
         var se = $("#se").text();
-        //申请
+        //申請
         $.ajax({
             url:'/admin/set/apply',
             type: 'post',
@@ -1034,11 +1034,11 @@
 
     var getaudio =function(){
 
-        //音频先加载
+        //音訊先加载
         var audio_context;
         var recorder;
         var wavBlob;
-        //创建音频
+        //建立音訊
         try {
             // webkit shim
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -1048,7 +1048,7 @@
             audio_context = new AudioContext;
 
             if (!navigator.getUserMedia) {
-                console.log('语音创建失敗');
+                console.log('语音建立失敗');
             }
             ;
         } catch (e) {
@@ -1071,7 +1071,7 @@
                         icon: 16
                         , shade: 0.01
                         , skin: 'layui-layer-lan'
-                        , time: 0 //20s后自动關閉
+                        , time: 0 //20s后自動關閉
                         , btn: ['发送', '取消']
                         , yes: function (index, layero) {
                             //按钮【按钮一】的回调
@@ -1088,7 +1088,7 @@
                                     if (xhr.readyState == 4 && xhr.status == 200) {
                                         jsonObject = JSON.parse(xhr.responseText);
 
-                                        voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音频消息</p></div>';
+                                        voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音訊消息</p></div>';
 
                                         var sid = $('#channel').text();
                                         var pic = $("#se_avatar").attr('src');
@@ -1179,7 +1179,7 @@
                 });
             } else {
 
-                layer.msg('音频输入只支持https协议！');
+                layer.msg('音訊输入只支持https协议！');
 
             }
 
@@ -1237,11 +1237,11 @@
         var istop=that.data('istop');
         $.ajax({
             url:'/admin/visiter/chat2top/visiter_id/'+id+'/istop/'+istop,
-            dataType:"json",   //返回格式为json
-            async:true,//请求是否异步，默认为异步，这也是ajax重要特性
-            type:"POST",   //请求方式
+            dataType:"json",   //返回格式為json
+            async:true,//請求是否异步，默认為异步，这也是ajax重要特性
+            type:"POST",   //請求方式
             beforeSend:function(){
-                //请求前的处理
+                //請求前的处理
                 index = layer.load(2, {shade: false});
             },
             success:function(res){
@@ -1254,14 +1254,14 @@
                 }else{
                     layer.msg(res.msg,{icon:2});
                 }
-                //请求成功时处理
+                //請求成功时处理
             },
             complete:function(){
-                //请求完成的处理
+                //請求完成的处理
                 layer.close(index);
             },
             error:function(){
-                //请求出错处理
+                //請求出错处理
             }
         });
     }

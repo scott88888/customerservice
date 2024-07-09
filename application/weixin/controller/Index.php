@@ -15,7 +15,7 @@ class  Index extends Controller
    {
 //       file_put_contents(PUBLIC_PATH.'/wxindex.txt',var_export($_REQUEST,true),FILE_APPEND);
        $business_id = $this->request->param('business_id',null);
-       !$business_id && abort(500,'参数错误');
+       !$business_id && abort(500,'参數錯誤');
        $wechat = WechatPlatform::get(['business_id' => $business_id]);
        // config配置
        $options=[
@@ -26,13 +26,13 @@ class  Index extends Controller
             'token'  => $wechat['wx_token'],
             'log' => [
                 'level' => 'debug',
-                'file'  => PUBLIC_PATH.'/easywechat.log', // XXX: 绝对路径！！！！
+                'file'  => PUBLIC_PATH.'/easywechat.log', // XXX: 绝對路径！！！！
             ],
        ];
        $url = domain;
        $app = new Application($options);
        $server = $app->server;
-       // 消息回复
+       // 消息回覆
        $server->setMessageHandler(function ($message) use($business_id) {
            Log::info($message);
            // $message->FromUserName // 使用者的 openid
@@ -51,7 +51,7 @@ class  Index extends Controller
                            return '取消关注';
                            break;
                        case 'SCAN':
-//                           return '使用者通过扫描带参二维码'.$message->EventKey;
+//                           return '使用者通過扫描带参二维碼'.$message->EventKey;
                            /*Weixin::create([
                                'open_id' => $message->FromUserName,
                                'service_id' => $message->EventKey,
@@ -95,8 +95,8 @@ class  Index extends Controller
                        case '价格':
                            return '价格：￥4999';
                            break;
-                       case '官网':
-                           return '请访问:<a href="http://www.80zx.com/">八零線上</a>提供技术驱动';
+                       case '官網':
+                           return '請訪問:<a href="http://www.80zx.com/">八零線上</a>提供技术驱動';
                            break;
                    }
                    break;
@@ -107,7 +107,7 @@ class  Index extends Controller
 
        });
 
-       // 自定义菜单
+       // 自訂選單
        $menu = $app->menu;
        $buttons =[
          

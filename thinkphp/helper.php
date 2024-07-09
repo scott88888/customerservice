@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 
 //------------------------
-// ThinkPHP 助手函数
+// ThinkPHP 助手函數
 //-------------------------
 
 use think\Cache;
@@ -48,7 +48,7 @@ if (!function_exists('exception')) {
      * 抛出异常处理
      *
      * @param string    $msg  异常消息
-     * @param integer   $code 异常代码 默认为0
+     * @param integer   $code 异常程式碼 默认為0
      * @param string    $exception 异常类
      *
      * @throws Exception
@@ -62,10 +62,10 @@ if (!function_exists('exception')) {
 
 if (!function_exists('debug')) {
     /**
-     * 记录时间（微秒）和内存使用情况
-     * @param string            $start 开始标签
+     * 记录時間（微秒）和内存使用情况
+     * @param string            $start 開始标签
      * @param string            $end 结束标签
-     * @param integer|string    $dec 小数位 如果是m 表示统计内存占用
+     * @param integer|string    $dec 小數位 如果是m 表示统计内存占用
      * @return mixed
      */
     function debug($start, $end = '', $dec = 6)
@@ -82,7 +82,7 @@ if (!function_exists('lang')) {
     /**
      * 取得語言变量值
      * @param string    $name 語言变量名
-     * @param array     $vars 动态变量值
+     * @param array     $vars 動态变量值
      * @param string    $lang 語言
      * @return mixed
      */
@@ -94,9 +94,9 @@ if (!function_exists('lang')) {
 
 if (!function_exists('config')) {
     /**
-     * 取得和设置配置参数
-     * @param string|array  $name 参数名
-     * @param mixed         $value 参数值
+     * 取得和設定配置参數
+     * @param string|array  $name 参數名
+     * @param mixed         $value 参數值
      * @param string        $range 作用域
      * @return mixed
      */
@@ -125,14 +125,14 @@ if (!function_exists('input')) {
             $has = true;
         }
         if ($pos = strpos($key, '.')) {
-            // 指定参数来源
+            // 指定参數来源
             list($method, $key) = explode('.', $key, 2);
             if (!in_array($method, ['get', 'post', 'put', 'patch', 'delete', 'route', 'param', 'request', 'session', 'cookie', 'server', 'env', 'path', 'file'])) {
                 $key    = $method . '.' . $key;
                 $method = 'param';
             }
         } else {
-            // 默认为自动判断
+            // 默认為自動判断
             $method = 'param';
         }
         if (isset($has)) {
@@ -147,7 +147,7 @@ if (!function_exists('widget')) {
     /**
      * 渲染输出Widget
      * @param string    $name Widget名稱
-     * @param array     $data 传入的参数
+     * @param array     $data 传入的参數
      * @return mixed
      */
     function widget($name, $data = [])
@@ -188,8 +188,8 @@ if (!function_exists('db')) {
     /**
      * 实例化資料库类
      * @param string        $name 操作的資料表名稱（不含前缀）
-     * @param array|string  $config 資料库配置参数
-     * @param bool          $force 是否强制重新连接
+     * @param array|string  $config 資料库配置参數
+     * @param bool          $force 是否强制重新連結
      * @return \think\db\Query
      */
     function db($name = '', $config = [], $force = false)
@@ -214,9 +214,9 @@ if (!function_exists('controller')) {
 
 if (!function_exists('action')) {
     /**
-     * 调用模块的操作方法 参数格式 [模块/控制器/]操作
+     * 调用模块的操作方法 参數格式 [模块/控制器/]操作
      * @param string        $url 调用地址
-     * @param string|array  $vars 调用参数 支持字符串和数组
+     * @param string|array  $vars 调用参數 支持字符串和數组
      * @param string        $layer 要调用的控制层名稱
      * @param bool          $appendSuffix 是否新增类名后缀
      * @return mixed
@@ -229,8 +229,8 @@ if (!function_exists('action')) {
 
 if (!function_exists('import')) {
     /**
-     * 匯入所需的类库 同java的Import 本函数有缓存功能
-     * @param string    $class 类库命名空间字符串
+     * 匯入所需的类库 同java的Import 本函數有缓存功能
+     * @param string    $class 类库命名空間字符串
      * @param string    $baseUrl 起始路径
      * @param string    $ext 匯入的文件扩展名
      * @return boolean
@@ -258,8 +258,8 @@ if (!function_exists('dump')) {
     /**
      * 浏览器友好的变量输出
      * @param mixed     $var 变量
-     * @param boolean   $echo 是否输出 默认为true 如果为false 则返回输出字符串
-     * @param string    $label 标签 默认为空
+     * @param boolean   $echo 是否输出 默认為true 如果為false 则返回输出字符串
+     * @param string    $label 标签 默认為空
      * @return void|string
      */
     function dump($var, $echo = true, $label = null)
@@ -270,10 +270,10 @@ if (!function_exists('dump')) {
 
 if (!function_exists('url')) {
     /**
-     * Url生成
+     * Url產生
      * @param string        $url 路由地址
      * @param string|array  $vars 变量
-     * @param bool|string   $suffix 生成的URL后缀
+     * @param bool|string   $suffix 產生的URL后缀
      * @param bool|string   $domain 域名
      * @return string
      */
@@ -286,7 +286,7 @@ if (!function_exists('url')) {
 if (!function_exists('session')) {
     /**
      * Session管理
-     * @param string|array  $name session名稱，如果为数组表示进行session设置
+     * @param string|array  $name session名稱，如果為數组表示进行session設定
      * @param mixed         $value session值
      * @param string        $prefix 前缀
      * @return mixed
@@ -306,7 +306,7 @@ if (!function_exists('session')) {
             // 刪除
             return Session::delete($name, $prefix);
         } else {
-            // 设置
+            // 設定
             return Session::set($name, $value, $prefix);
         }
     }
@@ -315,9 +315,9 @@ if (!function_exists('session')) {
 if (!function_exists('cookie')) {
     /**
      * Cookie管理
-     * @param string|array  $name cookie名稱，如果为数组表示进行cookie设置
+     * @param string|array  $name cookie名稱，如果為數组表示进行cookie設定
      * @param mixed         $value cookie值
-     * @param mixed         $option 参数
+     * @param mixed         $option 参數
      * @return mixed
      */
     function cookie($name, $value = '', $option = null)
@@ -335,7 +335,7 @@ if (!function_exists('cookie')) {
             // 刪除
             return Cookie::delete($name);
         } else {
-            // 设置
+            // 設定
             return Cookie::set($name, $value, $option);
         }
     }
@@ -344,9 +344,9 @@ if (!function_exists('cookie')) {
 if (!function_exists('cache')) {
     /**
      * 缓存管理
-     * @param mixed     $name 缓存名稱，如果为数组表示进行缓存设置
+     * @param mixed     $name 缓存名稱，如果為數组表示进行缓存設定
      * @param mixed     $value 缓存值
-     * @param mixed     $options 缓存参数
+     * @param mixed     $options 缓存参數
      * @param string    $tag 缓存标签
      * @return mixed
      */
@@ -376,9 +376,9 @@ if (!function_exists('cache')) {
         } else {
             // 缓存資料
             if (is_array($options)) {
-                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢缓存無法设置过期时间
+                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢缓存無法設定过期時間
             } else {
-                $expire = is_numeric($options) ? $options : null; //默认快捷缓存设置过期时间
+                $expire = is_numeric($options) ? $options : null; //默认快捷缓存設定过期時間
             }
             if (is_null($tag)) {
                 return $cache->set($name, $value, $expire);
@@ -392,7 +392,7 @@ if (!function_exists('cache')) {
 if (!function_exists('trace')) {
     /**
      * 记录日志訊息
-     * @param mixed     $log log訊息 支持字符串和数组
+     * @param mixed     $log log訊息 支持字符串和數组
      * @param string    $level 日志级别
      * @return void|array
      */
@@ -408,7 +408,7 @@ if (!function_exists('trace')) {
 
 if (!function_exists('request')) {
     /**
-     * 取得当前Request对象实例
+     * 取得当前Request對象实例
      * @return Request
      */
     function request()
@@ -419,9 +419,9 @@ if (!function_exists('request')) {
 
 if (!function_exists('response')) {
     /**
-     * 创建普通 Response 对象实例
+     * 建立普通 Response 對象实例
      * @param mixed      $data   输出資料
-     * @param int|string $code   狀態码
+     * @param int|string $code   狀態碼
      * @param array      $header 头訊息
      * @param string     $type
      * @return Response
@@ -438,7 +438,7 @@ if (!function_exists('view')) {
      * @param string    $template 模板文件
      * @param array     $vars 模板变量
      * @param array     $replace 模板替换
-     * @param integer   $code 狀態码
+     * @param integer   $code 狀態碼
      * @return \think\response\View
      */
     function view($template = '', $vars = [], $replace = [], $code = 200)
@@ -449,11 +449,11 @@ if (!function_exists('view')) {
 
 if (!function_exists('json')) {
     /**
-     * 取得\think\response\Json对象实例
+     * 取得\think\response\Json對象实例
      * @param mixed   $data 返回的資料
-     * @param integer $code 狀態码
+     * @param integer $code 狀態碼
      * @param array   $header 头部
-     * @param array   $options 参数
+     * @param array   $options 参數
      * @return \think\response\Json
      */
     function json($data = [], $code = 200, $header = [], $options = [])
@@ -464,11 +464,11 @@ if (!function_exists('json')) {
 
 if (!function_exists('jsonp')) {
     /**
-     * 取得\think\response\Jsonp对象实例
+     * 取得\think\response\Jsonp對象实例
      * @param mixed   $data    返回的資料
-     * @param integer $code    狀態码
+     * @param integer $code    狀態碼
      * @param array   $header 头部
-     * @param array   $options 参数
+     * @param array   $options 参數
      * @return \think\response\Jsonp
      */
     function jsonp($data = [], $code = 200, $header = [], $options = [])
@@ -479,11 +479,11 @@ if (!function_exists('jsonp')) {
 
 if (!function_exists('xml')) {
     /**
-     * 取得\think\response\Xml对象实例
+     * 取得\think\response\Xml對象实例
      * @param mixed   $data    返回的資料
-     * @param integer $code    狀態码
+     * @param integer $code    狀態碼
      * @param array   $header  头部
-     * @param array   $options 参数
+     * @param array   $options 参數
      * @return \think\response\Xml
      */
     function xml($data = [], $code = 200, $header = [], $options = [])
@@ -494,10 +494,10 @@ if (!function_exists('xml')) {
 
 if (!function_exists('redirect')) {
     /**
-     * 取得\think\response\Redirect对象实例
+     * 取得\think\response\Redirect對象实例
      * @param mixed         $url 重定向地址 支持Url::build方法的地址
-     * @param array|integer $params 额外参数
-     * @param integer       $code 狀態码
+     * @param array|integer $params 额外参數
+     * @param integer       $code 狀態碼
      * @param array         $with 隐式传参
      * @return \think\response\Redirect
      */
@@ -514,9 +514,9 @@ if (!function_exists('redirect')) {
 if (!function_exists('abort')) {
     /**
      * 抛出HTTP异常
-     * @param integer|Response      $code 狀態码 或者 Response对象实例
-     * @param string                $message 错误訊息
-     * @param array                 $header 参数
+     * @param integer|Response      $code 狀態碼 或者 Response對象实例
+     * @param string                $message 錯誤訊息
+     * @param array                 $header 参數
      */
     function abort($code, $message = null, $header = [])
     {
@@ -542,9 +542,9 @@ if (!function_exists('halt')) {
 
 if (!function_exists('token')) {
     /**
-     * 生成表單令牌
+     * 產生表單令牌
      * @param string $name 令牌名稱
-     * @param mixed  $type 令牌生成方法
+     * @param mixed  $type 令牌產生方法
      * @return string
      */
     function token($name = '__token__', $type = 'md5')
@@ -573,8 +573,8 @@ if (!function_exists('load_relation')) {
 
 if (!function_exists('collection')) {
     /**
-     * 数组转换为資料集对象
-     * @param array $resultSet 資料集数组
+     * 數组转换為資料集對象
+     * @param array $resultSet 資料集數组
      * @return \think\model\Collection|\think\Collection
      */
     function collection($resultSet)

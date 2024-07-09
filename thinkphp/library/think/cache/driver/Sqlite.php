@@ -14,7 +14,7 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * Sqlite缓存驱动
+ * Sqlite缓存驱動
  * @author    liu21st <liu21st@gmail.com>
  */
 class Sqlite extends Driver
@@ -28,8 +28,8 @@ class Sqlite extends Driver
     ];
 
     /**
-     * 构造函数
-     * @param array $options 缓存参数
+     * 构造函數
+     * @param array $options 缓存参數
      * @throws \BadFunctionCallException
      * @access public
      */
@@ -46,7 +46,7 @@ class Sqlite extends Driver
     }
 
     /**
-     * 取得实际的缓存标识
+     * 取得实际的缓存標識
      * @access public
      * @param string $name 缓存名
      * @return string
@@ -98,7 +98,7 @@ class Sqlite extends Driver
      * @access public
      * @param string            $name 缓存变量名
      * @param mixed             $value  存储資料
-     * @param integer|\DateTime $expire  有效时间（秒）
+     * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
      */
     public function set($name, $value, $expire = null)
@@ -111,7 +111,7 @@ class Sqlite extends Driver
         if ($expire instanceof \DateTime) {
             $expire = $expire->getTimestamp();
         } else {
-            $expire = (0 == $expire) ? 0 : (time() + $expire); //缓存有效期为0表示永久缓存
+            $expire = (0 == $expire) ? 0 : (time() + $expire); //缓存有效期為0表示永久缓存
         }
         if (function_exists('gzcompress')) {
             //資料压缩
@@ -131,10 +131,10 @@ class Sqlite extends Driver
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function inc($name, $step = 1)
@@ -148,10 +148,10 @@ class Sqlite extends Driver
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function dec($name, $step = 1)

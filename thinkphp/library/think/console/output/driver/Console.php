@@ -195,7 +195,7 @@ class Console
     }
 
     /**
-     * 取得stty列数
+     * 取得stty列數
      * @return string
      */
     private function getSttyColumns()

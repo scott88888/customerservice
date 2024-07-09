@@ -45,7 +45,7 @@ CREATE TABLE `wolive_admin_log`  (
   `info` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '操作结果',
   `ip` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '操作IP',
   `user_agent` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'User-Agent',
-  `create_time` int(11) NULL DEFAULT NULL COMMENT '操作时间',
+  `create_time` int(11) NULL DEFAULT NULL COMMENT '操作時間',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理员登入日志' ROW_FORMAT = DYNAMIC;
 
@@ -60,7 +60,7 @@ CREATE TABLE `wolive_admin_menu`  (
   `href` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '地址',
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `sort` tinyint(4) NOT NULL DEFAULT 99 COMMENT '排序',
-  `type` tinyint(1) NULL DEFAULT 1 COMMENT '菜单',
+  `type` tinyint(1) NULL DEFAULT 1 COMMENT '選單',
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '狀態',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
@@ -77,7 +77,7 @@ CREATE TABLE `wolive_admin_permission`  (
   `href` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '地址',
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `sort` tinyint(4) NOT NULL DEFAULT 99 COMMENT '排序',
-  `type` tinyint(1) NULL DEFAULT 1 COMMENT '菜单',
+  `type` tinyint(1) NULL DEFAULT 1 COMMENT '選單',
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '狀態',
   `is_admin` tinyint(1) NOT NULL DEFAULT 1 COMMENT '是否管理员',
   PRIMARY KEY (`id`) USING BTREE,
@@ -91,8 +91,8 @@ DROP TABLE IF EXISTS `wolive_admin_token`;
 CREATE TABLE `wolive_admin_token`  (
   `token` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Token',
   `user_id` int(11) UNSIGNED NOT NULL DEFAULT 0,
-  `createtime` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
-  `expiretime` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '过期时间',
+  `createtime` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '建立時間',
+  `expiretime` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '过期時間',
   PRIMARY KEY (`token`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'Token表' ROW_FORMAT = COMPACT;
 
@@ -109,7 +109,7 @@ CREATE TABLE `wolive_attachment_data`  (
   `filesize` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '文件大小',
   `url` varchar(600) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `filemd5` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `inputtime` int(10) UNSIGNED NOT NULL COMMENT '入库时间',
+  `inputtime` int(10) UNSIGNED NOT NULL COMMENT '入库時間',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `inputtime`(`inputtime`) USING BTREE,
   INDEX `fileext`(`fileext`) USING BTREE,
@@ -122,32 +122,32 @@ CREATE TABLE `wolive_attachment_data`  (
 DROP TABLE IF EXISTS `wolive_business`;
 CREATE TABLE `wolive_business`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `business_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商家标识符',
+  `business_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商家標識符',
   `logo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `copyright` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '底部版权訊息',
   `admin_id` int(11) NOT NULL DEFAULT 0,
   `video_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟视频',
   `voice_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'open' COMMENT '是否開啟提示音',
-  `audio_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟音频',
+  `audio_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟音訊',
   `template_state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close' COMMENT '是否開啟模板消息',
-  `distribution_rule` enum('auto','claim') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'auto' COMMENT 'claim:认领，auto:自动分配',
+  `distribution_rule` enum('auto','claim') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'auto' COMMENT 'claim:认领，auto:自動分配',
   `voice_address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '/upload/voice/default.mp3' COMMENT '提示音文件地址',
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `expire_time` int(11) NOT NULL DEFAULT 0,
   `max_count` int(11) NOT NULL DEFAULT 0,
   `push_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '推送url',
-  `state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'open' COMMENT '\'open\': 打开该商户 ，‘close’：禁止该商户',
+  `state` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'open' COMMENT '\'open\': 打開该商户 ，‘close’：禁止该商户',
   `is_recycle` tinyint(2) NOT NULL DEFAULT 0,
   `is_delete` tinyint(2) NOT NULL DEFAULT 0,
   `lang` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'cn',
   `bd_trans_appid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '百度翻译APPID',
   `bd_trans_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '百度翻译密钥',
   `google_trans_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '谷歌翻译KEY',
-  `auto_trans` tinyint(1) NOT NULL DEFAULT 0 COMMENT '发送客服是否自动翻译',
-  `auto_ip` tinyint(1) NOT NULL DEFAULT 0 COMMENT '根据IP自动设置客户語言',
+  `auto_trans` tinyint(1) NOT NULL DEFAULT 0 COMMENT '发送客服是否自動翻译',
+  `auto_ip` tinyint(1) NOT NULL DEFAULT 0 COMMENT '根據IP自動設定客户語言',
   `trans_type` tinyint(1) NOT NULL DEFAULT 0 COMMENT '翻译接口：百度0；谷歌1',
-  `theme` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '主题颜色',
-  `header` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '悬浮條背景色',
+  `theme` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '主題顏色',
+  `header` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '13c9cb' COMMENT '懸浮條背景色',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `bussiness`(`business_name`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商家表' ROW_FORMAT = COMPACT;
@@ -158,7 +158,7 @@ CREATE TABLE `wolive_business`  (
 DROP TABLE IF EXISTS `wolive_chats`;
 CREATE TABLE `wolive_chats`  (
   `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客id',
+  `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '訪客id',
   `service_id` int(11) NOT NULL COMMENT '客服id',
   `business_id` int(11) NOT NULL DEFAULT 0 COMMENT '商家id',
   `content` mediumtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '内容',
@@ -186,7 +186,7 @@ CREATE TABLE `wolive_comment`  (
   `group_id` int(11) NOT NULL DEFAULT 0,
   `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `visiter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `word_comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文字评价',
+  `word_comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文字評價',
   `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
@@ -199,7 +199,7 @@ CREATE TABLE `wolive_comment_detail`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `comment_id` int(11) UNSIGNED NOT NULL,
   `title` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `score` tinyint(4) NOT NULL DEFAULT 1 COMMENT '分数',
+  `score` tinyint(4) NOT NULL DEFAULT 1 COMMENT '分數',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
 
@@ -210,8 +210,8 @@ DROP TABLE IF EXISTS `wolive_comment_setting`;
 CREATE TABLE `wolive_comment_setting`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `business_id` int(11) NOT NULL DEFAULT 0,
-  `title` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '评价说明',
-  `comments` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '评价條目',
+  `title` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '評價说明',
+  `comments` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '評價條目',
   `word_switch` enum('close','open') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'close',
   `word_title` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -227,7 +227,7 @@ CREATE TABLE `wolive_group`  (
   `groupname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `business_id` int(11) UNSIGNED NOT NULL DEFAULT 0,
   `sort` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '排序',
-  `create_time` int(11) NULL DEFAULT NULL COMMENT '操作时间',
+  `create_time` int(11) NULL DEFAULT NULL COMMENT '操作時間',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
 
@@ -287,19 +287,19 @@ CREATE TABLE `wolive_question`  (
 DROP TABLE IF EXISTS `wolive_queue`;
 CREATE TABLE `wolive_queue`  (
   `qid` int(11) NOT NULL AUTO_INCREMENT,
-  `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客id',
+  `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '訪客id',
   `service_id` int(11) NOT NULL COMMENT '客服id',
   `groupid` int(11) NULL DEFAULT 0 COMMENT '客服分类id',
   `business_id` int(11) NOT NULL DEFAULT 0,
-  `state` enum('normal','complete','in_black_list') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'normal' COMMENT 'normal：正常接入,‘complete’:已经解决，‘in_black_list’:黑名单',
+  `state` enum('normal','complete','in_black_list') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'normal' COMMENT 'normal：正常接入,‘complete’:已经解决，‘in_black_list’:黑名單',
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `remind_tpl` tinyint(2) NOT NULL DEFAULT 0 COMMENT '是否已发送模板消息',
-  `remind_comment` tinyint(2) NOT NULL DEFAULT 0 COMMENT '是否已推送评价',
+  `remind_comment` tinyint(2) NOT NULL DEFAULT 0 COMMENT '是否已推送評價',
   PRIMARY KEY (`qid`) USING BTREE,
   INDEX `se`(`service_id`) USING BTREE,
   INDEX `vi`(`visiter_id`) USING BTREE,
   INDEX `business`(`business_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会话表(排队表)' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会話表(排队表)' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Table structure for wolive_reply
@@ -374,7 +374,7 @@ CREATE TABLE `wolive_service`  (
   `open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '信箱',
   `business_id` int(11) NOT NULL DEFAULT 0,
-  `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '/assets/images/admin/avatar-admin2.png' COMMENT '头像',
+  `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '/assets/images/admin/avatar-admin2.png' COMMENT '圖示',
   `level` enum('super_manager','manager','service') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'service' COMMENT 'super_manager: 超级管理员，manager：商家管理员 ，service：普通客服',
   `parent_id` int(11) NOT NULL DEFAULT 0 COMMENT '所属商家管理员id',
   `offline_first` tinyint(2) NOT NULL DEFAULT 0,
@@ -432,20 +432,20 @@ CREATE TABLE `wolive_vgroup`  (
 DROP TABLE IF EXISTS `wolive_visiter`;
 CREATE TABLE `wolive_visiter`  (
   `vid` int(11) NOT NULL AUTO_INCREMENT,
-  `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客id',
-  `visiter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客名稱',
+  `visiter_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '訪客id',
+  `visiter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '訪客名稱',
   `channel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '使用者遊客频道',
-  `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '头像',
+  `avatar` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '圖示',
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的姓名',
   `tel` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '使用者自己填写的電話',
-  `login_times` int(11) NOT NULL DEFAULT 1 COMMENT '登入次数',
+  `login_times` int(11) NOT NULL DEFAULT 1 COMMENT '登入次數',
   `connect` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '联系方式',
   `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '备注',
   `extends` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '浏览器扩展',
-  `ip` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客ip',
-  `from_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '访客浏览地址',
+  `ip` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '訪客ip',
+  `from_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '訪客浏览地址',
   `msg_time` timestamp NULL DEFAULT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '访问时间',
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '訪問時間',
   `business_id` int(11) NOT NULL DEFAULT 0,
   `state` enum('online','offline') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'offline' COMMENT 'offline：離線，online：線上',
   `istop` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '1置顶展示0未置顶',
@@ -481,9 +481,9 @@ CREATE TABLE `wolive_wechat_platform`  (
   `app_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '公众号appsecret',
   `wx_token` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '公众号token',
   `wx_aeskey` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '消息加解密密钥(EncodingAESKey)',
-  `visitor_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '新访客模板消息',
+  `visitor_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '新訪客模板消息',
   `msg_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '新消息提示模板消息',
-  `customer_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '访客模板消息',
+  `customer_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '訪客模板消息',
   `isscribe` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否開啟引导关注1開啟0關閉',
   `desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '公共号说明、备注',
   `addtime` int(11) NOT NULL DEFAULT 0,
@@ -502,7 +502,7 @@ CREATE TABLE `wolive_weixin`  (
   `app_id` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '公众号appid',
   `open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '微信使用者id',
   `subscribe` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否关注微信0未关注1已关注',
-  `subscribe_time` int(11) NOT NULL DEFAULT 0 COMMENT '关注时间',
+  `subscribe_time` int(11) NOT NULL DEFAULT 0 COMMENT '关注時間',
   PRIMARY KEY (`wid`) USING BTREE,
   INDEX `business_id`(`business_id`) USING BTREE,
   INDEX `app_id`(`app_id`) USING BTREE

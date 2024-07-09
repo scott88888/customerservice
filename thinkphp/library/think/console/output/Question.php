@@ -87,7 +87,7 @@ class Question
     }
 
     /**
-     * 设置不能被隐藏的时候的操作
+     * 設定不能被隐藏的时候的操作
      * @param bool $fallback
      * @return Question
      */
@@ -99,7 +99,7 @@ class Question
     }
 
     /**
-     * 取得自动完成
+     * 取得自動完成
      * @return null|array|\Traversable
      */
     public function getAutocompleterValues()
@@ -108,7 +108,7 @@ class Question
     }
 
     /**
-     * 设置自动完成的值
+     * 設定自動完成的值
      * @param null|array|\Traversable $values
      * @return Question
      * @throws \InvalidArgumentException
@@ -136,7 +136,7 @@ class Question
     }
 
     /**
-     * 设置答案的驗證器
+     * 設定答案的驗證器
      * @param null|callable $validator
      * @return Question The current instance
      */
@@ -157,7 +157,7 @@ class Question
     }
 
     /**
-     * 设置最大重试次数
+     * 設定最大重试次數
      * @param null|int $attempts
      * @return Question
      * @throws \InvalidArgumentException
@@ -174,7 +174,7 @@ class Question
     }
 
     /**
-     * 取得最大重试次数
+     * 取得最大重试次數
      * @return null|int
      */
     public function getMaxAttempts()
@@ -183,7 +183,7 @@ class Question
     }
 
     /**
-     * 设置响应的回调
+     * 設定响应的回调
      * @param string|\Closure $normalizer
      * @return Question
      */

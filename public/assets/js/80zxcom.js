@@ -23,11 +23,11 @@ function chat2top(id,that){
     var istop=that.data('istop');
     $.ajax({
         url:'/admin/visiter/chat2top/visiter_id/'+id+'/istop/'+istop,
-        dataType:"json",   //返回格式为json
-        async:true,//请求是否异步，默认为异步，这也是ajax重要特性
-        type:"POST",   //请求方式
+        dataType:"json",   //返回格式為json
+        async:true,//請求是否异步，默认為异步，这也是ajax重要特性
+        type:"POST",   //請求方式
         beforeSend:function(){
-            //请求前的处理
+            //請求前的处理
             index = layer.load(2, {shade: false});
         },
         success:function(res){
@@ -39,14 +39,14 @@ function chat2top(id,that){
             }else{
                 layer.msg(res.msg,{icon:2});
             }
-            //请求成功时处理
+            //請求成功时处理
         },
         complete:function(){
-            //请求完成的处理
+            //請求完成的处理
             layer.close(index);
         },
         error:function(){
-            //请求出错处理
+            //請求出错处理
         }
     });
 }
@@ -65,12 +65,12 @@ if (jsAjaxBtn.length) {
         if(href===undefined || href==='')return;
         refresh    = refresh === undefined ? 0 : refresh;
         $.ajax({
-            url:href,    //请求的url地址
-            dataType:"json",   //返回格式为json
-            async:true,//请求是否异步，默认为异步，这也是ajax重要特性
-            type:"POST",   //请求方式
+            url:href,    //請求的url地址
+            dataType:"json",   //返回格式為json
+            async:true,//請求是否异步，默认為异步，这也是ajax重要特性
+            type:"POST",   //請求方式
             beforeSend:function(){
-                //请求前的处理
+                //請求前的处理
                 index = layer.load(2, {shade: false});
             },
             success:function(res){
@@ -80,14 +80,14 @@ if (jsAjaxBtn.length) {
                 }else{
                     layer.msg(res.msg,{icon:2});
                 }
-                //请求成功时处理
+                //請求成功时处理
             },
             complete:function(){
-                //请求完成的处理
+                //請求完成的处理
                 layer.close(index);
             },
             error:function(){
-                //请求出错处理
+                //請求出错处理
             }
         });
         layer.open({

@@ -18,9 +18,9 @@ use think\Model;
 class BelongsTo extends OneToOne
 {
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param Model  $parent 上级模型对象
+     * @param Model  $parent 上级模型對象
      * @param string $model 模型名
      * @param string $foreignKey 关联外键
      * @param string $localKey 关联主键
@@ -65,10 +65,10 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
-     * @param integer $count    个数
+     * @param integer $count    个數
      * @param string  $id       关联表的统计字段
      * @return Query
      */
@@ -78,9 +78,9 @@ class BelongsTo extends OneToOne
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查詢條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -153,7 +153,7 @@ class BelongsTo extends OneToOne
                     // 绑定关联属性
                     $this->bindAttr($relationModel, $result, $this->bindAttr);
                 } else {
-                    // 设置关联属性
+                    // 設定关联属性
                     $result->setRelation($attr, $relationModel);
                 }
             }
@@ -163,7 +163,7 @@ class BelongsTo extends OneToOne
     /**
      * 预载入关联查詢（資料）
      * @access public
-     * @param Model     $result 資料对象
+     * @param Model     $result 資料對象
      * @param string    $relation 当前关联名
      * @param string    $subRelation 子关联名
      * @param \Closure  $closure 闭包
@@ -187,7 +187,7 @@ class BelongsTo extends OneToOne
             // 绑定关联属性
             $this->bindAttr($relationModel, $result, $this->bindAttr);
         } else {
-            // 设置关联属性
+            // 設定关联属性
             $result->setRelation(Loader::parseName($relation), $relationModel);
         }
     }
@@ -195,7 +195,7 @@ class BelongsTo extends OneToOne
     /**
      * 新增关联資料
      * @access public
-     * @param Model $model       关联模型对象
+     * @param Model $model       关联模型對象
      * @return Model
      */
     public function associate($model)

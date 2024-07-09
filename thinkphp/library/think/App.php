@@ -38,7 +38,7 @@ class App
     public static $debug = true;
 
     /**
-     * @var string 应用类库命名空间
+     * @var string 应用类库命名空間
      */
     public static $namespace = 'app';
 
@@ -58,7 +58,7 @@ class App
     protected static $routeMust;
 
     /**
-     * @var array 请求调度分发
+     * @var array 請求调度分发
      */
     protected static $dispatch;
 
@@ -70,7 +70,7 @@ class App
     /**
      * 执行应用程序
      * @access public
-     * @param  Request $request 请求对象
+     * @param  Request $request 請求對象
      * @return Response
      * @throws Exception
      */
@@ -85,7 +85,7 @@ class App
             if (defined('BIND_MODULE')) {
                 BIND_MODULE && Route::bind(BIND_MODULE);
             } elseif ($config['auto_bind_module']) {
-                // 入口自动绑定
+                // 入口自動绑定
                 $name = pathinfo($request->baseFile(), PATHINFO_FILENAME);
                 if ($name && 'index' != $name && is_dir(APP_PATH . $name)) {
                     Route::bind($name);
@@ -111,7 +111,7 @@ class App
             // 取得应用调度訊息
             $dispatch = self::$dispatch;
 
-            // 未设置调度訊息则进行 URL 路由检测
+            // 未設定调度訊息则进行 URL 路由检测
             if (empty($dispatch)) {
                 $dispatch = self::routeCheck($request, $config);
             }
@@ -119,7 +119,7 @@ class App
             // 记录当前调度訊息
             $request->dispatch($dispatch);
 
-            // 记录路由和请求訊息
+            // 记录路由和請求訊息
             if (self::$debug) {
                 Log::record('[ ROUTE ] ' . var_export($dispatch, true), 'info');
                 Log::record('[ HEADER ] ' . var_export($request->header(), true), 'info');
@@ -129,7 +129,7 @@ class App
             // 监听 app_begin
             Hook::listen('app_begin', $dispatch);
 
-            // 请求缓存檢查
+            // 請求缓存檢查
             $request->cache(
                 $config['request_cache'],
                 $config['request_cache_expire'],
@@ -148,7 +148,7 @@ class App
         if ($data instanceof Response) {
             $response = $data;
         } elseif (!is_null($data)) {
-            // 默认自动识别响应输出类型
+            // 默认自動识别响应输出类型
             $type = $request->isAjax() ?
             Config::get('default_ajax_return') :
             Config::get('default_return_type');
@@ -188,7 +188,7 @@ class App
             if (!self::$debug) {
                 ini_set('display_errors', 'Off');
             } elseif (!IS_CLI) {
-                // 重新申请一块比较大的 buffer
+                // 重新申請一块比较大的 buffer
                 if (ob_get_level() > 0) {
                     $output = ob_get_clean();
                 }
@@ -216,7 +216,7 @@ class App
                 }
             }
 
-            // 设置系统时区
+            // 設定系统时区
             date_default_timezone_set($config['default_timezone']);
 
             // 监听 app_init
@@ -269,7 +269,7 @@ class App
                 Config::load(CONF_PATH . $module . $config['app_status'] . CONF_EXT);
             }
 
-            // 加载行为扩展文件
+            // 加载行為扩展文件
             if (is_file(CONF_PATH . $module . 'tags' . EXT)) {
                 Hook::import(include CONF_PATH . $module . 'tags' . EXT);
             }
@@ -290,7 +290,7 @@ class App
     }
 
     /**
-     * 设置当前请求的调度訊息
+     * 設定当前請求的调度訊息
      * @access public
      * @param array|string  $dispatch 调度訊息
      * @param string        $type     调度类型
@@ -302,9 +302,9 @@ class App
     }
 
     /**
-     * 执行函数或者闭包方法 支持参数调用
+     * 执行函數或者闭包方法 支持参數调用
      * @access public
-     * @param string|array|\Closure $function 函数或者闭包
+     * @param string|array|\Closure $function 函數或者闭包
      * @param array                 $vars     变量
      * @return mixed
      */
@@ -320,7 +320,7 @@ class App
     }
 
     /**
-     * 调用反射执行类的方法 支持参数绑定
+     * 调用反射执行类的方法 支持参數绑定
      * @access public
      * @param string|array $method 方法
      * @param array        $vars   变量
@@ -360,7 +360,7 @@ class App
     }
 
     /**
-     * 绑定参数
+     * 绑定参數
      * @access private
      * @param \ReflectionMethod|\ReflectionFunction $reflect 反射类
      * @param array                                 $vars    变量
@@ -368,7 +368,7 @@ class App
      */
     private static function bindParams($reflect, $vars = [])
     {
-        // 自动取得请求变量
+        // 自動取得請求变量
         if (empty($vars)) {
             $vars = Config::get('url_param_type') ?
             Request::instance()->route() :
@@ -377,7 +377,7 @@ class App
 
         $args = [];
         if ($reflect->getNumberOfParameters() > 0) {
-            // 判断数组类型 数字数组时按顺序绑定参数
+            // 判断數组类型 數字數组时按顺序绑定参數
             reset($vars);
             $type = key($vars) === 0 ? 1 : 0;
 
@@ -390,9 +390,9 @@ class App
     }
 
     /**
-     * 取得参数值
+     * 取得参數值
      * @access private
-     * @param \ReflectionParameter  $param 参数
+     * @param \ReflectionParameter  $param 参數
      * @param array                 $vars  变量
      * @param string                $type  类别
      * @return array
@@ -486,8 +486,8 @@ class App
      * 执行模块
      * @access public
      * @param array $result  模块/控制器/操作
-     * @param array $config  配置参数
-     * @param bool  $convert 是否自动转换控制器和操作名
+     * @param array $config  配置参數
+     * @param bool  $convert 是否自動转换控制器和操作名
      * @return mixed
      * @throws HttpException
      */
@@ -525,7 +525,7 @@ class App
                 $request->module($module);
                 $config = self::init($module);
 
-                // 模块请求缓存檢查
+                // 模块請求缓存檢查
                 $request->cache(
                     $config['request_cache'],
                     $config['request_cache_expire'],
@@ -535,18 +535,18 @@ class App
                 throw new HttpException(404, 'module not exists:' . $module);
             }
         } else {
-            // 单一模块部署
+            // 單一模块部署
             $module = '';
             $request->module($module);
         }
 
-        // 设置默认过滤机制
+        // 設定默认过滤机制
         $request->filter($config['default_filter']);
 
         // 当前模块路径
         App::$modulePath = APP_PATH . ($module ? $module . DS : '');
 
-        // 是否自动转换控制器和操作名
+        // 是否自動转换控制器和操作名
         $convert = is_bool($convert) ? $convert : $config['url_convert'];
 
         // 取得控制器名
@@ -566,7 +566,7 @@ class App
             $actionName = $convert ? strtolower($actionName) : $actionName;
         }
 
-        // 设置当前请求的控制器、操作
+        // 設定当前請求的控制器、操作
         $request->controller(Loader::parseName($controller, 1))->action($actionName);
 
         // 监听module_init
@@ -612,9 +612,9 @@ class App
     }
 
     /**
-     * URL路由检测（根据PATH_INFO)
+     * URL路由检测（根據PATH_INFO)
      * @access public
-     * @param  \think\Request $request 请求实例
+     * @param  \think\Request $request 請求实例
      * @param  array          $config  配置訊息
      * @return array
      * @throws \think\Exception
@@ -644,7 +644,7 @@ class App
                 }
             }
 
-            // 路由检测（根据路由定义返回不同的URL调度）
+            // 路由检测（根據路由定义返回不同的URL调度）
             $result = Route::check($request, $path, $depr, $config['url_domain_deploy']);
             $must   = !is_null(self::$routeMust) ? self::$routeMust : $config['url_route_must'];
 
@@ -654,7 +654,7 @@ class App
             }
         }
 
-        // 路由無效 解析模块/控制器/操作/参数... 支持控制器自动搜索
+        // 路由無效 解析模块/控制器/操作/参數... 支持控制器自動搜索
         if (false === $result) {
             $result = Route::parseUrl($path, $depr, $config['controller_auto_search']);
         }
@@ -663,7 +663,7 @@ class App
     }
 
     /**
-     * 设置应用的路由检测机制
+     * 設定应用的路由检测机制
      * @access public
      * @param  bool $route 是否需要检测路由
      * @param  bool $must  是否强制检测路由

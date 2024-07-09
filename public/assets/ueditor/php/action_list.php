@@ -31,7 +31,7 @@ if (!$allowFiles[0]) {
     unset($allowFiles[0]);
 }
 
-/* 取得参数 */
+/* 取得参數 */
 $size = isset($_GET['size']) ? htmlspecialchars($_GET['size']) : $listSize;
 $start = isset($_GET['start']) ? htmlspecialchars($_GET['start']) : 0;
 $end = $start + $size;

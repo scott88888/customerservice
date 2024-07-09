@@ -39,41 +39,41 @@
         });
 
             //全局变量
-        var imageUrls = [],          //用于保存从服务器返回的图片訊息数组
-            selectedImageCount = 0,  //当前已選擇的但未上传的图片数量
+        var imageUrls = [],          //用于保存从服务器返回的图片訊息數组
+            selectedImageCount = 0,  //当前已選擇的但未上传的图片數量
             optImageUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
             optImageFieldName = editor.getOpt('imageFieldName'),
             optImageCompressBorder = editor.getOpt('imageCompressEnable') ? editor.getOpt('imageCompressBorder'):null,
             maxSize = editor.getOpt('imageMaxSize') / 1024,
             extension = editor.getOpt('imageAllowFiles').join(';').replace(/\./g, '*.');
 
-        /* 新增额外的GET参数 */
+        /* 新增额外的GET参數 */
         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
             urlWidthParams = optImageUrl + (optImageUrl.indexOf('?') == -1 ? '?':'&') + params;
 
         utils.domReady(function(){
-            //创建Flash相关的参数集合
+            //建立Flash相關的参數集合
             var flashOptions = {
                 container:"flashContainer",                                                    //flash容器id
                 url:urlWidthParams,                                           // 上传处理頁面的url地址
-                ext:editor.queryCommandValue('serverParam') || {},                                 //可向服务器送出的自定义参数列表
+                ext:editor.queryCommandValue('serverParam') || {},                                 //可向服务器送出的自訂参數列表
                 fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //上传文件格式限制
                 flashUrl:'imageUploader.swf',                                                  //上传用的flash组件地址
                 width:600,          //flash的宽度
                 height:272,         //flash的高度
                 gridWidth:120,     // 每一个预览图片所占的宽度
                 gridHeight:120,    // 每一个预览图片所占的高度
-                picWidth:100,      // 单张预览图片的宽度
-                picHeight:100,     // 单张预览图片的高度
-                uploadDataFieldName: optImageFieldName,    // POST请求中图片資料的key
-                picDescFieldName:'pictitle',      // POST请求中图片描述的key
-                maxSize: maxSize,                         // 文件的最大体积,单位M
-                compressSize:1,                   // 上传前如果图片体积超过该值，会先压缩,单位M
-                maxNum:32,                         // 单次最大可上传多少个文件
-                compressSide: 0,                 //等比压缩的基准，0为按照最长边，1为按照宽度，2为按照高度
-                compressLength: optImageCompressBorder        //能接受的最大边长，超过该值Flash会自动等比压缩
+                picWidth:100,      // 單张预览图片的宽度
+                picHeight:100,     // 單张预览图片的高度
+                uploadDataFieldName: optImageFieldName,    // POST請求中图片資料的key
+                picDescFieldName:'pictitle',      // POST請求中图片描述的key
+                maxSize: maxSize,                         // 文件的最大体积,單位M
+                compressSize:1,                   // 上传前如果图片体积超过该值，会先压缩,單位M
+                maxNum:32,                         // 單次最大可上传多少个文件
+                compressSide: 0,                 //等比压缩的基准，0為按照最長边，1為按照宽度，2為按照高度
+                compressLength: optImageCompressBorder        //能接受的最大边長，超过该值Flash会自動等比压缩
             };
-            //回调函数集合，支持传递函数名的字符串、函数句柄以及函数本身三种类型
+            //回调函數集合，支持传递函數名的字符串、函數句柄以及函數本身三种类型
             var callbacks={
                 selectFileCallback: function(selectFiles){                // 選擇文件的回调
                     selectedImageCount += selectFiles.length;
@@ -84,23 +84,23 @@
                     selectedImageCount -= delFiles.length;
                     if (!selectedImageCount) {
                         baidu.g("upload").style.display = "none";
-                        dialog.buttons[0].setDisabled(false);         //没有選擇图片时重新点亮按钮
+                        dialog.buttons[0].setDisabled(false);         //没有選擇图片时重新點亮按钮
                     }
                 },
-                uploadCompleteCallback: function(data){               // 单个文件上传完成的回调
+                uploadCompleteCallback: function(data){               // 單个文件上传完成的回调
                     try{var info = eval("(" + data.info + ")");
                     info && imageUrls.push(info);
                     selectedImageCount--;
                     }catch(e){}
                 },
-                uploadErrorCallback: function (data){         // 单个文件上传失敗的回调,
+                uploadErrorCallback: function (data){         // 單个文件上传失敗的回调,
                     console && console.log(data);
                 },
                 allCompleteCallback: function(){              // 全部上传完成时的回调
-                    dialog.buttons[0].setDisabled(false);    //上传完毕后点亮按钮
+                    dialog.buttons[0].setDisabled(false);    //上传完毕后點亮按钮
                 }
                 //exceedFileCallback: 'exceedFileCallback',   // 文件超出限制的最大体积时的回调
-                //startUploadCallback: startUploadCallback    // 开始上传某个文件时的回调
+                //startUploadCallback: startUploadCallback    // 開始上传某个文件时的回调
             };
             wordImage.init(flashOptions,callbacks);
         });

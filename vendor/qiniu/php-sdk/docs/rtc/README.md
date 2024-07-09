@@ -3,10 +3,10 @@
 ## Features
 
 - Appclient
-    - [x] 创建房间: client->createApp()
+    - [x] 建立房间: client->createApp()
     - [x] 查看房间: client->getApp()
     - [x] 刪除房间: client->deleteApp()
-    - [x] 生成房间token: client->appToken()
+    - [x] 產生房间token: client->appToken()
 
 
 

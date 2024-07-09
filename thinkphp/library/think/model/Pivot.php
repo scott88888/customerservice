@@ -22,7 +22,7 @@ class Pivot extends Model
     protected $autoWriteTimestamp = false;
 
     /**
-     * 架构函数
+     * 架构函數
      * @access public
      * @param array|object  $data 資料
      * @param Model         $parent 上级模型

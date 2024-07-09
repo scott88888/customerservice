@@ -46,7 +46,7 @@ class Console
     private $catchExceptions = true;
 
     /**
-     * @var bool 是否自动退出执行
+     * @var bool 是否自動退出执行
      */
     private $autoExit = true;
 
@@ -101,7 +101,7 @@ class Console
     }
 
     /**
-     * 设置执行使用者
+     * 設定执行使用者
      * @param $user
      */
     public function setUser($user)
@@ -243,7 +243,7 @@ class Console
     }
 
     /**
-     * 设置输入参数定义
+     * 設定输入参數定义
      * @access public
      * @param  InputDefinition $definition 输入定义
      * @return $this;
@@ -256,7 +256,7 @@ class Console
     }
 
     /**
-     * 取得输入参数定义
+     * 取得输入参數定义
      * @access public
      * @return InputDefinition
      */
@@ -276,7 +276,7 @@ class Console
     }
 
     /**
-     * 设置是否捕获异常
+     * 設定是否捕获异常
      * @access public
      * @param bool $boolean 是否捕获
      * @return $this
@@ -289,9 +289,9 @@ class Console
     }
 
     /**
-     * 设置是否自动退出
+     * 設定是否自動退出
      * @access public
-     * @param bool $boolean 是否自动退出
+     * @param bool $boolean 是否自動退出
      * @return $this
      */
     public function setAutoExit($boolean)
@@ -312,7 +312,7 @@ class Console
     }
 
     /**
-     * 设置名稱
+     * 設定名稱
      * @access public
      * @param  string $name 名稱
      * @return $this
@@ -335,7 +335,7 @@ class Console
     }
 
     /**
-     * 设置版本
+     * 設定版本
      * @access public
      * @param  string $version 版本訊息
      * @return $this
@@ -461,7 +461,7 @@ class Console
     }
 
     /**
-     * 取得所有的命名空间
+     * 取得所有的命名空間
      * @access public
      * @return array
      */
@@ -485,7 +485,7 @@ class Console
     }
 
     /**
-     * 查找注册命名空间中的名稱或缩写
+     * 查找注册命名空間中的名稱或缩写
      * @access public
      * @param string $namespace
      * @return string
@@ -591,7 +591,7 @@ class Console
     /**
      * 取得所有的指令
      * @access public
-     * @param  string $namespace 命名空间
+     * @param  string $namespace 命名空間
      * @return Command[]
      */
     public function all($namespace = null)
@@ -629,7 +629,7 @@ class Console
     }
 
     /**
-     * 配置基于使用者的参数和选项的输入和输出实例
+     * 配置基于使用者的参數和选项的输入和输出实例
      * @access protected
      * @param  Input  $input  输入实例
      * @param  Output $output 输出实例
@@ -750,10 +750,10 @@ class Console
     }
 
     /**
-     * 返回指令的命名空间部分
+     * 返回指令的命名空間部分
      * @access public
      * @param  string $name  指令名稱
-     * @param  string $limit 部分的命名空间的最大数量
+     * @param  string $limit 部分的命名空間的最大數量
      * @return string
      */
     public function extractNamespace($name, $limit = null)
@@ -827,7 +827,7 @@ class Console
     }
 
     /**
-     * 设置默认的指令
+     * 設定默认的指令
      * @access public
      * @param string $commandName 指令名稱
      * @return $this
@@ -840,7 +840,7 @@ class Console
     }
 
     /**
-     * 返回所有的命名空间
+     * 返回所有的命名空間
      * @access private
      * @param  string $name 指令名稱
      * @return array

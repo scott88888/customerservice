@@ -7,12 +7,12 @@ $bucket = Common::getBucketName();
 $ossClient = Common::getOssClient();
 if (is_null($ossClient)) exit(1);
 
-//*******************************简单使用***************************************************************
+//*******************************简單使用***************************************************************
 
 /** putObject 使用callback上传内容到oss文件
-  * callbackurl参数指定请求回调的服务器url
-  * callbackbodytype参数可为application/json或application/x-www-form-urlencoded, 可选参数，默认为application/x-www-form-urlencoded
-  * OSS_CALLBACK_VAR参数可以不设置
+  * callbackurl参數指定請求回调的服务器url
+  * callbackbodytype参數可為application/json或application/x-www-form-urlencoded, 可选参數，默认為application/x-www-form-urlencoded
+  * OSS_CALLBACK_VAR参數可以不設定
   */
 $url = 
     '{
@@ -36,9 +36,9 @@ Common::println($result['info']['http_code']);
 
 /**
   * completeMultipartUpload 使用callback上传内容到oss文件
-  * callbackurl参数指定请求回调的服务器url
-  * callbackbodytype参数可为application/json或application/x-www-form-urlencoded, 可选参数，默认为application/x-www-form-urlencoded
-  * OSS_CALLBACK_VAR参数可以不设置
+  * callbackurl参數指定請求回调的服务器url
+  * callbackbodytype参數可為application/json或application/x-www-form-urlencoded, 可选参數，默认為application/x-www-form-urlencoded
+  * OSS_CALLBACK_VAR参數可以不設定
   */  
 $object = "multipart-callback-test.txt";
 $copiedObject = "multipart-callback-test.txt.copied";

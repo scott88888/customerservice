@@ -98,7 +98,7 @@ Tree.prototype = {
 
     $loader.removeClass(this.options.hiddenClass);
 
-    // 根据模板和資料生成 tree
+    // 根據模板和資料產生 tree
     this.options.dataSource(treeData, function(items) {
       $loader.addClass(_this.options.hiddenClass);
 

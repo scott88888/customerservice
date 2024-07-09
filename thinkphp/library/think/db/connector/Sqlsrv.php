@@ -15,11 +15,11 @@ use PDO;
 use think\db\Connection;
 
 /**
- * Sqlsrv資料库驱动
+ * Sqlsrv資料库驱動
  */
 class Sqlsrv extends Connection
 {
-    // PDO连接参数
+    // PDO連結参數
     protected $params = [
         PDO::ATTR_CASE              => PDO::CASE_NATURAL,
         PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
@@ -27,9 +27,9 @@ class Sqlsrv extends Connection
     ];
     protected $builder = '\\think\\db\\builder\\Sqlsrv';
     /**
-     * 解析pdo连接的dsn訊息
+     * 解析pdo連結的dsn訊息
      * @access protected
-     * @param array $config 连接訊息
+     * @param array $config 連結訊息
      * @return string
      */
     protected function parseDsn($config)
@@ -78,7 +78,7 @@ class Sqlsrv extends Connection
             }
         }
         $sql = "SELECT column_name FROM information_schema.key_column_usage WHERE table_name='$tableName'";
-        // 调试开始
+        // 调试開始
         $this->debug(true);
         $pdo = $this->linkID->query($sql);
         // 调试结束

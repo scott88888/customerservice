@@ -9,15 +9,15 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-// 应用行为扩展定义文件
+// 应用行為扩展定义文件
 return [
     // 应用初始化  'app\\platform\\behavior\\Cloud',
     'app_init'     => [],
-    // 应用开始
+    // 应用開始
     'app_begin'    => [],
     // 模块初始化
     'module_init'  => [],
-    // 操作开始执行
+    // 操作開始执行
     'action_begin' => [],
     // 视图内容过滤
     'view_filter'  => [],

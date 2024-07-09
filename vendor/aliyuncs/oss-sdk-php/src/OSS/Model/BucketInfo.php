@@ -46,7 +46,7 @@ class BucketInfo
     }
 
     /**
-     * 得到bucket的创建时间
+     * 得到bucket的建立時間
      *
      * @return string
      */
@@ -69,7 +69,7 @@ class BucketInfo
     private $name;
 
     /**
-     * bucket的创建事件
+     * bucket的建立事件
      *
      * @var string
      */

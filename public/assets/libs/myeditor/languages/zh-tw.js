@@ -26,9 +26,9 @@
                 link             : "連結",
                 "reference-link" : "引用鏈接",
                 image            : "圖片",
-                code             : "行內代碼",
-                "preformatted-text" : "預格式文本 / 代碼塊（縮進風格）",
-                "code-block"     : "代碼塊（多語言風格）",
+                code             : "行內程式碼",
+                "preformatted-text" : "預格式文本 / 程式碼塊（縮進風格）",
+                "code-block"     : "程式碼塊（多語言風格）",
                 table            : "新增表格",
                 datetime         : "日期時間",
                 emoji            : "Emoji 表情",
@@ -36,7 +36,7 @@
                 pagebreak        : "插入分頁符",
                 watch            : "關閉實時預覽",
                 unwatch          : "開啟實時預覽",
-                preview          : "全窗口預覽HTML（按 Shift + ESC 退出）",
+                preview          : "全視窗預覽HTML（按 Shift + ESC 退出）",
                 fullscreen       : "全屏（按 ESC 退出）",
                 clear            : "清空",
                 search           : "搜尋",
@@ -76,16 +76,16 @@
                     formatNotAllowed : "錯誤：只允許上傳圖片文件，允許上傳的圖片文件格式有："
                 },
                 preformattedText : {
-                    title             : "新增預格式文本或代碼塊", 
-                    emptyAlert        : "錯誤：請填寫預格式文本或代碼的內容。"
+                    title             : "新增預格式文本或程式碼塊", 
+                    emptyAlert        : "錯誤：請填寫預格式文本或程式碼的內容。"
                 },
                 codeBlock : {
-                    title             : "新增代碼塊",                 
-                    selectLabel       : "代碼語言：",
-                    selectDefaultText : "請語言代碼語言",
+                    title             : "新增程式碼塊",                 
+                    selectLabel       : "程式碼語言：",
+                    selectDefaultText : "請語言程式碼語言",
                     otherLanguage     : "其他語言",
-                    unselectedLanguageAlert : "錯誤：請選擇代碼所屬的語言類型。",
-                    codeEmptyAlert    : "錯誤：請填寫代碼內容。"
+                    unselectedLanguageAlert : "錯誤：請選擇程式碼所屬的語言類型。",
+                    codeEmptyAlert    : "錯誤：請填寫程式碼內容。"
                 },
                 htmlEntities : {
                     title : "HTML實體字符"

@@ -21,8 +21,8 @@ class Evaluate extends Base
         parent::_initialize();
         $login = $_SESSION['Msg'];
         $this->login = $login;
-        $this->assign('title', "评价管理");
-        $this->assign('part', "评价管理");
+        $this->assign('title', "評價管理");
+        $this->assign('part', "評價管理");
     }
 
     public function index()
@@ -63,8 +63,8 @@ class Evaluate extends Base
         $this->assign('groups',$groups);
         $this->assign('comments',$comments);
         $this->assign('keyword',$keyword);
-        $this->assign('part', '评价管理');
-        $this->assign('title', '评价管理');
+        $this->assign('part', '評價管理');
+        $this->assign('title', '評價管理');
         $this->assign('star',$star);
         $this->assign('group',$group);
         return $this->fetch();
@@ -73,8 +73,8 @@ class Evaluate extends Base
 
     public function setting()
     {
-        $this->assign('part', '设置');
-        $this->assign('title', '评价设置');
+        $this->assign('part', '設定');
+        $this->assign('title', '評價設定');
         return $this->fetch();
     }
 
@@ -102,19 +102,19 @@ class Evaluate extends Base
             $data['comments'] = json_encode($comments);
             $data['business_id'] = $this->login['business_id'];
             if (empty($data['title'])) {
-                return json(['code'=>1,'msg'=>'评价说明不能为空']);
+                return json(['code'=>1,'msg'=>'評價说明不能為空']);
             }
             if (empty($comments)) {
-                return json(['code'=>1,'msg'=>'评价條目不能为空']);
+                return json(['code'=>1,'msg'=>'評價條目不能為空']);
             }
             foreach ($comments as $v) {
                 if (mb_strlen($v)>8 || empty($v)) {
-                    return json(['code'=>1,'msg'=>'评价條目限8字且不能为空']);
+                    return json(['code'=>1,'msg'=>'評價條目限8字且不能為空']);
                 }
             }
             if ($data['word_switch'] == 'open') {
                 if (mb_strlen($data['word_title']) >8 || !isset($data['word_title'])) {
-                    return json(['code'=>1,'msg'=>'评价條目限8字且不能为空']);
+                    return json(['code'=>1,'msg'=>'評價條目限8字且不能為空']);
                 }
             }
             $setting = CommentSetting::get(['business_id'=>$data['business_id']]);

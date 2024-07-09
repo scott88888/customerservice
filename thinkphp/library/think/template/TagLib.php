@@ -45,7 +45,7 @@ class TagLib
     protected $tagList = [];
 
     /**
-     * 标签库分析数组
+     * 标签库分析數组
      * @var array
      * @access protected
      */
@@ -59,7 +59,7 @@ class TagLib
     protected $valid = false;
 
     /**
-     * 当前模板对象
+     * 当前模板對象
      * @var object
      * @access protected
      */
@@ -68,9 +68,9 @@ class TagLib
     protected $comparison = [' nheq ' => ' !== ', ' heq ' => ' === ', ' neq ' => ' != ', ' eq ' => ' == ', ' egt ' => ' >= ', ' gt ' => ' > ', ' elt ' => ' <= ', ' lt ' => ' < '];
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param \stdClass $template 模板引擎对象
+     * @param \stdClass $template 模板引擎對象
      */
     public function __construct($template)
     {
@@ -92,7 +92,7 @@ class TagLib
             $close                      = !isset($val['close']) || $val['close'] ? 1 : 0;
             $tags[$close][$lib . $name] = $name;
             if (isset($val['alias'])) {
-                // 别名设置
+                // 别名設定
                 $array = (array) $val['alias'];
                 foreach (explode(',', $array[0]) as $v) {
                     $tags[$close][$lib . $v] = $name;
@@ -111,10 +111,10 @@ class TagLib
                         $name = strtolower($match[2][0]);
                         // 如果有没闭合的标签头则取出最后一个
                         if (!empty($right[$name])) {
-                            // $match[0][1]为标签结束符在模板中的位置
+                            // $match[0][1]為标签结束符在模板中的位置
                             $nodes[$match[0][1]] = [
                                 'name'  => $name,
-                                'begin' => array_pop($right[$name]), // 标签开始符
+                                'begin' => array_pop($right[$name]), // 标签開始符
                                 'end'   => $match[0], // 标签结束符
                             ];
                         }
@@ -133,22 +133,22 @@ class TagLib
                 $beginArray = [];
                 // 标签替换 从后向前
                 foreach ($nodes as $pos => $node) {
-                    // 对应的标签名
+                    // 對应的标签名
                     $name  = $tags[1][$node['name']];
                     $alias = $lib . $name != $node['name'] ? ($lib ? strstr($node['name'], $lib) : $node['name']) : '';
                     // 解析标签属性
                     $attrs  = $this->parseAttr($node['begin'][0], $name, $alias);
                     $method = 'tag' . $name;
-                    // 读取标签库中对应的标签内容 replace[0]用来替换标签头，replace[1]用来替换标签尾
+                    // 读取标签库中對应的标签内容 replace[0]用来替换标签头，replace[1]用来替换标签尾
                     $replace = explode($break, $this->$method($attrs, $break));
                     if (count($replace) > 1) {
                         while ($beginArray) {
                             $begin = end($beginArray);
-                            // 判断当前标签尾的位置是否在栈中最后一个标签头的后面，是则为子标签
+                            // 判断当前标签尾的位置是否在栈中最后一个标签头的後面，是则為子标签
                             if ($node['end'][1] > $begin['pos']) {
                                 break;
                             } else {
-                                // 不为子标签时，取出栈中最后一个标签头
+                                // 不為子标签时，取出栈中最后一个标签头
                                 $begin = array_pop($beginArray);
                                 // 替换标签头部
                                 $content = substr_replace($content, $begin['str'], $begin['pos'], $begin['len']);
@@ -171,7 +171,7 @@ class TagLib
         if (!empty($tags[0])) {
             $regex   = $this->getRegex(array_keys($tags[0]), 0);
             $content = preg_replace_callback($regex, function ($matches) use (&$tags, &$lib) {
-                // 对应的标签名
+                // 對应的标签名
                 $name  = $tags[0][strtolower($matches[1])];
                 $alias = $lib . $name != $matches[1] ? ($lib ? strstr($matches[1], $lib) : $matches[1]) : '';
                 // 解析标签属性
@@ -184,10 +184,10 @@ class TagLib
     }
 
     /**
-     * 按标签生成正则
+     * 按标签產生正则
      * @access private
      * @param  array|string     $tags 标签名
-     * @param  boolean          $close 是否为闭合标签
+     * @param  boolean          $close 是否為闭合标签
      * @return string
      */
     public function getRegex($tags, $close)
@@ -245,7 +245,7 @@ class TagLib
                 }
             } else {
                 $tag = $this->tags[$name];
-                // 设置了标签别名
+                // 設定了标签别名
                 if (!empty($alias) && isset($tag['alias'])) {
                     $type          = !empty($tag['alias'][1]) ? $tag['alias'][1] : 'type';
                     $result[$type] = $alias;
@@ -291,12 +291,12 @@ class TagLib
         }
         $condition = str_ireplace(array_keys($this->comparison), array_values($this->comparison), $condition);
         $this->tpl->parseVar($condition);
-        // $this->tpl->parseVarFunction($condition); // XXX: 此句能解析表达式中用|分隔的函数，但表达式中如果有|、||这样的逻辑运算就产生了歧异
+        // $this->tpl->parseVarFunction($condition); // XXX: 此句能解析表达式中用|分隔的函數，但表达式中如果有|、||这样的逻辑运算就产生了歧异
         return $condition;
     }
 
     /**
-     * 自动识别构建变量
+     * 自動识别构建变量
      * @access public
      * @param string $name 变量描述
      * @return string
@@ -305,7 +305,7 @@ class TagLib
     {
         $flag = substr($name, 0, 1);
         if (':' == $flag) {
-            // 以:开头为函数调用，解析前去掉:
+            // 以:開头為函數调用，解析前去掉:
             $name = substr($name, 1);
         } elseif ('$' != $flag && preg_match('/[a-zA-Z_]/', $flag)) {
             // XXX: 这句的写法可能还需要改进
@@ -313,7 +313,7 @@ class TagLib
             if (defined($name)) {
                 return $name;
             }
-            // 不以$开头并且也不是常量，自动补上$前缀
+            // 不以$開头并且也不是常量，自動补上$前缀
             $name = '$' . $name;
         }
         $this->tpl->parseVar($name);

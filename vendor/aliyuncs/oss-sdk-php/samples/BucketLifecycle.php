@@ -11,9 +11,9 @@ $bucket = Common::getBucketName();
 $ossClient = Common::getOssClient();
 if (is_null($ossClient)) exit(1);
 
-//******************************* 简单使用 *******************************************************
+//******************************* 简單使用 *******************************************************
 
-//设置lifecycle规则
+//設定lifecycle规则
 $lifecycleConfig = new LifecycleConfig();
 $actions = array();
 $actions[] = new LifecycleAction("Expiration", "Days", 3);
@@ -31,7 +31,7 @@ $ossClient->deleteBucketLifecycle($bucket);
 Common::println("bucket $bucket lifecycleConfig deleted");
 
 
-//***************************** 完整用法参考下面函数  ***********************************************
+//***************************** 完整用法参考下面函數  ***********************************************
 
 putBucketLifecycle($ossClient, $bucket);
 getBucketLifecycle($ossClient, $bucket);
@@ -39,10 +39,10 @@ deleteBucketLifecycle($ossClient, $bucket);
 getBucketLifecycle($ossClient, $bucket);
 
 /**
- * 设置bucket的生命周期配置
+ * 設定bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function putBucketLifecycle($ossClient, $bucket)
@@ -70,7 +70,7 @@ function putBucketLifecycle($ossClient, $bucket)
  * 取得bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function getBucketLifecycle($ossClient, $bucket)
@@ -91,7 +91,7 @@ function getBucketLifecycle($ossClient, $bucket)
  * 刪除bucket的生命周期配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function deleteBucketLifecycle($ossClient, $bucket)

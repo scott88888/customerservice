@@ -184,7 +184,7 @@ class Unix extends Pipes
     }
 
     /**
-     * 创建一个新的 UnixPipes 实例
+     * 建立一个新的 UnixPipes 实例
      * @param Process         $process
      * @param string|resource $input
      * @return self

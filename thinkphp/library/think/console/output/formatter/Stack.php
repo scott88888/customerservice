@@ -43,7 +43,7 @@ class Stack
     }
 
     /**
-     * 推一个样式进入堆栈
+     * 推一个樣式进入堆栈
      * @param Style $style
      */
     public function push(Style $style)
@@ -52,7 +52,7 @@ class Stack
     }
 
     /**
-     * 从堆栈中弹出一个样式
+     * 从堆栈中弹出一个樣式
      * @param Style|null $style
      * @return Style
      * @throws \InvalidArgumentException
@@ -83,7 +83,7 @@ class Stack
     }
 
     /**
-     * 计算堆栈的当前样式。
+     * 计算堆栈的当前樣式。
      * @return Style
      */
     public function getCurrent()

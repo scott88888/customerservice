@@ -8,7 +8,7 @@ use Qiniu\Http\Client;
 use Qiniu\Http\Error;
 
 /**
- * 主要涉及了鉴黄接口的实现，具体的接口规格可以参考
+ * 主要涉及了鉴黄接口的實現，具体的接口规格可以参考
  *
  * @link https://developer.qiniu.com/dora/manual/3674/kodo-product-introduction
  */
@@ -33,7 +33,7 @@ final class ArgusManager
      * @param $body     body訊息
      * @param $vid      videoID
      *
-     * @return mixed      成功返回NULL，失敗返回对象Qiniu\Http\Error
+     * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  https://developer.qiniu.com/dora/manual/4258/video-pulp
      */
     public function pulpVideo($body, $vid)

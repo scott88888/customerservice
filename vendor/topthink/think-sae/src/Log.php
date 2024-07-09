@@ -11,7 +11,7 @@ class Log
         'log_time_format' => ' c ',
     ];
 
-    // 实例化并传入参数
+    // 实例化并传入参數
     public function __construct(array $config = [])
     {
         $this->config = array_merge($this->config, $config);
@@ -35,7 +35,7 @@ class Log
         }
         $runtime    = round(microtime(true) - THINK_START_TIME, 10);
         $reqs       = number_format(1 / $runtime, 2);
-        $time_str   = " [运行时间：{$runtime}s] [吞吐率：{$reqs}req/s]";
+        $time_str   = " [运行時間：{$runtime}s] [吞吐率：{$reqs}req/s]";
         $memory_use = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
         $memory_str = " [内存消耗：{$memory_use}kb]";
         $file_load  = " [文件加载：" . count(get_included_files()) . "]";

@@ -89,7 +89,7 @@ class Encryptor
         !is_null($nonce) || $nonce = substr($this->appId, 0, 10);
         !is_null($timestamp) || $timestamp = time();
 
-        //生成安全签名
+        //產生安全签名
         $signature = $this->getSHA1($this->token, $timestamp, $nonce, $encrypt);
 
         $response = [
@@ -99,7 +99,7 @@ class Encryptor
             'Nonce' => $nonce,
         ];
 
-        //生成响应xml
+        //產生响应xml
         return XML::build($response);
     }
 

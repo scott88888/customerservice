@@ -75,7 +75,7 @@
 
 
 
-/** 实 现 菜 单 隐 藏 */
+/** 实 现 選 單 隐 藏 */
 .pear-nav-mini {
 	overflow: hidden;
 }
@@ -121,7 +121,7 @@
 	width: 150px;
 }
 
-/** 隐 藏 后 子 级 悬 浮 菜 单 */
+/** 隐 藏 后 子 级 悬 浮 選 單 */
 .pear-nav-tree .layui-nav-hover {
 	border-radius: 4px;
 	overflow: hidden;

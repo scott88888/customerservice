@@ -24,7 +24,7 @@ class Common
     const bucket = Config::OSS_TEST_BUCKET;
 
     /**
-     * 根据Config配置，得到一个OssClient实例
+     * 根據Config配置，得到一个OssClient实例
      *
      * @return OssClient 一个OssClient实例
      */
@@ -46,7 +46,7 @@ class Common
     }
 
     /**
-     * 工具方法，创建一个存储空间，如果发生异常直接exit
+     * 工具方法，建立一个存储空間，如果发生异常直接exit
      */
     public static function createBucket()
     {

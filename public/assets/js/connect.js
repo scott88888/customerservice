@@ -1,5 +1,5 @@
 /**
- * 连接websockt
+ * 連結websockt
  */
 
  var wolive_connect=function(){
@@ -35,7 +35,7 @@
 
         channelme.bind("on_chat", function (data) {
             $.cookie("cu_com",'');
-            layer.msg('该访客被刪除');
+            layer.msg('该訪客被刪除');
         });
 
     // 公共频道
@@ -44,7 +44,7 @@
            $("#wolive_notice").removeClass('hide');
        });    
 
-    // 对话频道
+    // 對話频道
     var channel =pusher.subscribe("kefu" + config.service_id);
        // 接受消息
        channel.bind("cu-event", function (data) {

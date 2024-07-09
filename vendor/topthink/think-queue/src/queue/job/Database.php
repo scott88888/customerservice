@@ -69,7 +69,7 @@ class Database extends Job
     }
 
     /**
-     * 取得当前任务尝试次数
+     * 取得当前任务尝试次數
      * @return int
      */
     public function attempts()

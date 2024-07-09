@@ -11,9 +11,9 @@
     pjax.defaults = {
         bind: '[data-pjax]',
         render: '#layout-main',             // 渲染输出容器
-        container: '#container',            // 动画容器
+        container: '#container',            // 動画容器
         animation: [
-            'am-animation-slide-right',     // 右侧划入
+            'am-animation-slide-right',     // 右側划入
             'am-animation-slide-bottom',    // 底部划入
             'am-animation-slide-top'        // 顶部划入
         ],

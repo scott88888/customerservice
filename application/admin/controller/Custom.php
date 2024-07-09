@@ -85,7 +85,7 @@ class Custom extends Base
             $post['business_id'] = $this->login['business_id'];
             $post['service_id'] = $this->login['service_id'];
             if (empty($post['group_name'])) {
-                return json(['code'=>1,'msg'=>'分組名不能为空']);
+                return json(['code'=>1,'msg'=>'分組名不能為空']);
             }
             if(mb_strlen($post['group_name'],'UTF8') > 20){
                 $data = ['code'=>1,'msg'=>'分組名不能多于12个字符！'];
@@ -235,7 +235,7 @@ class Custom extends Base
                 foreach ($visiter as &$v) {
                     $url = url('mobile/admin/talk',null,true,true);
                     $v['mobile_route_url'] = $url."?channel=".$v['channel']."&avatar=".urlencode($v['avatar'])."&visiter_id=".$v['visiter_id'];
-                    $v['group_name_array'] = ['黑名单'];
+                    $v['group_name_array'] = ['黑名單'];
                 }
             } else {
                 $visiter = [];
@@ -333,7 +333,7 @@ class Custom extends Base
                 ->where('q.business_id',$this->login['business_id'])
                 ->count();
             if ($groups != count($gid) || $visiter != count($vids)) {
-                return json(['code'=>1,'msg'=>'参数错误']);
+                return json(['code'=>1,'msg'=>'参數錯誤']);
             }
             $vgmodel = new VisiterGroup();
             $vgmodel->where('business_id',$this->login['business_id'])
@@ -366,7 +366,7 @@ class Custom extends Base
             $vids = $this->request->post('vid/a',[]);
             $gid = $this->request->post('group_id',0);
             if (empty($vids) || empty($gid)) {
-                return json(['code'=>1,'msg'=>'请選擇分組或客户']);
+                return json(['code'=>1,'msg'=>'請選擇分組或客户']);
             }
             if ($gid != -1) {
                 $group = Vgroup::get($gid);
@@ -424,7 +424,7 @@ class Custom extends Base
             $vids = $this->request->post('vid/a', []);
             $gid = $this->request->post('group_id', 0);
             if (empty($gid)) {
-                return json($data = ['code'=>1,'msg'=>'请選擇分組']);
+                return json($data = ['code'=>1,'msg'=>'請選擇分組']);
             } elseif ($gid == -1) {
                 $result = Queue::alias('q')->where('q.business_id', $this->login['business_id'])
                     ->join('wolive_visiter v','q.visiter_id = v.visiter_id','left')
@@ -519,7 +519,7 @@ class Custom extends Base
                 ->paginate(20);
             foreach ($res as &$v) {
                 $v['create_time'] = time(); // 防止报错
-                $v['group_name_array'] = ['黑名单'];
+                $v['group_name_array'] = ['黑名單'];
                 $url = url('mobile/admin/talk',null,true,true);
                 $v['mobile_route_url'] = $url."?channel=".$v['channel']."&avatar=".urlencode($v['avatar'])."&visiter_id=".$v['visiter_id'];
             }
@@ -549,14 +549,14 @@ class Custom extends Base
     }
 
     /**
-     * 批量加黑名单
+     * 批量加黑名單
      */
     public function moreblack()
     {
         if ($this->request->isPost()) {
             $vids = $this->request->post('vid/a', []);
             if (empty($vids)) {
-                return json(['code' => 1, 'msg' => '参数不正确']);
+                return json(['code' => 1, 'msg' => '参數不正确']);
             }
             $result = Db::table('wolive_queue')->where('visiter_id', 'in',$vids)->where('business_id', $this->login['business_id'])->update(['state' => 'in_black_list']);
             $arr = ['code' => 0, 'msg' => 'success', 'data' => $result];
@@ -565,14 +565,14 @@ class Custom extends Base
     }
     
      /**
-     * 批量加黑名单
+     * 批量加黑名單
      */
     public function bitchDelete()
     {
         if ($this->request->isPost()) {
             $vids = $this->request->post('vid/a', []);
             if (empty($vids)) {
-                return json(['code' => 1, 'msg' => '参数不正确']);
+                return json(['code' => 1, 'msg' => '参數不正确']);
             }
            Visiter::where('visiter_id','in',$vids) ->delete();
           $result =    Queue::where('visiter_id','in',$vids)->delete();
@@ -583,7 +583,7 @@ class Custom extends Base
     }
 
     /**
-     * 重新打开访客
+     * 重新打開訪客
      * @return \think\response\Json
      */
     public function openCs()

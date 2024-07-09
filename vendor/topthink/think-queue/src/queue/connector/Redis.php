@@ -130,7 +130,7 @@ class Redis extends Connector
     }
 
     /**
-     * 移动所有任务
+     * 移動所有任务
      *
      * @param  string $queue
      * @return void
@@ -143,7 +143,7 @@ class Redis extends Connector
     }
 
     /**
-     * 移动延迟任务
+     * 移動延迟任务
      *
      * @param string $from
      * @param string $to

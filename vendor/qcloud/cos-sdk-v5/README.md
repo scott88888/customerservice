@@ -7,9 +7,9 @@
 
 ## 环境准备
 *   PHP 5.3+
-    您可以通过`php -v`命令查看当前的 PHP 版本。
+    您可以通過`php -v`命令查看当前的 PHP 版本。
 *   cURL 扩展
-    您可以通过`php -m`命令查看 cURL 扩展是否已经安装好。
+    您可以通過`php -m`命令查看 cURL 扩展是否已经安装好。
 
 >- Ubuntu 系统中，您可以使用 apt-get 包管理器安装 PHP 的 cURL 扩展，安装命令如下。
 ```
@@ -24,19 +24,19 @@ sudo yum install php-curl
 SDK 安装有三种方式：
 * Composer 方式
 * Phar 方式
-* 源码方式
+* 源碼方式
 
 ### Composer 方式
-推荐使用 Composer 安装 cos-php-sdk-v5，Composer 是 PHP 的依赖管理工具，允许您声明项目所需的依赖，然后自动将它们安装到您的项目中。
-> 您可以在 [Composer 官网](https://getcomposer.org/) 上找到更多关于如何安装 Composer，配置自动加载以及用于定义依赖项的其他最佳实践等相关訊息。
+推荐使用 Composer 安装 cos-php-sdk-v5，Composer 是 PHP 的依赖管理工具，允许您声明项目所需的依赖，然后自動将它们安装到您的项目中。
+> 您可以在 [Composer 官網](https://getcomposer.org/) 上找到更多关于如何安装 Composer，配置自動加载以及用于定义依赖项的其他最佳实践等相關訊息。
 
 #### 安装步骤： 
-1. 打开终端。
+1. 打開终端。
 2. 下载 Composer，执行以下命令。
 ```
 curl -sS https://getcomposer.org/installer | php
 ```
-3. 创建一个名为`composer.json`的文件，内容如下。
+3. 建立一个名為`composer.json`的文件，内容如下。
 ```
 {
     "require": {
@@ -48,8 +48,8 @@ curl -sS https://getcomposer.org/installer | php
 ```
 php composer.phar install
 ```
-使用该命令后会在当前目录中创建一个 vendor 文件夹，里面包含 SDK 的依赖库和一个 autoload.php 脚本，方便在项目中调用。
-5. 通过 autoloader 脚本调用 cos-php-sdk-v5。
+使用该命令后会在当前目录中建立一个 vendor 文件夹，里面包含 SDK 的依赖库和一个 autoload.php 脚本，方便在项目中调用。
+5. 通過 autoloader 脚本调用 cos-php-sdk-v5。
 ```
 require '/path/to/sdk/vendor/autoload.php';
 ```
@@ -59,15 +59,15 @@ require '/path/to/sdk/vendor/autoload.php';
 ### Phar 方式
 Phar 方式安装 SDK 的步骤如下：
 1. 在 [GitHub 发布頁面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载相应的 phar 文件。
-2.  在代码中引入 phar 文件：
+2.  在程式碼中引入 phar 文件：
 ```
 require  '/path/to/cos-sdk-v5.phar';
 ```
 
-### 源码方式
-源码方式安装 SDK 的步骤如下：
+### 源碼方式
+源碼方式安装 SDK 的步骤如下：
 1.  在 [GitHub 发布頁面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载相应的 zip 文件。
-2.  解压通过 autoload.php 脚本加载 SDK：
+2.  解压通過 autoload.php 脚本加载 SDK：
 ```
 require '/path/to/sdk/vendor/autoload.php';
 ```
@@ -86,7 +86,7 @@ $cosClient = new Qcloud\Cos\Client(array('region' => '<Region>',
         'secretKey' => '<SecretKey>')));
 ```
 
-若您使用 [临时密钥](https://cloud.tencent.com/document/product/436/14048) 初始化，请用下面方式创建实例。
+若您使用 [临时密钥](https://cloud.tencent.com/document/product/436/14048) 初始化，請用下面方式建立实例。
 
 ```
 $cosClient = new Qcloud\Cos\Client(array('region' => '<Region>',
@@ -103,7 +103,7 @@ $cosClient = new Qcloud\Cos\Client(array('region' => '<Region>',
 # 上传文件
 ## putObject(上传接口，最大支持上传5G文件)
 ### 上传内存中的字符串
-//bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名稱必须为此格式
+//bucket 的命名规则為{name}-{appid} ，此处填写的存储桶名稱必须為此格式
 try {
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -125,7 +125,7 @@ try {
     echo "$e\n";
 }
 
-### 设置header和meta
+### 設定header和meta
 try {
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -171,7 +171,7 @@ try {
     echo "$e\n";
 }
 
-### 设置header和meta
+### 設定header和meta
 try {
     $result = $cosClient->Upload(
         $bucket= $bucket,
@@ -203,7 +203,7 @@ try {
 # 下载文件
 ## getObject(下载文件)
 ### 下载到内存
-//bucket 的命名规则为{name}-{appid} ，此处填写的存储桶名稱必须为此格式
+//bucket 的命名规则為{name}-{appid} ，此处填写的存储桶名稱必须為此格式
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
@@ -225,7 +225,7 @@ try {
 
 ### 指定下载范围
 /*
- * Range 字段格式为 'bytes=a-b'
+ * Range 字段格式為 'bytes=a-b'
  */
 try {
     $result = $cosClient->getObject(array(
@@ -237,7 +237,7 @@ try {
     echo "$e\n";
 }
 
-### 设置返回header
+### 設定返回header
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,

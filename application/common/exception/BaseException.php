@@ -5,7 +5,7 @@ use think\Exception;
 
 /**
  * Class BaseException
- * 自定义异常类基类
+ * 自訂异常类基类
  */
 class BaseException extends Exception
 {
@@ -16,8 +16,8 @@ class BaseException extends Exception
     public $shouldToClient = true;
 
     /**
-     * 构造函数，接收一个关联数组
-     * @param array $params 关联数组只应包含code、msg和errorCode，且不应该是空值
+     * 构造函數，接收一个关联數组
+     * @param array $params 关联數组只应包含code、msg和errorCode，且不应该是空值
      */
     public function __construct($params=[])
     {

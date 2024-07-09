@@ -27,7 +27,7 @@ class Builder
 
     /**
      * 构造方法
-     * @param string[] $arguments 参数
+     * @param string[] $arguments 参數
      */
     public function __construct(array $arguments = [])
     {
@@ -35,8 +35,8 @@ class Builder
     }
 
     /**
-     * 创建一个实例
-     * @param string[] $arguments 参数
+     * 建立一个实例
+     * @param string[] $arguments 参數
      * @return self
      */
     public static function create(array $arguments = [])
@@ -45,8 +45,8 @@ class Builder
     }
 
     /**
-     * 新增一个参数
-     * @param string $argument 参数
+     * 新增一个参數
+     * @param string $argument 参數
      * @return self
      */
     public function add($argument)
@@ -69,7 +69,7 @@ class Builder
     }
 
     /**
-     * 设置参数
+     * 設定参數
      * @param string[] $arguments
      * @return  self
      */
@@ -81,7 +81,7 @@ class Builder
     }
 
     /**
-     * 设置工作目录
+     * 設定工作目录
      * @param null|string $cwd
      * @return  self
      */
@@ -105,7 +105,7 @@ class Builder
     }
 
     /**
-     * 设置环境变量
+     * 設定环境变量
      * @param string      $name
      * @param null|string $value
      * @return self
@@ -130,7 +130,7 @@ class Builder
     }
 
     /**
-     * 设置输入
+     * 設定输入
      * @param mixed $input
      * @return self
      */
@@ -142,7 +142,7 @@ class Builder
     }
 
     /**
-     * 设置超时时间
+     * 設定超时時間
      * @param float|null $timeout
      * @return self
      */
@@ -166,7 +166,7 @@ class Builder
     }
 
     /**
-     * 设置proc_open选项
+     * 設定proc_open选项
      * @param string $name
      * @param string $value
      * @return self
@@ -201,7 +201,7 @@ class Builder
     }
 
     /**
-     * 创建一个Process实例
+     * 建立一个Process实例
      * @return Process
      */
     public function getProcess()

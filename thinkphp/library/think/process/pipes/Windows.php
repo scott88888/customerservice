@@ -144,7 +144,7 @@ class Windows extends Pipes
     }
 
     /**
-     * 创建一个新的 WindowsPipes 实例。
+     * 建立一个新的 WindowsPipes 实例。
      * @param Process $process
      * @param         $input
      * @return self

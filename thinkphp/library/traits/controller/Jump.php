@@ -29,7 +29,7 @@ trait Jump
      * @param mixed  $msg    提示訊息
      * @param string $url    跳转的 URL 地址
      * @param mixed  $data   返回的資料
-     * @param int    $wait   跳转等待时间
+     * @param int    $wait   跳转等待時間
      * @param array  $header 发送的 Header 訊息
      * @return void
      * @throws HttpResponseException
@@ -65,12 +65,12 @@ trait Jump
     }
 
     /**
-     * 操作错误跳转的快捷方法
+     * 操作錯誤跳转的快捷方法
      * @access protected
      * @param mixed  $msg    提示訊息
      * @param string $url    跳转的 URL 地址
      * @param mixed  $data   返回的資料
-     * @param int    $wait   跳转等待时间
+     * @param int    $wait   跳转等待時間
      * @param array  $header 发送的 Header 訊息
      * @return void
      * @throws HttpResponseException
@@ -134,7 +134,7 @@ trait Jump
      * URL 重定向
      * @access protected
      * @param string    $url    跳转的 URL 表达式
-     * @param array|int $params 其它 URL 参数
+     * @param array|int $params 其它 URL 参數
      * @param int       $code   http code
      * @param array     $with   隐式传参
      * @return void

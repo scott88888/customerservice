@@ -36,13 +36,13 @@ class Comments extends Base
         $comments = $this->request->post('comments/a',[]);
         $data['comments'] = json_encode($comments);
         $data['business_id'] = $_SESSION['Msg']['business_id'];
-        if (empty($data['title'])) $this->error("评价说明不能为空");
-        if (empty($comments)) $this->error("评价條目不能为空");
+        if (empty($data['title'])) $this->error("評價说明不能為空");
+        if (empty($comments)) $this->error("評價條目不能為空");
         foreach ($comments as $v) {
-            if (mb_strlen($v)>8 || empty($v)) $this->error("评价條目限8字且不能为空");
+            if (mb_strlen($v)>8 || empty($v)) $this->error("評價條目限8字且不能為空");
         }
         if ($data['word_switch'] == 'open') {
-            if (mb_strlen($data['word_title']) >8 || !isset($data['word_title'])) $this->error("评价條目限8字且不能为空");
+            if (mb_strlen($data['word_title']) >8 || !isset($data['word_title'])) $this->error("評價條目限8字且不能為空");
         }
         $setting = CommentSetting::get(['business_id'=>$data['business_id']]);
         if (!empty($setting)) $res = $setting->save($data);

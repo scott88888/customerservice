@@ -55,7 +55,7 @@ class Str
     }
 
     /**
-     * 檢查字符串是否以某些字符串开头
+     * 檢查字符串是否以某些字符串開头
      *
      * @param  string       $haystack
      * @param  string|array $needles
@@ -73,7 +73,7 @@ class Str
     }
 
     /**
-     * 取得指定长度的随机字母数字组合的字符串
+     * 取得指定長度的随机字母數字组合的字符串
      *
      * @param  int $length
      * @return string
@@ -108,7 +108,7 @@ class Str
     }
 
     /**
-     * 取得字符串的长度
+     * 取得字符串的長度
      *
      * @param  string $value
      * @return int
@@ -190,7 +190,7 @@ class Str
     }
 
     /**
-     * 转为首字母大写的标题格式
+     * 转為首字母大写的标题格式
      *
      * @param  string $value
      * @return string

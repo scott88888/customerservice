@@ -346,7 +346,7 @@ body > .main .main-body {
     bottom: 0;
     background: rgba(255, 255, 255, 0.9);
     display: block;
-    content: '已隐藏内容，请点击編輯或查看';
+    content: '已隐藏内容，請點擊編輯或查看';
 }
 
 .input-group-addon {

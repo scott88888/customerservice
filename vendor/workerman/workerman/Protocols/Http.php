@@ -211,7 +211,7 @@ class Http
     }
 
     /**
-     * 设置http头
+     * 設定http头
      *
      * @return bool|void
      */

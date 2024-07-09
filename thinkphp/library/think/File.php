@@ -16,7 +16,7 @@ use SplFileObject;
 class File extends SplFileObject
 {
     /**
-     * @var string 错误訊息
+     * @var string 錯誤訊息
      */
     private $error = '';
 
@@ -41,7 +41,7 @@ class File extends SplFileObject
     protected $validate = [];
 
     /**
-     * @var bool 单元测试
+     * @var bool 單元测试
      */
     protected $isTest;
 
@@ -59,7 +59,7 @@ class File extends SplFileObject
      * File constructor.
      * @access public
      * @param  string $filename 文件名稱
-     * @param  string $mode     访问模式
+     * @param  string $mode     訪問模式
      */
     public function __construct($filename, $mode = 'r')
     {
@@ -68,7 +68,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置是否是单元测试
+     * 設定是否是單元测试
      * @access public
      * @param  bool $test 是否是测试
      * @return $this
@@ -81,7 +81,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置上传訊息
+     * 設定上传訊息
      * @access public
      * @param  array $info 上传文件訊息
      * @return $this
@@ -115,7 +115,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置上传文件的保存文件名
+     * 設定上传文件的保存文件名
      * @access public
      * @param  string $saveName 保存名稱
      * @return $this
@@ -172,7 +172,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置文件的命名规则
+     * 設定文件的命名规则
      * @access public
      * @param  string $rule 文件命名规则
      * @return $this
@@ -185,7 +185,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 设置上传文件的驗證规则
+     * 設定上传文件的驗證规则
      * @access public
      * @param  array $rule 驗證规则
      * @return $this
@@ -319,16 +319,16 @@ class File extends SplFileObject
     }
 
     /**
-     * 移动文件
+     * 移動文件
      * @access public
      * @param  string      $path     保存路径
-     * @param  string|bool $savename 保存的文件名 默认自动生成
+     * @param  string|bool $savename 保存的文件名 默认自動產生
      * @param  boolean     $replace  同名文件是否覆盖
      * @return false|File
      */
     public function move($path, $savename = true, $replace = true)
     {
-        // 文件上传失敗，捕获错误代码
+        // 文件上传失敗，捕获錯誤程式碼
         if (!empty($this->info['error'])) {
             $this->error($this->info['error']);
             return false;
@@ -361,7 +361,7 @@ class File extends SplFileObject
             return false;
         }
 
-        /* 移动文件 */
+        /* 移動文件 */
         if ($this->isTest) {
             rename($this->filename, $filename);
         } elseif (!move_uploaded_file($this->filename, $filename)) {
@@ -369,7 +369,7 @@ class File extends SplFileObject
             return false;
         }
 
-        // 返回 File 对象实例
+        // 返回 File 對象实例
         $file = new self($filename);
         $file->setSaveName($saveName)->setUploadInfo($this->info);
 
@@ -379,12 +379,12 @@ class File extends SplFileObject
     /**
      * 取得保存文件名
      * @access protected
-     * @param  string|bool $savename 保存的文件名 默认自动生成
+     * @param  string|bool $savename 保存的文件名 默认自動產生
      * @return string
      */
     protected function buildSaveName($savename)
     {
-        // 自动生成文件名
+        // 自動產生文件名
         if (true === $savename) {
             if ($this->rule instanceof \Closure) {
                 $savename = call_user_func_array($this->rule, [$this]);
@@ -416,9 +416,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得错误代码訊息
+     * 取得錯誤程式碼訊息
      * @access private
-     * @param  int $errorNo 错误号
+     * @param  int $errorNo 錯誤号
      * @return $this
      */
     private function error($errorNo)
@@ -448,7 +448,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得错误訊息（支持多語言）
+     * 取得錯誤訊息（支持多語言）
      * @access public
      * @return string
      */
@@ -468,7 +468,7 @@ class File extends SplFileObject
      * 魔法方法，取得文件的 hash 值
      * @access public
      * @param  string $method 方法名
-     * @param  mixed  $args   调用参数
+     * @param  mixed  $args   调用参數
      * @return string
      */
     public function __call($method, $args)

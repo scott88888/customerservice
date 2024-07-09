@@ -102,16 +102,16 @@
     {if condition="$account_over_max"}
     <div class="form-disable">
         <div class="alert alert-danger">
-            <div class="mb-2 pl-3 pr-3"><b>子账户创建数量上限！</b></div>
-            <div>当前子账户数量：{$account_count}</div>
-            <div>最大子账户数量：{$account_max}</div>
+            <div class="mb-2 pl-3 pr-3"><b>子账户建立數量上限！</b></div>
+            <div>当前子账户數量：{$account_count}</div>
+            <div>最大子账户數量：{$account_max}</div>
         </div>
     </div>
     {/if}
     <div class="card-header new-account">
         <span class="new-account-title">新增子账户訊息</span>
         <div class="account-info">
-            当前子账户数量 <span>{$account_count}</span>，最大子账户数量 <span>{$account_max == -1 ? '無限制':$account_max}</span>
+            当前子账户數量 <span>{$account_count}</span>，最大子账户數量 <span>{$account_max == -1 ? '無限制':$account_max}</span>
         </div>
     </div>
     <div class="card-body" style="padding-left: 15%;">
@@ -161,17 +161,17 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label account-label required"><span>客服系统数量</span></label>
+            <label class="col-sm-3 col-form-label account-label required"><span>客服系统數量</span></label>
             <div class="form-input">
 
                 {if condition="isset($model['id'])"}
                 <input class="form-control " type="number" step="1" min="0"
                        value="{$model['app_max_count']}" name="app_max_count">
-                <div class="fs-sm text-muted">此使用者可以创建的客服系统的数量，填写0则表示不限制使用者创建客服系统的数量</div>
+                <div class="fs-sm text-muted">此使用者可以建立的客服系统的數量，填写0则表示不限制使用者建立客服系统的數量</div>
                 {else/}
                 <input class="form-control " type="number" step="1" min="0"
                        value="" name="app_max_count">
-                <div class="fs-sm text-muted">此使用者可以创建的客服系统的数量，填写0则表示不限制使用者创建客服系统的数量</div>
+                <div class="fs-sm text-muted">此使用者可以建立的客服系统的數量，填写0则表示不限制使用者建立客服系统的數量</div>
                 {/if}
 
 
@@ -202,7 +202,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label  account-label"><span>权限设置</span></label>
+            <label class="col-sm-3 col-form-label  account-label"><span>权限設定</span></label>
             <div class="col-sm-6" style="padding-top: calc(.5rem - 1px * 2);">
                 {if condition="isset($model->id) && $model->id == 1"}
                 <input type="hidden"  name="permission[]" value="copyright">
@@ -212,7 +212,7 @@
                     <input type="checkbox"
                            class="custom-control-input"   name="permission[]" value="copyright" {$is_copyright ? 'checked' : ''}>
                     <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">版权设置</span>
+                    <span class="custom-control-description">版权設定</span>
                 </label>
                 <label class="custom-control custom-checkbox mr-5">
                     <input type="checkbox"

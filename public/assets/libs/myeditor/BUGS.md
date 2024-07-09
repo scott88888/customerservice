@@ -10,7 +10,7 @@
 
 ####IE8 & IE9 & IE10
 
-- KaTeX会出现解析错误，但不影响程序运行；
+- KaTeX会出现解析錯誤，但不影响程序运行；
 
 ####Sea.js
 
@@ -18,5 +18,5 @@
 
 ####Require.js
 
-- ~~CodeMirror編輯器的代码無法高亮；~~
+- ~~CodeMirror編輯器的程式碼無法高亮；~~
 - ~~sequenceDiagram不支持: `Uncaught TypeError: Cannot call method 'isArray' of undefined.`~~

@@ -6,13 +6,13 @@
  * To change this template use File | Settings | File Templates.
  */
 /**
- * tab点击处理事件
+ * tab點擊处理事件
  * @param tabHeads
  * @param tabBodys
  * @param obj
  */
 function clickHandler( tabHeads,tabBodys,obj ) {
-    //head样式更改
+    //head樣式更改
     for ( var k = 0, len = tabHeads.length; k < len; k++ ) {
         tabHeads[k].className = "";
     }
@@ -36,7 +36,7 @@ function clickHandler( tabHeads,tabBodys,obj ) {
 
 /**
  * TAB切换
- * @param tabParentId  tab的父节点ID或者对象本身
+ * @param tabParentId  tab的父节點ID或者對象本身
  */
 function switchTab( tabParentId ) {
     var tabElements = $G( tabParentId ).children,

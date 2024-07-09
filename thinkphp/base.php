@@ -55,10 +55,10 @@ if (is_file(ROOT_PATH . '.env')) {
     }
 }
 
-// 注册自动加载
+// 注册自動加载
 \think\Loader::register();
 
-// 注册错误和异常处理机制
+// 注册錯誤和异常处理机制
 \think\Error::register();
 
 // 加载惯例配置文件

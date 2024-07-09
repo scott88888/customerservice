@@ -44,7 +44,7 @@ var getonline = function () {
 
 window.onload = getonline();
 
-// 取得访客狀態
+// 取得訪客狀態
 function getstatus(cha) {
     $.ajax({
         url:'/admin/set/getstatus',
@@ -257,7 +257,7 @@ function getwait() {
 }
 
 
-//取得黑名单
+//取得黑名單
 function getblacklist() {
     $.ajax({
         url:"/admin/set/getblackdata",
@@ -539,7 +539,7 @@ $(document).on('click','.editusergroup',function (){
         layer.open({
             skin: 'group',
             type: 1,
-            title: '设置分組',
+            title: '設定分組',
             area: ['300px', 'auto'],
             content: res,
             btn: ['确认', '取消'],

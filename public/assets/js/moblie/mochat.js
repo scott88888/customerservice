@@ -423,9 +423,9 @@ var init = function () {
                 $("#img_head").attr('src',data.avatar);
                 $("#services").text(data.nick_name);
                 data.visiter_id=visiter_id;
-                console.log('触发postMessage发送问候语');
+                console.log('触发postMessage发送問候語');
                 window.parent.postMessage({type:'greeting',data:data},'*');
-                // 问候语
+                // 問候語
                 //$('#ymwl-showhelp', window.parent.document)
 
                 var msg = '';
@@ -594,7 +594,7 @@ function getanswer(id,question){
 
 
 
-// 取得排队的数量
+// 取得排队的數量
 function getnums(id){
     var value ="";
     $.ajax({

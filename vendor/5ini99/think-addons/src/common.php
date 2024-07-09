@@ -22,17 +22,17 @@ define('ADDON_PATH', ROOT_PATH . 'addons' . DS);
 // 定义路由
 Route::any('addons/execute/:route', "\\think\\addons\\Route@execute");
 
-// 如果插件目录不存在则创建
+// 如果插件目录不存在则建立
 if (!is_dir(ADDON_PATH)) {
     @mkdir(ADDON_PATH, 0777, true);
 }
 
-// 注册类的根命名空间
+// 注册类的根命名空間
 Loader::addNamespace('addons', ADDON_PATH);
 
-// 闭包自动识别插件目录配置
+// 闭包自動识别插件目录配置
 Hook::add('app_init', function () {
-    // 取得开关
+    // 取得開关
     $autoload = (bool)Config::get('addons.autoload', false);
     // 非正是返回
     if (!$autoload) {
@@ -55,14 +55,14 @@ Hook::add('app_init', function () {
             if (strtolower($info['filename']) == strtolower($name)) {
                 // 读取出所有公共方法
                 $methods = (array)get_class_methods("\\addons\\" . $name . "\\" . $info['filename']);
-                // 跟插件基类方法做比对，得到差异结果
+                // 跟插件基类方法做比對，得到差异结果
                 $hooks = array_diff($methods, $base);
                 // 循环将钩子方法写入配置中
                 foreach ($hooks as $hook) {
                     if (!isset($config['hooks'][$hook])) {
                         $config['hooks'][$hook] = [];
                     }
-                    // 兼容手动配置项
+                    // 兼容手動配置项
                     if (is_string($config['hooks'][$hook])) {
                         $config['hooks'][$hook] = explode(',', $config['hooks'][$hook]);
                     }
@@ -77,7 +77,7 @@ Hook::add('app_init', function () {
     Config::set('addons', $config);
 });
 
-// 闭包初始化行为
+// 闭包初始化行為
 Hook::add('action_begin', function () {
     // 取得系统配置
     $data = App::$debug ? [] : Cache::get('hooks', []);
@@ -102,7 +102,7 @@ Hook::add('action_begin', function () {
 /**
  * 处理插件钩子
  * @param string $hook 钩子名稱
- * @param mixed $params 传入参数
+ * @param mixed $params 传入参數
  * @return void
  */
 function hook($hook, $params = [])
@@ -113,7 +113,7 @@ function hook($hook, $params = [])
 /**
  * 取得插件类的类名
  * @param $name 插件名
- * @param string $type 返回命名空间类型
+ * @param string $type 返回命名空間类型
  * @param string $class 当前类名
  * @return string
  */
@@ -142,7 +142,7 @@ function get_addon_class($name, $type = 'hook', $class = null)
 }
 
 /**
- * 取得插件类的配置文件数组
+ * 取得插件类的配置文件數组
  * @param string $name 插件名
  * @return array
  */
@@ -158,11 +158,11 @@ function get_addon_config($name)
 }
 
 /**
- * 插件显示内容里生成访问插件的url
+ * 插件显示内容里產生訪問插件的url
  * @param $url
  * @param array $param
  * @return bool|string
- * @param bool|string $suffix 生成的URL后缀
+ * @param bool|string $suffix 產生的URL后缀
  * @param bool|string $domain 域名
  */
 function addon_url($url, $param = [], $suffix = true, $domain = false)
@@ -173,13 +173,13 @@ function addon_url($url, $param = [], $suffix = true, $domain = false)
     $controller = $case ? Loader::parseName($url['host']) : $url['host'];
     $action = trim($case ? strtolower($url['path']) : $url['path'], '/');
 
-    /* 解析URL带的参数 */
+    /* 解析URL带的参數 */
     if (isset($url['query'])) {
         parse_str($url['query'], $query);
         $param = array_merge($query, $param);
     }
 
-    // 生成插件連結新规则
+    // 產生插件連結新规则
     $actions = "{$addons}-{$controller}-{$action}";
 
     return url("addons/execute/{$actions}", $param, $suffix, $domain);

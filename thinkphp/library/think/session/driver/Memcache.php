@@ -21,8 +21,8 @@ class Memcache extends SessionHandler
         'host'         => '127.0.0.1', // memcache主机
         'port'         => 11211, // memcache端口
         'expire'       => 3600, // session有效期
-        'timeout'      => 0, // 连接超时时间（单位：毫秒）
-        'persistent'   => true, // 长连接
+        'timeout'      => 0, // 連結超时時間（單位：毫秒）
+        'persistent'   => true, // 長連結
         'session_name' => '', // memcache key前缀
     ];
 
@@ -32,7 +32,7 @@ class Memcache extends SessionHandler
     }
 
     /**
-     * 打开Session
+     * 打開Session
      * @access public
      * @param string    $savePath
      * @param mixed     $sessName
@@ -50,7 +50,7 @@ class Memcache extends SessionHandler
         if (empty($ports[0])) {
             $ports[0] = 11211;
         }
-        // 建立连接
+        // 建立連結
         foreach ((array) $hosts as $i => $host) {
             $port = isset($ports[$i]) ? $ports[$i] : $ports[0];
             $this->config['timeout'] > 0 ?

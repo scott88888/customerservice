@@ -118,7 +118,7 @@ class Process
      * @param string|null    $cwd         工作目录
      * @param array|null     $env         环境变量
      * @param string|null    $input       输入
-     * @param int|float|null $timeout     超时时间
+     * @param int|float|null $timeout     超时時間
      * @param array          $options     proc_open的选项
      * @throws \RuntimeException
      * @api
@@ -194,7 +194,7 @@ class Process
     }
 
     /**
-     * 启动进程并写到 STDIN 输入后返回。
+     * 启動进程并写到 STDIN 输入后返回。
      * @param callable|null $callback
      * @throws \RuntimeException
      * @throws \RuntimeException
@@ -323,7 +323,7 @@ class Process
     }
 
     /**
-     * 禁用从底层过程取得输出和错误输出。
+     * 禁用从底层过程取得输出和錯誤输出。
      * @return Process
      */
     public function disableOutput()
@@ -341,7 +341,7 @@ class Process
     }
 
     /**
-     * 開啟从底层过程取得输出和错误输出。
+     * 開啟从底层过程取得输出和錯誤输出。
      * @return Process
      * @throws \RuntimeException
      */
@@ -419,7 +419,7 @@ class Process
     }
 
     /**
-     * 返回当前的错误输出的过程 (STDERR)。
+     * 返回当前的錯誤输出的过程 (STDERR)。
      * @return string
      */
     public function getErrorOutput()
@@ -469,7 +469,7 @@ class Process
     }
 
     /**
-     * 取得退出码
+     * 取得退出碼
      * @return null|int
      */
     public function getExitCode()
@@ -523,7 +523,7 @@ class Process
     }
 
     /**
-     * 返回导致子进程终止其执行的数。
+     * 返回导致子进程终止其执行的數。
      * @return int
      */
     public function getTermSignal()
@@ -553,7 +553,7 @@ class Process
     }
 
     /**
-     * 返回导致子进程停止其执行的数。
+     * 返回导致子进程停止其执行的數。
      * @return int
      */
     public function getStopSignal()
@@ -581,7 +581,7 @@ class Process
     }
 
     /**
-     * 檢查是否已开始
+     * 檢查是否已開始
      * @return bool
      */
     public function isStarted()
@@ -651,7 +651,7 @@ class Process
     }
 
     /**
-     * 新增一行错误输出
+     * 新增一行錯誤输出
      * @param string $line
      */
     public function addErrorOutput($line)
@@ -670,7 +670,7 @@ class Process
     }
 
     /**
-     * 设置指令
+     * 設定指令
      * @param string $commandline
      * @return self
      */
@@ -682,7 +682,7 @@ class Process
     }
 
     /**
-     * 取得超时时间
+     * 取得超时時間
      * @return float|null
      */
     public function getTimeout()
@@ -691,7 +691,7 @@ class Process
     }
 
     /**
-     * 取得idle超时时间
+     * 取得idle超时時間
      * @return float|null
      */
     public function getIdleTimeout()
@@ -700,7 +700,7 @@ class Process
     }
 
     /**
-     * 设置超时时间
+     * 設定超时時間
      * @param int|float|null $timeout
      * @return self
      */
@@ -712,7 +712,7 @@ class Process
     }
 
     /**
-     * 设置idle超时时间
+     * 設定idle超时時間
      * @param int|float|null $timeout
      * @return self
      */
@@ -728,7 +728,7 @@ class Process
     }
 
     /**
-     * 设置TTY
+     * 設定TTY
      * @param bool $tty
      * @return self
      */
@@ -756,7 +756,7 @@ class Process
     }
 
     /**
-     * 设置pty模式
+     * 設定pty模式
      * @param bool $bool
      * @return self
      */
@@ -790,7 +790,7 @@ class Process
     }
 
     /**
-     * 设置工作目录
+     * 設定工作目录
      * @param string $cwd
      * @return self
      */
@@ -811,7 +811,7 @@ class Process
     }
 
     /**
-     * 设置环境变量
+     * 設定环境变量
      * @param array $env
      * @return self
      */
@@ -839,7 +839,7 @@ class Process
     }
 
     /**
-     * 设置输入
+     * 設定输入
      * @param mixed $input
      * @return self
      */
@@ -864,7 +864,7 @@ class Process
     }
 
     /**
-     * 设置proc_open的选项
+     * 設定proc_open的选项
      * @param array $options
      * @return self
      */
@@ -885,7 +885,7 @@ class Process
     }
 
     /**
-     * 设置是否兼容windows
+     * 設定是否兼容windows
      * @param bool $enhance
      * @return self
      */
@@ -966,7 +966,7 @@ class Process
     }
 
     /**
-     * 创建所需的 proc_open 的描述符
+     * 建立所需的 proc_open 的描述符
      * @return array
      */
     private function getDescriptors()
@@ -1089,7 +1089,7 @@ class Process
     }
 
     /**
-     * 捕获退出码
+     * 捕获退出碼
      */
     private function captureExitCode()
 {
@@ -1100,7 +1100,7 @@ class Process
 
     /**
      * 關閉资源
-     * @return int 退出码
+     * @return int 退出碼
      */
     private function close()
 {

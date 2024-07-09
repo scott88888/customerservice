@@ -17,7 +17,7 @@ use think\template\TagLib;
 /**
  * ThinkPHP分离出来的模板引擎
  * 支持XML标签和普通标签的模板解析
- * 编译型模板引擎 支持动态缓存
+ * 编译型模板引擎 支持動态缓存
  */
 class Template
 {
@@ -30,35 +30,35 @@ class Template
         'view_suffix'        => 'html', // 默认模板文件后缀
         'view_depr'          => DS,
         'cache_suffix'       => 'php', // 默认模板缓存后缀
-        'tpl_deny_func_list' => 'echo,exit', // 模板引擎禁用函数
-        'tpl_deny_php'       => false, // 默认模板引擎是否禁用PHP原生代码
-        'tpl_begin'          => '{', // 模板引擎普通标签开始标记
+        'tpl_deny_func_list' => 'echo,exit', // 模板引擎禁用函數
+        'tpl_deny_php'       => false, // 默认模板引擎是否禁用PHP原生程式碼
+        'tpl_begin'          => '{', // 模板引擎普通标签開始标记
         'tpl_end'            => '}', // 模板引擎普通标签结束标记
         'strip_space'        => false, // 是否去除模板文件里面的html空格与换行
-        'tpl_cache'          => true, // 是否開啟模板编译缓存,设为false则每次都会重新编译
+        'tpl_cache'          => true, // 是否開啟模板编译缓存,设為false则每次都会重新编译
         'compile_type'       => 'file', // 模板编译类型
-        'cache_prefix'       => '', // 模板缓存前缀标识，可以动态改变
-        'cache_time'         => 0, // 模板缓存有效期 0 为永久，(以数字为值，单位:秒)
-        'layout_on'          => false, // 布局模板开关
+        'cache_prefix'       => '', // 模板缓存前缀標識，可以動态改变
+        'cache_time'         => 0, // 模板缓存有效期 0 為永久，(以數字為值，單位:秒)
+        'layout_on'          => false, // 布局模板開关
         'layout_name'        => 'layout', // 布局模板入口文件
-        'layout_item'        => '{__CONTENT__}', // 布局模板的内容替换标识
-        'taglib_begin'       => '{', // 标签库标签开始标记
+        'layout_item'        => '{__CONTENT__}', // 布局模板的内容替换標識
+        'taglib_begin'       => '{', // 标签库标签開始标记
         'taglib_end'         => '}', // 标签库标签结束标记
-        'taglib_load'        => true, // 是否使用内置标签库之外的其它标签库，默认自动检测
+        'taglib_load'        => true, // 是否使用内置标签库之外的其它标签库，默认自動检测
         'taglib_build_in'    => 'cx', // 内置标签库名稱(标签使用不必指定标签库名稱),以逗号分隔 注意解析顺序
         'taglib_pre_load'    => '', // 需要额外加载的标签库(须指定标签库名稱)，多个以逗号分隔
         'display_cache'      => false, // 模板渲染缓存
         'cache_id'           => '', // 模板缓存ID
         'tpl_replace_string' => [],
-        'tpl_var_identify'   => 'array', // .语法变量识别，array|object|'', 为空时自动识别
+        'tpl_var_identify'   => 'array', // .语法变量识别，array|object|'', 為空时自動识别
     ];
 
     private $literal     = [];
-    private $includeFile = []; // 记录所有模板包含的文件路径及更新时间
+    private $includeFile = []; // 记录所有模板包含的文件路径及更新時間
     protected $storage;
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
      * @param array $config
      */
@@ -98,7 +98,7 @@ class Template
     }
 
     /**
-     * 模板引擎参数赋值
+     * 模板引擎参數赋值
      * @access public
      * @param mixed $name
      * @param mixed $value
@@ -154,7 +154,7 @@ class Template
      * @access public
      * @param string    $template 模板文件
      * @param array     $vars 模板变量
-     * @param array     $config 模板参数
+     * @param array     $config 模板参數
      * @return void
      */
     public function fetch($template, $vars = [], $config = [])
@@ -201,7 +201,7 @@ class Template
      * @access public
      * @param string    $content 模板内容
      * @param array     $vars 模板变量
-     * @param array     $config 模板参数
+     * @param array     $config 模板参數
      * @return void
      */
     public function display($content, $vars = [], $config = [])
@@ -222,10 +222,10 @@ class Template
     }
 
     /**
-     * 设置布局
+     * 設定布局
      * @access public
      * @param mixed     $name 布局模板名稱 false 则關閉布局
-     * @param string    $replace 布局模板内容替换标识
+     * @param string    $replace 布局模板内容替换標識
      * @return Template
      */
     public function layout($name, $replace = '')
@@ -236,7 +236,7 @@ class Template
         } else {
             // 開啟布局
             $this->config['layout_on'] = true;
-            // 名稱必须为字符串
+            // 名稱必须為字符串
             if (is_string($name)) {
                 $this->config['layout_name'] = $name;
             }
@@ -315,7 +315,7 @@ class Template
         // 判断是否启用布局
         if ($this->config['layout_on']) {
             if (false !== strpos($content, '{__NOLAYOUT__}')) {
-                // 可以单独定义不使用布局
+                // 可以單独定义不使用布局
                 $content = str_replace('{__NOLAYOUT__}', '', $content);
             } else {
                 // 读取布局模板
@@ -337,12 +337,12 @@ class Template
             $replace = ['><', '>'];
             $content = preg_replace($find, $replace, $content);
         }
-        // 优化生成的php代码
+        // 优化產生的php程式碼
         $content = preg_replace('/\?>\s*<\?php\s(?!echo\b)/s', '', $content);
         // 模板过滤输出
         $replace = $this->config['tpl_replace_string'];
         $content = str_replace(array_keys($replace), array_values($replace), $content);
-        // 新增安全代码及模板引用记录
+        // 新增安全程式碼及模板引用记录
         $content = '<?php if (!defined(\'THINK_PATH\')) exit(); /*' . serialize($this->includeFile) . '*/ ?>' . "\n" . $content;
         // 编译存储
         $this->storage->write($cacheFile, $content);
@@ -352,14 +352,14 @@ class Template
 
     /**
      * 模板解析入口
-     * 支持普通标签和TagLib解析 支持自定义标签库
+     * 支持普通标签和TagLib解析 支持自訂标签库
      * @access public
      * @param string $content 要解析的模板内容
      * @return void
      */
     public function parse(&$content)
     {
-        // 内容为空不解析
+        // 内容為空不解析
         if (empty($content)) {
             return;
         }
@@ -380,11 +380,11 @@ class Template
         // 标签库只需要定义一次，允许引入多个一次
         // 一般放在文件的最前面
         // 格式：<taglib name="html,mytag..." />
-        // 当TAGLIB_LOAD配置为true时才会进行检测
+        // 当TAGLIB_LOAD配置為true时才会进行检测
         if ($this->config['taglib_load']) {
             $tagLibs = $this->getIncludeTagLib($content);
             if (!empty($tagLibs)) {
-                // 对匯入的TagLib进行解析
+                // 對匯入的TagLib进行解析
                 foreach ($tagLibs as $tagLibName) {
                     $this->parseTagLib($tagLibName, $content);
                 }
@@ -419,7 +419,7 @@ class Template
      */
     private function parsePhp(&$content)
     {
-        // 短标签的情况要将<?标签用echo方式输出 否则無法正常输出xml标识
+        // 短标签的情况要将<?标签用echo方式输出 否则無法正常输出xml標識
         $content = preg_replace('/(<\?(?!php|=|$))/i', '<?php echo \'\\1\'; ?>' . "\n", $content);
         // PHP语法檢查
         if ($this->config['tpl_deny_php'] && false !== strpos($content, '<?php')) {
@@ -475,14 +475,14 @@ class Template
                     // 分析模板文件名并读取内容
                     $parseStr = $this->parseTemplateName($file);
                     foreach ($array as $k => $v) {
-                        // 以$开头字符串转换成模板变量
+                        // 以$開头字符串转换成模板变量
                         if (0 === strpos($v, '$')) {
                             $v = $this->get(substr($v, 1));
                         }
                         $parseStr = str_replace('[' . $k . ']', $v, $parseStr);
                     }
                     $content = str_replace($match[0], $parseStr, $content);
-                    // 再次对包含文件进行模板分析
+                    // 再次對包含文件进行模板分析
                     $func($parseStr);
                 }
                 unset($matches);
@@ -572,7 +572,7 @@ class Template
      * 替换頁面中的literal标签
      * @access private
      * @param  string   $content 模板内容
-     * @param  boolean  $restore 是否为还原
+     * @param  boolean  $restore 是否為还原
      * @return void
      */
     private function parseLiteral(&$content, $restore = false)
@@ -674,7 +674,7 @@ class Template
     public function parseTagLib($tagLib, &$content, $hide = false)
     {
         if (false !== strpos($tagLib, '\\')) {
-            // 支持指定标签库的命名空间
+            // 支持指定标签库的命名空間
             $className = $tagLib;
             $tagLib    = substr($tagLib, strrpos($tagLib, '\\') + 1);
         } else {
@@ -690,7 +690,7 @@ class Template
      * 分析标签属性
      * @access public
      * @param  string   $str 属性字符串
-     * @param  string   $name 不为空时返回指定的属性名
+     * @param  string   $name 不為空时返回指定的属性名
      * @return array
      */
     public function parseAttr($str, $name = null)
@@ -738,7 +738,7 @@ class Template
                             $this->parseVar($str);
                             $first = substr($str, 0, 1);
                             if (strpos($name, ')')) {
-                                // $name为对象或是自动识别，或者含有函数
+                                // $name為對象或是自動识别，或者含有函數
                                 if (isset($array[1])) {
                                     $this->parseVar($array[2]);
                                     $name .= $array[1] . $array[2];
@@ -760,18 +760,18 @@ class Template
                                 } else {
                                     $express = false;
                                 }
-                                // $name为数组
+                                // $name為數组
                                 switch ($first) {
                                     case '?':
                                         // {$varname??'xxx'} $varname有定义则输出$varname,否则输出xxx
                                         $str = '<?php echo ' . ($express ?: 'isset(' . $name . ')') . '?' . $name . ':' . substr($str, 1) . '; ?>';
                                         break;
                                     case '=':
-                                        // {$varname?='xxx'} $varname为真时才输出xxx
+                                        // {$varname?='xxx'} $varname為真时才输出xxx
                                         $str = '<?php if(' . ($express ?: '!empty(' . $name . ')') . ') echo ' . substr($str, 1) . '; ?>';
                                         break;
                                     case ':':
-                                        // {$varname?:'xxx'} $varname为真时输出$varname,否则输出xxx
+                                        // {$varname?:'xxx'} $varname為真时输出$varname,否则输出xxx
                                         $str = '<?php echo ' . ($express ?: '!empty(' . $name . ')') . '?' . $name . $str . '; ?>';
                                         break;
                                     default:
@@ -785,13 +785,13 @@ class Template
                         }
                         break;
                     case ':':
-                        // 输出某个函数的结果
+                        // 输出某个函數的结果
                         $str = substr($str, 1);
                         $this->parseVar($str);
                         $str = '<?php echo ' . $str . '; ?>';
                         break;
                     case '~':
-                        // 执行某个函数
+                        // 执行某个函數
                         $str = substr($str, 1);
                         $this->parseVar($str);
                         $str = '<?php ' . $str . '; ?>';
@@ -822,7 +822,7 @@ class Template
     }
 
     /**
-     * 模板变量解析,支持使用函数
+     * 模板变量解析,支持使用函數
      * 格式： {$varname|function1|function2=arg1,arg2}
      * @access public
      * @param  string $varStr 变量資料
@@ -843,10 +843,10 @@ class Template
                         $vars  = explode('.', $match[0]);
                         $first = array_shift($vars);
                         if ('$Think' == $first) {
-                            // 所有以Think.打头的以特殊变量对待 無需模板赋值就可以输出
+                            // 所有以Think.打头的以特殊变量對待 無需模板赋值就可以输出
                             $parseStr = $this->parseThinkVar($vars);
                         } elseif ('$Request' == $first) {
-                            // 取得Request请求对象参数
+                            // 取得Request請求對象参數
                             $method = array_shift($vars);
                             if (!empty($vars)) {
                                 $params = implode('.', $vars);
@@ -859,13 +859,13 @@ class Template
                             $parseStr = '\think\Request::instance()->' . $method . '(' . $params . ')';
                         } else {
                             switch ($this->config['tpl_var_identify']) {
-                                case 'array': // 识别为数组
+                                case 'array': // 识别為數组
                                     $parseStr = $first . '[\'' . implode('\'][\'', $vars) . '\']';
                                     break;
-                                case 'obj': // 识别为对象
+                                case 'obj': // 识别為對象
                                     $parseStr = $first . '->' . implode('->', $vars);
                                     break;
-                                default: // 自动判断数组或对象
+                                default: // 自動判断數组或對象
                                     $parseStr = '(is_array(' . $first . ')?' . $first . '[\'' . implode('\'][\'', $vars) . '\']:' . $first . '->' . implode('->', $vars) . ')';
                             }
                         }
@@ -882,7 +882,7 @@ class Template
     }
 
     /**
-     * 对模板中使用了函数的变量进行解析
+     * 對模板中使用了函數的变量进行解析
      * 格式 {$varname|function1|function2=arg1,arg2}
      * @access public
      * @param  string $varStr 变量字符串
@@ -902,23 +902,23 @@ class Template
             $varArray = explode('|', $varStr);
             // 取得变量名稱
             $name = array_shift($varArray);
-            // 对变量使用函数
+            // 對变量使用函數
             $length = count($varArray);
-            // 取得模板禁止使用函数列表
+            // 取得模板禁止使用函數列表
             $template_deny_funs = explode(',', $this->config['tpl_deny_func_list']);
             for ($i = 0; $i < $length; $i++) {
                 $args = explode('=', $varArray[$i], 2);
-                // 模板函数过滤
+                // 模板函數过滤
                 $fun = trim($args[0]);
                 switch ($fun) {
-                    case 'default': // 特殊模板函数
+                    case 'default': // 特殊模板函數
                         if (false === strpos($name, '(')) {
                             $name = '(isset(' . $name . ') && (' . $name . ' !== \'\')?' . $name . ':' . $args[1] . ')';
                         } else {
                             $name = '(' . $name . ' ?: ' . $args[1] . ')';
                         }
                         break;
-                    default: // 通用模板函数
+                    default: // 通用模板函數
                         if (!in_array($fun, $template_deny_funs)) {
                             if (isset($args[1])) {
                                 if (strstr($args[1], '###')) {
@@ -945,7 +945,7 @@ class Template
      * 特殊模板变量解析
      * 格式 以 $Think. 打头的变量属于特殊模板变量
      * @access public
-     * @param  array $vars 变量数组
+     * @param  array $vars 变量數组
      * @return string
      */
     public function parseThinkVar($vars)
@@ -1067,7 +1067,7 @@ class Template
         }
 
         if (is_file($template)) {
-            // 记录模板文件的更新时间
+            // 记录模板文件的更新時間
             $this->includeFile[$template] = filemtime($template);
             return $template;
         } else {
@@ -1077,7 +1077,7 @@ class Template
     }
 
     /**
-     * 按标签生成正则
+     * 按标签產生正则
      * @access private
      * @param  string $tagName 标签名
      * @return string

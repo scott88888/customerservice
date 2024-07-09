@@ -28,7 +28,7 @@ class Upload
 
                 $data =['code'=>0,'msg'=>'','data'=>[ 'url' => $imgpath,]];
             }else{
-                // 上传失敗取得错误訊息
+                // 上传失敗取得錯誤訊息
                 $data =['code'=>1,'msg'=>$file->getError()];
             }
             return json($data);
@@ -52,7 +52,7 @@ class Upload
 
                 $data =['code'=>0,'msg'=>'','data'=>[ 'url' => $filename,]];
             }else{
-                // 上传失敗取得错误訊息
+                // 上传失敗取得錯誤訊息
                 $data =['code'=>1,'msg'=>$file->getError()];
             }
             return json($data);

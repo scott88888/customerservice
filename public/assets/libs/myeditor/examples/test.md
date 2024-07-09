@@ -44,7 +44,7 @@ This is an H2
 
 **缩写(同HTML的abbr标签)**
 
-> 即更长的单词或短语的缩写形式，前提是開啟识别HTML标签时，已默认開啟
+> 即更長的單词或短语的缩写形式，前提是開啟识别HTML标签时，已默认開啟
 
 The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
@@ -56,7 +56,7 @@ The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is mainta
                     
 > 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通連結](http://localhost/)。
 
-### 锚点与連結 Links
+### 锚點与連結 Links
 
 [普通連結](http://localhost/)
 
@@ -64,25 +64,25 @@ The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is mainta
 
 直接連結：<https://github.com>
 
-[锚点連結][anchor-id] 
+[锚點連結][anchor-id] 
 
 [anchor-id]: http://www.this-anchor-link.com/
 
 [mailto:test.test@gmail.com](mailto:test.test@gmail.com)
 
-GFM a-tail link @pandao  信箱地址自动連結 test.test@gmail.com  www@vip.qq.com
+GFM a-tail link @pandao  信箱地址自動連結 test.test@gmail.com  www@vip.qq.com
 
 > @pandao
 
-### 多語言代码高亮 Codes
+### 多語言程式碼高亮 Codes
 
-#### 行内代码 Inline code
+#### 行内程式碼 Inline code
 
 执行命令：`npm install marked`
 
 #### 缩进风格
 
-即缩进四个空格，也做为实现类似 `<pre>` 预格式化文本 ( Preformatted Text ) 的功能。
+即缩进四个空格，也做為實現类似 `<pre>` 预格式化文本 ( Preformatted Text ) 的功能。
 
     <?php
         echo "Hello world!";
@@ -95,7 +95,7 @@ GFM a-tail link @pandao  信箱地址自动連結 test.test@gmail.com  www@vip.q
     | Content Cell  | Content Cell  |
     | Content Cell  | Content Cell  |
 
-#### JS代码　
+#### JS程式碼　
 
 ```javascript
 function test() {
@@ -136,7 +136,7 @@ var testBox = box();
 testBox.add("jQuery").remove("jQuery");
 ```
 
-#### HTML 代码 HTML codes
+#### HTML 程式碼 HTML codes
 
 ```html
 <!DOCTYPE html>
@@ -168,13 +168,13 @@ Image:
 
 ![](https://pandao.github.io/editor.md/examples/images/8.jpg)
 
-> 图为：厦门白城沙滩
+> 图為：厦门白城沙滩
 
 图片加連結 (Image + Link)：
 
 [![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/images/7.jpg "李健首张专辑《似水流年》封面")
 
-> 图为：李健首张专辑《似水流年》封面
+> 图為：李健首张专辑《似水流年》封面
                 
 ----
 
@@ -226,7 +226,7 @@ Image:
                     
 ### 绘制表格 Tables
 
-| 项目        | 价格   |  数量  |
+| 项目        | 价格   |  數量  |
 | --------   | -----:  | :----:  |
 | 计算机      | $1600   |   5     |
 | 手机        |   $12   |   12   |

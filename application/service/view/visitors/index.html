@@ -16,7 +16,7 @@
 								<select name="state">
 									<option value="">請選擇使用者狀態</option>
 									<option value="normal">正常</option>
-									<option value="in_black_list">黑名单</option>
+									<option value="in_black_list">黑名單</option>
 								</select>
 							</div>
 						</div>
@@ -24,7 +24,7 @@
 							<label class="layui-form-label">使用者分組</label>
 							<div class="layui-input-inline">
 								<select name="groupid">
-									<option value="">请選擇使用者分組</option>
+									<option value="">請選擇使用者分組</option>
 									{foreach $group as $v}
 									<option value="{$v.id}">{$v.group_name|default=''}</option>
 									{/foreach}
@@ -55,7 +55,7 @@
 			{{#if (d.state == 'normal') { }}
 			<span>正常</span>
 			{{# }else{ }}
-			<span>黑名单</span>
+			<span>黑名單</span>
 			{{# } }}
 		</script>
 

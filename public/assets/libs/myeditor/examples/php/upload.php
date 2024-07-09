@@ -32,11 +32,11 @@
 
     if (isset($_FILES[$name]))
     {        
-        $imageUploader = new EditorMdUploader($savePath, $saveURL, $formats['image'], false);  // Ymdhis表示按日期生成文件名，利用date()函数
+        $imageUploader = new EditorMdUploader($savePath, $saveURL, $formats['image'], false);  // Ymdhis表示按日期產生文件名，利用date()函數
         
         $imageUploader->config(array(
-            'maxSize' => 1024,        // 允许上传的最大文件大小，以KB为单位，默认值为1024
-            'cover'   => true         // 是否覆盖同名文件，默认为true
+            'maxSize' => 1024,        // 允许上传的最大文件大小，以KB為單位，默认值為1024
+            'cover'   => true         // 是否覆盖同名文件，默认為true
         ));
         
         if ($imageUploader->upload($name))

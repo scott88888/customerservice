@@ -9,22 +9,22 @@ $bucket = Common::getBucketName();
 $ossClient = Common::getOssClient();
 if (is_null($ossClient)) exit(1);
 
-//*******************************简单使用***************************************************************
+//*******************************简單使用***************************************************************
 
-// 设置Bucket的静态网站托管模式
+// 設定Bucket的静态網站托管模式
 $websiteConfig = new WebsiteConfig("index.html", "error.html");
 $ossClient->putBucketWebsite($bucket, $websiteConfig);
 Common::println("bucket $bucket websiteConfig created:" . $websiteConfig->serializeToXml());
 
-// 查看Bucket的静态网站托管狀態
+// 查看Bucket的静态網站托管狀態
 $websiteConfig = $ossClient->getBucketWebsite($bucket);
 Common::println("bucket $bucket websiteConfig fetched:" . $websiteConfig->serializeToXml());
 
-// 刪除Bucket的静态网站托管模式
+// 刪除Bucket的静态網站托管模式
 $ossClient->deleteBucketWebsite($bucket);
 Common::println("bucket $bucket websiteConfig deleted");
 
-//******************************* 完整用法参考下面函数 ****************************************************
+//******************************* 完整用法参考下面函數 ****************************************************
 
 putBucketWebsite($ossClient, $bucket);
 getBucketWebsite($ossClient, $bucket);
@@ -32,10 +32,10 @@ deleteBucketWebsite($ossClient, $bucket);
 getBucketWebsite($ossClient, $bucket);
 
 /**
- * 设置bucket的静态网站托管模式配置
+ * 設定bucket的静态網站托管模式配置
  *
  * @param $ossClient OssClient
- * @param  $bucket string 存储空间名稱
+ * @param  $bucket string 存储空間名稱
  * @return null
  */
 function putBucketWebsite($ossClient, $bucket)
@@ -52,10 +52,10 @@ function putBucketWebsite($ossClient, $bucket)
 }
 
 /**
- * 取得bucket的静态网站托管狀態
+ * 取得bucket的静态網站托管狀態
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function getBucketWebsite($ossClient, $bucket)
@@ -73,10 +73,10 @@ function getBucketWebsite($ossClient, $bucket)
 }
 
 /**
- * 刪除bucket的静态网站托管模式配置
+ * 刪除bucket的静态網站托管模式配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function deleteBucketWebsite($ossClient, $bucket)

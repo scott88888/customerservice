@@ -217,7 +217,7 @@
     <tr>
         <td colspan="5" class="text-center p-5">
             <!--<a href="javascript:" class="add-app">新增客服系统商城</a>-->
-            <span class="text-muted">暂無相关客服系统</>
+            <span class="text-muted">暫無相關客服系統</>
         </td>
     </tr>
     {/if}
@@ -245,7 +245,7 @@
         <td class="operate">
             <a href="#" data-toggle="modal" class="edit-app" id="{:url('platform/app/edit', ['id' => $item['id']])}" data-target="#add-modal"><img src="__image__/admin/A/edit.png" alt="編輯"></a>
             <a href="#" data-toggle="modal" class="clean-app" id="{:url('platform/app/truncate',  ['id' => $item['id']])}" data-target="#clean-modal">
-			<img src="__image__/platform/truncate.png" alt="清理磁盘" title="清理磁盘"></a>    
+			<img src="__image__/platform/truncate.png" alt="清理磁碟" title="清理磁碟"></a>    
             {if condition="$item['is_recycle'] == 0"}
             <a class="recycle-btn"
                data-desc="确认将客服系统放进回收站？"
@@ -266,7 +266,7 @@
         <div class="modal-content">
             <!-- 标题 -->
             <div class="modal-header">
-                <div class="modal-title" id="myModalLabel"><b>清理磁盘空间</b><b style="color: red;">無法找回,请谨慎操作！！！</b></div>
+                <div class="modal-title" id="myModalLabel"><b>清理磁碟空間</b><b style="color: red;">無法找回,請谨慎操作！！！</b></div>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="clean-modal-body modal-body">
@@ -280,7 +280,7 @@
     $(document).on("click", ".delete-btn", function () {
         var href = $(this).attr("href");
         $.myConfirm({
-            content: "确认将客服系统刪除？请谨慎操作",
+            content: "确认将客服系统刪除？請谨慎操作",
             confirm: function () {
                 $.myLoading({
                     title: "正在送出",

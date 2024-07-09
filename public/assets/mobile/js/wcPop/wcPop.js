@@ -1,7 +1,7 @@
 /**
-	* @title 			弹窗插件【仿微信】wcPop-v1.0 beta (UTF-8)
+	* @title 			彈窗插件【仿微信】wcPop-v1.0 beta (UTF-8)
 	* @Create		hison
-	* @Timer		2018/03/30 11:30:45 GMT+0800 (中國标准时间)
+	* @Timer		2018/03/30 11:30:45 GMT+0800 (中國标准時間)
 */
 !function(win){
 	var _doc = win.document, _docEle = _doc.documentElement, index = 0,
@@ -25,21 +25,21 @@
 	wcPop = function(options){
 		var _this = this,
 			config = {
-				id: 'wcPop',				//弹窗ID标识 (不同ID对应不同弹窗)
+				id: 'wcPop',				//彈窗ID標識 (不同ID對应不同彈窗)
 				title: '',					//标题
 				content: '',				//内容
-				style: '',					//自定弹窗样式
-				skin: '',					//自定弹窗显示风格 ->目前支持配置  toast(仿微信toast风格)、footer(底部对话框风格)、actionsheet(底部弹出式菜单)、ios|android(仿微信样式)
-				icon: '',					//弹窗小图标(success | info | error | loading)
+				style: '',					//自定彈窗樣式
+				skin: '',					//自定彈窗显示风格 ->目前支持配置  toast(仿微信toast风格)、footer(底部對話框风格)、actionsheet(底部弹出式選單)、ios|android(仿微信樣式)
+				icon: '',					//彈窗小图标(success | info | error | loading)
 				
 				shade: true,				//是否显示遮罩层
-				shadeClose: true,			//是否点击遮罩时關閉层
-				anim: 'scaleIn',			//scaleIn：缩放打开(默认)  fadeIn：渐变打开  fadeInUpBig：由上向下打开 fadeInDownBig：由下向上打开  rollIn：左侧翻转打开  shake：震动  footer：底部向上弹出
-				time: 0,					//设置弹窗自动關閉秒数1、 2、 3
-				zIndex: 9999,				//设置元素层叠
+				shadeClose: true,			//是否點擊遮罩时關閉层
+				anim: 'scaleIn',			//scaleIn：缩放打開(默认)  fadeIn：渐变打開  fadeInUpBig：由上向下打開 fadeInDownBig：由下向上打開  rollIn：左側翻转打開  shake：震動  footer：底部向上弹出
+				time: 0,					//設定彈窗自動關閉秒數1、 2、 3
+				zIndex: 9999,				//設定元素层叠
 				
-				btns: null,					//不设置则不显示按钮，btn参数: [{按钮1配置}, {按钮2配置}]
-				end: null					//层销毁后的回调函数
+				btns: null,					//不設定则不显示按钮，btn参數: [{按钮1配置}, {按钮2配置}]
+				end: null					//层销毁后的回调函數
 			};
 		
 		_this.opts = options;
@@ -91,7 +91,7 @@
 		},
 		callback: function(){
 			var _this = this, opt = _this.opts;
-			//自动關閉弹窗
+			//自動關閉彈窗
 			if(opt.time){
 				util.timer[_this.index] = setTimeout(function(){
 					exports.close(_this.index);
@@ -107,7 +107,7 @@
 						typeof btn.onTap === "function" && btn.onTap(e);
 					});
 			}
-			//点击遮罩层關閉
+			//點擊遮罩层關閉
 			if(opt.shade && opt.shadeClose){
 				var c = util.$(opt.id).getElementsByClassName("popui__modal-mask")[0];
 				util.touch(c, function () {
@@ -115,7 +115,7 @@
 				});
 			}
 		},
-		//取得弹窗最大层级
+		//取得彈窗最大层级
 		maxIndex: function(){
 			for(var idx = this.opts.zIndex, elem = _doc.getElementsByTagName("*"), i = 0, len = elem.length; i < len; i++)
 				idx = Math.max(idx, elem[i].style.zIndex);
@@ -124,13 +124,13 @@
 	};
 	
 	var exports = (function(){
-		//实例化弹窗(返回 弹窗索引值)
+		//实例化彈窗(返回 彈窗索引值)
 		fn = function(args){
 			var o = new wcPop(args);
 			return o.index;
 		};
 		
-		//關閉弹窗
+		//關閉彈窗
 		fn.close = function(index){
 			var index = index ? index : "";
 			var o = _doc.getElementsByClassName("wcPop"+index)[0];

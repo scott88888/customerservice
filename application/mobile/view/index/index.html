@@ -900,11 +900,11 @@
      var sid =$.cookie('services');
      if(sid == service_id){
 
-         //音频先加载
+         //音訊先加载
                 var audio_context;
                 var recorder;
                 var wavBlob;
-                //创建音频
+                //建立音訊
                 try {
                     // webkit shim
                     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -937,7 +937,7 @@
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
-                                , time: 0 //20s后自动關閉
+                                , time: 0 //20s后自動關閉
                                 , btn: ['傳送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
@@ -954,7 +954,7 @@
                                             if (xhr.readyState == 4 && xhr.status == 200) {
                                                 jsonObject = JSON.parse(xhr.responseText);
 
-                                                voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音频消息</p></div>';
+                                                voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="'+jsonObject.data.src+'"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音訊消息</p></div>';
 
                                                     var sid = $('#channel').text();
                                     
@@ -1043,13 +1043,13 @@
                         });
                     } else {
                         
-                            layer.msg('音频输入只支持https协议！');
+                            layer.msg('音訊输入只支持https协议！');
                         
                     }
 
 
                 }, function (e) {
-                     layer.msg('音频输入只支持https协议！');
+                     layer.msg('音訊输入只支持https协议！');
                 });
 
 
@@ -1094,7 +1094,7 @@
     }
     
     var text = document.getElementById('text_in');
-    // 取得焦点，拉到底部
+    // 取得焦點，拉到底部
     text.onfocus  = function() {
         $(".tool_box").hide();
         let height = +document.documentElement.clientHeight;
@@ -1102,7 +1102,7 @@
             $('html ,body').animate({scrollTop: height}, 0);
         },200)
     }
-    // 失去焦点，拉到顶部
+    // 失去焦點，拉到顶部
     text.onblur = function() {
         setTimeout(function() {
             $('html ,body').animate({scrollTop: 0}, 0);

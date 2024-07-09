@@ -32,16 +32,16 @@ class App extends Validate
      * @var [type]
      */
     protected $message = [
-        'business_name.require' => '请填写客服系统名稱',
-        'business_name.length' => '客服系统名稱为3~16个字符',
-        'business_name.chsDash' => '客服系统名稱只能是汉字、字母、数字和下划线_及破折号-',
-        'user_name.require' => '请填写帐号',
-        'user_name.length' => '管理员账号为3~16个字符',
-        'user_name.alphaDash' => '管理员账号只能是字母、数字、下划线 _ ',
-        'password.require' => '请填写登入密碼',
-        'password.length' => '密碼长度为1~16个字符',
-        'max_count.require' =>'请填写数量',
-        'max_count.number' =>'客服数量只能是数字',
+        'business_name.require' => '請填写客服系统名稱',
+        'business_name.length' => '客服系统名稱為3~16个字符',
+        'business_name.chsDash' => '客服系统名稱只能是汉字、字母、數字和下划线_及破折号-',
+        'user_name.require' => '請填写帐号',
+        'user_name.length' => '管理员账号為3~16个字符',
+        'user_name.alphaDash' => '管理员账号只能是字母、數字、下划线 _ ',
+        'password.require' => '請填写登入密碼',
+        'password.length' => '密碼長度為1~16个字符',
+        'max_count.require' =>'請填写數量',
+        'max_count.number' =>'客服數量只能是數字',
         'expire_time' => '有效期格式不正确',
     ];
 

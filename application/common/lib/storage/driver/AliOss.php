@@ -14,7 +14,7 @@ use OSS\OssClient;
 class AliOss extends Driver
 {
     /**
-     * 架构函数
+     * 架构函數
      * @param array $options
      */
     public function __construct($options = [])

@@ -23,11 +23,11 @@ use think\Model;
  */
 abstract class Relation
 {
-    // 父模型对象
+    // 父模型對象
     protected $parent;
     /** @var  Model 当前关联的模型类 */
     protected $model;
-    /** @var Query 关联模型查詢对象 */
+    /** @var Query 关联模型查詢對象 */
     protected $query;
     // 关联表外键
     protected $foreignKey;
@@ -35,7 +35,7 @@ abstract class Relation
     protected $localKey;
     // 基础查詢
     protected $baseQuery;
-    // 是否为自关联
+    // 是否為自关联
     protected $selfRelation;
 
     /**
@@ -49,7 +49,7 @@ abstract class Relation
     }
 
     /**
-     * 取得当前的关联模型对象实例
+     * 取得当前的关联模型對象实例
      * @access public
      * @return Model
      */
@@ -59,7 +59,7 @@ abstract class Relation
     }
 
     /**
-     * 取得关联的查詢对象
+     * 取得关联的查詢對象
      * @access public
      * @return Query
      */
@@ -69,7 +69,7 @@ abstract class Relation
     }
 
     /**
-     * 设置当前关联为自关联
+     * 設定当前关联為自关联
      * @access public
      * @param  bool $self 是否自关联
      * @return $this
@@ -81,7 +81,7 @@ abstract class Relation
     }
 
     /**
-     * 当前关联是否为自关联
+     * 当前关联是否為自关联
      * @access public
      * @return bool
      */

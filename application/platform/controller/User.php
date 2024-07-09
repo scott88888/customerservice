@@ -99,7 +99,7 @@ class User extends Base
                 }
                 unset($post['password']);
                 $res = Admin::where('id',$post['id'])->update($post);
-                $false = '操作失敗，请重试';
+                $false = '操作失敗，請重试';
             }
             if ($res !== false) {
                 return ['code'=>0,'msg'=>'操作成功'];
@@ -165,7 +165,7 @@ class User extends Base
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '使用者不存在，请刷新頁面后重试',
+                'msg' => '使用者不存在，請刷新頁面后重试',
             ];
         }
 
@@ -194,7 +194,7 @@ class User extends Base
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '使用者不存在，请刷新頁面后重试',
+                'msg' => '使用者不存在，請刷新頁面后重试',
             ];
         }
         $post =  $this->request->post();
@@ -210,7 +210,7 @@ class User extends Base
             if (strlen($paswword) == 0) {
                 return [
                     'code' => 1,
-                    'msg' => '密碼不能为空',
+                    'msg' => '密碼不能為空',
                 ];
             }
 

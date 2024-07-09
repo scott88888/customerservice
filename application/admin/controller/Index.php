@@ -27,7 +27,7 @@ class Index extends Base
     }
 
     /**
-     * 后台对话頁面.
+     * 后台對話頁面.
      *
      * @return mixed
      */
@@ -55,15 +55,15 @@ class Index extends Base
         $page = $data->render();
         $this->assign('page', $page);
         $this->assign('lister', $data);
-        $this->assign('title', "问候语设置");
-        $this->assign('part', "设置");
+        $this->assign('title', "問候語設定");
+        $this->assign('part', "設定");
 
         return $this->fetch();
     }
 
 
     /**
-     * 生成前台文件頁面.
+     * 產生前台文件頁面.
      *
      * @return mixed
      */
@@ -284,15 +284,15 @@ $content='';
     }
 
     /**
-     * 设置頁面
+     * 設定頁面
      * [set description]
      */
     public function set()
     {
 
         $this->assign('user', $_SESSION['Msg']);
-        $this->assign('title', '系统设置');
-        $this->assign('part', '系统设置');
+        $this->assign('title', '系统設定');
+        $this->assign('part', '系统設定');
         return $this->fetch();
     }
 
@@ -313,8 +313,8 @@ $content='';
         $this->assign('template', $res['template_state']);
         $this->assign('method', $res['distribution_rule']);
         $this->assign('push_url',$res['push_url']);
-        $this->assign('title', '通用设置');
-        $this->assign('part', '设置');
+        $this->assign('title', '通用設定');
+        $this->assign('part', '設定');
 
         return $this->fetch();
     }
@@ -339,7 +339,7 @@ $content='';
         $this->assign('tablist', $res);
 
         $this->assign('title', '編輯前端tab面版');
-        $this->assign('part', '设置');
+        $this->assign('part', '設定');
 
         return $this->fetch();
     }
@@ -379,8 +379,8 @@ $content='';
             $protocol=$common->isHTTPS()?'https://':'http://';
             $this->assign('template',$template);
             $this->assign('protocol',$protocol);
-            $this->assign('title', '公众号与模板消息设置');
-            $this->assign('part', "设置");
+            $this->assign('title', '公众号与模板消息設定');
+            $this->assign('part', "設定");
             return $this->fetch();
         }
     }

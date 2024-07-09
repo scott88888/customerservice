@@ -1,4 +1,4 @@
-/*---- 对话框 start ----*/
+/*---- 對話框 start ----*/
 $.confirm = function (args) {
     args = args || {};
     var content = args.content || "";
@@ -158,7 +158,7 @@ $.loading = function (args) {
 $.loadingHide = function () {
     $("#myLoading").modal("hide");
 };
-/*---- 对话框 end ----*/
+/*---- 對話框 end ----*/
 
 
 /*---- 文件上传 start ----*/
@@ -180,7 +180,7 @@ $(document).ready(function () {
 
     function uploader_init() {
         _pl_file_uploader.uploader = new plupload.Uploader({
-            browse_button: _pl_file_uploader.id, //触发文件選擇对话框的按钮，为那个元素id
+            browse_button: _pl_file_uploader.id, //触发文件選擇對話框的按钮，為那个元素id
             url: _upload_url, //服务器端的上传頁面地址
         });
         _pl_file_uploader.uploader.bind('Init', function (uploader) {
@@ -333,7 +333,7 @@ $.select_file = function (args) {
 };
 /*---- 文件選擇 end ----*/
 
-/*---- 表單自动送出 start ----*/
+/*---- 表單自動送出 start ----*/
 $(document).ready(function () {
     $(document).on('submit', '.auto-form', function () {
         submit(this);
@@ -381,7 +381,7 @@ $(document).ready(function () {
             error: function (e) {
                 btn.btnReset();
                 $.alert({
-                    title: '<span class="text-danger">系统错误</span>',
+                    title: '<span class="text-danger">系统錯誤</span>',
                     content: e.responseText,
                 });
             }
@@ -395,13 +395,13 @@ $(document).ready(function () {
             group_list: [],
             selected: 0,  //选中组
             edit_group: -1, //編輯组
-            edit_setting: -1, //打开編輯组
+            edit_setting: -1, //打開編輯组
             file_list: [], //选中的图片
             list: [], //当前组的所有图片
         }
     });
 });
-/*---- 表單自动送出 end ----*/
+/*---- 表單自動送出 end ----*/
 
 /*---- 快速上传组件 start ----*/
 $(document).on('click', '.upload-group .upload-file', function () {

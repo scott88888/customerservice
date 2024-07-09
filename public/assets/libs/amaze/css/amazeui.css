@@ -601,7 +601,7 @@ select {
  * http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
  * http://msdn.microsoft.com/en-us/library/ie/hh869615%28v=vs.85%29.aspx
  * http://msdn.microsoft.com/zh-cn/library/ie/hh708740(v=vs.85).aspx
- * @2014.01.20: 设置一下属性以后，windows Phone 8 上显示的字体过小，暂时注释掉
+ * @2014.01.20: 設定一下属性以后，windows Phone 8 上显示的字体过小，暫时注释掉
  * ========================================================================== */
 /*
 @-ms-viewport {
@@ -8995,8 +8995,8 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 }
 /*
 TODO:
-  1. 动画应该放在 dialog 上，不再是整个 modal，涉及 JS 逻辑，需要统筹修改
-  2. modal 滚动條处理，是否需要新增一个滚动條宽度的水平 padding？
+  1. 動画应该放在 dialog 上，不再是整个 modal，涉及 JS 逻辑，需要统筹修改
+  2. modal 滚動條处理，是否需要新增一个滚動條宽度的水平 padding？
 */
 /* ==========================================================================
    Component: Modal Plugin

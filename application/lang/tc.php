@@ -27,7 +27,7 @@ return [
     'evaluate_score' => '請評分',
     'mobile_error' => '手機格式不正確',
     'name_error' => '請填寫姓名',
-    'save_ok' => '送出成功,請等待客服回复',
+    'save_ok' => '送出成功,請等待客服回覆',
     'save_error' => '送出失敗',
     'robot_error' => [
         '我不太明白您的意思,您可以換一個問題試試',

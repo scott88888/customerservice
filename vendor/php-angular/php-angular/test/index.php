@@ -16,43 +16,43 @@ $data = [
 // 树状结构
 $menus = [
     [
-        'title' => '菜单1',
+        'title' => '選單1',
         'sub'   => [
-            ['title' => '菜单1.1'],
-            ['title' => '菜单1.2'],
-            ['title' => '菜单1.3'],
-            ['title' => '菜单1.4'],
+            ['title' => '選單1.1'],
+            ['title' => '選單1.2'],
+            ['title' => '選單1.3'],
+            ['title' => '選單1.4'],
         ],
     ],
     [
-        'title' => '菜单2',
+        'title' => '選單2',
         'sub'   => [
-            ['title' => '菜单2.1'],
-            ['title' => '菜单2.2'],
-            ['title' => '菜单2.3'],
-            ['title' => '菜单2.4'],
+            ['title' => '選單2.1'],
+            ['title' => '選單2.2'],
+            ['title' => '選單2.3'],
+            ['title' => '選單2.4'],
         ],
     ],
     [
-        'title' => '菜单3',
+        'title' => '選單3',
         'sub'   => [
             [
-                'title' => '菜单3.1',
+                'title' => '選單3.1',
                 'sub'   => [
-                    ['title' => '菜单3.1.1'],
-                    ['title' => '菜单3.1.2'],
+                    ['title' => '選單3.1.1'],
+                    ['title' => '選單3.1.2'],
                     [
-                        'title' => '菜单3.1.3',
+                        'title' => '選單3.1.3',
                         'sub'   => [
-                            ['title' => '菜单3.1.3.1'],
-                            ['title' => '菜单3.1.3.2'],
+                            ['title' => '選單3.1.3.1'],
+                            ['title' => '選單3.1.3.2'],
                         ],
                     ],
                 ],
             ],
-            ['title' => '菜单3.2'],
-            ['title' => '菜单3.3'],
-            ['title' => '菜单3.4'],
+            ['title' => '選單3.2'],
+            ['title' => '選單3.3'],
+            ['title' => '選單3.4'],
         ],
     ],
 ];
@@ -63,7 +63,7 @@ $view->assign('page', function ($p) {
     return 'index.php?p=' . $p;
 });
 
-// 向模板引擎设置資料
+// 向模板引擎設定資料
 $view->assign($data);
 $view->assign('start_time', $start_time);
 $view->assign('menus', $menus);
@@ -75,5 +75,5 @@ $view->display('index');
 // $html = $view->fetch('index');
 // echo $html;
 
-// 取得混编代码
+// 取得混编程式碼
 // $php_code = $view->compiler('index');

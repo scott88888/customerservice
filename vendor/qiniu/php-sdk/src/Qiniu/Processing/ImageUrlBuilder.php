@@ -38,7 +38,7 @@ final class ImageUrlBuilder
      * @param  string $url 图片連結
      * @param  int $mode 缩略模式
      * @param  int $width 宽度
-     * @param  int $height 长度
+     * @param  int $height 長度
      * @param  string $format 输出类型
      * @param  int $quality 图片质量
      * @param  int $interlace 是否支持渐进显示
@@ -63,7 +63,7 @@ final class ImageUrlBuilder
             return $url;
         }
 
-        // 参数合法性效验
+        // 参數合法性效验
         if (!in_array(intval($mode), $this->modeArr, true)) {
             return $url;
         }
@@ -98,7 +98,7 @@ final class ImageUrlBuilder
 
         $thumbStr .= 'ignore-error/' . $ignoreError . '/';
 
-        // 如果有query_string用|线分割实现多参数
+        // 如果有query_string用|线分割實現多参數
         return $url . ($this->hasQuery($url) ? '|' : '?') . $thumbStr;
     }
 
@@ -167,7 +167,7 @@ final class ImageUrlBuilder
             $waterStr .= 'ws/' . $watermarkScale . '/';
         }
 
-        // 如果有query_string用|线分割实现多参数
+        // 如果有query_string用|线分割實現多参數
         return $url . ($this->hasQuery($url) ? '|' : '?') . $waterStr;
     }
 
@@ -245,7 +245,7 @@ final class ImageUrlBuilder
             $waterStr .= 'dy/' . $dy . '/';
         }
 
-        // 如果有query_string用|线分割实现多参数
+        // 如果有query_string用|线分割實現多参數
         return $url . ($this->hasQuery($url) ? '|' : '?') . $waterStr;
     }
 

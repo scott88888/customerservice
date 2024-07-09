@@ -55,7 +55,7 @@
             var value = {$arr['service_id']};
             var channel = pusher.subscribe("kefu"+value);
                 channel.bind("cu-event", function (data) {
-                    // 取得未读消息数
+                    // 取得未读消息數
                     getnews(data.message.visiter_id);
                     var str = data.message.content;
                     str.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, function (match, capture) {
@@ -87,7 +87,7 @@
                 getchat();
             });
 
-            // 认领后取得访客訊息
+            // 认领后取得訪客訊息
             var channelme = pusher.subscribe("ud" + value);
             channelme.bind("on_notice", function (data) {
                 getwait();

@@ -15,7 +15,7 @@ use PDO;
 use think\db\Connection;
 
 /**
- * Sqlite資料库驱动
+ * Sqlite資料库驱動
  */
 class Sqlite extends Connection
 {
@@ -23,9 +23,9 @@ class Sqlite extends Connection
     protected $builder = '\\think\\db\\builder\\Sqlite';
 
     /**
-     * 解析pdo连接的dsn訊息
+     * 解析pdo連結的dsn訊息
      * @access protected
-     * @param array $config 连接訊息
+     * @param array $config 連結訊息
      * @return string
      */
     protected function parseDsn($config)

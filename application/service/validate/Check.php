@@ -29,10 +29,10 @@ class Check extends Validate
      * @var [type]
      */
     protected $message = [
-        'oldpass.require' => '请填写旧密碼',
-        'newpass.require' => '请填写新密碼',
-        "newpass.length" => "密碼长度为6~16个字符",
-        'newpass2.require' => '请再次填写新密碼',
+        'oldpass.require' => '請填写旧密碼',
+        'newpass.require' => '請填写新密碼',
+        "newpass.length" => "密碼長度為6~16个字符",
+        'newpass2.require' => '請再次填写新密碼',
         "newpass2.confirm" => "新密碼不一致",
     ];
 

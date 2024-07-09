@@ -25,7 +25,7 @@ function writable($var)
     }
     return $writeable;
 }
-//取得随机数
+//取得随机數
 function GetRandStr($length){
     //字符组合
     $str = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -101,11 +101,11 @@ foreach ($dirarray as $key => $dir) {
         <h3 class="text-muted">安装向导</h3>
     </div>
     <script>
-        layer.alert('使用AI智能客服产品期间，不得危害国家安全、泄露国家秘密，不得侵犯国家社会集体和公民的合法权益。<br><br><strong>AI智能客服产品禁止用于含有木马、病毒、色情、赌博、诈骗等违法违规业务。一经发现，AI智能客服有权立即停止服务，并协助相关行政执法机关进行清查。</strong><br><br>对因意外事故、滥用、错误使用、擅自修改所引起的软件使用問題，AI智能客服不承担任何责任，也不做任何保证。', {
+        layer.alert('使用AI智能客服产品期间，不得危害国家安全、泄露国家秘密，不得侵犯国家社会集体和公民的合法权益。<br><br><strong>AI智能客服产品禁止用于含有木马、病毒、色情、赌博、诈骗等违法违规业务。一经发现，AI智能客服有权立即停止服务，并协助相關行政执法机关进行清查。</strong><br><br>對因意外事故、滥用、錯誤使用、擅自修改所引起的软件使用問題，AI智能客服不承担任何责任，也不做任何保证。', {
             title: '提示條款',
             maxWidth: '500',
             btn: '同意',
-            skin: 'layui-layer-lan' //样式类名
+            skin: 'layui-layer-lan' //樣式类名
             ,closeBtn: 0
         });
     </script>
@@ -427,14 +427,14 @@ foreach ($dirarray as $key => $dir) {
         if (empty($dbHost) || empty($dbUser) || empty($dbName) || empty($dbPass) || empty($adminUser) || empty($adminPass) || empty($secret) || empty($app_key) || empty($app_id) || empty($whost) || empty($wport) || empty($ahost) || empty($aport) || empty($registToken)
         ): ?>
 
-            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 请把表單資料填完</div>
+            <div class="alert alert-danger" role="alert"><strong>錯誤.</strong> 請把表單資料填完</div>
 
             <center style="margin-bottom: 20px;">
                 <a href="javascript:history.go(-1)" style="display: inline-block;width: 90px;" class="btn btn-default">返回上一步</a>
             </center>
 
         <?php elseif (strlen($adminPass) < 5): ?>
-            <div class="alert alert-danger" role="alert"><strong>错误.</strong> 密碼不能小于5位数.</div>
+            <div class="alert alert-danger" role="alert"><strong>錯誤.</strong> 密碼不能小于5位數.</div>
 
             <center>
                 <a href="javascript:history.go(-1)" style="display: inline-block;width: 90px;" class="btn btn-default">返回上一步</a>
@@ -532,7 +532,7 @@ return [
     'debug'          => false,
     // 是否严格檢查字段是否存在
     'fields_strict'  => true,
-    // 是否自动写入时间戳字段
+    // 是否自動写入時間戳字段
     'auto_timestamp' => false,
     // 是否需要进行SQL性能分析
     'sql_explain'    => false,
@@ -551,9 +551,9 @@ return [
     'hostport'       => '',
     // 資料库表前缀
     'prefix'         => '',
-    // 資料库编码默认采用utf8
+    // 資料库编碼默认采用utf8
     'charset'        => 'utf8',
-    // 資料库连接参数
+    // 資料库連結参數
     'params'         => [],
 ];
 ");
@@ -602,7 +602,7 @@ define('registToken','{$registToken}');
 define('AIKF_SALT','{$salt}');
 define('AKF_VERSION','AI_KF');
 
-// 自定义一个 入口 目录
+// 自訂一个 入口 目录
 define('PUBLIC_PATH',__DIR__);
 // 定义 类的文件路径
 define('EXTEND_PATH','../extend/');
@@ -628,7 +628,7 @@ require __DIR__ . '/../thinkphp/start.php';");
 // App id
 \$app_id = {$app_id};
 
-// websocket 端口，客服系统网頁会连这个端口
+// websocket 端口，客服系统網頁会连这个端口
 \$websocket_port = {$wport};
 
 // Api 端口，用于后端与pusher通讯
@@ -647,7 +647,7 @@ require __DIR__ . '/../thinkphp/start.php';");
     <?php else: ?>
 
         <div class="alert alert-success"><strong>已经安装成功</strong></div>
-        <p>如果想重新安装，请刪除<code>public\index.php</code></p>
+        <p>如果想重新安装，請刪除<code>public\index.php</code></p>
     <?php endif; ?>
 </div>
 </div>

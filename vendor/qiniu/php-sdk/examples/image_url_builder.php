@@ -18,7 +18,7 @@ $waterImage = 'http://developer.qiniu.com/resource/logo-2.jpg';
  * @param  string $url 图片連結
  * @param  int $mode 缩略模式
  * @param  int $width 宽度
- * @param  int $height 长度
+ * @param  int $height 長度
  * @param  string $format 输出类型 [可选]
  * @param  int $quality 图片质量 [可选]
  * @param  int $interlace 是否支持渐进显示 [可选]
@@ -29,7 +29,7 @@ $waterImage = 'http://developer.qiniu.com/resource/logo-2.jpg';
  */
 $thumbLink = $imageUrlBuilder->thumbnail($url, 1, 100, 100);
 
-// 函数方式调用 也可拼接多个操作参数 图片+水印
+// 函數方式调用 也可拼接多个操作参數 图片+水印
 $thumbLink2 = \Qiniu\thumbnail($url2, 1, 100, 100);
 var_dump($thumbLink, $thumbLink2);
 
@@ -48,7 +48,7 @@ var_dump($thumbLink, $thumbLink2);
  * @author Sherlock Ren <sherlock_ren@icloud.com>
  */
 $waterLink = $imageUrlBuilder->waterImg($url, $waterImage);
-// 函数调用方法
+// 函數调用方法
 //$waterLink = \Qiniu\waterImg($url, $waterImage);
 var_dump($waterLink);
 
@@ -69,6 +69,6 @@ var_dump($waterLink);
  * @author Sherlock Ren <sherlock_ren@icloud.com>
  */
 $textLink = $imageUrlBuilder->waterText($url, '你瞅啥', '微软雅黑', 300);
-// 函数调用方法
+// 函數调用方法
 // $textLink = \Qiniu\waterText($url, '你瞅啥', '微软雅黑', 300);
 var_dump($textLink);

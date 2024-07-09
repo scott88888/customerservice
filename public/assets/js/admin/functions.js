@@ -1,5 +1,5 @@
 /**
- * 解析Ajax请求取得的HTML内容
+ * 解析Ajax請求取得的HTML内容
  * @param data
  * @returns {*}
  */
@@ -12,7 +12,7 @@ var parse_html = function (data) {
     return data;
 };
 /**
- * 扩展函数库
+ * 扩展函數库
  * Created by PhpStorm.
  * @version 2016-07-25 14:46:29
  * @author  cbwfree
@@ -21,7 +21,7 @@ var parse_html = function (data) {
 /**
  * 解析URL
  * @param {string} url 完整的URL地址
- * @returns {object} 自定义的对象
+ * @returns {object} 自訂的對象
  */
 function parse_url(url) {
     var a = document.createElement('a');
@@ -38,7 +38,7 @@ function parse_url(url) {
 }
 
 /**
- * 解析URL参数
+ * 解析URL参數
  * @param query
  * @returns {{}}
  */

@@ -61,7 +61,7 @@
         });
         search.search(document.getElementById('address').value || document.getElementById('city').value);
     }
-    //获得参数
+    //获得参數
     function getPars(str,par){
         var reg = new RegExp(par+"=((\\d+|[.,])*)","g");
         return reg.exec(str)[1];
@@ -88,10 +88,10 @@
             map.addControl(new BMap.NavigationControl());
             map.centerAndZoom(point, Number(getPars(url,"zoom")));
         }else{
-            point = new BMap.Point(116.404, 39.915);    // 创建点坐标
+            point = new BMap.Point(116.404, 39.915);    // 建立點坐标
             marker = new BMap.Marker(point);
             map.addControl(new BMap.NavigationControl());
-            map.centerAndZoom(point, 10);                     // 初始化地图,设置中心点坐标和地图级别。
+            map.centerAndZoom(point, 10);                     // 初始化地图,設定中心點坐标和地图级别。
         }
         marker.enableDragging();
         map.addOverlay(marker);

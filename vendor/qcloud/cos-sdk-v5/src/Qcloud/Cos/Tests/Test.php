@@ -59,7 +59,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket，设置bucket公公权限为private
+     * put bucket，設定bucket公公权限為private
      * 200
      */
     public function testCreatePrivateBucket()
@@ -76,7 +76,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket，设置bucket公公权限为public-read
+     * put bucket，設定bucket公公权限為public-read
      * 200
      */
     public function testCreatePublicReadBucket()
@@ -111,7 +111,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket公共权限为private
+     * put bucket acl，設定bucket公共权限為private
      * 200
      */
     public function testPutBucketAclPrivate()
@@ -130,7 +130,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket公共权限为public-read
+     * put bucket acl，設定bucket公共权限為public-read
      * 200
      */
     public function testPutBucketAclPublicRead()
@@ -168,7 +168,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限为grant-read
+     * put bucket acl，設定bucket账号权限為grant-read
      * 200
      */
     public function testPutBucketAclReadToUser()
@@ -184,7 +184,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限为grant-write
+     * put bucket acl，設定bucket账号权限為grant-write
      * 200
      */
     public function testPutBucketAclWriteToUser()
@@ -200,7 +200,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限为grant-full-control
+     * put bucket acl，設定bucket账号权限為grant-full-control
      * 200
      */
     public function testPutBucketAclFullToUser()
@@ -216,7 +216,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限，同时授权给多个账户
+     * put bucket acl，設定bucket账号权限，同时授权给多个账户
      * 200
      */
     public function testPutBucketAclToUsers()
@@ -232,7 +232,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限，授权给子账号
+     * put bucket acl，設定bucket账号权限，授权给子账号
      * 200
      */
     public function testPutBucketAclToSubuser()
@@ -248,7 +248,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限，同时指定read、write和fullcontrol
+     * put bucket acl，設定bucket账号权限，同时指定read、write和fullcontrol
      * 200
      */
     public function testPutBucketAclReadWriteFull()
@@ -266,7 +266,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限，grant值非法
+     * put bucket acl，設定bucket账号权限，grant值非法
      * InvalidArgument
      * 400
      */
@@ -283,7 +283,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限，通过body方式授权
+     * put bucket acl，設定bucket账号权限，通過body方式授权
      * 200
      */
     public function testPutBucketAclByBody()
@@ -313,7 +313,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，设置bucket账号权限，通过body方式授权给anyone
+     * put bucket acl，設定bucket账号权限，通過body方式授权给anyone
      * 200
      */
     public function testPutBucketAclByBodyToAnyone()
@@ -361,7 +361,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket acl，覆盖设置
+     * put bucket acl，覆盖設定
      * x200
      */
     public function testPutBucketAclCover()
@@ -414,7 +414,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * get bucket,bucket为空
+     * get bucket,bucket為空
      * 200
      */
     public function testGetBucketEmpty()
@@ -534,7 +534,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * bucket未设置cors规则，发送get bucket cors
+     * bucket未設定cors规则，发送get bucket cors
      * NoSuchCORSConfiguration
      * 404
      */
@@ -553,7 +553,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * bucket未设置cors规则，发送get bucket cors
+     * bucket未設定cors规则，发送get bucket cors
      * NoSuchCORSConfiguration
      * 404
      */
@@ -591,11 +591,11 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                             ),
                             'Transitions' => array(
                                 array(
-                                    # 30天后转换为Standard_IA
+                                    # 30天后转换為Standard_IA
                                     'Days' => 30,
                                     'StorageClass' => 'Standard_IA'),
                                 array(
-                                    # 365天后转换为Archive
+                                    # 365天后转换為Archive
                                     'Days' => 365,
                                     'StorageClass' => 'Archive')
                             ),
@@ -636,11 +636,11 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                         ),
                         'Transitions' => array(
                             array(
-                                # 30天后转换为Standard_IA
+                                # 30天后转换為Standard_IA
                                 'Days' => 30,
                                 'StorageClass' => 'Standard_IA'),
                             array(
-                                # 365天后转换为Archive
+                                # 365天后转换為Archive
                                 'Days' => 365,
                                 'StorageClass' => 'Archive')
                         ),
@@ -661,7 +661,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put bucket lifecycle，请求body中不指定filter
+     * put bucket lifecycle，請求body中不指定filter
      * 200
      */
     public function testPutBucketLifecycleNonFilter()
@@ -741,7 +741,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * bucket不存在，发送get bucket location请求
+     * bucket不存在，发送get bucket location請求
      * NoSuchBucket
      * 404
      */
@@ -761,7 +761,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
      **********************************/
 
     /*
-     * put object,请求头部携带服务端加密参数
+     * put object,請求头部携带服务端加密参數
      * 200
      */
     public function testPutObjectEncryption()
@@ -828,14 +828,14 @@ class BucketTest extends \PHPUnit_Framework_TestCase
         try {
             $this->cosClient->createBucket(array('Bucket' => $this->bucket));
             $this->cosClient->upload($this->bucket, '你好.txt', '1234124');
-            $this->cosClient->upload($this->bucket, '你好.txt', '请二位qwe');
+            $this->cosClient->upload($this->bucket, '你好.txt', '請二位qwe');
         } catch (ServiceResponseException $e) {
             $this->assertFalse(true, $e);
         }
     }
 
     /*
-     * put object，请求头部携带自定义头部x-cos-meta-
+     * put object，請求头部携带自訂头部x-cos-meta-
      * 200
      */
     public function testPutObjectMeta() {
@@ -854,7 +854,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object，请求头部携带自定义头部x-cos-meta-
+     * put object，請求头部携带自訂头部x-cos-meta-
      * KeyTooLong
      * 400
      */
@@ -934,7 +934,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * get object，请求头部带if-match，参数值为true
+     * get object，請求头部带if-match，参數值為true
      * 200
      */
     public function testGetObjectIfMatchTrue() {
@@ -952,7 +952,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 
 
     /*
-     * get object，请求头部带if-match，参数值为false
+     * get object，請求头部带if-match，参數值為false
      * PreconditionFailed
      * 412
      */
@@ -972,7 +972,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * get object，请求头部带if-none-match，参数值为true
+     * get object，請求头部带if-none-match，参數值為true
      * 200
      */
     public function testGetObjectIfNoneMatchTrue() {
@@ -990,7 +990,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 
 
     /*
-     * get object，请求头部带if-none-match，参数值为false
+     * get object，請求头部带if-none-match，参數值為false
      * PreconditionFailed
      * 412
      */
@@ -1022,7 +1022,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 设置objectacl
+     * 設定objectacl
      * 200
      */
     public function testPutObjectACL() {
@@ -1088,7 +1088,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-        * put object acl，设置object公共权限为private
+        * put object acl，設定object公共权限為private
         * 200
         */
     public function testPutObjectAclPrivate()
@@ -1109,7 +1109,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object公共权限为public-read
+     * put object acl，設定object公共权限為public-read
      * 200
      */
     public function testPutObjectAclPublicRead()
@@ -1151,7 +1151,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限为grant-read
+     * put object acl，設定object账号权限為grant-read
      * 200
      */
     public function testPutObjectAclReadToUser()
@@ -1169,7 +1169,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限为grant-write
+     * put object acl，設定object账号权限為grant-write
      * 200
      */
 //    public function testPutObjectAclWriteToUser()
@@ -1187,7 +1187,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 //    }
 
     /*
-     * put object acl，设置object账号权限为grant-full-control
+     * put object acl，設定object账号权限為grant-full-control
      * 200
      */
     public function testPutObjectAclFullToUser()
@@ -1205,7 +1205,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限，同时授权给多个账户
+     * put object acl，設定object账号权限，同时授权给多个账户
      * 200
      */
     public function testPutObjectAclToUsers()
@@ -1223,7 +1223,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限，授权给子账号
+     * put object acl，設定object账号权限，授权给子账号
      * 200
      */
     public function testPutObjectAclToSubuser()
@@ -1241,7 +1241,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限，同时指定read、write和fullcontrol
+     * put object acl，設定object账号权限，同时指定read、write和fullcontrol
      * 200
      */
 //    public function testPutObjectAclReadWriteFull()
@@ -1261,7 +1261,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 //    }
 
     /*
-     * put object acl，设置object账号权限，grant值非法
+     * put object acl，設定object账号权限，grant值非法
      * InvalidArgument
      * 400
      */
@@ -1280,7 +1280,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限，通过body方式授权
+     * put object acl，設定object账号权限，通過body方式授权
      * 200
      */
     public function testPutObjectAclByBody()
@@ -1312,7 +1312,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * put object acl，设置object账号权限，通过body方式授权给anyone
+     * put object acl，設定object账号权限，通過body方式授权给anyone
      * 200
      */
     public function testPutObjectAclByBodyToAnyone()

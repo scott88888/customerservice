@@ -22,7 +22,7 @@ use think\Controller;
 use app\admin\iplocation\Ip;
 /**
  *
- * 设置控制器.
+ * 設定控制器.
  */
 class Fanyi extends Controller
 {

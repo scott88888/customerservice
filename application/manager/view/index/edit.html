@@ -133,16 +133,16 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label required">客服数量限制</label>
+                <label class="col-sm-2 col-form-label required">客服數量限制</label>
                 <div class="col-sm-6">
                     {if condition="isset($model['id'])"}
                     <input type="number" class="form-control "
                            value="{$model->max_count}"  name="max_count" class="form-control-plaintext ">
-                    <div class="fs-sm text-muted">此客服系统站点可以创建客服的数量，填写0则表示不限制使用者创建客服的数量</div>
+                    <div class="fs-sm text-muted">此客服系统站點可以建立客服的數量，填写0则表示不限制使用者建立客服的數量</div>
                     {else/}
                     <input type="number"class="form-control " name="max_count"
                            value="">
-                    <div class="fs-sm text-muted">此客服系统站点可以创建客服的数量，填写0则表示不限制使用者创建客服的数量</div>
+                    <div class="fs-sm text-muted">此客服系统站點可以建立客服的數量，填写0则表示不限制使用者建立客服的數量</div>
                     {/if}
                 </div>
             </div>

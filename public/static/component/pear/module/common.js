@@ -13,7 +13,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 		
 		/**
 		 * 取得当前表格选中字段
-		 * @param obj 表格回调参数
+		 * @param obj 表格回调参數
 		 * @param field 要取得的字段
 		 * */
 		this.checkField = function(obj, field) {
@@ -30,7 +30,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 		}
 		
 		/**
-		 * 当前是否为与移动端
+		 * 当前是否為与移動端
 		 * */
 		this.isModile = function(){
 			if ($(window).width() <= 768) {

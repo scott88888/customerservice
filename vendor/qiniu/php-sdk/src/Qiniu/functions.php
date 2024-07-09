@@ -8,11 +8,11 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     define('QINIU_FUNCTIONS_VERSION', Config::SDK_VER);
 
     /**
-     * 计算文件的crc32检验码:
+     * 计算文件的crc32检验碼:
      *
-     * @param $file string  待计算校验码的文件路径
+     * @param $file string  待计算校验碼的文件路径
      *
-     * @return string 文件内容的crc32校验码
+     * @return string 文件内容的crc32校验碼
      */
     function crc32_file($file)
     {
@@ -22,11 +22,11 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 计算输入流的crc32检验码
+     * 计算输入流的crc32检验碼
      *
-     * @param $data 待计算校验码的字符串
+     * @param $data 待计算校验碼的字符串
      *
-     * @return string 输入字符串的crc32校验码
+     * @return string 输入字符串的crc32校验碼
      */
     function crc32_data($data)
     {
@@ -36,11 +36,11 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 对提供的資料进行urlsafe的base64编码。
+     * 對提供的資料进行urlsafe的base64编碼。
      *
-     * @param string $data 待编码的資料，一般为字符串
+     * @param string $data 待编碼的資料，一般為字符串
      *
-     * @return string 编码后的字符串
+     * @return string 编碼后的字符串
      * @link http://developer.qiniu.com/docs/v6/api/overview/appendix.html#urlsafe-base64
      */
     function base64_urlSafeEncode($data)
@@ -51,11 +51,11 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 对提供的urlsafe的base64编码的資料进行解码
+     * 對提供的urlsafe的base64编碼的資料进行解碼
      *
-     * @param string $str 待解码的資料，一般为字符串
+     * @param string $str 待解碼的資料，一般為字符串
      *
-     * @return string 解码后的字符串
+     * @return string 解碼后的字符串
      */
     function base64_urlSafeDecode($str)
     {
@@ -108,7 +108,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     /**
      * 计算七牛API中的資料格式
      *
-     * @param $bucket 待操作的空间名
+     * @param $bucket 待操作的空間名
      * @param $key 待操作的文件名
      *
      * @return string  符合七牛API规格的資料格式
@@ -128,7 +128,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
      *
      * @param $array 待操作array
      * @param $key key
-     * @param $value value 为null时 不设置
+     * @param $value value 為null时 不設定
      *
      * @return array 原来的array，便于连续操作
      */
@@ -146,7 +146,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
      * @param  string $url 图片連結
      * @param  int $mode 缩略模式
      * @param  int $width 宽度
-     * @param  int $height 长度
+     * @param  int $height 長度
      * @param  string $format 输出类型
      * @param  int $quality 图片质量
      * @param  int $interlace 是否支持渐进显示

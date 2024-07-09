@@ -79,7 +79,7 @@ window.addEventListener('message', function (event) {
 //实例化編輯器
 jQuery( function ($) {
     if ( document.body.addEventListener ) {
-        $( "#tips").html('<div id="loading"><img src="kityformula/loading.gif" alt="loading" /><p>正在加载，请耐心等待...</p></div>' );
+        $( "#tips").html('<div id="loading"><img src="kityformula/loading.gif" alt="loading" /><p>正在加载，請耐心等待...</p></div>' );
         var factory = kf.EditorFactory.create( $( "#kfEditorContainer" )[ 0 ], {
             render: {
                 fontsize: 24
@@ -90,7 +90,7 @@ jQuery( function ($) {
         } );
         factory.ready( function ( KFEditor ) {
             $( "#tips").remove();
-            //处理地址栏的参数并加载到編輯器中
+            //处理地址栏的参數并加载到編輯器中
             var c=getQueryVariable("c")
             if(c){
                 this.execCommand( "render",decodeURIComponent(c) );

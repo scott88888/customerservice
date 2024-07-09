@@ -19,7 +19,7 @@ use think\Request;
 
 class Php
 {
-    // 模板引擎参数
+    // 模板引擎参數
     protected $config = [
         // 视图基础目录（集中式）
         'view_base'   => '',
@@ -29,7 +29,7 @@ class Php
         'view_suffix' => 'php',
         // 模板文件名分隔符
         'view_depr'   => DS,
-        // 默认模板渲染规则 1 解析为小写+下划线 2 全部转换小写
+        // 默认模板渲染规则 1 解析為小写+下划线 2 全部转换小写
         'auto_rule'   => 1,
     ];
     protected $template;
@@ -97,7 +97,7 @@ class Php
     }
 
     /**
-     * 自动定位模板文件
+     * 自動定位模板文件
      * @access private
      * @param string $template 模板文件规则
      * @return string
@@ -128,7 +128,7 @@ class Php
             $controller = Loader::parseName($request->controller());
             if ($controller) {
                 if ('' == $template) {
-                    // 如果模板文件名为空 按照默认规则定位
+                    // 如果模板文件名為空 按照默认规则定位
                     $template = str_replace('.', DS, $controller) . $depr . (1 == $this->config['auto_rule'] ? Loader::parseName($request->action(true)) : $request->action());
                 } elseif (false === strpos($template, $depr)) {
                     $template = str_replace('.', DS, $controller) . $depr . $template;
@@ -143,8 +143,8 @@ class Php
     /**
      * 配置模板引擎
      * @access private
-     * @param string|array  $name 参数名
-     * @param mixed         $value 参数值
+     * @param string|array  $name 参數名
+     * @param mixed         $value 参數值
      * @return void
      */
     public function config($name, $value = null)

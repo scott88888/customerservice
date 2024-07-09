@@ -54,7 +54,7 @@ class Controller
     /**
      * 构造方法
      * @access public
-     * @param Request $request Request 对象
+     * @param Request $request Request 對象
      */
     public function __construct(Request $request = null)
     {
@@ -87,7 +87,7 @@ class Controller
      * 前置操作
      * @access protected
      * @param  string $method 前置操作方法名
-     * @param  array $options 调用参数 ['only'=>[...]] 或者 ['except'=>[...]]
+     * @param  array $options 调用参數 ['only'=>[...]] 或者 ['except'=>[...]]
      * @return void
      */
     protected function beforeAction($method, $options = [])
@@ -119,7 +119,7 @@ class Controller
      * @param  string $template 模板文件名
      * @param  array $vars 模板输出变量
      * @param  array $replace 模板替换
-     * @param  array $config 模板参数
+     * @param  array $config 模板参數
      * @return mixed
      */
     protected function fetch($template = '', $vars = [], $replace = [], $config = [])
@@ -133,7 +133,7 @@ class Controller
      * @param  string $content 模板内容
      * @param  array $vars 模板输出变量
      * @param  array $replace 替换内容
-     * @param  array $config 模板参数
+     * @param  array $config 模板参數
      * @return mixed
      */
     protected function display($content = '', $vars = [], $replace = [], $config = [])
@@ -158,7 +158,7 @@ class Controller
     /**
      * 初始化模板引擎
      * @access protected
-     * @param array|string $engine 引擎参数
+     * @param array|string $engine 引擎参數
      * @return $this
      */
     protected function engine($engine)
@@ -169,7 +169,7 @@ class Controller
     }
 
     /**
-     * 设置驗證失敗后是否抛出异常
+     * 設定驗證失敗后是否抛出异常
      * @access protected
      * @param bool $fail 是否抛出异常
      * @return $this
@@ -185,7 +185,7 @@ class Controller
      * 驗證資料
      * @access protected
      * @param  array $data 資料
-     * @param  string|array $validate 驗證器名或者驗證规则数组
+     * @param  string|array $validate 驗證器名或者驗證规则數组
      * @param  array $message 提示訊息
      * @param  bool $batch 是否批量驗證
      * @param  mixed $callback 回调方法（闭包）
@@ -213,7 +213,7 @@ class Controller
             $v->batch(true);
         }
 
-        // 设置错误訊息
+        // 設定錯誤訊息
         if (is_array($message)) {
             $v->message($message);
         }

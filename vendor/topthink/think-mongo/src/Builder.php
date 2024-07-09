@@ -23,11 +23,11 @@ use think\mongo\Query;
 
 class Builder
 {
-    // connection对象实例
+    // connection對象实例
     protected $connection;
-    // 查詢对象实例
+    // 查詢對象实例
     protected $query;
-    // 查詢参数
+    // 查詢参數
     protected $options = [];
     // 最后插入ID
     protected $insertId = [];
@@ -35,10 +35,10 @@ class Builder
     protected $exp = ['<>' => 'ne', 'neq' => 'ne', '=' => 'eq', '>' => 'gt', '>=' => 'gte', '<' => 'lt', '<=' => 'lte', 'in' => 'in', 'not in' => 'nin', 'nin' => 'nin', 'mod' => 'mod', 'exists' => 'exists', 'regex' => 'regex', 'type' => 'type', 'all' => 'all', '> time' => '> time', '< time' => '< time', 'between' => 'between', 'not between' => 'not between', 'between time' => 'between time', 'not between time' => 'not between time', 'notbetween time' => 'not between time', 'like' => 'like', 'near' => 'near'];
 
     /**
-     * 架构函数
+     * 架构函數
      * @access public
-     * @param Connection    $connection 資料库连接对象实例
-     * @param Query         $query 資料库查詢对象实例
+     * @param Connection    $connection 資料库連結對象实例
+     * @param Query         $query 資料库查詢對象实例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -79,7 +79,7 @@ class Builder
      * insert資料分析
      * @access protected
      * @param array $data 資料
-     * @param array $options 查詢参数
+     * @param array $options 查詢参數
      * @return array
      */
     protected function parseData($data, $options)
@@ -108,7 +108,7 @@ class Builder
      * Set資料分析
      * @access protected
      * @param array $data 資料
-     * @param array $options 查詢参数
+     * @param array $options 查詢参數
      * @return array
      */
     protected function parseSet($data, $options)
@@ -130,7 +130,7 @@ class Builder
     }
 
     /**
-     * 生成查詢过滤條件
+     * 產生查詢过滤條件
      * @access public
      * @param mixed $where
      * @return array
@@ -163,7 +163,7 @@ class Builder
                             $filter['$and'][] = $this->parseWhereItem($k, $value);
                         }
                     } else {
-                        // 对字段使用表达式查詢
+                        // 對字段使用表达式查詢
                         $field            = is_string($field) ? $field : '';
                         $filter[$logic][] = $this->parseWhereItem($field, $value);
                     }
@@ -173,7 +173,7 @@ class Builder
         return $filter;
     }
 
-    // where子单元分析
+    // where子單元分析
     protected function parseWhereItem($field, $val)
     {
         $key = $field ? $this->parseKey($field) : '';
@@ -183,7 +183,7 @@ class Builder
         }
         list($exp, $value) = $val;
 
-        // 对一个字段使用多个查詢條件
+        // 對一个字段使用多个查詢條件
         if (is_array($exp)) {
             $data = [];
             foreach ($val as $value) {
@@ -272,7 +272,7 @@ class Builder
     }
 
     /**
-     * 日期时间條件解析
+     * 日期時間條件解析
      * @access protected
      * @param string $value
      * @param string $key
@@ -280,15 +280,15 @@ class Builder
      */
     protected function parseDateTime($value, $key)
     {
-        // 取得时间字段类型
+        // 取得時間字段类型
         $type = $this->query->getTableInfo('', 'type');
         if (isset($type[$key])) {
             $value = strtotime($value) ?: $value;
             if (preg_match('/(datetime|timestamp)/is', $type[$key])) {
-                // 日期及时间戳类型
+                // 日期及時間戳类型
                 $value = date('Y-m-d H:i:s', $value);
             } elseif (preg_match('/(date)/is', $type[$key])) {
-                // 日期及时间戳类型
+                // 日期及時間戳类型
                 $value = date('Y-m-d', $value);
             }
         }
@@ -296,7 +296,7 @@ class Builder
     }
 
     /**
-     * 取得最后写入的ID 如果是insertAll方法的话 返回所有写入的ID
+     * 取得最后写入的ID 如果是insertAll方法的話 返回所有写入的ID
      * @access public
      * @return mixed
      */
@@ -306,7 +306,7 @@ class Builder
     }
 
     /**
-     * 生成insert BulkWrite对象
+     * 產生insert BulkWrite對象
      * @access public
      * @param array     $data 資料
      * @param array     $options 表达式
@@ -325,10 +325,10 @@ class Builder
     }
 
     /**
-     * 生成insertall BulkWrite对象
+     * 產生insertall BulkWrite對象
      * @access public
      * @param array     $dataSet 資料集
-     * @param array     $options 参数
+     * @param array     $options 参數
      * @return BulkWrite
      */
     public function insertAll($dataSet, $options = [])
@@ -346,10 +346,10 @@ class Builder
     }
 
     /**
-     * 生成update BulkWrite对象
+     * 產生update BulkWrite對象
      * @access public
      * @param array     $data 資料
-     * @param array     $options 参数
+     * @param array     $options 参數
      * @return BulkWrite
      */
     public function update($data, $options = [])
@@ -369,9 +369,9 @@ class Builder
     }
 
     /**
-     * 生成delete BulkWrite对象
+     * 產生delete BulkWrite對象
      * @access public
-     * @param array     $options 参数
+     * @param array     $options 参數
      * @return BulkWrite
      */
     public function delete($options)
@@ -389,9 +389,9 @@ class Builder
     }
 
     /**
-     * 生成Mongo查詢对象
+     * 產生Mongo查詢對象
      * @access public
-     * @param array $options 参数
+     * @param array $options 参數
      * @return MongoQuery
      */
     public function select($options)
@@ -403,9 +403,9 @@ class Builder
     }
 
     /**
-     * 生成Count命令
+     * 產生Count命令
      * @access public
-     * @param array $options 参数
+     * @param array $options 参數
      * @return Command
      */
     public function count($options)
@@ -423,9 +423,9 @@ class Builder
     }
 
     /**
-     * 生成distinct命令
+     * 產生distinct命令
      * @access public
-     * @param array     $options 参数
+     * @param array     $options 参數
      * @param string    $field 字段名
      * @return Command
      */

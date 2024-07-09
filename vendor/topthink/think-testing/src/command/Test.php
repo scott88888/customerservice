@@ -29,7 +29,7 @@ class Test extends Command
 
     public function execute(Input $input, Output $output)
     {
-        //注册命名空间
+        //注册命名空間
         Loader::addNamespace('tests', ROOT_PATH . 'tests');
 
         Session::init();

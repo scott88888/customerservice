@@ -20,7 +20,7 @@ final class Zone
     //IOVIP域名
     public $iovipHost;
 
-    //构造一个Zone对象
+    //构造一个Zone對象
     public function __construct(
         $srcUpHosts = array(),
         $cdnUpHosts = array(),
@@ -52,7 +52,7 @@ final class Zone
         return $Zone_z0;
     }
 
-    //华东机房内网上传
+    //华东机房内網上传
     public static function zoneZ0()
     {
         $Zone_z01 = new Zone(
@@ -65,7 +65,7 @@ final class Zone
         return $Zone_z01;
     }
 
-    //华北机房内网上传
+    //华北机房内網上传
     public static function zoneZ1()
     {
         $Zone_z12 = new Zone(

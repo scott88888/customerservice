@@ -22,20 +22,20 @@ class SmsService
         $ind_sms = self::isConfig();
 
         $config = [
-            // HTTP 请求的超时时间（秒）
+            // HTTP 請求的超时時間（秒）
             'timeout' => 5.0,
 
             // 默认发送配置
             'default' => [
-                // 网关调用策略，默认：顺序调用
+                // 網关调用策略，默认：顺序调用
                 'strategy' => \Overtrue\EasySms\Strategies\OrderStrategy::class,
 
-                // 默认可用的发送网关
+                // 默认可用的发送網关
                 'gateways' => [
                     'yunpian', 'aliyun',
                 ],
             ],
-            // 可用的网关配置
+            // 可用的網关配置
             'gateways' => [
                 'aliyun' => [
                     'access_key_id' => $ind_sms['aliyun']['access_key_id'],

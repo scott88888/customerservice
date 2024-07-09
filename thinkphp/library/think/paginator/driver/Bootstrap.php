@@ -52,7 +52,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 頁码按钮
+     * 頁碼按钮
      * @return string
      */
     protected function getLinks()
@@ -127,7 +127,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 生成一个可点击的按钮
+     * 產生一个可點擊的按钮
      *
      * @param  string $url
      * @param  int    $page
@@ -139,7 +139,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 生成一个禁用的按钮
+     * 產生一个禁用的按钮
      *
      * @param  string $text
      * @return string
@@ -150,7 +150,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 生成一个激活的按钮
+     * 產生一个激活的按钮
      *
      * @param  string $text
      * @return string
@@ -161,7 +161,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 生成省略号按钮
+     * 產生省略号按钮
      *
      * @return string
      */
@@ -171,7 +171,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 批量生成頁码按钮.
+     * 批量產生頁碼按钮.
      *
      * @param  array $urls
      * @return string
@@ -188,7 +188,7 @@ class Bootstrap extends Paginator
     }
 
     /**
-     * 生成普通頁码按钮
+     * 產生普通頁碼按钮
      *
      * @param  string $url
      * @param  int    $page

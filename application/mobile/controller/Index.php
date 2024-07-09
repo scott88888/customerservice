@@ -30,7 +30,7 @@ class Index extends Controller
         $this->assign('basename',$basename);
     }
     /**
-     * 唯一随机数方法
+     * 唯一随机數方法
      * [rand description]
      * @param  [type] $len [description]
      * @return [type]      [description]

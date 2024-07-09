@@ -16,9 +16,9 @@ use think\Exception;
 
 abstract class Builder
 {
-    // connection对象实例
+    // connection對象实例
     protected $connection;
-    // 查詢对象实例
+    // 查詢對象实例
     protected $query;
 
     // 資料库表达式
@@ -32,10 +32,10 @@ abstract class Builder
     protected $deleteSql    = 'DELETE FROM %TABLE% %USING% %JOIN% %WHERE% %ORDER%%LIMIT% %LOCK%%COMMENT%';
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param Connection    $connection 資料库连接对象实例
-     * @param Query         $query      資料库查詢对象实例
+     * @param Connection    $connection 資料库連結對象实例
+     * @param Query         $query      資料库查詢對象实例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -44,7 +44,7 @@ abstract class Builder
     }
 
     /**
-     * 取得当前的连接对象实例
+     * 取得当前的連結對象实例
      * @access public
      * @return Connection
      */
@@ -54,7 +54,7 @@ abstract class Builder
     }
 
     /**
-     * 取得当前的Query对象实例
+     * 取得当前的Query對象实例
      * @access public
      * @return Query
      */
@@ -78,7 +78,7 @@ abstract class Builder
      * 資料分析
      * @access protected
      * @param array     $data 資料
-     * @param array     $options 查詢参数
+     * @param array     $options 查詢参數
      * @return array
      * @throws Exception
      */
@@ -107,7 +107,7 @@ abstract class Builder
                 $result[$item] = $val->getValue();
                 continue;
             } elseif (is_object($val) && method_exists($val, '__toString')) {
-                // 对象資料写入
+                // 對象資料写入
                 $val = $val->__toString();
             }
             if (false === strpos($key, '.') && !in_array($key, $fields, true)) {
@@ -232,7 +232,7 @@ abstract class Builder
      * where分析
      * @access protected
      * @param mixed $where   查詢條件
-     * @param array $options 查詢参数
+     * @param array $options 查詢参數
      * @return string
      */
     protected function parseWhere($where, $options)
@@ -250,7 +250,7 @@ abstract class Builder
     }
 
     /**
-     * 生成查詢條件SQL
+     * 產生查詢條件SQL
      * @access public
      * @param mixed     $where
      * @param array     $options
@@ -298,7 +298,7 @@ abstract class Builder
                     }
                     $str[] = ' ' . $key . ' ( ' . implode(' AND ', $item) . ' )';
                 } else {
-                    // 对字段使用表达式查詢
+                    // 對字段使用表达式查詢
                     $field = is_string($field) ? $field : '';
                     $str[] = ' ' . $key . ' ' . $this->parseWhereItem($field, $value, $key, $options, $binds);
                 }
@@ -310,7 +310,7 @@ abstract class Builder
         return $whereStr;
     }
 
-    // where子单元分析
+    // where子單元分析
     protected function parseWhereItem($field, $val, $rule = '', $options = [], $binds = [], $bindName = null)
     {
         // 字段分析
@@ -322,7 +322,7 @@ abstract class Builder
         }
         list($exp, $value) = $val;
 
-        // 对一个字段使用多个查詢條件
+        // 對一个字段使用多个查詢條件
         if (is_array($exp)) {
             $item = array_pop($val);
             // 传入 or 或者 and
@@ -349,14 +349,14 @@ abstract class Builder
         }
         $bindName = $bindName ?: 'where_' . $rule . '_' . str_replace(['.', '-'], '_', $field);
         if (preg_match('/\W/', $bindName)) {
-            // 处理带非单词字符的字段名
+            // 处理带非單词字符的字段名
             $bindName = md5($bindName);
         }
 
         if ($value instanceof Expression) {
 
         } elseif (is_object($value) && method_exists($value, '__toString')) {
-            // 对象資料写入
+            // 對象資料写入
             $value = $value->__toString();
         }
 
@@ -476,7 +476,7 @@ abstract class Builder
     }
 
     /**
-     * 日期时间條件解析
+     * 日期時間條件解析
      * @access protected
      * @param string    $value
      * @param string    $key
@@ -487,7 +487,7 @@ abstract class Builder
      */
     protected function parseDateTime($value, $key, $options = [], $bindName = null, $bindType = null)
     {
-        // 取得时间字段类型
+        // 取得時間字段类型
         if (strpos($key, '.')) {
             list($table, $key) = explode('.', $key);
             if (isset($options['alias']) && $pos = array_search($table, $options['alias'])) {
@@ -506,10 +506,10 @@ abstract class Builder
             }
 
             if (preg_match('/(datetime|timestamp)/is', $info)) {
-                // 日期及时间戳类型
+                // 日期及時間戳类型
                 $value = date('Y-m-d H:i:s', $value);
             } elseif (preg_match('/(date)/is', $info)) {
-                // 日期及时间戳类型
+                // 日期及時間戳类型
                 $value = date('Y-m-d', $value);
             }
         }
@@ -687,7 +687,7 @@ abstract class Builder
     }
 
     /**
-     * 设置锁机制
+     * 設定锁机制
      * @access protected
      * @param bool|string $lock
      * @return string
@@ -702,7 +702,7 @@ abstract class Builder
     }
 
     /**
-     * 生成查詢SQL
+     * 產生查詢SQL
      * @access public
      * @param array $options 表达式
      * @return string
@@ -730,7 +730,7 @@ abstract class Builder
     }
 
     /**
-     * 生成insert SQL
+     * 產生insert SQL
      * @access public
      * @param array     $data 資料
      * @param array     $options 表达式
@@ -761,7 +761,7 @@ abstract class Builder
     }
 
     /**
-     * 生成insertall SQL
+     * 產生insertall SQL
      * @access public
      * @param array     $dataSet 資料集
      * @param array     $options 表达式
@@ -790,7 +790,7 @@ abstract class Builder
                 } elseif (is_scalar($val)) {
                     $data[$key] = $this->parseValue($val, $key);
                 } elseif (is_object($val) && method_exists($val, '__toString')) {
-                    // 对象資料写入
+                    // 對象資料写入
                     $data[$key] = $val->__toString();
                 } else {
                     // 过滤掉非标量資料
@@ -821,7 +821,7 @@ abstract class Builder
     }
 
     /**
-     * 生成select insert SQL
+     * 產生select insert SQL
      * @access public
      * @param array     $fields 資料
      * @param string    $table 資料表
@@ -840,7 +840,7 @@ abstract class Builder
     }
 
     /**
-     * 生成update SQL
+     * 產生update SQL
      * @access public
      * @param array     $data 資料
      * @param array     $options 表达式
@@ -874,7 +874,7 @@ abstract class Builder
     }
 
     /**
-     * 生成delete SQL
+     * 產生delete SQL
      * @access public
      * @param array $options 表达式
      * @return string

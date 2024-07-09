@@ -3452,7 +3452,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  zh_cn: {
-	    ios: '如要把应用程式加至主屏幕,请点击%icon, 然后<strong>加至主屏幕</strong>',
+	    ios: '如要把应用程式加至主屏幕,請點擊%icon, 然后<strong>加至主屏幕</strong>',
 	    android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon <span class="ath-action-icon">icon</span>.</small>'
 	  },
 
@@ -4332,7 +4332,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$element
 	    .one(UI.support.transition.end, $.proxy(complete, this))
 	    .emulateTransitionEnd(300)
-	    .css({height: scrollHeight}); // 当折叠的容器有 padding 时，如果用 height() 只能设置内容的宽度
+	    .css({height: scrollHeight}); // 当折叠的容器有 padding 时，如果用 height() 只能設定内容的宽度
 	};
 
 	Collapse.prototype.close = function() {
@@ -4433,8 +4433,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.collapse = Collapse;
 
 	// TODO: 更好的 target 選擇方式
-	//       折叠的容器必须没有 border/padding 才能正常处理，否则动画会有一些小問題
-	//       寻找更好的未知高度 transition 动画解决方案，max-height 之类的就算了
+	//       折叠的容器必须没有 border/padding 才能正常处理，否则動画会有一些小問題
+	//       寻找更好的未知高度 transition 動画解决方案，max-height 之类的就算了
 
 
 /***/ },
@@ -5121,7 +5121,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UI.datepicker = Datepicker;
 
-	// TODO: 1. 载入动画
+	// TODO: 1. 载入動画
 	//       2. less 优化
 
 
@@ -8072,7 +8072,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // callback hook
 	  relatedTarget && (this.relatedTarget = relatedTarget);
 
-	  // 判断如果还在动画，就先触发之前的closed事件
+	  // 判断如果还在動画，就先触发之前的closed事件
 	  if (this.transitioning) {
 	    clearTimeout($element.transitionEndTimmer);
 	    $element.transitionEndTimmer = null;
@@ -8139,7 +8139,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var options = this.options;
 	  var isPopup = this.isPopup;
 
-	  // 判断如果还在动画，就先触发之前的opened事件
+	  // 判断如果还在動画，就先触发之前的opened事件
 	  if (this.transitioning) {
 	    clearTimeout($element.transitionEndTimmer);
 	    $element.transitionEndTimmer = null;
@@ -8485,7 +8485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UI.offcanvas = OffCanvas;
 
-	// TODO: 优化动画效果
+	// TODO: 优化動画效果
 	// http://dbushell.github.io/Responsive-Off-Canvas-Menu/step4.html
 
 
@@ -10043,7 +10043,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  target: 'img',
 
 	  // 微信 Webview 中调用微信的图片浏览器
-	  // 实现图片保存、分享好友、收藏图片等功能
+	  // 實現图片保存、分享好友、收藏图片等功能
 	  weChatImagePreview: true
 	};
 
@@ -10373,10 +10373,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = PureView;
 
-	// TODO: 1. 动画改进
+	// TODO: 1. 動画改进
 	//       2. 改变图片的时候恢复 Zoom
 	//       3. 选项
-	//       4. 图片高度問題：由于 PinchZoom 的原因，过高的图片如果设置看了滚动，则放大以后显示不全
+	//       4. 图片高度問題：由于 PinchZoom 的原因，过高的图片如果設定看了滚動，则放大以后显示不全
 
 
 /***/ },
@@ -10605,7 +10605,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = ScrollSpyNav;
 
 	// TODO: 1. 算法改进
-	//       2. 多级菜单支持
+	//       2. 多级選單支持
 	//       3. smooth scroll pushState
 
 
@@ -10792,7 +10792,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  dropUp: 0,
 	  maxHeight: null,
 	  maxChecked: null,
-	  placeholder: '点击選擇...',
+	  placeholder: '點擊選擇...',
 	  selectedClass: 'am-checked',
 	  disabledClass: 'am-disabled',
 	  searchBox: false,
@@ -10937,7 +10937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $optgroup = $element.find('optgroup');
 	  this.$originalOptions = this.$element.find('option');
 
-	  // 单选框使用 JS 禁用已经選擇的 option 以后，
+	  // 單选框使用 JS 禁用已经選擇的 option 以后，
 	  // 浏览器会重新选定第一个 option，但有一定延迟，致使 JS 取得 value 时返回 null
 	  if (!this.multiple && ($element.val() === null)) {
 	    this.$originalOptions.length &&
@@ -11225,11 +11225,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    icon: 'weibo'
 	  },
 	  // url          連結地址
-	  // title:”,     分享的文字内容(可选，默认为所在頁面的title)
-	  // appkey:”,    您申请的应用appkey,显示分享来源(可选)
+	  // title:”,     分享的文字内容(可选，默认為所在頁面的title)
+	  // appkey:”,    您申請的应用appkey,显示分享来源(可选)
 	  // pic:”,       分享图片的路径(可选)
 	  // ralateUid:”, 关联使用者的UID，分享微博会@该使用者(可选)
-	  // NOTE: 会自动抓取图片，不用指定 pic
+	  // NOTE: 会自動抓取图片，不用指定 pic
 
 	  qq: {
 	    title: 'QQ 好友',
@@ -11240,12 +11240,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // title:'',    分享标题(可选)
 	  // pics:'',     分享图片的路径(可选)
 	  // summary:'',  分享摘要(可选)
-	  // site:'',     分享来源 如：腾讯网(可选)
+	  // site:'',     分享来源 如：腾讯網(可选)
 	  // desc: ''     发送给使用者的消息
 	  // NOTE: 经过测试，最终发给使用者的只有 url 和 desc
 
 	  qzone: {
-	    title: 'QQ 空间',
+	    title: 'QQ 空間',
 	    url: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey',
 	    icon: 'star'
 	  },
@@ -11254,8 +11254,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // title:'',    分享标题(可选)
 	  // desc:'',     默认分享理由(可选)
 	  // summary:'',  分享摘要(可选)
-	  // site:'',     分享来源 如：腾讯网(可选)
-	  // pics:'',     分享图片的路径(可选)，不会自动抓取，多个图片用|分隔
+	  // site:'',     分享来源 如：腾讯網(可选)
+	  // pics:'',     分享图片的路径(可选)，不会自動抓取，多个图片用|分隔
 
 	  tqq: {
 	    title: '腾讯微博',
@@ -11267,18 +11267,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // title
 	  // pic 多个图片用 | 分隔
 	  // appkey
-	  // NOTE: 不会自动抓取图片
+	  // NOTE: 不会自動抓取图片
 
 	  wechat: {
 	    title: '微信',
 	    url: '[qrcode]',
 	    icon: 'wechat'
 	  },
-	  // 生成一个二维码 供使用者扫描
-	  // 相关接口 https://github.com/zxlie/WeixinApi
+	  // 產生一个二维碼 供使用者扫描
+	  // 相關接口 https://github.com/zxlie/WeixinApi
 
 	  renren: {
-	    title: '人人网',
+	    title: '人人網',
 	    url: 'http://widget.renren.com/dialog/share',
 	    icon: 'renren'
 	  },
@@ -11286,11 +11286,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // 550 * 400
 	  // resourceUrl : '', // 分享的资源Url
 	  // srcUrl : '',	     // 分享的资源来源Url,
-	  //                   //   默认为header中的Referer,如果分享失敗可以调整此值为resourceUrl试试
-	  // pic : '',		 // 分享的主题图片，会自动抓取
+	  //                   //   默认為header中的Referer,如果分享失敗可以调整此值為resourceUrl试试
+	  // pic : '',		 // 分享的主题图片，会自動抓取
 	  // title : '',		 // 分享的标题
 	  // description : ''	 // 分享的详细描述
-	  // NOTE: 经过测试，直接使用 url 参数即可
+	  // NOTE: 经过测试，直接使用 url 参數即可
 
 	  douban: {
 	    title: '豆瓣',
@@ -11491,8 +11491,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    '<div class="am-modal-bd">' +
 	    '<div class="am-share-wx-qr"></div>' +
 	    '<div class="am-share-wechat-tip">' +
-	    '打开微信，点击底部的<em>发现</em>，<br/> ' +
-	    '使用<em>扫一扫</em>将网頁分享至朋友圈</div></div></div></div>');
+	    '打開微信，點擊底部的<em>发现</em>，<br/> ' +
+	    '使用<em>扫一扫</em>将網頁分享至朋友圈</div></div></div></div>');
 
 	    $qr.attr('id', qrId);
 
@@ -11542,18 +11542,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	var qrcodeAlgObjCache = [];
 
 	/**
-	 * 二维码构造函数，主要用于绘制
-	 * @param  {Object} opt 传递参数
+	 * 二维碼构造函數，主要用于绘制
+	 * @param  {Object} opt 传递参數
 	 * @return {String} qrcode
 	 * @constructor
 	 */
 	var QRCode = function(opt) {
-	  if (typeof opt === 'string') { // 只编码ASCII字符串
+	  if (typeof opt === 'string') { // 只编碼ASCII字符串
 	    opt = {
 	      text: opt
 	    };
 	  }
-	  // 设置默认参数
+	  // 設定默认参數
 	  this.options = $.extend({}, {
 	    text: "",
 	    render: "",
@@ -11564,7 +11564,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    foreground: "#000000"
 	  }, opt);
 
-	  // 使用QRCodeAlg创建二维码结构
+	  // 使用QRCodeAlg建立二维碼结构
 	  var qrCodeAlg = null;
 	  for (var i = 0, l = qrcodeAlgObjCache.length; i < l; i++) {
 	    if (qrcodeAlgObjCache[i].text == this.options.text && qrcodeAlgObjCache[i].text.correctLevel == this.options.correctLevel) {
@@ -11596,7 +11596,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return this.createDefault(qrCodeAlg);
 	};
 	/**
-	 * 使用Canvas来画二维码
+	 * 使用Canvas来画二维碼
 	 * @return {}
 	 */
 
@@ -11609,13 +11609,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return this.createTable(qrCodeAlg);
 	};
 	QRCode.prototype.createCanvas = function(qrCodeAlg) {
-	  //创建canvas节点
+	  //建立canvas节點
 	  var canvas = document.createElement('canvas');
 	  canvas.width = this.options.width;
 	  canvas.height = this.options.height;
 	  var ctx = canvas.getContext('2d');
 
-	  //计算每个点的长宽
+	  //计算每个點的長宽
 	  var tileW = (this.options.width / qrCodeAlg.getModuleCount()).toPrecision(4);
 	  var tileH = this.options.height / qrCodeAlg.getModuleCount().toPrecision(4);
 
@@ -11628,20 +11628,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	      ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h);
 	    }
 	  }
-	  //返回绘制的节点
+	  //返回绘制的节點
 	  return canvas;
 	};
 	/**
-	 * 使用table来绘制二维码
+	 * 使用table来绘制二维碼
 	 * @return {}
 	 */
 	QRCode.prototype.createTable = function(qrCodeAlg) {
-	  //创建table节点
+	  //建立table节點
 	  var s = [];
 	  s.push('<table style="border:0px; margin:0px; padding:0px; border-collapse:collapse; background-color: ' +
 	  this.options.background +
 	  ';">');
-	  // 计算每个节点的长宽；取整，防止点之间出现分离
+	  // 计算每个节點的長宽；取整，防止點之间出现分离
 	  var tileW = -1, tileH = -1, caculateW = -1, caculateH = -1;
 	  tileW = caculateW = Math.floor(this.options.width / qrCodeAlg.getModuleCount());
 	  tileH = caculateH = Math.floor(this.options.height / qrCodeAlg.getModuleCount());
@@ -11660,7 +11660,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 
-	  // 绘制二维码
+	  // 绘制二维碼
 	  foreTd = '<td style="border:0px; margin:0px; padding:0px; width:' + tileW + 'px; background-color: ' + this.options.foreground + '"></td>',
 	    backTd = '<td style="border:0px; margin:0px; padding:0px; width:' + tileW + 'px; background-color: ' + this.options.background + '"></td>',
 	    l = qrCodeAlg.getModuleCount();
@@ -11680,7 +11680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * 使用SVG开绘制二维码
+	 * 使用SVG開绘制二维碼
 	 * @return {}
 	 */
 	QRCode.prototype.createSVG = function(qrCodeAlg) {
@@ -11721,7 +11721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * 取得单个字符的utf8编码
+	 * 取得單个字符的utf8编碼
 	 * unicode BMP平面约65535个字符
 	 * @param {num} code
 	 * return {array}
@@ -11745,7 +11745,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * 取得字符串的utf8编码字节串
+	 * 取得字符串的utf8编碼字节串
 	 * @param {string} string
 	 * @return {array}
 	 */
@@ -11762,8 +11762,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * 二维码算法实现
-	 * @param {string} data              要编码的訊息字符串
+	 * 二维碼算法實現
+	 * @param {string} data              要编碼的訊息字符串
 	 * @param {num} errorCorrectLevel 纠错等级
 	 */
 	function QRCodeAlg(data, errorCorrectLevel) {
@@ -11782,14 +11782,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	QRCodeAlg.prototype = {
 	  constructor: QRCodeAlg,
 	  /**
-	   * 取得二维码矩阵大小
+	   * 取得二维碼矩阵大小
 	   * @return {num} 矩阵大小
 	   */
 	  getModuleCount: function() {
 	    return this.moduleCount;
 	  },
 	  /**
-	   * 编码
+	   * 编碼
 	   */
 	  make: function() {
 	    this.getRightType();
@@ -11797,7 +11797,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.createQrcode();
 	  },
 	  /**
-	   * 设置二位矩阵功能图形
+	   * 設定二位矩阵功能图形
 	   * @param  {bool} test 表示是否在寻找最好掩膜阶段
 	   * @param  {num} maskPattern 掩膜的版本
 	   */
@@ -11824,7 +11824,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.mapData(this.dataCache, maskPattern);
 	  },
 	  /**
-	   * 设置二维码的位置探测图形
+	   * 設定二维碼的位置探测图形
 	   * @param  {num} row 探测图形的中心横坐标
 	   * @param  {num} col 探测图形的中心纵坐标
 	   */
@@ -11847,7 +11847,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 创建二维码
+	   * 建立二维碼
 	   * @return {[type]} [description]
 	   */
 	  createQrcode: function() {
@@ -11876,7 +11876,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 设置定位图形
+	   * 設定定位图形
 	   * @return {[type]} [description]
 	   */
 	  setupTimingPattern: function() {
@@ -11894,7 +11894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置矫正图形
+	   * 設定矫正图形
 	   * @return {[type]} [description]
 	   */
 	  setupPositionAdjustPattern: function() {
@@ -11927,7 +11927,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置版本訊息（7以上版本才有）
+	   * 設定版本訊息（7以上版本才有）
 	   * @param  {bool} test 是否处于判断最佳掩膜阶段
 	   * @return {[type]}      [description]
 	   */
@@ -11942,7 +11942,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置格式訊息（纠错等级和掩膜版本）
+	   * 設定格式訊息（纠错等级和掩膜版本）
 	   * @param  {bool} test
 	   * @param  {num} maskPattern 掩膜版本
 	   * @return {}
@@ -11982,7 +11982,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 資料编码
+	   * 資料编碼
 	   * @return {[type]} [description]
 	   */
 	  createData: function() {
@@ -12018,8 +12018,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return this.createBytes(buffer);
 	  },
 	  /**
-	   * 纠错码编码
-	   * @param  {buffer} buffer 資料编码
+	   * 纠错碼编碼
+	   * @param  {buffer} buffer 資料编碼
 	   * @return {[type]}
 	   */
 	  createBytes: function(buffer) {
@@ -12160,7 +12160,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	//---------------------------------------------------------------------
-	// 纠错等级对应的编码
+	// 纠错等级對应的编碼
 	//---------------------------------------------------------------------
 
 	var QRErrorCorrectLevel = [1, 0, 3, 2];
@@ -12237,7 +12237,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  G15_MASK: (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1),
 
 	  /*
-	   BCH编码格式訊息
+	   BCH编碼格式訊息
 	   */
 	  getBCHTypeInfo: function(data) {
 	    var d = data << 10;
@@ -12247,7 +12247,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ((data << 10) | d) ^ QRUtil.G15_MASK;
 	  },
 	  /*
-	   BCH编码版本訊息
+	   BCH编碼版本訊息
 	   */
 	  getBCHTypeNumber: function(data) {
 	    var d = data << 12;
@@ -12271,7 +12271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return digit;
 	  },
 	  /*
-	   取得版本对应的矫正图形位置
+	   取得版本對应的矫正图形位置
 	   */
 	  getPatternPosition: function(typeNumber) {
 	    return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
@@ -12318,7 +12318,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return a;
 	  },
 	  /*
-	   取得评价
+	   取得評價
 	   */
 	  getLostPoint: function(qrCode) {
 
@@ -12335,7 +12335,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var current = qrCode.modules[row][col];
 
-	        //level 3 评价
+	        //level 3 評價
 	        if (col < moduleCount - 6) {
 	          if (current && !qrCode.modules[row][col + 1] && qrCode.modules[row][col + 2] && qrCode.modules[row][col + 3] && qrCode.modules[row][col + 4] && !qrCode.modules[row][col + 5] && qrCode.modules[row][col + 6]) {
 	            if (col < moduleCount - 10) {
@@ -12351,7 +12351,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 
-	        //level 2 评价
+	        //level 2 評價
 	        if ((row < moduleCount - 1) && (col < moduleCount - 1)) {
 	          var count = 0;
 	          if (current) count++;
@@ -12363,7 +12363,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 
-	        //level 1 评价
+	        //level 1 評價
 	        if (head ^ current) {
 	          sameCount++;
 	        } else {
@@ -12374,7 +12374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          sameCount = 1;
 	        }
 
-	        //level 4 评价
+	        //level 4 評價
 	        if (current) {
 	          darkCount++;
 	        }
@@ -12391,7 +12391,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var current = qrCode.modules[row][col];
 
-	        //level 3 评价
+	        //level 3 評價
 	        if (row < moduleCount - 6) {
 	          if (current && !qrCode.modules[row + 1][col] && qrCode.modules[row + 2][col] && qrCode.modules[row + 3][col] && qrCode.modules[row + 4][col] && !qrCode.modules[row + 5][col] && qrCode.modules[row + 6][col]) {
 	            if (row < moduleCount - 10) {
@@ -12406,7 +12406,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 
-	        //level 1 评价
+	        //level 1 評價
 	        if (head ^ current) {
 	          sameCount++;
 	        } else {
@@ -12432,12 +12432,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	//---------------------------------------------------------------------
-	// QRMath使用的数学工具
+	// QRMath使用的數学工具
 	//---------------------------------------------------------------------
 
 	var QRMath = {
 	  /*
-	   将n转化为a^m
+	   将n转化為a^m
 	   */
 	  glog: function(n) {
 
@@ -12448,7 +12448,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return QRMath.LOG_TABLE[n];
 	  },
 	  /*
-	   将a^m转化为n
+	   将a^m转化為n
 	   */
 	  gexp: function(n) {
 
@@ -12484,7 +12484,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//---------------------------------------------------------------------
 	/**
 	 * 多项式类
-	 * @param {Array} num   系数
+	 * @param {Array} num   系數
 	 * @param {num} shift a^shift
 	 */
 	function QRPolynomial(num, shift) {
@@ -12564,7 +12564,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// RS_BLOCK_TABLE
 	//---------------------------------------------------------------------
 	/*
-	 二维码各个版本訊息[块数, 每块中的資料块数, 每块中的訊息块数]
+	 二维碼各个版本訊息[块數, 每块中的資料块數, 每块中的訊息块數]
 	 */
 	var RS_BLOCK_TABLE = [
 
@@ -12815,7 +12815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 	/**
-	 * 根据資料取得对应版本
+	 * 根據資料取得對应版本
 	 * @return {[type]} [description]
 	 */
 	QRCodeAlg.prototype.getRightType = function() {
@@ -12879,7 +12879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	/**
-	 * 取得单个字符的utf8编码
+	 * 取得單个字符的utf8编碼
 	 * unicode BMP平面约65535个字符
 	 * @param {num} code
 	 * return {array}
@@ -12903,7 +12903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * 取得字符串的utf8编码字节串
+	 * 取得字符串的utf8编碼字节串
 	 * @param {string} string
 	 * @return {array}
 	 */
@@ -12920,8 +12920,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * 二维码算法实现
-	 * @param {string} data              要编码的訊息字符串
+	 * 二维碼算法實現
+	 * @param {string} data              要编碼的訊息字符串
 	 * @param {num} errorCorrectLevel 纠错等级
 	 */
 	function QRCodeAlg(data, errorCorrectLevel) {
@@ -12940,14 +12940,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	QRCodeAlg.prototype = {
 	  constructor: QRCodeAlg,
 	  /**
-	   * 取得二维码矩阵大小
+	   * 取得二维碼矩阵大小
 	   * @return {num} 矩阵大小
 	   */
 	  getModuleCount: function() {
 	    return this.moduleCount;
 	  },
 	  /**
-	   * 编码
+	   * 编碼
 	   */
 	  make: function() {
 	    this.getRightType();
@@ -12955,7 +12955,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.createQrcode();
 	  },
 	  /**
-	   * 设置二位矩阵功能图形
+	   * 設定二位矩阵功能图形
 	   * @param  {bool} test 表示是否在寻找最好掩膜阶段
 	   * @param  {num} maskPattern 掩膜的版本
 	   */
@@ -12982,7 +12982,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.mapData(this.dataCache, maskPattern);
 	  },
 	  /**
-	   * 设置二维码的位置探测图形
+	   * 設定二维碼的位置探测图形
 	   * @param  {num} row 探测图形的中心横坐标
 	   * @param  {num} col 探测图形的中心纵坐标
 	   */
@@ -13005,7 +13005,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 创建二维码
+	   * 建立二维碼
 	   * @return {[type]} [description]
 	   */
 	  createQrcode: function() {
@@ -13034,7 +13034,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 设置定位图形
+	   * 設定定位图形
 	   * @return {[type]} [description]
 	   */
 	  setupTimingPattern: function() {
@@ -13052,7 +13052,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置矫正图形
+	   * 設定矫正图形
 	   * @return {[type]} [description]
 	   */
 	  setupPositionAdjustPattern: function() {
@@ -13085,7 +13085,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置版本訊息（7以上版本才有）
+	   * 設定版本訊息（7以上版本才有）
 	   * @param  {bool} test 是否处于判断最佳掩膜阶段
 	   * @return {[type]}      [description]
 	   */
@@ -13100,7 +13100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 设置格式訊息（纠错等级和掩膜版本）
+	   * 設定格式訊息（纠错等级和掩膜版本）
 	   * @param  {bool} test
 	   * @param  {num} maskPattern 掩膜版本
 	   * @return {}
@@ -13140,7 +13140,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 資料编码
+	   * 資料编碼
 	   * @return {[type]} [description]
 	   */
 	  createData: function() {
@@ -13176,8 +13176,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return this.createBytes(buffer);
 	  },
 	  /**
-	   * 纠错码编码
-	   * @param  {buffer} buffer 資料编码
+	   * 纠错碼编碼
+	   * @param  {buffer} buffer 資料编碼
 	   * @return {[type]}
 	   */
 	  createBytes: function(buffer) {
@@ -13318,7 +13318,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	//---------------------------------------------------------------------
-	// 纠错等级对应的编码
+	// 纠错等级對应的编碼
 	//---------------------------------------------------------------------
 
 	var QRErrorCorrectLevel = [1, 0, 3, 2];
@@ -13395,7 +13395,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  G15_MASK: (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1),
 
 	  /*
-	   BCH编码格式訊息
+	   BCH编碼格式訊息
 	   */
 	  getBCHTypeInfo: function(data) {
 	    var d = data << 10;
@@ -13405,7 +13405,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ((data << 10) | d) ^ QRUtil.G15_MASK;
 	  },
 	  /*
-	   BCH编码版本訊息
+	   BCH编碼版本訊息
 	   */
 	  getBCHTypeNumber: function(data) {
 	    var d = data << 12;
@@ -13429,7 +13429,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return digit;
 	  },
 	  /*
-	   取得版本对应的矫正图形位置
+	   取得版本對应的矫正图形位置
 	   */
 	  getPatternPosition: function(typeNumber) {
 	    return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
@@ -13476,7 +13476,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return a;
 	  },
 	  /*
-	   取得评价
+	   取得評價
 	   */
 	  getLostPoint: function(qrCode) {
 
@@ -13493,7 +13493,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var current = qrCode.modules[row][col];
 
-	        //level 3 评价
+	        //level 3 評價
 	        if (col < moduleCount - 6) {
 	          if (current && !qrCode.modules[row][col + 1] && qrCode.modules[row][col + 2] && qrCode.modules[row][col + 3] && qrCode.modules[row][col + 4] && !qrCode.modules[row][col + 5] && qrCode.modules[row][col + 6]) {
 	            if (col < moduleCount - 10) {
@@ -13509,7 +13509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 
-	        //level 2 评价
+	        //level 2 評價
 	        if ((row < moduleCount - 1) && (col < moduleCount - 1)) {
 	          var count = 0;
 	          if (current) count++;
@@ -13521,7 +13521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 
-	        //level 1 评价
+	        //level 1 評價
 	        if (head ^ current) {
 	          sameCount++;
 	        } else {
@@ -13532,7 +13532,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          sameCount = 1;
 	        }
 
-	        //level 4 评价
+	        //level 4 評價
 	        if (current) {
 	          darkCount++;
 	        }
@@ -13549,7 +13549,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var current = qrCode.modules[row][col];
 
-	        //level 3 评价
+	        //level 3 評價
 	        if (row < moduleCount - 6) {
 	          if (current && !qrCode.modules[row + 1][col] && qrCode.modules[row + 2][col] && qrCode.modules[row + 3][col] && qrCode.modules[row + 4][col] && !qrCode.modules[row + 5][col] && qrCode.modules[row + 6][col]) {
 	            if (row < moduleCount - 10) {
@@ -13564,7 +13564,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 
-	        //level 1 评价
+	        //level 1 評價
 	        if (head ^ current) {
 	          sameCount++;
 	        } else {
@@ -13590,12 +13590,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	//---------------------------------------------------------------------
-	// QRMath使用的数学工具
+	// QRMath使用的數学工具
 	//---------------------------------------------------------------------
 
 	var QRMath = {
 	  /*
-	   将n转化为a^m
+	   将n转化為a^m
 	   */
 	  glog: function(n) {
 
@@ -13606,7 +13606,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return QRMath.LOG_TABLE[n];
 	  },
 	  /*
-	   将a^m转化为n
+	   将a^m转化為n
 	   */
 	  gexp: function(n) {
 
@@ -13642,7 +13642,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//---------------------------------------------------------------------
 	/**
 	 * 多项式类
-	 * @param {Array} num   系数
+	 * @param {Array} num   系數
 	 * @param {num} shift a^shift
 	 */
 	function QRPolynomial(num, shift) {
@@ -13722,7 +13722,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// RS_BLOCK_TABLE
 	//---------------------------------------------------------------------
 	/*
-	 二维码各个版本訊息[块数, 每块中的資料块数, 每块中的訊息块数]
+	 二维碼各个版本訊息[块數, 每块中的資料块數, 每块中的訊息块數]
 	 */
 	RS_BLOCK_TABLE = [
 
@@ -13973,7 +13973,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 	/**
-	 * 根据資料取得对应版本
+	 * 根據資料取得對应版本
 	 * @return {[type]} [description]
 	 */
 	QRCodeAlg.prototype.getRightType = function() {
@@ -14234,7 +14234,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /*
 	     if (offsetBottom) {
-	     // （底部边距 + 元素高度 > 窗口高度） 时定位到底部
+	     // （底部边距 + 元素高度 > 視窗高度） 时定位到底部
 	     if ((offsetBottom + this.offset.height > $(window).height()) &&
 	     (scrollTop + $(window).height() >= scrollHeight - offsetBottom)) {
 	     $element.addClass(options.className.stickyBtm).
@@ -14738,18 +14738,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Validator.validationMessages = {
 	  zh_CN: {
-	    valueMissing: '请填写（選擇）此字段',
+	    valueMissing: '請填写（選擇）此字段',
 	    customError: {
 	      tooShort: '至少填写 %s 个字符',
 	      checkedOverflow: '至多選擇 %s 项',
 	      checkedUnderflow: '至少選擇 %s 项'
 	    },
-	    patternMismatch: '请按照要求的格式填写',
-	    rangeOverflow: '请填写小于等于 %s 的值',
-	    rangeUnderflow: '请填写大于等于 %s 的值',
+	    patternMismatch: '請按照要求的格式填写',
+	    rangeOverflow: '請填写小于等于 %s 的值',
+	    rangeUnderflow: '請填写大于等于 %s 的值',
 	    stepMismatch: '',
 	    tooLong: '至多填写 %s 个字符',
-	    typeMismatch: '请按照要求的类型填写'
+	    typeMismatch: '請按照要求的类型填写'
 	  }
 	};
 
@@ -16037,14 +16037,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }).attr('src', 'http://api.map.baidu.com/getscript' +
 	  '?type=quick&file=api&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');
 
-	  // jQuery 中 `load` 事件触发有問題，动态设置 src 属性才会触发 `load` 事件
+	  // jQuery 中 `load` 事件触发有問題，動态設定 src 属性才会触发 `load` 事件
 	  // $mapApi0 = $('<script />', {src: 'xxx'}); 这样的写法在 Zepto.js 中则没有問題
 	}
 
 	function addBdMap() {
 	  // 如果使用 $ 選擇符，minify 以后会报错: $ is undefined
-	  // 即使传入 $ 也無效，改为使用原生方法
-	  // 这个函数作为 callback 会插入到 body 以后才执行，应该是 $ 引用错误导致
+	  // 即使传入 $ 也無效，改為使用原生方法
+	  // 这个函數作為 callback 会插入到 body 以后才执行，应该是 $ 引用錯誤导致
 	  var content = document.querySelector('.am-map');
 	  var defaultLng = 116.331398; // 经度默认值
 	  var defaultLat = 39.897445;  // 纬度默认值
@@ -16057,7 +16057,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  var map = new BMap.Map('bd-map');
 
-	  // 实例化一个地理坐标点
+	  // 实例化一个地理坐标點
 	  var point = new BMap.Point(lng, lat);
 
 	  // 设初始化地图, options: 3-18
@@ -16073,47 +16073,47 @@ return /******/ (function(modules) { // webpackBootstrap
 	    map.addControl(new BMap.ScaleControl());
 	  }
 
-	  // 创建标准与自定义 icon
+	  // 建立标准与自訂 icon
 	  var marker = new BMap.Marker(point);
 	  if (icon) {
 	    marker.setIcon(new BMap.Icon(icon, new BMap.Size(40, 40)));
 	  }
 
 	  var opts = {
-	    width: 200,     // 訊息窗口宽度
-	    // height: 'auto',     // 訊息窗口高度
-	    title: name // 訊息窗口标题
+	    width: 200,     // 訊息視窗宽度
+	    // height: 'auto',     // 訊息視窗高度
+	    title: name // 訊息視窗标题
 	  };
 
-	  // 创建訊息窗口对象
+	  // 建立訊息視窗對象
 	  var infoWindow = new BMap.InfoWindow('地址：' + address, opts);
 
-	  // 创建地址解析器实例
+	  // 建立地址解析器实例
 	  var myGeo = new BMap.Geocoder();
 
 	  // 判断有没有使用经纬度
 	  if (lng == defaultLng && lat == defaultLat) {
-	    // 使用地址反解析来设置地图
+	    // 使用地址反解析来設定地图
 	    // 将地址解析结果显示在地图上,并调整地图视野
 	    myGeo.getPoint(address, function(point) {
 	      if (point) {
 	        map.centerAndZoom(point, setZoom);
 	        marker.setPosition(point);
 	        map.addOverlay(marker);
-	        map.openInfoWindow(infoWindow, point); // 開啟訊息窗口
+	        map.openInfoWindow(infoWindow, point); // 開啟訊息視窗
 	      }
 	    }, '');
 
 	  } else {
-	    // 使用经纬度来设置地图
+	    // 使用经纬度来設定地图
 	    myGeo.getLocation(point, function(result) {
 	      map.centerAndZoom(point, setZoom);
 	      marker.setPosition(point);
 	      map.addOverlay(marker);
 	      if (address) {
-	        map.openInfoWindow(infoWindow, point); // 開啟訊息窗口
+	        map.openInfoWindow(infoWindow, point); // 開啟訊息視窗
 	      } else {
-	        map.openInfoWindow(new BMap.InfoWindow(address, opts), point); // 開啟訊息窗口
+	        map.openInfoWindow(new BMap.InfoWindow(address, opts), point); // 開啟訊息視窗
 	      }
 	    });
 	  }
@@ -16286,7 +16286,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var dir = $(this).index() > prevIndex;
 	      var target = $(this)[dir ? 'next' : 'prev']();
 
-	      // 点击的按钮，显示一半
+	      // 點擊的按钮，显示一半
 	      var offset = target.offset() || $(this).offset();
 	      var within = $this.offset();
 
@@ -16361,7 +16361,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  '<span class="am-icon-angle-up"></span>' +
 	  '<span class="am-navbar-label">更多</span></a></li>');
 
-	  // 如果有 Fix 的工具栏则设置 body 的 padding-bottom
+	  // 如果有 Fix 的工具栏则設定 body 的 padding-bottom
 	  if ($navBar.css('position') == 'fixed') {
 	    $body.addClass('am-with-fixed-navbar');
 	  }
@@ -16380,7 +16380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	      var $qrContainer = $qrModal.find('.am-modal-bd');
 
-	      // 判断上传自定义的二维码没有，否则生成二维码
+	      // 判断上传自訂的二维碼没有，否则產生二维碼
 	      if (qrImg) {
 	        $qrContainer.html('<img src="' + qrImg + '"/>');
 	      } else {
@@ -16453,7 +16453,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  /**
-	   * 计算最适合显示的條目个数
+	   * 计算最适合显示的條目个數
 	   * @returns {number}
 	   */
 	  function calcSuiteItems() {
@@ -16514,8 +16514,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(20);
 
 	/**
-	 * 表格滚动
-	 * @param {number} index ID 标识，多个 paragraph 里面多个 table
+	 * 表格滚動
+	 * @param {number} index ID 標識，多个 paragraph 里面多个 table
 	 */
 	$.fn.scrollTable = function(index) {
 	  var $this = $(this);
@@ -16684,7 +16684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      },
 	      fail: function() {
-	        alert('调用 checkJsApi 接口时发生错误!');
+	        alert('调用 checkJsApi 接口时发生錯誤!');
 	      }
 	    });
 	  });

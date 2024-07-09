@@ -478,24 +478,24 @@
     height: 5px;
     background: url(../images/scrollbar/custom/down.png) 0 0 repeat-y white;
 }
-/*定义滚动條渐减按扭的样式 */
+/*定义滚動條渐减按扭的樣式 */
 .kf-editor-ui-box::-webkit-scrollbar-button:start:decrement {
     height: 5px;
     background: url(../images/scrollbar/custom/up.png) 0 0 repeat-y white;
 }
 
-/* 垂直滚动條的第三层轨道的上段 */
+/* 垂直滚動條的第三层轨道的上段 */
 .kf-editor-ui-box::-webkit-scrollbar-track-piece:vertical:start {
     background-image: url(../images/scrollbar/custom/top.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
 }
-/* 垂直滚动條的第三层轨道的下段 */
+/* 垂直滚動條的第三层轨道的下段 */
 .kf-editor-ui-box::-webkit-scrollbar-track-piece:vertical:end {
     background-image: url(../images/scrollbar/custom/bottom.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
     background-position: 0 bottom, 0 0;
 }
-/* 垂直滚动條的滑动块 */
+/* 垂直滚動條的滑動块 */
 .kf-editor-ui-box::-webkit-scrollbar-thumb:vertical {
     /*background: url(./images2/bar.png) 6px 0 no-repeat;*/
     /*background-size: 6px;*/
@@ -512,24 +512,24 @@
     height: 5px;
     background: url(../images/scrollbar/custom/down.png) 0 0 repeat-y white;
 }
-/*定义滚动條渐减按扭的样式 */
+/*定义滚動條渐减按扭的樣式 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-button:start:decrement {
     height: 5px;
     background: url(../images/scrollbar/custom/up.png) 0 0 repeat-y white;
 }
 
-/* 垂直滚动條的第三层轨道的上段 */
+/* 垂直滚動條的第三层轨道的上段 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-track-piece:vertical:start {
     background-image: url(../images/scrollbar/custom/top.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
 }
-/* 垂直滚动條的第三层轨道的下段 */
+/* 垂直滚動條的第三层轨道的下段 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-track-piece:vertical:end {
     background-image: url(../images/scrollbar/custom/bottom.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
     background-position: 0 bottom, 0 0;
 }
-/* 垂直滚动條的滑动块 */
+/* 垂直滚動條的滑動块 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-thumb:vertical {
     -webkit-border-image: url(../images/scrollbar/custom/bar.png) 8;
     border-width: 10px;

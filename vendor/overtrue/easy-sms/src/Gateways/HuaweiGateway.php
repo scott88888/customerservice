@@ -54,7 +54,7 @@ class HuaweiGateway extends Gateway
         $templateId = $message->getTemplate($this);
         $messageData = $message->getData($this);
 
-        // 短信签名通道号码
+        // 短信签名通道号碼
         $from = 'default';
         if (isset($messageData['from'])) {
             $from = $messageData['from'];
@@ -78,7 +78,7 @@ class HuaweiGateway extends Gateway
             $result = $this->request('post', $endpoint, [
                 'headers' => $headers,
                 'form_params' => $params,
-                //为防止因HTTPS证书认证失敗造成API调用失敗，需要先忽略证书信任問題
+                //為防止因HTTPS证书认证失敗造成API调用失敗，需要先忽略证书信任問題
                 'verify' => false,
             ]);
         } catch (RequestException $e) {
@@ -107,7 +107,7 @@ class HuaweiGateway extends Gateway
     }
 
     /**
-     * 取得请求 Headers 参数.
+     * 取得請求 Headers 参數.
      *
      * @param string $appKey
      * @param string $appSecret
@@ -124,7 +124,7 @@ class HuaweiGateway extends Gateway
     }
 
     /**
-     * 构造X-WSSE参数值
+     * 构造X-WSSE参數值
      *
      * @param string $appKey
      * @param string $appSecret

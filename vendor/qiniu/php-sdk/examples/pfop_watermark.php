@@ -4,7 +4,7 @@ require_once __DIR__ . '/../autoload.php';
 use Qiniu\Auth;
 use Qiniu\Processing\PersistentFop;
 
-//对已经上传到七牛的视频发起异步转码操作 
+//對已经上传到七牛的视频发起异步转碼操作 
 
 $accessKey = getenv('QINIU_ACCESS_KEY');
 $secretKey = getenv('QINIU_SECRET_KEY');
@@ -12,13 +12,13 @@ $bucket = getenv('QINIU_TEST_BUCKET');
 
 $auth = new Auth($accessKey, $secretKey);
 
-//要转码的文件所在的空间和文件名。
+//要转碼的文件所在的空間和文件名。
 $key = 'qiniu.mp4';
 
-//转码是使用的队列名稱。 https://portal.qiniu.com/mps/pipeline
+//转碼是使用的队列名稱。 https://portal.qiniu.com/mps/pipeline
 $pipeline = 'sdktest';
 
-//转码完成后通知到你的业务服务器。
+//转碼完成后通知到你的业务服务器。
 $notifyUrl = 'http://375dec79.ngrok.com/notify.php';
 $force = false;
 
@@ -30,7 +30,7 @@ $pfop = new PersistentFop($auth, $config);
 //可以参考http://developer.qiniu.com/code/v6/api/dora-api/av/video-watermark.html
 $base64URL = Qiniu\base64_urlSafeEncode('http://devtools.qiniu.com/qiniu.png');
 
-//水印参数
+//水印参數
 $fops = "avthumb/mp4/s/640x360/vb/1.4m/image/" . $base64URL . "|saveas/"
     . \Qiniu\base64_urlSafeEncode($bucket . ":qiniu_wm.mp4");
 
@@ -42,7 +42,7 @@ if ($err != null) {
     echo "PersistentFop Id: $id\n";
 }
 
-//查詢转码的进度和狀態
+//查詢转碼的进度和狀態
 list($ret, $err) = $pfop->status($id);
 echo "\n====> pfop avthumb status: \n";
 if ($err != null) {

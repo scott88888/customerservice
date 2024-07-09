@@ -261,7 +261,7 @@
         });
 
         channel.bind("cu-event", function (data) {
-            // 取得未读消息数
+            // 取得未读消息數
 
             var str = data.message.content;
             str.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, function (match, capture) {
@@ -296,7 +296,7 @@
             getchat();
         });
 
-        // 认领后取得访客訊息
+        // 认领后取得訪客訊息
         var channelme = pusher.subscribe("ud" + config.service_id);
         channelme.bind("on_notice", function (data) {
             getwait();
@@ -374,7 +374,7 @@
         });
     }
 
-    // 对话列表
+    // 對話列表
     function getchat() {
         $.ajax({
             url:ROOT_URL+"/admin/set/getchats",

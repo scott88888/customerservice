@@ -143,11 +143,11 @@
             </div>
             <div class="col-sm-4 step-item step-item-2">
                 <div class="step-icon">2</div>
-                <div>申请訊息</div>
+                <div>申請訊息</div>
             </div>
             <div class="col-sm-4 step-item step-item-3">
                 <div class="step-icon">3</div>
-                <div>送出注册申请</div>
+                <div>送出注册申請</div>
             </div>
         </div>
 
@@ -156,11 +156,11 @@
                 <label class="col-sm-4 col-form-label text-right">帐户名</label>
                 <div class="col-sm-8">
                     <input class="form-control" v-model="username" placeholder="請輸入帐户名">
-                    <div class="fs-sm text-muted">帐户名必须是字母开头，只允许有字母、数字、下划线 _</div>
+                    <div class="fs-sm text-muted">帐户名必须是字母開头，只允许有字母、數字、下划线 _</div>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-4 col-form-label text-right">设置密碼</label>
+                <label class="col-sm-4 col-form-label text-right">設定密碼</label>
                 <div class="col-sm-8">
                     <input class="form-control" type="password" v-model="password" placeholder="請輸入密碼">
                 </div>
@@ -168,7 +168,7 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label text-right">確認密碼</label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="password" v-model="password2" placeholder="请再次输入密碼">
+                    <input class="form-control" type="password" v-model="password2" placeholder="請再次输入密碼">
                 </div>
             </div>
             <div class="form-group row">
@@ -209,9 +209,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-4 col-form-label text-right">申请原因</label>
+                <label class="col-sm-4 col-form-label text-right">申請原因</label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" v-model="desc" placeholder="請輸入申请原因" rows="4"></textarea>
+                    <textarea class="form-control" v-model="desc" placeholder="請輸入申請原因" rows="4"></textarea>
                 </div>
             </div>
             <div class="form-group row">
@@ -227,9 +227,9 @@
         <div class="step step-3 text-center mb-4" style="display: none">
             <img style="margin-bottom: 40px"
                  src="/statics/admin/images/register-result-1.png">
-            <div>您的注册申请已送出</div>
+            <div>您的注册申請已送出</div>
             <div>我们将以手机短信的方式通知注册结果</div>
-            <div>请您留意</div>
+            <div>請您留意</div>
         </div>
 
     </div>
@@ -255,7 +255,7 @@
                                  data-refresh=""
                                  src=""
                                  style="height: 33px;width: 72px;float: right;cursor: pointer;border: 1px solid #ccc"
-                                 title="点击刷新驗證碼">
+                                 title="點擊刷新驗證碼">
                         </div>
                     </div>
                     <p v-if="send_sms_error" class="text-danger"></p>

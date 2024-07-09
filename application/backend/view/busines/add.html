@@ -18,11 +18,11 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">有效期</label>
                     <div class="layui-input-block">
-                        <input type="text" name="expire_time" lay-verify="required" placeholder="请選擇有效期" autocomplete="off" class="layui-input" id="valid_time">
+                        <input type="text" name="expire_time" lay-verify="required" placeholder="請選擇有效期" autocomplete="off" class="layui-input" id="valid_time">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">坐席数量</label>
+                    <label class="layui-form-label">坐席數量</label>
                     <div class="layui-input-block">
                         <input type="number" name="max_count" value="" lay-verify="required"  placeholder="請輸入坐席數量" class="layui-input" autocomplete="off">
                     </div>
@@ -73,7 +73,7 @@ layui.use(['form','jquery','laydate'],function(){
                         icon: 1
                     });
                     setTimeout(function() {
-                        var index = parent.layer.getFrameIndex(window.name); //取得窗口索引
+                        var index = parent.layer.getFrameIndex(window.name); //取得視窗索引
                         parent.layer.close(index);
                         parent.layui.table.reload("dataTable");
                     }, 2000)

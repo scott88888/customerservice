@@ -14,8 +14,8 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * Redis缓存驱动，适合单机部署、有前端代理实现高可用的场景，性能最好
- * 有需要在业务层实现读写分离、或者使用RedisCluster的需求，请使用Redisd驱动
+ * Redis缓存驱動，适合單机部署、有前端代理實現高可用的场景，性能最好
+ * 有需要在业务层實現读写分离、或者使用RedisCluster的需求，請使用Redisd驱動
  *
  * 要求安装phpredis扩展：https://github.com/nicolasff/phpredis
  * @author    尘缘 <130775@qq.com>
@@ -34,8 +34,8 @@ class Redis extends Driver
     ];
 
     /**
-     * 构造函数
-     * @param array $options 缓存参数
+     * 构造函數
+     * @param array $options 缓存参數
      * @access public
      */
     public function __construct($options = [])
@@ -101,7 +101,7 @@ class Redis extends Driver
      * @access public
      * @param string            $name 缓存变量名
      * @param mixed             $value  存储資料
-     * @param integer|\DateTime $expire  有效时间（秒）
+     * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
      */
     public function set($name, $value, $expire = null)
@@ -127,10 +127,10 @@ class Redis extends Driver
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param  string    $name 缓存变量名
-     * @param  int       $step 步长
+     * @param  int       $step 步長
      * @return false|int
      */
     public function inc($name, $step = 1)
@@ -141,10 +141,10 @@ class Redis extends Driver
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param  string    $name 缓存变量名
-     * @param  int       $step 步长
+     * @param  int       $step 步長
      * @return false|int
      */
     public function dec($name, $step = 1)

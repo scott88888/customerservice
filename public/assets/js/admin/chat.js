@@ -29,7 +29,7 @@ var types=function(){
 
                 var str=a.replace(/(^\s*)|(\s*$)/g,"");
                 if(!str){
-                    layer.msg('内容不能为空',{icon:3});
+                    layer.msg('内容不能為空',{icon:3});
                     $('#text_in').html('');
                     return false;
                 }
@@ -127,7 +127,7 @@ function getreply(){
                 });
 
 
-                str+='<div class="add-reply" onclick="addreply()" >新增快速回覆</div><div class="manager-reply" onclick="show()" >管理快捷回复</div>';
+                str+='<div class="add-reply" onclick="addreply()" >新增快速回覆</div><div class="manager-reply" onclick="show()" >管理快捷回覆</div>';
 
                 $("#quit_reply").prepend(str);
             }
@@ -136,7 +136,7 @@ function getreply(){
     })
 }
 
-// 選擇对象
+// 選擇對象
 
 function choose(vid) {
     if (choose_lock) {
@@ -157,7 +157,7 @@ function choose(vid) {
     getchat();
 }
 
-//拖到黑名单
+//拖到黑名單
 function getblack() {
     var data = $.cookie("cu_com");
     var vid;
@@ -177,7 +177,7 @@ function getblack() {
                 $.cookie("cu_com", "");
             }
 
-            layer.msg("已拖入黑名单", {offset: "20px"});
+            layer.msg("已拖入黑名單", {offset: "20px"});
             getchat();
             getblacklist();
         }
@@ -338,7 +338,7 @@ $(".wl_faces_main img").click(function () {
 });
 
 
-//刪除对象
+//刪除對象
 
 function cut(id) {
 
@@ -559,7 +559,7 @@ function put() {
 
     } else {
 
-        layer.msg("请選擇图片", {icon: 2});
+        layer.msg("請選擇图片", {icon: 2});
     }
 }
 

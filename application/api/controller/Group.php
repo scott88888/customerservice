@@ -21,7 +21,7 @@ class Group extends Base
             ->find();
         if (!$business ) {
             throw new ApiException([
-                'msg' => '请求客服系统不存在',
+                'msg' => '請求客服系统不存在',
                 'errorCode' => 40000
             ]);
         }

@@ -42,7 +42,7 @@ layui.define(['layer', 'form'], function(exports) {
 				return false
 				break;
 			default:
-				layer.msg('类型错误', {
+				layer.msg('类型錯誤', {
 					icon: 2
 				})
 		}
@@ -117,7 +117,7 @@ layui.define(['layer', 'form'], function(exports) {
 
 	function checkbox_b(size) {
 		var html = '  <div class="layui-form-item">\n' +
-			'    <label class="layui-form-label">开关</label>\n' +
+			'    <label class="layui-form-label">開关</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
 			'      <input type="checkbox" name="' + key + '" lay-skin="switch">\n' +
 			'    </div>\n' +
@@ -127,7 +127,7 @@ layui.define(['layer', 'form'], function(exports) {
 
 	function radio(size) {
 		var html = '  <div class="layui-form-item">\n' +
-			'    <label class="layui-form-label">单选框</label>\n' +
+			'    <label class="layui-form-label">單选框</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
 			'      <input type="radio" name="' + key + '" value="男" title="男">\n' +
 			'      <input type="radio" name="' + key + '" value="女" title="女" checked>\n' +

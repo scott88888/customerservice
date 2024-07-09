@@ -26,9 +26,9 @@ class MorphOne extends Relation
     protected $type;
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param Model  $parent    上级模型对象
+     * @param Model  $parent    上级模型對象
      * @param string $model     模型名
      * @param string $morphKey  关联外键
      * @param string $morphType 多态字段名
@@ -65,10 +65,10 @@ class MorphOne extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
      * @param string  $operator 比较操作符
-     * @param integer $count    个数
+     * @param integer $count    个數
      * @param string  $id       关联表的统计字段
      * @param string  $joinType JOIN类型
      * @return Query
@@ -79,9 +79,9 @@ class MorphOne extends Relation
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
-     * @param  mixed $where  查詢條件（数组或者闭包）
+     * @param  mixed $where  查詢條件（數组或者闭包）
      * @param  mixed $fields 字段
      * @return Query
      */
@@ -138,7 +138,7 @@ class MorphOne extends Relation
     /**
      * 预载入关联查詢
      * @access public
-     * @param Model    $result      資料对象
+     * @param Model    $result      資料對象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
@@ -167,7 +167,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 多态一对一 关联模型预查詢
+     * 多态一對一 关联模型预查詢
      * @access   public
      * @param array         $where       关联预查詢條件
      * @param string        $relation    关联名
@@ -192,9 +192,9 @@ class MorphOne extends Relation
     }
 
     /**
-     * 保存（新增）当前关联資料对象
+     * 保存（新增）当前关联資料對象
      * @access public
-     * @param mixed $data 資料 可以使用数组 关联模型对象 和 关联对象的主键
+     * @param mixed $data 資料 可以使用數组 关联模型對象 和 关联對象的主键
      * @return Model|false
      */
     public function save($data)
@@ -215,7 +215,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 创建关联对象实例
+     * 建立关联對象实例
      * @param array $data
      * @return Model
      */
@@ -250,7 +250,7 @@ class MorphOne extends Relation
     }
 
     /**
-     * 创建关联统计子查詢
+     * 建立关联统计子查詢
      * @access public
      * @param \Closure $closure 闭包
      * @param string   $name    统计資料别名

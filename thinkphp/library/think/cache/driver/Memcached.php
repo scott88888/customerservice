@@ -19,7 +19,7 @@ class Memcached extends Driver
         'host'     => '127.0.0.1',
         'port'     => 11211,
         'expire'   => 0,
-        'timeout'  => 0, // 超时时间（单位：毫秒）
+        'timeout'  => 0, // 超时時間（單位：毫秒）
         'prefix'   => '',
         'username' => '', //账号
         'password' => '', //密碼
@@ -27,8 +27,8 @@ class Memcached extends Driver
     ];
 
     /**
-     * 构造函数
-     * @param array $options 缓存参数
+     * 构造函數
+     * @param array $options 缓存参數
      * @access public
      */
     public function __construct($options = [])
@@ -43,7 +43,7 @@ class Memcached extends Driver
         if (!empty($this->options['option'])) {
             $this->handler->setOptions($this->options['option']);
         }
-        // 设置连接超时时间（单位：毫秒）
+        // 設定連結超时時間（單位：毫秒）
         if ($this->options['timeout'] > 0) {
             $this->handler->setOption(\Memcached::OPT_CONNECT_TIMEOUT, $this->options['timeout']);
         }
@@ -53,7 +53,7 @@ class Memcached extends Driver
         if (empty($ports[0])) {
             $ports[0] = 11211;
         }
-        // 建立连接
+        // 建立連結
         $servers = [];
         foreach ((array) $hosts as $i => $host) {
             $servers[] = [$host, (isset($ports[$i]) ? $ports[$i] : $ports[0]), 1];
@@ -95,7 +95,7 @@ class Memcached extends Driver
      * @access public
      * @param string            $name 缓存变量名
      * @param mixed             $value  存储資料
-     * @param integer|\DateTime $expire  有效时间（秒）
+     * @param integer|\DateTime $expire  有效時間（秒）
      * @return bool
      */
     public function set($name, $value, $expire = null)
@@ -119,10 +119,10 @@ class Memcached extends Driver
     }
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function inc($name, $step = 1)
@@ -135,10 +135,10 @@ class Memcached extends Driver
     }
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     public function dec($name, $step = 1)

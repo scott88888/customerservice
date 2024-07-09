@@ -2,7 +2,7 @@
 
 ## v2.3.0 / 2018-01-05
 
-* 修复：putObject支持创建空文件
+* 修复：putObject支持建立空文件
 * 修复：createBucket支持IA/Archive
 * 增加：支持restoreObject
 * 增加：支持Symlink功能
@@ -20,11 +20,11 @@
 
 ## v2.2.2 / 2017-01-18
 
-* 解决在php7上运行连接数和内存bug
+* 解决在php7上运行連結數和内存bug
 
 ## v2.2.1 / 2016-12-01
 
-* 禁止http curl自动填充Accept-Encoding
+* 禁止http curl自動填充Accept-Encoding
 
 ## v2.2.0 / 2016-11-22
 
@@ -62,13 +62,13 @@
 
 ## v2.0.1
 
-* 增加对ListObjects/ListMultipartUploads时特殊字符的处理
+* 增加對ListObjects/ListMultipartUploads时特殊字符的处理
 * 提供接口取得OssException中的详细訊息
 
 
 ## 2015.11.25
 
-* **大版本升级，不再兼容以前接口，新版本对易用性做了很大的改进，建议使用者迁移到新版本。**
+* **大版本升级，不再兼容以前接口，新版本對易用性做了很大的改进，建议使用者迁移到新版本。**
 
 ## 修改内容
 
@@ -76,16 +76,16 @@
 
 ### 新增内容
 
-* 引入命名空间
+* 引入命名空間
 * 接口命名修正，采用驼峰式命名
-* 接口入参修改，把常用参数从Options参数中提出来
-* 接口返回结果修改，对返回结果进行处理，使用者可以直接得到容易处理的資料结构　
-* OssClient的构造函数变更
+* 接口入参修改，把常用参數从Options参數中提出来
+* 接口返回结果修改，對返回结果进行处理，使用者可以直接得到容易处理的資料结构　
+* OssClient的构造函數变更
 * 支持CNAME和IP格式的Endpoint地址
-* 重新整理sample文件组织结构，使用function组织功能点
-* 增加设置连接超时，请求超时的接口
-* 去掉Object Group相关的已经过时的接口
-* OssException中的message改为英文
+* 重新整理sample文件组织结构，使用function组织功能點
+* 增加設定連結超时，請求超时的接口
+* 去掉Object Group相關的已经过时的接口
+* OssException中的message改為英文
 
 ### 問題修复
 

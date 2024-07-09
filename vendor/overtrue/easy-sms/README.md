@@ -13,14 +13,14 @@
 </p>
 
 
-## 特点
+## 特點
 
 1. 支持目前市面多家服务商
 1. 一套写法兼容所有平台
-1. 简单配置即可灵活增减服务商
-1. 内置多种服务商轮询策略、支持自定义轮询策略
+1. 简單配置即可灵活增减服务商
+1. 内置多种服务商轮询策略、支持自訂轮询策略
 1. 统一的返回值格式，便于日志与监控
-1. 自动轮询選擇可用的服务商
+1. 自動轮询選擇可用的服务商
 1. 更多等你去发现与改进...
 
 ## 平台支持
@@ -40,7 +40,7 @@
 - [天毅無线](http://www.85hu.com/)
 - [腾讯云 SMS](https://cloud.tencent.com/product/sms)
 - [阿凡达資料](http://www.avatardata.cn/)
-- [华为云](https://www.huaweicloud.com/product/msgsms.html)
+- [华為云](https://www.huaweicloud.com/product/msgsms.html)
 
 ## 环境需求
 
@@ -58,20 +58,20 @@ $ composer require "overtrue/easy-sms"
 use Overtrue\EasySms\EasySms;
 
 $config = [
-    // HTTP 请求的超时时间（秒）
+    // HTTP 請求的超时時間（秒）
     'timeout' => 5.0,
 
     // 默认发送配置
     'default' => [
-        // 网关调用策略，默认：顺序调用
+        // 網关调用策略，默认：顺序调用
         'strategy' => \Overtrue\EasySms\Strategies\OrderStrategy::class,
 
-        // 默认可用的发送网关
+        // 默认可用的发送網关
         'gateways' => [
             'yunpian', 'aliyun',
         ],
     ],
-    // 可用的网关配置
+    // 可用的網关配置
     'gateways' => [
         'errorlog' => [
             'file' => '/tmp/easy-sms.log',
@@ -91,7 +91,7 @@ $config = [
 $easySms = new EasySms($config);
 
 $easySms->send(13188888888, [
-    'content'  => '您的驗證碼为: 6379',
+    'content'  => '您的驗證碼為: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -101,17 +101,17 @@ $easySms->send(13188888888, [
 
 ## 短信内容
 
-由于使用多网关发送，所以一條短信要支持多平台发送，每家的发送方式不一样，但是我们抽象定义了以下公用属性：
+由于使用多網关发送，所以一條短信要支持多平台发送，每家的发送方式不一样，但是我们抽象定义了以下公用属性：
 
 - `content` 文字内容，使用在像云片类似的以文字内容发送的平台
 - `template` 模板 ID，使用在以模板ID来发送短信的平台
 - `data`  模板变量，使用在以模板ID来发送短信的平台
 
-所以，在使用过程中你可以根据所要使用的平台定义发送的内容。
+所以，在使用过程中你可以根據所要使用的平台定义发送的内容。
 
 ```php
 $easySms->send(13188888888, [
-    'content'  => '您的驗證碼为: 6379',
+    'content'  => '您的驗證碼為: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -119,12 +119,12 @@ $easySms->send(13188888888, [
 ]);
 ```
 
-你也可以使用闭包来返回对应的值：
+你也可以使用闭包来返回對应的值：
 
 ```php
 $easySms->send(13188888888, [
     'content'  => function($gateway){
-        return '您的驗證碼为: 6379';
+        return '您的驗證碼為: 6379';
     },
     'template' => function($gateway){
         return 'SMS_001';
@@ -137,7 +137,7 @@ $easySms->send(13188888888, [
 ]);
 ```
 
-你可以根据 `$gateway` 参数类型来判断返回值，例如：
+你可以根據 `$gateway` 参數类型来判断返回值，例如：
 
 ```php
 $easySms->send(13188888888, [
@@ -145,7 +145,7 @@ $easySms->send(13188888888, [
         if ($gateway->getName() == 'yunpian') {
             return '云片专用驗證碼：1235';
         }
-        return '您的驗證碼为: 6379';
+        return '您的驗證碼為: 6379';
     },
     'template' => function($gateway){
         if ($gateway->getName() == 'aliyun') {
@@ -161,23 +161,23 @@ $easySms->send(13188888888, [
 ]);
 ```
 
-## 发送网关
+## 发送網关
 
-默认使用 `default` 中的设置来发送，如果某一條短信你想要覆盖默认的设置。在 `send` 方法中使用第三个参数即可：
+默认使用 `default` 中的設定来发送，如果某一條短信你想要覆盖默认的設定。在 `send` 方法中使用第三个参數即可：
 
 ```php
 $easySms->send(13188888888, [
-    'content'  => '您的驗證碼为: 6379',
+    'content'  => '您的驗證碼為: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
     ],
- ], ['yunpian', 'juhe']); // 这里的网关配置将会覆盖全局默认值
+ ], ['yunpian', 'juhe']); // 这里的網关配置将会覆盖全局默认值
 ```
 
 ## 返回值
 
-由于使用多网关发送，所以返回值为一个数组，结构如下：
+由于使用多網关发送，所以返回值為一个數组，结构如下：
 ```php
 [
     'yunpian' => [
@@ -188,37 +188,37 @@ $easySms->send(13188888888, [
     'juhe' => [
         'gateway' => 'juhe',
         'status' => 'failure',
-        'exception' => \Overtrue\EasySms\Exceptions\GatewayErrorException 对象
+        'exception' => \Overtrue\EasySms\Exceptions\GatewayErrorException 對象
     ],
     //...
 ]
 ```
 
-如果所选网关列表均发送失敗时，将会抛出 `Overtrue\EasySms\Exceptions\NoGatewayAvailableException` 异常，你可以使用 `$e->results` 取得发送结果。
+如果所选網关列表均发送失敗时，将会抛出 `Overtrue\EasySms\Exceptions\NoGatewayAvailableException` 异常，你可以使用 `$e->results` 取得发送结果。
 
 你也可以使用 `$e` 提供的更多便捷方法：
 
 ```php
 $e->getResults();               // 返回所有 API 的结果，结构同上
 $e->getExceptions();            // 返回所有调用异常列表
-$e->getException($gateway);     // 返回指定网关名稱的异常对象
-$e->getLastException();         // 取得最后一个失敗的异常对象 
+$e->getException($gateway);     // 返回指定網关名稱的异常對象
+$e->getLastException();         // 取得最后一个失敗的异常對象 
 ```
 
-## 自定义网关
+## 自訂網关
 
-本拓展已经支持使用者自定义网关，你可以很方便的配置即可当成与其它拓展一样的使用：
+本拓展已经支持使用者自訂網关，你可以很方便的配置即可当成与其它拓展一样的使用：
 
 ```php
 $config = [
     ...
     'default' => [
         'gateways' => [
-            'mygateway', // 配置你的网站到可用的网关列表
+            'mygateway', // 配置你的網站到可用的網关列表
         ],
     ],
     'gateways' => [
-        'mygateway' => [...], // 你网关所需要的参数，如果没有可以不配置
+        'mygateway' => [...], // 你網关所需要的参數，如果没有可以不配置
     ],
 ];
 
@@ -231,7 +231,7 @@ $easySms->extend('mygateway', function($gatewayConfig){
 });
 
 $easySms->send(13188888888, [
-    'content'  => '您的驗證碼为: 6379',
+    'content'  => '您的驗證碼為: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -241,16 +241,16 @@ $easySms->send(13188888888, [
 
 ## 国际短信
 
-国际短信与国内短信的区别是号码前面需要加国际码，但是由于各平台对国际号码的写法不一致，所以在发送国际短信的时候有一点区别：
+国际短信与国内短信的区别是号碼前面需要加国际碼，但是由于各平台對国际号碼的写法不一致，所以在发送国际短信的时候有一點区别：
 
 ```php
 use Overtrue\EasySms\PhoneNumber;
 
-// 发送到国际码为 31 的国际号码
+// 发送到国际碼為 31 的国际号碼
 $number = new PhoneNumber(13188888888, 31);
 
 $easySms->send($number, [
-    'content'  => '您的驗證碼为: 6379',
+    'content'  => '您的驗證碼為: 6379',
     'template' => 'SMS_001',
     'data' => [
         'code' => 6379
@@ -260,7 +260,7 @@ $easySms->send($number, [
 
 ## 定义短信
 
-你可以根据发送场景的不同，定义不同的短信类，从而实现一处定义多处调用，你可以继承 `Overtrue\EasySms\Message` 来定义短信模型：
+你可以根據发送场景的不同，定义不同的短信类，从而實現一处定义多处调用，你可以继承 `Overtrue\EasySms\Message` 来定义短信模型：
 
 ```php
 <?php
@@ -272,7 +272,7 @@ use Overtrue\EasySms\Strategies\OrderStrategy;
 class OrderPaidMessage extends Message
 {
     protected $order;
-    protected $strategy = OrderStrategy::class;           // 定义本短信的网关使用策略，覆盖全局配置中的 `default.strategy`
+    protected $strategy = OrderStrategy::class;           // 定义本短信的網关使用策略，覆盖全局配置中的 `default.strategy`
     protected $gateways = ['alidayu', 'yunpian', 'juhe']; // 定义本短信的适用平台，覆盖全局配置中的 `default.gateways`
 
     public function __construct($order)
@@ -283,7 +283,7 @@ class OrderPaidMessage extends Message
     // 定义直接使用内容发送平台的内容
     public function getContent(GatewayInterface $gateway = null)
     {
-        return sprintf('您的订单:%s, 已经完成付款', $this->order->no);    
+        return sprintf('您的订單:%s, 已经完成付款', $this->order->no);    
     }
 
     // 定义使用模板发送方式平台所需要的模板 ID
@@ -292,7 +292,7 @@ class OrderPaidMessage extends Message
         return 'SMS_003';
     }
 
-    // 模板参数
+    // 模板参數
     public function getData(GatewayInterface $gateway = null)
     {
         return [
@@ -302,9 +302,9 @@ class OrderPaidMessage extends Message
 }
 ```
 
-> 更多自定义方式请参考：[`Overtrue\EasySms\Message`](Overtrue\EasySms\Message;)
+> 更多自訂方式請参考：[`Overtrue\EasySms\Message`](Overtrue\EasySms\Message;)
 
-发送自定义短信：
+发送自訂短信：
 
 ```php
 $order = ...;
@@ -415,7 +415,7 @@ $easySms->send(13188888888, $message);
     'sendcloud' => [
         'sms_user' => '',
         'sms_key' => '',
-        'timestamp' => false, // 是否启用时间戳
+        'timestamp' => false, // 是否启用時間戳
     ],
 ```
 ### [百度云](https://cloud.baidu.com/)
@@ -458,7 +458,7 @@ $easySms->send(13188888888, $message);
         // \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_PROMOTION_CODE => 会员营销通道
         'channel'  => \Overtrue\EasySms\Gateways\ChuanglanGateway::CHANNEL_VALIDATE_CODE, 
 
-        // 会员营销通道 特定参数。创蓝规定：api送出营销短信的时候，需要自己加短信的签名及退订訊息
+        // 会员营销通道 特定参數。创蓝规定：api送出营销短信的时候，需要自己加短信的签名及退订訊息
         'sign' => '【通讯云】',
         'unsubscribe' => '回TD退订', 
     ],
@@ -466,7 +466,7 @@ $easySms->send(13188888888, $message);
 
 ### [融云](http://www.rongcloud.cn)
 
-短信分为两大类，驗證类和通知类短信。 发送驗證类短信使用 `template` + `data`
+短信分為两大类，驗證类和通知类短信。 发送驗證类短信使用 `template` + `data`
 
 ```php
     'rongcloud' => [
@@ -483,19 +483,19 @@ $easySms->send(13188888888, $message);
     'tianyiwuxian' => [
         'username' => '', //使用者名稱
         'password' => '', //密碼
-        'gwid' => '', //网关ID
+        'gwid' => '', //網关ID
     ]
 ```
 
 ### [twilio](https://www.twilio.com)
 
 短信使用 `content`  
-发送对象需要 使用`+`新增区号
+发送對象需要 使用`+`新增区号
 
 ```php
     'twilio' => [
         'account_sid' => '', // sid
-        'from' => '', // 发送的号码 可以在控制台购买
+        'from' => '', // 发送的号碼 可以在控制台购买
         'token' => '', // apitoken
     ],
 ```
@@ -508,7 +508,7 @@ $easySms->send(13188888888, $message);
     'qcloud' => [
         'sdk_app_id' => '', // SDK APP ID
         'app_key' => '', // APP KEY
-        'sign_name' => '', // 短信签名，如果使用默认签名，该字段可缺省（对应官方文档中的sign）
+        'sign_name' => '', // 短信签名，如果使用默认签名，该字段可缺省（對应官方文档中的sign）
     ],
 ```
 
@@ -522,7 +522,7 @@ $easySms->send(13188888888, $message);
     ],
 ```
 
-### [华为云 SMS](https://www.huaweicloud.com/product/msgsms.html)
+### [华為云 SMS](https://www.huaweicloud.com/product/msgsms.html)
 
 短信内容使用 `template` + `data`
 
@@ -559,7 +559,7 @@ $easySms->send(13188888888, [
     'template' => 'SMS_001',
     'data' => [
         6379,
-        'from' => 'custom' // 对应 config 中的 from 数组中 custom
+        'from' => 'custom' // 對应 config 中的 from 數组中 custom
     ],
 ]);
 ```

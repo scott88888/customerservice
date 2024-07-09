@@ -19,14 +19,14 @@ class Rest extends Base
         parent::_initialize();
         $login = $_SESSION['Msg'];
         $this->login = $login;
-        $this->assign('title', "下班设置");
-        $this->assign('part', "下班设置");
+        $this->assign('title', "下班設定");
+        $this->assign('part', "下班設定");
     }
 
     public function setting()
     {
-        $this->assign('part', '设置');
-        $this->assign('title', '下班设置');
+        $this->assign('part', '設定');
+        $this->assign('title', '下班設定');
         return $this->fetch();
     }
 

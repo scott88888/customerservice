@@ -24,11 +24,11 @@
 				dialog : {
 					table : {
 						title      : "新增表格",
-						cellsLabel : "单元格数",
-						alignLabel : "对齐方式",
-						rows       : "行数",
-						cols       : "列数",
-						aligns     : ["默认", "左对齐", "居中对齐", "右对齐"]
+						cellsLabel : "單元格數",
+						alignLabel : "對齐方式",
+						rows       : "行數",
+						cols       : "列數",
+						aligns     : ["默认", "左對齐", "居中對齐", "右對齐"]
 					}
 				}
 			},

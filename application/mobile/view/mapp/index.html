@@ -453,7 +453,7 @@
                 <h2 class="barTit barTitLg flex1">{$seo.business_name}</em></h2>
             </div>
         </div>
-        <!-- //4个tabBar滑动切换 -->
+        <!-- //4个tabBar滑動切换 -->
         <div class="wc__swiper-tabBar flex1">
             <div class="swiper-container" style="height: 100%">
                 <div class="swiper-wrapper">
@@ -495,7 +495,7 @@
                                     <div class='list-item' id="0">全部使用者<span></span><img class='right-icon' src='__image__/mobile/icon-jiantou-r.png' alt=''></div>
                                 </div>
                                 <div class="black-list">
-                                    <div class='list-item' id="-1">黑名单<span></span><img class='right-icon' src='__image__/mobile/icon-jiantou-r.png' alt=''></div>
+                                    <div class='list-item' id="-1">黑名單<span></span><img class='right-icon' src='__image__/mobile/icon-jiantou-r.png' alt=''></div>
                                 </div>
                                 <div class="edit-btn">
                                     <div class="edit-cancel-btn">取消</div>
@@ -504,7 +504,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- //4、设置-->
+                    <!-- //4、設定-->
                     {if $mine.level != 'service'}
                     <div class="swiper-slide" data-history="setting">
                         <div class="wc__scrolling-panel">
@@ -616,7 +616,7 @@
         <div class="clearAll">
             <div class="add-group">
                 <div class="add-group-title"></div>
-                <div class="add-group-body" style="text-align:center;font-size:16px;">确认清空当前会话列表？</div>
+                <div class="add-group-body" style="text-align:center;font-size:16px;">确认清空当前会話列表？</div>
                 <div class="add-group-btn">
                     <div class="add-group-cancel">取消</div>
                     <div class="clear-submit">確定</div>
@@ -636,7 +636,7 @@
         paginationBulletRender: function (chatSwiper, index, className) {
             switch (index) {
                 case {$i=0}:
-                    name='<img class="wechat-img" src="__image__/mobile/talk.png" alt=""><img class="wechat-active-img" src="__image__/mobile/talk-active.png" alt=""><span class="wechat-text">会话</span>';
+                    name='<img class="wechat-img" src="__image__/mobile/talk.png" alt=""><img class="wechat-active-img" src="__image__/mobile/talk-active.png" alt=""><span class="wechat-text">会話</span>';
                     break;
                 case {++$i}:
                     name='<img class="wechat-img" src="__image__/mobile/receive.png" alt=""><img class="wechat-active-img" src="__image__/mobile/receive-active.png" alt=""><span class="wechat-text">待认领</span>';
@@ -646,7 +646,7 @@
                     break;
                 {if $mine.level != 'service'}
                 case {++$i}:
-                    name='<img class="wechat-img" src="__image__/mobile/setting.png" alt=""><img class="wechat-active-img" src="__image__/mobile/setting-active.png" alt=""><span class="wechat-text">设置</span>';
+                    name='<img class="wechat-img" src="__image__/mobile/setting.png" alt=""><img class="wechat-active-img" src="__image__/mobile/setting-active.png" alt=""><span class="wechat-text">設定</span>';
                     break;
                 {/if}
                 case {++$i}:
@@ -662,18 +662,18 @@
 <!-- 左右滑屏切换 end -->
 
 <script type="text/javascript">
-    /** __公共函数 */
+    /** __公共函數 */
     $(function(){
-        // 禁止长按弹出系统菜单
+        // 禁止長按弹出系统選單
         $(".wechat__panel").on("contextmenu", function(e){
             e.preventDefault();
         });
     });
 
-    /** __自定函数 */
+    /** __自定函數 */
     $(function(){
         //***1、wolive-------------------------
-        // 聊天记录頁面（长按操作）
+        // 聊天记录頁面（長按操作）
         $("#J__recordChatList").on("longTap", "li", function(e){
             var that = $(this);
             wcPop({
@@ -713,7 +713,7 @@
             window.location.href = routeurl;
         });
 
-        // 访客认领
+        // 訪客认领
         $(".wechat__panel").on("click", "*[accept]", function(e){
             var visiter_id = $(this).attr('accept');
             if(!visiter_id) return;
@@ -739,7 +739,7 @@
 
         });
 
-        // 对话列表
+        // 對話列表
         function getchat() {
             $.ajax({
                 url:ROOT_URL+"/admin/set/getchats",
@@ -792,7 +792,7 @@
                         window.location.href = ROOT_URL + '/mobile/admin/user?id=' + searchName;
                         $('.search-input').val('');
                     }else {
-                        layer.msg('搜索内容不得为空');
+                        layer.msg('搜索内容不得為空');
                     }
                 }
          });
@@ -863,7 +863,7 @@
                                 <div class="img"><img src="'+item.avatar+'"/></div>\
                                     <div class="info flex1">\
                                     <h2 class="title">'+item.visiter_name+'</h2>\
-                                    <p class="desc clamp1">点击认领</p>\
+                                    <p class="desc clamp1">點擊认领</p>\
                                 </div>\
                                 <label class="time">'+item.timestamp+'</label>\
                             </li>'
@@ -1115,7 +1115,7 @@
                 getchat();
             });
 
-            // 认领后取得访客訊息
+            // 认领后取得訪客訊息
             var channelme = pusher.subscribe("ud" + config.service_id);
             channelme.bind("on_notice", function (data) {
                 getwait();

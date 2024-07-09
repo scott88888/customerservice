@@ -9,26 +9,26 @@ $bucket = Common::getBucketName();
 $ossClient = Common::getOssClient();
 if (is_null($ossClient)) exit(1);
 
-//******************************* 简单使用 ****************************************************************
+//******************************* 简單使用 ****************************************************************
 
-//设置referer白名单
+//設定referer白名單
 $refererConfig = new RefererConfig();
 $refererConfig->setAllowEmptyReferer(true);
 $refererConfig->addReferer("www.aliiyun.com");
 $refererConfig->addReferer("www.aliiyuncs.com");
 $ossClient->putBucketReferer($bucket, $refererConfig);
 Common::println("bucket $bucket refererConfig created:" . $refererConfig->serializeToXml());
-//取得Referer白名单
+//取得Referer白名單
 $refererConfig = $ossClient->getBucketReferer($bucket);
 Common::println("bucket $bucket refererConfig fetched:" . $refererConfig->serializeToXml());
 
-//刪除referer白名单
+//刪除referer白名單
 $refererConfig = new RefererConfig();
 $ossClient->putBucketReferer($bucket, $refererConfig);
 Common::println("bucket $bucket refererConfig deleted");
 
 
-//******************************* 完整用法参考下面函数 ****************************************************
+//******************************* 完整用法参考下面函數 ****************************************************
 
 putBucketReferer($ossClient, $bucket);
 getBucketReferer($ossClient, $bucket);
@@ -36,10 +36,10 @@ deleteBucketReferer($ossClient, $bucket);
 getBucketReferer($ossClient, $bucket);
 
 /**
- * 设置bucket的防盗链配置
+ * 設定bucket的防盗链配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function putBucketReferer($ossClient, $bucket)
@@ -62,7 +62,7 @@ function putBucketReferer($ossClient, $bucket)
  * 取得bucket的防盗链配置
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function getBucketReferer($ossClient, $bucket)
@@ -81,10 +81,10 @@ function getBucketReferer($ossClient, $bucket)
 
 /**
  * 刪除bucket的防盗链配置
- * Referer白名单不能直接清空，只能通过重新设置来覆盖之前的规则。
+ * Referer白名單不能直接清空，只能通過重新設定来覆盖之前的规则。
  *
  * @param OssClient $ossClient OssClient实例
- * @param string $bucket 存储空间名稱
+ * @param string $bucket 存储空間名稱
  * @return null
  */
 function deleteBucketReferer($ossClient, $bucket)

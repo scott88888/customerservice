@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传图片对话框逻辑代码,包括tab: 远程图片/上传图片/線上图片/搜索图片
+ * 上传图片對話框逻辑程式碼,包括tab: 远程图片/上传图片/線上图片/搜索图片
  */
 
 (function () {
@@ -111,9 +111,9 @@
     }
 
 
-    /* 初始化对其方式的点击事件 */
+    /* 初始化對其方式的點擊事件 */
     function initAlign(){
-        /* 点击align图标 */
+        /* 點擊align图标 */
         domUtils.on($G("alignIcon"), 'click', function(e){
             var target = e.target || e.srcElement;
             if(target.className && target.className.indexOf('-align') != -1) {
@@ -122,7 +122,7 @@
         });
     }
 
-    /* 设置对齐方式 */
+    /* 設定對齐方式 */
     function setAlign(align){
         align = align || 'none';
         var aligns = $G("alignIcon").children;
@@ -135,7 +135,7 @@
             }
         }
     }
-    /* 取得对齐方式 */
+    /* 取得對齐方式 */
     function getAlign(){
         var align = $G("align").value || 'none';
         return align == 'none' ? '':align;
@@ -227,7 +227,7 @@
             /* 防止onchange事件循环调用 */
             if (src !== $G("url").value) $G("url").value = src;
             if(src) {
-                /* 设置表單内容 */
+                /* 設定表單内容 */
                 $G("width").value = img.width || '';
                 $G("height").value = img.height || '';
                 $G("border").value = img.getAttribute("border") || '0';
@@ -324,7 +324,7 @@
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
-            // 新增的文件数量
+            // 新增的文件數量
                 fileCount = 0,
             // 新增的文件总大小
                 fileSize = 0,
@@ -335,7 +335,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度訊息，key为file id
+            // 所有文件的进度訊息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -380,9 +380,9 @@
                 compress: editor.getOpt('imageCompressEnable') ? {
                     width: imageCompressBorder,
                     height: imageCompressBorder,
-                    // 图片质量，只有type为`image/jpeg`的时候才有效。
+                    // 图片质量，只有type為`image/jpeg`的时候才有效。
                     quality: 90,
-                    // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+                    // 是否允许放大，如果想要產生小图的时候不失真，此选项应该設定為false.
                     allowMagnify: false,
                     // 是否允许裁剪。
                     crop: false,
@@ -400,7 +400,7 @@
 
             setState('pedding');
 
-            // 当有文件新增进来时执行，负责view的创建
+            // 当有文件新增进来时执行，负责view的建立
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -576,7 +576,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以开始上传 */
+                        /* 可以開始上传 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -592,7 +592,7 @@
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* 暂停上传 */
+                        /* 暫停上传 */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -689,7 +689,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 新增额外的GET参数 */
+                        /* 新增额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -702,7 +702,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象新增POST参数
+                //这里可以通過data對象新增POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -810,11 +810,11 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取資料 */
+        /* 初始化滚動事件,滚動到地步自動拉取資料 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取图片 */
+            /* 滚動拉取图片 */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
@@ -978,14 +978,14 @@
         initEvents: function(){
             var _this = this;
 
-            /* 点击搜索按钮 */
+            /* 點擊搜索按钮 */
             domUtils.on($G('searchBtn'), 'click', function(){
                 var key = $G('searchTxt').value;
                 if(key && key != lang.searchRemind) {
                     _this.getImageData();
                 }
             });
-            /* 点击清除妞 */
+            /* 點擊清除妞 */
             domUtils.on($G('searchReset'), 'click', function(){
                 $G('searchTxt').value = lang.searchRemind;
                 $G('searchListUl').innerHTML = '';

@@ -1,8 +1,8 @@
 @charset "utf-8";
-/*/动画*/
+/*/動画*/
 
 
-/* …… css3自定义动画效果 …… */
+/* …… css3自訂動画效果 …… */
 .anim-fadeIn {-webkit-animation-name: fadeIn; animation-name: fadeIn;}
 .anim-fadeInBig {-webkit-animation-name: fadeInBig; animation-name: fadeInBig;}
 .anim-fadeInUp {-webkit-animation-name: fadeInUp; animation-name: fadeInUp;}

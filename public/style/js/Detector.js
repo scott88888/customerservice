@@ -28,10 +28,10 @@ Detector = {
 		if ( ! this.webgl ) {
 
 			domElement.innerHTML = window.WebGLRenderingContext ? [
-				'对不起，你的显卡不支持 <a href="/khronos.org/webgl/wiki/Getting_a_WebGL_Implementation">WebGL</a>'
+				'對不起，你的显卡不支持 <a href="/khronos.org/webgl/wiki/Getting_a_WebGL_Implementation">WebGL</a>'
 			].join( '\n' ) : [
-				'对不起，您的浏览器不支持 <a href="/khronos.org/webgl/wiki/Getting_a_WebGL_Implementation">WebGL</a><br/>',
-				'请升级你的浏览器！'
+				'對不起，您的浏览器不支持 <a href="/khronos.org/webgl/wiki/Getting_a_WebGL_Implementation">WebGL</a><br/>',
+				'請升级你的浏览器！'
 			].join( '\n' );
 		}
 		return domElement;

@@ -8,7 +8,7 @@ layui.config({
 	version: "3.8.9"
 }).extend({
 	admin: "admin", 	// 框架布局组件
-	menu: "menu",		// 資料菜单组件
+	menu: "menu",		// 資料選單组件
 	frame: "frame", 	// 内容頁面组件
 	tab: "tab",			// 多选项卡组件
 	echarts: "echarts", // 資料图表组件
@@ -25,7 +25,7 @@ layui.config({
 	dtree:"dtree",			// 树结构
 	tinymce:"tinymce/tinymce", // 編輯器
 	area:"area",			// 省市级联
-	count:"count",			// 数字滚动组件
+	count:"count",			// 數字滚動组件
 	topBar: "topBar",		// 置顶组件
 	button: "button",		// 加载按钮
 	design: "design",		// 表單设计
@@ -35,7 +35,7 @@ layui.config({
 	convert:"convert",		// 資料转换
 	yaml:"yaml",			// yaml 解析组件
 	context: "context",		// 上下文组件
-	http: "http",			// ajax请求组件
+	http: "http",			// ajax請求组件
 	theme: "theme",			// 主题转换
 	message: "message",     // 通知组件
 	uploads: "uploads"		// 上传组件

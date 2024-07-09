@@ -15,7 +15,7 @@ layui.define(['jquery'],function (exports) {
         base_url: modPath
         , images_upload_url: ''//图片上传接口，可在option传入，也可在这里修改，option的值優先
         , language: 'zh_CN'//語言，可在option传入，也可在这里修改，option的值優先
-        , response: {//后台返回資料格式设置
+        , response: {//后台返回資料格式設定
             statusName: response.statusName || 'code'//返回狀態字段
             , msgName: response.msgName || 'msg'//返回消息字段
             , dataName: response.dataName || 'data'//返回的資料
@@ -23,7 +23,7 @@ layui.define(['jquery'],function (exports) {
                 ok: 0//資料正常
             }
         }
-        , success: function (res, succFun, failFun) {//图片上传完成回调 根据自己需要修改
+        , success: function (res, succFun, failFun) {//图片上传完成回调 根據自己需要修改
             if (res[this.response.statusName] == this.response.statusCode.ok) {
                 succFun(res[this.response.dataName]);
             } else {
@@ -32,7 +32,7 @@ layui.define(['jquery'],function (exports) {
         }
     };
 
-    //  ----------------  以下代码無需修改  ----------------
+    //  ----------------  以下程式碼無需修改  ----------------
 
     var t = {};
 
@@ -56,7 +56,7 @@ layui.define(['jquery'],function (exports) {
 
     t.init = t.render
 
-    // 取得ID对应的編輯器对象
+    // 取得ID對应的編輯器對象
     t.get = function (elem) {
 
         initTinymce();
@@ -165,7 +165,7 @@ layui.define(['jquery'],function (exports) {
                     settings.success(res, succFun, failFun)
                 },
                 error: function (res) {
-                    failFun("网络错误：" + res.status);
+                    failFun("網络錯誤：" + res.status);
                 }
             };
             if (typeof admin.req == 'function') {

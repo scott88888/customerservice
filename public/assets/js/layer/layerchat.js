@@ -151,7 +151,7 @@ function put() {
 
     } else {
 
-        layer.msg("请選擇图片", {icon: 2});
+        layer.msg("請選擇图片", {icon: 2});
     }
 }
 
@@ -374,7 +374,7 @@ var init = function () {
                     $("#img_head").addClass("icon_gray");
                 }
 
-                // 问候语
+                // 問候語
                 var msg = '';
                 msg += '<li class="chatmsg" style="margin-bottom: 45px;"><div style="position: absolute;top:16px;left:10px;">';
                 msg += '<img  class="my-circle" src="' + data.avatar + '" width="40px" height="40px"></div>';
@@ -403,7 +403,7 @@ var init = function () {
                 msg+='<li class="chatmsg_notice"><div style="position: absolute;left:3px;top:17px">';
                 msg+='<img  class="my-circle" src="'+ROOT_URL+'/assets/images/index/workerman_logo.png" width="40px" height="40px"></div>';
                 msg+="<div class='outer-left' style='right:4%;top:13px;'><div class='service'>";
-                msg+="<pre>通知 ： 现在还有"+num+" 人在排队，请等待 ....</pre>";
+                msg+="<pre>通知 ： 现在还有"+num+" 人在排队，請等待 ....</pre>";
                 msg+="</div></div>";
                 msg+="</li>";
                 $(".conversation").append(msg);
@@ -534,7 +534,7 @@ function getanswer(id){
 
 
 
-// 取得排队的数量
+// 取得排队的數量
 function getnums(id){
     var value ="";
     $.ajax({

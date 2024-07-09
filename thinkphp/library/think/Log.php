@@ -18,7 +18,7 @@ use think\exception\ClassNotFoundException;
  * @package think
  *
  * @method void log($msg) static 记录一般日志
- * @method void error($msg) static 记录错误日志
+ * @method void error($msg) static 记录錯誤日志
  * @method void info($msg) static 记录一般訊息日志
  * @method void sql($msg) static 记录 SQL 查詢日志
  * @method void notice($msg) static 记录提示日志
@@ -40,7 +40,7 @@ class Log
     protected static $log = [];
 
     /**
-     * @var array 配置参数
+     * @var array 配置参數
      */
     protected static $config = [];
 
@@ -50,7 +50,7 @@ class Log
     protected static $type = ['log', 'error', 'info', 'sql', 'notice', 'alert', 'debug'];
 
     /**
-     * @var log\driver\File|log\driver\Test|log\driver\Socket 日志写入驱动
+     * @var log\driver\File|log\driver\Test|log\driver\Socket 日志写入驱動
      */
     protected static $driver;
 
@@ -62,7 +62,7 @@ class Log
     /**
      * 日志初始化
      * @access public
-     * @param  array $config 配置参数
+     * @param  array $config 配置参數
      * @return void
      */
     public static function init($config = [])
@@ -120,7 +120,7 @@ class Log
     }
 
     /**
-     * 设置当前日志记录的授权 key
+     * 設定当前日志记录的授权 key
      * @access public
      * @param  string $key 授权 key
      * @return void
@@ -133,7 +133,7 @@ class Log
     /**
      * 檢查日志写入权限
      * @access public
-     * @param  array $config 当前日志配置参数
+     * @param  array $config 当前日志配置参數
      * @return bool
      */
     public static function check($config)
@@ -186,7 +186,7 @@ class Log
     }
 
     /**
-     * 实时写入日志訊息 并支持行为
+     * 实时写入日志訊息 并支持行為
      * @access public
      * @param  mixed  $msg   调试訊息
      * @param  string $type  訊息类型
@@ -222,7 +222,7 @@ class Log
      * 静态方法调用
      * @access public
      * @param  string $method 调用方法
-     * @param  mixed  $args   参数
+     * @param  mixed  $args   参數
      * @return void
      */
     public static function __callStatic($method, $args)

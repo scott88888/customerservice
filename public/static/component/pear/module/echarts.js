@@ -15866,18 +15866,18 @@
         },
         magicType: {
           title: {
-            line: '切换为折线图',
-            bar: '切换为柱状图',
-            stack: '切换为堆叠',
-            tiled: '切换为平铺'
+            line: '切换為折线图',
+            bar: '切换為柱状图',
+            stack: '切换為堆叠',
+            tiled: '切换為平铺'
           }
         },
         restore: {
           title: '还原'
         },
         saveAsImage: {
-          title: '保存为图片',
-          lang: ['右键另存为图片']
+          title: '保存為图片',
+          lang: ['右键另存為图片']
         }
       },
       series: {
@@ -15885,8 +15885,8 @@
           pie: '饼图',
           bar: '柱状图',
           line: '折线图',
-          scatter: '散点图',
-          effectScatter: '涟漪散点图',
+          scatter: '散點图',
+          effectScatter: '涟漪散點图',
           radar: '雷达图',
           tree: '树图',
           treemap: '矩形树图',
@@ -24705,7 +24705,7 @@
 
         switch (cmd) {
           case CMD$3.M:
-            // moveTo 命令重新创建一个新的 subpath, 并且更新新的起点
+            // moveTo 命令重新建立一个新的 subpath, 并且更新新的起點
             // 在 closePath 的时候使用
             x0 = data[i++];
             y0 = data[i++];
@@ -24732,7 +24732,7 @@
             break;
 
           case CMD$3.A:
-            // TODO Arc 判断的开销比较大
+            // TODO Arc 判断的開销比较大
             var cx = data[i++];
             var cy = data[i++];
             var rx = data[i++];
@@ -24746,10 +24746,10 @@
             y1 = Math.sin(theta) * ry + cy; // 不是直接使用 arc 命令
 
             if (i <= 1) {
-              // 第一个命令起点还未定义
+              // 第一个命令起點还未定义
               x0 = x1;
               y0 = y1;
-            } // zr 使用scale来模拟椭圆, 这里也对x做一定的缩放
+            } // zr 使用scale来模拟椭圆, 这里也對x做一定的缩放
 
 
             var _x = (x - cx) * ry / rx + cx;
@@ -43616,10 +43616,10 @@
         // 默认全局居中
         center: ['50%', '50%'],
         radius: [0, '75%'],
-        // 默认顺时针
+        // 默认顺时針
         clockwise: true,
         startAngle: 90,
-        // 最小角度改为0
+        // 最小角度改為0
         minAngle: 0,
         // If the angle of a sector less than `minShowLabelAngle`,
         // the label will not be displayed.
@@ -43657,16 +43657,16 @@
           bleedMargin: 10,
           // Distance between text and label line.
           distanceToLabelLine: 5 // formatter: 标签文本格式器，同Tooltip.formatter，不支持异步回调
-          // 默认使用全局文本样式，详见TEXTSTYLE
-          // distance: 当position为inner时有效，为label位置到圆心的距离与圆半径(环状图为内外半径和)的比例系数
+          // 默认使用全局文本樣式，详见TEXTSTYLE
+          // distance: 当position為inner时有效，為label位置到圆心的距离与圆半径(环状图為内外半径和)的比例系數
 
         },
         // Enabled when label.normal.position is 'outer'
         labelLine: {
           show: true,
-          // 引导线两段中的第一段长度
+          // 引导线两段中的第一段長度
           length: 15,
-          // 引导线两段中的第二段长度
+          // 引导线两段中的第二段長度
           length2: 15,
           smooth: false,
           minTurnAngle: 90,
@@ -53247,7 +53247,7 @@
 
         if (!containerGroup) {
           // FIXME
-          // 加一层containerGroup是为了clip，但是现在clip功能并没有实现。
+          // 加一层containerGroup是為了clip，但是现在clip功能并没有實現。
           containerGroup = this._containerGroup = new Group$1();
 
           this._initEvents(containerGroup);
@@ -54804,7 +54804,7 @@
         var treeRoot = seriesModel.getData().tree.root;
         treeRoot.setLayout(calculateRootPosition(layoutInfo, rootRect, targetInfo), true);
         seriesModel.setLayoutInfo(layoutInfo); // FIXME
-        // 现在没有clip功能，暂时取ec高宽。
+        // 现在没有clip功能，暫时取ec高宽。
 
         prunning(treeRoot, // Transform to base element coordinate system.
         new BoundingRect(-layoutInfo.x, -layoutInfo.y, ecWidth, ecHeight), viewAbovePath, viewRoot, 0);
@@ -58585,7 +58585,7 @@
         min: 0,
         // 最大值
         max: 100,
-        // 分割段数，默认为10
+        // 分割段數，默认為10
         splitNumber: 10,
         // 坐标轴线
         axisLine: {
@@ -58610,10 +58610,10 @@
         splitLine: {
           // 默认显示，属性show控制显示与否
           show: true,
-          // 属性length控制线长
+          // 属性length控制线長
           length: 10,
           distance: 10,
-          // 属性lineStyle（详见lineStyle）控制线條样式
+          // 属性lineStyle（详见lineStyle）控制线條樣式
           lineStyle: {
             color: '#63677A',
             width: 3,
@@ -58626,10 +58626,10 @@
           show: true,
           // 每份split细分多少段
           splitNumber: 5,
-          // 属性length控制线长
+          // 属性length控制线長
           length: 6,
           distance: 10,
-          // 属性lineStyle控制线條样式
+          // 属性lineStyle控制线條樣式
           lineStyle: {
             color: '#63677A',
             width: 1,
@@ -58666,9 +58666,9 @@
         },
         title: {
           show: true,
-          // x, y，单位px
+          // x, y，單位px
           offsetCenter: [0, '20%'],
-          // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+          // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
           color: '#464646',
           fontSize: 16,
           valueAnimation: false
@@ -58681,10 +58681,10 @@
           width: 100,
           height: null,
           padding: [5, 10],
-          // x, y，单位px
+          // x, y，單位px
           offsetCenter: [0, '40%'],
           // formatter: null,
-          // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+          // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
           color: '#464646',
           fontSize: 30,
           fontWeight: 'bold',
@@ -64238,7 +64238,7 @@
         // Geo coordinate system
         // geoIndex: 0,
         // symbol: null,        // 图形类型
-        symbolSize: 10 // 图形大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+        symbolSize: 10 // 图形大小，半宽（半径）参數，当图形為方向或菱形则总宽度為symbolSize * 2
         // symbolRotate: null,  // 图形旋转控制
         // itemStyle: {
         //     opacity: 1
@@ -67735,10 +67735,10 @@
         // 默认全局居中
         center: ['50%', '50%'],
         radius: [0, '75%'],
-        // 默认顺时针
+        // 默认顺时針
         clockwise: true,
         startAngle: 90,
-        // 最小角度改为0
+        // 最小角度改為0
         minAngle: 0,
         // If still show when all data zero.
         stillShowZeroSum: true,
@@ -81692,7 +81692,7 @@
           interval: 'auto',
           rotate: 0,
           // formatter: null,
-          // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+          // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
           color: '#A4B1D7'
         },
         itemStyle: {
@@ -81735,7 +81735,7 @@
         emphasis: {
           label: {
             show: true,
-            // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+            // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
             color: '#6f778d'
           },
           itemStyle: {
@@ -83141,7 +83141,7 @@
             }
 
             if (isFunction(symbolSize)) {
-              // FIXME 这里不兼容 ECharts 2.x，2.x 貌似参数是整个資料？
+              // FIXME 这里不兼容 ECharts 2.x，2.x 貌似参數是整个資料？
               symbolSize = symbolSize(rawIdx, dataParams);
             }
 
@@ -87172,7 +87172,7 @@
         inactiveColor: '#aaa',
         borderWidth: 0,
         padding: 5,
-        // 接受数组分别设定上右下左边距，同css
+        // 接受數组分别设定上右下左边距，同css
         textGap: 10,
         precision: 0,
         textStyle: {
@@ -89406,7 +89406,7 @@
       }
 
       function getSeriesTypeName(type) {
-        return ecModel.getLocaleModel().get(['series', 'typeNames'])[type] || '自定义图';
+        return ecModel.getLocaleModel().get(['series', 'typeNames'])[type] || '自訂图';
       }
     }
 

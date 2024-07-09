@@ -26,13 +26,13 @@
 .wcPop-close .popui__footer, .wcPop-close .popui__actionsheet{animation: anim-fadeOutUp .3s;}
 
 
-/* __ 自定义样式 */
-/* 样式1（toast） */
+/* __ 自訂樣式 */
+/* 樣式1（toast） */
 .popui__toast{background: rgba(17,17,17,.7); color: #fff; min-height: 120px; width: 120px;}
 .popui__toast .popui__toast-icon{margin-bottom: 5px;}
 .popui__toast .popui__toast-icon img{height:24px;width:24px;}
 .popui__toast .popui__panel-cnt{padding: 35px 10px 15px;}
-/* 样式2（footer底部弹出） */
+/* 樣式2（footer底部弹出） */
 .popui__footer{background: 0 0; margin:0 auto; max-width: 100%; position: fixed; left: 0; right: 0; bottom: 10px; width: 95%;}
 .popui__footer .popui__panel-cnt{background-color: rgba(255,255,255,.8); border-radius: 3px 3px 0 0; padding: 15px 10px;}
 .popui__footer .popui__panel-btn{background: 0 0; border-top: 0; display: block;}
@@ -41,14 +41,14 @@
 .popui__footer .popui__panel-btn .btn:after{border-left:none;}
 .popui__footer .popui__panel-btn .btn:nth-last-child(2){border-radius: 0 0 3px 3px;}
 .popui__footer .popui__panel-btn .btn:nth-last-child(1){border-top: 0; border-radius: 3px; margin-top: 10px;}
-/* 样式3（actionsheet底部弹出式菜单） */
+/* 樣式3（actionsheet底部弹出式選單） */
 .popui__actionsheet{border-radius: 0; margin:0 auto; max-width: 100%; position: fixed; left: 0; right: 0; bottom: 0; width: 100%;}
 .popui__actionsheet .popui__panel-cnt{padding: 15px 10px;}
 .popui__actionsheet .popui__panel-btn{background: 0 0; border-top: 0; display: block;}
 .popui__actionsheet .popui__panel-btn .btn{border-top: 1px solid #e7e7e7;}
 .popui__actionsheet .popui__panel-btn .btn:after{border-left:none;}
 .popui__actionsheet .popui__panel-btn .btn:nth-last-child(1){border-top: 5px solid #e7e7e7; border-bottom-right-radius: 0;}
-/* 样式4（ios、android） */
+/* 樣式4（ios、android） */
 .wcPop-close .popui__ios, .wcPop-close .popui__android, .wcPop-close .popui__androidSheet{animation: anim-fadeScaleOut .3s;}
 .popui__ios{width: 80%;}
 .popui__ios .popui__panel-tit{font-size:16px; padding: 20px 25px 10px;}
@@ -77,7 +77,7 @@
 .popui__androidSheet .popui__panel-btn .btn:after{display: none;}
 
 
-/* __ 弹窗动画 */
+/* __ 彈窗動画 */
 .anim-fadeIn{animation: anim-fadeIn .5s;}
 .anim-scaleIn{animation: anim-scaleIn .3s;}
 .anim-fadeInUp{animation: anim-fadeInUp .3s;}
@@ -99,12 +99,12 @@
 	0% {opacity: 0; transform: scale(.9);}
 	100% {opacity: 1; transform: scale(1);}
 }
-/* 由上向下打开 */
+/* 由上向下打開 */
 @keyframes anim-fadeInUp {
 	0% {opacity: 0; transform: translateY(-100%);}
 	100% {opacity: 1; transform: translateY(0);}
 }
-/* 由下向上打开 */
+/* 由下向上打開 */
 @keyframes anim-fadeInDown {
 	0% {opacity: 0; transform: translateY(100%);}
 	100% {opacity: 1; transform: translateY(0);}
@@ -121,12 +121,12 @@
 @keyframes anim-fadeScaleOut {
 	100% {opacity: 0;-webkit-transform: scale(.9);transform: scale(.9);}
 }
-/* 左侧翻转打开 */
+/* 左側翻转打開 */
 @keyframes anim-rollIn {
 	0% {opacity: 0; transform: translateX(-100%) rotate(-120deg);}
 	100% {opacity: 1; transform: translateX(0) rotate(0);}
 }
-/* 震动 */
+/* 震動 */
 @keyframes anim-shake {
 	0%,100% {transform: translateX(0);}
 	10%,30%,50%,70%,90% {transform: translateX(-10px);}
@@ -144,7 +144,7 @@
 }
 
 
-/* 去除android上a、button、input标签点击产生的阴影 */
+/* 去除android上a、button、input标签點擊产生的阴影 */
 a,button,input,label{-webkit-tap-highlight-color:rgba(255,0,0,0); outline:none;}
 /* __ flex弹性盒子 */
 .flexbox{display:-webkit-box; display:-webkit-flex; display:flex; display:-ms-flexbox;}

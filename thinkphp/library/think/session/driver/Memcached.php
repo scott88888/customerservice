@@ -21,7 +21,7 @@ class Memcached extends SessionHandler
         'host'         => '127.0.0.1', // memcache主机
         'port'         => 11211, // memcache端口
         'expire'       => 3600, // session有效期
-        'timeout'      => 0, // 连接超时时间（单位：毫秒）
+        'timeout'      => 0, // 連結超时時間（單位：毫秒）
         'session_name' => '', // memcache key前缀
         'username'     => '', //账号
         'password'     => '', //密碼
@@ -33,7 +33,7 @@ class Memcached extends SessionHandler
     }
 
     /**
-     * 打开Session
+     * 打開Session
      * @access public
      * @param string    $savePath
      * @param mixed     $sessName
@@ -45,7 +45,7 @@ class Memcached extends SessionHandler
             throw new Exception('not support:memcached');
         }
         $this->handler = new \Memcached;
-        // 设置连接超时时间（单位：毫秒）
+        // 設定連結超时時間（單位：毫秒）
         if ($this->config['timeout'] > 0) {
             $this->handler->setOption(\Memcached::OPT_CONNECT_TIMEOUT, $this->config['timeout']);
         }
@@ -55,7 +55,7 @@ class Memcached extends SessionHandler
         if (empty($ports[0])) {
             $ports[0] = 11211;
         }
-        // 建立连接
+        // 建立連結
         $servers = [];
         foreach ((array) $hosts as $i => $host) {
             $servers[] = [$host, (isset($ports[$i]) ? $ports[$i] : $ports[0]), 1];

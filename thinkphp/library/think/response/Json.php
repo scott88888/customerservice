@@ -15,7 +15,7 @@ use think\Response;
 
 class Json extends Response
 {
-    // 输出参数
+    // 输出参數
     protected $options = [
         'json_encode_param' => JSON_UNESCAPED_UNICODE,
     ];

@@ -17,7 +17,7 @@ use think\Lang;
 
 /**
  *
- * 前台Pc端对话窗口.
+ * 前台Pc端對話視窗.
  */
 class Index extends Controller
 {
@@ -107,7 +107,7 @@ class Index extends Controller
     }
 
     /**
-     * 对话窗口頁面.
+     * 對話視窗頁面.
      *
      * @return mixed
      */
@@ -192,7 +192,7 @@ class Index extends Controller
             }
         }
 
-        // 判断是否访问过
+        // 判断是否訪問过
         if ($visiter_id) {
 
             if (!isset($_COOKIE['product_id'])) {
@@ -387,7 +387,7 @@ class Index extends Controller
     }
 
     /**
-     * 取得排队数量.
+     * 取得排队數量.
      *
      * @return mixed
      */

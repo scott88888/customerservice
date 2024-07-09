@@ -36,7 +36,7 @@ var connenctVide =function(cid){
     }).catch(function (e) {
         switch (e.name){
             case 'PermissionDeniedError':
-                alert('请同意打开摄像头');
+                alert('請同意打開摄像头');
                 break;
             case 'DevicesNotFoundError':
                 alert('未找到摄像头');
@@ -55,7 +55,7 @@ var connenctVide =function(cid){
             channel.bind('client-already', function (e) {
                 ++i;
                 if (i == 2){
-                    alert('房间已满，请更换房间');
+                    alert('房间已满，請更换房间');
                 }
             });
             

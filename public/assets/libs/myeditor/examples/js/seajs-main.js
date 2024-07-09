@@ -13,9 +13,9 @@ define(function(require){
             path : '../lib/',
             markdown : md,
             //toolbar  : false,             //關閉工具栏
-            htmlDecode : true,            // 開啟HTML标签解析，为了安全性，默认不開啟
+            htmlDecode : true,            // 開啟HTML标签解析，為了安全性，默认不開啟
             tex : true,                   // 開啟科学公式TeX語言支持，默认關閉
-            //previewCodeHighlight : false,  // 關閉预览窗口的代码高亮，默认開啟
+            //previewCodeHighlight : false,  // 關閉预览視窗的程式碼高亮，默认開啟
             flowChart : true,              // 疑似Sea.js与Raphael.js有冲突，必须先加载Raphael.js，Editor.md才能在Sea.js下正常进行；
             sequenceDiagram : true,        // 同上
             onload : function() {

@@ -17,11 +17,11 @@ trait Queueable
     /** @var string 队列名稱 */
     public $queue;
 
-    /** @var integer 延迟时间 */
+    /** @var integer 延迟時間 */
     public $delay;
 
     /**
-     * 设置队列名
+     * 設定队列名
      * @param $queue
      * @return $this
      */
@@ -33,7 +33,7 @@ trait Queueable
     }
 
     /**
-     * 设置延迟时间
+     * 設定延迟時間
      * @param $delay
      * @return $this
      */

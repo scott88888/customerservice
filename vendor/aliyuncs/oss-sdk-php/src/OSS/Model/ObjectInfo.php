@@ -9,8 +9,8 @@ namespace OSS\Model;
  * listObjects接口中返回的Object列表中的类
  *
  * listObjects接口返回資料中包含两个Array
- * 一个是拿到的Object列表【可以理解成对应文件系统中的文件列表】
- * 一个是拿到的Prefix列表【可以理解成对应文件系统中的目录列表】
+ * 一个是拿到的Object列表【可以理解成對应文件系统中的文件列表】
+ * 一个是拿到的Prefix列表【可以理解成對应文件系统中的目录列表】
  *
  * @package OSS\Model
  */

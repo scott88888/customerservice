@@ -341,7 +341,7 @@ $(document).ready(function () {
             $(this).append('<input name="_csrf" value="' + _csrf + '" type="hidden">');
     });
 
-    //元素自动保持比例
+    //元素自動保持比例
     (function () {
         $.toResponsive = function () {
             $("*[data-responsive]").each(function (i) {
@@ -363,7 +363,7 @@ $(document).ready(function () {
         };
     })();
 
-    //表單自动送出
+    //表單自動送出
     (function () {
         $(document).on("click", ".auto-submit-form .submit-btn", "click", function () {
             var form = $(this).parents("form");

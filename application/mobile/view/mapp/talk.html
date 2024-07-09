@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <title>谈话頁面</title>
+    <title>谈話頁面</title>
     <script>
     ROOT_URL = "{$baseroot?$baseroot:''}";
     </script>
@@ -616,7 +616,7 @@
                             </div>
                         </form>
                     </a>
-                    <!-- 推送评价 -->
+                    <!-- 推送評價 -->
                     <a id="evaluate" href="javascript:" onclick="toEvaluate()"><img src="__image__/mobile/get-evaluate.png" alt=""></a>
                 </div>
             </div>
@@ -660,7 +660,7 @@
             },
 
             methods: {
-                // 请求使用者資料
+                // 請求使用者資料
                 getList(page) {
                     let that = this;
                     $.ajax({
@@ -739,7 +739,7 @@
             // });
             group.getUser();
         })
-        // 推送评价
+        // 推送評價
         var toEvaluate = function() {
             $.ajax({
                 url:ROOT_URL + '/admin/set/pushComment',
@@ -748,7 +748,7 @@
                 success:function(res){
                     if(res.code == 0){
                         var str = '';
-                        str += "<div class='push-evaluation'>已推送评价</div>"
+                        str += "<div class='push-evaluation'>已推送評價</div>"
                         $(".conversation").append(str);
                         var div = document.getElementById("wrap");
                         div.scrollTop = div.scrollHeight;
@@ -777,11 +777,11 @@
 
         var getaudio = function() {
 
-            //音频先加载
+            //音訊先加载
             var audio_context;
             var recorder;
             var wavBlob;
-            //创建音频
+            //建立音訊
             try {
                 // webkit shim
                 window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -791,7 +791,7 @@
                 audio_context = new AudioContext;
 
                 if (!navigator.getUserMedia) {
-                    console.log('语音创建失敗');
+                    console.log('语音建立失敗');
                 };
             } catch (e) {
                 console.log(e);
@@ -813,7 +813,7 @@
                             icon: 16,
                             shade: 0.01,
                             skin: 'layui-layer-lan',
-                            time: 0 //20s后自动關閉
+                            time: 0 //20s后自動關閉
                                 ,
                             btn: ['发送', '取消'],
                             yes: function(index, layero) {
@@ -831,7 +831,7 @@
                                         if (xhr.readyState == 4 && xhr.status == 200) {
                                             jsonObject = JSON.parse(xhr.responseText);
 
-                                            voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="' + jsonObject.data.src + '"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音频消息</p></div>';
+                                            voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="' + jsonObject.data.src + '"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音訊消息</p></div>';
 
                                             var sid = $('#channel').text();
                                             var pic = $("#se_avatar").attr('src');
@@ -915,11 +915,11 @@
                     });
                 } else {
 
-                    layer.msg('音频输入只支持https协议！');
+                    layer.msg('音訊输入只支持https协议！');
                 }
 
             }, function(e) {
-                layer.msg('音频输入只支持https协议！');
+                layer.msg('音訊输入只支持https协议！');
             });
         }
 
@@ -1156,7 +1156,7 @@
             '偷笑': 'emo_26',
             '亲亲': 'emo_27',
             '生病': 'emo_28',
-            '太开心': 'emo_29',
+            '太開心': 'emo_29',
             '白眼': 'emo_30',
             '右哼哼': 'emo_31',
             '左哼哼': 'emo_32',
@@ -1222,7 +1222,7 @@
             str += '<li><img title="偷笑" src="/upload/emoji/emo_26.gif" onclick="emoj(this)"/></li>';
             str += '<li><img title="亲亲"  src="/upload/emoji/emo_27.gif"  onclick="emoj(this)"/></li>';
             str += '<li><img title="生病" src="/upload/emoji/emo_28.gif" onclick="emoj(this)"/></li>';
-            str += '<li><img title="太开心" src="/upload/emoji/emo_29.gif" onclick="emoj(this)"/></li>';
+            str += '<li><img title="太開心" src="/upload/emoji/emo_29.gif" onclick="emoj(this)"/></li>';
             str += '<li><img title="白眼" src="/upload/emoji/emo_30.gif" onclick="emoj(this)"/></li>';
             str += '<li><img title="右哼哼" src="/upload/emoji/emo_31.gif" onclick="emoj(this)"/></li>';
             str += '<li><img title="左哼哼" src="/upload/emoji/emo_32.gif" onclick="emoj(this)"/></li>';
@@ -1367,7 +1367,7 @@
 
             } else {
 
-                layer.msg("请選擇图片", { icon: 2 });
+                layer.msg("請選擇图片", { icon: 2 });
             }
         }
 
@@ -1588,7 +1588,7 @@
         }
 
         var text = document.getElementById('text_all');
-        // 取得焦点，拉到底部
+        // 取得焦點，拉到底部
         text.onfocus = function() {
             $(".tool_box").hide();
             let height = +document.documentElement.clientHeight;
@@ -1596,7 +1596,7 @@
                 $('html ,body').animate({scrollTop: height}, 0);
             },200)
         }
-        // 失去焦点，拉到顶部
+        // 失去焦點，拉到顶部
         text.onblur = function() {
             setTimeout(function() {
                 $('html ,body').animate({ scrollTop: 0 }, 0);

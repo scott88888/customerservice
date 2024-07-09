@@ -55,7 +55,7 @@ class Music extends AbstractMessage
     ];
 
     /**
-     * 设置音乐封面.
+     * 設定音乐封面.
      *
      * @param string $mediaId
      *

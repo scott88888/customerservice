@@ -1,7 +1,7 @@
 <form method="post" return="{:url('app/index')}" action="{$action_url}" class="auto-form">
     <!-- 聊天记录 -->
     <div class="talk clean-item">
-        <!-- 勾选聊天记录 && 若大小为0B input增加disabled属性 -->
+        <!-- 勾选聊天记录 && 若大小為0B input增加disabled属性 -->
         <input id="talk" name="talk" type="checkbox">
         <span class="clean-item-title">聊天记录</span>
         <!-- 日期筛选 -->
@@ -12,7 +12,7 @@
             <option label="3个月前" value="3"></option>
             <option label="1年前" value="4"></option>
         </select>
-        <!-- 所占空间 -->
+        <!-- 所占空間 -->
         <span class="float-text">{$count}條</span>
     </div>
     <div style="display: flex;justify-content: center;">
@@ -21,7 +21,7 @@
     </div>
 </form>
 <script>
-    // 根据勾选聊天记录选项判断日期選擇项禁用狀態
+    // 根據勾选聊天记录选项判断日期選擇项禁用狀態
     $("#talk").click(function () {
         if ($(this).prop("checked")) {
             $(".talk select").removeAttr("disabled")

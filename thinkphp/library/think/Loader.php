@@ -16,7 +16,7 @@ use think\exception\ClassNotFoundException;
 class Loader
 {
     /**
-     * @var array 实例数组
+     * @var array 实例數组
      */
     protected static $instance = [];
 
@@ -26,12 +26,12 @@ class Loader
     protected static $classMap = [];
 
     /**
-     * @var array 命名空间别名
+     * @var array 命名空間别名
      */
     protected static $namespaceAlias = [];
 
     /**
-     * @var array PSR-4 命名空间前缀长度映射
+     * @var array PSR-4 命名空間前缀長度映射
      */
     private static $prefixLengthsPsr4 = [];
 
@@ -46,7 +46,7 @@ class Loader
     private static $fallbackDirsPsr4 = [];
 
     /**
-     * @var array PSR-0 命名空间前缀映射
+     * @var array PSR-0 命名空間前缀映射
      */
     private static $prefixesPsr0 = [];
 
@@ -61,14 +61,14 @@ class Loader
     private static $files = [];
 
     /**
-     * 自动加载
+     * 自動加载
      * @access public
      * @param  string $class 类名
      * @return bool
      */
     public static function autoload($class)
     {
-        // 检测命名空间别名
+        // 检测命名空間别名
         if (!empty(self::$namespaceAlias)) {
             $namespace = dirname($class);
             if (isset(self::$namespaceAlias[$namespace])) {
@@ -155,7 +155,7 @@ class Loader
             }
         }
 
-        // 找不到则设置映射为 false 并返回
+        // 找不到则設定映射為 false 并返回
         return self::$classMap[$class] = false;
     }
 
@@ -176,9 +176,9 @@ class Loader
     }
 
     /**
-     * 注册命名空间
+     * 注册命名空間
      * @access public
-     * @param  string|array $namespace 命名空间
+     * @param  string|array $namespace 命名空間
      * @param  string       $path      路径
      * @return void
      */
@@ -194,11 +194,11 @@ class Loader
     }
 
     /**
-     * 新增 PSR-0 命名空间
+     * 新增 PSR-0 命名空間
      * @access private
-     * @param  array|string $prefix  空间前缀
+     * @param  array|string $prefix  空間前缀
      * @param  array        $paths   路径
-     * @param  bool         $prepend 预先设置的優先级更高
+     * @param  bool         $prepend 预先設定的優先级更高
      * @return void
      */
     private static function addPsr0($prefix, $paths, $prepend = false)
@@ -221,11 +221,11 @@ class Loader
     }
 
     /**
-     * 新增 PSR-4 空间
+     * 新增 PSR-4 空間
      * @access private
-     * @param  array|string $prefix  空间前缀
+     * @param  array|string $prefix  空間前缀
      * @param  string       $paths   路径
-     * @param  bool         $prepend 预先设置的優先级更高
+     * @param  bool         $prepend 预先設定的優先级更高
      * @return void
      */
     private static function addPsr4($prefix, $paths, $prepend = false)
@@ -258,9 +258,9 @@ class Loader
     }
 
     /**
-     * 注册命名空间别名
+     * 注册命名空間别名
      * @access public
-     * @param  array|string $namespace 命名空间
+     * @param  array|string $namespace 命名空間
      * @param  string       $original  源文件
      * @return void
      */
@@ -274,17 +274,17 @@ class Loader
     }
 
     /**
-     * 注册自动加载机制
+     * 注册自動加载机制
      * @access public
-     * @param  callable $autoload 自动加载处理方法
+     * @param  callable $autoload 自動加载处理方法
      * @return void
      */
     public static function register($autoload = null)
     {
-        // 注册系统自动加载
+        // 注册系统自動加载
         spl_autoload_register($autoload ?: 'think\\Loader::autoload', true, true);
 
-        // Composer 自动加载支持
+        // Composer 自動加载支持
         if (is_dir(VENDOR_PATH . 'composer')) {
             if (PHP_VERSION_ID >= 50600 && is_file(VENDOR_PATH . 'composer' . DS . 'autoload_static.php')) {
                 require VENDOR_PATH . 'composer' . DS . 'autoload_static.php';
@@ -302,7 +302,7 @@ class Loader
             }
         }
 
-        // 注册命名空间定义
+        // 注册命名空間定义
         self::addNamespace([
             'think'    => LIB_PATH . 'think' . DS,
             'behavior' => LIB_PATH . 'behavior' . DS,
@@ -316,12 +316,12 @@ class Loader
 
         self::loadComposerAutoloadFiles();
 
-        // 自动加载 extend 目录
+        // 自動加载 extend 目录
         self::$fallbackDirsPsr4[] = rtrim(EXTEND_PATH, DS);
     }
 
     /**
-     * 注册 composer 自动加载
+     * 注册 composer 自動加载
      * @access private
      * @return void
      */
@@ -366,9 +366,9 @@ class Loader
     }
 
     /**
-     * 匯入所需的类库 同 Java 的 Import 本函数有缓存功能
+     * 匯入所需的类库 同 Java 的 Import 本函數有缓存功能
      * @access public
-     * @param  string $class   类库命名空间字符串
+     * @param  string $class   类库命名空間字符串
      * @param  string $baseUrl 起始路径
      * @param  string $ext     匯入的文件扩展名
      * @return bool
@@ -387,7 +387,7 @@ class Loader
             list($name, $class) = explode(DS, $class, 2);
 
             if (isset(self::$prefixDirsPsr4[$name . '\\'])) {
-                // 注册的命名空间
+                // 注册的命名空間
                 $baseUrl = self::$prefixDirsPsr4[$name . '\\'];
             } elseif ('@' == $name) {
                 // 加载当前模块应用类库
@@ -560,7 +560,7 @@ class Loader
      * 資料库初始化 并取得資料库类实例
      * @access public
      * @param  mixed       $config 資料库配置
-     * @param  bool|string $name   连接标识 true 强制重新连接
+     * @param  bool|string $name   連結標識 true 强制重新連結
      * @return \think\db\Connection
      */
     public static function db($config = [], $name = false)
@@ -569,10 +569,10 @@ class Loader
     }
 
     /**
-     * 远程调用模块的操作方法 参数格式 [模块/控制器/]操作
+     * 远程调用模块的操作方法 参數格式 [模块/控制器/]操作
      * @access public
      * @param  string       $url          调用地址
-     * @param  string|array $vars         调用参数 支持字符串和数组
+     * @param  string|array $vars         调用参數 支持字符串和數组
      * @param  string       $layer        要调用的控制层名稱
      * @param  bool         $appendSuffix 是否新增类名后缀
      * @return mixed
@@ -601,7 +601,7 @@ class Loader
 
     /**
      * 字符串命名风格转换
-     * type 0 将 Java 风格转换为 C 的风格 1 将 C 风格转换为 Java 的风格
+     * type 0 将 Java 风格转换為 C 的风格 1 将 C 风格转换為 Java 的风格
      * @access public
      * @param  string  $name    字符串
      * @param  integer $type    转换类型

@@ -11,7 +11,7 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
   exports('setter', {
     container: 'LAY_app' //容器ID
     ,base: layui.cache.base //记录静态资源所在路径
-    ,views: layui.cache.base + 'tpl/' //动态模板所在目录
+    ,views: layui.cache.base + 'tpl/' //動态模板所在目录
     ,entry: 'index' //默认视图文件名
     ,engine: '.html' //视图文件后缀名
     ,pageTabs: true //是否開啟頁面选项卡功能。iframe版推荐開啟
@@ -22,17 +22,17 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     
     ,debug: true //是否開啟调试模式。如開啟，接口异常时会抛出异常 URL 等訊息
 
-    //自定义请求字段
+    //自訂請求字段
     ,request: {
-      tokenName: false //自动携带 token 的字段名（如：access_token）。可设置 false 不携带。
+      tokenName: false //自動携带 token 的字段名（如：access_token）。可設定 false 不携带。
     }
     
-    //自定义响应字段
+    //自訂响应字段
     ,response: {
       statusName: 'code' //資料狀態的字段名稱
       ,statusCode: {
-        ok: 0 //資料狀態一切正常的狀態码
-        ,logout: 1001 //登入狀態失效的狀態码
+        ok: 0 //資料狀態一切正常的狀態碼
+        ,logout: 1001 //登入狀態失效的狀態碼
       }
       ,msgName: 'msg' //狀態訊息的字段名稱
       ,dataName: 'data' //資料详情的字段名稱
@@ -121,8 +121,8 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
         ,alias: 'green-header' //墨绿头
       }]
       
-      //初始的颜色索引，对应上面的配色方案数组索引
-      //如果本地已经有主题色记录，则以本地记录为優先，除非请求本地資料（localStorage）
+      //初始的颜色索引，對应上面的配色方案數组索引
+      //如果本地已经有主题色记录，则以本地记录為優先，除非請求本地資料（localStorage）
       ,initColorIndex: 0
     }
   });

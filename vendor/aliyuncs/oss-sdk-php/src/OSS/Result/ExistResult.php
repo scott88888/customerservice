@@ -4,7 +4,7 @@ namespace OSS\Result;
 
 /**
  * Class ExistResult 檢查bucket和object是否存在的返回结果，
- * 根据返回response的http status判断
+ * 根據返回response的http status判断
  * @package OSS\Result
  */
 class ExistResult extends Result
@@ -18,7 +18,7 @@ class ExistResult extends Result
     }
 
     /**
-     * 根据返回http狀態码判断，[200-299]即认为是OK, 判断是否存在的接口，404也认为是一种
+     * 根據返回http狀態碼判断，[200-299]即认為是OK, 判断是否存在的接口，404也认為是一种
      * 有效响应
      *
      * @return bool

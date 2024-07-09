@@ -8,7 +8,7 @@
 
 ## 概述
 
-阿里云对象存储（Object Storage Service，简称OSS），是阿里云对外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通过调用API，在任何应用、任何时间、任何地点上传和下载資料，也可以通过使用者Web控制台对資料进行简单的管理。OSS适合存放任意文件类型，适合各种网站、开发企业及开发者使用。
+阿里云對象存储（Object Storage Service，简称OSS），是阿里云對外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通過调用API，在任何应用、任何時間、任何地點上传和下载資料，也可以通過使用者Web控制台對資料进行简單的管理。OSS适合存放任意文件类型，适合各种網站、開发企业及開发者使用。
 
 
 ## 运行环境
@@ -21,26 +21,26 @@
 
 ## 安装方法
 
-1. 如果您通过composer管理您的项目依赖，可以在你的项目根目录运行：
+1. 如果您通過composer管理您的项目依赖，可以在你的项目根目录运行：
 
         $ composer require aliyuncs/oss-sdk-php
 
-   或者在你的`composer.json`中声明对Aliyun OSS SDK for PHP的依赖：
+   或者在你的`composer.json`中声明對Aliyun OSS SDK for PHP的依赖：
 
         "require": {
             "aliyuncs/oss-sdk-php": "~2.0"
         }
 
-   然后通过`composer install`安装依赖。composer安装完成后，在您的PHP代码中引入依赖即可：
+   然后通過`composer install`安装依赖。composer安装完成后，在您的PHP程式碼中引入依赖即可：
 
         require_once __DIR__ . '/vendor/autoload.php';
 
 2. 您也可以直接下载已经打包好的[phar文件][releases-page]，然后在你
-   的代码中引入这个文件即可：
+   的程式碼中引入这个文件即可：
 
         require_once '/path/to/oss-sdk-php.phar';
 
-3. 下载SDK源码，在您的代码中引入SDK目录下的`autoload.php`文件：
+3. 下载SDK源碼，在您的程式碼中引入SDK目录下的`autoload.php`文件：
 
         require_once '/path/to/oss-sdk/autoload.php';
 
@@ -48,20 +48,20 @@
 
 ### 常用类
 
-| 类名 | 解释 |
+| 类名 | 解釋 |
 |:------------------|:------------------------------------|
-|OSS\OssClient | OSS客户端类，使用者通过OssClient的实例调用接口 |
+|OSS\OssClient | OSS客户端类，使用者通過OssClient的实例调用接口 |
 |OSS\Core\OssException | OSS异常类，使用者在使用的过程中，只需要注意这个异常|
 
 ### OssClient初始化
 
-SDK的OSS操作通过OssClient类完成的，下面代码创建一个OssClient对象:
+SDK的OSS操作通過OssClient类完成的，下面程式碼建立一个OssClient對象:
 
 ```php
 <?php
 $accessKeyId = "<您从OSS获得的AccessKeyId>"; ;
 $accessKeySecret = "<您从OSS获得的AccessKeySecret>";
-$endpoint = "<您选定的OSS資料中心访问域名，例如oss-cn-hangzhou.aliyuncs.com>";
+$endpoint = "<您选定的OSS資料中心訪問域名，例如oss-cn-hangzhou.aliyuncs.com>";
 try {
     $ossClient = new OssClient($accessKeyId, $accessKeySecret, $endpoint);
 } catch (OssException $e) {
@@ -71,7 +71,7 @@ try {
 
 ### 文件操作
 
-文件(又称对象,Object)是OSS中最基本的資料单元，您可以把它简单地理解为文件，用下面代码可以实现一个Object的上传：
+文件(又称對象,Object)是OSS中最基本的資料單元，您可以把它简單地理解為文件，用下面程式碼可以實現一个Object的上传：
 
 ```php
 <?php
@@ -85,9 +85,9 @@ try {
 }
 ```
 
-### 存储空间操作
+### 存储空間操作
 
-存储空间(又称Bucket)是一个使用者用来管理所存储Object的存储空间,对于使用者来说是一个管理Object的单元，所有的Object都必须隶属于某个Bucket。您可以按照下面的代码新建一个Bucket：
+存储空間(又称Bucket)是一个使用者用来管理所存储Object的存储空間,對于使用者来说是一个管理Object的單元，所有的Object都必须隶属于某个Bucket。您可以按照下面的程式碼新建一个Bucket：
 
 ```php
 <?php
@@ -101,10 +101,10 @@ try {
 
 ### 返回结果处理
 
-OssClient提供的接口返回返回資料分为两种：
+OssClient提供的接口返回返回資料分為两种：
 
-* Put，Delete类接口，接口返回null，如果没有OssException，即可认为操作成功
-* Get，List类接口，接口返回对应的資料，如果没有OssException，即可认为操作成功，举个例子：
+* Put，Delete类接口，接口返回null，如果没有OssException，即可认為操作成功
+* Get，List类接口，接口返回對应的資料，如果没有OssException，即可认為操作成功，举个例子：
 
 ```php
 <?php
@@ -114,7 +114,7 @@ foreach($bucketList as $bucket) {
     print($bucket->getLocation() . "\t" . $bucket->getName() . "\t" . $bucket->getCreatedate() . "\n");
 }
 ```
-上面代码中的$bucketListInfo的資料类型是 `OSS\Model\BucketListInfo`
+上面程式碼中的$bucketListInfo的資料类型是 `OSS\Model\BucketListInfo`
 
 
 ### 运行Sample程序
@@ -122,10 +122,10 @@ foreach($bucketList as $bucket) {
 1. 修改 `samples/Config.php`， 补充配置訊息
 2. 执行 `cd samples/ && php RunAll.php`
 
-### 运行单元测试
+### 运行單元测试
 
 1. 执行`composer install`下载依赖的库
-2. 设置环境变量
+2. 設定环境变量
 
         export OSS_ACCESS_KEY_ID=access-key-id
         export OSS_ACCESS_KEY_SECRET=access-key-secret
@@ -140,10 +140,10 @@ foreach($bucketList as $bucket) {
 
 ## 联系我们
 
-- [阿里云OSS官方网站](http://oss.aliyun.com)
+- [阿里云OSS官方網站](http://oss.aliyun.com)
 - [阿里云OSS官方论坛](http://bbs.aliyun.com)
 - [阿里云OSS官方文档中心](http://www.aliyun.com/product/oss#Docs)
-- 阿里云官方技术支持：[送出工单](https://workorder.console.aliyun.com/#/ticket/createIndex)
+- 阿里云官方技术支持：[送出工單](https://workorder.console.aliyun.com/#/ticket/createIndex)
 
 [releases-page]: https://github.com/aliyun/aliyun-oss-php-sdk/releases
 [phar-composer]: https://github.com/clue/phar-composer

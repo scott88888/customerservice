@@ -86,7 +86,7 @@ class Login extends Controller
         $post = $this->request->post();
 //        if(!isset($post['username']) || !isset($post['password']) || !isset($post['business_id'])){
         if(!isset($post['username']) || !isset($post['password'])){
-          $this->error('参数不完整!', url("/admin/login/index"));
+          $this->error('参數不完整!', url("/admin/login/index"));
         }
 
         $post['user_name'] =htmlspecialchars($post['username']);
@@ -98,7 +98,7 @@ class Login extends Controller
             if ($result !== true) {
                 $this->error($result);
             }
-            // 取得訊息 根据$post['username'] 的資料 来做條件 取得整條訊息
+            // 取得訊息 根據$post['username'] 的資料 来做條件 取得整條訊息
 //                        ->where('business_id',$post['business_id'])
            /* $admin = Admins::table("wolive_service")
                 ->where('user_name', $post['user_name'])
@@ -117,7 +117,7 @@ class Login extends Controller
 
             if (!$admin) {
 
-                $this->error('登入使用者名稱或密碼错误');
+                $this->error('登入使用者名稱或密碼錯誤');
             }
 
             // 取得登入資料

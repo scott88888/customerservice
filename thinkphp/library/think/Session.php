@@ -19,7 +19,7 @@ class Session
     protected static $init   = null;
 
     /**
-     * 设置或者取得session作用域（前缀）
+     * 設定或者取得session作用域（前缀）
      * @param string $prefix
      * @return string|void
      */
@@ -51,7 +51,7 @@ class Session
             ini_set('session.use_trans_sid', $config['use_trans_sid'] ? 1 : 0);
         }
 
-        // 启动session
+        // 启動session
         if (!empty($config['auto_start']) && PHP_SESSION_ACTIVE != session_status()) {
             ini_set('session.auto_start', 0);
             $isDoStart = true;
@@ -94,10 +94,10 @@ class Session
             session_cache_expire($config['cache_expire']);
         }
         if (!empty($config['type'])) {
-            // 读取session驱动
+            // 读取session驱動
             $class = false !== strpos($config['type'], '\\') ? $config['type'] : '\\think\\session\\driver\\' . ucwords($config['type']);
 
-            // 檢查驱动类
+            // 檢查驱動类
             if (!class_exists($class) || !session_set_save_handler(new $class($config))) {
                 throw new ClassNotFoundException('error session handler:' . $class, $class);
             }
@@ -111,7 +111,7 @@ class Session
     }
 
     /**
-     * session自动启动或者初始化
+     * session自動启動或者初始化
      * @return void
      */
     public static function boot()
@@ -127,7 +127,7 @@ class Session
     }
 
     /**
-     * session设置
+     * session設定
      * @param string        $name session名稱
      * @param mixed         $value session值
      * @param string|null   $prefix 作用域（前缀）
@@ -139,7 +139,7 @@ class Session
 
         $prefix = !is_null($prefix) ? $prefix : self::$prefix;
         if (strpos($name, '.')) {
-            // 二维数组赋值
+            // 二维數组赋值
             list($name1, $name2) = explode('.', $name);
             if ($prefix) {
                 $_SESSION[$prefix][$name1][$name2] = $value;
@@ -203,7 +203,7 @@ class Session
     }
 
     /**
-     * session设置 下一次请求有效
+     * session設定 下一次請求有效
      * @param string        $name session名稱
      * @param mixed         $value session值
      * @param string|null   $prefix 作用域（前缀）
@@ -219,7 +219,7 @@ class Session
     }
 
     /**
-     * 清空当前请求的session資料
+     * 清空当前請求的session資料
      * @return void
      */
     public static function flush()
@@ -295,7 +295,7 @@ class Session
         empty(self::$init) && self::boot();
         $prefix = !is_null($prefix) ? $prefix : self::$prefix;
         if (strpos($name, '.')) {
-            // 支持数组
+            // 支持數组
             list($name1, $name2) = explode('.', $name);
             return $prefix ? isset($_SESSION[$prefix][$name1][$name2]) : isset($_SESSION[$name1][$name2]);
         } else {
@@ -304,7 +304,7 @@ class Session
     }
 
     /**
-     * 新增資料到一个session数组
+     * 新增資料到一个session數组
      * @param  string  $key
      * @param  mixed   $value
      * @return void
@@ -320,7 +320,7 @@ class Session
     }
 
     /**
-     * 启动session
+     * 启動session
      * @return void
      */
     public static function start()
@@ -344,8 +344,8 @@ class Session
     }
 
     /**
-     * 重新生成session_id
-     * @param bool $delete 是否刪除关联会话文件
+     * 重新產生session_id
+     * @param bool $delete 是否刪除关联会話文件
      * @return void
      */
     public static function regenerate($delete = false)
@@ -354,12 +354,12 @@ class Session
     }
 
     /**
-     * 暂停session
+     * 暫停session
      * @return void
      */
     public static function pause()
     {
-        // 暂停session
+        // 暫停session
         session_write_close();
         self::$init = false;
     }

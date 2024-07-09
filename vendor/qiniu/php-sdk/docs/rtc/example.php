@@ -11,7 +11,7 @@ $client = new Qiniu\Rtc\AppClient($auth);
 $hub = 'lfxlive';
 $title = 'lfxl';
 try {
-    //创建app
+    //建立app
     $resp = $client->createApp($hub, $title, $maxUsers);
     print_r($resp);
     // 取得app狀態
@@ -34,7 +34,7 @@ try {
     // 列举房间
     $resp=$client->listActiveRooms("dgbfvvzid", 'lfx', null, null);
     print_r($resp);
-    //鉴权的有效时间: 1个小时.
+    //鉴权的有效時間: 1个小时.
     $resp = $client->appToken("dgd4vecde", "lfxl", '1111', (time()+3600), 'user');
     print_r($resp);
 } catch (\Exception $e) {

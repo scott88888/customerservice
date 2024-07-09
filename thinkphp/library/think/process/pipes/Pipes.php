@@ -28,13 +28,13 @@ abstract class Pipes
     const CHUNK_SIZE = 16384;
 
     /**
-     * 返回用于 proc_open 描述符的数组
+     * 返回用于 proc_open 描述符的數组
      * @return array
      */
     abstract public function getDescriptors();
 
     /**
-     * 返回一个数组的索引由其相关的流，以防这些管道使用的临时文件的文件名。
+     * 返回一个數组的索引由其相關的流，以防这些管道使用的临时文件的文件名。
      * @return string[]
      */
     abstract public function getFiles();
@@ -48,7 +48,7 @@ abstract class Pipes
     abstract public function readAndWrite($blocking, $close = false);
 
     /**
-     * 返回当前狀態如果有打开的文件句柄或管道。
+     * 返回当前狀態如果有打開的文件句柄或管道。
      * @return bool
      */
     abstract public function areOpen();

@@ -30,7 +30,7 @@ class Robots extends Base
             $post['reply']=$this->request->post('reply','','\app\Common::clearXSS');
             if (mb_strlen($post['keyword'],'UTF8') > 8) $this->error('關鍵字不能大于8个字！');
             $sort = $this->request->post('sort/d',0);
-            if (!is_int($sort)) $this->error('排序字段必须是整数！');
+            if (!is_int($sort)) $this->error('排序字段必须是整數！');
             $status = $this->request->post('status/d',0);
             if (!is_int($status)) $this->error('匹配方式字段非法！');
             $res = Robot::where("id", $post['id'])->field(true)->update($post);
@@ -51,7 +51,7 @@ class Robots extends Base
             $post['reply']=$this->request->post('reply','','\app\Common::clearXSS');
             if (mb_strlen($post['keyword'],'UTF8') > 8) $this->error('關鍵字不能大于8个字！');
             $sort = $this->request->post('sort/d',0);
-            if (!is_int($sort)) $this->error('排序字段必须是整数！');
+            if (!is_int($sort)) $this->error('排序字段必须是整數！');
             $status = $this->request->post('status/d',0);
             if (!is_int($status)) $this->error('匹配方式字段非法！');
             $res =Robot::insert($post);

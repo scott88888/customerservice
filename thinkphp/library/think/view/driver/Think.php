@@ -22,7 +22,7 @@ class Think
 {
     // 模板引擎实例
     private $template;
-    // 模板引擎参数
+    // 模板引擎参數
     protected $config = [
         // 视图基础目录（集中式）
         'view_base'   => '',
@@ -32,9 +32,9 @@ class Think
         'view_suffix' => 'html',
         // 模板文件名分隔符
         'view_depr'   => DS,
-        // 是否開啟模板编译缓存,设为false则每次都会重新编译
+        // 是否開啟模板编译缓存,设為false则每次都会重新编译
         'tpl_cache'   => true,
-        // 默认模板渲染规则 1 解析为小写+下划线 2 全部转换小写
+        // 默认模板渲染规则 1 解析為小写+下划线 2 全部转换小写
         'auto_rule'   => 1,
     ];
 
@@ -68,7 +68,7 @@ class Think
      * @access public
      * @param string    $template 模板文件
      * @param array     $data 模板变量
-     * @param array     $config 模板参数
+     * @param array     $config 模板参數
      * @return void
      */
     public function fetch($template, $data = [], $config = [])
@@ -92,7 +92,7 @@ class Think
      * @access public
      * @param string    $template 模板内容
      * @param array     $data 模板变量
-     * @param array     $config 模板参数
+     * @param array     $config 模板参數
      * @return void
      */
     public function display($template, $data = [], $config = [])
@@ -101,7 +101,7 @@ class Think
     }
 
     /**
-     * 自动定位模板文件
+     * 自動定位模板文件
      * @access private
      * @param string $template 模板文件规则
      * @return string
@@ -129,7 +129,7 @@ class Think
             $controller = Loader::parseName($request->controller());
             if ($controller) {
                 if ('' == $template) {
-                    // 如果模板文件名为空 按照默认规则定位
+                    // 如果模板文件名為空 按照默认规则定位
                     $template = str_replace('.', DS, $controller) . $depr . (1 == $this->config['auto_rule'] ? Loader::parseName($request->action(true)) : $request->action());
                 } elseif (false === strpos($template, $depr)) {
                     $template = str_replace('.', DS, $controller) . $depr . $template;
@@ -142,10 +142,10 @@ class Think
     }
 
     /**
-     * 配置或者取得模板引擎参数
+     * 配置或者取得模板引擎参數
      * @access private
-     * @param string|array  $name 参数名
-     * @param mixed         $value 参数值
+     * @param string|array  $name 参數名
+     * @param mixed         $value 参數值
      * @return mixed
      */
     public function config($name, $value = null)

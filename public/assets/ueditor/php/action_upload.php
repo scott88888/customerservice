@@ -47,11 +47,11 @@ switch (htmlspecialchars($_GET['action'])) {
         break;
 }
 
-/* 生成上传实例对象并完成上传 */
+/* 產生上传实例對象并完成上传 */
 $up = new Uploader($fieldName, $config, $base64);
 
 /**
- * 得到上传文件所对应的各个参数,数组结构
+ * 得到上传文件所對应的各个参數,數组结构
  * array(
  *     "state" => "",          //上传狀態，上传成功时必须返回"SUCCESS"
  *     "url" => "",            //返回的地址

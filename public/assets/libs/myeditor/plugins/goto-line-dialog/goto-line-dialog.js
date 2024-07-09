@@ -25,7 +25,7 @@
 					"goto-line" : {
 						title  : "跳转到行",
 						label  : "請輸入行号",
-						error  : "错误："
+						error  : "錯誤："
 					}
 				}
 			},

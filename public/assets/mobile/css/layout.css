@@ -5,7 +5,7 @@
 .transit{transition:all .3s;-webkit-transition:all .3s;-moz-transition:all .3s;}
 /* __ 触摸模拟(active) */
 .wc__material-cell:active{background-color: #f3f3f3!important;}
-/* __ 消息提示(圆点) */
+/* __ 消息提示(圆點) */
 .wc__badge{background-color: #ff3b30; border-radius: 18px; color: #fff; display: inline-block; font-size: 12px; font-family: Verdana; text-align: center; padding: 0 4px; line-height: 14px; min-width: 8px; vertical-align: middle;}
 .wc__badge-dot{padding: 5px; min-width: 0;}
 /* __ 边框线(border) */
@@ -39,7 +39,7 @@
 .wc__headerBar .inner .sear{background: url(../img/topbar/icon__sear.png) no-repeat center; background-size:.4rem;}
 .wc__headerBar .inner .add{background: url(../img/topbar/icon__add.png) no-repeat center; background-size:.4rem;}
 
-/* __ tabBar四个頁面滑动切换 */
+/* __ tabBar四个頁面滑動切换 */
 .wc__swiper-tabBar .swiper-slide{height: calc(100vh - 2.1rem); position: relative; z-index: 11;}
 .wc__scrolling-panel{overflow: auto; -webkit-overflow-scrolling: touch; height: 100%; position: relative;padding-bottom: 20vh}
 
@@ -144,7 +144,7 @@
 .chatMsg-cnt ul li .content .picture .img__pic, .chatMsg-cnt ul li .content .video .img__video{vertical-align: top; pointer-events: none; max-height: 5.4rem; max-width: 5.4rem}
 .chatMsg-cnt ul li .content .video:after{content: ''; background: url(../img/wchat/icon-play.png) no-repeat center; background-size: .6rem; height: 100%; width: 100%; position: absolute; left: 0; top: 0;}
 .chatMsg-cnt ul li .content .lgface{background-color: transparent!important; border-width: 0; border-radius:0; padding: 0; overflow: hidden; position: relative;} /*大表情*/
-/* 长按菜单 */
+/* 長按選單 */
 .wc__chatTapMenu{display: inline-block;}
 .wc__chatTapMenu .menu{background: #313131; border-radius: .07rem; overflow: hidden; padding:0 .1rem; text-align: center;}
 .wc__chatTapMenu .menu:before{content: ""; border-style: solid dashed dashed dashed; border-width: .16rem; font-size:0; overflow: hidden; height: 0; width: 0; position: absolute; left:50%; bottom:-.14rem;
@@ -184,7 +184,7 @@
 .wc__choose-panel .wrap-emotion .emotion__cells-swiper .face__lg-list span{float: left; text-align: center; margin-top: .3rem; margin-right: .366rem; height: 1.5rem; width: 1.5rem;}
 .wc__choose-panel .wrap-emotion .emotion__cells-swiper .face__lg-list span:active{background-color: #f3f3f3; border-radius: .07rem;}
 .wc__choose-panel .wrap-emotion .emotion__cells-swiper .face__lg-list span img{margin-top: .1rem; height: 1.3rem; width: 1.3rem;}
-/* 圆点 */
+/* 圆點 */
 .wc__choose-panel .wrap-emotion .emotion__cells-swiper .pagination-emotion{text-align: center; position: absolute; bottom: .1rem; z-index: 11;}
 .wc__choose-panel .wrap-emotion .emotion__cells-swiper .pagination-emotion .swiper-pagination-bullet{opacity: .1; height: 6px; width: 6px;}
 .wc__choose-panel .wrap-emotion .emotion__cells-swiper .pagination-emotion .swiper-pagination-bullet-active{background: #999; opacity: 1;}
@@ -196,7 +196,7 @@
 .wc__choose-panel .wrap-emotion .emotion__cells-footer ul li.cur{background-color: #f3f3f3;}
 .wc__choose-panel .wrap-emotion .emotion__cells-footer ul li img{height: 100%;}
 .wc__choose-panel .wrap-emotion .emotion__cells-footer ul li.swiperTmplSet img{height: 100%;}
-/* 滚动隐藏滚动條 */
+/* 滚動隐藏滚動條 */
 .wc__choose-panel .wrap-emotion .emotion__cells-footer::-webkit-scrollbar{
 	display:none;
 }
@@ -211,7 +211,7 @@
 .wc__choose-panel .wrap-choose ul li a .img img{margin-top: .25rem; height: .7rem; width: .7rem; position: relative; z-index: 9;}
 .wc__choose-panel .wrap-choose ul li a .img input[type="file"]{opacity: 0; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: 11;}
 .wc__choose-panel .wrap-choose ul li a em{color: #999; display: block; font-size: .2rem; margin-top: .1rem;}
-/* 霸屏、打赏、红包模板样式 */
+/* 霸屏、打赏、红包模板樣式 */
 .weui-picker__hd{font-size: 14px!important;}
 .weui-picker__hd .weui-picker__action{color: #ffba00;}
 .weui-picker__item{font-size: 14px;}
@@ -341,7 +341,7 @@
 .wc__bankCard-add.wc__borB:after{border-bottom-color: #4a4f58;}
 .wc__bankCard-add:active{background-color: #4a4f58!important;}
 /* __ 收付款 */
-/* 付款码 */
+/* 付款碼 */
 .wc__receivables-qrcode{background: #fff; border-radius: .05rem; margin: .2rem;}
 .wc__receivables-qrcode .head{background: #f8f8f8; border-top-left-radius: .05rem; border-top-right-radius: .05rem; height: 1rem;}
 .wc__receivables-qrcode .head .lbl{background: url(../img/wallet/icon__wallet-shoukuan-color.png) no-repeat .2rem center; background-size: .5rem; color: #ccae56; font-size: .28rem; padding-left: .9rem;}
@@ -423,7 +423,7 @@
 /* }}} */
 
 
-/* …… 微聊顶部弹出菜单 …… */
+/* …… 微聊顶部弹出選單 …… */
 .wc__popup-topbar{position:relative; display:none;}
 .wrap__topbar-mask{background:rgba(100,100,100,0); height: 100%; width: 100%; position:fixed; left:0; top: 0; z-index: 2008;}
 .wrap__topbar-menu{max-width:750px;width:100%;position: fixed; top: 1rem; z-index:2008;}
@@ -451,7 +451,7 @@
 .wc__popup-videoPreview .wc__videoClose:before{height: .5rem; width: 2px;}
 .wc__popup-videoPreview .wc__videoClose:after{height: 2px; width: .5rem;}
 
-/* …… 数字输入法键盘(自定义) …… */
+/* …… 數字输入法键盘(自訂) …… */
 .keyboardPanel{max-width: 750px; width: 100%; position: fixed; bottom: 0; z-index: 10005;}
 .keyboardPanel .keyboard-result{background: #f8f8f8; border-top: 1px solid #e9e9e9; color: #ffba00; font-size: .28rem; font-weight: 700; text-align: center; height: .5rem; line-height: .5rem;}
 .keyboardPanel .keyboard-xclose{background: url(../img/icon__keyboard-xclose.png) no-repeat center #f8f8f8; background-size: .4rem; height: .5rem; border-top: 1px solid #e9e9e9;}

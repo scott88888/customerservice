@@ -13,7 +13,7 @@ use think\Paginator;
 use app\Common;
 /**
  *
- * 访客控制器
+ * 訪客控制器
  */
 class Vgroup extends Base
 {
@@ -32,7 +32,7 @@ class Vgroup extends Base
    public function user_group_list(){
        $vid=$this->request->param('vid','');
        if(!$vid){
-           $this->error('参数请求非法！');
+           $this->error('参數請求非法！');
        }
        $vgInfo=db('wolive_visiter_vgroup')->field('GROUP_CONCAT(group_id) as group_id')->where(['vid'=>$vid])->group('vid')
            ->find();

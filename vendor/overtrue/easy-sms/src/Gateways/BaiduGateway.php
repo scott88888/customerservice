@@ -101,29 +101,29 @@ class BaiduGateway extends Gateway
      */
     protected function generateSign(array $signHeaders, $datetime, Config $config)
     {
-        // 生成 authString
+        // 產生 authString
         $authString = self::BCE_AUTH_VERSION.'/'.$config->get('ak').'/'
             .$datetime.'/'.self::DEFAULT_EXPIRATION_IN_SECONDS;
 
-        // 使用 sk 和 authString 生成 signKey
+        // 使用 sk 和 authString 產生 signKey
         $signingKey = hash_hmac('sha256', $authString, $config->get('sk'));
-        // 生成标准化 URI
-        // 根据 RFC 3986，除了：1.大小写英文字符 2.阿拉伯数字 3.点'.'、波浪线'~'、减号'-'以及下划线'_' 以外都要编码
+        // 產生标准化 URI
+        // 根據 RFC 3986，除了：1.大小写英文字符 2.阿拉伯數字 3.點'.'、波浪线'~'、减号'-'以及下划线'_' 以外都要编碼
         $canonicalURI = str_replace('%2F', '/', rawurlencode(self::ENDPOINT_URI));
 
-        // 生成标准化 QueryString
+        // 產生标准化 QueryString
         $canonicalQueryString = ''; // 此 api 不需要此项。返回空字符串
 
-        // 整理 headersToSign，以 ';' 号连接
+        // 整理 headersToSign，以 ';' 号連結
         $signedHeaders = empty($signHeaders) ? '' : strtolower(trim(implode(';', array_keys($signHeaders))));
 
-        // 生成标准化 header
+        // 產生标准化 header
         $canonicalHeader = $this->getCanonicalHeaders($signHeaders);
 
-        // 组成标准请求串
+        // 组成标准請求串
         $canonicalRequest = "POST\n{$canonicalURI}\n{$canonicalQueryString}\n{$canonicalHeader}";
 
-        // 使用 signKey 和标准请求串完成签名
+        // 使用 signKey 和标准請求串完成签名
         $signature = hash_hmac('sha256', $canonicalRequest, $signingKey);
 
         // 组成最终签名串
@@ -131,7 +131,7 @@ class BaiduGateway extends Gateway
     }
 
     /**
-     * 生成标准化 http 请求头串.
+     * 產生标准化 http 請求头串.
      *
      * @param array $headers
      *
@@ -141,7 +141,7 @@ class BaiduGateway extends Gateway
     {
         $headerStrings = [];
         foreach ($headers as $name => $value) {
-            //trim后再encode，之后使用':'号连接起来
+            //trim后再encode，之后使用':'号連結起来
             $headerStrings[] = rawurlencode(strtolower(trim($name))).':'.rawurlencode(trim($value));
         }
 
@@ -151,7 +151,7 @@ class BaiduGateway extends Gateway
     }
 
     /**
-     * 根据 指定的 keys 过滤应该参与签名的 header.
+     * 根據 指定的 keys 过滤应该参与签名的 header.
      *
      * @param array $headers
      * @param array $keys

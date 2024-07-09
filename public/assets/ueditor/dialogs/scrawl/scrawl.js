@@ -12,7 +12,7 @@ var scrawl = function (options) {
     var canvas = $G("J_brushBoard"),
         context = canvas.getContext('2d'),
         drawStep = [], //undo redo存储
-        drawStepIndex = 0; //undo redo指针
+        drawStepIndex = 0; //undo redo指針
 
     scrawl.prototype = {
         isScrawl:false, //是否涂鸦
@@ -22,7 +22,7 @@ var scrawl = function (options) {
         initOptions:function (options) {
             var me = this;
             me.originalState(options);//初始頁面狀態
-            me._buildToolbarColor(options.colorList);//动态生成颜色選擇集合
+            me._buildToolbarColor(options.colorList);//動态產生颜色選擇集合
 
             me._addBoardListener(options.saveNum);//新增画板处理
             me._addOPerateListener(options.saveNum);//新增undo redo clearBoard处理
@@ -92,7 +92,7 @@ var scrawl = function (options) {
                         isMouseUp = false;
                         isMouseMove = false;
                         me.isScrawl = true;
-                        startX = e.clientX - margin;//10为外边距总和
+                        startX = e.clientX - margin;//10為外边距总和
                         startY = e.clientY - margin;
                         context.beginPath();
                         break;
@@ -101,7 +101,7 @@ var scrawl = function (options) {
                             return;
                         }
                         if (!flag && button) {
-                            startX = e.clientX - margin;//10为外边距总和
+                            startX = e.clientX - margin;//10為外边距总和
                             startY = e.clientY - margin;
                             context.beginPath();
                             flag = 1;

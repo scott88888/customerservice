@@ -43,7 +43,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		})
 	}
 	
-	/** 同 步 请 求 获 取 数 据 */
+	/** 同 步 請 求 获 取 數 据 */
 	function getData(url) {
 		$.ajaxSettings.async = false;
 		var data = null;
@@ -63,7 +63,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		var noticeTitle = '<ul class="layui-tab-title">';
 		var noticeContent = '<div class="layui-tab-content" style="height:' + option.height + ';overflow-x: hidden;">';
 
-		// 根据 data 便利資料
+		// 根據 data 便利資料
 		$.each(option.data, function(i, item) {
 			if (i === 0) {
 				noticeTitle += '<li class="pear-this">' + item.title + '</li>';

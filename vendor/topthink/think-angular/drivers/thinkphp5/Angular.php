@@ -31,7 +31,7 @@ class Angular
             'tpl_cache_path'   => RUNTIME_PATH . 'temp' . DS, // 模板缓存目录
             'tpl_cache_suffix' => '.php', // 模板缓存文件后缀
             'directive_prefix' => 'php-', // 指令前缀
-            'directive_max'    => 10000, // 指令的最大解析次数
+            'directive_max'    => 10000, // 指令的最大解析次數
         ];
 
         $this->config   = array_merge($default, $config);
@@ -52,7 +52,7 @@ class Angular
         // 处理模版地址
         $template = $this->parseTemplatePath($template);
 
-        // 根据模版文件名定位缓存文件
+        // 根據模版文件名定位缓存文件
         $tpl_cache_file = $this->config['tpl_cache_path'] . 'angular_' . md5($template) . '.php';
         if (App::$debug || !is_file($tpl_cache_file) || !$this->storage->check($tpl_cache_file, 0)) {
             // 编译模板内容
@@ -75,7 +75,7 @@ class Angular
     }
 
     /**
-     * 如果模版为空, 则通过URL参数取得模版地址
+     * 如果模版為空, 则通過URL参數取得模版地址
      * @param string $template 模版地址
      * @return string
      */

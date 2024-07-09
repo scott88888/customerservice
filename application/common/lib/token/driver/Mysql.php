@@ -22,8 +22,8 @@ class Mysql extends Driver
 
 
     /**
-     * 构造函数
-     * @param array $options 参数
+     * 构造函數
+     * @param array $options 参數
      * @access public
      */
     public function __construct($options = [])
@@ -42,7 +42,7 @@ class Mysql extends Driver
      * 存储Token
      * @param   string $token Token
      * @param   int $user_id 会员ID
-     * @param   int $expire 过期时长,0表示無限,单位秒
+     * @param   int $expire 过期时長,0表示無限,單位秒
      * @return bool
      */
     public function set($token, $user_id, $expire = null)
@@ -65,7 +65,7 @@ class Mysql extends Driver
             if (!$data['expiretime'] || $data['expiretime'] > time()) {
                 //返回未加密的token给客户端使用
                 $data['token'] = $token;
-                //返回剩余有效时间
+                //返回剩余有效時間
                 $data['expires_in'] = $this->getExpiredIn($data['expiretime']);
                 return $data;
             } else {

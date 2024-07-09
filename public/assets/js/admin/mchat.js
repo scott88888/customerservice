@@ -23,7 +23,7 @@ var group = new Vue({
     },
 
     methods: {
-        // 请求使用者資料
+        // 請求使用者資料
         getList(page) {
             let that = this;
             $.ajax({
@@ -100,7 +100,7 @@ $(function() {
     // });
     group.getUser();
 })
-// 推送评价
+// 推送評價
 var toEvaluate = function() {
     $.ajax({
         url:ROOT_URL + '/admin/set/pushComment',
@@ -109,7 +109,7 @@ var toEvaluate = function() {
         success:function(res){
             if(res.code == 0){
                 var str = '';
-                str += "<div class='push-evaluation'>已推送评价</div>"
+                str += "<div class='push-evaluation'>已推送評價</div>"
                 $(".conversation").append(str);
                 var div = document.getElementById("wrap");
                 div.scrollTop = div.scrollHeight;
@@ -156,11 +156,11 @@ $(document).on('touchend', '.content', function() {
 
 var getaudio = function() {
 
-    //音频先加载
+    //音訊先加载
     var audio_context;
     var recorder;
     var wavBlob;
-    //创建音频
+    //建立音訊
     try {
         // webkit shim
         window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -170,7 +170,7 @@ var getaudio = function() {
         audio_context = new AudioContext;
 
         if (!navigator.getUserMedia) {
-            console.log('语音创建失敗');
+            console.log('语音建立失敗');
         };
     } catch (e) {
         console.log(e);
@@ -192,7 +192,7 @@ var getaudio = function() {
                     icon: 16,
                     shade: 0.01,
                     skin: 'layui-layer-lan',
-                    time: 0 //20s后自动關閉
+                    time: 0 //20s后自動關閉
                     ,
                     btn: ['发送', '取消'],
                     yes: function(index, layero) {
@@ -210,7 +210,7 @@ var getaudio = function() {
                                 if (xhr.readyState == 4 && xhr.status == 200) {
                                     jsonObject = JSON.parse(xhr.responseText);
 
-                                    voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="' + jsonObject.data.src + '"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音频消息</p></div>';
+                                    voicemessage = '<div style="cursor:pointer;text-align:center;" onclick="getstate(this)" data="play"><audio src="' + jsonObject.data.src + '"></audio><i class="layui-icon" style="font-size:25px;">&#xe652;</i><p>音訊消息</p></div>';
 
                                     var sid = $('#channel').text();
                                     var pic = $("#se_avatar").attr('src');
@@ -294,11 +294,11 @@ var getaudio = function() {
             });
         } else {
 
-            layer.msg('音频输入只支持https协议！');
+            layer.msg('音訊输入只支持https协议！');
         }
 
     }, function(e) {
-        layer.msg('音频输入只支持https协议！');
+        layer.msg('音訊输入只支持https协议！');
     });
 }
 
@@ -694,7 +694,7 @@ function put() {
 
     } else {
 
-        layer.msg("请選擇图片", { icon: 2 });
+        layer.msg("請選擇图片", { icon: 2 });
     }
 }
 
@@ -924,7 +924,7 @@ document.getElementById("wrap").onscroll = function() {
 
 
 var text = document.getElementById('text_all');
-// 取得焦点，拉到底部
+// 取得焦點，拉到底部
 text.onfocus = function() {
     $(".tool_box").hide();
     let height = +document.documentElement.clientHeight;
@@ -932,7 +932,7 @@ text.onfocus = function() {
         $('html ,body').animate({scrollTop: height}, 0);
     },200)
 }
-// 失去焦点，拉到顶部
+// 失去焦點，拉到顶部
 text.onblur = function() {
     setTimeout(function() {
         $('html ,body').animate({ scrollTop: 0 }, 0);

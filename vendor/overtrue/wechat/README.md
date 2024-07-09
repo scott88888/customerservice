@@ -34,14 +34,14 @@
 <img width="400" src="http://wx1.sinaimg.cn/mw690/82b94fb4gy1fgwafq32r0j20nw0nwter.jpg">
 </p>
 
-<p align="center">关注我的公众号我们一起聊聊代码怎么样？</p>
+<p align="center">关注我的公众号我们一起聊聊程式碼怎么样？</p>
 
 ## Feature
 
  - 命名不那么乱七八糟；
- - 隐藏开发者不需要关注的细节；
+ - 隐藏開发者不需要关注的细节；
  - 方法使用更优雅，不必再去研究那些奇怪的的方法名或者类名是做啥用的；
- - 自定义缓存方式；
+ - 自訂缓存方式；
  - 符合 [PSR](https://github.com/php-fig/fig-standards) 标准，你可以各种方便的与你的框架集成；
  - 高度抽象的消息类，免去各种拼json与xml的痛苦；
  - 详细 Debug 日志，一切交互都一目了然；
@@ -53,7 +53,7 @@
 3. openssl 拓展
 4. fileinfo 拓展（素材管理模块需要用到）
 
-> SDK 对所使用的框架并無特别要求
+> SDK 對所使用的框架并無特别要求
 
 ## Installation
 
@@ -63,7 +63,7 @@ composer require "overtrue/wechat:~3.1" -vvv
 
 ## Usage
 
-基本使用（以服务端为例）:
+基本使用（以服务端為例）:
 
 ```php
 <?php
@@ -96,7 +96,7 @@ $server->setMessageHandler(function($message) use ($user) {
 $server->serve()->send();
 ```
 
-更多请参考[http://easywechat.org/](http://easywechat.org/)。
+更多請参考[http://easywechat.org/](http://easywechat.org/)。
 
 ## Documentation
 

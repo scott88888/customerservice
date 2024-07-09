@@ -66,7 +66,7 @@ class Descriptor
     }
 
     /**
-     * 描述参数
+     * 描述参數
      * @param InputArgument $argument
      * @param array         $options
      * @return void

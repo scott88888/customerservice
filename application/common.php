@@ -8,7 +8,7 @@ class Common
 {
 
     /**
-     * url参数加密类.
+     * url参數加密类.
      * [encrypt description]
      * @param  [type] $string    [description]
      * @param  [type] $operation [description]
@@ -54,19 +54,19 @@ class Common
 
 
     /**
-     * 判断访问地址是PC和移动方法
+     * 判断訪問地址是PC和移動方法
      * [is_mobile description]
      * @return boolean [description]
      */
     public function isMobile()
     {
-        // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
+        // 如果有HTTP_X_WAP_PROFILE则一定是移動设备
         if (isset($_SERVER['HTTP_X_WAP_PROFILE'])) {
             return true;
         }
-        // 如果via訊息含有wap则一定是移动设备,部分服务商会屏蔽该訊息
+        // 如果via訊息含有wap则一定是移動设备,部分服务商会屏蔽该訊息
         if (isset($_SERVER['HTTP_VIA'])) {
-            // 找不到为flase,否则为true
+            // 找不到為flase,否则為true
             return stristr($_SERVER['HTTP_VIA'], "wap") ? true : false;
         }
         // 脑残法，判断手机发送的客户端标志,兼容性有待提高。其中'MicroMessenger'是电脑微信
@@ -77,10 +77,10 @@ class Common
                 return true;
             }
         }
-        // 协议法，因为有可能不准确，放到最后判断
+        // 协议法，因為有可能不准确，放到最后判断
         if (isset ($_SERVER['HTTP_ACCEPT'])) {
-            // 如果只支持wml并且不支持html那一定是移动设备
-            // 如果支持wml和html但是wml在html之前则是移动设备
+            // 如果只支持wml并且不支持html那一定是移動设备
+            // 如果支持wml和html但是wml在html之前则是移動设备
             if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
                 return true;
             }
@@ -90,7 +90,7 @@ class Common
 
 
     /**
-     * 唯一随机数方法
+     * 唯一随机數方法
      * [rand description]
      * @param  [type] $len [description]
      * @return [type]      [description]
@@ -173,7 +173,7 @@ class Common
         return $clean_text;
     }
 
-    //主动判断是否HTTPS
+    //主動判断是否HTTPS
     public function isHTTPS()
     {
         if (defined('HTTPS') && HTTPS) return true;
@@ -189,7 +189,7 @@ class Common
         return FALSE;
     }
 
-    //    自定义函数：快速清除多维维数组的每个元素两边的空格 封装成函数deep_array_map_trim()
+    //    自訂函數：快速清除多维维數组的每个元素两边的空格 封装成函數deep_array_map_trim()
     public function deep_array_map_trim($arr)
     {
         return array_map(function (&$v) {
@@ -200,7 +200,7 @@ class Common
         }, $arr);
     }
 
-    //这里是加密函数支持url传输，可用cpDecode()函数解密，$data：待加密的字符串或数组；$key：密钥；$expire 过期时间
+    //这里是加密函數支持url传输，可用cpDecode()函數解密，$data：待加密的字符串或數组；$key：密钥；$expire 过期時間
     public function cpEncode($data, $key = '', $expire = 0)
     {
         $string = serialize($data);
@@ -241,7 +241,7 @@ class Common
         return rawurlencode($keyc . str_replace('=', '', base64_encode($result)));
     }
 
-//cpEncode之后的解密函数，$string待解密的字符串，$key，密钥
+//cpEncode之后的解密函數，$string待解密的字符串，$key，密钥
     public function cpDecode($string, $key = '')
     {
         $string = rawurldecode($string);
@@ -287,7 +287,7 @@ class Common
         }
     }
 
-    /* 过滤xss函数 */
+    /* 过滤xss函數 */
     public static function clearXSS($string)
     {
         $config = \HTMLPurifier_HTML5Config::createDefault();
@@ -299,7 +299,7 @@ class Common
             'nntp' => true,
             'news' => true,
             'tel' => true,
-//            重点在这里让它支持data开头协议
+//            重點在这里让它支持data開头协议
             'data' => true
         ));
         $purifier = new \HTMLPurifier($config);
@@ -321,7 +321,7 @@ class Common
     }
 
     /**
-     * 取得时间段日期
+     * 取得時間段日期
      * @return array
      */
     public static function getDaysByDay($sday,$eday)

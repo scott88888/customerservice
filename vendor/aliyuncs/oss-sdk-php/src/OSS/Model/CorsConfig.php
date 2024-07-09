@@ -78,7 +78,7 @@ class CorsConfig implements XmlConfig
     }
 
     /**
-     * 生成xml字符串
+     * 產生xml字符串
      *
      * @return string
      */

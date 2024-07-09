@@ -30,7 +30,7 @@ class Collection extends BaseCollection
     }
 
     /**
-     * 设置需要隐藏的输出属性
+     * 設定需要隐藏的输出属性
      * @access public
      * @param array $hidden   属性列表
      * @param bool  $override 是否覆盖
@@ -46,7 +46,7 @@ class Collection extends BaseCollection
     }
 
     /**
-     * 设置需要输出的属性
+     * 設定需要输出的属性
      * @param array $visible
      * @param bool  $override 是否覆盖
      * @return $this
@@ -61,7 +61,7 @@ class Collection extends BaseCollection
     }
 
     /**
-     * 设置需要追加的输出属性
+     * 設定需要追加的输出属性
      * @access public
      * @param array $append   属性列表
      * @param bool  $override 是否覆盖

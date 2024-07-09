@@ -25,10 +25,10 @@ class View
     protected $replace = [];
 
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param array $engine  模板引擎参数
-     * @param array $replace  字符串替换参数
+     * @param array $engine  模板引擎参數
+     * @param array $replace  字符串替换参數
      */
     public function __construct($engine = [], $replace = [])
     {
@@ -54,8 +54,8 @@ class View
     /**
      * 初始化视图
      * @access public
-     * @param array $engine  模板引擎参数
-     * @param array $replace  字符串替换参数
+     * @param array $engine  模板引擎参數
+     * @param array $replace  字符串替换参數
      * @return object
      */
     public static function instance($engine = [], $replace = [])
@@ -100,9 +100,9 @@ class View
     }
 
     /**
-     * 设置当前模板解析的引擎
+     * 設定当前模板解析的引擎
      * @access public
-     * @param array|string $options 引擎参数
+     * @param array|string $options 引擎参數
      * @return $this
      */
     public function engine($options = [])
@@ -125,8 +125,8 @@ class View
     /**
      * 配置模板引擎
      * @access private
-     * @param string|array  $name 参数名
-     * @param mixed         $value 参数值
+     * @param string|array  $name 参數名
+     * @param mixed         $value 参數值
      * @return $this
      */
     public function config($name, $value = null)
@@ -140,7 +140,7 @@ class View
      * @param string    $template 模板文件名或者内容
      * @param array     $vars     模板输出变量
      * @param array     $replace 替换内容
-     * @param array     $config     模板参数
+     * @param array     $config     模板参數
      * @param bool      $renderContent     是否渲染内容
      * @return string
      * @throws Exception
@@ -157,7 +157,7 @@ class View
         // 渲染输出
         try {
             $method = $renderContent ? 'display' : 'fetch';
-            // 允许使用者自定义模板的字符串替换
+            // 允许使用者自訂模板的字符串替换
             $replace = array_merge($this->replace, $replace, (array) $this->engine->config('tpl_replace_string'));
             $this->engine->config('tpl_replace_string', $replace);
             $this->engine->$method($template, $vars, $config);
@@ -196,7 +196,7 @@ class View
      * @param string $content 内容
      * @param array  $vars    模板输出变量
      * @param array  $replace 替换内容
-     * @param array  $config     模板参数
+     * @param array  $config     模板参數
      * @return mixed
      */
     public function display($content, $vars = [], $replace = [], $config = [])
@@ -227,7 +227,7 @@ class View
     }
 
     /**
-     * 检测模板变量是否设置
+     * 检测模板变量是否設定
      * @access public
      * @param string $name 模板变量名
      * @return bool

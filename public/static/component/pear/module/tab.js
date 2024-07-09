@@ -169,7 +169,7 @@ layui.define(['jquery', 'element'], function(exports) {
 
 	var index = 0;
 
-	// 根据过滤 filter 标识, 刪除执行选项卡
+	// 根據过滤 filter 標識, 刪除执行选项卡
 	pearTab.prototype.delTabByElem = function(elem, id, callback) {
 		var currentTab = $(".layui-tab[lay-filter='" + elem + "'] .layui-tab-title [lay-id='" + id + "']");
 		if (currentTab.find("span").is(".able-close")) {
@@ -177,7 +177,7 @@ layui.define(['jquery', 'element'], function(exports) {
 		}
 	}
 
-	// 根据过滤 filter 标识, 刪除当前选项卡
+	// 根據过滤 filter 標識, 刪除当前选项卡
 	pearTab.prototype.delCurrentTabByElem = function(elem, callback) {
 		var currentTab = $(".layui-tab[lay-filter='" + elem + "'] .layui-tab-title .layui-this");
 		if (currentTab.find("span").is(".able-close")) {
@@ -186,7 +186,7 @@ layui.define(['jquery', 'element'], function(exports) {
 		}
 	}
 
-	// 通过过滤 filter 标识, 新增标签頁
+	// 通過过滤 filter 標識, 新增标签頁
 	pearTab.prototype.addTabOnlyByElem = function(elem, opt, time) {
 		var title = '';
 		if (opt.close) {
@@ -302,12 +302,12 @@ layui.define(['jquery', 'element'], function(exports) {
 			sessionStorage.setItem(this.option.elem + "-pear-tab-data-current", opt.id);
 		} else {
 			var isData = false;
-			//查詢当前选项卡数量
+			//查詢当前选项卡數量
 			if ($(".layui-tab[lay-filter='" + this.option.elem + "'] .layui-tab-title li[lay-id]").length >= this.option.tabMax) {
-				layer.msg("最多打开" + this.option.tabMax + "个标签頁", {
+				layer.msg("最多打開" + this.option.tabMax + "个标签頁", {
 					icon: 2,
 					time: 1000,
-					shift: 6 //抖动效果
+					shift: 6 //抖動效果
 				});
 				return false;
 			}
@@ -382,7 +382,7 @@ layui.define(['jquery', 'element'], function(exports) {
 
 	function tabDelete(elem, id, callback, option) {
 
-		//根据 elem id 来刪除指定的 layui title li
+		//根據 elem id 来刪除指定的 layui title li
 		var tabTitle = $(".layui-tab[lay-filter='" + elem + "']").find(".layui-tab-title");
 
 		// 刪除指定 id 的 title

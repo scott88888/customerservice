@@ -4,7 +4,7 @@
  */
 
 
-var e={'羊驼':'emo_01','神马':'emo_02','浮云':'emo_03','给力':'emo_04','围观':'emo_05','威武':'emo_06','熊猫':'emo_07','兔子':'emo_08','奥特曼':'emo_09','囧':'emo_10','互粉':'emo_11','礼物':'emo_12','微笑':'emo_13','嘻嘻':'emo_14','哈哈':'emo_15','可爱':'emo_16','可怜':'emo_17','抠鼻':'emo_18','吃惊':'emo_19','害羞':'emo_20','调皮':'emo_21','闭嘴':'emo_22','鄙视':'emo_23','爱你':'emo_24','流泪':'emo_25','偷笑':'emo_26','亲亲':'emo_27','生病':'emo_28','太开心':'emo_29','白眼':'emo_30','右哼哼':'emo_31','左哼哼':'emo_32','嘘':'emo_33','衰':'emo_34','委屈':'emo_35','呕吐':'emo_36','打哈欠':'emo_37','抱抱':'emo_38','怒':'emo_39','问号':'emo_40','馋':'emo_41','拜拜':'emo_42','思考':'emo_43','汗':'emo_44','打呼':'emo_45','睡':'emo_46','钱':'emo_47','失望':'emo_48','酷':'emo_49','好色':'emo_50','生气':'emo_51','鼓掌':'emo_52','晕':'emo_53','悲伤':'emo_54','抓狂':'emo_55','黑线':'emo_56','阴险':'emo_57','怒骂':'emo_58','心':'emo_59','伤心':'emo_60'};
+var e={'羊驼':'emo_01','神马':'emo_02','浮云':'emo_03','给力':'emo_04','围观':'emo_05','威武':'emo_06','熊猫':'emo_07','兔子':'emo_08','奥特曼':'emo_09','囧':'emo_10','互粉':'emo_11','礼物':'emo_12','微笑':'emo_13','嘻嘻':'emo_14','哈哈':'emo_15','可爱':'emo_16','可怜':'emo_17','抠鼻':'emo_18','吃惊':'emo_19','害羞':'emo_20','调皮':'emo_21','闭嘴':'emo_22','鄙视':'emo_23','爱你':'emo_24','流泪':'emo_25','偷笑':'emo_26','亲亲':'emo_27','生病':'emo_28','太開心':'emo_29','白眼':'emo_30','右哼哼':'emo_31','左哼哼':'emo_32','嘘':'emo_33','衰':'emo_34','委屈':'emo_35','呕吐':'emo_36','打哈欠':'emo_37','抱抱':'emo_38','怒':'emo_39','问号':'emo_40','馋':'emo_41','拜拜':'emo_42','思考':'emo_43','汗':'emo_44','打呼':'emo_45','睡':'emo_46','钱':'emo_47','失望':'emo_48','酷':'emo_49','好色':'emo_50','生气':'emo_51','鼓掌':'emo_52','晕':'emo_53','悲伤':'emo_54','抓狂':'emo_55','黑线':'emo_56','阴险':'emo_57','怒骂':'emo_58','心':'emo_59','伤心':'emo_60'};
 
 var types=function(){
     if($.cookie('type') == 1){
@@ -35,7 +35,7 @@ var types=function(){
 
                 var str=a.replace(/(^\s*)|(\s*$)/g,"");
                 if(!str){
-                    layer.msg('内容不能为空',{icon:3});
+                    layer.msg('内容不能為空',{icon:3});
                     $('#text_in').html('');
                     return false;
                 }
@@ -115,7 +115,7 @@ var chaton = function () {
 };
 window.onload = chaton();
 
-// 選擇对象
+// 選擇對象
 
 function choose(vid) {
     var sdata = $.cookie("cu_com");
@@ -147,7 +147,7 @@ function choose(vid) {
     }
 }
 
-//拖到黑名单
+//拖到黑名單
 function getblack() {
     var data = $.cookie("cu_com");
     var vid;
@@ -167,7 +167,7 @@ function getblack() {
                 $.cookie("cu_com", "");
             }
 
-            layer.msg("已拖入黑名单", {offset: "20px"});
+            layer.msg("已拖入黑名單", {offset: "20px"});
             getchat();
             getblacklist();
         }
@@ -293,7 +293,7 @@ $(".wl_faces_main img").click(function () {
 });
 
 
-//刪除对象
+//刪除對象
 
 function cut(id) {
 
@@ -478,7 +478,7 @@ function put() {
 
     } else {
 
-        layer.msg("请選擇图片", {icon: 2});
+        layer.msg("請選擇图片", {icon: 2});
     }
 }
 

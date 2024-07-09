@@ -16,7 +16,7 @@ use think\Exception;
 trait Instance
 {
     /**
-     * @var null|static 实例对象
+     * @var null|static 实例對象
      */
     protected static $instance = null;
 
@@ -35,7 +35,7 @@ trait Instance
     /**
      * 静态调用
      * @param string $method 调用方法
-     * @param array  $params 调用参数
+     * @param array  $params 调用参數
      * @return mixed
      * @throws Exception
      */

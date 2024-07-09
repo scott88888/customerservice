@@ -18,7 +18,7 @@ class Auth
     protected $_logined = FALSE;
     protected $_user = NULL;
     protected $_token = '';
-    //Token默认有效时长
+    //Token默认有效时長
     protected $keeptime = 604800;
     protected $requestUri = '';
     protected $rules = [];
@@ -38,7 +38,7 @@ class Auth
 
     /**
      * 
-     * @param array $options 参数
+     * @param array $options 参數
      * @return Auth
      */
     public static function instance($options = [])
@@ -52,7 +52,7 @@ class Auth
     }
 
     /**
-     * 设置模型
+     * 設定模型
      */
     public function setUser(Admin $user)
     {
@@ -80,7 +80,7 @@ class Auth
     }
 
     /**
-     * 根据Token初始化
+     * 根據Token初始化
      *
      * @param string       $token    Token
      * @return boolean
@@ -130,7 +130,7 @@ class Auth
      * @param string $password  密碼
      * @param string $email     信箱
      * @param string $mobile    手機號碼
-     * @param array $extend    扩展参数
+     * @param array $extend    扩展参數
      * @return boolean
      */
     public function register($username, $password, $mobile = '', $extend = [])
@@ -169,7 +169,7 @@ class Auth
             // 此时的Model中只包含部分資料
             $this->_user = Admin::get($user->id);
 
-            //设置Token
+            //設定Token
            /* $this->_token = Random::uuid();
             Token::set($this->_token, $user->id, $this->keeptime);*/
 
@@ -235,7 +235,7 @@ class Auth
             $this->setError('你没有登入');
             return false;
         }
-        //设置登入标识
+        //設定登入標識
         $this->_logined = FALSE;
         //刪除Token
         Token::delete($this->_token);
@@ -358,7 +358,7 @@ class Auth
     }
 
     /**
-     * 取得当前请求的URI
+     * 取得当前請求的URI
      * @return string
      */
     public function getRequestUri()
@@ -367,7 +367,7 @@ class Auth
     }
 
     /**
-     * 设置当前请求的URI
+     * 設定当前請求的URI
      * @param string $uri
      */
     public function setRequestUri($uri)
@@ -385,7 +385,7 @@ class Auth
     }
 
     /**
-     * 设置允许输出的字段
+     * 設定允许输出的字段
      * @param array $fields
      */
     public function setAllowFields($fields)
@@ -434,9 +434,9 @@ class Auth
     }
 
     /**
-     * 检测当前控制器和方法是否匹配传递的数组
+     * 检测当前控制器和方法是否匹配传递的數组
      *
-     * @param array $arr 需要驗證权限的数组
+     * @param array $arr 需要驗證权限的數组
      * @return boolean
      */
     public function match($arr = [])
@@ -459,8 +459,8 @@ class Auth
     }
 
     /**
-     * 设置会话有效时间
-     * @param int $keeptime 默认为永久
+     * 設定会話有效時間
+     * @param int $keeptime 默认為永久
      */
     public function keeptime($keeptime = 0)
     {
@@ -469,7 +469,7 @@ class Auth
 
     /**
      * 渲染使用者資料
-     * @param array     $datalist   二维数组
+     * @param array     $datalist   二维數组
      * @param mixed     $fields     加载的字段列表
      * @param string    $fieldkey   渲染的字段
      * @param string    $renderkey  结果字段
@@ -508,9 +508,9 @@ class Auth
     }
 
     /**
-     * 设置错误訊息
+     * 設定錯誤訊息
      *
-     * @param $error 错误訊息
+     * @param $error 錯誤訊息
      * @return Auth
      */
     public function setError($error)
@@ -520,7 +520,7 @@ class Auth
     }
 
     /**
-     * 取得错误訊息
+     * 取得錯誤訊息
      * @return string
      */
     public function getError()

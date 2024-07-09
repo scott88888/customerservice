@@ -15,7 +15,7 @@ use OSS\Core\OssException;
 class Common
 {
     /**
-     * 根据Config配置，得到一个OssClient实例
+     * 根據Config配置，得到一个OssClient实例
      *
      * @return OssClient 一个OssClient实例
      */
@@ -40,7 +40,7 @@ class Common
     }
 
     /**
-     * 工具方法，创建一个bucket
+     * 工具方法，建立一个bucket
      */
     public static function createBucket()
     {

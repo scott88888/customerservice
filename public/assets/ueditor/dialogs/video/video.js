@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //編輯视频时初始化相关訊息
+        //編輯视频时初始化相關訊息
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 将单个视频訊息插入編輯器中
+     * 将單个视频訊息插入編輯器中
      */
     function insertSingle(){
         var width = $G("videoWidth"),
@@ -149,7 +149,7 @@
     }
 
     /**
-     * 找到id下具有focus类的节点并返回该节点下的某个属性
+     * 找到id下具有focus类的节點并返回该节點下的某个属性
      * @param id
      * @param returnProperty
      */
@@ -184,7 +184,7 @@
     }
 
     /**
-      * 检测传入的所有input框中输入的长宽是否是正数
+      * 检测传入的所有input框中输入的長宽是否是正數
       * @param nodes input框集合，
       */
      function checkNum( nodes ) {
@@ -202,7 +202,7 @@
      }
 
     /**
-     * 数字判断
+     * 數字判断
      * @param value
      */
     function isNumber( value ) {
@@ -210,7 +210,7 @@
     }
 
     /**
-      * 创建图片浮动選擇按钮
+      * 建立图片浮動選擇按钮
       * @param ids
       */
      function createAlignButton( ids ) {
@@ -263,7 +263,7 @@
     }
 
     /**
-     * 根据url生成视频预览
+     * 根據url產生视频预览
      * @param url
      */
     function createPreviewVideo(url){
@@ -350,7 +350,7 @@
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度條
                 $progress = $statusBar.find('.progress').hide(),
-            // 新增的文件数量
+            // 新增的文件數量
                 fileCount = 0,
             // 新增的文件总大小
                 fileSize = 0,
@@ -361,7 +361,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度訊息，key为file id
+            // 所有文件的进度訊息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -409,7 +409,7 @@
 
             setState('pedding');
 
-            // 当有文件新增进来时执行，负责view的创建
+            // 当有文件新增进来时执行，负责view的建立
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -590,7 +590,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以开始上传 */
+                        /* 可以開始上传 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -606,7 +606,7 @@
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* 暂停上传 */
+                        /* 暫停上传 */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -703,7 +703,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 新增额外的GET参数 */
+                        /* 新增额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -716,7 +716,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象新增POST参数
+                //这里可以通過data對象新增POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 

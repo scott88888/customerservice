@@ -16,10 +16,10 @@ $bucketManager = new BucketManager($auth);
 // 要列取文件的公共前缀
 $prefix = '';
 
-// 上次列举返回的位置标记，作为本次列举的起点訊息。
+// 上次列举返回的位置标记，作為本次列举的起點訊息。
 $marker = '';
 
-// 本次列举的條目数
+// 本次列举的條目數
 $limit = 200;
 
 $delimiter = '/';

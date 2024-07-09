@@ -44,7 +44,7 @@
 		<script type="text/html" id="toolbar">
 		    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
 		        <i class="layui-icon layui-icon-addition"></i>
-		        新增问候语
+		        新增問候語
 			</button>
 		</script>
 
@@ -147,7 +147,7 @@
 				window.add = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '新增问候语',
+                        title: '新增問候語',
                         shade: 0.1,
                         area: ['700px', '600px'],
                         content: MODULE_PATH + 'setting/sentence_add'
@@ -157,7 +157,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '編輯问候语',
+                        title: '編輯問候語',
                         shade: 0.1,
                         area: ['700px', '600px'],
                         content: MODULE_PATH + 'setting/sentence_edit?id='+obj.data.sid
@@ -165,7 +165,7 @@
                 };
 
                 window.remove = function(obj) {
-                    layer.confirm('確定要刪除该问候语吗？', {
+                    layer.confirm('確定要刪除该問候語吗？', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

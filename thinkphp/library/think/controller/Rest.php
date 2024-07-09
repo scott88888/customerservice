@@ -18,7 +18,7 @@ use think\Response;
 abstract class Rest
 {
 
-    protected $method; // 当前请求类型
+    protected $method; // 当前請求类型
     protected $type; // 当前资源类型
     // 输出类型
     protected $restMethodList    = 'get|post|put|delete';
@@ -32,7 +32,7 @@ abstract class Rest
     ];
 
     /**
-     * 构造函数 取得模板对象实例
+     * 构造函數 取得模板對象实例
      * @access public
      */
     public function __construct()
@@ -41,18 +41,18 @@ abstract class Rest
         $request = Request::instance();
         $ext     = $request->ext();
         if ('' == $ext) {
-            // 自动检测资源类型
+            // 自動检测资源类型
             $this->type = $request->type();
         } elseif (!preg_match('/(' . $this->restTypeList . ')$/i', $ext)) {
-            // 资源类型非法 则用默认资源类型访问
+            // 资源类型非法 则用默认资源类型訪問
             $this->type = $this->restDefaultType;
         } else {
             $this->type = $ext;
         }
-        // 请求方式检测
+        // 請求方式检测
         $method = strtolower($request->method());
         if (!preg_match('/(' . $this->restMethodList . ')$/i', $method)) {
-            // 请求方式非法 则用默认请求方法
+            // 請求方式非法 则用默认請求方法
             $method = $this->restDefaultMethod;
         }
         $this->method = $method;
@@ -88,7 +88,7 @@ abstract class Rest
      * @access protected
      * @param mixed     $data 要返回的資料
      * @param String    $type 返回类型 JSON XML
-     * @param integer   $code HTTP狀態码
+     * @param integer   $code HTTP狀態碼
      * @return Response
      */
     protected function response($data, $type = 'json', $code = 200)

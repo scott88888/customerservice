@@ -18,7 +18,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 显示创建资源表單頁.
+     * 显示建立资源表單頁.
      *
      * @return \think\Response
      */

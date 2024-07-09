@@ -70,7 +70,7 @@ class Input
     }
 
     /**
-     * 解析参数
+     * 解析参數
      */
     protected function parse()
     {
@@ -152,7 +152,7 @@ class Input
     }
 
     /**
-     * 解析参数
+     * 解析参數
      * @param string $token 当前指令
      * @throws \RuntimeException
      */
@@ -240,7 +240,7 @@ class Input
     }
 
     /**
-     * 取得第一个参数
+     * 取得第一个参數
      * @return string|null
      */
     public function getFirstArgument()
@@ -256,7 +256,7 @@ class Input
     }
 
     /**
-     * 檢查原始参数是否包含某个值
+     * 檢查原始参數是否包含某个值
      * @param string|array $values 需要檢查的值
      * @return bool
      */
@@ -324,7 +324,7 @@ class Input
     }
 
     /**
-     * 设置输入的交互
+     * 設定输入的交互
      * @param bool
      */
     public function setInteractive($interactive)
@@ -333,7 +333,7 @@ class Input
     }
 
     /**
-     * 取得所有的参数
+     * 取得所有的参數
      * @return Argument[]
      */
     public function getArguments()
@@ -342,8 +342,8 @@ class Input
     }
 
     /**
-     * 根据名稱取得参数
-     * @param string $name 参数名
+     * 根據名稱取得参數
+     * @param string $name 参數名
      * @return mixed
      * @throws \InvalidArgumentException
      */
@@ -358,8 +358,8 @@ class Input
     }
 
     /**
-     * 设置参数的值
-     * @param string $name  参数名
+     * 設定参數的值
+     * @param string $name  参數名
      * @param string $value 值
      * @throws \InvalidArgumentException
      */
@@ -373,8 +373,8 @@ class Input
     }
 
     /**
-     * 檢查是否存在某个参数
-     * @param string|int $name 参数名或位置
+     * 檢查是否存在某个参數
+     * @param string|int $name 参數名或位置
      * @return bool
      */
     public function hasArgument($name)
@@ -407,7 +407,7 @@ class Input
     }
 
     /**
-     * 设置选项值
+     * 設定选项值
      * @param string      $name  选项名
      * @param string|bool $value 值
      * @throws \InvalidArgumentException
@@ -442,7 +442,7 @@ class Input
     }
 
     /**
-     * 返回传递给命令的参数的字符串
+     * 返回传递给命令的参數的字符串
      * @return string
      */
     public function __toString()

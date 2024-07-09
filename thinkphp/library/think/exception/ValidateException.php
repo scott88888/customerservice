@@ -22,7 +22,7 @@ class ValidateException extends \RuntimeException
     }
 
     /**
-     * 取得驗證错误訊息
+     * 取得驗證錯誤訊息
      * @access public
      * @return array|string
      */

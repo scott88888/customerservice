@@ -54,10 +54,10 @@ class Error
     }
 
     /**
-     * 错误处理
+     * 錯誤处理
      * @access public
-     * @param  integer $errno      错误编号
-     * @param  integer $errstr     详细错误訊息
+     * @param  integer $errno      錯誤编号
+     * @param  integer $errstr     详细錯誤訊息
      * @param  string  $errfile    出错的文件
      * @param  integer $errline    出错行号
      * @return void
@@ -67,7 +67,7 @@ class Error
     {
         $exception = new ErrorException($errno, $errstr, $errfile, $errline);
 
-        // 符合异常处理的则将错误訊息托管至 think\exception\ErrorException
+        // 符合异常处理的则将錯誤訊息托管至 think\exception\ErrorException
         if (error_reporting() & $errno) {
             throw $exception;
         }
@@ -82,7 +82,7 @@ class Error
      */
     public static function appShutdown()
     {
-        // 将错误訊息托管至 think\ErrorException
+        // 将錯誤訊息托管至 think\ErrorException
         if (!is_null($error = error_get_last()) && self::isFatal($error['type'])) {
             self::appException(new ErrorException(
                 $error['type'], $error['message'], $error['file'], $error['line']
@@ -94,9 +94,9 @@ class Error
     }
 
     /**
-     * 確定错误类型是否致命
+     * 確定錯誤类型是否致命
      * @access protected
-     * @param  int $type 错误类型
+     * @param  int $type 錯誤类型
      * @return bool
      */
     protected static function isFatal($type)

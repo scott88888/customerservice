@@ -14,15 +14,15 @@ namespace think;
 class Cookie
 {
     /**
-     * @var array cookie 设置参数
+     * @var array cookie 設定参數
      */
     protected static $config = [
         'prefix'    => '', // cookie 名稱前缀
-        'expire'    => 0, // cookie 保存时间
+        'expire'    => 0, // cookie 保存時間
         'path'      => '/', // cookie 保存路径
         'domain'    => '', // cookie 有效域名
         'secure'    => false, //  cookie 启用安全传输
-        'httponly'  => false, // httponly 设置
+        'httponly'  => false, // httponly 設定
         'setcookie' => true, // 是否使用 setcookie
     ];
 
@@ -34,7 +34,7 @@ class Cookie
     /**
      * Cookie初始化
      * @access public
-     * @param  array $config 配置参数
+     * @param  array $config 配置参數
      * @return void
      */
     public static function init(array $config = [])
@@ -53,7 +53,7 @@ class Cookie
     }
 
     /**
-     * 设置或者取得 cookie 作用域（前缀）
+     * 設定或者取得 cookie 作用域（前缀）
      * @access public
      * @param  string $prefix 前缀
      * @return string|
@@ -68,18 +68,18 @@ class Cookie
     }
 
     /**
-     * Cookie 设置、取得、刪除
+     * Cookie 設定、取得、刪除
      * @access public
      * @param  string $name   cookie 名稱
      * @param  mixed  $value  cookie 值
-     * @param  mixed  $option 可选参数 可能会是 null|integer|string
+     * @param  mixed  $option 可选参數 可能会是 null|integer|string
      * @return void
      */
     public static function set($name, $value = '', $option = null)
     {
         !isset(self::$init) && self::init();
 
-        // 参数设置(会覆盖黙认设置)
+        // 参數設定(会覆盖黙认設定)
         if (!is_null($option)) {
             if (is_numeric($option)) {
                 $option = ['expire' => $option];
@@ -94,7 +94,7 @@ class Cookie
 
         $name = $config['prefix'] . $name;
 
-        // 设置 cookie
+        // 設定 cookie
         if (is_array($value)) {
             array_walk_recursive($value, 'self::jsonFormatProtect', 'encode');
             $value = 'think:' . json_encode($value);
@@ -119,7 +119,7 @@ class Cookie
      * @access public
      * @param  string $name   cookie 名稱
      * @param  mixed  $value  cookie 值
-     * @param  mixed  $option 可选参数 可能会是 null|integer|string
+     * @param  mixed  $option 可选参數 可能会是 null|integer|string
      * @return void
      */
     public static function forever($name, $value = '', $option = null)
@@ -231,7 +231,7 @@ class Cookie
 
         !isset(self::$init) && self::init();
 
-        // 要刪除的 cookie 前缀，不指定则刪除 config 设置的指定前缀
+        // 要刪除的 cookie 前缀，不指定则刪除 config 設定的指定前缀
         $config = self::$config;
         $prefix = !is_null($prefix) ? $prefix : $config['prefix'];
 

@@ -42,25 +42,25 @@ abstract class Driver
      * @access public
      * @param string    $name 缓存变量名
      * @param mixed     $value  存储資料
-     * @param int       $expire  有效时间 0为永久
+     * @param int       $expire  有效時間 0為永久
      * @return boolean
      */
     abstract public function set($name, $value, $expire = null);
 
     /**
-     * 自增缓存（针对数值缓存）
+     * 自增缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     abstract public function inc($name, $step = 1);
 
     /**
-     * 自减缓存（针对数值缓存）
+     * 自减缓存（針對數值缓存）
      * @access public
      * @param string    $name 缓存变量名
-     * @param int       $step 步长
+     * @param int       $step 步長
      * @return false|int
      */
     abstract public function dec($name, $step = 1);
@@ -82,7 +82,7 @@ abstract class Driver
     abstract public function clear($tag = null);
 
     /**
-     * 取得实际的缓存标识
+     * 取得实际的缓存標識
      * @access public
      * @param string $name 缓存名
      * @return string
@@ -114,7 +114,7 @@ abstract class Driver
      * @access public
      * @param string    $name 缓存变量名
      * @param mixed     $value  存储資料
-     * @param int       $expire  有效时间 0为永久
+     * @param int       $expire  有效時間 0為永久
      * @return mixed
      */
     public function remember($name, $value, $expire = null)
@@ -153,7 +153,7 @@ abstract class Driver
      * 缓存标签
      * @access public
      * @param string        $name 标签名
-     * @param string|array  $keys 缓存标识
+     * @param string|array  $keys 缓存標識
      * @param bool          $overlay 是否覆盖
      * @return $this
      */
@@ -182,7 +182,7 @@ abstract class Driver
     /**
      * 更新标签
      * @access public
-     * @param string $name 缓存标识
+     * @param string $name 缓存標識
      * @return void
      */
     protected function setTagItem($name)
@@ -202,7 +202,7 @@ abstract class Driver
     }
 
     /**
-     * 取得标签包含的缓存标识
+     * 取得标签包含的缓存標識
      * @access public
      * @param string $tag 缓存标签
      * @return array
@@ -219,7 +219,7 @@ abstract class Driver
     }
 
     /**
-     * 返回句柄对象，可执行其它高级方法
+     * 返回句柄對象，可执行其它高级方法
      *
      * @access public
      * @return object

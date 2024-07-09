@@ -7,20 +7,20 @@ use app\common\lib\Storage;
  */
 class Uploader
 {
-    private $rid; //存储标识
+    private $rid; //存储標識
     private $watermark; //是否图片水印
     private $attachment_info; //附件存储訊息
     private $attachment_model; //附件模型
     private $fileMd5; //文件md5
 
     private $fileField; //文件域名
-    private $file; //文件上传对象
-    private $base64; //文件上传对象
+    private $file; //文件上传對象
+    private $base64; //文件上传對象
     private $config; //配置訊息
     private $oriName; //原始文件名
     private $fileName; //新文件名
-    private $fullName; //完整文件名,即从当前配置目录开始的URL
-    private $filePath; //完整文件名,即从当前配置目录开始的URL
+    private $fullName; //完整文件名,即从当前配置目录開始的URL
+    private $filePath; //完整文件名,即从当前配置目录開始的URL
     private $fileUrl; //完整文件URL
     private $fileSize; //文件大小
     private $fileType; //文件类型
@@ -31,17 +31,17 @@ class Uploader
         "文件大小超出 MAX_FILE_SIZE 限制",
         "文件未被完整上传",
         "没有文件被上传",
-        "上传文件为空",
-        "ERROR_TMP_FILE" => "临时文件错误",
+        "上传文件為空",
+        "ERROR_TMP_FILE" => "临时文件錯誤",
         "ERROR_TMP_FILE_NOT_FOUND" => "找不到临时文件",
-        "ERROR_SIZE_EXCEED" => "文件大小超出网站限制",
+        "ERROR_SIZE_EXCEED" => "文件大小超出網站限制",
         "ERROR_TYPE_NOT_ALLOWED" => "文件类型不允许",
-        "ERROR_CREATE_DIR" => "目录创建失敗",
+        "ERROR_CREATE_DIR" => "目录建立失敗",
         "ERROR_DIR_NOT_WRITEABLE" => "目录没有写权限",
         "ERROR_FILE_MOVE" => "文件保存时出错",
         "ERROR_FILE_NOT_FOUND" => "找不到上传文件",
-        "ERROR_WRITE_CONTENT" => "写入文件内容错误",
-        "ERROR_UNKNOWN" => "未知错误",
+        "ERROR_WRITE_CONTENT" => "写入文件内容錯誤",
+        "ERROR_UNKNOWN" => "未知錯誤",
         "ERROR_DEAD_LINK" => "連結不可用",
         "ERROR_HTTP_LINK" => "連結不是http連結",
         "ERROR_HTTP_CONTENTTYPE" => "連結contentType不正确",
@@ -50,10 +50,10 @@ class Uploader
     );
 
     /**
-     * 构造函数
+     * 构造函數
      * @param string $fileField 表單名稱
      * @param array $config 配置项
-     * @param bool $base64 是否解析base64编码，可省略。若開啟，则$fileField代表的是base64编码的字符串表單名
+     * @param bool $base64 是否解析base64编碼，可省略。若開啟，则$fileField代表的是base64编碼的字符串表單名
      */
     public function __construct($fileField, $config, $type = "upload")
     {
@@ -117,7 +117,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 处理base64编码的图片上传
+     * 处理base64编碼的图片上传
      * @return mixed
      */
     private function upBase64()
@@ -171,7 +171,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
         $imgUrl = htmlspecialchars($this->fileField);
         $imgUrl = str_replace("&amp;", "&", $imgUrl);
 
-        //http开头驗證
+        //http開头驗證
         if (strpos($imgUrl, "http") !== 0) {
             $this->stateInfo = $this->getStateInfo("ERROR_HTTP_LINK");
             return;
@@ -197,7 +197,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
             return;
         }
 
-        //取得请求头并检测死链
+        //取得請求头并检测死链
         $heads = get_headers($imgUrl, 1);
         if (!(stristr($heads[0], "200") && stristr($heads[0], "OK"))) {
             $this->stateInfo = $this->getStateInfo("ERROR_DEAD_LINK");
@@ -210,7 +210,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
             return;
         }
 
-        //打开输出缓冲区并取得远程图片
+        //打開输出缓冲区并取得远程图片
         ob_start();
         $context = stream_context_create(
             array('http' => array(
@@ -260,13 +260,13 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 上传错误檢查
+     * 上传錯誤檢查
      * @param $errCode
      * @return string
      */
     private function getStateInfo($errCode)
     {
-        return !$this->stateMap[$errCode] ? '上传错误('.$errCode.')' : $this->stateMap[$errCode];
+        return !$this->stateMap[$errCode] ? '上传錯誤('.$errCode.')' : $this->stateMap[$errCode];
     }
 
     /**

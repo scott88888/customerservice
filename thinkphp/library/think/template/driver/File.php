@@ -30,7 +30,7 @@ class File
         if (!is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
-        // 生成模板缓存文件
+        // 產生模板缓存文件
         if (false === file_put_contents($cacheFile, $content)) {
             throw new Exception('cache write error:' . $cacheFile, 11602);
         }
@@ -39,14 +39,14 @@ class File
     /**
      * 读取编译编译
      * @param string  $cacheFile 缓存的文件名
-     * @param array   $vars 变量数组
+     * @param array   $vars 变量數组
      * @return void
      */
     public function read($cacheFile, $vars = [])
     {
         $this->cacheFile = $cacheFile;
         if (!empty($vars) && is_array($vars)) {
-            // 模板阵列变量分解成为独立变量
+            // 模板阵列变量分解成為独立变量
             extract($vars, EXTR_OVERWRITE);
         }
         //载入模版缓存文件
@@ -56,7 +56,7 @@ class File
     /**
      * 檢查编译缓存是否有效
      * @param string  $cacheFile 缓存的文件名
-     * @param int     $cacheTime 缓存时间
+     * @param int     $cacheTime 缓存時間
      * @return boolean
      */
     public function check($cacheFile, $cacheTime)

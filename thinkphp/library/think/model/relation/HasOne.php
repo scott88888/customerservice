@@ -18,9 +18,9 @@ use think\Model;
 class HasOne extends OneToOne
 {
     /**
-     * 构造函数
+     * 构造函數
      * @access public
-     * @param Model  $parent     上级模型对象
+     * @param Model  $parent     上级模型對象
      * @param string $model      模型名
      * @param string $foreignKey 关联外键
      * @param string $localKey   当前模型主键
@@ -64,7 +64,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
      * @return Query
      */
@@ -83,9 +83,9 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 根据关联條件查詢当前模型
+     * 根據关联條件查詢当前模型
      * @access public
-     * @param  mixed  $where 查詢條件（数组或者闭包）
+     * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
      * @return Query
      */
@@ -157,7 +157,7 @@ class HasOne extends OneToOne
                     // 绑定关联属性
                     $this->bindAttr($relationModel, $result, $this->bindAttr);
                 } else {
-                    // 设置关联属性
+                    // 設定关联属性
                     $result->setRelation($attr, $relationModel);
                 }
             }
@@ -167,7 +167,7 @@ class HasOne extends OneToOne
     /**
      * 预载入关联查詢（資料）
      * @access public
-     * @param Model    $result      資料对象
+     * @param Model    $result      資料對象
      * @param string   $relation    当前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包

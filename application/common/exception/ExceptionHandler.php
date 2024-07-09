@@ -33,7 +33,7 @@ class ExceptionHandler extends Handle
         } else {
             if (config('app_debug')) {
                 // 调试狀態下需要显示TP默认的异常頁面，因为TP的默认頁面
-                // 很容易看出问题
+                // 很容易看出問題
                 return parent::render($e);
             }
 

@@ -407,7 +407,7 @@ layui.define(['jquery','layer','form'], function(exports) {
         
         this.toolbarMenu = {};	// 工具栏右键菜单绑定的所有元素
         this.checkbarNode = [];	// 复选框标记的全部节点資料
-        this.errData = [];		// 记录在渲染节点时有问题的資料
+        this.errData = [];		// 记录在渲染节点时有問題的資料
         this.checkArrLen = 0;	//新增节点的时判断复选框个数
         this.temp = [];	// 临时变量
         this.bak = "";	// 临时变量
@@ -4150,7 +4150,7 @@ layui.define(['jquery','layer','form'], function(exports) {
             }
         }
 
-        // 解决传递中文的乱码问题
+        // 解决传递中文的乱码問題
         var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;	//正则匹配中文
         for(var key in requestParam){
             if(reg.test(requestParam[key])) {

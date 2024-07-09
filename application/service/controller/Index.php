@@ -160,7 +160,7 @@ class Index extends Base
     }
 
     /**
-     * 常见问题设置.
+     * 常見問題设置.
      *
      * @return mixed
      */
@@ -177,7 +177,7 @@ class Index extends Base
         $page = $data->render();
         $this->assign('page', $page);
         $this->assign('lister', $data);
-        $this->assign('title', "常见问题设置");
+        $this->assign('title', "常見問題设置");
         $this->assign('part', "设置");
         return $this->fetch();
     }
@@ -347,7 +347,7 @@ class Index extends Base
     }
 
     /**
-     * 常见问题編輯頁面
+     * 常見問題編輯頁面
      * [editer description]
      * @return [type] [description]
      */
@@ -375,7 +375,7 @@ class Index extends Base
         return $this->fetch();
     }
     /**
-     * 常见问题編輯頁面
+     * 常見問題編輯頁面
      * [editer description]
      * @return [type] [description]
      */

@@ -3328,7 +3328,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某个分片由于网络问题出错，允许自动重传多少次？
+             * @description 如果某个分片由于网络問題出错，允许自动重传多少次？
              */
             chunkRetry: 2,
     
@@ -6379,7 +6379,7 @@
     
                 s = s || 1;
     
-                // todo 解决 orientation 的问题。
+                // todo 解决 orientation 的問題。
                 // values that require 90 degree rotation
                 // if ( ~[ 5, 6, 7, 8 ].indexOf( orientation ) ) {
     

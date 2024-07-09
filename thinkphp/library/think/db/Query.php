@@ -1901,7 +1901,7 @@ class Query
             $tableName = $this->parseSqlTable($tableName);
         }
 
-        // 修正子查詢作为表名的问题
+        // 修正子查詢作为表名的問題
         if (strpos($tableName, ')')) {
             return [];
         }

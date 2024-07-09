@@ -328,7 +328,7 @@ BBB;
     }
 
     /**
-     * 主要是由于windows系统编码是gbk，遇到中文时候，如果不进行转换处理会出现找不到文件的问题
+     * 主要是由于windows系统编码是gbk，遇到中文时候，如果不进行转换处理会出现找不到文件的問題
      *
      * @param $file_path
      * @return string

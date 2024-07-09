@@ -50,7 +50,7 @@
 		<script type="text/html" id="toolbar">
 		    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
 		        <i class="layui-icon layui-icon-addition"></i>
-		        新增常见问题
+		        新增常見問題
 			</button>
 		</script>
 
@@ -81,7 +81,7 @@
                 let cols = [
                         [{
                                 field: 'question',
-                                title: '问题',
+                                title: '問題',
                                 unresize: true,
                                 align: 'left'
                             }, {
@@ -164,7 +164,7 @@
 				window.add = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '新增常见问题',
+                        title: '新增常見問題',
                         shade: 0.1,
                         area: ['700px', '500px'],
                         content: MODULE_PATH + 'questions/add'
@@ -174,7 +174,7 @@
                 window.edit = function(obj) {
                     layer.open({
                         type: 2,
-                        title: '編輯常见问题',
+                        title: '編輯常見問題',
                         shade: 0.1,
                         area: ['700px', '500px'],
                         content: MODULE_PATH + 'questions/edit?id='+obj.data.qid
@@ -182,7 +182,7 @@
                 };
 
                 window.remove = function(obj) {
-                    layer.confirm('確定要刪除该常见问题吗？', {
+                    layer.confirm('確定要刪除该常見問題吗？', {
                         icon: 3,
                         title: '提示'
                     }, function(index) {

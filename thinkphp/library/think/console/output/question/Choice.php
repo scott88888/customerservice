@@ -23,7 +23,7 @@ class Choice extends Question
 
     /**
      * 构造方法
-     * @param string $question 问题
+     * @param string $question 問題
      * @param array  $choices  选项
      * @param mixed  $default  默认答案
      */

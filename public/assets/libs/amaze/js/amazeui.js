@@ -4433,7 +4433,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.collapse = Collapse;
 
 	// TODO: 更好的 target 選擇方式
-	//       折叠的容器必须没有 border/padding 才能正常处理，否则动画会有一些小问题
+	//       折叠的容器必须没有 border/padding 才能正常处理，否则动画会有一些小問題
 	//       寻找更好的未知高度 transition 动画解决方案，max-height 之类的就算了
 
 
@@ -10376,7 +10376,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// TODO: 1. 动画改进
 	//       2. 改变图片的时候恢复 Zoom
 	//       3. 选项
-	//       4. 图片高度问题：由于 PinchZoom 的原因，过高的图片如果设置看了滚动，则放大以后显示不全
+	//       4. 图片高度問題：由于 PinchZoom 的原因，过高的图片如果设置看了滚动，则放大以后显示不全
 
 
 /***/ },
@@ -16037,8 +16037,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }).attr('src', 'http://api.map.baidu.com/getscript' +
 	  '?type=quick&file=api&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');
 
-	  // jQuery 中 `load` 事件触发有问题，动态设置 src 属性才会触发 `load` 事件
-	  // $mapApi0 = $('<script />', {src: 'xxx'}); 这样的写法在 Zepto.js 中则没有问题
+	  // jQuery 中 `load` 事件触发有問題，动态设置 src 属性才会触发 `load` 事件
+	  // $mapApi0 = $('<script />', {src: 'xxx'}); 这样的写法在 Zepto.js 中则没有問題
 	}
 
 	function addBdMap() {

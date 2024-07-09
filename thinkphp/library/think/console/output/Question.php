@@ -25,7 +25,7 @@ class Question
 
     /**
      * 构造方法
-     * @param string $question 问题
+     * @param string $question 問題
      * @param mixed  $default  默认答案
      */
     public function __construct($question, $default = null)
@@ -35,7 +35,7 @@ class Question
     }
 
     /**
-     * 取得问题
+     * 取得問題
      * @return string
      */
     public function getQuestion()

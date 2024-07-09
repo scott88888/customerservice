@@ -181,7 +181,7 @@ class Index extends Base
     }
 
     /**
-     * 常见问题編輯頁面
+     * 常見問題編輯頁面
      * [editer description]
      * @return [type] [description]
      */
@@ -209,7 +209,7 @@ class Index extends Base
         return $this->fetch();
     }
     /**
-     * 常见问题編輯頁面
+     * 常見問題編輯頁面
      * [editer description]
      * @return [type] [description]
      */

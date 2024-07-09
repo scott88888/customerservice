@@ -20,7 +20,7 @@ class Confirmation extends Question
 
     /**
      * 构造方法
-     * @param string $question        问题
+     * @param string $question        問題
      * @param bool   $default         默认答案
      * @param string $trueAnswerRegex 驗證正则
      */

@@ -44,7 +44,7 @@ use Qiniu\Auth;
 $ ./vendor/bin/phpunit tests/Qiniu/Tests/
 ```
 
-## 常见问题
+## 常見問題
 
 - $error保留了请求响应的訊息，失敗情况下ret 为none, 将$error可以列印出来，送出给我们。
 - API 的使用 demo 可以参考 [单元测试](https://github.com/qiniu/php-sdk/blob/master/tests)。
@@ -60,7 +60,7 @@ $ ./vendor/bin/phpunit tests/Qiniu/Tests/
 ## 联系我们
 
 - 如果需要帮助，请送出工单（在portal右侧点击咨询和建议送出工单，或者直接向 support@qiniu.com 发送邮件）
-- 如果有什么问题，可以到问答社区提问，[问答社区](http://qiniu.segmentfault.com/)
+- 如果有什么問題，可以到问答社区提问，[问答社区](http://qiniu.segmentfault.com/)
 - 更详细的文档，见[官方文档站](http://developer.qiniu.com/)
 - 如果发现了bug， 欢迎送出 [issue](https://github.com/qiniu/php-sdk/issues)
 - 如果有功能需求，欢迎送出 [issue](https://github.com/qiniu/php-sdk/issues)

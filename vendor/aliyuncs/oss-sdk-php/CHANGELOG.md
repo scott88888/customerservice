@@ -28,7 +28,7 @@
 
 ## v2.2.0 / 2016-11-22
 
-* 修复PutObject/CompleteMultipartUpload的返回值问题(#26)
+* 修复PutObject/CompleteMultipartUpload的返回值問題(#26)
 
 ## v2.1.0 / 2016-11-12
 
@@ -54,11 +54,11 @@
 
 ## v2.0.3
 
-* 修复Util中的常量定义在低于5.6的PHP版本中报错的问题
+* 修复Util中的常量定义在低于5.6的PHP版本中报错的問題
 
 ## v2.0.2
 
-* 修复multipart上传时無法指定Content-Type的问题
+* 修复multipart上传时無法指定Content-Type的問題
 
 ## v2.0.1
 
@@ -87,6 +87,6 @@
 * 去掉Object Group相关的已经过时的接口
 * OssException中的message改为英文
 
-### 问题修复
+### 問題修复
 
 * object名稱校验不完备

@@ -1368,7 +1368,7 @@ class Set extends Base
     }
 
     /**
-     * 刪除常见问题
+     * 刪除常見問題
      * [getdeleteQuestion description]
      * @return [type] [description]
      */

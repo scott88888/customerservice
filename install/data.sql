@@ -279,7 +279,7 @@ CREATE TABLE `wolive_question`  (
   `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 1 COMMENT '1显示 0不显示',
   `lang` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'cn',
   PRIMARY KEY (`qid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '常见问题表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '常見問題表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Table structure for wolive_queue
@@ -344,7 +344,7 @@ CREATE TABLE `wolive_robot`  (
   `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 1 COMMENT '1显示 0不显示',
   `lang` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'cn',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '常见问题表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '常見問題表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Table structure for wolive_sentence
@@ -529,8 +529,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------
 INSERT INTO `wolive_admin_menu` VALUES (1, 0, '首頁', '/backend/index/home', 'layui-icon layui-icon-home', 1, 1, 1);
 INSERT INTO `wolive_admin_menu` VALUES (2, 0, '登入日志', '/backend/log/index', 'layui-icon layui-icon-layouts', 2, 1, 1);
-INSERT INTO `wolive_admin_menu` VALUES (3, 0, '商户管理', '', 'layui-icon layui-icon-username', 1, 0, 1);
-INSERT INTO `wolive_admin_menu` VALUES (4, 3, '商户列表', '/backend/busines/index', NULL, 99, 1, 1);
+INSERT INTO `wolive_admin_menu` VALUES (3, 0, '商家管理', '', 'layui-icon layui-icon-username', 1, 0, 1);
+INSERT INTO `wolive_admin_menu` VALUES (4, 3, '商家列表', '/backend/busines/index', NULL, 99, 1, 1);
 INSERT INTO `wolive_admin_menu` VALUES (5, 3, '客服列表', '/backend/services/index', NULL, 99, 1, 1);
 
 -- ----------------------------
@@ -540,22 +540,22 @@ INSERT INTO `wolive_admin_permission` VALUES (1, 0, '首頁', '/service/index/ho
 INSERT INTO `wolive_admin_permission` VALUES (2, 0, '客服管理', '', 'layui-icon layui-icon-username', 2, 0, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (3, 2, '客服列表', '/service/services/index', NULL, 99, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (4, 2, '客服分組', '/service/groups/index', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (5, 0, '评价列表', '/service/comments/index', 'layui-icon layui-icon-praise', 5, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (6, 0, '评价设置', '/service/comments/setting', 'layui-icon layui-icon-tabs', 6, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (7, 0, '常见问题设置', '/service/questions/index', 'layui-icon layui-icon-survey', 4, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (8, 0, '客户管理', '', 'layui-icon layui-icon-user', 3, 0, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (9, 8, '客户列表', '/service/visitors/index', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (10, 8, '客户分組', '/service/vgroups/index', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (11, 0, '问候语设置', '/service/setting/sentence', 'layui-icon layui-icon-release', 6, 1, 1, 0);
-INSERT INTO `wolive_admin_permission` VALUES (12, 0, '消息记录', '/service/history/index', 'layui-icon layui-icon-form', 7, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (5, 0, '評價列表', '/service/comments/index', 'layui-icon layui-icon-praise', 5, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (6, 0, '評價設定', '/service/comments/setting', 'layui-icon layui-icon-tabs', 6, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (7, 0, '常見問題設定', '/service/questions/index', 'layui-icon layui-icon-survey', 4, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (8, 0, '客戶管理', '', 'layui-icon layui-icon-user', 3, 0, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (9, 8, '客戶清單', '/service/visitors/index', NULL, 99, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (10, 8, '客戶分組', '/service/vgroups/index', NULL, 99, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (11, 0, '問候語設定', '/service/setting/sentence', 'layui-icon layui-icon-release', 6, 1, 1, 0);
+INSERT INTO `wolive_admin_permission` VALUES (12, 0, '訊息記錄', '/service/history/index', 'layui-icon layui-icon-form', 7, 1, 1, 1);
 INSERT INTO `wolive_admin_permission` VALUES (13, 0, '客服工作台', '/service/chat/index', 'layui-icon layui-icon-service', 1, 1, 1, 0);
-INSERT INTO `wolive_admin_permission` VALUES (14, 0, '機器人知识库', '/service/robots/index', 'layui-icon layui-icon-service', 4, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (15, 0, '如何接入', '', 'layui-icon layui-icon-unlink', 8, 0, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (16, 15, '接入配置', '/service/setting/access', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (17, 15, '接入教程', '/service/setting/course', NULL, 99, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (18, 0, '商户设置', '/service/setting/index', 'layui-icon layui-icon-set', 1, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (23, 0, '登入日志', '/service/log/index', 'layui-icon layui-icon-layouts', 8, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (24, 0, '資料统计', '/service/log/data', 'layui-icon layui-icon-senior', 8, 1, 1, 1);
-INSERT INTO `wolive_admin_permission` VALUES (25, 0, '违禁词', '/service/banwords/index', 'layui-icon layui-icon-face-cry', 4, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (14, 0, '機器人知識庫', '/service/robots/index', 'layui-icon layui-icon-service', 4, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (15, 0, '如何存取', '', 'layui-icon layui-icon-unlink', 8, 0, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (16, 15, '存取配置', '/service/setting/access', NULL, 99, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (17, 15, '接入教學', '/service/setting/course', NULL, 99, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (18, 0, '商家設定', '/service/setting/index', 'layui-icon layui-icon-set', 1, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (23, 0, '登入日誌', '/service/log/index', 'layui-icon layui-icon-layouts', 8, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (24, 0, '資料統計', '/service/log/data', 'layui-icon layui-icon-senior', 8, 1, 1, 1);
+INSERT INTO `wolive_admin_permission` VALUES (25, 0, '違禁詞', '/service/banwords/index', 'layui-icon layui-icon-face-cry', 4, 1, 1, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

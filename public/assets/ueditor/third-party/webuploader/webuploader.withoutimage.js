@@ -2751,7 +2751,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某个分片由于网络问题出错，允许自动重传多少次？
+             * @description 如果某个分片由于网络問題出错，允许自动重传多少次？
              */
             chunkRetry: 2,
     

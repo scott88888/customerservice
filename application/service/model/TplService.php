@@ -17,7 +17,7 @@ class TplService extends Model
     protected $table = 'wolive_wechat_platform';
 
     /**
-     * 发送模板消息
+     * 發送模板消息
      */
     public static function send($business_id,$openid,$url,$tpl,$data)
     {

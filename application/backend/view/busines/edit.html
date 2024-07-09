@@ -25,15 +25,15 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">登入密碼</label>
                     <div class="layui-input-block">
-                        <input type="password" name="password" value=""  placeholder="输入则為重置密碼" class="layui-input" autocomplete="off">
+                        <input type="password" name="password" value=""  placeholder="输入則為重置密碼" class="layui-input" autocomplete="off">
                     </div>
                 </div>
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">默认語言</label>
+                    <label class="layui-form-label">默認語言</label>
                     <div class="layui-input-block">
                         <select name="lang">
-                            <option value="">請選擇默认語言</option>
+                            <option value="">請選擇默認語言</option>
                             {foreach name=":config('lang')" item="vo"}
                             <option value="{$key}" {if $business.lang == $key}selected{/if}>{$vo}</option>
                             {/foreach}

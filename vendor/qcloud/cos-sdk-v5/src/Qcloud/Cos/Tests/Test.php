@@ -445,7 +445,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 
 
     /*
-     * put bucket cors，cors规则包含多條
+     * put bucket cors，cors規則包含多條
      * 200
      */
     public function testPutBucketCors()
@@ -534,7 +534,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * bucket未設定cors规则，发送get bucket cors
+     * bucket未設定cors規則，發送get bucket cors
      * NoSuchCORSConfiguration
      * 404
      */
@@ -553,7 +553,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * bucket未設定cors规则，发送get bucket cors
+     * bucket未設定cors規則，發送get bucket cors
      * NoSuchCORSConfiguration
      * 404
      */
@@ -591,16 +591,16 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                             ),
                             'Transitions' => array(
                                 array(
-                                    # 30天后转换為Standard_IA
+                                    # 30天後轉換為Standard_IA
                                     'Days' => 30,
                                     'StorageClass' => 'Standard_IA'),
                                 array(
-                                    # 365天后转换為Archive
+                                    # 365天後轉換為Archive
                                     'Days' => 365,
                                     'StorageClass' => 'Archive')
                             ),
                             'Expiration' => array(
-                                # 3650天后过期刪除
+                                # 3650天後过期刪除
                                 'Days' => 3650,
                             )
                         )
@@ -636,16 +636,16 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                         ),
                         'Transitions' => array(
                             array(
-                                # 30天后转换為Standard_IA
+                                # 30天後轉換為Standard_IA
                                 'Days' => 30,
                                 'StorageClass' => 'Standard_IA'),
                             array(
-                                # 365天后转换為Archive
+                                # 365天後轉換為Archive
                                 'Days' => 365,
                                 'StorageClass' => 'Archive')
                         ),
                         'Expiration' => array(
-                            # 3650天后过期刪除
+                            # 3650天後过期刪除
                             'Days' => 3650,
                         )
                     )
@@ -741,7 +741,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * bucket不存在，发送get bucket location請求
+     * bucket不存在，發送get bucket location請求
      * NoSuchBucket
      * 404
      */
@@ -779,7 +779,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 上传文件Bucket不存在
+     * 上傳文件Bucket不存在
      * NoSuchBucket
      * 404
      */
@@ -795,7 +795,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 
 
     /*
-     * 上传小文件
+     * 上傳小文件
      * 200
      */
     public function testUploadSmallObject() {
@@ -808,7 +808,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 上传空文件
+     * 上傳空文件
      * 200
      */
     public function testPutObjectEmpty() {
@@ -821,7 +821,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 上传已存在的文件
+     * 上傳已存在的文件
      * 200
      */
     public function testPutObjectExisted() {
@@ -876,7 +876,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 上传复杂文件名的文件
+     * 上傳复杂文件名的文件
      * 200
      */
     public function testUploadComplexObject() {
@@ -889,7 +889,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     }
 
     /*
-     * 上传大文件
+     * 上傳大文件
      * 200
      */
     public function testUploadLargeObject() {

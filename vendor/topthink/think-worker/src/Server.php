@@ -14,7 +14,7 @@ namespace think\worker;
 use Workerman\Worker;
 
 /**
- * Worker控制器扩展类
+ * Worker控制器扩展類
  */
 abstract class Server
 {
@@ -31,7 +31,7 @@ abstract class Server
      */
     public function __construct()
     {
-        // 实例化 Websocket 服务
+        // 實例化 Websocket 服务
         $this->worker = new Worker($this->socket ?: $this->protocol . '://' . $this->host . ':' . $this->port);
         // 設定进程數
         $this->worker->count = $this->processes;

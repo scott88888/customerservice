@@ -21,22 +21,22 @@ class File extends SplFileObject
     private $error = '';
 
     /**
-     * @var string 当前完整文件名
+     * @var string 當前完整文件名
      */
     protected $filename;
 
     /**
-     * @var string 上传文件名
+     * @var string 上傳文件名
      */
     protected $saveName;
 
     /**
-     * @var string 文件上传命名规则
+     * @var string 文件上傳命名規則
      */
     protected $rule = 'date';
 
     /**
-     * @var array 文件上传驗證规则
+     * @var array 文件上傳驗證規則
      */
     protected $validate = [];
 
@@ -46,7 +46,7 @@ class File extends SplFileObject
     protected $isTest;
 
     /**
-     * @var array 上传文件訊息
+     * @var array 上傳文件訊息
      */
     protected $info;
 
@@ -81,9 +81,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 設定上传訊息
+     * 設定上傳訊息
      * @access public
-     * @param  array $info 上传文件訊息
+     * @param  array $info 上傳文件訊息
      * @return $this
      */
     public function setUploadInfo($info)
@@ -94,7 +94,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得上传文件的訊息
+     * 取得上傳文件的訊息
      * @access public
      * @param  string $name 訊息名稱
      * @return array|string
@@ -105,7 +105,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得上传文件的文件名
+     * 取得上傳文件的文件名
      * @access public
      * @return string
      */
@@ -115,7 +115,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 設定上传文件的保存文件名
+     * 設定上傳文件的保存文件名
      * @access public
      * @param  string $saveName 保存名稱
      * @return $this
@@ -130,7 +130,7 @@ class File extends SplFileObject
     /**
      * 取得文件的哈希散列值
      * @access public
-     * @param  string $type 类型
+     * @param  string $type 類型
      * @return string
      */
     public function hash($type = 'sha1')
@@ -143,9 +143,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 檢查目录是否可写
+     * 檢查目錄是否可寫
      * @access protected
-     * @param  string $path 目录
+     * @param  string $path 目錄
      * @return boolean
      */
     protected function checkPath($path)
@@ -160,7 +160,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得文件类型訊息
+     * 取得文件類型訊息
      * @access public
      * @return string
      */
@@ -172,9 +172,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 設定文件的命名规则
+     * 設定文件的命名規則
      * @access public
-     * @param  string $rule 文件命名规则
+     * @param  string $rule 文件命名規則
      * @return $this
      */
     public function rule($rule)
@@ -185,9 +185,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 設定上传文件的驗證规则
+     * 設定上傳文件的驗證規則
      * @access public
-     * @param  array $rule 驗證规则
+     * @param  array $rule 驗證規則
      * @return $this
      */
     public function validate(array $rule = [])
@@ -198,7 +198,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 检测是否合法的上传文件
+     * 检测是否合法的上傳文件
      * @access public
      * @return bool
      */
@@ -208,9 +208,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 检测上传文件
+     * 检测上傳文件
      * @access public
-     * @param  array $rule 驗證规则
+     * @param  array $rule 驗證規則
      * @return bool
      */
     public function check($rule = [])
@@ -223,19 +223,19 @@ class File extends SplFileObject
             return false;
         }
 
-        /* 檢查文件 Mime 类型 */
+        /* 檢查文件 Mime 類型 */
         if (isset($rule['type']) && !$this->checkMime($rule['type'])) {
             $this->error = 'mimetype to upload is not allowed';
             return false;
         }
 
-        /* 檢查文件后缀 */
+        /* 檢查文件後缀 */
         if (isset($rule['ext']) && !$this->checkExt($rule['ext'])) {
             $this->error = 'extensions to upload is not allowed';
             return false;
         }
 
-        /* 檢查图像文件 */
+        /* 檢查圖像文件 */
         if (!$this->checkImg()) {
             $this->error = 'illegal image files';
             return false;
@@ -245,9 +245,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 检测上传文件后缀
+     * 检测上傳文件後缀
      * @access public
-     * @param  array|string $ext 允许后缀
+     * @param  array|string $ext 允许後缀
      * @return bool
      */
     public function checkExt($ext)
@@ -262,7 +262,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 检测图像文件
+     * 检测圖像文件
      * @access public
      * @return bool
      */
@@ -270,14 +270,14 @@ class File extends SplFileObject
     {
         $extension = strtolower(pathinfo($this->getInfo('name'), PATHINFO_EXTENSION));
 
-        // 如果上传的不是图片，或者是图片而且后缀确实符合图片类型则返回 true
+        // 如果上傳的不是圖片，或者是圖片而且後缀确实符合圖片類型則返回 true
         return !in_array($extension, ['gif', 'jpg', 'jpeg', 'bmp', 'png', 'swf']) || in_array($this->getImageType($this->filename), [1, 2, 3, 4, 6, 13]);
     }
 
     /**
-     * 判断图像类型
+     * 判断圖像類型
      * @access protected
-     * @param  string $image 图片名稱
+     * @param  string $image 圖片名稱
      * @return bool|int
      */
     protected function getImageType($image)
@@ -295,7 +295,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 检测上传文件大小
+     * 检测上傳文件大小
      * @access public
      * @param  integer $size 最大大小
      * @return bool
@@ -306,9 +306,9 @@ class File extends SplFileObject
     }
 
     /**
-     * 检测上传文件类型
+     * 检测上傳文件類型
      * @access public
-     * @param  array|string $mime 允许类型
+     * @param  array|string $mime 允许類型
      * @return bool
      */
     public function checkMime($mime)
@@ -321,14 +321,14 @@ class File extends SplFileObject
     /**
      * 移動文件
      * @access public
-     * @param  string      $path     保存路径
-     * @param  string|bool $savename 保存的文件名 默认自動產生
+     * @param  string      $path     保存路徑
+     * @param  string|bool $savename 保存的文件名 默認自動產生
      * @param  boolean     $replace  同名文件是否覆盖
      * @return false|File
      */
     public function move($path, $savename = true, $replace = true)
     {
-        // 文件上传失敗，捕获錯誤程式碼
+        // 文件上傳失敗，捕获錯誤程式碼
         if (!empty($this->info['error'])) {
             $this->error($this->info['error']);
             return false;
@@ -340,17 +340,17 @@ class File extends SplFileObject
             return false;
         }
 
-        // 驗證上传
+        // 驗證上傳
         if (!$this->check()) {
             return false;
         }
 
         $path = rtrim($path, DS) . DS;
-        // 文件保存命名规则
+        // 文件保存命名規則
         $saveName = $this->buildSaveName($savename);
         $filename = $path . $saveName;
 
-        // 检测目录
+        // 检测目錄
         if (false === $this->checkPath(dirname($filename))) {
             return false;
         }
@@ -369,7 +369,7 @@ class File extends SplFileObject
             return false;
         }
 
-        // 返回 File 對象实例
+        // 返回 File 對象實例
         $file = new self($filename);
         $file->setSaveName($saveName)->setUploadInfo($this->info);
 
@@ -379,7 +379,7 @@ class File extends SplFileObject
     /**
      * 取得保存文件名
      * @access protected
-     * @param  string|bool $savename 保存的文件名 默认自動產生
+     * @param  string|bool $savename 保存的文件名 默認自動產生
      * @return string
      */
     protected function buildSaveName($savename)
@@ -448,7 +448,7 @@ class File extends SplFileObject
     }
 
     /**
-     * 取得錯誤訊息（支持多語言）
+     * 取得錯誤訊息（支援多語言）
      * @access public
      * @return string
      */

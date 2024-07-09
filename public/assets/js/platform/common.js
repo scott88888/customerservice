@@ -2,7 +2,7 @@ var _loading_svg = '<svg width="100%" height="100%" xmlns="http://www.w3.org/200
 $.randomString = function (len) {
     len = len || 32;
     var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
-    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+    /****默認去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
     var maxPos = $chars.length;
     var pwd = '';
     for (i = 0; i < len; i++) {
@@ -254,14 +254,14 @@ $.fn.extend({
 
     /**
      * {
-     * url:'上传接收端'
+     * url:'上傳接收端'
      * success:function(element,responseData,httpStatusCode)
      * progress:function(element,percent)
      * }
      * */
     plupload: function (args) {
         if (typeof plupload !== 'object') {
-            throw '缺少plupload上传组件，详见：http://www.bootcdn.cn/plupload/\n或者使用<script src="https://cdn.bootcss.com/plupload/2.3.4/plupload.full.min.js"></script>';
+            throw '缺少plupload上傳组件，详见：http://www.bootcdn.cn/plupload/\n或者使用<script src="https://cdn.bootcss.com/plupload/2.3.4/plupload.full.min.js"></script>';
         }
         var $this = this;
         $this.each(function () {

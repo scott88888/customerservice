@@ -98,7 +98,7 @@
         });
 
         var channel =pusher.subscribe("kefu" + value);
-        // 发送一个推送
+        // 發送一个推送
         channel.bind("callbackpusher",function(data){
             $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
             })
@@ -530,7 +530,7 @@
                 </div>
             </div>
 
-            <!-- 浮层 -->
+            <!-- 浮層 -->
             <div id='fuceng' class="hide" style="background: #f7f7f7;height: 68px;position: absolute;bottom: 70px;right: 20px;z-index: 9999;border-radius: 8px;padding: 8px 0">
                 <ul style="width: 100%;height: 60px;">
                     <li class="fuceng-li" onclick="choosetype(this)" name='1'><img id='type1' class="layui-icon selecte-icon" src="__image__/admin/B/selected.png" alt=""><span>按Enter鍵發送訊息，Ctrl+Enter換行</span></li>
@@ -735,7 +735,7 @@
 
         layer.open({
             type:1,
-            title:'新增快捷回覆',
+            title:'新增快速回覆',
             area: ['600px', '415px'],
             content: html,
             btn: ['保存', '取消'],
@@ -839,12 +839,12 @@
     }
 
 
-    //取得qq截图的图片
+    //取得qq截圖的圖片
     (function () {
         var imgReader = function (item) {
             var blob = item.getAsFile(),
                 reader = new FileReader();
-            // 读取文件后将其显示在網頁中
+            // 读取文件後将其显示在網頁中
             reader.onload = function (e) {
                 var msg = '';
                 msg += "<img   src='" + e.target.result + "'>";
@@ -940,7 +940,7 @@
                     return;
                 }
                 item = items[0];
-                // 保存在剪贴板中的資料类型
+                // 保存在剪贴板中的資料類型
                 types = clipboardData.types || [];
                 for (; i < types.length; i++) {
                     if (types[i] === 'Files') {
@@ -948,7 +948,7 @@
                         break;
                     }
                 }
-                // 判断是否為图片資料
+                // 判断是否為圖片資料
                 if (item && item.kind === 'file' && item.type.match(/^image\//i)) {
                     imgReader(item);
                 }
@@ -1034,7 +1034,7 @@
 
     var getaudio =function(){
 
-        //音訊先加载
+        //音訊先載入
         var audio_context;
         var recorder;
         var wavBlob;
@@ -1048,7 +1048,7 @@
             audio_context = new AudioContext;
 
             if (!navigator.getUserMedia) {
-                console.log('语音建立失敗');
+                console.log('語音建立失敗');
             }
             ;
         } catch (e) {
@@ -1063,7 +1063,7 @@
             if (falg == 'https:') {
                 recorder && recorder.record();
 
-                //示范一个公告层
+                //示范一个公告層
                 layui.use(['jquery', 'layer'], function () {
                     var layer = layui.layer;
 
@@ -1071,8 +1071,8 @@
                         icon: 16
                         , shade: 0.01
                         , skin: 'layui-layer-lan'
-                        , time: 0 //20s后自動關閉
-                        , btn: ['发送', '取消']
+                        , time: 0 //20s後自動關閉
+                        , btn: ['發送', '取消']
                         , yes: function (index, layero) {
                             //按钮【按钮一】的回调
                             recorder && recorder.stop();
@@ -1179,7 +1179,7 @@
                 });
             } else {
 
-                layer.msg('音訊输入只支持https协议！');
+                layer.msg('音訊输入只支援https协议！');
 
             }
 
@@ -1225,7 +1225,7 @@
 
         layer.open({
             type: 2,
-            title: '转接客服列表',
+            title: '轉接客服列表',
             area: ['400px', '420px'],
             shade: false,
             content: '/service/index/service?visiter_id='+sid+'&name='+se
@@ -1238,10 +1238,10 @@
         $.ajax({
             url:'/admin/visiter/chat2top/visiter_id/'+id+'/istop/'+istop,
             dataType:"json",   //返回格式為json
-            async:true,//請求是否异步，默认為异步，这也是ajax重要特性
+            async:true,//請求是否异步，默認為异步，这也是ajax重要特性
             type:"POST",   //請求方式
             beforeSend:function(){
-                //請求前的处理
+                //請求前的處理
                 index = layer.load(2, {shade: false});
             },
             success:function(res){
@@ -1254,14 +1254,14 @@
                 }else{
                     layer.msg(res.msg,{icon:2});
                 }
-                //請求成功时处理
+                //請求成功时處理
             },
             complete:function(){
-                //請求完成的处理
+                //請求完成的處理
                 layer.close(index);
             },
             error:function(){
-                //請求出错处理
+                //請求出错處理
             }
         });
     }

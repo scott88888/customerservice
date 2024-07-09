@@ -138,11 +138,11 @@
                     {if condition="isset($model['id'])"}
                     <input type="number" class="form-control "
                            value="{$model->max_count}"  name="max_count" class="form-control-plaintext ">
-                    <div class="fs-sm text-muted">此客服系统站點可以建立客服的數量，填写0则表示不限制使用者建立客服的數量</div>
+                    <div class="fs-sm text-muted">此客服系统站點可以建立客服的數量，填寫0則表示不限制使用者建立客服的數量</div>
                     {else/}
                     <input type="number"class="form-control " name="max_count"
                            value="">
-                    <div class="fs-sm text-muted">此客服系统站點可以建立客服的數量，填写0则表示不限制使用者建立客服的數量</div>
+                    <div class="fs-sm text-muted">此客服系统站點可以建立客服的數量，填寫0則表示不限制使用者建立客服的數量</div>
                     {/if}
                 </div>
             </div>
@@ -171,12 +171,12 @@
             {/if}
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Logo图片URL</label>
+                <label class="col-sm-2 col-form-label">Logo圖片URL</label>
                 <div class="col-sm-6">
                     <div class="input-group mb-2">
                         <input class="form-control" value="{$model['logo']}" name="logo">
                         <span class="input-group-btn">
-                        <a class="btn btn-secondary upload-btn" href="javascript:">上传图片</a>
+                        <a class="btn btn-secondary upload-btn" href="javascript:">上傳圖片</a>
                     </span>
                     </div>
                     <span class="upload-preview-tip">98&times;36</span>

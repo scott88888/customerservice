@@ -14,7 +14,7 @@ class App extends Validate
 {
 
     /**
-     * 驗證规则.
+     * 驗證規則.
      * [$rule description]
      * @var array
      */
@@ -30,12 +30,12 @@ class App extends Validate
      * @var [type]
      */
     protected $message = [
-        'business_name.require' => '請填写商户名稱',
+        'business_name.require' => '請填寫商户名稱',
         'business_name.length' => '商户名稱為3~16个字符',
         'business_name.alphaDash' => '商户名稱只能是字母、數字、下划线 _ ',
-        'password.require' => '請填写登入密碼',
+        'password.require' => '請填寫登入密碼',
         'password.length' => '密碼長度為1~16个字符',
-        'max_count.require' =>'請填写數量',
+        'max_count.require' =>'請填寫數量',
         'max_count.number' =>'客服數量只能是數字',
     ];
 

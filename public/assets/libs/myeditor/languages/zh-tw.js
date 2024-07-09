@@ -12,8 +12,8 @@
                 italic           : "斜體",
                 quote            : "引用",
                 ucwords          : "將所選的每個單詞首字母轉成大寫",
-                uppercase        : "將所選文本轉成大寫",
-                lowercase        : "將所選文本轉成小寫",
+                uppercase        : "將所選文字轉成大寫",
+                lowercase        : "將所選文字轉成小寫",
                 h1               : "標題1",
                 h2               : "標題2",
                 h3               : "標題3",
@@ -27,7 +27,7 @@
                 "reference-link" : "引用鏈接",
                 image            : "圖片",
                 code             : "行內程式碼",
-                "preformatted-text" : "預格式文本 / 程式碼塊（縮進風格）",
+                "preformatted-text" : "預格式文字 / 程式碼塊（縮進風格）",
                 "code-block"     : "程式碼塊（多語言風格）",
                 table            : "新增表格",
                 datetime         : "日期時間",
@@ -76,8 +76,8 @@
                     formatNotAllowed : "錯誤：只允許上傳圖片文件，允許上傳的圖片文件格式有："
                 },
                 preformattedText : {
-                    title             : "新增預格式文本或程式碼塊", 
-                    emptyAlert        : "錯誤：請填寫預格式文本或程式碼的內容。"
+                    title             : "新增預格式文字或程式碼塊", 
+                    emptyAlert        : "錯誤：請填寫預格式文字或程式碼的內容。"
                 },
                 codeBlock : {
                     title             : "新增程式碼塊",                 

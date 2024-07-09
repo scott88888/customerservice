@@ -10,7 +10,7 @@ use think\File;
 
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Services extends Base
 {
@@ -76,12 +76,12 @@ class Services extends Base
             if ($info) {
                 $imgname = $info->getFilename();
                 $imgpath = $this->base_root . "/upload/images/{$_SESSION['Msg']['business_id']}/" . $imgname;
-                $this->success('上传成功', '', $imgpath);
+                $this->success('上傳成功', '', $imgpath);
             } else {
-                $this->error('上传失敗！');
+                $this->error('上傳失敗！');
             }
         }
-        $this->error('上传失敗！');
+        $this->error('上傳失敗！');
     }
 
     public function pass()

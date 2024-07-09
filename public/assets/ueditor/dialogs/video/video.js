@@ -68,7 +68,7 @@
     }
 
     /**
-     * 监听确认和取消两个按钮事件，使用者执行插入或者清空正在播放的视频实例操作
+     * 监听确认和取消两个按钮事件，使用者執行插入或者清空正在播放的视频實例操作
      */
     function addOkListener(){
         dialog.onok = function(){
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依据传入的align值更新按钮訊息
+     * 依据傳入的align值更新按钮訊息
      * @param align
      */
     function updateAlignButton( align ) {
@@ -129,7 +129,7 @@
     }
 
     /**
-     * 将元素id下的所有代表视频的图片插入編輯器中
+     * 将元素id下的所有代表视频的圖片插入編輯器中
      * @param id
      */
     function insertSearch(id){
@@ -149,7 +149,7 @@
     }
 
     /**
-     * 找到id下具有focus类的节點并返回该节點下的某个属性
+     * 找到id下具有focus類的节點並返回该节點下的某个属性
      * @param id
      * @param returnProperty
      */
@@ -184,7 +184,7 @@
     }
 
     /**
-      * 检测传入的所有input框中输入的長宽是否是正數
+      * 检测傳入的所有input框中输入的長宽是否是正數
       * @param nodes input框集合，
       */
      function checkNum( nodes ) {
@@ -210,7 +210,7 @@
     }
 
     /**
-      * 建立图片浮動選擇按钮
+      * 建立圖片浮動選擇按钮
       * @param ids
       */
      function createAlignButton( ids ) {
@@ -263,7 +263,7 @@
     }
 
     /**
-     * 根據url產生视频预览
+     * 根據url產生视频預覽
      * @param url
      */
     function createPreviewVideo(url){
@@ -283,7 +283,7 @@
     }
 
 
-    /* 插入上传视频 */
+    /* 插入上傳视频 */
     function insertUpload(){
         var videoObjs=[],
             uploadDir = editor.getOpt('videoUrlPrefix'),
@@ -302,20 +302,20 @@
 
         var count = uploadFile.getQueueCount();
         if (count) {
-            $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上传文件'.replace(/[\d]/, count) + '</span>');
+            $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上傳文件'.replace(/[\d]/, count) + '</span>');
             return false;
         } else {
             editor.execCommand('insertvideo', videoObjs, 'upload');
         }
     }
 
-    /*初始化上传标签*/
+    /*初始化上傳标签*/
     function initUpload(){
         uploadFile = new UploadFile('queueList');
     }
 
 
-    /* 上传附件 */
+    /* 上傳附件 */
     function UploadFile(target) {
         this.$wrap = target.constructor == String ? $('#' + target) : $(target);
         this.init();
@@ -334,17 +334,17 @@
             var _this = this,
                 $ = jQuery,    // just in case. Make sure it's not an other libaray.
                 $wrap = _this.$wrap,
-            // 图片容器
+            // 圖片容器
                 $queue = $wrap.find('.filelist'),
             // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
             // 文件总体選擇訊息。
                 $info = $statusBar.find('.info'),
-            // 上传按钮
+            // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
-            // 上传按钮
+            // 上傳按钮
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-            // 上传按钮
+            // 上傳按钮
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
@@ -356,7 +356,7 @@
                 fileSize = 0,
             // 优化retina, 在retina下这个值是2
                 ratio = window.devicePixelRatio || 1,
-            // 缩略图大小
+            // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
@@ -373,7 +373,7 @@
                     s = null;
                     return r;
                 })(),
-            // WebUploader实例
+            // WebUploader實例
                 uploader,
                 actionUrl = editor.getActionUrl(editor.getOpt('videoActionName')),
                 fileMaxSize = editor.getOpt('videoMaxSize'),
@@ -409,7 +409,7 @@
 
             setState('pedding');
 
-            // 当有文件新增进来时执行，负责view的建立
+            // 当有文件新增进来时執行，负责view的建立
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -590,7 +590,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以開始上传 */
+                        /* 可以開始上傳 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -600,13 +600,13 @@
                             uploader.refresh();
                             break;
 
-                        /* 上传中 */
+                        /* 上傳中 */
                         case 'uploading':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* 暫停上传 */
+                        /* 暫停上傳 */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -703,7 +703,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 新增额外的GET参數 */
+                        /* 新增額外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);

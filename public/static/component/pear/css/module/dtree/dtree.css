@@ -1,6 +1,6 @@
 
 /**************** 主题换肤  ****************/
-/* 默认风格*/
+/* 默認風格*/
 .dtree-theme-item-this{background-color: #d2d2d2!important;}
 .dtree-theme-item:hover{background-color: #eaeceb!important;}
 .dtree-theme-item cite{font-size:12px!important;}
@@ -12,7 +12,7 @@
 .dtree-theme-checkbox:hover{color:#fe7786!important;}
 .dtree-theme-choose{color:#fe7786!important;}
 
-/* layui主题风格*/
+/* layui主题風格*/
 .dtree-layui-item-this{background: none!important;}
 .dtree-layui-item:hover{background: none!important;}
 .dtree-layui-item cite{font-size:14px!important;}
@@ -24,7 +24,7 @@
 .dtree-layui-checkbox:hover{color:#5FB878!important;}
 .dtree-layui-choose{color:#5FB878!important;}
 
-/* laySimple主题风格*/
+/* laySimple主题風格*/
 .dtree-laySimple-item-this{background-color: #d2d2d2!important;}
 .dtree-laySimple-item:hover{background-color: #eaeceb!important;}
 .dtree-laySimple-item cite{font-size:12px!important;}
@@ -73,7 +73,7 @@
 .dtree-nav-last-line:after{content:"";position: absolute;top: 16px;left: 8px;width: 9px;height: 0;border-top: 1px dotted #c0c4cc;}
 
 
-/* 图标及复选框*/
+/* 圖标及复选框*/
 .dtreefont{cursor: pointer;}
 .dtreefont-special{margin: 0 4px;}
 .dtree-nav-checkbox-div{display: inline-block;}
@@ -86,7 +86,7 @@
 .dtree-nav-div cite{font-style: normal;cursor: pointer;}
 .dtree-nav-div:hover cite{opacity:0.7;filter:Alpha(opacity=70);transition: all .3s;-webkit-transition: all .3s;}
 
-/* 规则属性*/
+/* 規則属性*/
 .dtree-nav-show {display: block!important;}
 .dtree-nav-hide {display: none!important;}
 .dtree-nav-this {}

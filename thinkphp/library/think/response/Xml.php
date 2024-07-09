@@ -25,7 +25,7 @@ class Xml extends Response
         'root_attr' => '',
         //數字索引的子节點名
         'item_node' => 'item',
-        // 數字索引子节點key转换的属性名
+        // 數字索引子节點key轉換的属性名
         'item_key'  => 'id',
         // 資料编碼
         'encoding'  => 'utf-8',
@@ -34,14 +34,14 @@ class Xml extends Response
     protected $contentType = 'text/xml';
 
     /**
-     * 处理資料
+     * 處理資料
      * @access protected
-     * @param mixed $data 要处理的資料
+     * @param mixed $data 要處理的資料
      * @return mixed
      */
     protected function output($data)
     {
-        // XML資料转换
+        // XML資料轉換
         return $this->xmlEncode($data, $this->options['root_node'], $this->options['item_node'], $this->options['root_attr'], $this->options['item_key'], $this->options['encoding']);
     }
 
@@ -51,7 +51,7 @@ class Xml extends Response
      * @param string $root 根节點名
      * @param string $item 數字索引的子节點名
      * @param string $attr 根节點属性
-     * @param string $id   數字索引子节點key转换的属性名
+     * @param string $id   數字索引子节點key轉換的属性名
      * @param string $encoding 資料编碼
      * @return string
      */
@@ -77,7 +77,7 @@ class Xml extends Response
      * 資料XML编碼
      * @param mixed  $data 資料
      * @param string $item 數字索引时的节點名稱
-     * @param string $id   數字索引key转换為的属性名
+     * @param string $id   數字索引key轉換為的属性名
      * @return string
      */
     protected function dataToXml($data, $item, $id)

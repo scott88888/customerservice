@@ -26,18 +26,18 @@ defined('RUNTIME_PATH') or define('RUNTIME_PATH', ROOT_PATH . 'runtime' . DS);
 defined('LOG_PATH') or define('LOG_PATH', RUNTIME_PATH . 'log' . DS);
 defined('CACHE_PATH') or define('CACHE_PATH', RUNTIME_PATH . 'cache' . DS);
 defined('TEMP_PATH') or define('TEMP_PATH', RUNTIME_PATH . 'temp' . DS);
-defined('CONF_PATH') or define('CONF_PATH', APP_PATH); // 配置文件目录
-defined('CONF_EXT') or define('CONF_EXT', EXT); // 配置文件后缀
+defined('CONF_PATH') or define('CONF_PATH', APP_PATH); // 配置文件目錄
+defined('CONF_EXT') or define('CONF_EXT', EXT); // 配置文件後缀
 defined('ENV_PREFIX') or define('ENV_PREFIX', 'PHP_'); // 环境变量的配置前缀
 
 // 环境常量
 define('IS_CLI', PHP_SAPI == 'cli' ? true : false);
 define('IS_WIN', strpos(PHP_OS, 'WIN') !== false);
 
-// 载入Loader类
+// 载入Loader類
 require CORE_PATH . 'Loader.php';
 
-// 加载环境变量配置文件
+// 載入环境变量配置文件
 if (is_file(ROOT_PATH . '.env')) {
     $env = parse_ini_file(ROOT_PATH . '.env', true);
 
@@ -55,11 +55,11 @@ if (is_file(ROOT_PATH . '.env')) {
     }
 }
 
-// 注册自動加载
+// 註冊自動載入
 \think\Loader::register();
 
-// 注册錯誤和异常处理机制
+// 註冊錯誤和异常處理機制
 \think\Error::register();
 
-// 加载惯例配置文件
+// 載入惯例配置文件
 \think\Config::set(include THINK_PATH . 'convention' . EXT);

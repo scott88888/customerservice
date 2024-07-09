@@ -40,8 +40,8 @@ class Definition
     }
 
     /**
-     * 設定指令的定义
-     * @param array $definition 定义的數组
+     * 設定指令的定義
+     * @param array $definition 定義的數组
      */
     public function setDefinition(array $definition)
     {
@@ -176,7 +176,7 @@ class Definition
     }
 
     /**
-     * 取得参數默认值
+     * 取得参數默認值
      * @return array
      */
     public function getArgumentDefaults()
@@ -300,7 +300,7 @@ class Definition
     }
 
     /**
-     * 取得所有选项的默认值
+     * 取得所有选项的默認值
      * @return array
      */
     public function getOptionDefaults()

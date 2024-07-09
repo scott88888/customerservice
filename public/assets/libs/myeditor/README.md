@@ -32,13 +32,13 @@
 
 #### 主要特性
 
-- 支持通用 Markdown / CommonMark 和 GFM (GitHub Flavored Markdown) 风格的语法，也可[变身為程式碼編輯器](https://pandao.github.io/editor.md/examples/change-mode.html)；
-- 支持实时预览、图片（跨域）上传、预格式文本/程式碼/表格插入、程式碼折叠、跳转到行、搜索替换、只读模式、自訂樣式主题和多語言语法高亮等功能；
-- 支持 [ToC（Table of Contents）](https://pandao.github.io/editor.md/examples/toc.html)、[Emoji表情](https://pandao.github.io/editor.md/examples/emoji.html)、[Task lists](https://pandao.github.io/editor.md/examples/task-lists.html)、[@連結](https://pandao.github.io/editor.md/examples/@links.html)等 Markdown 扩展语法；
-- 支持 TeX 科学公式（基于 [KaTeX](https://pandao.github.io/editor.md/examples/katex.html)）、流程图 [Flowchart](https://pandao.github.io/editor.md/examples/flowchart.html) 和 [时序图 Sequence Diagram](https://pandao.github.io/editor.md/examples/sequence-diagram.html);
-- 支持[识别和解析 HTML 标签，并且支持自訂过滤标签及属性解析](https://pandao.github.io/editor.md/examples/html-tags-decode.html)，具有可靠的安全性和几乎無限的扩展性；
-- 支持 AMD / CMD 模块化加载（支持 [Require.js](https://pandao.github.io/editor.md/examples/use-requirejs.html) & [Sea.js](https://pandao.github.io/editor.md/examples/use-seajs.html)），并且支持[自訂扩展插件](https://pandao.github.io/editor.md/examples/define-plugin.html)；
-- 兼容主流的浏览器（IE8+）和 [Zepto.js](https://pandao.github.io/editor.md/examples/use-zepto.html)，且支持 iPad 等平板设备；
+- 支援通用 Markdown / CommonMark 和 GFM (GitHub Flavored Markdown) 風格的語法，也可[变身為程式碼編輯器](https://pandao.github.io/editor.md/examples/change-mode.html)；
+- 支援实时預覽、圖片（跨域）上傳、预格式文字/程式碼/表格插入、程式碼折叠、跳转到行、搜索替换、只读模式、自訂樣式主题和多語言語法高亮等功能；
+- 支援 [ToC（Table of Contents）](https://pandao.github.io/editor.md/examples/toc.html)、[Emoji表情](https://pandao.github.io/editor.md/examples/emoji.html)、[Task lists](https://pandao.github.io/editor.md/examples/task-lists.html)、[@連結](https://pandao.github.io/editor.md/examples/@links.html)等 Markdown 扩展語法；
+- 支援 TeX 科学公式（基于 [KaTeX](https://pandao.github.io/editor.md/examples/katex.html)）、流程圖 [Flowchart](https://pandao.github.io/editor.md/examples/flowchart.html) 和 [时序圖 Sequence Diagram](https://pandao.github.io/editor.md/examples/sequence-diagram.html);
+- 支援[识别和解析 HTML 标签，並且支援自訂过滤标签及属性解析](https://pandao.github.io/editor.md/examples/html-tags-decode.html)，具有可靠的安全性和几乎無限的扩展性；
+- 支援 AMD / CMD 模組化載入（支援 [Require.js](https://pandao.github.io/editor.md/examples/use-requirejs.html) & [Sea.js](https://pandao.github.io/editor.md/examples/use-seajs.html)），並且支援[自訂扩展插件](https://pandao.github.io/editor.md/examples/define-plugin.html)；
+- 兼容主流的浏览器（IE8+）和 [Zepto.js](https://pandao.github.io/editor.md/examples/use-zepto.html)，且支援 iPad 等平板设备；
 
 #### Examples
 

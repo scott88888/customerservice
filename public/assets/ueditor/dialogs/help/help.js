@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 /**
- * tab點擊处理事件
+ * tab點擊處理事件
  * @param tabHeads
  * @param tabBodys
  * @param obj

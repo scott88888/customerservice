@@ -73,7 +73,7 @@ class Str
     }
 
     /**
-     * 取得指定長度的随机字母數字组合的字符串
+     * 取得指定長度的随機字母數字组合的字符串
      *
      * @param  int $length
      * @return string
@@ -86,7 +86,7 @@ class Str
     }
 
     /**
-     * 字符串转小写
+     * 字符串转小寫
      *
      * @param  string $value
      * @return string
@@ -97,7 +97,7 @@ class Str
     }
 
     /**
-     * 字符串转大写
+     * 字符串转大寫
      *
      * @param  string $value
      * @return string
@@ -132,7 +132,7 @@ class Str
     }
 
     /**
-     * 驼峰转下划线
+     * 駝峰转下划线
      *
      * @param  string $value
      * @param  string $delimiter
@@ -156,7 +156,7 @@ class Str
     }
 
     /**
-     * 下划线转驼峰(首字母小写)
+     * 下划线转駝峰(首字母小寫)
      *
      * @param  string $value
      * @return string
@@ -171,7 +171,7 @@ class Str
     }
 
     /**
-     * 下划线转驼峰(首字母大写)
+     * 下划线转駝峰(首字母大寫)
      *
      * @param  string $value
      * @return string
@@ -190,7 +190,7 @@ class Str
     }
 
     /**
-     * 转為首字母大写的标题格式
+     * 转為首字母大寫的標題格式
      *
      * @param  string $value
      * @return string

@@ -15,7 +15,7 @@ use PDO;
 use think\db\Connection;
 
 /**
- * Pgsql資料库驱動
+ * Pgsql資料庫驱動
  */
 class Pgsql extends Connection
 {
@@ -68,7 +68,7 @@ class Pgsql extends Connection
     }
 
     /**
-     * 取得資料库的表訊息
+     * 取得資料庫的表訊息
      * @access public
      * @param string $dbName
      * @return array

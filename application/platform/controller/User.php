@@ -165,7 +165,7 @@ class User extends Base
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '使用者不存在，請刷新頁面后重试',
+                'msg' => '使用者不存在，請刷新頁面後重试',
             ];
         }
 
@@ -194,7 +194,7 @@ class User extends Base
         if (!$admin) {
             return [
                 'code' => 1,
-                'msg' => '使用者不存在，請刷新頁面后重试',
+                'msg' => '使用者不存在，請刷新頁面後重试',
             ];
         }
         $post =  $this->request->post();

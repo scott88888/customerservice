@@ -14,7 +14,7 @@ namespace think\exception;
 use think\Exception;
 
 /**
- * Database相關异常处理类
+ * Database相關异常處理類
  */
 class DbException extends Exception
 {

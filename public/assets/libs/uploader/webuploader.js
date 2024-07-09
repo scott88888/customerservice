@@ -1,5 +1,5 @@
 /**
- * @fileOverview Uploader上传类
+ * @fileOverview Uploader上傳類
  */
 define([
     './preset/all',

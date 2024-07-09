@@ -15,7 +15,7 @@
 ```bash
 $ composer require qiniu/php-sdk
 ```
-* 直接下载安装，SDK 没有依赖其他第三方库，但需要参照 composer的autoloader，增加一个自己的autoloader程序。
+* 直接下载安装，SDK 没有依赖其他第三方庫，但需要参照 composer的autoloader，增加一个自己的autoloader程序。
 
 ## 运行环境
 
@@ -26,7 +26,7 @@ $ composer require qiniu/php-sdk
 
 ## 使用方法
 
-### 上传
+### 上傳
 ```php
 use Qiniu\Storage\UploadManager;
 use Qiniu\Auth;
@@ -59,7 +59,7 @@ $ ./vendor/bin/phpunit tests/Qiniu/Tests/
 
 ## 联系我们
 
-- 如果需要帮助，請送出工單（在portal右側點擊咨询和建议送出工單，或者直接向 support@qiniu.com 发送邮件）
+- 如果需要帮助，請送出工單（在portal右側點擊咨询和建议送出工單，或者直接向 support@qiniu.com 發送邮件）
 - 如果有什么問題，可以到问答社区提问，[问答社区](http://qiniu.segmentfault.com/)
 - 更详细的文档，见[官方文档站](http://developer.qiniu.com/)
 - 如果发现了bug， 欢迎送出 [issue](https://github.com/qiniu/php-sdk/issues)

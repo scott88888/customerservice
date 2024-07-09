@@ -895,7 +895,7 @@
         var sid =$.cookie('services');
         if(sid == service_id){
 
-            //音訊先加载
+            //音訊先載入
             var audio_context;
             var recorder;
             var wavBlob;
@@ -922,14 +922,14 @@
                 var falg = window.location.protocol;
                 if (falg == 'https:') {
                     recorder && recorder.record();
-                    //示范一个公告层
+                    //示范一个公告層
                     layui.use(['jquery', 'layer'], function () {
                         var layer = layui.layer;
                         layer.msg('錄音中...', {
                             icon: 16
                             , shade: 0.01
                             , skin: 'layui-layer-lan'
-                            , time: 0 //20s后自動關閉
+                            , time: 0 //20s後自動關閉
                             , btn: ['傳送', '取消']
                             , yes: function (index, layero) {
                                 //按钮【按钮一】的回调
@@ -1079,7 +1079,7 @@
             $('html ,body').animate({scrollTop: height}, 0);
         },200)
     }
-    // 失去焦點，拉到顶部
+    // 失去焦點，拉到頂部
     text.onblur = function() {
         setTimeout(function() {
             $('html ,body').animate({scrollTop: 0}, 0);

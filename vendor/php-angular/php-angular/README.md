@@ -38,15 +38,15 @@
 
 ## 使用说明
 
-此模板引擎針對能够使用angularjs的php開发者编写, 主要特點是 不需要额外的标签定义, 全部使用属性定义, 写好模板文件在IDE中不会出现警告和錯誤, 格式化程式碼的时候很整洁, 因為套完的模板文件还是规范的html
+此模板引擎針對能够使用angularjs的php開发者编寫, 主要特點是 不需要額外的标签定義, 全部使用属性定義, 寫好模板文件在IDE中不会出现警告和錯誤, 格式化程式碼的时候很整洁, 因為套完的模板文件还是规范的html
 
-注: 一个标签上可以使用多个模板属性, 属性有前后顺序要求, 所以要注意属性的顺序, 在單标签上使用模板属性时一定要使用<code>/></code>结束, 如 <code>&lt;input php-if="$is_download" type="button" value="下载" />, &lt;img php-if="$article['pic']" src="{&dollar;article.pic}" /></code> 等等, 具体可参考後面章节的解析结果  
+注: 一个标签上可以使用多个模板属性, 属性有前後顺序要求, 所以要注意属性的顺序, 在單标签上使用模板属性时一定要使用<code>/></code>结束, 如 <code>&lt;input php-if="$is_download" type="button" value="下载" />, &lt;img php-if="$article['pic']" src="{&dollar;article.pic}" /></code> 等等, 具体可参考後面章节的解析结果  
 
 ## 文档
 看云文档托管平台: http://www.kancloud.cn/shuai/php-angular
 
 ## 示例程式碼
-参考/test目录 
+参考/test目錄 
 
 ## 直接使用方法 /test/index.php
 
@@ -56,15 +56,15 @@
 // 配置
 $config = [
     'debug'            => true, // 是否開啟调试
-    'tpl_path'         => './view/', // 模板根目录
-    'tpl_suffix'       => '.html', // 模板后缀
-    'tpl_cache_path'   => './cache/', // 模板缓存目录
-    'tpl_cache_suffix' => '.php', // 模板后缀
+    'tpl_path'         => './view/', // 模板根目錄
+    'tpl_suffix'       => '.html', // 模板後缀
+    'tpl_cache_path'   => './cache/', // 模板快取目錄
+    'tpl_cache_suffix' => '.php', // 模板後缀
     'attr'             => 'php-', // 标签前缀
     'max_tag'          => 10000, // 标签的最大解析次數
 ];
 
-// 实例化
+// 實例化
 $view = new PHPAngular/Angular($config);
 
 // 資料
@@ -91,7 +91,7 @@ $view->display('index');
 ~~~
 
 
-## 模板实例 /test/view/index.html
+## 模板實例 /test/view/index.html
 ~~~
 <!DOCTYPE html>
 <html>
@@ -111,7 +111,7 @@ $view->display('index');
     <body>
         <div class="box" php-show="$title">{$title}</div>
 
-        <div class="box" php-hide="$title">如果title的值為空, 则可以显示这條消息, 否则不显示</div>
+        <div class="box" php-hide="$title">如果title的值為空, 則可以显示这條消息, 否則不显示</div>
 
         <div class="box">
             <span>foreach by [1,2,3,4,5]</span>
@@ -185,7 +185,7 @@ $view->display('index');
     <body>
         <?php if ($title) { ?><div class="box" ><?php echo $title; ?></div><?php } ?>
 
-        <?php if (!($title)) { ?><div class="box" >如果title的值為空, 则可以显示这條消息, 否则不显示</div><?php } ?>
+        <?php if (!($title)) { ?><div class="box" >如果title的值為空, 則可以显示这條消息, 否則不显示</div><?php } ?>
 
         <div class="box">
             <span>foreach by [1,2,3,4,5]</span>

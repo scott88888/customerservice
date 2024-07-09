@@ -158,7 +158,7 @@ class Time
     }
 
     /**
-     * 返回几天后的時間戳
+     * 返回几天後的時間戳
      *
      * @param int $day
      * @return int
@@ -170,7 +170,7 @@ class Time
     }
 
     /**
-     * 天數转换成秒數
+     * 天數轉換成秒數
      *
      * @param int $day
      * @return int
@@ -181,7 +181,7 @@ class Time
     }
 
     /**
-     * 周數转换成秒數
+     * 周數轉換成秒數
      *
      * @param int $week
      * @return int

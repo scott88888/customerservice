@@ -23,9 +23,9 @@ class Json extends Response
     protected $contentType = 'application/json';
 
     /**
-     * 处理資料
+     * 處理資料
      * @access protected
-     * @param mixed $data 要处理的資料
+     * @param mixed $data 要處理的資料
      * @return mixed
      * @throws \Exception
      */

@@ -8,7 +8,7 @@ use think\Db;
 use think\Exception;
 
 /**
- * 資料模型类.
+ * 資料模型類.
  */
 class Business extends Model
 {
@@ -32,7 +32,7 @@ class Business extends Model
 
     public static function addBusiness($post)
     {
-        //账号注册时需要開啟事务,避免出现垃圾資料
+        //账号註冊时需要開啟事务,避免出现垃圾資料
         Db::startTrans();
         try
         {

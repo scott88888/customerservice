@@ -2,7 +2,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>图片上传示例 - Editor.md examples</title>
+        <title>圖片上傳示例 - Editor.md examples</title>
         <link rel="stylesheet" href="css/style.css?v=__lkversion__" />
         <link rel="stylesheet" href="../css/editormd.css?v=__lkversion__" />
         <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
@@ -10,7 +10,7 @@
     <body>
         <div id="layout" style="height: 2000px;background: #f6f6f6;">
             <header>
-                <h1>图片上传示例</h1>
+                <h1>圖片上傳示例</h1>
                 <p>Image upload example</p>
             </header>
             <div id="test-editormd">
@@ -28,9 +28,9 @@
 
 ```json
 {
-    success : 0 | 1,           // 0 表示上传失敗，1 表示上传成功
-    message : "提示的訊息，上传成功或上传失敗及錯誤訊息等。",
-    url     : "图片地址"        // 上传成功时才返回
+    success : 0 | 1,           // 0 表示上傳失敗，1 表示上傳成功
+    message : "提示的訊息，上傳成功或上傳失敗及錯誤訊息等。",
+    url     : "圖片地址"        // 上傳成功时才返回
 }
 ```</textarea>
         </div>
@@ -44,21 +44,21 @@
                     height: 640,
                     markdown : "",
                     path : '../lib/',
-                    //dialogLockScreen : false,   // 設定弹出层對話框不锁屏，全局通用，默认為 true
-                    //dialogShowMask : false,     // 設定弹出层對話框显示透明遮罩层，全局通用，默认為 true
-                    //dialogDraggable : false,    // 設定弹出层對話框不可拖動，全局通用，默认為 true
-                    //dialogMaskOpacity : 0.4,    // 設定透明遮罩层的透明度，全局通用，默认值為 0.1
-                    //dialogMaskBgColor : "#000", // 設定透明遮罩层的背景颜色，全局通用，默认為 #fff
+                    //dialogLockScreen : false,   // 設定弹出層對話框不锁屏，全局通用，默認為 true
+                    //dialogShowMask : false,     // 設定弹出層對話框显示透明遮罩層，全局通用，默認為 true
+                    //dialogDraggable : false,    // 設定弹出層對話框不可拖動，全局通用，默認為 true
+                    //dialogMaskOpacity : 0.4,    // 設定透明遮罩層的透明度，全局通用，默認值為 0.1
+                    //dialogMaskBgColor : "#000", // 設定透明遮罩層的背景颜色，全局通用，默認為 #fff
                     imageUpload : true,
                     imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
                     imageUploadURL : "./php/upload.php?test=dfdf",
                     
                     /*
-                     上传的后台只需要返回一个 JSON 資料，结构如下：
+                     上傳的後台只需要返回一个 JSON 資料，结构如下：
                      {
-                        success : 0 | 1,           // 0 表示上传失敗，1 表示上传成功
-                        message : "提示的訊息，上传成功或上传失敗及錯誤訊息等。",
-                        url     : "图片地址"        // 上传成功时才返回
+                        success : 0 | 1,           // 0 表示上傳失敗，1 表示上傳成功
+                        message : "提示的訊息，上傳成功或上傳失敗及錯誤訊息等。",
+                        url     : "圖片地址"        // 上傳成功时才返回
                      }
                      */
                 });

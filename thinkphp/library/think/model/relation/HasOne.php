@@ -23,8 +23,8 @@ class HasOne extends OneToOne
      * @param Model  $parent     上级模型對象
      * @param string $model      模型名
      * @param string $foreignKey 关联外键
-     * @param string $localKey   当前模型主键
-     * @param string $joinType   JOIN类型
+     * @param string $localKey   當前模型主键
+     * @param string $joinType   JOIN類型
      */
     public function __construct(Model $parent, $model, $foreignKey, $localKey, $joinType = 'INNER')
     {
@@ -44,12 +44,12 @@ class HasOne extends OneToOne
      */
     public function getRelation($subRelation = '', $closure = null)
     {
-        // 执行关联定义方法
+        // 執行关联定義方法
         $localKey = $this->localKey;
         if ($closure) {
             call_user_func_array($closure, [ & $this->query]);
         }
-        // 判断关联类型执行查詢
+        // 判断关联類型執行查詢
         $relationModel = $this->query
             ->removeWhereField($this->foreignKey)
             ->where($this->foreignKey, $this->parent->$localKey)
@@ -64,7 +64,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 根據关联條件查詢当前模型
+     * 根據关联條件查詢當前模型
      * @access public
      * @return Query
      */
@@ -83,7 +83,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 根據关联條件查詢当前模型
+     * 根據关联條件查詢當前模型
      * @access public
      * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
@@ -115,7 +115,7 @@ class HasOne extends OneToOne
      * 预载入关联查詢（資料集）
      * @access public
      * @param array    $resultSet   資料集
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -168,7 +168,7 @@ class HasOne extends OneToOne
      * 预载入关联查詢（資料）
      * @access public
      * @param Model    $result      資料對象
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -197,7 +197,7 @@ class HasOne extends OneToOne
     }
 
     /**
-     * 执行基础查詢（仅执行一次）
+     * 執行基础查詢（仅執行一次）
      * @access protected
      * @return void
      */

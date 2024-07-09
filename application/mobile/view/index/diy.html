@@ -140,7 +140,7 @@
                         $("#services").attr("data", data.message.service_id);
                         service_id = data.message.service_id;
                         $("#log").html('');
-                        layer.msg("已经将您转接到其他客服" + data.message.nick_name);
+                        layer.msg("已经将您轉接到其他客服" + data.message.nick_name);
                     });
 
                    function getlisten(chas){
@@ -618,7 +618,7 @@
             <div class="footer">
                 <input type="text" id="text_in" placeholder="发消息..." class="layui-input"/>
                 <button class="layui-btn layui-btn-normal send-btn"
-                        onclick="send()">发送
+                        onclick="send()">發送
                 </button>
             </div>
             <div class="msg-toolbar">
@@ -791,7 +791,7 @@
      var sid =$.cookie('services');
      if(sid == service_id){
 
-         //音訊先加载
+         //音訊先載入
                 var audio_context;
                 var recorder;
                 var wavBlob;
@@ -805,7 +805,7 @@
                     audio_context = new AudioContext;
 
                     if (!navigator.getUserMedia) {
-                        console.log('语音建立失敗');
+                        console.log('語音建立失敗');
                     }
                     ;
                 } catch (e) {
@@ -820,7 +820,7 @@
                     if (falg == 'https:') {
                         recorder && recorder.record();
 
-                        //示范一个公告层
+                        //示范一个公告層
                         layui.use(['jquery', 'layer'], function () {
                             var layer = layui.layer;
 
@@ -828,8 +828,8 @@
                                 icon: 16
                                 , shade: 0.01
                                 , skin: 'layui-layer-lan'
-                                , time: 0 //20s后自動關閉
-                                , btn: ['发送', '取消']
+                                , time: 0 //20s後自動關閉
+                                , btn: ['發送', '取消']
                                 , yes: function (index, layero) {
                                     //按钮【按钮一】的回调
                                     recorder && recorder.stop();
@@ -934,13 +934,13 @@
                         });
                     } else {
                         
-                            layer.msg('音訊输入只支持https协议！');
+                            layer.msg('音訊输入只支援https协议！');
                         
                     }
 
 
                 }, function (e) {
-                     layer.msg('音訊输入只支持https协议！');
+                     layer.msg('音訊输入只支援https协议！');
                 });
 
 
@@ -993,7 +993,7 @@
             $('html ,body').animate({scrollTop: height}, 0);
         },200)
     }
-    // 失去焦點，拉到顶部
+    // 失去焦點，拉到頂部
     text.onblur = function() {
         setTimeout(function() {
             $('html ,body').animate({scrollTop: 0}, 0);

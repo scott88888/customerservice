@@ -24,7 +24,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 
 		var pearAdmin = new function() {
 
-			// 默认配置
+			// 默認配置
 			var configType = 'yml';
 			var configPath = 'pear.config.yml';
 
@@ -97,7 +97,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 					defaultMenu: 0,
 					accordion: param.menu.accordion,
 					url: param.menu.data,
-					data: param.menu.data, //async為false时，传入選單數组
+					data: param.menu.data, //async為false时，傳入選單數组
 					parseData: false,
 					change: function() {
 						compatible();
@@ -265,12 +265,12 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 		var messageTip = function(id, title, context, form) {
 			layer.open({
 				type: 1,
-				title: '消息', //标题
+				title: '消息', //標題
 				area: ['390px', '330px'], //宽高
 				shade: 0.4, //遮罩透明度
 				content: "<div style='background-color:whitesmoke;'><div class='layui-card'><div class='layui-card-body'>来源 : &nbsp; " +
-					form + "</div><div class='layui-card-header' >标题 : &nbsp; " + title +
-					"</div><div class='layui-card-body' >内容 : &nbsp; " + context + "</div></div></div>", //支持取得DOM元素
+					form + "</div><div class='layui-card-header' >標題 : &nbsp; " + title +
+					"</div><div class='layui-card-body' >内容 : &nbsp; " + context + "</div></div></div>", //支援取得DOM元素
 				btn: ['确认'], //按钮组
 				scrollbar: false, //屏蔽浏览器滚動條
 				yes: function(index) { //layer.msg('yes');    //點擊確定回调
@@ -301,7 +301,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 			var result = logout();
 
 			if (result) {
-				// 清空缓存
+				// 清空快取
 				bodyTab.clear();
 			}
 		})
@@ -356,7 +356,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 
 			var html =
 				'<div class="pearone-color">\n' +
-				'<div class="color-title">整体风格</div>\n' +
+				'<div class="color-title">整体風格</div>\n' +
 				'<div class="color-content">\n' +
 				'<ul>\n' + bgColorHtml + '</ul>\n' +
 				'</div>\n' +
@@ -464,7 +464,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 		function buildLinkHtml() {
 			var links = "";
 			$.each(config.links, function(i, value) {
-				// value.target 存在，则為新視窗打開，增加 target="_blank" 属性
+				// value.target 存在，則為新視窗打開，增加 target="_blank" 属性
 				links += '<a class="more-menu-item" href="' + value.href + '" ' + (value.target ? ' target="_blank" ' : '') +
 					'>' +
 					'<i class="' + value.icon + '" style="font-size: 19px;"></i> ' + value.title +

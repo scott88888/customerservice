@@ -35,7 +35,7 @@ class Builder
     }
 
     /**
-     * 建立一个实例
+     * 建立一个實例
      * @param string[] $arguments 参數
      * @return self
      */
@@ -81,7 +81,7 @@ class Builder
     }
 
     /**
-     * 設定工作目录
+     * 設定工作目錄
      * @param null|string $cwd
      * @return  self
      */
@@ -201,7 +201,7 @@ class Builder
     }
 
     /**
-     * 建立一个Process实例
+     * 建立一个Process實例
      * @return Process
      */
     public function getProcess()

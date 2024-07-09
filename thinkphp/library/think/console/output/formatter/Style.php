@@ -156,7 +156,7 @@ class Style
     }
 
     /**
-     * 应用樣式到文字
+     * 應用樣式到文字
      * @param string $text 文字
      * @return string
      */

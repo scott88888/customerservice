@@ -26,7 +26,7 @@ class Index extends Controller
         $this->assign('basename',$this->basename);
     }
      /**
-    * 唯一随机數方法
+    * 唯一随機數方法
     * [rand description]
     * @param  [type] $len [description]
     * @return [type]      [description]
@@ -147,7 +147,7 @@ class Index extends Controller
 
     /**
      *
-     * 手机端首頁.
+     * 手機端首頁.
      *
      * @return mixed
      */

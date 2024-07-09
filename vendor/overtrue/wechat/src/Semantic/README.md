@@ -1,2 +1,2 @@
 # semantic
-微信SDK 语义理解模块
+微信SDK 語义理解模組

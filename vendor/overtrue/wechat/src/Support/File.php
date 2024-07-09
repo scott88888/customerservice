@@ -48,7 +48,7 @@ class File
         'image/tiff' => '.tiff',
         'image/jpeg' => '.jpg',
 
-                // 列举更多的文件 mime, 企业号是支持的, 公众平台这边之后万一也更新了呢
+                // 列举更多的文件 mime, 企业号是支援的, 公众平台这边之後万一也更新了呢
         'application/msword' => '.doc',
 
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => '.docx',

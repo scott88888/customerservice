@@ -8,7 +8,7 @@ use think\Db;
 
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Robots extends Base
 {

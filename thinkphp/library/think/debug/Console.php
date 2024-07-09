@@ -27,7 +27,7 @@ class Console
         'trace_tabs' => ['base' => '基本', 'file' => '文件', 'info' => '流程', 'notice|error' => '錯誤', 'sql' => 'SQL', 'debug|log' => '调试'],
     ];
 
-    // 实例化并传入参數
+    // 實例化並傳入参數
     public function __construct($config = [])
     {
         if (is_array($config)) {
@@ -39,7 +39,7 @@ class Console
      * 调试输出接口
      * @access public
      * @param Response  $response Response對象
-     * @param array     $log 日志訊息
+     * @param array     $log 日誌訊息
      * @return bool
      */
     public function output(Response $response, array $log = [])
@@ -66,10 +66,10 @@ class Console
         // 頁面Trace訊息
         $base = [
             '請求訊息' => date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']) . ' ' . $uri,
-            '运行時間' => number_format($runtime, 6) . 's [ 吞吐率：' . $reqs . 'req/s ] 内存消耗：' . $mem . 'kb 文件加载：' . count(get_included_files()),
+            '运行時間' => number_format($runtime, 6) . 's [ 吞吐率：' . $reqs . 'req/s ] 内存消耗：' . $mem . 'kb 文件載入：' . count(get_included_files()),
             '查詢訊息' => Db::$queryTimes . ' queries ' . Db::$executeTimes . ' writes ',
-            '缓存訊息' => Cache::$readTimes . ' reads,' . Cache::$writeTimes . ' writes',
-            '配置加载' => count(Config::get()),
+            '快取訊息' => Cache::$readTimes . ' reads,' . Cache::$writeTimes . ' writes',
+            '配置載入' => count(Config::get()),
         ];
 
         if (session_id()) {

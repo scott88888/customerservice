@@ -42,7 +42,7 @@ getBucketCors($ossClient, $bucket);
 /**
  * 設定bucket的cors配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -67,9 +67,9 @@ function putBucketCors($ossClient, $bucket)
 }
 
 /**
- * 取得并列印bucket的cors配置
+ * 取得並列印bucket的cors配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -90,7 +90,7 @@ function getBucketCors($ossClient, $bucket)
 /**
  * 刪除bucket的所有的cors配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */

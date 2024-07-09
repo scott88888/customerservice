@@ -19,7 +19,7 @@ use think\exception\ThrowableError;
 class Error
 {
     /**
-     * 注册异常处理
+     * 註冊异常處理
      * @access public
      * @return void
      */
@@ -32,7 +32,7 @@ class Error
     }
 
     /**
-     * 异常处理
+     * 异常處理
      * @access public
      * @param  \Exception|\Throwable $e 异常
      * @return void
@@ -54,7 +54,7 @@ class Error
     }
 
     /**
-     * 錯誤处理
+     * 錯誤處理
      * @access public
      * @param  integer $errno      錯誤编号
      * @param  integer $errstr     详细錯誤訊息
@@ -67,7 +67,7 @@ class Error
     {
         $exception = new ErrorException($errno, $errstr, $errfile, $errline);
 
-        // 符合异常处理的则将錯誤訊息托管至 think\exception\ErrorException
+        // 符合异常處理的則将錯誤訊息托管至 think\exception\ErrorException
         if (error_reporting() & $errno) {
             throw $exception;
         }
@@ -76,7 +76,7 @@ class Error
     }
 
     /**
-     * 异常中止处理
+     * 异常中止處理
      * @access public
      * @return void
      */
@@ -89,14 +89,14 @@ class Error
             ));
         }
 
-        // 写入日志
+        // 寫入日誌
         Log::save();
     }
 
     /**
-     * 確定錯誤类型是否致命
+     * 確定錯誤類型是否致命
      * @access protected
-     * @param  int $type 錯誤类型
+     * @param  int $type 錯誤類型
      * @return bool
      */
     protected static function isFatal($type)
@@ -105,7 +105,7 @@ class Error
     }
 
     /**
-     * 取得异常处理的实例
+     * 取得异常處理的實例
      * @access public
      * @return Handle
      */
@@ -114,7 +114,7 @@ class Error
         static $handle;
 
         if (!$handle) {
-            // 异常处理 handle
+            // 异常處理 handle
             $class = Config::get('exception_handle');
 
             if ($class && is_string($class) && class_exists($class) &&

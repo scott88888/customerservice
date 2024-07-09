@@ -9,7 +9,7 @@ use think\Loader;
 
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Busines extends Base
 {

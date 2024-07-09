@@ -76,7 +76,7 @@ function getstatus(cha) {
     });
 }
 
-// 正在聊天的队列表
+// 正在聊天的對列表
 function getchat() {
     $.ajax({
         url:"/admin/set/getchats",
@@ -208,7 +208,7 @@ function hidecut(obj){
     $(obj).children('i').addClass('hide');
 }
 
-//取得队列的实时資料
+//取得對列的实时資料
 function getwait() {
 
     $.ajax({

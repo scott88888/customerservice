@@ -27,10 +27,10 @@ class Gif
     private $delays = [];
 
     /**
-     * 构造方法，用于解碼GIF图片
+     * 构造方法，用于解碼GIF圖片
      *
-     * @param string $src GIF图片資料
-     * @param string $mod 图片資料类型
+     * @param string $src GIF圖片資料
+     * @param string $mod 圖片資料類型
      * @throws \Exception
      */
     public function __construct($src = null, $mod = 'url')
@@ -39,19 +39,19 @@ class Gif
             if ('url' == $mod && is_file($src)) {
                 $src = file_get_contents($src);
             }
-            /* 解碼GIF图片 */
+            /* 解碼GIF圖片 */
             try {
                 $de           = new Decoder($src);
                 $this->frames = $de->getFrames();
                 $this->delays = $de->getDelays();
             } catch (\Exception $e) {
-                throw new \Exception("解碼GIF图片出错");
+                throw new \Exception("解碼GIF圖片出错");
             }
         }
     }
 
     /**
-     * 設定或取得当前帧的資料
+     * 設定或取得當前帧的資料
      *
      * @param  string $stream 二进制資料流
      * @return mixed        取得到的資料
@@ -66,9 +66,9 @@ class Gif
     }
 
     /**
-     * 将当前帧移動到下一帧
+     * 将當前帧移動到下一帧
      *
-     * @return string 当前帧資料
+     * @return string 當前帧資料
      */
     public function nextImage()
     {
@@ -76,9 +76,9 @@ class Gif
     }
 
     /**
-     * 编碼并保存当前GIF图片
+     * 编碼並保存當前GIF圖片
      *
-     * @param  string $pathname 图片名稱
+     * @param  string $pathname 圖片名稱
      */
     public function save($pathname)
     {

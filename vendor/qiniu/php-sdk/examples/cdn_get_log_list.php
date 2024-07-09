@@ -17,7 +17,7 @@ $domains = array(
 
 $logDate = '2017-08-20';
 
-//取得日志下载連結
+//取得日誌下载連結
 //参考文档：http://developer.qiniu.com/article/fusion/api/log.html
 
 list($logListData, $getLogErr) = $cdnManager->getCdnLogList($domains, $logDate);

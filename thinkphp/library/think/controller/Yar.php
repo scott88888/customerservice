@@ -12,7 +12,7 @@
 namespace think\controller;
 
 /**
- * ThinkPHP Yar控制器类
+ * ThinkPHP Yar控制器類
  */
 abstract class Yar
 {
@@ -33,14 +33,14 @@ abstract class Yar
             throw new \Exception('not support yar');
         }
 
-        //实例化Yar_Server
+        //實例化Yar_Server
         $server = new \Yar_Server($this);
         // 启動server
         $server->handle();
     }
 
     /**
-     * 魔术方法 有不存在的操作的时候执行
+     * 魔术方法 有不存在的操作的时候執行
      * @access public
      * @param string $method 方法名
      * @param array $args 参數

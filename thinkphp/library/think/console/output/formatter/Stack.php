@@ -83,7 +83,7 @@ class Stack
     }
 
     /**
-     * 计算堆栈的当前樣式。
+     * 计算堆栈的當前樣式。
      * @return Style
      */
     public function getCurrent()

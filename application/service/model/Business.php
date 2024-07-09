@@ -29,7 +29,7 @@ class Business extends Model
 
     public static function addBusiness($post)
     {
-        //账号注册时需要開啟事务,避免出现垃圾資料
+        //账号註冊时需要開啟事务,避免出现垃圾資料
         Db::startTrans();
         try
         {
@@ -74,7 +74,7 @@ class Business extends Model
             
             Db::commit();
 
-            //注册成功的事件
+            //註冊成功的事件
             Hook::listen("dianqilai_edit_successed");
 
             return TRUE;

@@ -92,7 +92,7 @@ var emoj=function (obj) {
 
 }
 
-// 图片上传
+// 圖片上傳
 function put() {
 
     var value = $('input[name="upload"]').val();
@@ -154,7 +154,7 @@ function put() {
 
 }
 
-// 文件上传
+// 文件上傳
 function putfile() {
 
     var value = $('input[name="folder"]').val();
@@ -256,7 +256,7 @@ $(document).on('click','.outer-left .service img,.outer-right .customer img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存資料
+    // 如果圖片被快取，則直接返回快取資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;
@@ -423,7 +423,7 @@ var init = function () {
                 $("#img_head").attr('src',data.avatar);
                 $("#services").text(data.nick_name);
                 data.visiter_id=visiter_id;
-                console.log('触发postMessage发送問候語');
+                console.log('触发postMessage發送問候語');
                 window.parent.postMessage({type:'greeting',data:data},'*');
                 // 問候語
                 //$('#ymwl-showhelp', window.parent.document)
@@ -460,7 +460,7 @@ var init = function () {
                 $("#img_head").attr("src","/assets/images/index/workerman_logo.png");
                 $("#services").text("");
                 var num= getnums(business_id);
-                // 告知客服在排队
+                // 告知客服在排對
                 var msg='';
                 msg+='<li class="chatmsg_notice"><div style="position: absolute;left:3px;">';
                 msg+='<img  class="my-circle" src="'+ROOT_URL+'/assets/images/index/workerman_logo.png" width="40px" height="40px"></div>';
@@ -594,7 +594,7 @@ function getanswer(id,question){
 
 
 
-// 取得排队的數量
+// 取得排對的數量
 function getnums(id){
     var value ="";
     $.ajax({
@@ -609,7 +609,7 @@ function getnums(id){
     return value;
 }
 
-//发送消息
+//發送消息
 
 var send = function () {
     //取得 遊客id

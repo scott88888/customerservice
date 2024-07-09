@@ -10,7 +10,7 @@ use app\service\model\Service;
 
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Setting extends Base
 {

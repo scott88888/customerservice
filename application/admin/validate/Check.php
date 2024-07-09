@@ -13,7 +13,7 @@ class Check extends Validate
 {
 
     /**
-     * 驗證规则.
+     * 驗證規則.
      * [$rule description]
      * @var array
      */
@@ -29,10 +29,10 @@ class Check extends Validate
      * @var [type]
      */
     protected $message = [
-        'oldpass.require' => '請填写旧密碼',
-        'newpass.require' => '請填写新密碼',
+        'oldpass.require' => '請填寫旧密碼',
+        'newpass.require' => '請填寫新密碼',
         "newpass.length" => "密碼長度為6~16个字符",
-        'newpass2.require' => '請再次填写新密碼',
+        'newpass2.require' => '請再次填寫新密碼',
         "newpass2.confirm" => "新密碼不一致",
     ];
 

@@ -32,7 +32,7 @@ class BaiduGateway extends Gateway
 
     const BCE_AUTH_VERSION = 'bce-auth-v1';
 
-    const DEFAULT_EXPIRATION_IN_SECONDS = 1800; //签名有效期默认1800秒
+    const DEFAULT_EXPIRATION_IN_SECONDS = 1800; //签名有效期默認1800秒
 
     const SUCCESS_CODE = 1000;
 
@@ -108,7 +108,7 @@ class BaiduGateway extends Gateway
         // 使用 sk 和 authString 產生 signKey
         $signingKey = hash_hmac('sha256', $authString, $config->get('sk'));
         // 產生标准化 URI
-        // 根據 RFC 3986，除了：1.大小写英文字符 2.阿拉伯數字 3.點'.'、波浪线'~'、减号'-'以及下划线'_' 以外都要编碼
+        // 根據 RFC 3986，除了：1.大小寫英文字符 2.阿拉伯數字 3.點'.'、波浪线'~'、减号'-'以及下划线'_' 以外都要编碼
         $canonicalURI = str_replace('%2F', '/', rawurlencode(self::ENDPOINT_URI));
 
         // 產生标准化 QueryString
@@ -141,7 +141,7 @@ class BaiduGateway extends Gateway
     {
         $headerStrings = [];
         foreach ($headers as $name => $value) {
-            //trim后再encode，之后使用':'号連結起来
+            //trim後再encode，之後使用':'号連結起来
             $headerStrings[] = rawurlencode(strtolower(trim($name))).':'.rawurlencode(trim($value));
         }
 

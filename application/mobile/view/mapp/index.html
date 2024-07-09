@@ -427,7 +427,7 @@
         }
 
         input[type=search]::-webkit-search-cancel-button{
-            -webkit-appearance: none;/*此处只是去掉默认的小×*/
+            -webkit-appearance: none;/*此处只是去掉默認的小×*/
         }
 
         .clear-btn {
@@ -447,7 +447,7 @@
 <!-- <>wolive主容器 -->
 <div class="wechat__panel clearfix">
     <div class="wc__home-wrapper flexbox flex__direction-column">
-        <!-- //顶部 -->
+        <!-- //頂部 -->
         <div class="wc__headerBar fixed">
             <div class="inner flexbox">
                 <h2 class="barTit barTitLg flex1">{$seo.business_name}</em></h2>
@@ -558,7 +558,7 @@
                                     <li>
                                         <div class="item person-item flexbox flex-alignc wc__material-cell">
                                             <img class="person-info-img" src="__image__/mobile/mobile.png" alt="">
-                                            <span class="txt person-label flex02">手机</span>
+                                            <span class="txt person-label flex02">手機</span>
                                             <span class="txt flex1">
                                                     <em>{$mine.phone}</em>
                                             </span>
@@ -616,7 +616,7 @@
         <div class="clearAll">
             <div class="add-group">
                 <div class="add-group-title"></div>
-                <div class="add-group-body" style="text-align:center;font-size:16px;">确认清空当前会話列表？</div>
+                <div class="add-group-body" style="text-align:center;font-size:16px;">确认清空當前会話列表？</div>
                 <div class="add-group-btn">
                     <div class="add-group-cancel">取消</div>
                     <div class="clear-submit">確定</div>
@@ -847,7 +847,7 @@
         }
 
 
-        // 取得排队列表
+        // 取得排對列表
         function getwait() {
 
             $.ajax({
@@ -1053,7 +1053,7 @@
 
 
             var channel = pusher.subscribe("kefu" + config.service_id);
-            // 发送一个推送
+            // 發送一个推送
             channel.bind("callbackpusher",function(data){
                 $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
 
@@ -1082,13 +1082,13 @@
                     if (value.indexOf("emo") == 0) {
                         str = '[表情]';
                     } else {
-                        str = '[图片]';
+                        str = '[圖片]';
                     }
                 });
 
                 str = str.replace(/<div><a[^<>]+>.+?<\/a><\/div>/, '[文件]');
 
-                str = str.replace(/<img src=['"]([^'"]+)[^>]*>/gi, '[图片]');
+                str = str.replace(/<img src=['"]([^'"]+)[^>]*>/gi, '[圖片]');
 
                 $("#visiter-"+data.message.visiter_id+" .desc").html(str);
                 $("#visiter-"+data.message.visiter_id+" .time").html('刚刚');
@@ -1115,7 +1115,7 @@
                 getchat();
             });
 
-            // 认领后取得訪客訊息
+            // 认领後取得訪客訊息
             var channelme = pusher.subscribe("ud" + config.service_id);
             channelme.bind("on_notice", function (data) {
                 getwait();

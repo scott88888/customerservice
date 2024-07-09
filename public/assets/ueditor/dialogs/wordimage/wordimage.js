@@ -54,7 +54,7 @@ function addOkListener() {
 }
 
 /**
- * 绑定開始上传事件
+ * 绑定開始上傳事件
  */
 function addUploadListener() {
 	g("upload").onclick = function () {
@@ -81,9 +81,9 @@ function showLocalPath(id) {
 }
 
 function createFlashUploader(opt, callbacks) {
-    //由于lang.flashI18n是静态属性，不可以直接进行修改，否则会影响到后续内容
+    //由于lang.flashI18n是静态属性，不可以直接进行修改，否則会影响到後续内容
     var i18n = utils.extend({},lang.flashI18n);
-    //处理图片资源地址的编碼，补全等問題
+    //處理圖片資源地址的编碼，补全等問題
     for(var i in i18n){
         if(!(i in {"lang":1,"uploadingTF":1,"imageTF":1,"textEncoding":1}) && i18n[i]){
             i18n[i] = encodeURIComponent(editor.options.langPath + editor.options.lang + "/images/" + i18n[i]);

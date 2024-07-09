@@ -38,7 +38,7 @@ Class Index extends Base
           $talknum =Admins::table('wolive_queue')->where(['business_id'=>$v])->where('state','normal')->where("service_id",'<>',0)->count();
           // 線上客服人數
           $services=Admins::table("wolive_service")->where(['business_id'=>$v,'state'=>'online'])->count();
-          // 正在排队人數
+          // 正在排對人數
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$v])->where("service_id",0)->count();
           // 接入总人數
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$v)->count();
@@ -87,7 +87,7 @@ Class Index extends Base
          $talknum =Admins::table('wolive_queue')->where(['business_id'=>$login['business_id']])->where('state','normal')->where("service_id",'<>',0)->count();
           // 線上客服人數
           $services=Admins::table("wolive_service")->where(['business_id'=>$login['business_id'],'state'=>'online'])->count();
-          // 正在排队人數
+          // 正在排對人數
           $waitnum =Admins::table("wolive_queue")->where(['business_id'=>$login['business_id']])->where("service_id",0)->count();
           // 接入总人數
           $totalvisit=Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id',$login['business_id'])->count();

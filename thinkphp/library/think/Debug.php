@@ -30,7 +30,7 @@ class Debug
      * 记录時間（微秒）和内存使用情况
      * @access public
      * @param  string $name  标记位置
-     * @param  mixed  $value 标记值(留空则取当前 time 表示仅记录時間 否则同时记录時間和内存)
+     * @param  mixed  $value 标记值(留空則取當前 time 表示仅记录時間 否則同时记录時間和内存)
      * @return void
      */
     public static function remark($name, $value = '')
@@ -72,7 +72,7 @@ class Debug
     }
 
     /**
-     * 取得当前訪問的吞吐率情况
+     * 取得當前訪問的吞吐率情况
      * @access public
      * @return string
      */
@@ -154,7 +154,7 @@ class Debug
     }
 
     /**
-     * 取得文件加载訊息
+     * 取得文件載入訊息
      * @access public
      * @param  bool $detail 是否显示详细
      * @return integer|array
@@ -180,8 +180,8 @@ class Debug
      * 浏览器友好的变量输出
      * @access public
      * @param  mixed       $var   变量
-     * @param  boolean     $echo  是否输出(默认為 true，為 false 则返回输出字符串)
-     * @param  string|null $label 标签(默认為空)
+     * @param  boolean     $echo  是否输出(默認為 true，為 false 則返回输出字符串)
+     * @param  string|null $label 标签(默認為空)
      * @param  integer     $flags htmlspecialchars 的标志
      * @return null|string
      */
@@ -214,7 +214,7 @@ class Debug
     /**
      * 调试訊息注入到响应中
      * @access public
-     * @param  Response $response 响应实例
+     * @param  Response $response 响应實例
      * @param  string   $content  返回的字符串
      * @return void
      */

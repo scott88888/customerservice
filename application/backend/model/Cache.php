@@ -91,7 +91,7 @@ class Cache extends Model
         ];
     }
 
-    //循环目录下的所有文件
+    //循环目錄下的所有文件
     private function delFileUnderDir($dirName, $delDir = false, $ignoreList = [])
     {
         if (file_exists("$dirName")) {

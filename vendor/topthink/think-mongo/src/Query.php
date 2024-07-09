@@ -39,19 +39,19 @@ use think\Paginator;
 
 class Query
 {
-    // 資料库Connection對象实例
+    // 資料庫Connection對象實例
     protected $connection;
-    // 資料库驱動类型
+    // 資料庫驱動類型
     protected $driver;
-    // 当前模型类名稱
+    // 當前模型類名稱
     protected $model;
-    // 当前資料表名稱（含前缀）
+    // 當前資料表名稱（含前缀）
     protected $table = '';
-    // 当前資料表名稱（不含前缀）
+    // 當前資料表名稱（不含前缀）
     protected $name = '';
-    // 当前資料表主键
+    // 當前資料表主键
     protected $pk;
-    // 当前資料表前缀
+    // 當前資料表前缀
     protected $prefix = '';
     // 查詢参數
     protected $options = [];
@@ -61,7 +61,7 @@ class Query
     /**
      * 架构函數
      * @access public
-     * @param Connection    $connection 資料库對象实例
+     * @param Connection    $connection 資料庫對象實例
      * @param string        $model 模型名
      */
     public function __construct(Connection $connection = null, $model = '')
@@ -99,7 +99,7 @@ class Query
     }
 
     /**
-     * 取得当前的資料库Connection對象
+     * 取得當前的資料庫Connection對象
      * @access public
      * @return Connection
      */
@@ -109,7 +109,7 @@ class Query
     }
 
     /**
-     * 切换当前的資料库連結
+     * 切换當前的資料庫連結
      * @access public
      * @param mixed $config
      * @return $this
@@ -121,7 +121,7 @@ class Query
     }
 
     /**
-     * 指定默认的資料表名（不含前缀）
+     * 指定默認的資料表名（不含前缀）
      * @access public
      * @param string $name
      * @return $this
@@ -133,7 +133,7 @@ class Query
     }
 
     /**
-     * 指定默认資料表名（含前缀）
+     * 指定默認資料表名（含前缀）
      * @access public
      * @param string $table 表名
      * @return $this
@@ -145,7 +145,7 @@ class Query
     }
 
     /**
-     * 得到当前或者指定名稱的資料表
+     * 得到當前或者指定名稱的資料表
      * @access public
      * @param string $name
      * @return string
@@ -177,9 +177,9 @@ class Query
     }
 
     /**
-     * 将SQL语句中的__TABLE_NAME__字符串替换成带前缀的表名（小写）
+     * 将SQL語句中的__TABLE_NAME__字符串替换成带前缀的表名（小寫）
      * @access public
-     * @param string $sql sql语句
+     * @param string $sql sql語句
      * @return string
      */
     public function parseSqlTable($sql)
@@ -194,7 +194,7 @@ class Query
     }
 
     /**
-     * 执行查詢 返回資料集
+     * 執行查詢 返回資料集
      * @access public
      * @param string $namespace
      * @param MongoQuery        $query 查詢對象
@@ -213,7 +213,7 @@ class Query
     }
 
     /**
-     * 执行指令 返回資料集
+     * 執行指令 返回資料集
      * @access public
      * @param Command           $command 指令
      * @param string            $dbName
@@ -232,7 +232,7 @@ class Query
     }
 
     /**
-     * 执行语句
+     * 執行語句
      * @access public
      * @param string        $namespace
      * @param BulkWrite     $bulk
@@ -264,7 +264,7 @@ class Query
     }
 
     /**
-     * 取得最近一次执行的指令
+     * 取得最近一次執行的指令
      * @access public
      * @return string
      */
@@ -274,7 +274,7 @@ class Query
     }
 
     /**
-     * 取得資料库的配置参數
+     * 取得資料庫的配置参數
      * @access public
      * @param string $name 参數名稱
      * @return boolean
@@ -288,14 +288,14 @@ class Query
      * 得到某个字段的值
      * @access public
      * @param string    $field 字段名
-     * @param mixed     $default 默认值
+     * @param mixed     $default 默認值
      * @return mixed
      */
     public function value($field, $default = null)
     {
         $result = null;
         if (!empty($this->options['cache'])) {
-            // 判断查詢缓存
+            // 判断查詢快取
             $cache = $this->options['cache'];
             if (empty($this->options['table'])) {
                 $this->options['table'] = $this->getTable();
@@ -313,7 +313,7 @@ class Query
             $data      = isset($resultSet[0]) ? $resultSet[0] : null;
             $result    = $data[$field];
             if (isset($cache)) {
-                // 缓存資料
+                // 快取資料
                 Cache::set($key, $result, $cache['expire']);
             }
         } else {
@@ -334,7 +334,7 @@ class Query
     {
         $result = false;
         if (!empty($this->options['cache'])) {
-            // 判断查詢缓存
+            // 判断查詢快取
             $cache = $this->options['cache'];
             if (empty($this->options['table'])) {
                 $this->options['table'] = $this->getTable();
@@ -376,7 +376,7 @@ class Query
             }
 
             if (isset($cache) && isset($guid)) {
-                // 缓存資料
+                // 快取資料
                 Cache::set($guid, $result, $cache['expire']);
             }
         } else {
@@ -387,11 +387,11 @@ class Query
     }
 
     /**
-     * 执行command
+     * 執行command
      * @access public
      * @param string|array|object   $command 指令
-     * @param mixed                 $extra 额外参數
-     * @param string                $db 資料库名
+     * @param mixed                 $extra 額外参數
+     * @param string                $db 資料庫名
      * @return array
      */
     public function cmd($command, $extra = null, $db = null)
@@ -423,9 +423,9 @@ class Query
     }
 
     /**
-     * 取得資料库的所有collection
+     * 取得資料庫的所有collection
      * @access public
-     * @param string  $db 資料库名稱 留空為当前資料库
+     * @param string  $db 資料庫名稱 留空為當前資料庫
      * @throws Exception
      */
     public function listCollections($db = '')
@@ -451,7 +451,7 @@ class Query
 
     /**
      * 設定记录的某个字段值
-     * 支持使用資料库字段和方法
+     * 支援使用資料庫字段和方法
      * @access public
      * @param string|array  $field 字段名
      * @param mixed         $value 字段值
@@ -484,11 +484,11 @@ class Query
             throw new Exception('no data to update');
         }
         if ($lazyTime > 0) {
-            // 延迟写入
+            // 延迟寫入
             $guid = md5($this->getTable() . '_' . $field . '_' . serialize($condition));
             $step = $this->lazyWrite($guid, $step, $lazyTime);
             if (empty($step)) {
-                return true; // 等待下次写入
+                return true; // 等待下次寫入
             }
         }
         return $this->setField($field, ['$inc', $step]);
@@ -511,11 +511,11 @@ class Query
             throw new Exception('no data to update');
         }
         if ($lazyTime > 0) {
-            // 延迟写入
+            // 延迟寫入
             $guid = md5($this->getTable() . '_' . $field . '_' . serialize($condition));
             $step = $this->lazyWrite($guid, -$step, $lazyTime);
             if (empty($step)) {
-                return true; // 等待下次写入
+                return true; // 等待下次寫入
             }
         }
         return $this->setField($field, ['$inc', -1 * $step]);
@@ -523,29 +523,29 @@ class Query
 
     /**
      * 延時更新檢查 返回false表示需要延時
-     * 否则返回实际写入的數值
+     * 否則返回实际寫入的數值
      * @access public
-     * @param string    $guid 写入標識
-     * @param integer   $step 写入步进值
+     * @param string    $guid 寫入標識
+     * @param integer   $step 寫入步进值
      * @param integer   $lazyTime 延時時間(s)
      * @return false|integer
      */
     protected function lazyWrite($guid, $step, $lazyTime)
     {
         if (false !== ($value = Cache::get($guid))) {
-            // 存在缓存写入資料
+            // 存在快取寫入資料
             if ($_SERVER['REQUEST_TIME'] > Cache::get($guid . '_time') + $lazyTime) {
-                // 延時更新時間到了，刪除缓存資料 并实际写入資料库
+                // 延時更新時間到了，刪除快取資料 並实际寫入資料庫
                 Cache::rm($guid);
                 Cache::rm($guid . '_time');
                 return $value + $step;
             } else {
-                // 追加資料到缓存
+                // 追加資料到快取
                 Cache::set($guid, $value + $step, 0);
                 return false;
             }
         } else {
-            // 没有缓存資料
+            // 没有快取資料
             Cache::set($guid, $step, 0);
             // 计时開始
             Cache::set($guid . '_time', $_SERVER['REQUEST_TIME'], 0);
@@ -650,7 +650,7 @@ class Query
      * @access public
      * @param string        $field 日期字段名
      * @param string        $op 比较运算符或者表达式
-     * @param string|array  $range 比较范围
+     * @param string|array  $range 比较範圍
      * @return $this
      */
     public function whereTime($field, $op, $range = null)
@@ -699,14 +699,14 @@ class Query
      * @param int|null  $listRows 每頁數量
      * @param bool      $simple 简洁模式
      * @param array     $config 配置参數
-     *                      page:当前頁,
-     *                      path:url路径,
-     *                      query:url额外参數,
+     *                      page:當前頁,
+     *                      path:url路徑,
+     *                      query:url額外参數,
      *                      fragment:url锚點,
      *                      var_page:分頁变量,
      *                      list_rows:每頁數量
-     *                      type:分頁类名,
-     *                      namespace:分頁类命名空間
+     *                      type:分頁類名,
+     *                      namespace:分頁類命名空間
      * @return \think\paginator\Collection
      * @throws DbException
      */
@@ -737,7 +737,7 @@ class Query
     }
 
     /**
-     * 指定当前操作的資料表
+     * 指定當前操作的資料表
      * @access public
      * @param string $table 表名
      * @return $this
@@ -749,7 +749,7 @@ class Query
     }
 
     /**
-     * 查詢缓存
+     * 查詢快取
      * @access public
      * @param mixed     $key
      * @param integer   $expire
@@ -757,7 +757,7 @@ class Query
      */
     public function cache($key = true, $expire = null)
     {
-        // 增加快捷调用方式 cache(10) 等同于 cache(true, 10)
+        // 增加快速调用方式 cache(10) 等同于 cache(true, 10)
         if (is_numeric($key) && is_null($expire)) {
             $expire = $key;
             $key    = true;
@@ -783,7 +783,7 @@ class Query
     /**
      * 指定資料集返回對象
      * @access public
-     * @param string $class 指定返回的資料集對象类名
+     * @param string $class 指定返回的資料集對象類名
      * @return $this
      */
     public function fetchClass($class)
@@ -1075,7 +1075,7 @@ class Query
     }
 
     /**
-     * 取得当前資料表的主键
+     * 取得當前資料表的主键
      * @access public
      * @return string|array
      */
@@ -1097,7 +1097,7 @@ class Query
     }
 
     /**
-     * 取得当前的查詢参數
+     * 取得當前的查詢参數
      * @access public
      * @param string $name 参數名
      * @return mixed
@@ -1120,7 +1120,7 @@ class Query
     }
 
     /**
-     * 把主键值转换為查詢條件 支持复合主键
+     * 把主键值轉換為查詢條件 支援复合主键
      * @access public
      * @param array|string  $data 主键資料
      * @param mixed         $options 表达式参數
@@ -1176,7 +1176,7 @@ class Query
     }
 
     /**
-     * 插入记录并取得自增ID
+     * 插入记录並取得自增ID
      * @access public
      * @param mixed $data 資料
      * @return integer
@@ -1235,25 +1235,25 @@ class Query
         $options = $this->parseExpress();
         if (empty($options['where'])) {
             $pk = $this->getPk();
-            // 如果存在主键資料 则自動作為更新條件
+            // 如果存在主键資料 則自動作為更新條件
             if (is_string($pk) && isset($data[$pk])) {
                 $where[$pk] = $data[$pk];
                 $key        = 'mongo:' . $options['table'] . '|' . $data[$pk];
                 unset($data[$pk]);
             } elseif (is_array($pk)) {
-                // 增加复合主键支持
+                // 增加复合主键支援
                 foreach ($pk as $field) {
                     if (isset($data[$field])) {
                         $where[$field] = $data[$field];
                     } else {
-                        // 如果缺少复合主键資料则不执行
+                        // 如果缺少复合主键資料則不執行
                         throw new Exception('miss complex primary data');
                     }
                     unset($data[$field]);
                 }
             }
             if (!isset($where)) {
-                // 如果没有任何更新條件则不执行
+                // 如果没有任何更新條件則不執行
                 throw new Exception('miss update condition');
             } else {
                 $options['where']['$and'] = $where;
@@ -1264,9 +1264,9 @@ class Query
         $bulk         = $this->builder->update($data, $options);
         $writeConcern = isset($options['writeConcern']) ? $options['writeConcern'] : null;
         $writeResult  = $this->execute($options['table'], $bulk, $writeConcern);
-        // 检测缓存
+        // 检测快取
         if (isset($key) && Cache::get($key)) {
-            // 刪除缓存
+            // 刪除快取
             Cache::rm($key);
         }
         return $writeResult->getModifiedCount();
@@ -1291,7 +1291,7 @@ class Query
 
         if (!is_null($data) && true !== $data) {
             if (!is_array($data)) {
-                // 缓存標識
+                // 快取標識
                 $key = 'mongo:' . $options['table'] . '|' . $data;
             }
             // AR模式分析主键條件
@@ -1306,11 +1306,11 @@ class Query
         // 產生bulkWrite對象
         $bulk         = $this->builder->delete($options);
         $writeConcern = isset($options['writeConcern']) ? $options['writeConcern'] : null;
-        // 执行操作
+        // 執行操作
         $writeResult = $this->execute($options['table'], $bulk, $writeConcern);
-        // 检测缓存
+        // 检测快取
         if (isset($key) && Cache::get($key)) {
-            // 刪除缓存
+            // 刪除快取
             Cache::rm($key);
         }
         return $writeResult->getDeletedCount();
@@ -1346,7 +1346,7 @@ class Query
 
         $resultSet = false;
         if (!empty($options['cache'])) {
-            // 判断查詢缓存
+            // 判断查詢快取
             $cache     = $options['cache'];
             $key       = is_string($cache['key']) ? $cache['key'] : md5(serialize($options));
             $resultSet = Cache::get($key);
@@ -1354,7 +1354,7 @@ class Query
         if (!$resultSet) {
             // 產生MongoQuery對象
             $query = $this->builder->select($options);
-            // 执行查詢操作
+            // 執行查詢操作
             $readPreference = isset($options['readPreference']) ? $options['readPreference'] : null;
             $resultSet      = $this->query($options['table'], $query, $readPreference, $options['fetch_class'], $options['typeMap']);
 
@@ -1364,14 +1364,14 @@ class Query
             }
 
             if (isset($cache)) {
-                // 缓存資料集
+                // 快取資料集
                 Cache::set($key, $resultSet, $cache['expire']);
             }
         }
 
-        // 返回结果处理
+        // 返回结果處理
         if ($resultSet) {
-            // 資料列表读取后的处理
+            // 資料列表读取後的處理
             if (!empty($this->model)) {
                 // 產生模型對象
                 $model = $this->model;
@@ -1427,7 +1427,7 @@ class Query
         $options['limit'] = 1;
         $result           = false;
         if (!empty($options['cache'])) {
-            // 判断查詢缓存
+            // 判断查詢快取
             $cache = $options['cache'];
             if (true === $cache['key'] && !is_null($data) && !is_array($data)) {
                 $key = 'mongo:' . $options['table'] . '|' . $data;
@@ -1439,7 +1439,7 @@ class Query
         if (!$result) {
             // 產生查詢SQL
             $query = $this->builder->select($options);
-            // 执行查詢
+            // 執行查詢
             $readPreference = isset($options['readPreference']) ? $options['readPreference'] : null;
             $result         = $this->query($options['table'], $query, $readPreference, $options['fetch_class'], $options['typeMap']);
 
@@ -1449,12 +1449,12 @@ class Query
             }
 
             if (isset($cache)) {
-                // 缓存資料
+                // 快取資料
                 Cache::set($key, $result, $cache['expire']);
             }
         }
 
-        // 資料处理
+        // 資料處理
         if (!empty($result[0])) {
             $data = $result[0];
             if (!empty($this->model)) {
@@ -1496,7 +1496,7 @@ class Query
     }
 
     /**
-     * 查找多條记录 如果不存在则抛出异常
+     * 查找多條记录 如果不存在則抛出异常
      * @access public
      * @param array|string|Query|\Closure $data
      * @return array|\PDOStatement|string|Model
@@ -1513,7 +1513,7 @@ class Query
     }
 
     /**
-     * 查找單條记录 如果不存在则抛出异常
+     * 查找單條记录 如果不存在則抛出异常
      * @access public
      * @param array|string|Query|\Closure $data
      * @return array|\PDOStatement|string|Model
@@ -1530,11 +1530,11 @@ class Query
     }
 
     /**
-     * 分批資料返回处理
+     * 分批資料返回處理
      * @access public
-     * @param integer   $count 每次处理的資料數量
-     * @param callable  $callback 处理回调方法
-     * @param string    $column 分批处理的字段名
+     * @param integer   $count 每次處理的資料數量
+     * @param callable  $callback 處理回调方法
+     * @param string    $column 分批處理的字段名
      * @return boolean
      */
     public function chunk($count, $callback, $column = null)
@@ -1562,7 +1562,7 @@ class Query
      * 取得資料表訊息
      * @access public
      * @param string $tableName 資料表名 留空自動取得
-     * @param string $fetch 取得訊息类型 包括 fields type pk
+     * @param string $fetch 取得訊息類型 包括 fields type pk
      * @return mixed
      */
     public function getTableInfo($tableName = '', $fetch = '')
@@ -1587,7 +1587,7 @@ class Query
             $fields = array_keys($result);
             $type   = [];
             foreach ($result as $key => $val) {
-                // 记录字段类型
+                // 记录字段類型
                 $type[$key] = getType($val);
                 if ('_id' == $key) {
                     $pk = $key;
@@ -1604,7 +1604,7 @@ class Query
     }
 
     /**
-     * 分析表达式（可用于查詢或者写入操作）
+     * 分析表达式（可用于查詢或者寫入操作）
      * @access protected
      * @return array
      */

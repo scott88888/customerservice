@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 上传附件和上传视频
+ * 上傳附件和上傳视频
  */
 include "Uploader.class.php";
 
-/* 上传配置 */
+/* 上傳配置 */
 $base64 = "upload";
 switch (htmlspecialchars($_GET['action'])) {
     case 'uploadimage':
@@ -47,17 +47,17 @@ switch (htmlspecialchars($_GET['action'])) {
         break;
 }
 
-/* 產生上传实例對象并完成上传 */
+/* 產生上傳實例對象並完成上傳 */
 $up = new Uploader($fieldName, $config, $base64);
 
 /**
- * 得到上传文件所對应的各个参數,數组结构
+ * 得到上傳文件所對应的各个参數,數组结构
  * array(
- *     "state" => "",          //上传狀態，上传成功时必须返回"SUCCESS"
+ *     "state" => "",          //上傳狀態，上傳成功时必须返回"SUCCESS"
  *     "url" => "",            //返回的地址
  *     "title" => "",          //新文件名
  *     "original" => "",       //原始文件名
- *     "type" => ""            //文件类型
+ *     "type" => ""            //文件類型
  *     "size" => "",           //文件大小
  * )
  */

@@ -5,7 +5,7 @@ final class Config
 {
     const SDK_VER = '7.2.7';
 
-    const BLOCK_SIZE = 4194304; //4*1024*1024 分块上传块大小，该参數為接口规格，不能修改
+    const BLOCK_SIZE = 4194304; //4*1024*1024 分块上傳块大小，该参數為接口规格，不能修改
 
     const RSF_HOST = 'rsf.qiniu.com';
     const API_HOST = 'api.qiniu.com';
@@ -15,11 +15,11 @@ final class Config
     const ARGUS_HOST = 'argus.atlab.ai';
     const RTCAPI_VERSION = 'v3';
 
-    // Zone 空間對应的机房
+    // Zone 空間對应的機房
     public $zone;
     //BOOL 是否使用https域名
     public $useHTTPS;
-    //BOOL 是否使用CDN加速上传域名
+    //BOOL 是否使用CDN加速上傳域名
     public $useCdnDomains;
     // Zone Cache
     private $zoneCache;

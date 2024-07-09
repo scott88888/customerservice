@@ -1,2 +1,2 @@
 # material
-微信 SDK 素材管理模块
+微信 SDK 素材管理模組

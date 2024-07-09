@@ -26,7 +26,7 @@ abstract class OneToOne extends Relation
 {
     // 预载入方式 0 -JOIN 1 -IN
     protected $eagerlyType = 1;
-    // 当前关联的JOIN类型
+    // 當前关联的JOIN類型
     protected $joinType;
     // 要绑定的属性
     protected $bindAttr = [];
@@ -34,9 +34,9 @@ abstract class OneToOne extends Relation
     protected $relation;
 
     /**
-     * 設定join类型
+     * 設定join類型
      * @access public
-     * @param string $type JOIN类型
+     * @param string $type JOIN類型
      * @return $this
      */
     public function joinType($type)
@@ -84,7 +84,7 @@ abstract class OneToOne extends Relation
         }
 
         if ($closure) {
-            // 执行闭包查詢
+            // 執行闭包查詢
             call_user_func_array($closure, [ & $query]);
             // 使用withField指定取得关联的字段，如
             // $query->where(['id'=>1])->withField('id,name');
@@ -122,7 +122,7 @@ abstract class OneToOne extends Relation
      * 预载入关联查詢（資料集）
      * @access public
      * @param array    $resultSet   資料集
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -144,7 +144,7 @@ abstract class OneToOne extends Relation
      * 预载入关联查詢（資料）
      * @access public
      * @param Model    $result      資料對象
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -161,7 +161,7 @@ abstract class OneToOne extends Relation
     }
 
     /**
-     * 保存（新增）当前关联資料對象
+     * 保存（新增）當前关联資料對象
      * @access public
      * @param mixed $data 資料 可以使用數组 关联模型對象 和 关联對象的主键
      * @return Model|false
@@ -240,7 +240,7 @@ abstract class OneToOne extends Relation
      * @access public
      * @param string $model    模型名稱
      * @param string $relation 关联名
-     * @param Model  $result   模型對象实例
+     * @param Model  $result   模型對象實例
      * @return void
      */
     protected function match($model, $relation, &$result)
@@ -306,7 +306,7 @@ abstract class OneToOne extends Relation
     {
         $this->baseQuery = true;
 
-        // 预载入关联查詢 支持嵌套预载入
+        // 预载入关联查詢 支援嵌套预载入
         if ($closure) {
             call_user_func_array($closure, [ & $model]);
             if ($field = $model->getOptions('with_field')) {

@@ -46,7 +46,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 			window.setTimeout(function() { renderMenu(option);}, 500);
 		}
 		
-		// 处理高度
+		// 處理高度
 		$("#"+opt.elem).height(option.height)
 		
 		setTimeout(function(){
@@ -249,7 +249,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					'" menu-title="' + item.title + '"  href="' + href + '"  ' + target + '><i class="' + item.icon +
 					'"></i><span>' + item.title + '</span></a>';
 			}
-			// 调 用 递 归 方 法 加 载 無 限 层 级 的 子 選 單 
+			// 调 用 递 归 方 法 加 载 無 限 層 级 的 子 選 單 
 			content += loadchild(item);
 			// 结 束 一 个 根 選 單 项
 			content += '</li>';
@@ -303,7 +303,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					target = "target='_blank'";
 					className = "";
 				}
-				// 判 断 選 單 类 型 0 是 不可跳转的目录 1 是 可 點 击 跳 转 的 選 單
+				// 判 断 選 單 類 型 0 是 不可跳转的目錄 1 是 可 點 击 跳 转 的 選 單
 				if (note.type == 0) {
 					// 创 建 目 录 结 构
 					content += '<a  href="' + href + '" ' + target + ' menu-type="' + note.type + '" menu-id="' + note.id +
@@ -341,7 +341,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		})
 	}
 
-	/** 加载子選單 (递归)*/
+	/** 載入子選單 (递归)*/
 	function loadchild(obj) {
 		// 判 單 是 否 是 選 單， 如 果 是 選 單 直 接 返 回
 		if (obj.type == 1) {
@@ -363,7 +363,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 					target = "target='_blank'";
 					className = "";
 				}
-				// 判 断 子 项 类 型
+				// 判 断 子 项 類 型
 				if (note.type == 0) {
 					// 创 建 目 录 结 构
 					content += '<a ' + target + '  href="' + href + '" menu-type="' + note.type + '" menu-id="' + note.id +
@@ -381,7 +381,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 			});
 			// 封 装
 		} else {
-			content += '<dd style="background-color: transparent!important;"><a style="background-color: transparent!important;margin-left: 26px">目录為空</a></dd>';
+			content += '<dd style="background-color: transparent!important;"><a style="background-color: transparent!important;margin-left: 26px">目錄為空</a></dd>';
 		}
 		content += '</dl>';
 		return content;

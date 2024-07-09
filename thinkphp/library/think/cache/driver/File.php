@@ -14,7 +14,7 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * 文件类型缓存类
+ * 文件類型快取類
  * @author    liu21st <liu21st@gmail.com>
  */
 class File extends Driver
@@ -51,7 +51,7 @@ class File extends Driver
      */
     private function init()
     {
-        // 建立项目缓存目录
+        // 建立项目快取目錄
         if (!is_dir($this->options['path'])) {
             if (mkdir($this->options['path'], 0755, true)) {
                 return true;
@@ -63,15 +63,15 @@ class File extends Driver
     /**
      * 取得变量的存储文件名
      * @access protected
-     * @param  string $name 缓存变量名
-     * @param  bool   $auto 是否自動建立目录
+     * @param  string $name 快取变量名
+     * @param  bool   $auto 是否自動建立目錄
      * @return string
      */
     protected function getCacheKey($name, $auto = false)
     {
         $name = md5($name);
         if ($this->options['cache_subdir']) {
-            // 使用子目录
+            // 使用子目錄
             $name = substr($name, 0, 2) . DS . substr($name, 2);
         }
         if ($this->options['prefix']) {
@@ -87,9 +87,9 @@ class File extends Driver
     }
 
     /**
-     * 判断缓存是否存在
+     * 判断快取是否存在
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return bool
      */
     public function has($name)
@@ -98,10 +98,10 @@ class File extends Driver
     }
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param string $name 缓存变量名
-     * @param mixed  $default 默认值
+     * @param string $name 快取变量名
+     * @param mixed  $default 默認值
      * @return mixed
      */
     public function get($name, $default = false)
@@ -131,9 +131,9 @@ class File extends Driver
     }
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access public
-     * @param string            $name 缓存变量名
+     * @param string            $name 快取变量名
      * @param mixed             $value  存储資料
      * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
@@ -167,9 +167,9 @@ class File extends Driver
     }
 
     /**
-     * 自增缓存（針對數值缓存）
+     * 自增快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
@@ -187,9 +187,9 @@ class File extends Driver
     }
 
     /**
-     * 自减缓存（針對數值缓存）
+     * 自减快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
@@ -207,9 +207,9 @@ class File extends Driver
     }
 
     /**
-     * 刪除缓存
+     * 刪除快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return boolean
      */
     public function rm($name)
@@ -222,7 +222,7 @@ class File extends Driver
     }
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access public
      * @param string $tag 标签名
      * @return boolean
@@ -254,7 +254,7 @@ class File extends Driver
     }
 
     /**
-     * 判断文件是否存在后，刪除
+     * 判断文件是否存在後，刪除
      * @param $path
      * @return bool
      * @author byron sampson <xiaobo.sun@qq.com>

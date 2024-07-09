@@ -12,20 +12,20 @@ if (is_null($ossClient)) exit(1);
 //*******************************简單使用***************************************************************
 
 /**
- * 查看完整用法中的 "putObjectByRawApis"函數，查看使用基础的分片上传api进行文件上传，使用者可以基于这个自行實現断點续传等功能
+ * 查看完整用法中的 "putObjectByRawApis"函數，查看使用基础的分片上傳api进行文件上傳，使用者可以基于这个自行實現断點续傳等功能
  */
 
-// 使用分片上传接口上传文件, 接口会根據文件大小决定是使用普通上传还是分片上传
+// 使用分片上傳接口上傳文件, 接口会根據文件大小决定是使用普通上傳还是分片上傳
 $ossClient->multiuploadFile($bucket, "file.php", __FILE__, array());
 Common::println("local file " . __FILE__ . " is uploaded to the bucket $bucket, file.php");
 
 
-// 上传本地目录到bucket内的targetdir子目录中
+// 上傳本地目錄到bucket内的targetdir子目錄中
 $ossClient->uploadDir($bucket, "targetdir", __DIR__);
 Common::println("local dir " . __DIR__ . " is uploaded to the bucket $bucket, targetdir/");
 
 
-// 列出当前未完成的分片上传
+// 列出當前未完成的分片上傳
 $listMultipartUploadInfo = $ossClient->listMultipartUploads($bucket, array());
 
 
@@ -37,9 +37,9 @@ uploadDir($ossClient, $bucket);
 listMultipartUploads($ossClient, $bucket);
 
 /**
- * 通過multipart上传文件
+ * 通過multipart上傳文件
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -60,9 +60,9 @@ function multiuploadFile($ossClient, $bucket)
 }
 
 /**
- * 使用基本的api分阶段进行分片上传
+ * 使用基本的api分阶段进行分片上傳
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @throws OssException
  */
@@ -70,7 +70,7 @@ function putObjectByRawApis($ossClient, $bucket)
 {
     $object = "test/multipart-test.txt";
     /**
-     *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 取得upload id
+     *  step 1. 初始化一个分块上傳事件, 也就是初始化上傳Multipart, 取得upload id
      */
     try {
         $uploadId = $ossClient->initiateMultipartUpload($bucket, $object);
@@ -81,7 +81,7 @@ function putObjectByRawApis($ossClient, $bucket)
     }
     print(__FUNCTION__ . ": initiateMultipartUpload OK" . "\n");
     /*
-     * step 2. 上传分片
+     * step 2. 上傳分片
      */
     $partSize = 10 * 1024 * 1024;
     $uploadFile = __FILE__;
@@ -104,7 +104,7 @@ function putObjectByRawApis($ossClient, $bucket)
             $contentMd5 = OssUtil::getMd5SumForFile($uploadFile, $fromPos, $toPos);
             $upOptions[$ossClient::OSS_CONTENT_MD5] = $contentMd5;
         }
-        //2. 将每一分片上传到OSS
+        //2. 将每一分片上傳到OSS
         try {
             $responseUploadPart[] = $ossClient->uploadPart($bucket, $object, $uploadId, $upOptions);
         } catch (OssException $e) {
@@ -122,7 +122,7 @@ function putObjectByRawApis($ossClient, $bucket)
         );
     }
     /**
-     * step 3. 完成上传
+     * step 3. 完成上傳
      */
     try {
         $ossClient->completeMultipartUpload($bucket, $object, $uploadId, $uploadParts);
@@ -135,7 +135,7 @@ function putObjectByRawApis($ossClient, $bucket)
 }
 
 /**
- * 按照目录上传文件
+ * 按照目錄上傳文件
  *
  * @param OssClient $ossClient OssClient
  * @param string $bucket 存储空間名稱
@@ -156,7 +156,7 @@ function uploadDir($ossClient, $bucket)
 }
 
 /**
- * 取得当前未完成的分片上传列表
+ * 取得當前未完成的分片上傳列表
  *
  * @param $ossClient OssClient
  * @param $bucket   string

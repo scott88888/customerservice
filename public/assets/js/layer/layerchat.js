@@ -151,11 +151,11 @@ function put() {
 
     } else {
 
-        layer.msg("請選擇图片", {icon: 2});
+        layer.msg("請選擇圖片", {icon: 2});
     }
 }
 
-// 文件上传
+// 文件上傳
 function putfile() {
 
     var value = $('input[name="folder"]').val();
@@ -165,7 +165,7 @@ function putfile() {
     var arr = value.split(".");
     var debugs =arr[1].toLowerCase();
     if ( debugs == "js" ||  debugs == "css" ||  debugs == "html" ||  debugs == "php") {
-        layer.msg("不支持该格式的文件", {icon: 2});
+        layer.msg("不支援该格式的文件", {icon: 2});
     } else {
         var myDate = new Date();
         var time =  myDate.getHours()+":"+myDate.getMinutes();
@@ -398,12 +398,12 @@ var init = function () {
                 $("#img_head").attr("src","/assets/images/index/workerman_logo.png");
                 $("#services").text("");
                 var num= getnums(business_id);
-                // 告知客服在排队
+                // 告知客服在排對
                 var msg='';
                 msg+='<li class="chatmsg_notice"><div style="position: absolute;left:3px;top:17px">';
                 msg+='<img  class="my-circle" src="'+ROOT_URL+'/assets/images/index/workerman_logo.png" width="40px" height="40px"></div>';
                 msg+="<div class='outer-left' style='right:4%;top:13px;'><div class='service'>";
-                msg+="<pre>通知 ： 现在还有"+num+" 人在排队，請等待 ....</pre>";
+                msg+="<pre>通知 ： 现在还有"+num+" 人在排對，請等待 ....</pre>";
                 msg+="</div></div>";
                 msg+="</li>";
                 $(".conversation").append(msg);
@@ -426,7 +426,7 @@ var init = function () {
                 layer.open({
                     title:'提示框',
                     area: ['300px', '180px'],
-                    content:'该客服離線中，是否转接其他客服？',
+                    content:'该客服離線中，是否轉接其他客服？',
                     btn:['是','否'],
                     yes:function(){
                         $.ajax({
@@ -436,7 +436,7 @@ var init = function () {
                             success:function(res){
                                 if(res.code == 0){
 
-                                    layer.msg('转接中....',{icon:3,end:function(){
+                                    layer.msg('轉接中....',{icon:3,end:function(){
                                             location.reload();
                                         }});
                                 }
@@ -534,7 +534,7 @@ function getanswer(id){
 
 
 
-// 取得排队的數量
+// 取得排對的數量
 function getnums(id){
     var value ="";
     $.ajax({
@@ -548,7 +548,7 @@ function getnums(id){
     });
     return value;
 }
-// 发送消息
+// 發送消息
 
 var send = function () {
     //取得 遊客id

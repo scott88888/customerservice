@@ -66,7 +66,7 @@
 		},
 		callback: function () {
 			var that = this, opt = that.opts, resObj = $(opt.resId);
-			// 处理數字
+			// 處理數字
 			$("#" + opt.id).on("click", ".number", function () {
 				if (resObj.text().indexOf(".") != -1 && resObj.text().substring(resObj.text().indexOf(".") + 1, resObj.text().length).length == 2) {
 					return;
@@ -80,7 +80,7 @@
 				resObj.text(resObj.text() + $(this).text());
 				resObj.val(resObj.text());
 			});
-			// 处理小數點
+			// 處理小數點
 			$("#" + opt.id).on("click", ".float", function () {
 				if ($.trim(resObj.text()) == "" || resObj.text().indexOf(".") != -1) {
 					return;
@@ -88,7 +88,7 @@
 				resObj.text(resObj.text() + $(this).text());
 				resObj.val(resObj.text());
 			});
-			// 处理數字0
+			// 處理數字0
 			$("#" + opt.id).on("click", ".zero", function () {
 				if (resObj.text().indexOf(".") != -1 && resObj.text().substring(resObj.text().indexOf(".") + 1, resObj.text().length).length == 2) {
 					return;
@@ -102,7 +102,7 @@
 				resObj.text(resObj.text() + $(this).text());
 				resObj.val(resObj.text());
 			});
-			// 处理刪除
+			// 處理刪除
 			$("#" + opt.id).on("click", ".del", function () {
 				resObj.text(resObj.text().substring(0, resObj.text().length - 1));
 				resObj.val(resObj.text());

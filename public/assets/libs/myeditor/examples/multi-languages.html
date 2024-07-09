@@ -2,7 +2,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>多語言支持 - Editor.md examples</title>
+        <title>多語言支援 - Editor.md examples</title>
         <link rel="stylesheet" href="css/style.css?v=__lkversion__" />
         <link rel="stylesheet" href="../css/editormd.css?v=__lkversion__" />
         <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
@@ -10,7 +10,7 @@
     <body>
         <div id="layout">
             <header>
-                <h1>多語言支持（l18n）</h1> 
+                <h1>多語言支援（l18n）</h1> 
                 <p>multi-languages for l18n.
                     <select id="lang-select">
                         <option selected="selected">Languages</option>
@@ -21,9 +21,9 @@
                 </p>
             </header>
             <div id="test-editormd">
-                <textarea style="display:none;">###多語言支持（l18n）
+                <textarea style="display:none;">###多語言支援（l18n）
 
-目前支持三种語言：简体中文、繁體中文、English，默认為简体中文 (zh-cn default)。
+目前支援三种語言：简体中文、繁體中文、English，默認為简体中文 (zh-cn default)。
 
 ```html
 &lt;!-- English --&gt;
@@ -53,7 +53,7 @@
                 //console.log(editormd.defaults.lang); 
                 var lang = "zh-cn";
                 
-                // 動态加载語言包
+                // 動态載入語言包
                 // Dynamic load language package
                 $("#lang-select").change(function() {
                     var value = $(this).val();
@@ -71,7 +71,7 @@
                             // 只重建涉及語言包的部分，如工具栏、弹出對話框等
                             testEditor.recreate();                
                                     
-                            // 整个編輯器重建，预览HTML会重新產生，出现闪動
+                            // 整个編輯器重建，預覽HTML会重新產生，出现闪動
                             //testEditor = editormd("test-editormd", {
                                 //width: "90%",
                                 //height: 640,

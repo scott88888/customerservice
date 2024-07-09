@@ -38,7 +38,7 @@ getBucketReferer($ossClient, $bucket);
 /**
  * 設定bucket的防盗链配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -61,7 +61,7 @@ function putBucketReferer($ossClient, $bucket)
 /**
  * 取得bucket的防盗链配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -81,9 +81,9 @@ function getBucketReferer($ossClient, $bucket)
 
 /**
  * 刪除bucket的防盗链配置
- * Referer白名單不能直接清空，只能通過重新設定来覆盖之前的规则。
+ * Referer白名單不能直接清空，只能通過重新設定来覆盖之前的規則。
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */

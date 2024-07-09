@@ -42,7 +42,7 @@ class Login extends Controller
     }
 
     /**
-     * 注册頁面.
+     * 註冊頁面.
      *
      * @return mixed
      */
@@ -66,7 +66,7 @@ class Login extends Controller
     }
 
     /**
-     * 注册驗證碼.
+     * 註冊驗證碼.
      *
      * @return \think\Response
      */
@@ -155,7 +155,7 @@ class Login extends Controller
     }
 
     /**
-     * 退出登入 并清除session.
+     * 退出登入 並清除session.
      *
      * @return void
      */

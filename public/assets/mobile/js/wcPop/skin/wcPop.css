@@ -132,7 +132,7 @@
 	10%,30%,50%,70%,90% {transform: translateX(-10px);}
 	20%,40%,60%,80% {transform: translateX(10px);}
 }
-/* 加载中 */
+/* 載入中 */
 @keyframes anim-loading {
 	0% {transform: rotate3d(0, 0, 1, 0deg);}
     100% {transform: rotate3d(0, 0, 1, 360deg);}

@@ -128,28 +128,28 @@ class Menu
                 'icon' => 'icon-setup',
                 'children' => [
                     [
-                        'name' => '我的应用',
+                        'name' => '我的應用',
                         'route' => 'platform/app/index',
                         'icon' => 'icon-shanghu',
                         'is_admin' => false,
                         'sub' => [
                             [
-                                'name' => '新增应用',
+                                'name' => '新增應用',
                                 'route' => 'platform/app/edit',
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '进入应用',
+                                'name' => '进入應用',
                                 'route' => 'platform/app/entry',
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '刪除应用',
+                                'name' => '刪除應用',
                                 'route' => 'platform/app/delete',
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '应用回收站',
+                                'name' => '應用回收站',
                                 'route' => 'platform/app/recycle',
                                 'is_admin' => false,
                             ],
@@ -159,7 +159,7 @@ class Menu
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '应用禁用',
+                                'name' => '應用禁用',
                                 'route' => 'platform/app/disabled',
                                 'is_admin' => false,
                             ],
@@ -177,7 +177,7 @@ class Menu
                         'is_admin' => false,
                     ],
                     [
-                        'name' => '子账户应用',
+                        'name' => '子账户應用',
                         'route' => 'platform/app/subapp',
                         'icon' => 'icon-xiaochengxu4',
                         'is_admin' => true,
@@ -202,7 +202,7 @@ class Menu
                         'is_admin' => false,
                     ],
                     [
-                        'name' => '上传設定',
+                        'name' => '上傳設定',
                         'route' => 'platform/storage/index',
                         'icon' => 'icon-settings',
                         'is_admin' => false,

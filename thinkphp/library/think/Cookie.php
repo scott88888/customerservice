@@ -19,9 +19,9 @@ class Cookie
     protected static $config = [
         'prefix'    => '', // cookie 名稱前缀
         'expire'    => 0, // cookie 保存時間
-        'path'      => '/', // cookie 保存路径
+        'path'      => '/', // cookie 保存路徑
         'domain'    => '', // cookie 有效域名
-        'secure'    => false, //  cookie 启用安全传输
+        'secure'    => false, //  cookie 启用安全傳输
         'httponly'  => false, // httponly 設定
         'setcookie' => true, // 是否使用 setcookie
     ];
@@ -231,7 +231,7 @@ class Cookie
 
         !isset(self::$init) && self::init();
 
-        // 要刪除的 cookie 前缀，不指定则刪除 config 設定的指定前缀
+        // 要刪除的 cookie 前缀，不指定則刪除 config 設定的指定前缀
         $config = self::$config;
         $prefix = !is_null($prefix) ? $prefix : $config['prefix'];
 
@@ -252,11 +252,11 @@ class Cookie
     }
 
     /**
-     * json 转换时的格式保护
+     * json 轉換时的格式保护
      * @access protected
-     * @param  mixed  $val  要转换的值
+     * @param  mixed  $val  要轉換的值
      * @param  string $key  键名
-     * @param  string $type 转换类别
+     * @param  string $type 轉換類别
      * @return void
      */
     protected static function jsonFormatProtect(&$val, $key, $type = 'encode')

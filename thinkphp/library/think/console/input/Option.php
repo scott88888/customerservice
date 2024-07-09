@@ -29,9 +29,9 @@ class Option
      * 构造方法
      * @param string       $name        选项名
      * @param string|array $shortcut    短名稱,多个用|隔開或者使用數组
-     * @param int          $mode        选项类型(可选类型為 self::VALUE_*)
+     * @param int          $mode        选项類型(可选類型為 self::VALUE_*)
      * @param string       $description 描述
-     * @param mixed        $default     默认值 (类型為 self::VALUE_REQUIRED 或者 self::VALUE_NONE 的时候必须為null)
+     * @param mixed        $default     默認值 (類型為 self::VALUE_REQUIRED 或者 self::VALUE_NONE 的时候必须為null)
      * @throws \InvalidArgumentException
      */
     public function __construct($name, $shortcut = null, $mode = null, $description = '', $default = null)
@@ -99,7 +99,7 @@ class Option
 
     /**
      * 是否可以設定值
-     * @return bool 类型不是 self::VALUE_NONE 的时候返回true,其他均返回false
+     * @return bool 類型不是 self::VALUE_NONE 的时候返回true,其他均返回false
      */
     public function acceptValue()
     {
@@ -108,7 +108,7 @@ class Option
 
     /**
      * 是否必须
-     * @return bool 类型是 self::VALUE_REQUIRED 的时候返回true,其他均返回false
+     * @return bool 類型是 self::VALUE_REQUIRED 的时候返回true,其他均返回false
      */
     public function isValueRequired()
     {
@@ -117,7 +117,7 @@ class Option
 
     /**
      * 是否可选
-     * @return bool 类型是 self::VALUE_OPTIONAL 的时候返回true,其他均返回false
+     * @return bool 類型是 self::VALUE_OPTIONAL 的时候返回true,其他均返回false
      */
     public function isValueOptional()
     {
@@ -126,7 +126,7 @@ class Option
 
     /**
      * 选项值是否接受數组
-     * @return bool 类型是 self::VALUE_IS_ARRAY 的时候返回true,其他均返回false
+     * @return bool 類型是 self::VALUE_IS_ARRAY 的时候返回true,其他均返回false
      */
     public function isArray()
     {
@@ -134,8 +134,8 @@ class Option
     }
 
     /**
-     * 設定默认值
-     * @param mixed $default 默认值
+     * 設定默認值
+     * @param mixed $default 默認值
      * @throws \LogicException
      */
     public function setDefault($default = null)
@@ -156,7 +156,7 @@ class Option
     }
 
     /**
-     * 取得默认值
+     * 取得默認值
      * @return mixed
      */
     public function getDefault()
@@ -174,7 +174,7 @@ class Option
     }
 
     /**
-     * 檢查所给选项是否是当前这个
+     * 檢查所给选项是否是當前这个
      * @param Option $option
      * @return bool
      */

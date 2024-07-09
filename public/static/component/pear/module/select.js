@@ -5,11 +5,11 @@
  * http://sun.faysunshine.com/layui/formSelects-v4/dist/formSelects-v4.js
  */
 (function(layui, window, factory) {
-	if(typeof exports === 'object') { // 支持 CommonJS
+	if(typeof exports === 'object') { // 支援 CommonJS
 		module.exports = factory();
-	} else if(typeof define === 'function' && define.amd) { // 支持 AMD
+	} else if(typeof define === 'function' && define.amd) { // 支援 AMD
 		define(factory);
-	} else if(window.layui && layui.define) { //layui加载
+	} else if(window.layui && layui.define) { //layui載入
 		layui.define(['jquery'], function(exports) {
 			exports('select', factory());
 		});
@@ -171,7 +171,7 @@
  			}
 		};
 	
-	//一些简單的处理方法
+	//一些简單的處理方法
 	let Common = function(){
 		this.appender();
 		this.on();
@@ -389,7 +389,7 @@
 		let ajaxConfig = ajaxs[id] ? ajaxs[id] : ajax;
 		let ajaxData = $.extend(true, {}, ajaxConfig.data);
 		ajaxData[ajaxConfig.searchName] = inputValue;
-		//是否需要對ajax新增随机時間
+		//是否需要對ajax新增随機時間
 		//ajaxData['_'] = Date.now();
 		$.ajax({
 			type: ajaxConfig.type,
@@ -523,7 +523,7 @@
 		html.push('<div style="clear: both; height: 288px;"></div>');
 		html.push('</div>');
 		reElem.find('dl').html(html.join(''));
-		reElem.find(`.${INPUT}`).css('display', 'none');//联動暫时不支持搜索
+		reElem.find(`.${INPUT}`).css('display', 'none');//联動暫时不支援搜索
 	}
 	
 	Common.prototype.renderReplace = function(id, dataArr){
@@ -549,7 +549,7 @@
 		dl.find(`dt[style]`).after($(html));
 	}
 
-	Common.prototype.exchangeData = function(id, arr){//这里处理树形结构
+	Common.prototype.exchangeData = function(id, arr){//这里處理树形结构
 	    let ajaxConfig = ajaxs[id] ? ajaxs[id] : ajax;
 	    let childrenName = ajaxConfig['keyChildren'];
 	    let disabledName = ajaxConfig['keyDis'];
@@ -596,7 +596,7 @@
 					tdd = item;
 				}
 			});
-			if(!tdd){//如果不存在, 则建立
+			if(!tdd){//如果不存在, 則建立
 				let val = fs.config.create(id, inputValue);
 				if(temp[0]){
 					temp.attr('lay-value', val);
@@ -820,7 +820,7 @@
 		});
 		$(target ? target : document).off('click', `dl.${DL}`).on('click', `dl.${DL}`, (e) => {
 			let othis = $(e.target);
-			if(othis.is(`.${LINKAGE}`) || othis.parents(`.${LINKAGE}`)[0]){//linkage的处理
+			if(othis.is(`.${LINKAGE}`) || othis.parents(`.${LINKAGE}`)[0]){//linkage的處理
 				othis = othis.is('li') ? othis : othis.parents('li[xm-value]');
 				let group = othis.parents('.xm-select-linkage-group'),
 					id = othis.parents('dl').attr('xid');
@@ -884,7 +884,7 @@
 			let dd = othis.is('dd') ? othis : othis.parents('dd');
 			let id = dd.parent('dl').attr('xid');
 			
-			if(dd.hasClass(DISABLED)){//被禁用选项的处理
+			if(dd.hasClass(DISABLED)){//被禁用选项的處理
 				return false;
 			}
 			
@@ -901,7 +901,7 @@
 			//树状结构的選擇
 			let treeId = dd.attr('tree-id');
 			if(treeId){
-				//忽略右边的图标
+				//忽略右边的圖标
 				if(othis.is('i:not(.icon-expand)')){
 					this.handlerLabel(id, dd, !dd.hasClass(THIS));
 					return false;
@@ -946,7 +946,7 @@
 				}
 			}
 			
-			if(dd.hasClass(FORM_SELECT_TIPS)){//tips的处理
+			if(dd.hasClass(FORM_SELECT_TIPS)){//tips的處理
 				let btn = othis.is(`.${CZ}`) ? othis : othis.parents(`.${CZ}`);
 				if(!btn[0]){
 					return false;
@@ -1050,12 +1050,12 @@
 			return ;
 		}
 		this.checkHideSpan(key, label);
-		//计算input的提示语
+		//计算input的提示語
 		this.changePlaceHolder(label);
 		//计算高度
 		this.retop(label.parents(`.${FORM_SELECT}`));
 		this.calcLabelLeft(label, 0, true);
-		//表單默认值
+		//表單默認值
 		this.setHidnVal(key, label);
 		//title值
 		label.parents(`.${FORM_TITLE} .${NAME}`).attr('title', data[key].values.map((val) => {
@@ -1138,7 +1138,7 @@
 			this.remove(vals, val)
 		);
 		if(!div[0]) return ;
-		//單选选完后直接關閉選擇域
+		//單选选完後直接關閉選擇域
 		if(fs.config.radio){
 			this.changeShow(div, false);
 		}
@@ -1242,7 +1242,7 @@
 			top.find(`dl .${FORM_EMPTY}`).removeClass(FORM_EMPTY);
 			top.find(`dl dd.${DD_HIDE}`).removeClass(DD_HIDE);
 			top.find(`dl dd.${TEMP}`).remove();
-			//计算ajax資料是否為空, 然后重新請求資料
+			//计算ajax資料是否為空, 然後重新請求資料
 			if(id && data[id] && data[id].config.isEmpty){
 				this.triggerSearch(top);
 			}
@@ -1256,7 +1256,7 @@
 		}
 	}
 	
-	Common.prototype.changePlaceHolder = function(div){//显示于隐藏提示语
+	Common.prototype.changePlaceHolder = function(div){//显示于隐藏提示語
 		//调整pane模式下的高度
 		let title = div.parents(`.${FORM_TITLE}`);
 		title[0] || (title = div.parents(`dl`).prev());
@@ -1270,7 +1270,7 @@
 		}else{
 			let height = title.find(`.${NAME}`)[0].clientHeight;
 			title.css('height' , (height > 36 ? height + 4 : height) + 'px');
-			//如果是layui pane模式, 处理label的高度
+			//如果是layui pane模式, 處理label的高度
 			let label = title.parents(`.${PNAME}`).parent().prev();
 			if(label.is('.layui-form-label') && title.parents('.layui-form-pane')[0]){
 				height = height > 36 ? height + 4 : height;
@@ -1333,7 +1333,7 @@
 		if(!dl[0]){
 			return ;
 		}
-		if(dl.find('.xm-select-linkage')[0]){//針對多级联動的处理
+		if(dl.find('.xm-select-linkage')[0]){//針對多级联動的處理
 			data[id].values.concat([]).forEach((item, idx) => {
 				let vs = item.value.split('/');
 				let pid, li, index = 0;
@@ -1386,7 +1386,7 @@
         return { x: x, y: y };
 	};
 	
-	Common.prototype.onreset = function(){//监听reset按钮, 然后重置多选
+	Common.prototype.onreset = function(){//监听reset按钮, 然後重置多选
 		$(document).on('click', '[type=reset]', (e) => {
 			$(e.target).parents('form').find(`.${PNAME} dl[xid]`).each((index, item) => {
 				let id = item.getAttribute('xid'),
@@ -1487,7 +1487,7 @@
 				temp = {},
 				dd,
 				isAdd = true;
-			if(isAppend == false){//刪除传入的數组
+			if(isAppend == false){//刪除傳入的數组
 				isAdd = false;
 			}else if(isAppend == true){//追加模式
 				isAdd = true;

@@ -24,15 +24,15 @@ var scrawl = function (options) {
             me.originalState(options);//初始頁面狀態
             me._buildToolbarColor(options.colorList);//動态產生颜色選擇集合
 
-            me._addBoardListener(options.saveNum);//新增画板处理
-            me._addOPerateListener(options.saveNum);//新增undo redo clearBoard处理
-            me._addColorBarListener();//新增颜色選擇处理
-            me._addBrushBarListener();//新增画笔大小处理
-            me._addEraserBarListener();//新增橡皮大小处理
-            me._addAddImgListener();//新增增添背景图片处理
-            me._addRemoveImgListenter();//刪除背景图片处理
-            me._addScalePicListenter();//新增缩放处理
-            me._addClearSelectionListenter();//新增清楚选中狀態处理
+            me._addBoardListener(options.saveNum);//新增画板處理
+            me._addOPerateListener(options.saveNum);//新增undo redo clearBoard處理
+            me._addColorBarListener();//新增颜色選擇處理
+            me._addBrushBarListener();//新增画笔大小處理
+            me._addEraserBarListener();//新增橡皮大小處理
+            me._addAddImgListener();//新增增添背景圖片處理
+            me._addRemoveImgListenter();//刪除背景圖片處理
+            me._addScalePicListenter();//新增缩放處理
+            me._addClearSelectionListenter();//新增清楚选中狀態處理
 
             me._originalColorSelect(options.drawBrushColor);//初始化颜色选中
             me._originalBrushSelect(options.drawBrushSize);//初始化画笔选中
@@ -566,13 +566,13 @@ var ScaleBoy = function () {
     };
 })();
 
-//后台回调
+//後台回调
 function ue_callback(url, state) {
     var doc = document,
         picBorard = $G("J_picBoard"),
         img = doc.createElement("img");
 
-    //图片缩放
+    //圖片缩放
     function scale(img, max, oWidth, oHeight) {
         var width = 0, height = 0, percent, ow = img.width || oWidth, oh = img.height || oHeight;
         if (ow > max || oh > max) {
@@ -592,7 +592,7 @@ function ue_callback(url, state) {
         }
     }
 
-    //移除遮罩层
+    //移除遮罩層
     removeMaskLayer();
     //狀態响应
     if (state == "SUCCESS") {
@@ -611,21 +611,21 @@ function ue_callback(url, state) {
         alert(state);
     }
 }
-//去掉遮罩层
+//去掉遮罩層
 function removeMaskLayer() {
     var maskLayer = $G("J_maskLayer");
     maskLayer.className = "maskLayerNull";
     maskLayer.innerHTML = "";
     dialog.buttons[0].setDisabled(false);
 }
-//新增遮罩层
+//新增遮罩層
 function addMaskLayer(html) {
     var maskLayer = $G("J_maskLayer");
     dialog.buttons[0].setDisabled(true);
     maskLayer.className = "maskLayer";
     maskLayer.innerHTML = html;
 }
-//执行确认按钮方法
+//執行确认按钮方法
 function exec(scrawlObj) {
     if (scrawlObj.isScrawl) {
         addMaskLayer(lang.scrawlUpLoading);

@@ -11,16 +11,16 @@ class Log
         'log_time_format' => ' c ',
     ];
 
-    // 实例化并传入参數
+    // 實例化並傳入参數
     public function __construct(array $config = [])
     {
         $this->config = array_merge($this->config, $config);
     }
 
     /**
-     * 日志写入接口
+     * 日誌寫入接口
      * @access public
-     * @param array $log 日志訊息
+     * @param array $log 日誌訊息
      * @return bool
      */
     public function save(array $log = [])
@@ -38,7 +38,7 @@ class Log
         $time_str   = " [运行時間：{$runtime}s] [吞吐率：{$reqs}req/s]";
         $memory_use = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
         $memory_str = " [内存消耗：{$memory_use}kb]";
-        $file_load  = " [文件加载：" . count(get_included_files()) . "]";
+        $file_load  = " [文件載入：" . count(get_included_files()) . "]";
 
         $info = '[ log ] ' . $current_uri . $time_str . $memory_str . $file_load . "\r\n";
         foreach ($log as $type => $val) {
@@ -59,7 +59,7 @@ class Log
             $is_debug = in_array($_SERVER['HTTP_APPVERSION'], explode(',', $appSettings['debug'])) ? true : false;
         }
         if ($is_debug) {
-            ini_set("display_errors", "off"); //记录日志不将日志列印出来
+            ini_set("display_errors", "off"); //记录日誌不将日誌列印出来
         }
         sae_debug($logstr);
         if ($is_debug) {

@@ -164,7 +164,7 @@ class Console
     }
 
     /**
-     * 取得当前终端的尺寸
+     * 取得當前终端的尺寸
      * @return array
      */
     public function getTerminalDimensions()
@@ -296,7 +296,7 @@ class Console
     }
 
     /**
-     * 当前环境是否支持写入控制台输出到stdout.
+     * 當前环境是否支援寫入控制台输出到stdout.
      *
      * @return bool
      */
@@ -306,7 +306,7 @@ class Console
     }
 
     /**
-     * 当前环境是否支持写入控制台输出到stderr.
+     * 當前环境是否支援寫入控制台输出到stderr.
      *
      * @return bool
      */
@@ -335,7 +335,7 @@ class Console
     }
 
     /**
-     * 将消息写入到输出。
+     * 将消息寫入到输出。
      * @param string $message 消息
      * @param bool   $newline 是否另起一行
      * @param null   $stream
@@ -353,7 +353,7 @@ class Console
     }
 
     /**
-     * 是否支持着色
+     * 是否支援着色
      * @param $stream
      * @return bool
      */

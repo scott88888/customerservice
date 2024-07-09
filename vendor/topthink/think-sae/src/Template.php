@@ -17,7 +17,7 @@ class Template
 {
     // mc 對象
     private $mc;
-    // 编译缓存内容
+    // 编译快取内容
     private $contents = [];
 
     /**
@@ -36,14 +36,14 @@ class Template
     }
 
     /**
-     * 写入编译缓存
-     * @param string $cacheFile 缓存的文件名
-     * @param string $content 缓存的内容
+     * 寫入编译快取
+     * @param string $cacheFile 快取的文件名
+     * @param string $content 快取的内容
      * @return void|array
      */
     public function write($cacheFile, $content)
     {
-        // 新增写入時間
+        // 新增寫入時間
         $content = $_SERVER['REQUEST_TIME'] . $content;
         if (!$this->mc->set($cacheFile, $content, 0)) {
             throw new Exception('sae mc write error:' . $cacheFile);
@@ -55,7 +55,7 @@ class Template
 
     /**
      * 读取编译编译
-     * @param string  $cacheFile 缓存的文件名
+     * @param string  $cacheFile 快取的文件名
      * @param array   $vars 变量數组
      * @return void
      */
@@ -68,16 +68,16 @@ class Template
     }
 
     /**
-     * 檢查编译缓存是否有效
-     * @param string  $cacheFile 缓存的文件名
-     * @param int     $cacheTime 缓存時間
+     * 檢查编译快取是否有效
+     * @param string  $cacheFile 快取的文件名
+     * @param int     $cacheTime 快取時間
      * @return boolean
      */
     public function check($cacheFile, $cacheTime)
     {
         $mtime = $this->get($cacheFile, 'mtime');
         if (0 != $cacheTime && $_SERVER['REQUEST_TIME'] > $mtime + $cacheTime) {
-            // 缓存是否在有效期
+            // 快取是否在有效期
             return false;
         }
         return true;

@@ -14,7 +14,7 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * Sqlite缓存驱動
+ * Sqlite快取驱動
  * @author    liu21st <liu21st@gmail.com>
  */
 class Sqlite extends Driver
@@ -29,7 +29,7 @@ class Sqlite extends Driver
 
     /**
      * 构造函數
-     * @param array $options 缓存参數
+     * @param array $options 快取参數
      * @throws \BadFunctionCallException
      * @access public
      */
@@ -46,9 +46,9 @@ class Sqlite extends Driver
     }
 
     /**
-     * 取得实际的缓存標識
+     * 取得实际的快取標識
      * @access public
-     * @param string $name 缓存名
+     * @param string $name 快取名
      * @return string
      */
     protected function getCacheKey($name)
@@ -57,9 +57,9 @@ class Sqlite extends Driver
     }
 
     /**
-     * 判断缓存
+     * 判断快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return bool
      */
     public function has($name)
@@ -71,10 +71,10 @@ class Sqlite extends Driver
     }
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param string $name 缓存变量名
-     * @param mixed  $default 默认值
+     * @param string $name 快取变量名
+     * @param mixed  $default 默認值
      * @return mixed
      */
     public function get($name, $default = false)
@@ -94,9 +94,9 @@ class Sqlite extends Driver
     }
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access public
-     * @param string            $name 缓存变量名
+     * @param string            $name 快取变量名
      * @param mixed             $value  存储資料
      * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
@@ -111,7 +111,7 @@ class Sqlite extends Driver
         if ($expire instanceof \DateTime) {
             $expire = $expire->getTimestamp();
         } else {
-            $expire = (0 == $expire) ? 0 : (time() + $expire); //缓存有效期為0表示永久缓存
+            $expire = (0 == $expire) ? 0 : (time() + $expire); //快取有效期為0表示永久快取
         }
         if (function_exists('gzcompress')) {
             //資料压缩
@@ -131,9 +131,9 @@ class Sqlite extends Driver
     }
 
     /**
-     * 自增缓存（針對數值缓存）
+     * 自增快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
@@ -148,9 +148,9 @@ class Sqlite extends Driver
     }
 
     /**
-     * 自减缓存（針對數值缓存）
+     * 自减快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
@@ -165,9 +165,9 @@ class Sqlite extends Driver
     }
 
     /**
-     * 刪除缓存
+     * 刪除快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return boolean
      */
     public function rm($name)
@@ -179,7 +179,7 @@ class Sqlite extends Driver
     }
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access public
      * @param string $tag 标签名
      * @return boolean

@@ -14,19 +14,19 @@ use think\Hook;
 use think\Request;
 
 /**
- * 插件执行默认控制器
+ * 插件執行默認控制器
  * Class AddonsController
  * @package think\addons
  */
 class Route extends Controller
 {
     /**
-     * 插件执行
+     * 插件執行
      */
     public function execute()
     {
         if (!empty($this->addon) && !empty($this->controller) && !empty($this->action)) {
-            // 取得类的命名空間
+            // 取得類的命名空間
             $class = get_addon_class($this->addon, 'controller', $this->controller);
             if (class_exists($class)) {
                 $model = new $class();

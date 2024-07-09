@@ -37,7 +37,7 @@
     display: block;
 }
 
-/* 图片對齐方式 */
+/* 圖片對齐方式 */
 .alignBar{
     float:right;
     margin-top: 5px;
@@ -94,7 +94,7 @@
 
 
 
-/* 远程图片樣式 */
+/* 远程圖片樣式 */
 #remote {
     z-index: 200;
 }
@@ -192,7 +192,7 @@
     overflow: hidden;
 }
 
-/* 上传图片 */
+/* 上傳圖片 */
 .tabbody #upload.panel {
     width: 0;
     height: 0;
@@ -632,7 +632,7 @@
 
 
 
-/* 图片管理樣式 */
+/* 圖片管理樣式 */
 #online {
     width: 100%;
     height: 336px;
@@ -706,7 +706,7 @@
 }
 
 
-/* 图片搜索樣式 */
+/* 圖片搜索樣式 */
 #search .searchBar {
     width: 100%;
     height: 30px;

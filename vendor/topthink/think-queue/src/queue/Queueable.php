@@ -14,14 +14,14 @@ namespace think\queue;
 trait Queueable
 {
 
-    /** @var string 队列名稱 */
+    /** @var string 對列名稱 */
     public $queue;
 
     /** @var integer 延迟時間 */
     public $delay;
 
     /**
-     * 設定队列名
+     * 設定對列名
      * @param $queue
      * @return $this
      */

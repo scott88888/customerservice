@@ -3452,7 +3452,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  zh_cn: {
-	    ios: '如要把应用程式加至主屏幕,請點擊%icon, 然后<strong>加至主屏幕</strong>',
+	    ios: '如要把應用程式加至主屏幕,請點擊%icon, 然後<strong>加至主屏幕</strong>',
 	    android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon <span class="ath-action-icon">icon</span>.</small>'
 	  },
 
@@ -4433,8 +4433,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.collapse = Collapse;
 
 	// TODO: 更好的 target 選擇方式
-	//       折叠的容器必须没有 border/padding 才能正常处理，否则動画会有一些小問題
-	//       寻找更好的未知高度 transition 動画解决方案，max-height 之类的就算了
+	//       折叠的容器必须没有 border/padding 才能正常處理，否則動画会有一些小問題
+	//       寻找更好的未知高度 transition 動画解决方案，max-height 之類的就算了
 
 
 /***/ },
@@ -5468,7 +5468,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UI.dropdown = Dropdown;
 
-	// TODO: 1. 处理連結 focus
+	// TODO: 1. 處理連結 focus
 	//       2. 增加 mouseenter / mouseleave 选项
 	//       3. 宽度适应
 
@@ -9477,7 +9477,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Popover;
 
-	// TODO: 允许使用者定义位置
+	// TODO: 允许使用者定義位置
 
 
 /***/ },
@@ -10039,11 +10039,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // press to toggle Toolbar
 	  toggleToolbar: true,
 
-	  // 从何处取得图片，img 可以使用 data-rel 指定大图
+	  // 从何处取得圖片，img 可以使用 data-rel 指定大圖
 	  target: 'img',
 
-	  // 微信 Webview 中调用微信的图片浏览器
-	  // 實現图片保存、分享好友、收藏图片等功能
+	  // 微信 Webview 中调用微信的圖片浏览器
+	  // 實現圖片保存、分享好友、收藏圖片等功能
 	  weChatImagePreview: true
 	};
 
@@ -10374,9 +10374,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = PureView;
 
 	// TODO: 1. 動画改进
-	//       2. 改变图片的时候恢复 Zoom
+	//       2. 改变圖片的时候恢复 Zoom
 	//       3. 选项
-	//       4. 图片高度問題：由于 PinchZoom 的原因，过高的图片如果設定看了滚動，则放大以后显示不全
+	//       4. 圖片高度問題：由于 PinchZoom 的原因，过高的圖片如果設定看了滚動，則放大以後显示不全
 
 
 /***/ },
@@ -10605,7 +10605,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = ScrollSpyNav;
 
 	// TODO: 1. 算法改进
-	//       2. 多级選單支持
+	//       2. 多级選單支援
 	//       3. smooth scroll pushState
 
 
@@ -10937,7 +10937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $optgroup = $element.find('optgroup');
 	  this.$originalOptions = this.$element.find('option');
 
-	  // 單选框使用 JS 禁用已经選擇的 option 以后，
+	  // 單选框使用 JS 禁用已经選擇的 option 以後，
 	  // 浏览器会重新选定第一个 option，但有一定延迟，致使 JS 取得 value 时返回 null
 	  if (!this.multiple && ($element.val() === null)) {
 	    this.$originalOptions.length &&
@@ -11225,11 +11225,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    icon: 'weibo'
 	  },
 	  // url          連結地址
-	  // title:”,     分享的文字内容(可选，默认為所在頁面的title)
-	  // appkey:”,    您申請的应用appkey,显示分享来源(可选)
-	  // pic:”,       分享图片的路径(可选)
+	  // title:”,     分享的文字内容(可选，默認為所在頁面的title)
+	  // appkey:”,    您申請的應用appkey,显示分享来源(可选)
+	  // pic:”,       分享圖片的路徑(可选)
 	  // ralateUid:”, 关联使用者的UID，分享微博会@该使用者(可选)
-	  // NOTE: 会自動抓取图片，不用指定 pic
+	  // NOTE: 会自動抓取圖片，不用指定 pic
 
 	  qq: {
 	    title: 'QQ 好友',
@@ -11237,11 +11237,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    icon: 'qq'
 	  },
 	  // url:,
-	  // title:'',    分享标题(可选)
-	  // pics:'',     分享图片的路径(可选)
+	  // title:'',    分享標題(可选)
+	  // pics:'',     分享圖片的路徑(可选)
 	  // summary:'',  分享摘要(可选)
 	  // site:'',     分享来源 如：腾讯網(可选)
-	  // desc: ''     发送给使用者的消息
+	  // desc: ''     發送给使用者的消息
 	  // NOTE: 经过测试，最终发给使用者的只有 url 和 desc
 
 	  qzone: {
@@ -11251,11 +11251,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  // http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=xxx&title=xxx&desc=&summary=&site=
 	  // url:,
-	  // title:'',    分享标题(可选)
-	  // desc:'',     默认分享理由(可选)
+	  // title:'',    分享標題(可选)
+	  // desc:'',     默認分享理由(可选)
 	  // summary:'',  分享摘要(可选)
 	  // site:'',     分享来源 如：腾讯網(可选)
-	  // pics:'',     分享图片的路径(可选)，不会自動抓取，多个图片用|分隔
+	  // pics:'',     分享圖片的路徑(可选)，不会自動抓取，多个圖片用|分隔
 
 	  tqq: {
 	    title: '腾讯微博',
@@ -11265,9 +11265,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // url=xx&title=&appkey=801cf76d3cfc44ada52ec13114e84a96
 	  // url
 	  // title
-	  // pic 多个图片用 | 分隔
+	  // pic 多个圖片用 | 分隔
 	  // appkey
-	  // NOTE: 不会自動抓取图片
+	  // NOTE: 不会自動抓取圖片
 
 	  wechat: {
 	    title: '微信',
@@ -11284,11 +11284,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  // http://widget.renren.com/dialog/share?resourceUrl=www&srcUrl=www&title=ww&description=xxx
 	  // 550 * 400
-	  // resourceUrl : '', // 分享的资源Url
-	  // srcUrl : '',	     // 分享的资源来源Url,
-	  //                   //   默认為header中的Referer,如果分享失敗可以调整此值為resourceUrl试试
-	  // pic : '',		 // 分享的主题图片，会自動抓取
-	  // title : '',		 // 分享的标题
+	  // resourceUrl : '', // 分享的資源Url
+	  // srcUrl : '',	     // 分享的資源来源Url,
+	  //                   //   默認為header中的Referer,如果分享失敗可以调整此值為resourceUrl试试
+	  // pic : '',		 // 分享的主题圖片，会自動抓取
+	  // title : '',		 // 分享的標題
 	  // description : ''	 // 分享的详细描述
 	  // NOTE: 经过测试，直接使用 url 参數即可
 
@@ -11301,7 +11301,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // 450 * 330
 	  // http://www.douban.com/share/service?bm=1&image=&href=xxx&updated=&name=
 	  // href 連結
-	  // name 标题
+	  // name 標題
 
 	  /* void (function() {
 	   var d = document, e = encodeURIComponent,
@@ -11433,7 +11433,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      !!allImages[i].src && imgSrc.push(encodeURIComponent(allImages[i].src));
 	    }
 
-	    this.pics = imgSrc; // 缓存图片
+	    this.pics = imgSrc; // 快取圖片
 	  }
 
 	  switch (sns) {
@@ -11441,16 +11441,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      shareData.desc = desc;
 	      shareData.site = this.options.via;
 	      shareData.pics = imgSrc.join('|');
-	      // TODO: 抓取图片多张
+	      // TODO: 抓取圖片多张
 	      break;
 	    case 'qq':
 	      shareData.desc = desc;
 	      shareData.site = this.options.via;
 	      shareData.pics = imgSrc[0];
-	      // 抓取一张图片
+	      // 抓取一张圖片
 	      break;
 	    case 'tqq':
-	      // 抓取图片多张
+	      // 抓取圖片多张
 	      shareData.pic = imgSrc.join('|');
 	      break;
 	  }
@@ -11472,7 +11472,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var query = [];
 	  for (var key in data) {
 	    if (data[key]) {
-	      // 避免 encode 图片分隔符 |
+	      // 避免 encode 圖片分隔符 |
 	      query.push(key.toString() + '=' + ((key === 'pic' || key === 'pics') ?
 	        data[key] : encodeURIComponent(data[key])));
 	    }
@@ -11543,7 +11543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 二维碼构造函數，主要用于绘制
-	 * @param  {Object} opt 传递参數
+	 * @param  {Object} opt 傳递参數
 	 * @return {String} qrcode
 	 * @constructor
 	 */
@@ -11553,7 +11553,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      text: opt
 	    };
 	  }
-	  // 設定默认参數
+	  // 設定默認参數
 	  this.options = $.extend({}, {
 	    text: "",
 	    render: "",
@@ -11771,7 +11771,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.errorCorrectLevel = errorCorrectLevel;
 	  this.modules = null;  // 二维矩阵，存放最终结果
 	  this.moduleCount = 0; // 矩阵大小
-	  this.dataCache = null; // 資料缓存
+	  this.dataCache = null; // 資料快取
 	  this.rsBlocks = null; // 版本資料訊息
 	  this.totalDataCount = -1; // 可使用的資料量
 	  this.data = data;
@@ -11797,7 +11797,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.createQrcode();
 	  },
 	  /**
-	   * 設定二位矩阵功能图形
+	   * 設定二位矩阵功能圖形
 	   * @param  {bool} test 表示是否在寻找最好掩膜阶段
 	   * @param  {num} maskPattern 掩膜的版本
 	   */
@@ -11824,9 +11824,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.mapData(this.dataCache, maskPattern);
 	  },
 	  /**
-	   * 設定二维碼的位置探测图形
-	   * @param  {num} row 探测图形的中心横坐标
-	   * @param  {num} col 探测图形的中心纵坐标
+	   * 設定二维碼的位置探测圖形
+	   * @param  {num} row 探测圖形的中心横坐标
+	   * @param  {num} col 探测圖形的中心纵坐标
 	   */
 	  setupPositionProbePattern: function(row, col) {
 
@@ -11876,7 +11876,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 設定定位图形
+	   * 設定定位圖形
 	   * @return {[type]} [description]
 	   */
 	  setupTimingPattern: function() {
@@ -11894,7 +11894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 設定矫正图形
+	   * 設定矫正圖形
 	   * @return {[type]} [description]
 	   */
 	  setupPositionAdjustPattern: function() {
@@ -12096,7 +12096,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 布置模块，构建最终訊息
+	   * 布置模組，构建最终訊息
 	   * @param  {} data
 	   * @param  {} maskPattern
 	   * @return {}
@@ -12181,13 +12181,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	//---------------------------------------------------------------------
-	// 工具类
+	// 工具類
 	//---------------------------------------------------------------------
 
 	var QRUtil = {
 
 	  /*
-	   每个版本矫正图形的位置
+	   每个版本矫正圖形的位置
 	   */
 	  PATTERN_POSITION_TABLE: [
 	    [],
@@ -12271,7 +12271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return digit;
 	  },
 	  /*
-	   取得版本對应的矫正图形位置
+	   取得版本對应的矫正圖形位置
 	   */
 	  getPatternPosition: function(typeNumber) {
 	    return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
@@ -12483,7 +12483,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// QRPolynomial 多项式
 	//---------------------------------------------------------------------
 	/**
-	 * 多项式类
+	 * 多项式類
 	 * @param {Array} num   系數
 	 * @param {num} shift a^shift
 	 */
@@ -12929,7 +12929,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.errorCorrectLevel = errorCorrectLevel;
 	  this.modules = null;  //二维矩阵，存放最终结果
 	  this.moduleCount = 0; //矩阵大小
-	  this.dataCache = null; //資料缓存
+	  this.dataCache = null; //資料快取
 	  this.rsBlocks = null; //版本資料訊息
 	  this.totalDataCount = -1; //可使用的資料量
 	  this.data = data;
@@ -12955,7 +12955,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.createQrcode();
 	  },
 	  /**
-	   * 設定二位矩阵功能图形
+	   * 設定二位矩阵功能圖形
 	   * @param  {bool} test 表示是否在寻找最好掩膜阶段
 	   * @param  {num} maskPattern 掩膜的版本
 	   */
@@ -12982,9 +12982,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.mapData(this.dataCache, maskPattern);
 	  },
 	  /**
-	   * 設定二维碼的位置探测图形
-	   * @param  {num} row 探测图形的中心横坐标
-	   * @param  {num} col 探测图形的中心纵坐标
+	   * 設定二维碼的位置探测圖形
+	   * @param  {num} row 探测圖形的中心横坐标
+	   * @param  {num} col 探测圖形的中心纵坐标
 	   */
 	  setupPositionProbePattern: function(row, col) {
 
@@ -13034,7 +13034,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 設定定位图形
+	   * 設定定位圖形
 	   * @return {[type]} [description]
 	   */
 	  setupTimingPattern: function() {
@@ -13052,7 +13052,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  /**
-	   * 設定矫正图形
+	   * 設定矫正圖形
 	   * @return {[type]} [description]
 	   */
 	  setupPositionAdjustPattern: function() {
@@ -13254,7 +13254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  },
 	  /**
-	   * 布置模块，构建最终訊息
+	   * 布置模組，构建最终訊息
 	   * @param  {} data
 	   * @param  {} maskPattern
 	   * @return {}
@@ -13339,13 +13339,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	//---------------------------------------------------------------------
-	// 工具类
+	// 工具類
 	//---------------------------------------------------------------------
 
 	var QRUtil = {
 
 	  /*
-	   每个版本矫正图形的位置
+	   每个版本矫正圖形的位置
 	   */
 	  PATTERN_POSITION_TABLE: [
 	    [],
@@ -13429,7 +13429,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return digit;
 	  },
 	  /*
-	   取得版本對应的矫正图形位置
+	   取得版本對应的矫正圖形位置
 	   */
 	  getPatternPosition: function(typeNumber) {
 	    return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
@@ -13641,7 +13641,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// QRPolynomial 多项式
 	//---------------------------------------------------------------------
 	/**
-	 * 多项式类
+	 * 多项式類
 	 * @param {Array} num   系數
 	 * @param {num} shift a^shift
 	 */
@@ -14505,8 +14505,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = UI.tabs = Tabs;
 
-	// TODO: 1. Ajax 支持
-	//       2. touch 事件处理逻辑优化
+	// TODO: 1. Ajax 支援
+	//       2. touch 事件處理逻辑优化
 
 
 /***/ },
@@ -14738,18 +14738,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Validator.validationMessages = {
 	  zh_CN: {
-	    valueMissing: '請填写（選擇）此字段',
+	    valueMissing: '請填寫（選擇）此字段',
 	    customError: {
-	      tooShort: '至少填写 %s 个字符',
+	      tooShort: '至少填寫 %s 个字符',
 	      checkedOverflow: '至多選擇 %s 项',
 	      checkedUnderflow: '至少選擇 %s 项'
 	    },
-	    patternMismatch: '請按照要求的格式填写',
-	    rangeOverflow: '請填写小于等于 %s 的值',
-	    rangeUnderflow: '請填写大于等于 %s 的值',
+	    patternMismatch: '請按照要求的格式填寫',
+	    rangeOverflow: '請填寫小于等于 %s 的值',
+	    rangeUnderflow: '請填寫大于等于 %s 的值',
 	    stepMismatch: '',
-	    tooLong: '至多填写 %s 个字符',
-	    typeMismatch: '請按照要求的类型填写'
+	    tooLong: '至多填寫 %s 个字符',
+	    typeMismatch: '請按照要求的類型填寫'
 	  }
 	};
 
@@ -14763,7 +14763,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	// TODO: 考虑表單元素不是 form 子元素的情形
-	// TODO: change/click/focusout 同时触发时处理重复
+	// TODO: change/click/focusout 同时触发时處理重复
 	// TODO: 显示提示訊息
 
 	Validator.prototype.init = function() {
@@ -16038,16 +16038,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  '?type=quick&file=api&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');
 
 	  // jQuery 中 `load` 事件触发有問題，動态設定 src 属性才会触发 `load` 事件
-	  // $mapApi0 = $('<script />', {src: 'xxx'}); 这样的写法在 Zepto.js 中则没有問題
+	  // $mapApi0 = $('<script />', {src: 'xxx'}); 这样的寫法在 Zepto.js 中則没有問題
 	}
 
 	function addBdMap() {
-	  // 如果使用 $ 選擇符，minify 以后会报错: $ is undefined
-	  // 即使传入 $ 也無效，改為使用原生方法
-	  // 这个函數作為 callback 会插入到 body 以后才执行，应该是 $ 引用錯誤导致
+	  // 如果使用 $ 選擇符，minify 以後会报错: $ is undefined
+	  // 即使傳入 $ 也無效，改為使用原生方法
+	  // 这个函數作為 callback 会插入到 body 以後才執行，应该是 $ 引用錯誤导致
 	  var content = document.querySelector('.am-map');
-	  var defaultLng = 116.331398; // 经度默认值
-	  var defaultLat = 39.897445;  // 纬度默认值
+	  var defaultLng = 116.331398; // 经度默認值
+	  var defaultLat = 39.897445;  // 纬度默認值
 	  var name = content.getAttribute('data-name');
 	  var address = content.getAttribute('data-address');
 	  var lng = content.getAttribute('data-longitude') || defaultLng;
@@ -16057,13 +16057,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  var map = new BMap.Map('bd-map');
 
-	  // 实例化一个地理坐标點
+	  // 實例化一个地理坐标點
 	  var point = new BMap.Point(lng, lat);
 
-	  // 设初始化地图, options: 3-18
+	  // 设初始化地圖, options: 3-18
 	  map.centerAndZoom(point, setZoom);
 
-	  // 新增地图缩放控件
+	  // 新增地圖缩放控件
 	  if (content.getAttribute('data-zoomControl')) {
 	    map.addControl(new BMap.ZoomControl());
 	  }
@@ -16082,19 +16082,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var opts = {
 	    width: 200,     // 訊息視窗宽度
 	    // height: 'auto',     // 訊息視窗高度
-	    title: name // 訊息視窗标题
+	    title: name // 訊息視窗標題
 	  };
 
 	  // 建立訊息視窗對象
 	  var infoWindow = new BMap.InfoWindow('地址：' + address, opts);
 
-	  // 建立地址解析器实例
+	  // 建立地址解析器實例
 	  var myGeo = new BMap.Geocoder();
 
 	  // 判断有没有使用经纬度
 	  if (lng == defaultLng && lat == defaultLat) {
-	    // 使用地址反解析来設定地图
-	    // 将地址解析结果显示在地图上,并调整地图视野
+	    // 使用地址反解析来設定地圖
+	    // 将地址解析结果显示在地圖上,並调整地圖视野
 	    myGeo.getPoint(address, function(point) {
 	      if (point) {
 	        map.centerAndZoom(point, setZoom);
@@ -16105,7 +16105,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, '');
 
 	  } else {
-	    // 使用经纬度来設定地图
+	    // 使用经纬度来設定地圖
 	    myGeo.getLocation(point, function(result) {
 	      map.centerAndZoom(point, setZoom);
 	      marker.setPosition(point);
@@ -16290,7 +16290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var offset = target.offset() || $(this).offset();
 	      var within = $this.offset();
 
-	      // 父类左边距
+	      // 父類左边距
 	      var listOffset;
 	      var parentLeft = parseInt($this.css('padding-left'));
 
@@ -16361,7 +16361,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  '<span class="am-icon-angle-up"></span>' +
 	  '<span class="am-navbar-label">更多</span></a></li>');
 
-	  // 如果有 Fix 的工具栏则設定 body 的 padding-bottom
+	  // 如果有 Fix 的工具栏則設定 body 的 padding-bottom
 	  if ($navBar.css('position') == 'fixed') {
 	    $body.addClass('am-with-fixed-navbar');
 	  }
@@ -16380,7 +16380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	      var $qrContainer = $qrModal.find('.am-modal-bd');
 
-	      // 判断上传自訂的二维碼没有，否则產生二维碼
+	      // 判断上傳自訂的二维碼没有，否則產生二维碼
 	      if (qrImg) {
 	        $qrContainer.html('<img src="' + qrImg + '"/>');
 	      } else {
@@ -16680,7 +16680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (res.checkResult.chooseWXPay) {
 	          wx.chooseWXPay(options);
 	        } else {
-	          alert('微信版本不支持支付接口或没有開啟！');
+	          alert('微信版本不支援支付接口或没有開啟！');
 	        }
 	      },
 	      fail: function() {

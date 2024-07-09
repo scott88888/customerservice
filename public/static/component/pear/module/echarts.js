@@ -15855,8 +15855,8 @@
           }
         },
         dataView: {
-          title: '資料视图',
-          lang: ['資料视图', '關閉', '刷新']
+          title: '資料视圖',
+          lang: ['資料视圖', '關閉', '刷新']
         },
         dataZoom: {
           title: {
@@ -15866,8 +15866,8 @@
         },
         magicType: {
           title: {
-            line: '切换為折线图',
-            bar: '切换為柱状图',
+            line: '切换為折线圖',
+            bar: '切换為柱状圖',
             stack: '切换為堆叠',
             tiled: '切换為平铺'
           }
@@ -15876,49 +15876,49 @@
           title: '还原'
         },
         saveAsImage: {
-          title: '保存為图片',
-          lang: ['右键另存為图片']
+          title: '保存為圖片',
+          lang: ['右键另存為圖片']
         }
       },
       series: {
         typeNames: {
-          pie: '饼图',
-          bar: '柱状图',
-          line: '折线图',
-          scatter: '散點图',
-          effectScatter: '涟漪散點图',
-          radar: '雷达图',
-          tree: '树图',
-          treemap: '矩形树图',
-          boxplot: '箱型图',
-          candlestick: 'K线图',
-          k: 'K线图',
-          heatmap: '热力图',
-          map: '地图',
-          parallel: '平行坐标图',
-          lines: '线图',
-          graph: '关系图',
-          sankey: '桑基图',
-          funnel: '漏斗图',
-          gauge: '仪表盘图',
-          pictorialBar: '象形柱图',
-          themeRiver: '主题河流图',
-          sunburst: '旭日图'
+          pie: '饼圖',
+          bar: '柱状圖',
+          line: '折线圖',
+          scatter: '散點圖',
+          effectScatter: '涟漪散點圖',
+          radar: '雷达圖',
+          tree: '树圖',
+          treemap: '矩形树圖',
+          boxplot: '箱型圖',
+          candlestick: 'K线圖',
+          k: 'K线圖',
+          heatmap: '热力圖',
+          map: '地圖',
+          parallel: '平行坐标圖',
+          lines: '线圖',
+          graph: '关系圖',
+          sankey: '桑基圖',
+          funnel: '漏斗圖',
+          gauge: '仪表盘圖',
+          pictorialBar: '象形柱圖',
+          themeRiver: '主题河流圖',
+          sunburst: '旭日圖'
         }
       },
       aria: {
         general: {
-          withTitle: '这是一个关于“{title}”的图表。',
-          withoutTitle: '这是一个图表，'
+          withTitle: '这是一个关于“{title}”的圖表。',
+          withoutTitle: '这是一个圖表，'
         },
         series: {
           single: {
             prefix: '',
-            withName: '图表类型是{seriesType}，表示{seriesName}。',
-            withoutName: '图表类型是{seriesType}。'
+            withName: '圖表類型是{seriesType}，表示{seriesName}。',
+            withoutName: '圖表類型是{seriesType}。'
           },
           multiple: {
-            prefix: '它由{seriesCount}个图表系列组成。',
+            prefix: '它由{seriesCount}个圖表系列组成。',
             withName: '第{seriesId}个系列是一个表示{seriesName}的{seriesType}，',
             withoutName: '第{seriesId}个系列是一个{seriesType}，',
             separator: {
@@ -24705,7 +24705,7 @@
 
         switch (cmd) {
           case CMD$3.M:
-            // moveTo 命令重新建立一个新的 subpath, 并且更新新的起點
+            // moveTo 命令重新建立一个新的 subpath, 並且更新新的起點
             // 在 closePath 的时候使用
             x0 = data[i++];
             y0 = data[i++];
@@ -24746,7 +24746,7 @@
             y1 = Math.sin(theta) * ry + cy; // 不是直接使用 arc 命令
 
             if (i <= 1) {
-              // 第一个命令起點还未定义
+              // 第一个命令起點还未定義
               x0 = x1;
               y0 = y1;
             } // zr 使用scale来模拟椭圆, 这里也對x做一定的缩放
@@ -43613,10 +43613,10 @@
         zlevel: 0,
         z: 2,
         legendHoverLink: true,
-        // 默认全局居中
+        // 默認全局居中
         center: ['50%', '50%'],
         radius: [0, '75%'],
-        // 默认顺时針
+        // 默認顺时針
         clockwise: true,
         startAngle: 90,
         // 最小角度改為0
@@ -43626,9 +43626,9 @@
         minShowLabelAngle: 0,
         // 选中时扇区偏移量
         selectedOffset: 10,
-        // 選擇模式，默认關閉，可选single，multiple
+        // 選擇模式，默認關閉，可选single，multiple
         // selectedMode: false,
-        // 南丁格尔玫瑰图模式，'radius'（半径） | 'area'（面积）
+        // 南丁格尔玫瑰圖模式，'radius'（半徑） | 'area'（面积）
         // roseType: null,
         percentPrecision: 2,
         // If still show when all data zero.
@@ -43656,9 +43656,9 @@
           // Works only position is 'outer' and alignTo is not 'edge'.
           bleedMargin: 10,
           // Distance between text and label line.
-          distanceToLabelLine: 5 // formatter: 标签文本格式器，同Tooltip.formatter，不支持异步回调
-          // 默认使用全局文本樣式，详见TEXTSTYLE
-          // distance: 当position為inner时有效，為label位置到圆心的距离与圆半径(环状图為内外半径和)的比例系數
+          distanceToLabelLine: 5 // formatter: 标签文字格式器，同Tooltip.formatter，不支援异步回调
+          // 默認使用全局文字樣式，详见TEXTSTYLE
+          // distance: 当position為inner时有效，為label位置到圆心的距离与圆半徑(环状圖為内外半徑和)的比例系數
 
         },
         // Enabled when label.normal.position is 'outer'
@@ -43763,7 +43763,7 @@
         z: 2,
         legendHoverLink: true,
         symbolSize: 10,
-        // symbolRotate: null,  // 图形旋转控制
+        // symbolRotate: null,  // 圖形旋转控制
         large: false,
         // Available when large is true
         largeThreshold: 2000,
@@ -49494,9 +49494,9 @@
       MapSeries.dependencies = ['geo'];
       MapSeries.layoutMode = 'box';
       MapSeries.defaultOption = {
-        // 一级层叠
+        // 一级層叠
         zlevel: 0,
-        // 二级层叠
+        // 二级層叠
         z: 2,
         coordinateSystem: 'geo',
         // map should be explicitly specified since ec3.
@@ -53247,7 +53247,7 @@
 
         if (!containerGroup) {
           // FIXME
-          // 加一层containerGroup是為了clip，但是现在clip功能并没有實現。
+          // 加一層containerGroup是為了clip，但是现在clip功能並没有實現。
           containerGroup = this._containerGroup = new Group$1();
 
           this._initEvents(containerGroup);
@@ -58574,7 +58574,7 @@
       GaugeSeriesModel.defaultOption = {
         zlevel: 0,
         z: 2,
-        // 默认全局居中
+        // 默認全局居中
         center: ['50%', '50%'],
         legendHoverLink: true,
         radius: '75%',
@@ -58585,11 +58585,11 @@
         min: 0,
         // 最大值
         max: 100,
-        // 分割段數，默认為10
+        // 分割段數，默認為10
         splitNumber: 10,
         // 坐标轴线
         axisLine: {
-          // 默认显示，属性show控制显示与否
+          // 默認显示，属性show控制显示与否
           show: true,
           roundCap: false,
           lineStyle: {
@@ -58599,7 +58599,7 @@
         },
         // 坐标轴线
         progress: {
-          // 默认显示，属性show控制显示与否
+          // 默認显示，属性show控制显示与否
           show: false,
           overlap: true,
           width: 10,
@@ -58608,7 +58608,7 @@
         },
         // 分隔线
         splitLine: {
-          // 默认显示，属性show控制显示与否
+          // 默認显示，属性show控制显示与否
           show: true,
           // 属性length控制线長
           length: 10,
@@ -58622,7 +58622,7 @@
         },
         // 坐标轴小标记
         axisTick: {
-          // 属性show控制显示与否，默认不显示
+          // 属性show控制显示与否，默認不显示
           show: true,
           // 每份split细分多少段
           splitNumber: 5,
@@ -58668,7 +58668,7 @@
           show: true,
           // x, y，單位px
           offsetCenter: [0, '20%'],
-          // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
+          // 其余属性默認使用全局文字樣式，详见TEXTSTYLE
           color: '#464646',
           fontSize: 16,
           valueAnimation: false
@@ -58684,7 +58684,7 @@
           // x, y，單位px
           offsetCenter: [0, '40%'],
           // formatter: null,
-          // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
+          // 其余属性默認使用全局文字樣式，详见TEXTSTYLE
           color: '#464646',
           fontSize: 30,
           fontWeight: 'bold',
@@ -58933,7 +58933,7 @@
         bottom: 60,
         // width: {totalWidth} - left - right,
         // height: {totalHeight} - top - bottom,
-        // 默认取資料最小最大值
+        // 默認取資料最小最大值
         // min: 0,
         // max: 100,
         minSize: '0%',
@@ -58944,7 +58944,7 @@
         funnelAlign: 'center',
         label: {
           show: true,
-          position: 'outer' // formatter: 标签文本格式器，同Tooltip.formatter，不支持异步回调
+          position: 'outer' // formatter: 标签文字格式器，同Tooltip.formatter，不支援异步回调
 
         },
         labelLine: {
@@ -64237,9 +64237,9 @@
         // polarIndex: 0,
         // Geo coordinate system
         // geoIndex: 0,
-        // symbol: null,        // 图形类型
-        symbolSize: 10 // 图形大小，半宽（半径）参數，当图形為方向或菱形则总宽度為symbolSize * 2
-        // symbolRotate: null,  // 图形旋转控制
+        // symbol: null,        // 圖形類型
+        symbolSize: 10 // 圖形大小，半宽（半徑）参數，当圖形為方向或菱形則总宽度為symbolSize * 2
+        // symbolRotate: null,  // 圖形旋转控制
         // itemStyle: {
         //     opacity: 1
         // }
@@ -65397,7 +65397,7 @@
         label: {
           show: false,
           position: 'end' // distance: 5,
-          // formatter: 标签文本格式器，同Tooltip.formatter，不支持异步回调
+          // formatter: 标签文字格式器，同Tooltip.formatter，不支援异步回调
 
         },
         lineStyle: {
@@ -67732,10 +67732,10 @@
       SunburstSeriesModel.defaultOption = {
         zlevel: 0,
         z: 2,
-        // 默认全局居中
+        // 默認全局居中
         center: ['50%', '50%'],
         radius: [0, '75%'],
-        // 默认顺时針
+        // 默認顺时針
         clockwise: true,
         startAngle: 90,
         // 最小角度改為0
@@ -81692,7 +81692,7 @@
           interval: 'auto',
           rotate: 0,
           // formatter: null,
-          // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
+          // 其余属性默認使用全局文字樣式，详见TEXTSTYLE
           color: '#A4B1D7'
         },
         itemStyle: {
@@ -81735,7 +81735,7 @@
         emphasis: {
           label: {
             show: true,
-            // 其余属性默认使用全局文本樣式，详见TEXTSTYLE
+            // 其余属性默認使用全局文字樣式，详见TEXTSTYLE
             color: '#6f778d'
           },
           itemStyle: {
@@ -86461,7 +86461,7 @@
         var handleLabels = displaybles.handleLabels;
         var orient = this._orient;
         var labelTexts = ['', '']; // FIXME
-        // date型，支持formatter，autoformatter（ec2 date.getAutoFormatter）
+        // date型，支援formatter，autoformatter（ec2 date.getAutoFormatter）
 
         if (dataZoomModel.get('showDetail')) {
           var axisProxy = dataZoomModel.findRepresentativeAxisProxy();
@@ -86705,7 +86705,7 @@
 
     function getOtherDim(thisDim) {
       // FIXME
-      // 这个逻辑和getOtherAxis里一致，但是写在这里是否不好
+      // 这个逻辑和getOtherAxis里一致，但是寫在这里是否不好
       var map = {
         x: 'y',
         y: 'x',
@@ -89406,7 +89406,7 @@
       }
 
       function getSeriesTypeName(type) {
-        return ecModel.getLocaleModel().get(['series', 'typeNames'])[type] || '自訂图';
+        return ecModel.getLocaleModel().get(['series', 'typeNames'])[type] || '自訂圖';
       }
     }
 

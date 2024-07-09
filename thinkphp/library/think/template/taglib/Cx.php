@@ -14,7 +14,7 @@ namespace think\template\taglib;
 use think\template\TagLib;
 
 /**
- * CX标签库解析类
+ * CX标签庫解析類
  * @category   Think
  * @package  Think
  * @subpackage  Driver.Taglib
@@ -23,9 +23,9 @@ use think\template\TagLib;
 class Cx extends Taglib
 {
 
-    // 标签定义
+    // 标签定義
     protected $tags = [
-        // 标签定义： attr 属性列表 close 是否闭合（0 或者1 默认1） alias 标签别名 level 嵌套层次
+        // 标签定義： attr 属性列表 close 是否闭合（0 或者1 默認1） alias 标签别名 level 嵌套層次
         'php'        => ['attr' => ''],
         'volist'     => ['attr' => 'name,id,offset,length,key,mod', 'alias' => 'iterate'],
         'foreach'    => ['attr' => 'name,id,item,key,offset,length,mod', 'expression' => true],
@@ -149,7 +149,7 @@ class Cx extends Taglib
         $length = !empty($tag['length']) && is_numeric($tag['length']) ? intval($tag['length']) : 'null';
 
         $parseStr = '<?php ';
-        // 支持用函數传數组
+        // 支援用函數傳數组
         if (':' == substr($name, 0, 1)) {
             $var  = '$_' . uniqid();
             $name = $this->autoBuildVar($name);
@@ -205,7 +205,7 @@ class Cx extends Taglib
      * {elseif condition="$a eq 2" /}
      * {else /}
      * {/if}
-     * 表达式支持 eq neq gt egt lt elt == > >= < <= or and || &&
+     * 表达式支援 eq neq gt egt lt elt == > >= < <= or and || &&
      * @access public
      * @param array $tag 标签属性
      * @param string $content 标签内容
@@ -316,7 +316,7 @@ class Cx extends Taglib
 
     /**
      * compare标签解析
-     * 用于值的比较 支持 eq neq gt lt egt elt heq nheq 默认是eq
+     * 用于值的比较 支援 eq neq gt lt egt elt heq nheq 默認是eq
      * 格式： {compare name="" type="eq" value="" }content{/compare}
      * @access public
      * @param array $tag 标签属性
@@ -327,7 +327,7 @@ class Cx extends Taglib
     {
         $name  = $tag['name'];
         $value = $tag['value'];
-        $type  = isset($tag['type']) ? $tag['type'] : 'eq'; // 比较类型
+        $type  = isset($tag['type']) ? $tag['type'] : 'eq'; // 比较類型
         $name  = $this->autoBuildVar($name);
         $flag  = substr($value, 0, 1);
         if ('$' == $flag || ':' == $flag) {
@@ -350,7 +350,7 @@ class Cx extends Taglib
 
     /**
      * range标签解析
-     * 如果某个变量存在于某个范围 则输出内容 type= in 表示在范围内 否则表示在范围外
+     * 如果某个变量存在于某个範圍 則输出内容 type= in 表示在範圍内 否則表示在範圍外
      * 格式： {range name="var|function"  value="val" type='in|notin' }content{/range}
      * example: {range name="a"  value="1,2,3" type='in' }content{/range}
      * @access public
@@ -362,7 +362,7 @@ class Cx extends Taglib
     {
         $name  = $tag['name'];
         $value = $tag['value'];
-        $type  = isset($tag['type']) ? $tag['type'] : 'in'; // 比较类型
+        $type  = isset($tag['type']) ? $tag['type'] : 'in'; // 比较類型
 
         $name = $this->autoBuildVar($name);
         $flag = substr($value, 0, 1);
@@ -386,7 +386,7 @@ class Cx extends Taglib
 
     /**
      * present标签解析
-     * 如果某个变量已经設定 则输出内容
+     * 如果某个变量已经設定 則输出内容
      * 格式： {present name="" }content{/present}
      * @access public
      * @param array $tag 标签属性
@@ -403,7 +403,7 @@ class Cx extends Taglib
 
     /**
      * notpresent标签解析
-     * 如果某个变量没有設定，则输出内容
+     * 如果某个变量没有設定，則输出内容
      * 格式： {notpresent name="" }content{/notpresent}
      * @access public
      * @param array $tag 标签属性
@@ -420,7 +420,7 @@ class Cx extends Taglib
 
     /**
      * empty标签解析
-     * 如果某个变量為empty 则输出内容
+     * 如果某个变量為empty 則输出内容
      * 格式： {empty name="" }content{/empty}
      * @access public
      * @param array $tag 标签属性
@@ -437,7 +437,7 @@ class Cx extends Taglib
 
     /**
      * notempty标签解析
-     * 如果某个变量不為empty 则输出内容
+     * 如果某个变量不為empty 則输出内容
      * 格式： {notempty name="" }content{/notempty}
      * @access public
      * @param array $tag 标签属性
@@ -453,8 +453,8 @@ class Cx extends Taglib
     }
 
     /**
-     * 判断是否已经定义了该常量
-     * {defined name='TXT'}已定义{/defined}
+     * 判断是否已经定義了该常量
+     * {defined name='TXT'}已定義{/defined}
      * @param array $tag
      * @param string $content
      * @return string
@@ -467,8 +467,8 @@ class Cx extends Taglib
     }
 
     /**
-     * 判断是否没有定义了该常量
-     * {notdefined name='TXT'}已定义{/notdefined}
+     * 判断是否没有定義了该常量
+     * {notdefined name='TXT'}已定義{/notdefined}
      * @param array $tag
      * @param string $content
      * @return string
@@ -494,7 +494,7 @@ class Cx extends Taglib
         $type     = isset($tag['type']) ? strtolower($tag['type']) : '';
         $parseStr = '';
         $endStr   = '';
-        // 判断是否存在加载條件 允许使用函數判断(默认為isset)
+        // 判断是否存在載入條件 允许使用函數判断(默認為isset)
         if (isset($tag['value'])) {
             $name = $tag['value'];
             $name = $this->autoBuildVar($name);
@@ -524,7 +524,7 @@ class Cx extends Taglib
 
     /**
      * assign标签解析
-     * 在模板中给某个变量赋值 支持变量赋值
+     * 在模板中给某个变量赋值 支援变量赋值
      * 格式： {assign name="" value="" /}
      * @access public
      * @param array $tag 标签属性
@@ -546,7 +546,7 @@ class Cx extends Taglib
 
     /**
      * define标签解析
-     * 在模板中定义常量 支持变量赋值
+     * 在模板中定義常量 支援变量赋值
      * 格式： {define name="" value="" /}
      * @access public
      * @param array $tag 标签属性
@@ -579,13 +579,13 @@ class Cx extends Taglib
      */
     public function tagFor($tag, $content)
     {
-        //設定默认值
+        //設定默認值
         $start      = 0;
         $end        = 0;
         $step       = 1;
         $comparison = 'lt';
         $name       = 'i';
-        $rand       = rand(); //新增随机數，防止嵌套变量冲突
+        $rand       = rand(); //新增随機數，防止嵌套变量冲突
         //取得属性
         foreach ($tag as $key => $value) {
             $value = trim($value);
@@ -622,7 +622,7 @@ class Cx extends Taglib
 
     /**
      * url函數的tag标签
-     * 格式：{url link="模块/控制器/方法" vars="参數" suffix="true或者false 是否带有后缀" domain="true或者false 是否携带域名" /}
+     * 格式：{url link="模組/控制器/方法" vars="参數" suffix="true或者false 是否带有後缀" domain="true或者false 是否携带域名" /}
      * @access public
      * @param array $tag 标签属性
      * @param string $content 标签内容

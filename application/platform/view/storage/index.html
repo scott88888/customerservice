@@ -68,10 +68,10 @@
 
 <form method="post" return="{:url('platform/storage/index')}" action="{:url('platform/storage/index')}" id="storage" class="auto-submit-form auto-form">
     <div class="card-body">
-        <div style="margin-bottom: 24px;"><b>上传配置（存储客服系统上传的图片或文件）</b></div>
+        <div style="margin-bottom: 24px;"><b>上傳配置（存储客服系统上傳的圖片或文件）</b></div>
             <div class="form-group row">
                 <div class="form-group-label col-sm-4 text-right">
-                    <label class="col-form-label">限制图片大小（MB）</label>
+                    <label class="col-form-label">限制圖片大小（MB）</label>
                 </div>
                 <div class="col-sm-6">
                     <input class="form-control mb-3" name="image_size"
@@ -91,12 +91,12 @@
 
             <div class="form-group row">
                 <div class="form-group-label col-sm-4 text-right">
-                    <label class="col-form-label">上传存储方式</label>
+                    <label class="col-form-label">上傳存储方式</label>
                 </div>
                 <div class="col-sm-6">
                     <select class="form-control" name="storage_type" v-model="storage_type">
                         {if condition="in_array('Local',$permission)"}
-                        <option value="1">無（当前服务器）</option>
+                        <option value="1">無（當前服务器）</option>
                         {/if}
                         {if condition="in_array('AliOss',$permission)"}
                         <option value="2">阿里云OSS</option>

@@ -21,15 +21,15 @@ class Php
 {
     // 模板引擎参數
     protected $config = [
-        // 视图基础目录（集中式）
+        // 视圖基础目錄（集中式）
         'view_base'   => '',
-        // 模板起始路径
+        // 模板起始路徑
         'view_path'   => '',
-        // 模板文件后缀
+        // 模板文件後缀
         'view_suffix' => 'php',
         // 模板文件名分隔符
         'view_depr'   => DS,
-        // 默认模板渲染规则 1 解析為小写+下划线 2 全部转换小写
+        // 默認模板渲染規則 1 解析為小寫+下划线 2 全部轉換小寫
         'auto_rule'   => 1,
     ];
     protected $template;
@@ -43,7 +43,7 @@ class Php
     /**
      * 检测是否存在模板文件
      * @access public
-     * @param string $template 模板文件或者模板规则
+     * @param string $template 模板文件或者模板規則
      * @return bool
      */
     public function exists($template)
@@ -74,7 +74,7 @@ class Php
 //            throw new TemplateNotFoundException('template not exists:' . $template, $template);
         }
         $this->template = $template;
-        // 记录视图訊息
+        // 记录视圖訊息
         App::$debug && Log::record('[ VIEW ] ' . $template . ' [ ' . var_export(array_keys($data), true) . ' ]', 'info');
 
         extract($data, EXTR_OVERWRITE);
@@ -99,7 +99,7 @@ class Php
     /**
      * 自動定位模板文件
      * @access private
-     * @param string $template 模板文件规则
+     * @param string $template 模板文件規則
      * @return string
      */
     private function parseTemplate($template)
@@ -109,13 +109,13 @@ class Php
         }
 
         $request = Request::instance();
-        // 取得视图根目录
+        // 取得视圖根目錄
         if (strpos($template, '@')) {
-            // 跨模块调用
+            // 跨模組调用
             list($module, $template) = explode('@', $template);
         }
         if ($this->config['view_base']) {
-            // 基础视图目录
+            // 基础视圖目錄
             $module = isset($module) ? $module : $request->module();
             $path   = $this->config['view_base'] . ($module ? $module . DS : '');
         } else {
@@ -128,7 +128,7 @@ class Php
             $controller = Loader::parseName($request->controller());
             if ($controller) {
                 if ('' == $template) {
-                    // 如果模板文件名為空 按照默认规则定位
+                    // 如果模板文件名為空 按照默認規則定位
                     $template = str_replace('.', DS, $controller) . $depr . (1 == $this->config['auto_rule'] ? Loader::parseName($request->action(true)) : $request->action());
                 } elseif (false === strpos($template, $depr)) {
                     $template = str_replace('.', DS, $controller) . $depr . $template;

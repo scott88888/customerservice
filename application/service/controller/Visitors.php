@@ -9,7 +9,7 @@ use think\File;
 
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Visitors extends Base
 {

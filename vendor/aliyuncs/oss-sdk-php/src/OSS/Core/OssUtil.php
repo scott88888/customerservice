@@ -5,7 +5,7 @@ namespace OSS\Core;
 /**
  * Class OssUtil
  *
- * Oss工具类，主要供OssClient使用，使用者也可以使用本类进行返回结果的格式化
+ * Oss工具類，主要供OssClient使用，使用者也可以使用本類进行返回结果的格式化
  *
  * @package OSS
  */
@@ -116,8 +116,8 @@ class OssUtil
     /**
      * 检验bucket名稱是否合法
      * bucket的命名规范：
-     * 1. 只能包括小写字母，數字
-     * 2. 必须以小写字母或者數字開头
+     * 1. 只能包括小寫字母，數字
+     * 2. 必须以小寫字母或者數字開头
      * 3. 長度必须在3-63字节之间
      *
      * @param string $bucket Bucket名稱
@@ -135,7 +135,7 @@ class OssUtil
     /**
      * 检验object名稱是否合法
      * object命名规范:
-     * 1. 规则長度必须在1-1023字节之间
+     * 1. 規則長度必须在1-1023字节之间
      * 2. 使用UTF-8编碼
      * 3. 不能以 "/" "\\"開头
      *
@@ -199,7 +199,7 @@ class OssUtil
     }
 
     /**
-     * 檢查上传文件的内容是否合法
+     * 檢查上傳文件的内容是否合法
      *
      * @param $content string
      * @throws OssException
@@ -318,7 +318,7 @@ BBB;
     }
 
     /**
-     * 检测是否windows系统，因為windows系统默认编碼為GBK
+     * 检测是否windows系统，因為windows系统默認编碼為GBK
      *
      * @return bool
      */
@@ -328,7 +328,7 @@ BBB;
     }
 
     /**
-     * 主要是由于windows系统编碼是gbk，遇到中文时候，如果不进行转换处理会出现找不到文件的問題
+     * 主要是由于windows系统编碼是gbk，遇到中文时候，如果不进行轉換處理会出现找不到文件的問題
      *
      * @param $file_path
      * @return string
@@ -396,7 +396,7 @@ BBB;
     }
 
     /**
-     * 读取目录
+     * 读取目錄
      *
      * @param string $dir
      * @param string $exclude

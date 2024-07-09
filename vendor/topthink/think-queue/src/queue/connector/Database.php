@@ -120,7 +120,7 @@ class Database extends Connector
     }
 
     /**
-     * 标记任务正在执行.
+     * 标记任务正在執行.
      *
      * @param  string $id
      * @return void

@@ -12,7 +12,7 @@ use think\Model;
 trait SoftDelete
 {
     /**
-     * 判断当前实例是否被软刪除
+     * 判断當前實例是否被软刪除
      * @access public
      * @return boolean
      */
@@ -54,7 +54,7 @@ trait SoftDelete
     }
 
     /**
-     * 刪除当前的记录
+     * 刪除當前的记录
      * @access public
      * @param bool $force 是否强制刪除
      * @return integer
@@ -71,7 +71,7 @@ trait SoftDelete
             $this->data[$name] = $this->autoWriteTimestamp($name);
             $result            = $this->isUpdate()->save();
         } else {
-            // 强制刪除当前模型資料
+            // 强制刪除當前模型資料
             $result = $this->getQuery()->where($this->getWhere())->delete();
         }
 
@@ -101,7 +101,7 @@ trait SoftDelete
     /**
      * 刪除记录
      * @access public
-     * @param mixed $data  主键列表(支持闭包查詢條件)
+     * @param mixed $data  主键列表(支援闭包查詢條件)
      * @param bool  $force 是否强制刪除
      * @return integer 成功刪除的记录數
      */
@@ -159,7 +159,7 @@ trait SoftDelete
     }
 
     /**
-     * 查詢默认不包含软刪除資料
+     * 查詢默認不包含软刪除資料
      * @access protected
      * @param Query $query 查詢對象
      * @return Query
@@ -173,7 +173,7 @@ trait SoftDelete
     /**
      * 取得软刪除字段
      * @access public
-     * @param bool $read 是否查詢操作(写操作的时候会自動去掉表别名)
+     * @param bool $read 是否查詢操作(寫操作的时候会自動去掉表别名)
      * @return string
      */
     protected function getDeleteTimeField($read = false)

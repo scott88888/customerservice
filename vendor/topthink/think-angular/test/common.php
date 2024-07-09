@@ -12,11 +12,11 @@ require '../src/Angular.php';
 
 // 配置
 $config = [
-    'debug'            => true, // 是否開啟调试, 開啟调试会实时產生缓存
-    'tpl_path'         => './view/', // 模板根目录
-    'tpl_suffix'       => '.html', // 模板后缀
-    'tpl_cache_path'   => './cache/', // 模板缓存目录
-    'tpl_cache_suffix' => '.php', // 模板后缀
+    'debug'            => true, // 是否開啟调试, 開啟调试会实时產生快取
+    'tpl_path'         => './view/', // 模板根目錄
+    'tpl_suffix'       => '.html', // 模板後缀
+    'tpl_cache_path'   => './cache/', // 模板快取目錄
+    'tpl_cache_suffix' => '.php', // 模板後缀
     'attr'             => 'php-', // 标签前缀
     'max_tag'          => 10000, // 标签的最大解析次數
 ];
@@ -54,7 +54,7 @@ function load($key)
     return include './data/' . $key . '.php';
 }
 
-// 实例化
+// 實例化
 $view = new Angular($config);
 
 // 导航

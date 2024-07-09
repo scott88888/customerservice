@@ -32,7 +32,7 @@
 	50%{ -webkit-transform: scale(1.1);  transform: scale(1.1);}
 	100%{ -webkit-transform: scale(1);  transform: scale(1);}
 }
-/* 顶部向下渐显 */
+/* 頂部向下渐显 */
 @-webkit-keyframes fadeInUp{
 	0%{opacity: 0; -webkit-transform: translate3d(0,-50px,0); transform: translate3d(0,-50px,0);}
 	to{opacity:1; -webkit-transform: none;  transform: none;}
@@ -61,7 +61,7 @@
 	50% {transform: scale3d(1.05,1.05,1.05);}
 	to {transform: scaleX(1);}
 }
-/* 顶部向下放大渐显 */
+/* 頂部向下放大渐显 */
 @-webkit-keyframes zoomInDown{
 	0% {opacity: 0;-webkit-transform: scale3d(.5,.5,.5) translate3d(0,-150px,0); -webkit-animation-timing-function: cubic-bezier(.55,.055,.675,.19)}
 	60% {opacity: 1;-webkit-transform: scale3d(1,1,1) translate3d(0,60px,0); -webkit-animation-timing-function: cubic-bezier(.175,.885,.32,1)}
@@ -70,7 +70,7 @@
 	0% {opacity: 0;transform: scale3d(.5,.5,.5) translate3d(0,-150px,0); animation-timing-function: cubic-bezier(.55,.055,.675,.19)}
 	60% {opacity: 1;transform: scale3d(1,1,1) translate3d(0,60px,0); animation-timing-function: cubic-bezier(.175,.885,.32,1)}
 }
-/* 顶部向下放大渐显 */
+/* 頂部向下放大渐显 */
 @-webkit-keyframes zoomInDownSmall{
 	0% {opacity: 0;-webkit-transform: scale3d(.5,.5,.5) translate3d(0,-50px,0); -webkit-animation-timing-function: cubic-bezier(.55,.055,.675,.19)}
 	60% {opacity: 1;-webkit-transform: scale3d(1,1,1) translate3d(0,10px,0); -webkit-animation-timing-function: cubic-bezier(.175,.885,.32,1)}

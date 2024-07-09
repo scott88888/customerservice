@@ -1,7 +1,7 @@
 <?php
 defined('UEDITORPATH') OR exit('No direct script access allowed');
 
-/* 在后台設定的【完整】模式下，工具栏上的所有的功能按钮和下拉框 */
+/* 在後台設定的【完整】模式下，工具栏上的所有的功能按钮和下拉框 */
 
 return '
   "undo","redo","|"

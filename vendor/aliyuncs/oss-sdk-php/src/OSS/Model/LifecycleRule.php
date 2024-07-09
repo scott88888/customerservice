@@ -12,7 +12,7 @@ namespace OSS\Model;
 class LifecycleRule
 {
     /**
-     * 得到规则ID
+     * 得到規則ID
      *
      * @return string
      */
@@ -22,7 +22,7 @@ class LifecycleRule
     }
 
     /**
-     * @param string $id 规则ID
+     * @param string $id 規則ID
      */
     public function setId($id)
     {
@@ -50,7 +50,7 @@ class LifecycleRule
     }
 
     /**
-     * Lifecycle规则的狀態
+     * Lifecycle規則的狀態
      *
      * @return string
      */
@@ -60,7 +60,7 @@ class LifecycleRule
     }
 
     /**
-     * 設定Lifecycle规则狀態
+     * 設定Lifecycle規則狀態
      *
      * @param string $status
      */
@@ -90,9 +90,9 @@ class LifecycleRule
     /**
      * LifecycleRule constructor.
      *
-     * @param string $id 规则ID
+     * @param string $id 規則ID
      * @param string $prefix 文件前缀
-     * @param string $status 规则狀態，可选[self::LIFECYCLE_STATUS_ENABLED, self::LIFECYCLE_STATUS_DISABLED]
+     * @param string $status 規則狀態，可选[self::LIFECYCLE_STATUS_ENABLED, self::LIFECYCLE_STATUS_DISABLED]
      * @param LifecycleAction[] $actions
      */
     public function __construct($id, $prefix, $status, $actions)

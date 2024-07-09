@@ -23,13 +23,13 @@ use think\mongo\Query;
 
 class Builder
 {
-    // connection對象实例
+    // connection對象實例
     protected $connection;
-    // 查詢對象实例
+    // 查詢對象實例
     protected $query;
     // 查詢参數
     protected $options = [];
-    // 最后插入ID
+    // 最後插入ID
     protected $insertId = [];
     // 查詢表达式
     protected $exp = ['<>' => 'ne', 'neq' => 'ne', '=' => 'eq', '>' => 'gt', '>=' => 'gte', '<' => 'lt', '<=' => 'lte', 'in' => 'in', 'not in' => 'nin', 'nin' => 'nin', 'mod' => 'mod', 'exists' => 'exists', 'regex' => 'regex', 'type' => 'type', 'all' => 'all', '> time' => '> time', '< time' => '< time', 'between' => 'between', 'not between' => 'not between', 'between time' => 'between time', 'not between time' => 'not between time', 'notbetween time' => 'not between time', 'like' => 'like', 'near' => 'near'];
@@ -37,8 +37,8 @@ class Builder
     /**
      * 架构函數
      * @access public
-     * @param Connection    $connection 資料库連結對象实例
-     * @param Query         $query 資料库查詢對象实例
+     * @param Connection    $connection 資料庫連結對象實例
+     * @param Query         $query 資料庫查詢對象實例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -177,7 +177,7 @@ class Builder
     protected function parseWhereItem($field, $val)
     {
         $key = $field ? $this->parseKey($field) : '';
-        // 查詢规则和條件
+        // 查詢規則和條件
         if (!is_array($val)) {
             $val = ['=', $val];
         }
@@ -225,20 +225,20 @@ class Builder
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$gte' => $this->parseValue($value[0], $key), '$lte' => $this->parseValue($value[1], $key)];
         } elseif ('not between' == $exp) {
-            // 范围查詢
+            // 範圍查詢
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$lt' => $this->parseValue($value[0], $key), '$gt' => $this->parseValue($value[1], $key)];
         } elseif ('exists' == $exp) {
             // 字段是否存在
             $query[$key] = ['$exists' => (bool) $value];
         } elseif ('type' == $exp) {
-            // 类型查詢
+            // 類型查詢
             $query[$key] = ['$type' => intval($value)];
         } elseif ('exp' == $exp) {
             // 表达式查詢
             $query['$where'] = $value instanceof Javascript ? $value : new Javascript($value);
         } elseif ('like' == $exp) {
-            // 模糊查詢 采用正则方式
+            // 模糊查詢 采用正則方式
             $query[$key] = $value instanceof Regex ? $value : new Regex($value, 'i');
         } elseif (in_array($exp, ['nin', 'in'])) {
             // IN 查詢
@@ -258,7 +258,7 @@ class Builder
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$gte' => $this->parseDateTime($value[0], $field), '$lte' => $this->parseDateTime($value[1], $field)];
         } elseif ('not between time' == $exp) {
-            // 范围查詢
+            // 範圍查詢
             $value       = is_array($value) ? $value : explode(',', $value);
             $query[$key] = ['$lt' => $this->parseDateTime($value[0], $field), '$gt' => $this->parseDateTime($value[1], $field)];
         } elseif ('near' == $exp) {
@@ -280,15 +280,15 @@ class Builder
      */
     protected function parseDateTime($value, $key)
     {
-        // 取得時間字段类型
+        // 取得時間字段類型
         $type = $this->query->getTableInfo('', 'type');
         if (isset($type[$key])) {
             $value = strtotime($value) ?: $value;
             if (preg_match('/(datetime|timestamp)/is', $type[$key])) {
-                // 日期及時間戳类型
+                // 日期及時間戳類型
                 $value = date('Y-m-d H:i:s', $value);
             } elseif (preg_match('/(date)/is', $type[$key])) {
-                // 日期及時間戳类型
+                // 日期及時間戳類型
                 $value = date('Y-m-d', $value);
             }
         }
@@ -296,7 +296,7 @@ class Builder
     }
 
     /**
-     * 取得最后写入的ID 如果是insertAll方法的話 返回所有写入的ID
+     * 取得最後寫入的ID 如果是insertAll方法的話 返回所有寫入的ID
      * @access public
      * @return mixed
      */
@@ -314,7 +314,7 @@ class Builder
      */
     public function insert(array $data, $options = [])
     {
-        // 分析并处理資料
+        // 分析並處理資料
         $data = $this->parseData($data, $options);
         $bulk = new BulkWrite;
         if ($insertId = $bulk->insert($data)) {
@@ -335,7 +335,7 @@ class Builder
     {
         $bulk = new BulkWrite;
         foreach ($dataSet as $data) {
-            // 分析并处理資料
+            // 分析並處理資料
             $data = $this->parseData($data, $options);
             if ($insertId = $bulk->insert($data)) {
                 $this->insertId[] = $insertId;

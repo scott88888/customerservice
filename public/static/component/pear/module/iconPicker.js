@@ -9,13 +9,13 @@ layui.define(['laypage', 'form'], function (exports) {
         laypage = layui.laypage,
         form = layui.form,
         BODY = 'body',
-        TIPS = '請選擇图标';
+        TIPS = '請選擇圖标';
 
     IconPicker.prototype.render = function(options){
         var opts = options,
             // DOM選擇器
             elem = opts.elem,
-            // 資料类型：fontClass/unicode
+            // 資料類型：fontClass/unicode
             type = opts.type == null ? 'fontClass' : opts.type,
             // 是否分頁：true/false
             page = opts.page == null ? true : opts.page,
@@ -23,11 +23,11 @@ layui.define(['laypage', 'form'], function (exports) {
             limit = opts.limit == null ? 12 : opts.limit,
             // 是否開啟搜索：true/false
             search = opts.search == null ? true : opts.search,
-            // 每个图标格子的宽度：'43px'或'20%'
+            // 每个圖标格子的宽度：'43px'或'20%'
             cellWidth = opts.cellWidth,
             // 點擊回调
             click = opts.click,
-            // 渲染成功后的回调
+            // 渲染成功後的回调
             success = opts.success,
             // json資料
             data = {},
@@ -82,7 +82,7 @@ layui.define(['laypage', 'form'], function (exports) {
             createSelect: function () {
                 var oriIcon = '<i class="layui-icon">';
                 
-                // 默认图标
+                // 默認圖标
                 if(ORIGINAL_ELEM_VALUE === '') {
                     if(isFontClass) {
                         ORIGINAL_ELEM_VALUE = 'layui-icon-circle-dot';
@@ -125,7 +125,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     } else {
                         // 隐藏其他picker
                         $('.layui-form-select').removeClass(selected);
-                        // 显示当前picker
+                        // 显示當前picker
                         $icon.addClass(selected).removeClass(unselect);
                     }
                     e.stopPropagation();
@@ -157,7 +157,7 @@ layui.define(['laypage', 'form'], function (exports) {
                 return a;
             },
             /**
-             * 绘制图标列表
+             * 绘制圖标列表
              * @param text 模糊查詢關鍵字
              * @returns {string}
              */
@@ -172,7 +172,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1), // 总计多少頁
                     _id = PAGE_ID;
 
-                // 图标列表
+                // 圖标列表
                 var icons = [];
 
                 for (var i = 0; i < l; i++) {
@@ -189,7 +189,7 @@ layui.define(['laypage', 'form'], function (exports) {
                         style += ' style="width:' + cellWidth + '"';
                     }
 
-                    // 每个图标dom
+                    // 每个圖标dom
                     var icon = '<div class="layui-iconpicker-icon-item" title="'+ obj +'" '+ style +'>';
                     if (isFontClass){
                         icon += '<i class="layui-icon '+ obj +'"></i>';
@@ -201,7 +201,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     icons.push(icon);
                 }
 
-                // 查詢出图标后再分頁
+                // 查詢出圖标後再分頁
                 l = icons.length;
                 _pages = l % _limit === 0 ? l / _limit : parseInt(l / _limit + 1);
                 for (var i = 0; i < _pages; i++) {
@@ -270,7 +270,7 @@ layui.define(['laypage', 'form'], function (exports) {
                     }
                     $cur.html(current);
 
-                    // 图标資料
+                    // 圖标資料
                     $('#'+ ICON_BODY + ' .layui-iconpicker-icon-limit').hide();
                     $('#layui-iconpicker-icon-limit-' + tmp + current).show();
                     e.stopPropagation();
@@ -290,7 +290,7 @@ layui.define(['laypage', 'form'], function (exports) {
                 return a;
             },
             /**
-             * 點擊选中图标
+             * 點擊选中圖标
              */
             check: function () {
                 var item = '#' + PICKER_BODY + ' .layui-iconpicker-icon-item';
@@ -338,7 +338,7 @@ layui.define(['laypage', 'form'], function (exports) {
 
         var common = {
             /**
-             * 加载樣式表
+             * 載入樣式表
              */
             loadCss: function () {
                 var css = '.layui-iconpicker {max-width: 280px;}.layui-iconpicker .layui-anim{display:none;width:280px;position:absolute;left:0;top:42px;padding:5px 0;z-index:899;min-width:100%;border:1px solid #d2d2d2;max-height:300px;overflow-y:auto;background-color:#fff;border-radius:2px;box-shadow:0 2px 4px rgba(0,0,0,.12);box-sizing:border-box;}.layui-iconpicker-item{border:1px solid #e6e6e6;width:90px;height:38px;border-radius:4px;cursor:pointer;position:relative;}.layui-iconpicker-icon{border-right:1px solid #e6e6e6;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;width:60px;height:100%;float:left;text-align:center;background:#fff;transition:all .3s;}.layui-iconpicker-icon i{line-height:38px;font-size:18px;}.layui-iconpicker-item > .layui-edge{left:70px;}.layui-iconpicker-item:hover{border-color:#D2D2D2!important;}.layui-iconpicker-item:hover .layui-iconpicker-icon{border-color:#D2D2D2!important;}.layui-iconpicker.layui-form-selected .layui-anim{display:block;}.layui-iconpicker-body{padding:6px;}.layui-iconpicker .layui-iconpicker-list{background-color:#fff;border:1px solid #ccc;border-radius:4px;}.layui-iconpicker .layui-iconpicker-icon-item{display:inline-block;width:21.1%;line-height:36px;text-align:center;cursor:pointer;vertical-align:top;height:36px;margin:4px;border:1px solid #ddd;border-radius:2px;transition:300ms;}.layui-iconpicker .layui-iconpicker-icon-item i.layui-icon{font-size:17px;}.layui-iconpicker .layui-iconpicker-icon-item:hover{background-color:#eee;border-color:#ccc;-webkit-box-shadow:0 0 2px #aaa,0 0 2px #fff inset;-moz-box-shadow:0 0 2px #aaa,0 0 2px #fff inset;box-shadow:0 0 2px #aaa,0 0 2px #fff inset;text-shadow:0 0 1px #fff;}.layui-iconpicker-search{position:relative;margin:0 0 6px 0;border:1px solid #e6e6e6;border-radius:2px;transition:300ms;}.layui-iconpicker-search:hover{border-color:#D2D2D2!important;}.layui-iconpicker-search .layui-input{cursor:text;display:inline-block;width:86%;border:none;padding-right:0;margin-top:1px;}.layui-iconpicker-search .layui-icon{position:absolute;top:11px;right:4%;}.layui-iconpicker-tips{text-align:center;padding:8px 0;cursor:not-allowed;}.layui-iconpicker-page{margin-top:6px;margin-bottom:-6px;font-size:12px;padding:0 2px;}.layui-iconpicker-page-count{display:inline-block;}.layui-iconpicker-page-operate{display:inline-block;float:right;cursor:default;}.layui-iconpicker-page-operate .layui-icon{font-size:12px;cursor:pointer;}.layui-iconpicker-body-page .layui-iconpicker-icon-limit{display:none;}.layui-iconpicker-body-page .layui-iconpicker-icon-limit:first-child{display:block;}';
@@ -366,9 +366,9 @@ layui.define(['laypage', 'form'], function (exports) {
     };
 
     /**
-     * 选中图标
+     * 选中圖标
      * @param filter lay-filter
-     * @param iconName 图标名稱，自動识别fontClass/unicode
+     * @param iconName 圖标名稱，自動识别fontClass/unicode
      */
     IconPicker.prototype.checkIcon = function (filter, iconName){
         var el = $('*[lay-filter='+ filter +']'),

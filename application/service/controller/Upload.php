@@ -5,7 +5,7 @@ namespace app\service\controller;
 
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Upload extends Base
 {

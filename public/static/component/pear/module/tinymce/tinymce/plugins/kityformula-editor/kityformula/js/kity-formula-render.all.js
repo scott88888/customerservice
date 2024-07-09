@@ -38,7 +38,7 @@ var _p = {
 };
 
 /*!
- * canvg库封装
+ * canvg庫封装
  * canvg官網： https://code.google.com/p/canvg/
  */
 _p[0] = {
@@ -3244,7 +3244,7 @@ _p[0] = {
 };
 
 /*!
- * 输出转换器，提供输出支持
+ * 输出轉換器，提供输出支援
  */
 _p[1] = {
     value: function(require) {
@@ -3333,7 +3333,7 @@ _p[2] = {
 _p[3] = {
     value: function() {
         return {
-            // 默认字体
+            // 默認字体
             defaultFont: "KF AMS MAIN"
         };
     }
@@ -3359,7 +3359,7 @@ _p[4] = {
             return text;
         }
         /**
-     * 构建节點来转换内容
+     * 构建节點来轉換内容
      */
         function convertContent(content) {
             divNode.innerHTML = '<svg><text gg="asfdas">' + content.replace(/\s/gi, "&nbsp;") + "</text></svg>";
@@ -3374,7 +3374,7 @@ _p[4] = {
 };
 
 /**
- * 文本
+ * 文字
  */
 _p[5] = {
     value: function(require) {
@@ -3423,7 +3423,7 @@ _p[5] = {
             },
             translation: function(content) {
                 var fontFamily = this.fontFamily;
-                // 首先特殊处理掉两个相连的"`"符号
+                // 首先特殊處理掉两个相连的"`"符号
                 return content.replace(/``/g, "“").replace(/\\([a-zA-Z,]+)\\/g, function(match, input) {
                     if (input === ",") {
                         return " ";
@@ -3440,7 +3440,7 @@ _p[5] = {
 };
 
 /**
- * 定义公式中各种對象的类型
+ * 定義公式中各种對象的類型
  */
 _p[6] = {
     value: function() {
@@ -3454,7 +3454,7 @@ _p[6] = {
 };
 
 /**
- * 定义公式中上下标的类型
+ * 定義公式中上下标的類型
  */
 _p[7] = {
     value: function() {
@@ -3538,7 +3538,7 @@ _p[11] = {
          * 构造函數调用方式：
          *  new Constructor( 左括号, 右括号, 表达式 )
          *  或者
-         *  new Constructor( 括号, 表达式 ), 该构造函數转换成上面的构造函數，是： new Constructor( 括号, 括号, 表达式 )
+         *  new Constructor( 括号, 表达式 ), 该构造函數轉換成上面的构造函數，是： new Constructor( 括号, 括号, 表达式 )
          * @param left 左括号
          * @param right 右括号
          * @param exp 表达式
@@ -3627,7 +3627,7 @@ _p[13] = {
                 this.setFlag("Fraction");
                 this.setOperator(new FractionOperator());
             },
-            /*------- 重写分數结构的baseline和mealine计算方式 */
+            /*------- 重寫分數结构的baseline和mealine计算方式 */
             getBaseline: function(refer) {
                 var downOperand = this.getOperand(1), rectBox = downOperand.getRenderBox(refer);
                 return rectBox.y + downOperand.getBaselineProportion() * rectBox.height;
@@ -3664,7 +3664,7 @@ _p[14] = {
                 this.setSuperscript(sup);
                 this.setSubscript(sub);
             },
-            // 当前函數应用的script位置是否是在側面
+            // 當前函數應用的script位置是否是在側面
             isSideScript: function() {
                 return !FUNC_CONF["ud-script"][this.funcName];
             },
@@ -3914,7 +3914,7 @@ _p[20] = {
         EmptyExpression.isEmpty = function(target) {
             return target instanceof EmptyExpression;
         };
-        // 注册打包函數
+        // 註冊打包函數
         Expression.registerWrap("empty", function(operand) {
             if (operand === null || operand === undefined) {
                 return new EmptyExpression();
@@ -3925,13 +3925,13 @@ _p[20] = {
 };
 
 /**
- * 基础表达式， 该类是表达式和操作數的高层抽象
+ * 基础表达式， 该類是表达式和操作數的高層抽象
  * @abstract
  */
 _p[21] = {
     value: function(require) {
         var kity = _p.r(34), GTYPE = _p.r(6), FONT_CONF = _p.r(47).font, // 打包函數列表
-        WRAP_FN = [], // 注册的打包函數的名稱与其在注册器列表中的索引之间的對应关系
+        WRAP_FN = [], // 註冊的打包函數的名稱与其在註冊器列表中的索引之间的對应关系
         WRAP_FN_INDEX = {}, Expression = kity.createClass("Expression", {
             base: _p.r(46),
             constructor: function() {
@@ -4089,7 +4089,7 @@ _p[22] = {
                 return this;
             }
         });
-        // 注册文本表达式的打包函數
+        // 註冊文字表达式的打包函數
         Expression.registerWrap("text", function(operand) {
             var operandType = typeof operand;
             if (operandType === "number" || operandType === "string") {
@@ -4178,7 +4178,7 @@ _p[24] = {
             var rectBox = tmpNode.getElementsByTagName("text")[0].getBBox();
             // text实际占用空間
             FONT_CONF.spaceHeight = rectBox.height;
-            // text顶部空間
+            // text頂部空間
             FONT_CONF.topSpace = -rectBox.y - FONT_CONF.baseline;
             FONT_CONF.bottomSpace = FONT_CONF.spaceHeight - FONT_CONF.topSpace - FONT_CONF.baseHeight;
             // text偏移值
@@ -4242,7 +4242,7 @@ _p[26] = {
 };
 
 /*!
- * 手写体
+ * 手寫体
  */
 _p[27] = {
     value: function() {
@@ -4863,11 +4863,11 @@ _p[31] = {
                     notifyExpression(expression.getChild(i));
                 }
             } else if (expression.getType() === GTYPE.COMPOUND_EXP) {
-                // 操作數处理
+                // 操作數處理
                 for (var i = 0, len = expression.getOperands().length; i < len; i++) {
                     notifyExpression(expression.getOperand(i));
                 }
-                // 处理操作符
+                // 處理操作符
                 notifyExpression(expression.getOperator());
             }
             expression.addedCall && expression.addedCall();
@@ -4931,7 +4931,7 @@ _p[33] = {
 };
 
 /**
- * kity库封包
+ * kity庫封包
  */
 _p[34] = {
     value: function() {
@@ -5018,7 +5018,7 @@ _p[37] = {
         var kity = _p.r(34), EmptyExpression = _p.r(20), defaultOptions = {
             subOffset: 0,
             supOffset: 0,
-            // 上下标的默认缩放值
+            // 上下标的默認缩放值
             zoom: .66
         };
         return kity.createClass("ScriptController", {
@@ -5054,11 +5054,11 @@ _p[37] = {
                 }
             },
             /**
-         * 返回应用上下标后的空間占用情况，其中的key各自的意义是：
+         * 返回應用上下标後的空間占用情况，其中的key各自的意义是：
          * top: 上空間偏移
          * bottom: 下空間偏移
-         * width: 当前整个图形的实际占用空間的width
-         * height: 当前整个图形的实际占用空間的height
+         * width: 當前整个圖形的实际占用空間的width
+         * height: 當前整个圖形的实际占用空間的height
          * @returns {*}
          */
             applySide: function() {
@@ -5072,7 +5072,7 @@ _p[37] = {
                         bottom: 0
                     };
                 } else {
-                    // 下标处理
+                    // 下标處理
                     if (EmptyExpression.isEmpty(sup) && !EmptyExpression.isEmpty(sub)) {
                         return this.applySideSub(target, sub);
                     } else if (!EmptyExpression.isEmpty(sup) && EmptyExpression.isEmpty(sub)) {
@@ -5252,7 +5252,7 @@ _p[39] = {
                 this.funcName = funcName;
             },
             /*
-         * 积分操作符应用操作數
+         * 积分操作符應用操作數
          * @param expr 函數表达式
          * @param sup 上限
          * @param sub 下限
@@ -5261,7 +5261,7 @@ _p[39] = {
                 var opShape = generateOperator.call(this), expBox = expr.getFixRenderBox(), scriptHanlder = this.parentExpression.isSideScript() ? "applySide" : "applyUpDown", space = new ScriptController(this, opShape, sup, sub, {
                     zoom: .5
                 })[scriptHanlder](), padding = 5, diff = (space.height + space.top + space.bottom - expBox.height) / 2;
-                // 应用偏移， 使图形在正确的位置上
+                // 應用偏移， 使圖形在正确的位置上
                 opShape.translate(0, space.top);
                 sup.translate(0, space.top);
                 sub.translate(0, space.top);
@@ -5283,7 +5283,7 @@ _p[39] = {
         function generateOperator() {
             var opShape = new Text(this.funcName, "KF AMS ROMAN");
             this.addOperatorShape(opShape);
-            // 為操作符图形建立baseline和meanline方法
+            // 為操作符圖形建立baseline和meanline方法
             opShape.getBaseline = function() {
                 return opShape.getFixRenderBox().height;
             };
@@ -5305,13 +5305,13 @@ _p[40] = {
             base: _p.r(41),
             constructor: function(type) {
                 this.callBase("Integration");
-                // 默认是普通單重积分
+                // 默認是普通單重积分
                 this.opType = type || 1;
             },
             setType: function(type) {
                 this.opType = type | 0;
             },
-            // 重置类型
+            // 重置類型
             resetType: function() {
                 this.opType = 1;
             },
@@ -5347,7 +5347,7 @@ _p[40] = {
                 }
                 opGroup.scale(1.6);
                 tmpShape = null;
-                // 為操作符图形建立baseline和meanline方法
+                // 為操作符圖形建立baseline和meanline方法
                 group.getBaseline = function() {
                     return opGroup.getFixRenderBox().height;
                 };
@@ -5361,7 +5361,7 @@ _p[40] = {
 };
 
 /**
- * 操作符抽象类
+ * 操作符抽象類
  * @abstract
  */
 _p[41] = {
@@ -5376,7 +5376,7 @@ _p[41] = {
                 this.parentExpression = null;
                 // 操作符名稱
                 this.operatorName = operatorName;
-                // 操作符图形
+                // 操作符圖形
                 this.operatorShape = new kity.Group();
                 this.addShape(this.operatorShape);
             },
@@ -5392,7 +5392,7 @@ _p[41] = {
             clearParentExpression: function() {
                 this.parentExpression = null;
             },
-            // 提供给具体實現类附加其绘制的操作符图形的接口
+            // 提供给具体實現類附加其绘制的操作符圖形的接口
             addOperatorShape: function(shpae) {
                 return this.operatorShape.addShape(shpae);
             },
@@ -5408,7 +5408,7 @@ _p[41] = {
  */
 _p[42] = {
     value: function(require) {
-        var kity = _p.r(34), // 符号图形属性
+        var kity = _p.r(34), // 符号圖形属性
         // 线條宽度
         SHAPE_DATA_WIDTH = 1, // 计算公式
         radians = 2 * Math.PI / 360, sin15 = Math.sin(15 * radians), cos15 = Math.cos(15 * radians), tan15 = Math.tan(15 * radians);
@@ -5464,7 +5464,7 @@ _p[42] = {
             var w = operand.getWidth() + 2 * SHAPE_DATA_WIDTH;
             return new kity.Rect(w, 2 * SHAPE_DATA_WIDTH).fill("black");
         }
-        // 合并根号的各个部分， 并返回根号的關鍵點位置資料
+        // 合併根号的各个部分， 並返回根号的關鍵點位置資料
         function mergeShape(decoration, vLine, hLine) {
             var decoBox = decoration.getFixRenderBox(), vLineBox = vLine.getFixRenderBox();
             vLine.translate(decoBox.width - sin15 * SHAPE_DATA_WIDTH * 3, 0);
@@ -5487,7 +5487,7 @@ _p[42] = {
             exponentBox = exponent.getFixRenderBox();
             if (exponentBox.width > 0 && exponentBox.height > 0) {
                 opOffset.y = exponentBox.height - opBox.height / 2;
-                // 指數不超出根号， 则移動指數
+                // 指數不超出根号， 則移動指數
                 if (opOffset.y < 0) {
                     exponent.translate(0, -opOffset.y);
                     opOffset.y = 0;
@@ -5570,13 +5570,13 @@ _p[44] = {
 };
 
 /*!
- * 资源管理器
- * 负责管理资源的加载，并在资源ready之后提供Formula构造器
+ * 資源管理器
+ * 负责管理資源的載入，並在資源ready之後提供Formula构造器
  */
 _p[45] = {
     value: function(require) {
-        var kity = _p.r(34), cbList = [], RES_CONF = _p.r(47).resource, FontInstall = _p.r(24), Formula = _p.r(31), // 资源管理器就绪狀態
-        __readyState = false, // 资源管理器是否已启動
+        var kity = _p.r(34), cbList = [], RES_CONF = _p.r(47).resource, FontInstall = _p.r(24), Formula = _p.r(31), // 資源管理器就绪狀態
+        __readyState = false, // 資源管理器是否已启動
         inited = false;
         return {
             // 初始化
@@ -5595,7 +5595,7 @@ _p[45] = {
             }
         };
         /**
-     * 资源初始化
+     * 資源初始化
      */
         function init(options) {
             options = kity.Utils.extend({}, RES_CONF, options);
@@ -5620,7 +5620,7 @@ _p[45] = {
 };
 
 /*!
- * 所有符号的基类
+ * 所有符号的基類
  * @abstract
  */
 _p[46] = {
@@ -5678,7 +5678,7 @@ _p[47] = {
                 // 系统字体列表
                 list: [ _p.r(29), _p.r(27), _p.r(28), _p.r(26), _p.r(30) ]
             },
-            /*------------------------- 资源配置*/
+            /*------------------------- 資源配置*/
             resource: {
                 path: "src/resource/"
             },
@@ -5730,7 +5730,7 @@ function use(name) {
     _p.r([ moduleMapping[name] ]);
 }
 /**
- * 模块暴露
+ * 模組暴露
  */
 
 ( function ( global ) {

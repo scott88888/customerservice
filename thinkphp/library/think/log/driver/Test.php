@@ -17,9 +17,9 @@ namespace think\log\driver;
 class Test
 {
     /**
-     * 日志写入接口
+     * 日誌寫入接口
      * @access public
-     * @param array $log 日志訊息
+     * @param array $log 日誌訊息
      * @return bool
      */
     public function save(array $log = [])

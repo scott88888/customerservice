@@ -8,7 +8,7 @@ use Qiniu\Http\Client;
 use Qiniu\Http\Error;
 
 /**
- * 主要涉及了空間资源管理及批量操作接口的實現，具体的接口规格可以参考
+ * 主要涉及了空間資源管理及批量操作接口的實現，具体的接口规格可以参考
  *
  * @link https://developer.qiniu.com/kodo/api/1274/rs
  */
@@ -63,9 +63,9 @@ final class BucketManager
      * @param $prefix     列举前缀
      * @param $marker     列举標識符
      * @param $limit      單次列举个數限制
-     * @param $delimiter  指定目录分隔符
+     * @param $delimiter  指定目錄分隔符
      *
-     * @return array    包含文件訊息的數组，类似：[
+     * @return array    包含文件訊息的數组，類似：[
      *                                              {
      *                                                 "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>",
@@ -88,12 +88,12 @@ final class BucketManager
     }
 
     /**
-     * 取得资源的元訊息，但不返回文件内容
+     * 取得資源的元訊息，但不返回文件内容
      *
-     * @param $bucket     待取得訊息资源所在的空間
-     * @param $key        待取得资源的文件名
+     * @param $bucket     待取得訊息資源所在的空間
+     * @param $key        待取得資源的文件名
      *
-     * @return array    包含文件訊息的數组，类似：
+     * @return array    包含文件訊息的數组，類似：
      *                                              [
      *                                                  "hash" => "<Hash string>",
      *                                                  "key" => "<Key string>",
@@ -111,10 +111,10 @@ final class BucketManager
     }
 
     /**
-     * 刪除指定资源
+     * 刪除指定資源
      *
-     * @param $bucket     待刪除资源所在的空間
-     * @param $key        待刪除资源的文件名
+     * @param $bucket     待刪除資源所在的空間
+     * @param $key        待刪除資源的文件名
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/delete.html
@@ -128,11 +128,11 @@ final class BucketManager
 
 
     /**
-     * 给资源进行重命名，本质為move操作。
+     * 给資源进行重命名，本质為move操作。
      *
-     * @param $bucket     待操作资源所在空間
-     * @param $oldname    待操作资源文件名
-     * @param $newname    目标资源文件名
+     * @param $bucket     待操作資源所在空間
+     * @param $oldname    待操作資源文件名
+     * @param $newname    目标資源文件名
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      */
@@ -142,12 +142,12 @@ final class BucketManager
     }
 
     /**
-     * 给资源进行重命名，本质為move操作。
+     * 给資源进行重命名，本质為move操作。
      *
-     * @param $from_bucket     待操作资源所在空間
-     * @param $from_key        待操作资源文件名
-     * @param $to_bucket       目标资源空間名
-     * @param $to_key          目标资源文件名
+     * @param $from_bucket     待操作資源所在空間
+     * @param $from_key        待操作資源文件名
+     * @param $to_bucket       目标資源空間名
+     * @param $to_key          目标資源文件名
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/copy.html
@@ -165,12 +165,12 @@ final class BucketManager
     }
 
     /**
-     * 将资源从一个空間到另一个空間
+     * 将資源从一个空間到另一个空間
      *
-     * @param $from_bucket     待操作资源所在空間
-     * @param $from_key        待操作资源文件名
-     * @param $to_bucket       目标资源空間名
-     * @param $to_key          目标资源文件名
+     * @param $from_bucket     待操作資源所在空間
+     * @param $from_key        待操作資源文件名
+     * @param $to_bucket       目标資源空間名
+     * @param $to_key          目标資源文件名
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/move.html
@@ -188,10 +188,10 @@ final class BucketManager
     }
 
     /**
-     * 主動修改指定资源的文件类型
+     * 主動修改指定資源的文件類型
      *
-     * @param $bucket     待操作资源所在空間
-     * @param $key        待操作资源文件名
+     * @param $bucket     待操作資源所在空間
+     * @param $key        待操作資源文件名
      * @param $mime       待操作文件目标mimeType
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
@@ -208,11 +208,11 @@ final class BucketManager
 
 
     /**
-     * 修改指定资源的存储类型
+     * 修改指定資源的存储類型
      *
-     * @param $bucket     待操作资源所在空間
-     * @param $key        待操作资源文件名
-     * @param $fileType       待操作文件目标文件类型
+     * @param $bucket     待操作資源所在空間
+     * @param $key        待操作資源文件名
+     * @param $fileType       待操作文件目标文件類型
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  https://developer.qiniu.com/kodo/api/3710/modify-the-file-type
@@ -226,11 +226,11 @@ final class BucketManager
     }
 
     /**
-     * 修改文件的存储狀態，即禁用狀態和启用狀態间的的互相转换
+     * 修改文件的存储狀態，即禁用狀態和启用狀態间的的互相轉換
      *
-     * @param $bucket     待操作资源所在空間
-     * @param $key        待操作资源文件名
-     * @param $status       待操作文件目标文件类型
+     * @param $bucket     待操作資源所在空間
+     * @param $key        待操作資源文件名
+     * @param $status       待操作文件目标文件類型
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  https://developer.qiniu.com/kodo/api/4173/modify-the-file-status
@@ -244,11 +244,11 @@ final class BucketManager
     }
 
     /**
-     * 从指定URL抓取资源，并将该资源存储到指定空間中
+     * 从指定URL抓取資源，並将该資源存储到指定空間中
      *
      * @param $url        指定的URL
-     * @param $bucket     目标资源空間
-     * @param $key        目标资源文件名
+     * @param $bucket     目标資源空間
+     * @param $key        目标資源文件名
      *
      * @return array    包含已拉取的文件訊息。
      *                         成功时：  [
@@ -280,10 +280,10 @@ final class BucketManager
     }
 
     /**
-     * 从镜像源站抓取资源到空間中，如果空間中已经存在，则覆盖该资源
+     * 从镜像源站抓取資源到空間中，如果空間中已经存在，則覆盖该資源
      *
-     * @param $bucket     待取得资源所在的空間
-     * @param $key        代取得资源文件名
+     * @param $bucket     待取得資源所在的空間
+     * @param $key        代取得資源文件名
      *
      * @return mixed      成功返回NULL，失敗返回對象Qiniu\Http\Error
      * @link  http://developer.qiniu.com/docs/v6/api/reference/rs/prefetch.html
@@ -302,11 +302,11 @@ final class BucketManager
     }
 
     /**
-     * 在單次請求中进行多个资源管理操作
+     * 在單次請求中进行多个資源管理操作
      *
-     * @param $operations     资源管理操作數组
+     * @param $operations     資源管理操作數组
      *
-     * @return array 每个资源的处理情况，结果类似：
+     * @return array 每个資源的處理情况，结果類似：
      *              [
      *                   { "code" => <HttpCode int>, "data" => <Data> },
      *                   { "code" => <HttpCode int> },
@@ -328,7 +328,7 @@ final class BucketManager
      *
      * @param $bucket 設定文件生命周期文件所在的空間
      * @param $key    設定文件生命周期文件的文件名
-     * @param $days   設定该文件多少天后刪除，当$days設定為0时表示取消该文件的生命周期
+     * @param $days   設定该文件多少天後刪除，当$days設定為0时表示取消该文件的生命周期
      *
      * @return Mixed
      * @link https://developer.qiniu.com/kodo/api/update-file-lifecycle

@@ -14,13 +14,13 @@ use app\Common;
 use app\extra\push\Pusher;
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Index extends Base
 {
 
     /**
-     * 后台首頁.
+     * 後台首頁.
      *
      * @return mixed
      */
@@ -45,7 +45,7 @@ class Index extends Base
         $getinall = Admins::table("wolive_chats")->distinct(true)->field('visiter_id')->where('business_id', $login['business_id'])->count();
         // 取得总会話量
         $chatsall = Admins::table("wolive_chats")->where($where)->count();
-        // 正在排队人數
+        // 正在排對人數
         $waiter = Admins::table("wolive_queue")->where(['business_id' => $login['business_id'], 'state' => 'normal'])->where("service_id", 0)->count();
         // 正在咨询的人
         $talking = Admins::table('wolive_queue')->where(['business_id' => $login['business_id']])->where('state', 'normal')->where("service_id", '<>', 0)->count();
@@ -125,7 +125,7 @@ class Index extends Base
     }
 
     /**
-     * 后台對話頁面.
+     * 後台對話頁面.
      *
      * @return mixed
      */
@@ -142,7 +142,7 @@ class Index extends Base
 
 
     /**
-     * 常用语頁面.
+     * 常用語頁面.
      *
      * @return mixed
      */
@@ -264,7 +264,7 @@ class Index extends Base
     }
 
     /**
-     * 转接客服頁面
+     * 轉接客服頁面
      * @return [type] [description]
      */
     public function service()
@@ -288,7 +288,7 @@ class Index extends Base
     }
     
     /**
-     * 转接客服类.
+     * 轉接客服類.
      * @return [type] [description]
      */
     public function getswitch()
@@ -320,13 +320,13 @@ class Index extends Base
         );
         $channel = bin2hex($post['visiter_id'] . '/' . $login['business_id']);
         $pusher->trigger("cu" . $channel, 'getswitch', array('message' => $admin));
-        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  转接訪客给你"));
+        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  轉接訪客给你"));
         $result = Admins::table('wolive_queue')->where("visiter_id", $post['visiter_id'])->where('business_id', $login['business_id'])->where('state', 'normal')->update(['service_id' => $post['id']]);
         if ($result) {
-            $arr = ['code' => 0, 'msg' => '转接成功！'];
+            $arr = ['code' => 0, 'msg' => '轉接成功！'];
             return $arr;
         } else {
-            $arr = ['code' => 1, 'msg' => '转接失敗！'];
+            $arr = ['code' => 1, 'msg' => '轉接失敗！'];
             return $arr;
         }
     }

@@ -479,7 +479,7 @@
 	if (typeof module !== 'undefined' && module.exports) { //Node
 		module.exports = factory(require('jquery'));
 	} else if (window.layui && layui.define) {
-		layui.define('jquery', function(exports) { //layui加载
+		layui.define('jquery', function(exports) { //layui載入
 			exports('toastr', factory(layui.jquery));
 			exports('notice', factory(layui.jquery));
 		});

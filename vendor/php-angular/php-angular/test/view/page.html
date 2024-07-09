@@ -15,7 +15,7 @@
             <span php-show="$p == $i">{$i}</span>
         </li>
         <li php-show="$p + 4 < $pagecount">
-            <!-- 这里是 后十頁, 如果最后一頁显示了, 就隐藏这个'...' 按钮 -->
+            <!-- 这里是 後十頁, 如果最後一頁显示了, 就隐藏这个'...' 按钮 -->
             <a href="{:$page($p + 10 > $pagecount ? $pagecount : $p + 10)}"><span>...</span></a>
         </li>
         <li php-show="$p < $pagecount">

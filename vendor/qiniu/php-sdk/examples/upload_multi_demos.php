@@ -14,7 +14,7 @@ $token = $auth->uploadToken($bucket);
 $uploadMgr = new UploadManager();
 
 //----------------------------------------upload demo1 ----------------------------------------
-// 上传字符串到七牛
+// 上傳字符串到七牛
 list($ret, $err) = $uploadMgr->put($token, null, 'content string');
 echo "\n====> put result: \n";
 if ($err !== null) {
@@ -25,7 +25,7 @@ if ($err !== null) {
 
 
 //----------------------------------------upload demo2 ----------------------------------------
-// 上传文件到七牛
+// 上傳文件到七牛
 $filePath = './php-logo.png';
 $key = 'php-logo.png';
 list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
@@ -38,7 +38,7 @@ if ($err !== null) {
 
 
 //----------------------------------------upload demo3 ----------------------------------------
-// 上传文件到七牛后， 七牛将文件名和文件大小回调给业务服务器.
+// 上傳文件到七牛後， 七牛将文件名和文件大小回调给業務服务器.
 // 可参考文档: http://developer.qiniu.com/docs/v6/api/reference/security/put-policy.html
 $policy = array(
     'callbackUrl' => 'http://172.30.251.210/upload_verify_callback.php',
@@ -59,14 +59,14 @@ if ($err !== null) {
 
 
 //----------------------------------------upload demo4 ----------------------------------------
-//上传视频，上传完成后进行m3u8的转碼， 并给视频打水印
+//上傳视频，上傳完成後进行m3u8的转碼， 並给视频打水印
 $wmImg = Qiniu\base64_urlSafeEncode('http://devtools.qiniudn.com/qiniu.png');
 $pfop = "avthumb/m3u8/wmImage/$wmImg";
 
-//转碼完成后回调到业务服务器。（公網可以訪問，并相应200 OK）
+//转碼完成後回调到業務服务器。（公網可以訪問，並相应200 OK）
 $notifyUrl = 'http://notify.fake.com';
 
-//独立的转碼队列：https://portal.qiniu.com/mps/pipeline
+//独立的转碼對列：https://portal.qiniu.com/mps/pipeline
 
 
 $policy = array(

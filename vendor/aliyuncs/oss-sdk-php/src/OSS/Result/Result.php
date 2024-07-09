@@ -7,8 +7,8 @@ use OSS\Http\ResponseCore;
 
 
 /**
- * Class Result, 操作结果类的基类，不同的請求在处理返回資料的时候有不同的逻辑，
- * 具体的解析逻辑推迟到子类實現
+ * Class Result, 操作结果類的基類，不同的請求在處理返回資料的时候有不同的逻辑，
+ * 具体的解析逻辑推迟到子類實現
  *
  * @package OSS\Model
  */
@@ -56,7 +56,7 @@ abstract class Result
     }
 
     /**
-     * 由子类實現，不同的請求返回資料有不同的解析逻辑，由子类實現
+     * 由子類實現，不同的請求返回資料有不同的解析逻辑，由子類實現
      *
      * @return mixed
      */
@@ -163,7 +163,7 @@ abstract class Result
      */
     protected $isOk = false;
     /**
-     * 由子类解析过的資料
+     * 由子類解析过的資料
      */
     protected $parsedData = null;
     /**

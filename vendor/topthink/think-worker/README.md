@@ -5,7 +5,7 @@ ThinkPHP 5.0 Workerman 扩展
 composer require topthink/think-worker
 
 ## 使用方法
-首先建立控制器类并继承 think\worker\Server，然后設定属性和新增回调方法
+首先建立控制器類並继承 think\worker\Server，然後設定属性和新增回调方法
 
 ~~~
 namespace app\index\controller;
@@ -22,10 +22,10 @@ class Worker extends Server
 	}
 }
 ~~~
-支持workerman所有的回调方法定义（回调方法必须是public类型）
+支援workerman所有的回调方法定義（回调方法必须是public類型）
 
 
-在应用根目录增加入口文件 server.php
+在應用根目錄增加入口文件 server.php
 
 ~~~
 #!/usr/bin/env php
@@ -34,7 +34,7 @@ define('APP_PATH', __DIR__ . '/application/');
 
 define('BIND_MODULE','index/Worker');
 
-// 加载框架引导文件
+// 載入框架引导文件
 require __DIR__ . '/thinkphp/start.php';
 ~~~
 
@@ -44,7 +44,7 @@ php server.php start
 ~~~
 
 
-linux下面可以支持下面指令
+linux下面可以支援下面指令
 ~~~
 php server.php start|stop|status|restart|reload
 ~~~

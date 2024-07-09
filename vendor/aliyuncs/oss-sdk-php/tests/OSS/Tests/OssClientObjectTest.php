@@ -78,7 +78,7 @@ class OssClientObjectTest extends TestOssClientBase
     public function testObject()
     {
         /**
-         *  上传本地变量到bucket
+         *  上傳本地变量到bucket
          */
         $object = "oss-php-sdk-test/upload-test-object-name.txt";
         $content = file_get_contents(__FILE__);
@@ -151,7 +151,7 @@ class OssClientObjectTest extends TestOssClientBase
 
 
         /**
-         * 上传本地文件到object
+         * 上傳本地文件到object
          */
         try {
             $this->ossClient->uploadFile($this->bucket, $object, __FILE__);
@@ -345,7 +345,7 @@ class OssClientObjectTest extends TestOssClientBase
         $content_array = array('Hello OSS', 'Hi OSS', 'OSS OK');
         
         /**
-         * 追加上传字符串
+         * 追加上傳字符串
          */
         try {
             $position = $this->ossClient->appendObject($this->bucket, $object, $content_array[0], 0);
@@ -379,7 +379,7 @@ class OssClientObjectTest extends TestOssClientBase
         }
         
         /**
-         * 追加上传本地文件
+         * 追加上傳本地文件
          */
         try {
             $position = $this->ossClient->appendFile($this->bucket, $object, __FILE__, 0);
@@ -418,7 +418,7 @@ class OssClientObjectTest extends TestOssClientBase
         );
 
         /**
-         * 带option的追加上传
+         * 带option的追加上傳
          */
         try {
             $position = $this->ossClient->appendObject($this->bucket, $object, "Hello OSS, ", 0, $options);
@@ -465,7 +465,7 @@ class OssClientObjectTest extends TestOssClientBase
     	$options = array(OssClient::OSS_CHECK_MD5 => true);
     	
     	/**
-    	 * 上传資料開啟MD5
+    	 * 上傳資料開啟MD5
     	 */
     	try {
     		$this->ossClient->putObject($this->bucket, $object, $content, $options);
@@ -484,7 +484,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
 
     	/**
-    	 * 上传文件開啟MD5
+    	 * 上傳文件開啟MD5
     	 */
     	try {
     		$this->ossClient->uploadFile($this->bucket, $object, __FILE__, $options);
@@ -516,7 +516,7 @@ class OssClientObjectTest extends TestOssClientBase
     	$options = array(OssClient::OSS_CHECK_MD5 => true);
     	
     	/**
-    	 * 追加上传字符串
+    	 * 追加上傳字符串
     	 */
     	try {
     		$position = $this->ossClient->appendObject($this->bucket, $object, $content_array[0], 0, $options);
@@ -549,7 +549,7 @@ class OssClientObjectTest extends TestOssClientBase
     	}
     	
     	/**
-    	 * 追加上传本地文件
+    	 * 追加上傳本地文件
     	 */
     	try {
     		$position = $this->ossClient->appendFile($this->bucket, $object, __FILE__, 0, $options);

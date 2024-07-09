@@ -56,7 +56,7 @@ class App extends Base
         if (!$business) {
             return [
                 'code' => 1,
-                'msg' => '資料錯誤，請刷新頁面后重试',
+                'msg' => '資料錯誤，請刷新頁面後重试',
             ];
         }
 

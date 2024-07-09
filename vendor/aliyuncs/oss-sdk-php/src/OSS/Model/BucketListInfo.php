@@ -5,7 +5,7 @@ namespace OSS\Model;
 /**
  * Class BucketListInfo
  *
- * ListBuckets接口返回的資料类型
+ * ListBuckets接口返回的資料類型
  *
  * @package OSS\Model
  */

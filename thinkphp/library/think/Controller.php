@@ -22,12 +22,12 @@ class Controller
     use Jump;
 
     /**
-     * @var \think\View 视图类实例
+     * @var \think\View 视圖類實例
      */
     protected $view;
 
     /**
-     * @var \think\Request Request 实例
+     * @var \think\Request Request 實例
      */
     protected $request;
 
@@ -114,7 +114,7 @@ class Controller
     }
 
     /**
-     * 加载模板输出
+     * 載入模板输出
      * @access protected
      * @param  string $template 模板文件名
      * @param  array $vars 模板输出变量
@@ -169,7 +169,7 @@ class Controller
     }
 
     /**
-     * 設定驗證失敗后是否抛出异常
+     * 設定驗證失敗後是否抛出异常
      * @access protected
      * @param bool $fail 是否抛出异常
      * @return $this
@@ -185,7 +185,7 @@ class Controller
      * 驗證資料
      * @access protected
      * @param  array $data 資料
-     * @param  string|array $validate 驗證器名或者驗證规则數组
+     * @param  string|array $validate 驗證器名或者驗證規則數组
      * @param  array $message 提示訊息
      * @param  bool $batch 是否批量驗證
      * @param  mixed $callback 回调方法（闭包）
@@ -198,7 +198,7 @@ class Controller
             $v = Loader::validate();
             $v->rule($validate);
         } else {
-            // 支持场景
+            // 支援场景
             if (strpos($validate, '.')) {
                 list($validate, $scene) = explode('.', $validate);
             }

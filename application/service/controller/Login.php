@@ -62,7 +62,7 @@ class Login extends Controller
     }
 
     /**
-     * 注册驗證碼.
+     * 註冊驗證碼.
      *
      * @return \think\Response
      */
@@ -117,7 +117,7 @@ class Login extends Controller
     }
 
     public function reg_check(){
-        if(!config('open_reg')) $this->error('禁止商户注册');
+        if(!config('open_reg')) $this->error('禁止商户註冊');
         $post = $this->request->post();
         if (!isset($post['username']) || !isset($post['password'])) $this->error('参數不完整!', url("/service/login/reg"));
         $post['user_name'] = htmlspecialchars($post['username']);
@@ -133,7 +133,7 @@ class Login extends Controller
             'expire_time' => time()+86400*config('default_reg_day'),
             'password' => $post['password'],
         );
-        if(Business::addBusiness($add)) $this->success('注册成功！', url("service/login/index"));
+        if(Business::addBusiness($add)) $this->success('註冊成功！', url("service/login/index"));
         $this->error('操作失敗！');
     }
 
@@ -150,7 +150,7 @@ class Login extends Controller
     }
 
     /**
-     * 退出登入 并清除session.
+     * 退出登入 並清除session.
      *
      * @return void
      */
@@ -203,7 +203,7 @@ class Login extends Controller
 
     public function reg(){
         if(isset($_SESSION['Msg'])&&!empty($_SESSION['Msg'])) $this->redirect(url('/service/index'));
-        if(!config('open_reg')) $this->error('禁止商户注册');
+        if(!config('open_reg')) $this->error('禁止商户註冊');
         return $this->fetch();
     }
 }

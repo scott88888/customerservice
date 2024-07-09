@@ -6,34 +6,34 @@ layui.define(['table', 'laypage','jquery', 'element'], function(exports) {
 		element = layui.element,
 		laypage = layui.laypage;
 		
-	var _instances = {};  // 记录所有实例
+	var _instances = {};  // 记录所有實例
 	
 	var defaultOption = {
 		elem: "#currentTableId",// 构建的模型
 		url: "",// 資料 url 連結
-		loading: true,//是否加载
-		limit: 0, //每頁數量默认是每行數量的双倍
+		loading: true,//是否載入
+		limit: 0, //每頁數量默認是每行數量的双倍
 		linenum: 4, //每行數量 2,3,4,6
-		currentPage: 1,//当前頁
+		currentPage: 1,//當前頁
 		data:[],       //静态資料
 		limits:[],     //頁碼
 		page: true, //是否分頁
 		layout: ['count', 'prev', 'page', 'next','limit', 'skip'],//分頁控件
 		request: {
-			pageName: 'page' //頁碼的参數名稱，默认：page
-			, limitName: 'limit' //每頁資料量的参數名，默认：limit
-			, idName: 'id'       //主键名稱，默认：id
-			, titleName: 'title' //标题名稱，默认：title
-			, imageName: 'image' //图片地址，默认：image
-			, remarkName: 'remark' //备注名稱，默认：remark
-			, timeName: 'time' //時間名稱，默认：time
+			pageName: 'page' //頁碼的参數名稱，默認：page
+			, limitName: 'limit' //每頁資料量的参數名，默認：limit
+			, idName: 'id'       //主键名稱，默認：id
+			, titleName: 'title' //標題名稱，默認：title
+			, imageName: 'image' //圖片地址，默認：image
+			, remarkName: 'remark' //备注名稱，默認：remark
+			, timeName: 'time' //時間名稱，默認：time
 		},
 		response: {
-			statusName: 'code' //规定資料狀態的字段名稱，默认：code
-			, statusCode: 0 //规定成功的狀態碼，默认：0
-			, msgName: 'msg' //规定狀態訊息的字段名稱，默认：msg
-			, countName: 'count' //规定資料总數的字段名稱，默认：count
-			, dataName: 'data' //规定資料列表的字段名稱，默认：data
+			statusName: 'code' //规定資料狀態的字段名稱，默認：code
+			, statusCode: 0 //规定成功的狀態碼，默認：0
+			, msgName: 'msg' //规定狀態訊息的字段名稱，默認：msg
+			, countName: 'count' //规定資料总數的字段名稱，默認：count
+			, dataName: 'data' //规定資料列表的字段名稱，默認：data
 		},
 		clickItem: function(data){},
 		done: function () {

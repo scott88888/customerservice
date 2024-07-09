@@ -144,7 +144,7 @@ class Windows extends Pipes
     }
 
     /**
-     * 建立一个新的 WindowsPipes 实例。
+     * 建立一个新的 WindowsPipes 實例。
      * @param Process $process
      * @param         $input
      * @return self
@@ -168,7 +168,7 @@ class Windows extends Pipes
     }
 
     /**
-     * 写入到 stdin 输入
+     * 寫入到 stdin 输入
      * @param bool $blocking
      * @param bool $close
      */

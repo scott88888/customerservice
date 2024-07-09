@@ -130,7 +130,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * ticket 换取二维碼图片.
+     * ticket 换取二维碼圖片.
      *
      * @param string $ticket
      *
@@ -393,7 +393,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 图文消息群发卡券.
+     * 圖文消息群发卡券.
      *
      * @param string $cardId
      *
@@ -522,7 +522,7 @@ class Card extends AbstractAPI
 
     /**
      * 設定微信买單接口.
-     * 設定买單的 card_id 必须已经配置了门店，否则会报错.
+     * 設定买單的 card_id 必须已经配置了门店，否則会报错.
      *
      * @param string $cardId
      * @param bool   $isOpen
@@ -540,7 +540,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 增加库存.
+     * 增加庫存.
      *
      * @param string $cardId
      * @param int    $amount
@@ -553,7 +553,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 减少库存.
+     * 减少庫存.
      *
      * @param string $cardId
      * @param int    $amount
@@ -566,7 +566,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 修改库存接口.
+     * 修改庫存接口.
      *
      * @param string $cardId
      * @param int    $amount
@@ -800,7 +800,7 @@ class Card extends AbstractAPI
     }
 
     /**
-     * 卡券開放类目查詢接口.
+     * 卡券開放類目查詢接口.
      *
      * @return \EasyWeChat\Support\Collection
      */

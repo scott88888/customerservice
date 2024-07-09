@@ -3,7 +3,7 @@
 namespace app\common\lib;
 
 /**
- * 随机產生类
+ * 随機產生類
  */
 class Random
 {
@@ -31,7 +31,7 @@ class Random
     }
 
     /**
-     * 產生指定長度的随机數字
+     * 產生指定長度的随機數字
      *
      * @param int $len 長度
      * @return string
@@ -42,7 +42,7 @@ class Random
     }
 
     /**
-     * 數字和字母组合的随机字符串
+     * 數字和字母组合的随機字符串
      *
      * @param int $len 長度
      * @return string
@@ -53,8 +53,8 @@ class Random
     }
 
     /**
-     * 能用的随机數產生
-     * @param string $type 类型 alpha/alnum/numeric/nozero/unique/md5/encrypt/sha1
+     * 能用的随機數產生
+     * @param string $type 類型 alpha/alnum/numeric/nozero/unique/md5/encrypt/sha1
      * @param int $len 長度
      * @return string
      */
@@ -95,8 +95,8 @@ class Random
      * 根據數组元素的概率获得键名
      *
      * @param array $ps array('p1'=>20, 'p2'=>30, 'p3'=>50);
-     * @param array $num 默认為1,即随机出来的數量
-     * @param array $unique 默认為true,即当num>1时,随机出的數量是否唯一
+     * @param array $num 默認為1,即随機出来的數量
+     * @param array $unique 默認為true,即当num>1时,随機出的數量是否唯一
      * @return mixed 当num為1时返回键名,反之返回一维數组
      */
     public static function lottery($ps, $num = 1, $unique = true)

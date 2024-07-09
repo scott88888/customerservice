@@ -40,7 +40,7 @@ class Mapp extends Mbase
     }
 
     /**
-     * 退出登入 并清除session.
+     * 退出登入 並清除session.
      *
      * @return void
      */

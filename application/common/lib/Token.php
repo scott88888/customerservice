@@ -8,12 +8,12 @@ use think\Config;
 use think\Log;
 
 /**
- * Token操作类
+ * Token操作類
  */
 class Token
 {
     /**
-     * @var array Token的实例
+     * @var array Token的實例
      */
     public static $instance = [];
 
@@ -66,7 +66,7 @@ class Token
         if (is_null(self::$handler)) {
             if (empty($options) && 'complex' == Config::get('token.type')) {
                 $default = Config::get('token.default');
-                // 取得默认Token配置，并連結
+                // 取得默認Token配置，並連結
                 $options = Config::get('token.' . $default['type']) ?: $default;
             } elseif (empty($options)) {
                 $options = Config::get('token');
@@ -103,7 +103,7 @@ class Token
      * 读取Token
      * @access public
      * @param  string $token Token標識
-     * @param  mixed $default 默认值
+     * @param  mixed $default 默認值
      * @return mixed
      */
     public static function get($token, $default = false)
@@ -112,7 +112,7 @@ class Token
     }
 
     /**
-     * 写入Token
+     * 寫入Token
      * @access public
      * @param  string $token Token標識
      * @param  mixed $user_id 存储資料

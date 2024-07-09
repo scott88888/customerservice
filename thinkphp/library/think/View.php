@@ -13,15 +13,15 @@ namespace think;
 
 class View
 {
-    // 视图实例
+    // 视圖實例
     protected static $instance;
-    // 模板引擎实例
+    // 模板引擎實例
     public $engine;
     // 模板变量
     protected $data = [];
     // 用于静态赋值的模板变量
     protected static $var = [];
-    // 视图输出替换
+    // 视圖输出替换
     protected $replace = [];
 
     /**
@@ -52,7 +52,7 @@ class View
     }
 
     /**
-     * 初始化视图
+     * 初始化视圖
      * @access public
      * @param array $engine  模板引擎参數
      * @param array $replace  字符串替换参數
@@ -100,7 +100,7 @@ class View
     }
 
     /**
-     * 設定当前模板解析的引擎
+     * 設定當前模板解析的引擎
      * @access public
      * @param array|string $options 引擎参數
      * @return $this
@@ -150,7 +150,7 @@ class View
         // 模板变量
         $vars = array_merge(self::$var, $this->data, $vars);
 
-        // 頁面缓存
+        // 頁面快取
         ob_start();
         ob_implicit_flush(0);
 
@@ -166,7 +166,7 @@ class View
             throw $e;
         }
 
-        // 取得并清空缓存
+        // 取得並清空快取
         $content = ob_get_clean();
         // 内容过滤标签
         Hook::listen('view_filter', $content);
@@ -174,9 +174,9 @@ class View
     }
 
     /**
-     * 视图内容替换
+     * 视圖内容替换
      * @access public
-     * @param string|array  $content 被替换内容（支持批量替换）
+     * @param string|array  $content 被替换内容（支援批量替换）
      * @param string        $replace    替换内容
      * @return $this
      */

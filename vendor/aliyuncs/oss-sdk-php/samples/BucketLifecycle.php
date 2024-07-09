@@ -13,7 +13,7 @@ if (is_null($ossClient)) exit(1);
 
 //******************************* 简單使用 *******************************************************
 
-//設定lifecycle规则
+//設定lifecycle規則
 $lifecycleConfig = new LifecycleConfig();
 $actions = array();
 $actions[] = new LifecycleAction("Expiration", "Days", 3);
@@ -22,7 +22,7 @@ $lifecycleConfig->addRule($lifecycleRule);
 $ossClient->putBucketLifecycle($bucket, $lifecycleConfig);
 Common::println("bucket $bucket lifecycleConfig created:" . $lifecycleConfig->serializeToXml());
 
-//取得lifecycle规则
+//取得lifecycle規則
 $lifecycleConfig = $ossClient->getBucketLifecycle($bucket);
 Common::println("bucket $bucket lifecycleConfig fetched:" . $lifecycleConfig->serializeToXml());
 
@@ -41,7 +41,7 @@ getBucketLifecycle($ossClient, $bucket);
 /**
  * 設定bucket的生命周期配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -69,7 +69,7 @@ function putBucketLifecycle($ossClient, $bucket)
 /**
  * 取得bucket的生命周期配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -90,7 +90,7 @@ function getBucketLifecycle($ossClient, $bucket)
 /**
  * 刪除bucket的生命周期配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */

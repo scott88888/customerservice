@@ -22,7 +22,7 @@ class Response
     // 原始資料
     protected $data;
 
-    // 当前的contentType
+    // 當前的contentType
     protected $contentType = 'text/html';
 
     // 字符集
@@ -61,7 +61,7 @@ class Response
      * 建立Response對象
      * @access public
      * @param mixed  $data    输出資料
-     * @param string $type    输出类型
+     * @param string $type    输出類型
      * @param int    $code
      * @param array  $header
      * @param array  $options 输出参數
@@ -80,7 +80,7 @@ class Response
     }
 
     /**
-     * 发送資料到客户端
+     * 發送資料到客户端
      * @access public
      * @return mixed
      * @throws \InvalidArgumentException
@@ -90,7 +90,7 @@ class Response
         // 监听response_send
         Hook::listen('response_send', $this);
 
-        // 处理输出資料
+        // 處理输出資料
         $data = $this->getContent();
 
         // Trace调试注入
@@ -109,9 +109,9 @@ class Response
         }
 
         if (!headers_sent() && !empty($this->header)) {
-            // 发送狀態碼
+            // 發送狀態碼
             http_response_code($this->code);
-            // 发送头部訊息
+            // 發送头部訊息
             foreach ($this->header as $name => $val) {
                 if (is_null($val)) {
                     header($name);
@@ -138,9 +138,9 @@ class Response
     }
 
     /**
-     * 处理資料
+     * 處理資料
      * @access protected
-     * @param mixed $data 要处理的資料
+     * @param mixed $data 要處理的資料
      * @return mixed
      */
     protected function output($data)
@@ -210,7 +210,7 @@ class Response
     }
 
     /**
-     * 发送HTTP狀態
+     * 發送HTTP狀態
      * @param integer $code 狀態碼
      * @return $this
      */
@@ -254,7 +254,7 @@ class Response
     }
 
     /**
-     * 頁面缓存控制
+     * 頁面快取控制
      * @param string $cache 狀態碼
      * @return $this
      */
@@ -265,8 +265,8 @@ class Response
     }
 
     /**
-     * 頁面输出类型
-     * @param string $contentType 输出类型
+     * 頁面输出類型
+     * @param string $contentType 输出類型
      * @param string $charset     输出编碼
      * @return $this
      */

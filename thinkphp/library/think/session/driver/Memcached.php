@@ -18,7 +18,7 @@ class Memcached extends SessionHandler
 {
     protected $handler = null;
     protected $config  = [
-        'host'         => '127.0.0.1', // memcache主机
+        'host'         => '127.0.0.1', // memcache主機
         'port'         => 11211, // memcache端口
         'expire'       => 3600, // session有效期
         'timeout'      => 0, // 連結超时時間（單位：毫秒）
@@ -49,7 +49,7 @@ class Memcached extends SessionHandler
         if ($this->config['timeout'] > 0) {
             $this->handler->setOption(\Memcached::OPT_CONNECT_TIMEOUT, $this->config['timeout']);
         }
-        // 支持集群
+        // 支援集群
         $hosts = explode(',', $this->config['host']);
         $ports = explode(',', $this->config['port']);
         if (empty($ports[0])) {
@@ -91,7 +91,7 @@ class Memcached extends SessionHandler
     }
 
     /**
-     * 写入Session
+     * 寫入Session
      * @access public
      * @param string $sessID
      * @param String $sessData

@@ -61,12 +61,12 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 根據关联條件查詢当前模型
+     * 根據关联條件查詢當前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个數
      * @param string  $id       关联表的统计字段
-     * @param string  $joinType JOIN类型
+     * @param string  $joinType JOIN類型
      * @return Query
      */
     public function has($operator = '>=', $count = 1, $id = '*', $joinType = 'INNER')
@@ -75,7 +75,7 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 根據关联條件查詢当前模型
+     * 根據关联條件查詢當前模型
      * @access public
      * @param  mixed  $where 查詢條件（數组或者闭包）
      * @param  mixed  $fields   字段
@@ -90,7 +90,7 @@ class HasManyThrough extends Relation
      * 预载入关联查詢
      * @access public
      * @param array    $resultSet   資料集
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -102,7 +102,7 @@ class HasManyThrough extends Relation
      * 预载入关联查詢 返回模型對象
      * @access public
      * @param Model    $result      資料對象
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -133,7 +133,7 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * 执行基础查詢（进执行一次）
+     * 執行基础查詢（进執行一次）
      * @access protected
      * @return void
      */

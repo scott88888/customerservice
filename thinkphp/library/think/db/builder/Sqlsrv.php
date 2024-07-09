@@ -15,7 +15,7 @@ use think\db\Builder;
 use think\db\Expression;
 
 /**
- * Sqlsrv資料库驱動
+ * Sqlsrv資料庫驱動
  */
 class Sqlsrv extends Builder
 {
@@ -61,7 +61,7 @@ class Sqlsrv extends Builder
     }
 
     /**
-     * 随机排序
+     * 随機排序
      * @access protected
      * @return string
      */
@@ -71,7 +71,7 @@ class Sqlsrv extends Builder
     }
 
     /**
-     * 字段和表名处理
+     * 字段和表名處理
      * @access protected
      * @param mixed  $key
      * @param array  $options

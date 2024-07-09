@@ -16,10 +16,10 @@ $uploadMgr = new UploadManager();
 
 $pfop = "imageMogr2/rotate/90|saveas/" . \Qiniu\base64_urlSafeEncode($bucket . ":php-logo-rotate.png");
 
-//转碼完成后通知到你的业务服务器。（公網可以訪問，并相应200 OK）
+//转碼完成後通知到你的業務服务器。（公網可以訪問，並相应200 OK）
 $notifyUrl = 'http://notify.fake.com';
 
-//独立的转碼队列：https://portal.qiniu.com/mps/pipeline
+//独立的转碼對列：https://portal.qiniu.com/mps/pipeline
 $pipeline = 'sdktest';
 
 $policy = array(

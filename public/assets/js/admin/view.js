@@ -196,7 +196,7 @@ function  get_user_info(vid) {
     });
 }
 
-//图片放大预览
+//圖片放大預覽
 function getbig(obj) {
 
 

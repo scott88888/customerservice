@@ -16,17 +16,17 @@ use think\cache\Driver;
 class Cache
 {
     /**
-     * @var array 缓存的实例
+     * @var array 快取的實例
      */
     public static $instance = [];
 
     /**
-     * @var int 缓存读取次數
+     * @var int 快取读取次數
      */
     public static $readTimes = 0;
 
     /**
-     * @var int 缓存写入次數
+     * @var int 快取寫入次數
      */
     public static $writeTimes = 0;
 
@@ -36,10 +36,10 @@ class Cache
     public static $handler;
 
     /**
-     * 連結缓存驱動
+     * 連結快取驱動
      * @access public
      * @param  array       $options 配置數组
-     * @param  bool|string $name    缓存連結標識 true 强制重新連結
+     * @param  bool|string $name    快取連結標識 true 强制重新連結
      * @return Driver
      */
     public static function connect(array $options = [], $name = false)
@@ -69,7 +69,7 @@ class Cache
     }
 
     /**
-     * 自動初始化缓存
+     * 自動初始化快取
      * @access public
      * @param  array $options 配置數组
      * @return Driver
@@ -79,7 +79,7 @@ class Cache
         if (is_null(self::$handler)) {
             if (empty($options) && 'complex' == Config::get('cache.type')) {
                 $default = Config::get('cache.default');
-                // 取得默认缓存配置，并連結
+                // 取得默認快取配置，並連結
                 $options = Config::get('cache.' . $default['type']) ?: $default;
             } elseif (empty($options)) {
                 $options = Config::get('cache');
@@ -92,9 +92,9 @@ class Cache
     }
 
     /**
-     * 切换缓存类型 需要配置 cache.type 為 complex
+     * 切换快取類型 需要配置 cache.type 為 complex
      * @access public
-     * @param  string $name 缓存標識
+     * @param  string $name 快取標識
      * @return Driver
      */
     public static function store($name = '')
@@ -107,9 +107,9 @@ class Cache
     }
 
     /**
-     * 判断缓存是否存在
+     * 判断快取是否存在
      * @access public
-     * @param  string $name 缓存变量名
+     * @param  string $name 快取变量名
      * @return bool
      */
     public static function has($name)
@@ -120,10 +120,10 @@ class Cache
     }
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param  string $name    缓存標識
-     * @param  mixed  $default 默认值
+     * @param  string $name    快取標識
+     * @param  mixed  $default 默認值
      * @return mixed
      */
     public static function get($name, $default = false)
@@ -134,9 +134,9 @@ class Cache
     }
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access public
-     * @param  string   $name   缓存標識
+     * @param  string   $name   快取標識
      * @param  mixed    $value  存储資料
      * @param  int|null $expire 有效時間 0為永久
      * @return boolean
@@ -149,9 +149,9 @@ class Cache
     }
 
     /**
-     * 自增缓存（針對數值缓存）
+     * 自增快取（針對數值快取）
      * @access public
-     * @param  string $name 缓存变量名
+     * @param  string $name 快取变量名
      * @param  int    $step 步長
      * @return false|int
      */
@@ -163,9 +163,9 @@ class Cache
     }
 
     /**
-     * 自减缓存（針對數值缓存）
+     * 自减快取（針對數值快取）
      * @access public
-     * @param  string $name 缓存变量名
+     * @param  string $name 快取变量名
      * @param  int    $step 步長
      * @return false|int
      */
@@ -177,9 +177,9 @@ class Cache
     }
 
     /**
-     * 刪除缓存
+     * 刪除快取
      * @access public
-     * @param  string $name 缓存標識
+     * @param  string $name 快取標識
      * @return boolean
      */
     public static function rm($name)
@@ -190,7 +190,7 @@ class Cache
     }
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access public
      * @param  string $tag 标签名
      * @return boolean
@@ -203,9 +203,9 @@ class Cache
     }
 
     /**
-     * 读取缓存并刪除
+     * 读取快取並刪除
      * @access public
-     * @param  string $name 缓存变量名
+     * @param  string $name 快取变量名
      * @return mixed
      */
     public static function pull($name)
@@ -217,9 +217,9 @@ class Cache
     }
 
     /**
-     * 如果不存在则写入缓存
+     * 如果不存在則寫入快取
      * @access public
-     * @param  string $name   缓存变量名
+     * @param  string $name   快取变量名
      * @param  mixed  $value  存储資料
      * @param  int    $expire 有效時間 0為永久
      * @return mixed
@@ -232,10 +232,10 @@ class Cache
     }
 
     /**
-     * 缓存标签
+     * 快取标签
      * @access public
      * @param  string       $name    标签名
-     * @param  string|array $keys    缓存標識
+     * @param  string|array $keys    快取標識
      * @param  bool         $overlay 是否覆盖
      * @return Driver
      */

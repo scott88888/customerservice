@@ -18,11 +18,11 @@ class Url
     protected static $bindCheck;
 
     /**
-     * URL產生 支持路由反射
+     * URL產生 支援路由反射
      * @param string            $url 路由地址
-     * @param string|array      $vars 参數（支持數组和字符串）a=val&b=val2... ['a'=>'val1', 'b'=>'val2']
-     * @param string|bool       $suffix 伪静态后缀，默认為true表示取得配置值
-     * @param boolean|string    $domain 是否显示域名 或者直接传入域名
+     * @param string|array      $vars 参數（支援數组和字符串）a=val&b=val2... ['a'=>'val1', 'b'=>'val2']
+     * @param string|bool       $suffix 伪静态後缀，默認為true表示取得配置值
+     * @param boolean|string    $domain 是否显示域名 或者直接傳入域名
      * @return string
      */
     public static function build($url = '', $vars = '', $suffix = true, $domain = false)
@@ -58,7 +58,7 @@ class Url
 
         // 解析参數
         if (is_string($vars)) {
-            // aaa=1&bbb=2 转换成數组
+            // aaa=1&bbb=2 轉換成數组
             parse_str($vars, $vars);
         }
 
@@ -66,7 +66,7 @@ class Url
             $rule = Route::name(isset($name) ? $name : $url . (isset($info['query']) ? '?' . $info['query'] : ''));
             if (is_null($rule) && isset($info['query'])) {
                 $rule = Route::name($url);
-                // 解析地址里面参數 合并到vars
+                // 解析地址里面参數 合併到vars
                 parse_str($info['query'], $params);
                 $vars = array_merge($params, $vars);
                 unset($info['query']);
@@ -107,7 +107,7 @@ class Url
                 $url = self::parseUrl($url, $domain);
             }
             if (isset($info['query'])) {
-                // 解析地址里面参數 合并到vars
+                // 解析地址里面参數 合併到vars
                 parse_str($info['query'], $params);
                 $vars = array_merge($params, $vars);
             }
@@ -127,7 +127,7 @@ class Url
         $depr = Config::get('pathinfo_depr');
         $url  = str_replace('/', $depr, $url);
 
-        // URL后缀
+        // URL後缀
         $suffix = in_array($url, ['/', '']) ? '' : self::parseSuffix($suffix);
         // 锚點
         $anchor = !empty($anchor) ? '#' . $anchor : '';
@@ -170,13 +170,13 @@ class Url
             // 直接作為路由地址解析
             $url = substr($url, 1);
         } elseif (false !== strpos($url, '\\')) {
-            // 解析到类
+            // 解析到類
             $url = ltrim(str_replace('\\', '/', $url), '/');
         } elseif (0 === strpos($url, '@')) {
             // 解析到控制器
             $url = substr($url, 1);
         } else {
-            // 解析到 模块/控制器/操作
+            // 解析到 模組/控制器/操作
             $module  = $request->module();
             $domains = Route::rules('domain');
             if (true === $domain && 2 == substr_count($url, '/')) {
@@ -212,7 +212,7 @@ class Url
 
             $controller = $request->controller();
             if ('' == $url) {
-                // 空字符串输出当前的 模块/控制器/操作
+                // 空字符串输出當前的 模組/控制器/操作
                 $action = $request->action();
             } else {
                 $path       = explode('/', $url);
@@ -284,7 +284,7 @@ class Url
         return $scheme . $domain;
     }
 
-    // 解析URL后缀
+    // 解析URL後缀
     protected static function parseSuffix($suffix)
     {
         if ($suffix) {
@@ -324,7 +324,7 @@ class Url
         return false;
     }
 
-    // 指定当前產生URL地址的root
+    // 指定當前產生URL地址的root
     public static function root($root)
     {
         self::$root = $root;

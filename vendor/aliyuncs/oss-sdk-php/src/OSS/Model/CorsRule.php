@@ -117,7 +117,7 @@ class CorsRule
     }
 
     /**
-     * 根據提供的xmlRule， 把this按照一定的规则插入到$xmlRule中
+     * 根據提供的xmlRule， 把this按照一定的規則插入到$xmlRule中
      *
      * @param \SimpleXMLElement $xmlRule
      * @throws OssException

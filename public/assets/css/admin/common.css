@@ -11,7 +11,7 @@ input[type="search"]::-webkit-search-cancel-button {
     cursor: pointer;
 }
 
-/* 后台主頁布局 */
+/* 後台主頁布局 */
 #layout-north {
     position: absolute;
     z-index: 2;
@@ -51,7 +51,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 
 
-/* 顶部导航 */
+/* 頂部导航 */
 #layout-logo {
     float: left;
     display: block;

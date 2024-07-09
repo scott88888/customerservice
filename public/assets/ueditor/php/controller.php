@@ -1,7 +1,7 @@
 <?php
 defined('UEDITORPATH') OR exit('No direct script access allowed');
 
-header('Access-Control-Allow-Origin:*'); //临时处理，後面在强化它
+header('Access-Control-Allow-Origin:*'); //临时處理，後面在强化它
 header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');
 
 //chdir(__DIR__);
@@ -30,24 +30,24 @@ if(!isset($_GET['action'])){
 $action = $_GET['action'];
 
 
-    // 驗證了才能上传
+    // 驗證了才能上傳
     switch ($action) {
         case 'config':
             $result =  json_encode($CONFIG, JSON_UNESCAPED_UNICODE);
             break;
 
-        /* 上传图片 */
+        /* 上傳圖片 */
         case 'uploadimage':
-            /* 上传涂鸦 */
+            /* 上傳涂鸦 */
         case 'uploadscrawl':
-            /* 上传视频 */
+            /* 上傳视频 */
         case 'uploadvideo':
-            /* 上传文件 */
+            /* 上傳文件 */
         case 'uploadfile':
             $result = include("action_upload.php");
             break;
 
-        /* 列出图片 */
+        /* 列出圖片 */
         case 'listimage':
             $result = include("action_list.php");
             break;

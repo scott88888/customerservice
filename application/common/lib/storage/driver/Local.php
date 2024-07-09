@@ -34,7 +34,7 @@ class Local extends Driver
             $this->url = $imgpath;
             $this->thumbUrl = $this->url;
         } else {
-            throw new StorageException('上传失敗');
+            throw new StorageException('上傳失敗');
         }
         return $this->save();
     }

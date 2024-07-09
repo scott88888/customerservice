@@ -113,7 +113,7 @@
             });
 
             var channel =pusher.subscribe("kefu" + value);
-            // 发送一个推送
+            // 發送一个推送
             channel.bind("callbackpusher",function(data){
                 $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
                 })
@@ -259,13 +259,13 @@
                         if (value.indexOf("emo") == 0) {
                             str = data.message.content;
                         } else {
-                            str = '[图片]';
+                            str = '[圖片]';
                         }
                     });
 
                     str = str.replace(/<div><a[^<>]+><i>.+?<\/i>.+?<\/a><\/div>/,'[文件]');
                     str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超連結]');
-                    str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[图片]');
+                    str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[圖片]');
 
                     $("#msg" + data.message.channel).html(str);
 
@@ -555,7 +555,7 @@
                         <div class="layui-input-inline">
                             <input type="text" name="m_height" placeholder="聊天視窗彈窗高度" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">單位像素，只針對手机端有效（只對自訂視窗產生js有效）</div>
+                        <div class="layui-form-mid layui-word-aux">單位像素，只針對手機端有效（只對自訂視窗產生js有效）</div>
                     </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label" style="width: 120px">懸浮條背景色</label>
@@ -613,13 +613,13 @@
                             &nbsp;&nbsp;var ai_service={};
                             &nbsp;&nbsp;ai_service.visiter_id='';//訪客id
                             &nbsp;&nbsp;ai_service.visiter_name='';//訪客暱稱
-                            &nbsp;&nbsp;ai_service.avatar='';//訪客圖示绝對路径
+                            &nbsp;&nbsp;ai_service.avatar='';//訪客圖示绝對路徑
                             &nbsp;&nbsp;ai_service.product='{}';//json資料字符串
                             &lt;/script>
                          </div>
                         /**
                         格式如下：
-                            {"pid":1,"title":" Apple MacBook Air ","img":"http://www.domain.com/assets/images/pro.jpg","info":"13.3英寸笔记本电脑 银色(2017款Core i5 处理器/8GB内存/128GB闪存 MQD32CH/A)","price":"￥7588.00","url":"http://www.domain.com/demo/index/product1"}
+                            {"pid":1,"title":" Apple MacBook Air ","img":"http://www.domain.com/assets/images/pro.jpg","info":"13.3英寸笔记本电脑 银色(2017款Core i5 處理器/8GB内存/128GB闪存 MQD32CH/A)","price":"￥7588.00","url":"http://www.domain.com/demo/index/product1"}
                          */
                      </pre>
 

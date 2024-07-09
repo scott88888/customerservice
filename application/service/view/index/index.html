@@ -92,7 +92,7 @@
           });
 
           var channel =pusher.subscribe("kefu" + value);
-          // 发送一个推送
+          // 發送一个推送
           channel.bind("callbackpusher",function(data){
               $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
               })
@@ -221,12 +221,12 @@
                       if (value.indexOf("emo") == 0) {
                           str = data.message.content;
                       } else {
-                          str = '[图片]';
+                          str = '[圖片]';
                       }
                   });
                   str = str.replace(/<div><a[^<>]+><i>.+?<\/i>.+?<\/a><\/div>/,'[文件]');
                   str = str.replace(/<a[^<>]+>.+?<\/a>/,'[超連結]');
-                  str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[图片]');
+                  str =str.replace(/<img src=['"]([^'"]+)[^>]*>/gi,'[圖片]');
                   $("#msg" + data.message.channel).html(str);
                   var div = document.getElementById("wrap");
               }
@@ -373,9 +373,9 @@
   </div>
   <!-- 側 边 区 域 -->
   <div class="layui-side layui-bg-black">
-    <!-- 顶 部 图 标 -->
+    <!-- 顶 部 圖 标 -->
     <div class="layui-logo">
-      <!-- 图 表 -->
+      <!-- 圖 表 -->
       <img class="logo"></img>
       <!-- 标 题 -->
       <span class="title"></span>
@@ -385,13 +385,13 @@
       <div id="sideMenu"></div>
     </div>
   </div>
-  <!-- 视 图 頁 面 -->
+  <!-- 视 圖 頁 面 -->
   <div class="layui-body">
     <!-- 内 容 頁 面 -->
     <div id="content"></div>
   </div>
 </div>
-<!-- 遮 盖 层 -->
+<!-- 遮 盖 層 -->
 <div class="pear-cover"></div>
 <!-- 移 動 端 便 捷 操 作 -->
 <div class="pear-collasped-pe collaspe"><a href="#" class="layui-icon layui-icon-shrink-right"></a></div>

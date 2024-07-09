@@ -32,31 +32,31 @@ class Stats extends AbstractAPI
     const  API_USER_SUMMARY = 'https://api.weixin.qq.com/datacube/getusersummary';
     // 取得累计使用者資料
     const  API_USER_CUMULATE = 'https://api.weixin.qq.com/datacube/getusercumulate';
-    // 取得图文群发每日資料
+    // 取得圖文群发每日資料
     const  API_ARTICLE_SUMMARY = 'https://api.weixin.qq.com/datacube/getarticlesummary';
-    // 取得图文群发总資料
+    // 取得圖文群发总資料
     const  API_ARTICLE_TOTAL = 'https://api.weixin.qq.com/datacube/getarticletotal';
-    // 取得图文统计資料
+    // 取得圖文统计資料
     const  API_USER_READ_SUMMARY = 'https://api.weixin.qq.com/datacube/getuserread';
-    // 取得图文统计分时資料
+    // 取得圖文统计分时資料
     const  API_USER_READ_HOURLY = 'https://api.weixin.qq.com/datacube/getuserreadhour';
-    // 取得图文分享转发資料
+    // 取得圖文分享转发資料
     const  API_USER_SHARE_SUMMARY = 'https://api.weixin.qq.com/datacube/getusershare';
-    // 取得图文分享转发分时資料
+    // 取得圖文分享转发分时資料
     const  API_USER_SHARE_HOURLY = 'https://api.weixin.qq.com/datacube/getusersharehour';
-    // 取得消息发送概况資料
+    // 取得消息發送概况資料
     const  API_UPSTREAM_MSG_SUMMARY = 'https://api.weixin.qq.com/datacube/getupstreammsg';
     // 取得消息分送分时資料
     const  API_UPSTREAM_MSG_HOURLY = 'https://api.weixin.qq.com/datacube/getupstreammsghour';
-    // 取得消息发送周資料
+    // 取得消息發送周資料
     const  API_UPSTREAM_MSG_WEEKLY = 'https://api.weixin.qq.com/datacube/getupstreammsgweek';
-    // 取得消息发送月資料
+    // 取得消息發送月資料
     const  API_UPSTREAM_MSG_MONTHLY = 'https://api.weixin.qq.com/datacube/getupstreammsgmonth';
-    // 取得消息发送分布資料
+    // 取得消息發送分布資料
     const  API_UPSTREAM_MSG_DIST_SUMMARY = 'https://api.weixin.qq.com/datacube/getupstreammsgdist';
-    // 取得消息发送分布周資料
+    // 取得消息發送分布周資料
     const  API_UPSTREAM_MSG_DIST_WEEKLY = 'https://api.weixin.qq.com/datacube/getupstreammsgdistweek';
-    // 取得消息发送分布月資料
+    // 取得消息發送分布月資料
     const  API_UPSTREAM_MSG_DIST_MONTHLY = 'https://api.weixin.qq.com/datacube/getupstreammsgdistmonth?';
     // 取得接口分析資料
     const  API_INTERFACE_SUMMARY = 'https://api.weixin.qq.com/datacube/getinterfacesummary';
@@ -96,7 +96,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得图文群发每日資料.
+     * 取得圖文群发每日資料.
      *
      * @param string $from
      * @param string $to
@@ -109,7 +109,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得图文群发总資料.
+     * 取得圖文群发总資料.
      *
      * @param string $from
      * @param string $to
@@ -122,7 +122,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得图文统计資料.
+     * 取得圖文统计資料.
      *
      * @param string $from
      * @param string $to
@@ -135,7 +135,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得图文统计分时資料.
+     * 取得圖文统计分时資料.
      *
      * @param string $from
      * @param string $to
@@ -148,7 +148,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得图文分享转发資料.
+     * 取得圖文分享转发資料.
      *
      * @param string $from
      * @param string $to
@@ -161,7 +161,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得图文分享转发分时資料.
+     * 取得圖文分享转发分时資料.
      *
      * @param string $from
      * @param string $to
@@ -174,7 +174,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得消息发送概况資料.
+     * 取得消息發送概况資料.
      *
      * @param string $from
      * @param string $to
@@ -200,7 +200,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得消息发送周資料.
+     * 取得消息發送周資料.
      *
      * @param string $from
      * @param string $to
@@ -213,7 +213,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得消息发送月資料.
+     * 取得消息發送月資料.
      *
      * @param string $from
      * @param string $to
@@ -226,7 +226,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得消息发送分布資料.
+     * 取得消息發送分布資料.
      *
      * @param string $from
      * @param string $to
@@ -239,7 +239,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得消息发送分布周資料.
+     * 取得消息發送分布周資料.
      *
      * @param string $from
      * @param string $to
@@ -252,7 +252,7 @@ class Stats extends AbstractAPI
     }
 
     /**
-     * 取得消息发送分布月資料.
+     * 取得消息發送分布月資料.
      *
      * @param string $from
      * @param string $to

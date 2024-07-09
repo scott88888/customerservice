@@ -54,7 +54,7 @@ function putBucketWebsite($ossClient, $bucket)
 /**
  * 取得bucket的静态網站托管狀態
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */
@@ -75,7 +75,7 @@ function getBucketWebsite($ossClient, $bucket)
 /**
  * 刪除bucket的静态網站托管模式配置
  *
- * @param OssClient $ossClient OssClient实例
+ * @param OssClient $ossClient OssClient實例
  * @param string $bucket 存储空間名稱
  * @return null
  */

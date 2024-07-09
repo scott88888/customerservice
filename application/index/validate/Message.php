@@ -7,7 +7,7 @@ use think\Validate;
 class Message extends Validate{
 
     /**
-    * 驗證规则
+    * 驗證規則
     * [$rule description]
     * @var [type]
     */
@@ -23,8 +23,8 @@ class Message extends Validate{
     * @var array
     */
    protected $message =[
-        "username.require"       => "請填写使用者名稱称",
-        'content.require'        => '請填写留言',
+        "username.require"       => "請填寫使用者名稱称",
+        'content.require'        => '請填寫留言',
    ];
   
 }

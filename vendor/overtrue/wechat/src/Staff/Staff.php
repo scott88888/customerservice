@@ -105,11 +105,11 @@ class Staff extends AbstractAPI
      */
     public function delete($account)
     {
-        // XXX: 微信那帮搞技术的都 TM 是 SB，url上的文本居然不 TM urlencode,
+        // XXX: 微信那帮搞技術的都 TM 是 SB，url上的文字居然不 TM urlencode,
         // 这里客服账号因為有 @ 符，而微信不接收urlencode的账号。。
         // 简直是日了...
         // #222
-        // PS: 如果你是微信做接口的，奉劝你們，尊重技术，不会别乱搞，笨不是你們的错，你們出来坑人就是大错特错。
+        // PS: 如果你是微信做接口的，奉劝你們，尊重技術，不会别乱搞，笨不是你們的错，你們出来坑人就是大错特错。
         $accessTokenField = sprintf('%s=%s', $this->accessToken->getQueryName(), $this->accessToken->getToken());
         $url = sprintf(self::API_DELETE.'?%s&kf_account=%s', $accessTokenField, $account);
 

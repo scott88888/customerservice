@@ -29,7 +29,7 @@ class File
         'json'        => false,
     ];
 
-    // 实例化并传入参數
+    // 實例化並傳入参數
     public function __construct($config = [])
     {
         if (is_array($config)) {
@@ -38,9 +38,9 @@ class File
     }
 
     /**
-     * 日志写入接口
+     * 日誌寫入接口
      * @access public
-     * @param  array    $log 日志訊息
+     * @param  array    $log 日誌訊息
      * @param  bool     $append 是否追加請求訊息
      * @return bool
      */
@@ -63,7 +63,7 @@ class File
             }
 
             if (!$this->config['json'] && (true === $this->config['apart_level'] || in_array($type, $this->config['apart_level']))) {
-                // 独立记录的日志级别
+                // 独立记录的日誌级别
                 $filename = $this->getApartLevelFile($path, $type);
 
                 $this->write($info[$type], $filename, true, $append);
@@ -79,7 +79,7 @@ class File
     }
 
     /**
-     * 取得主日志文件名
+     * 取得主日誌文件名
      * @access public
      * @return string
      */
@@ -113,10 +113,10 @@ class File
     }
 
     /**
-     * 取得独立日志文件名
+     * 取得独立日誌文件名
      * @access public
-     * @param  string $path 日志目录
-     * @param  string $type 日志类型
+     * @param  string $path 日誌目錄
+     * @param  string $type 日誌類型
      * @return string
      */
     protected function getApartLevelFile($path, $type)
@@ -137,20 +137,20 @@ class File
     }
 
     /**
-     * 日志写入
+     * 日誌寫入
      * @access protected
-     * @param  array     $message 日志訊息
-     * @param  string    $destination 日志文件
-     * @param  bool      $apart 是否独立文件写入
+     * @param  array     $message 日誌訊息
+     * @param  string    $destination 日誌文件
+     * @param  bool      $apart 是否独立文件寫入
      * @param  bool      $append 是否追加請求訊息
      * @return bool
      */
     protected function write($message, $destination, $apart = false, $append = false)
     {
-        // 检测日志文件大小，超过配置大小则备份日志文件重新產生
+        // 检测日誌文件大小，超过配置大小則备份日誌文件重新產生
         $this->checkLogSize($destination);
 
-        // 日志訊息封装
+        // 日誌訊息封装
         $info['timestamp'] = date($this->config['time_format']);
 
         foreach ($message as $type => $msg) {
@@ -160,7 +160,7 @@ class File
         if (PHP_SAPI == 'cli') {
             $message = $this->parseCliLog($info);
         } else {
-            // 新增调试日志
+            // 新增调试日誌
             $this->getDebugLog($info, $append, $apart);
 
             $message = $this->parseLog($info);
@@ -170,9 +170,9 @@ class File
     }
 
     /**
-     * 檢查日志文件大小并自動產生备份文件
+     * 檢查日誌文件大小並自動產生备份文件
      * @access protected
-     * @param  string    $destination 日志文件
+     * @param  string    $destination 日誌文件
      * @return void
      */
     protected function checkLogSize($destination)
@@ -186,9 +186,9 @@ class File
     }
 
     /**
-     * CLI日志解析
+     * CLI日誌解析
      * @access protected
-     * @param  array     $info 日志訊息
+     * @param  array     $info 日誌訊息
      * @return string
      */
     protected function parseCliLog($info)
@@ -208,9 +208,9 @@ class File
     }
 
     /**
-     * 解析日志
+     * 解析日誌
      * @access protected
-     * @param  array     $info 日志訊息
+     * @param  array     $info 日誌訊息
      * @return string
      */
     protected function parseLog($info)
@@ -253,7 +253,7 @@ class File
                 ] + $info;
 
             } elseif (!$apart) {
-                // 增加额外的调试訊息
+                // 增加額外的调试訊息
                 $runtime = round(microtime(true) - THINK_START_TIME, 10);
                 $reqs    = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
 
@@ -261,7 +261,7 @@ class File
 
                 $time_str   = '[运行時間：' . number_format($runtime, 6) . 's] [吞吐率：' . $reqs . 'req/s]';
                 $memory_str = ' [内存消耗：' . $memory_use . 'kb]';
-                $file_load  = ' [文件加载：' . count(get_included_files()) . ']';
+                $file_load  = ' [文件載入：' . count(get_included_files()) . ']';
 
                 array_unshift($info, $time_str . $memory_str . $file_load);
             }

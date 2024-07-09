@@ -97,7 +97,7 @@ class Session
             // 读取session驱動
             $class = false !== strpos($config['type'], '\\') ? $config['type'] : '\\think\\session\\driver\\' . ucwords($config['type']);
 
-            // 檢查驱動类
+            // 檢查驱動類
             if (!class_exists($class) || !session_set_save_handler(new $class($config))) {
                 throw new ClassNotFoundException('error session handler:' . $class, $class);
             }
@@ -186,7 +186,7 @@ class Session
     }
 
     /**
-     * session取得并刪除
+     * session取得並刪除
      * @param string        $name session名稱
      * @param string|null   $prefix 作用域（前缀）
      * @return mixed
@@ -219,7 +219,7 @@ class Session
     }
 
     /**
-     * 清空当前請求的session資料
+     * 清空當前請求的session資料
      * @return void
      */
     public static function flush()
@@ -295,7 +295,7 @@ class Session
         empty(self::$init) && self::boot();
         $prefix = !is_null($prefix) ? $prefix : self::$prefix;
         if (strpos($name, '.')) {
-            // 支持數组
+            // 支援數组
             list($name1, $name2) = explode('.', $name);
             return $prefix ? isset($_SESSION[$prefix][$name1][$name2]) : isset($_SESSION[$name1][$name2]);
         } else {

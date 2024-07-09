@@ -14,7 +14,7 @@ namespace think\db\builder;
 use think\db\Builder;
 
 /**
- * Sqlite資料库驱動
+ * Sqlite資料庫驱動
  */
 class Sqlite extends Builder
 {
@@ -40,7 +40,7 @@ class Sqlite extends Builder
     }
 
     /**
-     * 随机排序
+     * 随機排序
      * @access protected
      * @return string
      */
@@ -50,7 +50,7 @@ class Sqlite extends Builder
     }
 
     /**
-     * 字段和表名处理
+     * 字段和表名處理
      * @access protected
      * @param mixed  $key
      * @param array  $options

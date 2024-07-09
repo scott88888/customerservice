@@ -25,7 +25,7 @@ abstract class Driver
     public $file;
 
     /**
-     * 上传
+     * 上傳
      * @param $name
      * @return mixed
      */
@@ -38,13 +38,13 @@ abstract class Driver
         $this->extension = strtolower(pathinfo($this->file->getInfo('name'), PATHINFO_EXTENSION));
         $option = Option::getList('image_size,file_size', 0, 'admin');
         if (!$this->file->checkExt(['txt','jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp','rar','zip','mp4','ogg','mov','mp3','apk'])) {
-            throw new StorageException('不支持的文件类型');
+            throw new StorageException('不支援的文件類型');
         };
         if (in_array($this->extension,['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'])) {
             $type = 'images';
             if (isset($option['image_size']) && is_numeric($option['image_size'])) {
                 if (!$this->file->check(['size'=>1024*1024*$option['image_size']])) {
-                    throw new StorageException("图片大小受限，最大為:".$option['image_size']."MB");
+                    throw new StorageException("圖片大小受限，最大為:".$option['image_size']."MB");
                 };
             }
         } else {
@@ -61,7 +61,7 @@ abstract class Driver
 
     public function save()
     {
-        //todo 保存到資料库
+        //todo 保存到資料庫
         return [
             'url' => $this->url
         ];

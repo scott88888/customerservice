@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
-**目录 (Table of Contents)**
+**目錄 (Table of Contents)**
 
 [TOCM]
 
@@ -23,7 +23,7 @@
 ##### Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 ###### Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 
-#### 标题（用底线的形式）Heading (underline)
+#### 標題（用底线的形式）Heading (underline)
 
 This is an H1
 =============
@@ -42,25 +42,25 @@ This is an H2
 
 上标：X<sub>2</sub>，下标：O<sup>2</sup>
 
-**缩写(同HTML的abbr标签)**
+**缩寫(同HTML的abbr标签)**
 
-> 即更長的單词或短语的缩写形式，前提是開啟识别HTML标签时，已默认開啟
+> 即更長的單词或短語的缩寫形式，前提是開啟识别HTML标签时，已默認開啟
 
 The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
 ### 引用 Blockquotes
 
-> 引用文本 Blockquotes
+> 引用文字 Blockquotes
 
 引用的行内混合 Blockquotes
                     
-> 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通連結](http://localhost/)。
+> 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然後回车即可，[普通連結](http://localhost/)。
 
 ### 锚點与連結 Links
 
 [普通連結](http://localhost/)
 
-[普通連結带标题](http://localhost/ "普通連結带标题")
+[普通連結带標題](http://localhost/ "普通連結带標題")
 
 直接連結：<https://github.com>
 
@@ -78,17 +78,17 @@ GFM a-tail link @pandao  信箱地址自動連結 test.test@gmail.com  www@vip.q
 
 #### 行内程式碼 Inline code
 
-执行命令：`npm install marked`
+執行命令：`npm install marked`
 
-#### 缩进风格
+#### 缩进風格
 
-即缩进四个空格，也做為實現类似 `<pre>` 预格式化文本 ( Preformatted Text ) 的功能。
+即缩进四个空格，也做為實現類似 `<pre>` 预格式化文字 ( Preformatted Text ) 的功能。
 
     <?php
         echo "Hello world!";
     ?>
     
-预格式化文本：
+预格式化文字：
 
     | First Header  | Second Header |
     | ------------- | ------------- |
@@ -158,7 +158,7 @@ testBox.add("jQuery").remove("jQuery");
 </html>
 ```
 
-### 图片 Images
+### 圖片 Images
 
 Image:
 
@@ -168,13 +168,13 @@ Image:
 
 ![](https://pandao.github.io/editor.md/examples/images/8.jpg)
 
-> 图為：厦门白城沙滩
+> 圖為：厦门白城沙滩
 
-图片加連結 (Image + Link)：
+圖片加連結 (Image + Link)：
 
 [![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/images/7.jpg "李健首张专辑《似水流年》封面")
 
-> 图為：李健首张专辑《似水流年》封面
+> 圖為：李健首张专辑《似水流年》封面
                 
 ----
 
@@ -228,8 +228,8 @@ Image:
 
 | 项目        | 价格   |  數量  |
 | --------   | -----:  | :----:  |
-| 计算机      | $1600   |   5     |
-| 手机        |   $12   |   12   |
+| 计算機      | $1600   |   5     |
+| 手機        |   $12   |   12   |
 | 管线        |    $1    |  234  |
                     
 First Header  | Second Header
@@ -338,13 +338,13 @@ f(x) = \int_{-\infty}^\infty
 
 [========]
 
-### 绘制流程图 Flowchart
+### 绘制流程圖 Flowchart
 
 ```flow
 st=>start: 使用者登入
 op=>operation: 登入操作
 cond=>condition: 登入成功 Yes or No?
-e=>end: 进入后台
+e=>end: 进入後台
 
 st->op->cond
 cond(yes)->e
@@ -353,7 +353,7 @@ cond(no)->op
 
 [========]
                     
-### 绘制序列图 Sequence Diagram
+### 绘制序列圖 Sequence Diagram
                     
 ```seq
 Andrew->China: Says Hello 

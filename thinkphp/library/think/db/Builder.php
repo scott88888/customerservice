@@ -16,12 +16,12 @@ use think\Exception;
 
 abstract class Builder
 {
-    // connection對象实例
+    // connection對象實例
     protected $connection;
-    // 查詢對象实例
+    // 查詢對象實例
     protected $query;
 
-    // 資料库表达式
+    // 資料庫表达式
     protected $exp = ['eq' => '=', 'neq' => '<>', 'gt' => '>', 'egt' => '>=', 'lt' => '<', 'elt' => '<=', 'notlike' => 'NOT LIKE', 'not like' => 'NOT LIKE', 'like' => 'LIKE', 'in' => 'IN', 'exp' => 'EXP', 'notin' => 'NOT IN', 'not in' => 'NOT IN', 'between' => 'BETWEEN', 'not between' => 'NOT BETWEEN', 'notbetween' => 'NOT BETWEEN', 'exists' => 'EXISTS', 'notexists' => 'NOT EXISTS', 'not exists' => 'NOT EXISTS', 'null' => 'NULL', 'notnull' => 'NOT NULL', 'not null' => 'NOT NULL', '> time' => '> TIME', '< time' => '< TIME', '>= time' => '>= TIME', '<= time' => '<= TIME', 'between time' => 'BETWEEN TIME', 'not between time' => 'NOT BETWEEN TIME', 'notbetween time' => 'NOT BETWEEN TIME'];
 
     // SQL表达式
@@ -34,8 +34,8 @@ abstract class Builder
     /**
      * 构造函數
      * @access public
-     * @param Connection    $connection 資料库連結對象实例
-     * @param Query         $query      資料库查詢對象实例
+     * @param Connection    $connection 資料庫連結對象實例
+     * @param Query         $query      資料庫查詢對象實例
      */
     public function __construct(Connection $connection, Query $query)
     {
@@ -44,7 +44,7 @@ abstract class Builder
     }
 
     /**
-     * 取得当前的連結對象实例
+     * 取得當前的連結對象實例
      * @access public
      * @return Connection
      */
@@ -54,7 +54,7 @@ abstract class Builder
     }
 
     /**
-     * 取得当前的Query對象实例
+     * 取得當前的Query對象實例
      * @access public
      * @return Query
      */
@@ -64,9 +64,9 @@ abstract class Builder
     }
 
     /**
-     * 将SQL语句中的__TABLE_NAME__字符串替换成带前缀的表名（小写）
+     * 将SQL語句中的__TABLE_NAME__字符串替换成带前缀的表名（小寫）
      * @access protected
-     * @param string $sql sql语句
+     * @param string $sql sql語句
      * @return string
      */
     protected function parseSqlTable($sql)
@@ -107,7 +107,7 @@ abstract class Builder
                 $result[$item] = $val->getValue();
                 continue;
             } elseif (is_object($val) && method_exists($val, '__toString')) {
-                // 對象資料写入
+                // 對象資料寫入
                 $val = $val->__toString();
             }
             if (false === strpos($key, '.') && !in_array($key, $fields, true)) {
@@ -186,7 +186,7 @@ abstract class Builder
         if ('*' == $fields || empty($fields)) {
             $fieldsStr = '*';
         } elseif (is_array($fields)) {
-            // 支持 'field1'=>'field2' 这样的字段别名定义
+            // 支援 'field1'=>'field2' 这样的字段别名定義
             $array = [];
             foreach ($fields as $key => $field) {
                 if ($field instanceof Expression) {
@@ -316,7 +316,7 @@ abstract class Builder
         // 字段分析
         $key = $field ? $this->parseKey($field, $options, true) : '';
 
-        // 查詢规则和條件
+        // 查詢規則和條件
         if (!is_array($val)) {
             $val = is_null($val) ? ['null', ''] : ['=', $val];
         }
@@ -325,7 +325,7 @@ abstract class Builder
         // 對一个字段使用多个查詢條件
         if (is_array($exp)) {
             $item = array_pop($val);
-            // 传入 or 或者 and
+            // 傳入 or 或者 and
             if (is_string($item) && in_array($item, ['AND', 'and', 'OR', 'or'])) {
                 $rule = $item;
             } else {
@@ -349,14 +349,14 @@ abstract class Builder
         }
         $bindName = $bindName ?: 'where_' . $rule . '_' . str_replace(['.', '-'], '_', $field);
         if (preg_match('/\W/', $bindName)) {
-            // 处理带非單词字符的字段名
+            // 處理带非單词字符的字段名
             $bindName = md5($bindName);
         }
 
         if ($value instanceof Expression) {
 
         } elseif (is_object($value) && method_exists($value, '__toString')) {
-            // 對象資料写入
+            // 對象資料寫入
             $value = $value->__toString();
         }
 
@@ -467,7 +467,7 @@ abstract class Builder
         return $whereStr;
     }
 
-    // 执行闭包子查詢
+    // 執行闭包子查詢
     protected function parseClosure($call, $show = true)
     {
         $query = new Query($this->connection);
@@ -487,7 +487,7 @@ abstract class Builder
      */
     protected function parseDateTime($value, $key, $options = [], $bindName = null, $bindType = null)
     {
-        // 取得時間字段类型
+        // 取得時間字段類型
         if (strpos($key, '.')) {
             list($table, $key) = explode('.', $key);
             if (isset($options['alias']) && $pos = array_search($table, $options['alias'])) {
@@ -506,10 +506,10 @@ abstract class Builder
             }
 
             if (preg_match('/(datetime|timestamp)/is', $info)) {
-                // 日期及時間戳类型
+                // 日期及時間戳類型
                 $value = date('Y-m-d H:i:s', $value);
             } elseif (preg_match('/(date)/is', $info)) {
-                // 日期及時間戳类型
+                // 日期及時間戳類型
                 $value = date('Y-m-d', $value);
             }
         }
@@ -687,7 +687,7 @@ abstract class Builder
     }
 
     /**
-     * 設定锁机制
+     * 設定锁機制
      * @access protected
      * @param bool|string $lock
      * @return string
@@ -739,7 +739,7 @@ abstract class Builder
      */
     public function insert(array $data, $options = [], $replace = false)
     {
-        // 分析并处理資料
+        // 分析並處理資料
         $data = $this->parseData($data, $options);
         if (empty($data)) {
             return 0;
@@ -790,7 +790,7 @@ abstract class Builder
                 } elseif (is_scalar($val)) {
                     $data[$key] = $this->parseValue($val, $key);
                 } elseif (is_object($val) && method_exists($val, '__toString')) {
-                    // 對象資料写入
+                    // 對象資料寫入
                     $data[$key] = $val->__toString();
                 } else {
                     // 过滤掉非标量資料

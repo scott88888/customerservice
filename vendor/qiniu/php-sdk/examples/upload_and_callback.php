@@ -7,8 +7,8 @@ use Qiniu\Storage\UploadManager;
 // use Qiniu\Config;
 // use Qiniu\Zone;
 
-// 指定zone上传
-// $zone = Zone::zoneZ0(); //华东QVM内網上传指定host
+// 指定zone上傳
+// $zone = Zone::zoneZ0(); //华东QVM内網上傳指定host
 // $config = new Config($zone);
 
 $accessKey = getenv('QINIU_ACCESS_KEY');
@@ -16,7 +16,7 @@ $secretKey = getenv('QINIU_SECRET_KEY');
 $bucket = getenv('QINIU_TEST_BUCKET');
 $auth = new Auth($accessKey, $secretKey);
 
-// 上传文件到七牛后， 七牛将文件名和文件大小回调给业务服务器.
+// 上傳文件到七牛後， 七牛将文件名和文件大小回调给業務服务器.
 // 可参考文档: http://developer.qiniu.com/docs/v6/api/reference/security/put-policy.html
 $policy = array(
     'callbackUrl' => 'http://your.domain.com/upload_verify_callback.php',
@@ -24,7 +24,7 @@ $policy = array(
 );
 $uptoken = $auth->uploadToken($bucket, null, 3600, $policy);
 
-//上传文件的本地路径
+//上傳文件的本地路徑
 $filePath = './php-logo.png';
 
 //指定 config

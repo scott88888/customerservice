@@ -5,6 +5,6 @@
 比如：
 
 * `$bucket`  需要填上您想操作的 [bucket名字](http://developer.qiniu.com/docs/v6/api/overview/concepts.html#bucket)。
-* `$accessKey` 和 `$secretKey` 可以在我们的[管理后台](https://portal.qiniu.com/setting/key)找到。
-* 在进行`视频转碼`， `压缩文件`等异步操作时 需要使用到的队列名稱也可以在我们[管理后台](https://portal.qiniu.com/mps/pipeline)新建。
+* `$accessKey` 和 `$secretKey` 可以在我们的[管理後台](https://portal.qiniu.com/setting/key)找到。
+* 在进行`视频转碼`， `压缩文件`等异步操作时 需要使用到的對列名稱也可以在我们[管理後台](https://portal.qiniu.com/mps/pipeline)新建。
 

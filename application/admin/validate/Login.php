@@ -13,7 +13,7 @@ class Login extends Validate
 {
 
     /**
-     * 驗證规则.
+     * 驗證規則.
      * [$rule description]
      * @var array
      */
@@ -29,9 +29,9 @@ class Login extends Validate
      * @var [type]
      */
     protected $messege = [
-        'username.require' => '請填写登入帐号',
-        'password.require' => '請填写登入密碼',
-        'captcha.require'  => '請填写驗證碼',
+        'username.require' => '請填寫登入帐号',
+        'password.require' => '請填寫登入密碼',
+        'captcha.require'  => '請填寫驗證碼',
         'captcha.captcha'  => '驗證碼不正确'
     ];
 }

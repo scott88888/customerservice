@@ -2,11 +2,11 @@
 namespace app\common\lib;
 
 /**
- * cURL請求工具类
+ * cURL請求工具類
  */
 class CurlUtils {
 
-    private $ch;//curl资源對象
+    private $ch;//curl資源對象
 
     /**
      * 构造方法
@@ -38,7 +38,7 @@ class CurlUtils {
     }
 
     /**
-     * 发送請求
+     * 發送請求
      * @return string 返回的資料
      */
     private function exec(){
@@ -46,7 +46,7 @@ class CurlUtils {
     }
 
     /**
-     * 发送get請求
+     * 發送get請求
      * @return string 請求返回的資料
      */
     public function get(){
@@ -54,8 +54,8 @@ class CurlUtils {
     }
 
     /**
-     * 发送post請求
-     * @param  arr/string $value 准备发送post的資料
+     * 發送post請求
+     * @param  arr/string $value 准备發送post的資料
      * @param boolean $https 是否為https請求
      * @return string        請求返回的資料
      */

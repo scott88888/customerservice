@@ -35,17 +35,17 @@
         $imageUploader = new EditorMdUploader($savePath, $saveURL, $formats['image'], false);  // Ymdhis表示按日期產生文件名，利用date()函數
         
         $imageUploader->config(array(
-            'maxSize' => 1024,        // 允许上传的最大文件大小，以KB為單位，默认值為1024
-            'cover'   => true         // 是否覆盖同名文件，默认為true
+            'maxSize' => 1024,        // 允许上傳的最大文件大小，以KB為單位，默認值為1024
+            'cover'   => true         // 是否覆盖同名文件，默認為true
         ));
         
         if ($imageUploader->upload($name))
         {
-            $imageUploader->message('上传成功！', 1);
+            $imageUploader->message('上傳成功！', 1);
         }
         else
         {
-            $imageUploader->message('上传失敗！', 0);
+            $imageUploader->message('上傳失敗！', 0);
         }
     }
 ?>

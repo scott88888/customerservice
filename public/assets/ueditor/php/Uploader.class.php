@@ -3,44 +3,44 @@
 use app\common\lib\Storage;
 
 /**
- * UEditor編輯器通用上传类
+ * UEditor編輯器通用上傳類
  */
 class Uploader
 {
     private $rid; //存储標識
-    private $watermark; //是否图片水印
+    private $watermark; //是否圖片水印
     private $attachment_info; //附件存储訊息
     private $attachment_model; //附件模型
     private $fileMd5; //文件md5
 
     private $fileField; //文件域名
-    private $file; //文件上传對象
-    private $base64; //文件上传對象
+    private $file; //文件上傳對象
+    private $base64; //文件上傳對象
     private $config; //配置訊息
     private $oriName; //原始文件名
     private $fileName; //新文件名
-    private $fullName; //完整文件名,即从当前配置目录開始的URL
-    private $filePath; //完整文件名,即从当前配置目录開始的URL
+    private $fullName; //完整文件名,即从當前配置目錄開始的URL
+    private $filePath; //完整文件名,即从當前配置目錄開始的URL
     private $fileUrl; //完整文件URL
     private $fileSize; //文件大小
-    private $fileType; //文件类型
-    private $stateInfo; //上传狀態訊息,
-    private $stateMap = array( //上传狀態映射表，国际化使用者需考虑此处資料的国际化
-        "SUCCESS", //上传成功标记，在UEditor中内不可改变，否则flash判断会出错
+    private $fileType; //文件類型
+    private $stateInfo; //上傳狀態訊息,
+    private $stateMap = array( //上傳狀態映射表，国际化使用者需考虑此处資料的国际化
+        "SUCCESS", //上傳成功标记，在UEditor中内不可改变，否則flash判断会出错
         "文件大小超出 upload_max_filesize 限制",
         "文件大小超出 MAX_FILE_SIZE 限制",
-        "文件未被完整上传",
-        "没有文件被上传",
-        "上传文件為空",
+        "文件未被完整上傳",
+        "没有文件被上傳",
+        "上傳文件為空",
         "ERROR_TMP_FILE" => "临时文件錯誤",
         "ERROR_TMP_FILE_NOT_FOUND" => "找不到临时文件",
         "ERROR_SIZE_EXCEED" => "文件大小超出網站限制",
-        "ERROR_TYPE_NOT_ALLOWED" => "文件类型不允许",
-        "ERROR_CREATE_DIR" => "目录建立失敗",
-        "ERROR_DIR_NOT_WRITEABLE" => "目录没有写权限",
+        "ERROR_TYPE_NOT_ALLOWED" => "文件類型不允许",
+        "ERROR_CREATE_DIR" => "目錄建立失敗",
+        "ERROR_DIR_NOT_WRITEABLE" => "目錄没有寫权限",
         "ERROR_FILE_MOVE" => "文件保存时出错",
-        "ERROR_FILE_NOT_FOUND" => "找不到上传文件",
-        "ERROR_WRITE_CONTENT" => "写入文件内容錯誤",
+        "ERROR_FILE_NOT_FOUND" => "找不到上傳文件",
+        "ERROR_WRITE_CONTENT" => "寫入文件内容錯誤",
         "ERROR_UNKNOWN" => "未知錯誤",
         "ERROR_DEAD_LINK" => "連結不可用",
         "ERROR_HTTP_LINK" => "連結不是http連結",
@@ -53,7 +53,7 @@ class Uploader
      * 构造函數
      * @param string $fileField 表單名稱
      * @param array $config 配置项
-     * @param bool $base64 是否解析base64编碼，可省略。若開啟，则$fileField代表的是base64编碼的字符串表單名
+     * @param bool $base64 是否解析base64编碼，可省略。若開啟，則$fileField代表的是base64编碼的字符串表單名
      */
     public function __construct($fileField, $config, $type = "upload")
     {
@@ -72,7 +72,7 @@ class Uploader
     }
 
     /**
-     * 上传文件的主处理方法
+     * 上傳文件的主處理方法
      * @return mixed
      */
     private function upFile()
@@ -117,7 +117,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 处理base64编碼的图片上传
+     * 處理base64编碼的圖片上傳
      * @return mixed
      */
     private function upBase64()
@@ -163,7 +163,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 拉取远程图片
+     * 拉取远程圖片
      * @return mixed
      */
     private function saveRemote()
@@ -197,7 +197,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
             return;
         }
 
-        //取得請求头并检测死链
+        //取得請求头並检测死链
         $heads = get_headers($imgUrl, 1);
         if (!(stristr($heads[0], "200") && stristr($heads[0], "OK"))) {
             $this->stateInfo = $this->getStateInfo("ERROR_DEAD_LINK");
@@ -210,7 +210,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
             return;
         }
 
-        //打開输出缓冲区并取得远程图片
+        //打開输出缓冲区並取得远程圖片
         ob_start();
         $context = stream_context_create(
             array('http' => array(
@@ -260,13 +260,13 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 上传錯誤檢查
+     * 上傳錯誤檢查
      * @param $errCode
      * @return string
      */
     private function getStateInfo($errCode)
     {
-        return !$this->stateMap[$errCode] ? '上传錯誤('.$errCode.')' : $this->stateMap[$errCode];
+        return !$this->stateMap[$errCode] ? '上傳錯誤('.$errCode.')' : $this->stateMap[$errCode];
     }
 
     /**
@@ -297,13 +297,13 @@ $this->fileMd5=md5_file($file["tmp_name"]);
         $format = str_replace("{ss}", $d[6], $format);
         $format = str_replace("{time}", $t, $format);
 
-        //过滤文件名的非法自负,并替换文件名
+        //过滤文件名的非法自负,並替换文件名
         $oriName = substr($this->oriName, 0, strrpos($this->oriName, '.'));
         $oriName = preg_replace("/[\|\?\"\<\>\/\*\\\\]+/", '', $oriName);
         $format = str_replace("{filename}", $oriName, $format);
 
-        //替换随机字符串
-        $randNum = substr(md5(time().$oriName), rand(0, 20), 15); // 随机新名字
+        //替换随機字符串
+        $randNum = substr(md5(time().$oriName), rand(0, 20), 15); // 随機新名字
         if (preg_match("/\{rand\:([\d]*)\}/i", $format, $matches)) {
             $format = preg_replace("/\{rand\:[\d]*\}/i", substr($randNum, 0, $matches[1]), $format);
         }
@@ -315,7 +315,7 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 文件类型检测
+     * 文件類型检测
      * @return bool
      */
     private function checkType()
@@ -351,14 +351,14 @@ $this->fileMd5=md5_file($file["tmp_name"]);
     }
 
     /**
-     * 取得当前上传成功文件的各项訊息
+     * 取得當前上傳成功文件的各项訊息
      * @return array
      */
     public function getFileInfo()
     {
         $title = strstr($this->oriName, '.', true);
         if ($_GET['action'] == 'uploadimage' && in_array($this->fileType, ['.jpg', '.jpeg', '.gif', '.png'])) {
-             // 图片属性
+             // 圖片属性
             if (isset($this->config['imageAltValue']) && $this->config['imageAltValue'] == 'name') {
 
             } else {

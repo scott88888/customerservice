@@ -24,11 +24,11 @@ class Socket
     protected $config = [
         // socket服务器地址
         'host'                => 'localhost',
-        // 是否显示加载的文件列表
+        // 是否显示載入的文件列表
         'show_included_files' => false,
-        // 日志强制记录到配置的client_id
+        // 日誌强制记录到配置的client_id
         'force_client_ids'    => [],
-        // 限制允许读取日志的client_id
+        // 限制允许读取日誌的client_id
         'allow_client_ids'    => [],
     ];
 
@@ -44,7 +44,7 @@ class Socket
 
     /**
      * 构造函數
-     * @param array $config 缓存参數
+     * @param array $config 快取参數
      * @access public
      */
     public function __construct(array $config = [])
@@ -57,7 +57,7 @@ class Socket
     /**
      * 调试输出接口
      * @access public
-     * @param array     $log 日志訊息
+     * @param array     $log 日誌訊息
      * @return bool
      */
     public function save(array $log = [], $append = false)
@@ -72,7 +72,7 @@ class Socket
             $time_str   = ' [运行時間：' . number_format($runtime, 6) . 's][吞吐率：' . $reqs . 'req/s]';
             $memory_use = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
             $memory_str = ' [内存消耗：' . $memory_use . 'kb]';
-            $file_load  = ' [文件加载：' . count(get_included_files()) . ']';
+            $file_load  = ' [文件載入：' . count(get_included_files()) . ']';
 
             if (isset($_SERVER['HTTP_HOST'])) {
                 $current_uri = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -152,7 +152,7 @@ class Socket
     }
 
     /**
-     * 发送给指定客户端
+     * 發送给指定客户端
      * @author Zjmainstay
      * @param $tabid
      * @param $client_id
@@ -168,14 +168,14 @@ class Socket
             'force_client_id' => $force_client_id,
         ];
         $msg     = @json_encode($logs);
-        $address = '/' . $client_id; //将client_id作為地址， server端通過地址判断将日志发布给谁
+        $address = '/' . $client_id; //将client_id作為地址， server端通過地址判断将日誌发布给谁
         $this->send($this->config['host'], $msg, $address);
     }
 
     protected function check()
     {
         $tabid = $this->getClientArg('tabid');
-        //是否记录日志的檢查
+        //是否记录日誌的檢查
         if (!$tabid && !$this->config['force_client_ids']) {
             return false;
         }
@@ -226,7 +226,7 @@ class Socket
 
     /**
      * @param string $host - $host of socket server
-     * @param string $message - 发送的消息
+     * @param string $message - 發送的消息
      * @param string $address - 地址
      * @return bool
      */

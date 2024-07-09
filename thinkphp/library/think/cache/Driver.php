@@ -12,7 +12,7 @@
 namespace think\cache;
 
 /**
- * 缓存基础类
+ * 快取基础類
  */
 abstract class Driver
 {
@@ -21,26 +21,26 @@ abstract class Driver
     protected $tag;
 
     /**
-     * 判断缓存是否存在
+     * 判断快取是否存在
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return bool
      */
     abstract public function has($name);
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param string $name 缓存变量名
-     * @param mixed  $default 默认值
+     * @param string $name 快取变量名
+     * @param mixed  $default 默認值
      * @return mixed
      */
     abstract public function get($name, $default = false);
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param mixed     $value  存储資料
      * @param int       $expire  有效時間 0為永久
      * @return boolean
@@ -48,33 +48,33 @@ abstract class Driver
     abstract public function set($name, $value, $expire = null);
 
     /**
-     * 自增缓存（針對數值缓存）
+     * 自增快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
     abstract public function inc($name, $step = 1);
 
     /**
-     * 自减缓存（針對數值缓存）
+     * 自减快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
     abstract public function dec($name, $step = 1);
 
     /**
-     * 刪除缓存
+     * 刪除快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return boolean
      */
     abstract public function rm($name);
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access public
      * @param string $tag 标签名
      * @return boolean
@@ -82,9 +82,9 @@ abstract class Driver
     abstract public function clear($tag = null);
 
     /**
-     * 取得实际的缓存標識
+     * 取得实际的快取標識
      * @access public
-     * @param string $name 缓存名
+     * @param string $name 快取名
      * @return string
      */
     protected function getCacheKey($name)
@@ -93,9 +93,9 @@ abstract class Driver
     }
 
     /**
-     * 读取缓存并刪除
+     * 读取快取並刪除
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return mixed
      */
     public function pull($name)
@@ -110,9 +110,9 @@ abstract class Driver
     }
 
     /**
-     * 如果不存在则写入缓存
+     * 如果不存在則寫入快取
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param mixed     $value  存储資料
      * @param int       $expire  有效時間 0為永久
      * @return mixed
@@ -122,7 +122,7 @@ abstract class Driver
         if (!$this->has($name)) {
             $time = time();
             while ($time + 5 > time() && $this->has($name . '_lock')) {
-                // 存在锁定则等待
+                // 存在锁定則等待
                 usleep(200000);
             }
 
@@ -150,10 +150,10 @@ abstract class Driver
     }
 
     /**
-     * 缓存标签
+     * 快取标签
      * @access public
      * @param string        $name 标签名
-     * @param string|array  $keys 缓存標識
+     * @param string|array  $keys 快取標識
      * @param bool          $overlay 是否覆盖
      * @return $this
      */
@@ -182,7 +182,7 @@ abstract class Driver
     /**
      * 更新标签
      * @access public
-     * @param string $name 缓存標識
+     * @param string $name 快取標識
      * @return void
      */
     protected function setTagItem($name)
@@ -202,9 +202,9 @@ abstract class Driver
     }
 
     /**
-     * 取得标签包含的缓存標識
+     * 取得标签包含的快取標識
      * @access public
-     * @param string $tag 缓存标签
+     * @param string $tag 快取标签
      * @return array
      */
     protected function getTagItem($tag)
@@ -219,7 +219,7 @@ abstract class Driver
     }
 
     /**
-     * 返回句柄對象，可执行其它高级方法
+     * 返回句柄對象，可執行其它高级方法
      *
      * @access public
      * @return object

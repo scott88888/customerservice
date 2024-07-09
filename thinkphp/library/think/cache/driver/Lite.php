@@ -14,7 +14,7 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * 文件类型缓存类
+ * 文件類型快取類
  * @author    liu21st <liu21st@gmail.com>
  */
 class Lite extends Driver
@@ -45,7 +45,7 @@ class Lite extends Driver
     /**
      * 取得变量的存储文件名
      * @access protected
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return string
      */
     protected function getCacheKey($name)
@@ -54,9 +54,9 @@ class Lite extends Driver
     }
 
     /**
-     * 判断缓存是否存在
+     * 判断快取是否存在
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return mixed
      */
     public function has($name)
@@ -65,10 +65,10 @@ class Lite extends Driver
     }
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param string $name 缓存变量名
-     * @param mixed  $default 默认值
+     * @param string $name 快取变量名
+     * @param mixed  $default 默認值
      * @return mixed
      */
     public function get($name, $default = false)
@@ -89,9 +89,9 @@ class Lite extends Driver
     }
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access   public
-     * @param string            $name 缓存变量名
+     * @param string            $name 快取变量名
      * @param mixed             $value  存储資料
      * @param integer|\DateTime $expire  有效時間（秒）
      * @return bool
@@ -121,9 +121,9 @@ class Lite extends Driver
     }
 
     /**
-     * 自增缓存（針對數值缓存）
+     * 自增快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
@@ -138,9 +138,9 @@ class Lite extends Driver
     }
 
     /**
-     * 自减缓存（針對數值缓存）
+     * 自减快取（針對數值快取）
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param int       $step 步長
      * @return false|int
      */
@@ -155,9 +155,9 @@ class Lite extends Driver
     }
 
     /**
-     * 刪除缓存
+     * 刪除快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return boolean
      */
     public function rm($name)
@@ -166,7 +166,7 @@ class Lite extends Driver
     }
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access   public
      * @param string $tag 标签名
      * @return bool

@@ -50,9 +50,9 @@ class Config
      */
     public function __construct($configFile)
     {
-        // 加载配置
+        // 載入配置
         $this->values = include APP_PATH . 'config' . EXT;
-        //加载資料库配置
+        //載入資料庫配置
         $config = include $configFile;
 
         if ($config['deploy'] == 0) {

@@ -103,7 +103,7 @@
     <div class="form-disable">
         <div class="alert alert-danger">
             <div class="mb-2 pl-3 pr-3"><b>子账户建立數量上限！</b></div>
-            <div>当前子账户數量：{$account_count}</div>
+            <div>當前子账户數量：{$account_count}</div>
             <div>最大子账户數量：{$account_max}</div>
         </div>
     </div>
@@ -111,7 +111,7 @@
     <div class="card-header new-account">
         <span class="new-account-title">新增子账户訊息</span>
         <div class="account-info">
-            当前子账户數量 <span>{$account_count}</span>，最大子账户數量 <span>{$account_max == -1 ? '無限制':$account_max}</span>
+            當前子账户數量 <span>{$account_count}</span>，最大子账户數量 <span>{$account_max == -1 ? '無限制':$account_max}</span>
         </div>
     </div>
     <div class="card-body" style="padding-left: 15%;">
@@ -167,11 +167,11 @@
                 {if condition="isset($model['id'])"}
                 <input class="form-control " type="number" step="1" min="0"
                        value="{$model['app_max_count']}" name="app_max_count">
-                <div class="fs-sm text-muted">此使用者可以建立的客服系统的數量，填写0则表示不限制使用者建立客服系统的數量</div>
+                <div class="fs-sm text-muted">此使用者可以建立的客服系统的數量，填寫0則表示不限制使用者建立客服系统的數量</div>
                 {else/}
                 <input class="form-control " type="number" step="1" min="0"
                        value="" name="app_max_count">
-                <div class="fs-sm text-muted">此使用者可以建立的客服系统的數量，填写0则表示不限制使用者建立客服系统的數量</div>
+                <div class="fs-sm text-muted">此使用者可以建立的客服系统的數量，填寫0則表示不限制使用者建立客服系统的數量</div>
                 {/if}
 
 

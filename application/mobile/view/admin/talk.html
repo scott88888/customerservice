@@ -505,7 +505,7 @@
 
             var value = "{$user['service_id']}";
             var channel = pusher.subscribe("kefu" + value);
-            // 发送一个推送
+            // 發送一个推送
             channel.bind("callbackpusher",function(data){
                 $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
 
@@ -616,7 +616,7 @@
             <div class="foot_msg">
                 <div class="footer">
                     <input type="text" id="text_all" placeholder="发消息..." class="layui-input" />
-                    <button class="layui-btn layui-btn-normal send-btn" onclick="send()">发送
+                    <button class="layui-btn layui-btn-normal send-btn" onclick="send()">發送
                     </button>
                 </div>
                 <div class="msg-toolbar">

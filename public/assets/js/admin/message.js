@@ -55,7 +55,7 @@
                 }
                 var html = [];
                 html.push('<div class="am-alert am-block ' + status + '">');
-                html.push('<i class="' + icon + '"></i>&nbsp;&nbsp;' + content || "未定义消息");
+                html.push('<i class="' + icon + '"></i>&nbsp;&nbsp;' + content || "未定義消息");
                 html.push('<a href="javascript:;" class="close">×</a>');
                 html.push("</div>");
                 return ly.msg(html.join(""), {

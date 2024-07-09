@@ -9,9 +9,9 @@ if (is_null($ossClient)) exit(1);
 
 //*******************************简單使用***************************************************************
 
-/** putObject 使用callback上传内容到oss文件
+/** putObject 使用callback上傳内容到oss文件
   * callbackurl参數指定請求回调的服务器url
-  * callbackbodytype参數可為application/json或application/x-www-form-urlencoded, 可选参數，默认為application/x-www-form-urlencoded
+  * callbackbodytype参數可為application/json或application/x-www-form-urlencoded, 可选参數，默認為application/x-www-form-urlencoded
   * OSS_CALLBACK_VAR参數可以不設定
   */
 $url = 
@@ -35,9 +35,9 @@ Common::println($result['body']);
 Common::println($result['info']['http_code']);
 
 /**
-  * completeMultipartUpload 使用callback上传内容到oss文件
+  * completeMultipartUpload 使用callback上傳内容到oss文件
   * callbackurl参數指定請求回调的服务器url
-  * callbackbodytype参數可為application/json或application/x-www-form-urlencoded, 可选参數，默认為application/x-www-form-urlencoded
+  * callbackbodytype参數可為application/json或application/x-www-form-urlencoded, 可选参數，默認為application/x-www-form-urlencoded
   * OSS_CALLBACK_VAR参數可以不設定
   */  
 $object = "multipart-callback-test.txt";
@@ -45,7 +45,7 @@ $copiedObject = "multipart-callback-test.txt.copied";
 $ossClient->putObject($bucket, $copiedObject, file_get_contents(__FILE__));
 
 /**
-  *  step 1. 初始化一个分块上传事件, 也就是初始化上传Multipart, 取得upload id
+  *  step 1. 初始化一个分块上傳事件, 也就是初始化上傳Multipart, 取得upload id
   */
 $upload_id = $ossClient->initiateMultipartUpload($bucket, $object);
 

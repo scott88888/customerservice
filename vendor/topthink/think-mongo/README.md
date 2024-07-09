@@ -5,7 +5,7 @@ ThinkPHP 5.0 MongoDb驱動
 
 http://pecl.php.net/package/mongodb
 
-然后，配置应用的資料库配置文件`database.php`的`type`参數為：
+然後，配置應用的資料庫配置文件`database.php`的`type`参數為：
 
 ~~~
 'type'  =>  '\think\mongo\Connection',

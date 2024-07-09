@@ -10,7 +10,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 	};
 
 	message.prototype.render = function(opt) {
-		//默认配置值
+		//默認配置值
 		var option = {
 			elem: opt.elem,
 			url: opt.url ? opt.url : false,

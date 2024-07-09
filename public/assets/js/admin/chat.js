@@ -2,7 +2,7 @@ var e={'emoji1f600':'1f600','emoji1f601':'1f601','emoji1f602':'1f602','emoji1f60
 
 var types=function(){
     if($.cookie('type') == 1){
-        //快捷键
+        //快速键
         document.getElementById("text_in").onkeydown = function (e) {
             e = e || window.event;
 
@@ -58,13 +58,13 @@ var types=function(){
 }
 
 
-// 默认加载
+// 默認載入
 
 var chaton = function () {
     var height =document.body.clientHeight;
     $("#chat_list").css("height",(height -110)+"px");
     $("#wait_list").css("height",(height-110)+"px");
-    //判断当前有無排队人员
+    //判断當前有無排對人员
     getwait();
     getblacklist();
     $.cookie("hid","");
@@ -127,7 +127,7 @@ function getreply(){
                 });
 
 
-                str+='<div class="add-reply" onclick="addreply()" >新增快速回覆</div><div class="manager-reply" onclick="show()" >管理快捷回覆</div>';
+                str+='<div class="add-reply" onclick="addreply()" >新增快速回覆</div><div class="manager-reply" onclick="show()" >管理快速回覆</div>';
 
                 $("#quit_reply").prepend(str);
             }
@@ -192,7 +192,7 @@ function randomChar(l){
     }
     return tmp;
 }
-//发送消息
+//發送消息
 var send = function () {
     //取得 遊客id
     var msg = $("#text_in").val();
@@ -320,7 +320,7 @@ $('body').click(function(){
     $(".tool_box").hide();
 });
 
-//取得表情图片
+//取得表情圖片
 $(".wl_faces_main img").click(function () {
     var a = $(this).attr("title");
     var str=$("#text_in").val();
@@ -396,7 +396,7 @@ function delCookie(name) {
     document.cookie = name + "=a; expires=" + date.toGMTString()
 };
 
-//文件上传
+//文件上傳
 function putfile() {
 
     var value = $('input[name="folder"]').val();
@@ -405,7 +405,7 @@ function putfile() {
     var arr = value.split(".");
 
     if (arr[1] == "js" || arr[1] == "css" || arr[1] == "html" || arr[1] == "php") {
-        layer.msg("不支持该格式的文件", {icon: 2});
+        layer.msg("不支援该格式的文件", {icon: 2});
 
     } else {
 
@@ -472,7 +472,7 @@ function putfile() {
 }
 
 
-//图片上传
+//圖片上傳
 
 function put() {
 
@@ -559,11 +559,11 @@ function put() {
 
     } else {
 
-        layer.msg("請選擇图片", {icon: 2});
+        layer.msg("請選擇圖片", {icon: 2});
     }
 }
 
-//图片放大预览
+//圖片放大預覽
 
 function getbig(obj) {
 
@@ -634,7 +634,7 @@ $(document).on('click','.outer-left .customer img,.outer-right .service img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存資料
+    // 如果圖片被快取，則直接返回快取資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;

@@ -18,13 +18,13 @@ ThinkPHP 5.0 SAE扩展
 ]
 ~~~
 
-資料库配置文件database.php中修改為：
+資料庫配置文件database.php中修改為：
 ~~~
-// 資料库类型
+// 資料庫類型
 'type'        => 'mysql',
 // 服务器地址
 'hostname'    => SAE_MYSQL_HOST_M . ',' . SAE_MYSQL_HOST_S,
-// 資料库名
+// 資料庫名
 'database'    => SAE_MYSQL_DB,
 // 使用者名稱
 'username'    => SAE_MYSQL_USER,

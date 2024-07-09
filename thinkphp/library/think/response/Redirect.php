@@ -31,9 +31,9 @@ class Redirect extends Response
     }
 
     /**
-     * 处理資料
+     * 處理資料
      * @access protected
-     * @param mixed $data 要处理的資料
+     * @param mixed $data 要處理的資料
      * @return mixed
      */
     protected function output($data)
@@ -43,7 +43,7 @@ class Redirect extends Response
     }
 
     /**
-     * 重定向传值（通過Session）
+     * 重定向傳值（通過Session）
      * @access protected
      * @param string|array  $name 变量名或者數组
      * @param mixed         $value 值
@@ -81,7 +81,7 @@ class Redirect extends Response
     }
 
     /**
-     * 记住当前url后跳转
+     * 记住當前url後跳转
      * @return $this
      */
     public function remember()

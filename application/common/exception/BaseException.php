@@ -5,7 +5,7 @@ use think\Exception;
 
 /**
  * Class BaseException
- * 自訂异常类基类
+ * 自訂异常類基類
  */
 class BaseException extends Exception
 {

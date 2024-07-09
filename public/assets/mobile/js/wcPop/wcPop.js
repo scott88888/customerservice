@@ -14,7 +14,7 @@
 				fn.call(this, e);
 			}, !1);
 		},
-		//取得插件js路径
+		//取得插件js路徑
 		jspath: function(){
 			for(var s = _doc.getElementsByTagName("script"), i = s.length; i > 0; i--)
 				if(s[i-1].src && s[i-1].src.match(/wcPop[\w\-\.]*\.js/) != null)
@@ -26,20 +26,20 @@
 		var _this = this,
 			config = {
 				id: 'wcPop',				//彈窗ID標識 (不同ID對应不同彈窗)
-				title: '',					//标题
+				title: '',					//標題
 				content: '',				//内容
 				style: '',					//自定彈窗樣式
-				skin: '',					//自定彈窗显示风格 ->目前支持配置  toast(仿微信toast风格)、footer(底部對話框风格)、actionsheet(底部弹出式選單)、ios|android(仿微信樣式)
-				icon: '',					//彈窗小图标(success | info | error | loading)
+				skin: '',					//自定彈窗显示風格 ->目前支援配置  toast(仿微信toast風格)、footer(底部對話框風格)、actionsheet(底部弹出式選單)、ios|android(仿微信樣式)
+				icon: '',					//彈窗小圖标(success | info | error | loading)
 				
-				shade: true,				//是否显示遮罩层
-				shadeClose: true,			//是否點擊遮罩时關閉层
-				anim: 'scaleIn',			//scaleIn：缩放打開(默认)  fadeIn：渐变打開  fadeInUpBig：由上向下打開 fadeInDownBig：由下向上打開  rollIn：左側翻转打開  shake：震動  footer：底部向上弹出
+				shade: true,				//是否显示遮罩層
+				shadeClose: true,			//是否點擊遮罩时關閉層
+				anim: 'scaleIn',			//scaleIn：缩放打開(默認)  fadeIn：渐变打開  fadeInUpBig：由上向下打開 fadeInDownBig：由下向上打開  rollIn：左側翻转打開  shake：震動  footer：底部向上弹出
 				time: 0,					//設定彈窗自動關閉秒數1、 2、 3
-				zIndex: 9999,				//設定元素层叠
+				zIndex: 9999,				//設定元素層叠
 				
-				btns: null,					//不設定则不显示按钮，btn参數: [{按钮1配置}, {按钮2配置}]
-				end: null					//层销毁后的回调函數
+				btns: null,					//不設定則不显示按钮，btn参數: [{按钮1配置}, {按钮2配置}]
+				end: null					//層销毁後的回调函數
 			};
 		
 		_this.opts = options;
@@ -107,7 +107,7 @@
 						typeof btn.onTap === "function" && btn.onTap(e);
 					});
 			}
-			//點擊遮罩层關閉
+			//點擊遮罩層關閉
 			if(opt.shade && opt.shadeClose){
 				var c = util.$(opt.id).getElementsByClassName("popui__modal-mask")[0];
 				util.touch(c, function () {
@@ -115,7 +115,7 @@
 				});
 			}
 		},
-		//取得彈窗最大层级
+		//取得彈窗最大層级
 		maxIndex: function(){
 			for(var idx = this.opts.zIndex, elem = _doc.getElementsByTagName("*"), i = 0, len = elem.length; i < len; i++)
 				idx = Math.max(idx, elem[i].style.zIndex);
@@ -124,7 +124,7 @@
 	};
 	
 	var exports = (function(){
-		//实例化彈窗(返回 彈窗索引值)
+		//實例化彈窗(返回 彈窗索引值)
 		fn = function(args){
 			var o = new wcPop(args);
 			return o.index;
@@ -145,7 +145,7 @@
 			}
 		}
 		
-		//加载css
+		//載入css
 		fn.load = function(path){
 			for(var ck = _doc.createElement("link"), lk = _doc.getElementsByTagName("link"), i = lk.length; i > 0; i--)
 				if(lk[i-1].href == path) return;
@@ -166,7 +166,7 @@
 		return fn;
 	}());
 	
-	//加载css
+	//載入css
 	exports.load("skin/wcPop.css");
 	
 	win.wcPop = exports;

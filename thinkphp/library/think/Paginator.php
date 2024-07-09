@@ -26,10 +26,10 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     /** @var Collection 資料集 */
     protected $items;
 
-    /** @var integer 当前頁 */
+    /** @var integer 當前頁 */
     protected $currentPage;
 
-    /** @var  integer 最后一頁 */
+    /** @var  integer 最後一頁 */
     protected $lastPage;
 
     /** @var integer|null 資料总數 */
@@ -134,7 +134,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 自動取得当前頁碼
+     * 自動取得當前頁碼
      * @param string $varPage
      * @param int    $default
      * @return int
@@ -151,7 +151,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 自動取得当前的path
+     * 自動取得當前的path
      * @return string
      */
     public static function getCurrentPath()
@@ -280,7 +280,7 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     }
 
     /**
-     * 给每个元素执行个回调
+     * 给每个元素執行个回调
      *
      * @param  callable $callback
      * @return $this

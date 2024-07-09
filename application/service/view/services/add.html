@@ -93,10 +93,10 @@ layui.use(['form','jquery','upload'],function(){
     let $ = layui.jquery;
     var upload = layui.upload;
 
-    //执行实例
+    //執行實例
     var uploadInst = upload.render({
         elem: '#upload_avatar' //绑定元素
-        ,url: '/service/services/upload_avatar' //上传接口
+        ,url: '/service/services/upload_avatar' //上傳接口
         ,done: function(res){
             if(res.code === 1){
                 $('#kefu_avatar').val(res.data);
@@ -104,7 +104,7 @@ layui.use(['form','jquery','upload'],function(){
             }
         }
         ,error: function(){
-            layer.msg('上传失敗',{icon:2,time:1500})
+            layer.msg('上傳失敗',{icon:2,time:1500})
         }
     });
 

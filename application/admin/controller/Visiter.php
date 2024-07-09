@@ -1,7 +1,7 @@
 <?php
 /**
  * Date: 2021/2/17 0017
- * 技术支持微信: zrwx978
+ * 技術支援微信: zrwx978
  */
 namespace app\admin\controller;
 

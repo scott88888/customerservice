@@ -7,11 +7,11 @@ use think\Model;
 use app\service\iplocation\Ip;
 
 /**
- * 資料模型类.
+ * 資料模型類.
  */
 class AdminLog extends Model
 {
-    // 取得日志列表
+    // 取得日誌列表
     public static function getLog()
     {
         $where = [];

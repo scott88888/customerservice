@@ -5,11 +5,11 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <meta content="telephone=no,email=no" name="format-detection" />
-    <title>{$business['business_name']|default="客服后台"}</title>
+    <title>{$business['business_name']|default="客服後台"}</title>
     <script>
         ROOT_URL = '{:request()->root()}';
     </script>
-    <!--加载引用文件 -->
+    <!--載入引用文件 -->
     <link href="__libs__/layer/admin/admin.css?v=__lkversion__" rel="stylesheet">
     <link href="__libs__/layer/admin/login.css?v=__lkversion__" rel="stylesheet">
     <link href="__libs__/layer/admin/layui.css?v=__lkversion__" rel="stylesheet">
@@ -32,7 +32,7 @@
             {if condition="$business && !empty($business['logo'])"}
             <img class="login-logo" src="{$business['logo']}">
             {/if}
-          <h2>{$business['business_name']|default="客服后台"}</h2>
+          <h2>{$business['business_name']|default="客服後台"}</h2>
         </div>
         <form method="post" action="{$submit}" class="am-form" data-submit data-am-validator>
             <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
@@ -48,7 +48,7 @@
                 <div class="layui-row">
                     <div class="layui-col-xs7">
                         <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
-                        <input type="text" name="captcha" lay-verify="required" placeholder="图形驗證碼" class="layui-input">
+                        <input type="text" name="captcha" lay-verify="required" placeholder="圖形驗證碼" class="layui-input">
                       </div>
                       <div class="layui-col-xs5">
                         <div style="margin-left: 10px;">

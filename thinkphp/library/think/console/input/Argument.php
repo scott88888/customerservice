@@ -26,9 +26,9 @@ class Argument
     /**
      * 构造方法
      * @param string $name        参數名
-     * @param int    $mode        参數类型: self::REQUIRED 或者 self::OPTIONAL
+     * @param int    $mode        参數類型: self::REQUIRED 或者 self::OPTIONAL
      * @param string $description 描述
-     * @param mixed  $default     默认值 (仅 self::OPTIONAL 类型有效)
+     * @param mixed  $default     默認值 (仅 self::OPTIONAL 類型有效)
      * @throws \InvalidArgumentException
      */
     public function __construct($name, $mode = null, $description = '', $default = null)
@@ -74,8 +74,8 @@ class Argument
     }
 
     /**
-     * 設定默认值
-     * @param mixed $default 默认值
+     * 設定默認值
+     * @param mixed $default 默認值
      * @throws \LogicException
      */
     public function setDefault($default = null)
@@ -96,7 +96,7 @@ class Argument
     }
 
     /**
-     * 取得默认值
+     * 取得默認值
      * @return mixed
      */
     public function getDefault()

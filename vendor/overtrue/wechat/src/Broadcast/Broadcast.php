@@ -38,10 +38,10 @@ class Broadcast extends AbstractAPI
     const PREVIEW_BY_OPENID = 'touser';
     const PREVIEW_BY_NAME = 'towxname';
 
-    const MSG_TYPE_TEXT = 'text'; // 文本
-    const MSG_TYPE_NEWS = 'news'; // 图文
-    const MSG_TYPE_VOICE = 'voice'; // 语音
-    const MSG_TYPE_IMAGE = 'image'; // 图片
+    const MSG_TYPE_TEXT = 'text'; // 文字
+    const MSG_TYPE_NEWS = 'news'; // 圖文
+    const MSG_TYPE_VOICE = 'voice'; // 語音
+    const MSG_TYPE_IMAGE = 'image'; // 圖片
     const MSG_TYPE_VIDEO = 'video'; // 视频
     const MSG_TYPE_CARD = 'card'; // 卡券
 

@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传图片對話框逻辑程式碼,包括tab: 远程图片/上传图片/線上图片/搜索图片
+ * 上傳圖片對話框逻辑程式碼,包括tab: 远程圖片/上傳圖片/線上圖片/搜索圖片
  */
 
 (function () {
@@ -69,7 +69,7 @@
                     list = uploadFile.getInsertList();
                     var count = uploadFile.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上传文件'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上傳文件'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -83,7 +83,7 @@
     }
 
 
-    /* 上传附件 */
+    /* 上傳附件 */
     function UploadFile(target) {
         this.$wrap = target.constructor == String ? $('#' + target) : $(target);
         this.init();
@@ -102,17 +102,17 @@
             var _this = this,
                 $ = jQuery,    // just in case. Make sure it's not an other libaray.
                 $wrap = _this.$wrap,
-            // 图片容器
+            // 圖片容器
                 $queue = $wrap.find('.filelist'),
             // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
             // 文件总体選擇訊息。
                 $info = $statusBar.find('.info'),
-            // 上传按钮
+            // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
-            // 上传按钮
+            // 上傳按钮
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-            // 上传按钮
+            // 上傳按钮
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
@@ -124,7 +124,7 @@
                 fileSize = 0,
             // 优化retina, 在retina下这个值是2
                 ratio = window.devicePixelRatio || 1,
-            // 缩略图大小
+            // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
@@ -141,7 +141,7 @@
                     s = null;
                     return r;
                 })(),
-            // WebUploader实例
+            // WebUploader實例
                 uploader,
                 actionUrl = editor.getActionUrl(editor.getOpt('fileActionName')),
                 fileMaxSize = editor.getOpt('fileMaxSize'),
@@ -177,7 +177,7 @@
 
             setState('pedding');
 
-            // 当有文件新增进来时执行，负责view的建立
+            // 当有文件新增进来时執行，负责view的建立
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -358,7 +358,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以開始上传 */
+                        /* 可以開始上傳 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -368,13 +368,13 @@
                             uploader.refresh();
                             break;
 
-                        /* 上传中 */
+                        /* 上傳中 */
                         case 'uploading':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* 暫停上传 */
+                        /* 暫停上傳 */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -471,7 +471,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 新增额外的GET参數 */
+                        /* 新增額外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -591,14 +591,14 @@
         initEvents: function () {
             var _this = this;
 
-            /* 滚動拉取图片 */
+            /* 滚動拉取圖片 */
             domUtils.on($G('fileList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
                     _this.getFileData();
                 }
             });
-            /* 选中图片 */
+            /* 选中圖片 */
             domUtils.on(this.list, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode;
@@ -624,7 +624,7 @@
             /* 第一次拉取資料 */
             this.getFileData();
         },
-        /* 向后台拉取图片列表資料 */
+        /* 向後台拉取圖片列表資料 */
         getFileData: function () {
             var _this = this;
 
@@ -664,7 +664,7 @@
                 });
             }
         },
-        /* 新增图片到列表界面上 */
+        /* 新增圖片到列表界面上 */
         pushData: function (list) {
             var i, item, img, filetype, preview, icon, _this = this,
                 urlPrefix = editor.getOpt('fileManagerUrlPrefix');
@@ -707,7 +707,7 @@
                 }
             }
         },
-        /* 改变图片大小 */
+        /* 改变圖片大小 */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;

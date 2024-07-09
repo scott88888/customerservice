@@ -12,7 +12,7 @@ namespace Qiniu\Tests;
 class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * 缩略图测试
+     * 缩略圖测试
      *
      * @test
      * @return void
@@ -58,7 +58,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
             \Qiniu\thumbnail($url, 1, 200, 200, 'png', 2)
         );
 
-        // 图片质量测试
+        // 圖片质量测试
         $this->assertEquals(
             $url . '?imageView2/1/w/200/h/200/format/png/interlace/1/q/80/ignore-error/1/',
             $imageUrlBuilder->thumbnail($url, 1, 200, 200, 'png', 1, 80)
@@ -80,7 +80,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * 图片水印测试
+     * 圖片水印测试
      *
      * @test
      * @param  void
@@ -139,7 +139,7 @@ class ImageUrlBuilderTest extends \PHPUnit_Framework_TestCase
             \Qiniu\waterImg($url, $image, 100, 'SouthEast', 'sad', 'asdf')
         );
 
-        // 自适应原图的短边比例测试
+        // 自适应原圖的短边比例测试
         $this->assertEquals(
             $url . '?watermark/1/image/aHR0cDovL2RldmVsb3Blci5xaW5pdS5jb20vcmVzb3VyY2UvbG9nby0yLmpwZw=='
             . '/dissolve/100/gravity/SouthEast/dx/10/dy/10/ws/0.5/',

@@ -121,7 +121,7 @@
 	width: 150px;
 }
 
-/** 隐 藏 后 子 级 悬 浮 選 單 */
+/** 隐 藏 後 子 级 悬 浮 選 單 */
 .pear-nav-tree .layui-nav-hover {
 	border-radius: 4px;
 	overflow: hidden;
@@ -199,7 +199,7 @@
 	
 }
 
-/** 下 拉 图 标 */
+/** 下 拉 圖 标 */
 .pear-nav-tree.arrow .layui-nav-more {
 	font-family: layui-icon !important;
 	font-size: 10px;

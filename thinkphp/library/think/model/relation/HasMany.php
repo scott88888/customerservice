@@ -24,7 +24,7 @@ class HasMany extends Relation
      * @param Model  $parent     上级模型對象
      * @param string $model      模型名
      * @param string $foreignKey 关联外键
-     * @param string $localKey   当前模型主键
+     * @param string $localKey   當前模型主键
      */
     public function __construct(Model $parent, $model, $foreignKey, $localKey)
     {
@@ -60,7 +60,7 @@ class HasMany extends Relation
      * 预载入关联查詢
      * @access   public
      * @param array    $resultSet   資料集
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -104,7 +104,7 @@ class HasMany extends Relation
      * 预载入关联查詢
      * @access   public
      * @param Model    $result      資料對象
-     * @param string   $relation    当前关联名
+     * @param string   $relation    當前关联名
      * @param string   $subRelation 子关联名
      * @param \Closure $closure     闭包
      * @return void
@@ -180,7 +180,7 @@ class HasMany extends Relation
     protected function eagerlyOneToMany($model, $where, $relation, $subRelation = '', $closure = false)
     {
         $foreignKey = $this->foreignKey;
-        // 预载入关联查詢 支持嵌套预载入
+        // 预载入关联查詢 支援嵌套预载入
         if ($closure) {
             call_user_func_array($closure, [ & $model]);
         }
@@ -195,7 +195,7 @@ class HasMany extends Relation
     }
 
     /**
-     * 保存（新增）当前关联資料對象
+     * 保存（新增）當前关联資料對象
      * @access public
      * @param mixed $data 資料 可以使用數组 关联模型對象 和 关联對象的主键
      * @return Model|false
@@ -214,7 +214,7 @@ class HasMany extends Relation
     }
 
     /**
-     * 建立关联對象实例
+     * 建立关联對象實例
      * @param array $data
      * @return Model
      */
@@ -231,7 +231,7 @@ class HasMany extends Relation
     }
 
     /**
-     * 批量保存当前关联資料對象
+     * 批量保存當前关联資料對象
      * @access public
      * @param array $dataSet 資料集
      * @return integer
@@ -246,12 +246,12 @@ class HasMany extends Relation
     }
 
     /**
-     * 根據关联條件查詢当前模型
+     * 根據关联條件查詢當前模型
      * @access public
      * @param string  $operator 比较操作符
      * @param integer $count    个數
      * @param string  $id       关联表的统计字段
-     * @param string  $joinType JOIN类型
+     * @param string  $joinType JOIN類型
      * @return Query
      */
     public function has($operator = '>=', $count = 1, $id = '*', $joinType = 'INNER')
@@ -269,7 +269,7 @@ class HasMany extends Relation
     }
 
     /**
-     * 根據关联條件查詢当前模型
+     * 根據关联條件查詢當前模型
      * @access public
      * @param  mixed     $where  查詢條件（數组或者闭包）
      * @param  mixed     $fields 字段
@@ -300,7 +300,7 @@ class HasMany extends Relation
     }
 
     /**
-     * 执行基础查詢（进执行一次）
+     * 執行基础查詢（进執行一次）
      * @access protected
      * @return void
      */

@@ -31,7 +31,7 @@ class ErrorException extends Exception
      * 錯誤异常构造函數
      * @param integer $severity 錯誤级别
      * @param string  $message  錯誤详细訊息
-     * @param string  $file     出错文件路径
+     * @param string  $file     出错文件路徑
      * @param integer $line     出错行号
      * @param array   $context  錯誤上下文，会包含錯誤触发处作用域内所有变量的數组
      */

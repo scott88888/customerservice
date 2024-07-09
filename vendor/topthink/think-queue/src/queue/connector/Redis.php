@@ -225,7 +225,7 @@ class Redis extends Connector
     }
 
     /**
-     * 随机id
+     * 随機id
      *
      * @return string
      */
@@ -235,7 +235,7 @@ class Redis extends Connector
     }
 
     /**
-     * 取得队列名
+     * 取得對列名
      *
      * @param  string|null $queue
      * @return string

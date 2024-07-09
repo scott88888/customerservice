@@ -10,7 +10,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     /**
      * 计算文件的crc32检验碼:
      *
-     * @param $file string  待计算校验碼的文件路径
+     * @param $file string  待计算校验碼的文件路徑
      *
      * @return string 文件内容的crc32校验碼
      */
@@ -40,7 +40,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
      *
      * @param string $data 待编碼的資料，一般為字符串
      *
-     * @return string 编碼后的字符串
+     * @return string 编碼後的字符串
      * @link http://developer.qiniu.com/docs/v6/api/overview/appendix.html#urlsafe-base64
      */
     function base64_urlSafeEncode($data)
@@ -55,7 +55,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
      *
      * @param string $str 待解碼的資料，一般為字符串
      *
-     * @return string 解碼后的字符串
+     * @return string 解碼後的字符串
      */
     function base64_urlSafeDecode($str)
     {
@@ -141,15 +141,15 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 缩略图連結拼接
+     * 缩略圖連結拼接
      *
-     * @param  string $url 图片連結
+     * @param  string $url 圖片連結
      * @param  int $mode 缩略模式
      * @param  int $width 宽度
      * @param  int $height 長度
-     * @param  string $format 输出类型
-     * @param  int $quality 图片质量
-     * @param  int $interlace 是否支持渐进显示
+     * @param  string $format 输出類型
+     * @param  int $quality 圖片质量
+     * @param  int $interlace 是否支援渐进显示
      * @param  int $ignoreError 忽略结果
      * @return string
      * @link http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
@@ -175,15 +175,15 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     }
 
     /**
-     * 图片水印
+     * 圖片水印
      *
-     * @param  string $url 图片連結
-     * @param  string $image 水印图片連結
+     * @param  string $url 圖片連結
+     * @param  string $image 水印圖片連結
      * @param  numeric $dissolve 透明度
      * @param  string $gravity 水印位置
      * @param  numeric $dx 横轴边距
      * @param  numeric $dy 纵轴边距
-     * @param  numeric $watermarkScale 自适应原图的短边比例
+     * @param  numeric $watermarkScale 自适应原圖的短边比例
      * @link   http://developer.qiniu.com/code/v6/api/kodo-api/image/watermark.html
      * @return string
      * @author Sherlock Ren <sherlock_ren@icloud.com>
@@ -209,7 +209,7 @@ if (!defined('QINIU_FUNCTIONS_VERSION')) {
     /**
      * 文字水印
      *
-     * @param  string $url 图片連結
+     * @param  string $url 圖片連結
      * @param  string $text 文字
      * @param  string $font 文字字体
      * @param  string $fontSize 文字字号

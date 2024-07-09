@@ -35,7 +35,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 建立 Collection 实例
+     * 建立 Collection 實例
      * @access public
      * @param  array $items 資料
      * @return static
@@ -90,7 +90,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回數组中所有的键名组成的新 Collection 实例
+     * 返回數组中所有的键名组成的新 Collection 實例
      * @access public
      * @return static
      */
@@ -100,7 +100,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回數组中所有的值组成的新 Collection 实例
+     * 返回數组中所有的值组成的新 Collection 實例
      * @access public
      * @return static
      */
@@ -110,7 +110,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 合并數组并返回一个新的 Collection 实例
+     * 合併數组並返回一个新的 Collection 實例
      * @access public
      * @param  mixed $items 新的資料
      * @return static
@@ -121,7 +121,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 比较數组，返回差集產生的新 Collection 实例
+     * 比较數组，返回差集產生的新 Collection 實例
      * @access public
      * @param  mixed $items 做比较的資料
      * @return static
@@ -132,7 +132,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 比较數组，返回交集组成的 Collection 新实例
+     * 比较數组，返回交集组成的 Collection 新實例
      * @access public
      * @param  mixed $items 比较資料
      * @return static
@@ -143,7 +143,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回并刪除資料中的的最后一个元素（出栈）
+     * 返回並刪除資料中的的最後一个元素（出栈）
      * @access public
      * @return mixed
      */
@@ -153,7 +153,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 返回并刪除資料中首个元素
+     * 返回並刪除資料中首个元素
      * @access public
      * @return mixed
      */
@@ -207,7 +207,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 以相反的顺序建立一个新的 Collection 实例
+     * 以相反的顺序建立一个新的 Collection 實例
      * @access public
      * @return static
      */
@@ -235,7 +235,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 给資料中的每个元素执行回调
+     * 给資料中的每个元素執行回调
      * @access public
      * @param  callable $callback 回调函數
      * @return $this
@@ -312,7 +312,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 對資料排序，并返回排序后的資料组成的新 Collection 实例
+     * 對資料排序，並返回排序後的資料组成的新 Collection 實例
      * @access public
      * @param  callable|null $callback 回调函數
      * @return static
@@ -329,7 +329,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将資料打乱后组成新的 Collection 实例
+     * 将資料打乱後组成新的 Collection 實例
      * @access public
      * @return static
      */
@@ -342,7 +342,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 截取資料并返回新的 Collection 实例
+     * 截取資料並返回新的 Collection 實例
      * @access public
      * @param  int  $offset       起始位置
      * @param  int  $length       截取長度
@@ -434,7 +434,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 转换当前資料集為 JSON 字符串
+     * 轉換當前資料集為 JSON 字符串
      * @access public
      * @param  integer $options json 参數
      * @return string
@@ -445,7 +445,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将資料转换成字符串
+     * 将資料轉換成字符串
      * @access public
      * @return string
      */
@@ -455,7 +455,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * 将資料转换成數组
+     * 将資料轉換成數组
      * @access protected
      * @param  mixed $items 資料
      * @return array

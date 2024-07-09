@@ -2,7 +2,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 	"use strict";
 
 	/**
-	 * 常用封装类
+	 * 常用封装類
 	 * */
 	var MOD_NAME = 'common',
 		$ = layui.jquery,
@@ -12,7 +12,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 	var common = new function() {
 		
 		/**
-		 * 取得当前表格选中字段
+		 * 取得當前表格选中字段
 		 * @param obj 表格回调参數
 		 * @param field 要取得的字段
 		 * */
@@ -30,7 +30,7 @@ layui.define(['jquery', 'element','table'], function(exports) {
 		}
 		
 		/**
-		 * 当前是否為与移動端
+		 * 當前是否為与移動端
 		 * */
 		this.isModile = function(){
 			if ($(window).width() <= 768) {

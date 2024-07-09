@@ -4,14 +4,14 @@ namespace Qiniu\Processing;
 use Qiniu;
 
 /**
- * 主要涉及图片連結拼接
+ * 主要涉及圖片連結拼接
  *
  * @link http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
  */
 final class ImageUrlBuilder
 {
     /**
-     * mode合法范围值
+     * mode合法範圍值
      *
      * @var array
      */
@@ -25,7 +25,7 @@ final class ImageUrlBuilder
     protected $formatArr = array('psd', 'jpeg', 'png', 'gif', 'webp', 'tiff', 'bmp');
 
     /**
-     * 水印图片位置合法值
+     * 水印圖片位置合法值
      *
      * @var array
      */
@@ -33,15 +33,15 @@ final class ImageUrlBuilder
         'West', 'Center', 'East', 'SouthWest', 'South', 'SouthEast');
 
     /**
-     * 缩略图連結拼接
+     * 缩略圖連結拼接
      *
-     * @param  string $url 图片連結
+     * @param  string $url 圖片連結
      * @param  int $mode 缩略模式
      * @param  int $width 宽度
      * @param  int $height 長度
-     * @param  string $format 输出类型
-     * @param  int $quality 图片质量
-     * @param  int $interlace 是否支持渐进显示
+     * @param  string $format 输出類型
+     * @param  int $quality 圖片质量
+     * @param  int $interlace 是否支援渐进显示
      * @param  int $ignoreError 忽略结果
      * @return string
      * @link http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
@@ -88,7 +88,7 @@ final class ImageUrlBuilder
             $thumbStr .= 'interlace/' . $interlace . '/';
         }
 
-        // 拼接图片质量
+        // 拼接圖片质量
         if (!is_null($quality)
             && intval($quality) >= 0
             && intval($quality) <= 100
@@ -103,15 +103,15 @@ final class ImageUrlBuilder
     }
 
     /**
-     * 图片水印
+     * 圖片水印
      *
-     * @param  string $url 图片連結
-     * @param  string $image 水印图片連結
+     * @param  string $url 圖片連結
+     * @param  string $image 水印圖片連結
      * @param  numeric $dissolve 透明度
      * @param  string $gravity 水印位置
      * @param  numeric $dx 横轴边距
      * @param  numeric $dy 纵轴边距
-     * @param  numeric $watermarkScale 自适应原图的短边比例
+     * @param  numeric $watermarkScale 自适应原圖的短边比例
      * @link   http://developer.qiniu.com/code/v6/api/kodo-api/image/watermark.html
      * @return string
      * @author Sherlock Ren <sherlock_ren@icloud.com>
@@ -158,7 +158,7 @@ final class ImageUrlBuilder
             $waterStr .= 'dy/' . $dy . '/';
         }
 
-        // 拼接自适应原图的短边比例
+        // 拼接自适应原圖的短边比例
         if (!is_null($watermarkScale)
             && is_numeric($watermarkScale)
             && $watermarkScale > 0
@@ -174,7 +174,7 @@ final class ImageUrlBuilder
     /**
      * 文字水印
      *
-     * @param  string $url 图片連結
+     * @param  string $url 圖片連結
      * @param  string $text 文字
      * @param  string $font 文字字体
      * @param  string $fontSize 文字字号

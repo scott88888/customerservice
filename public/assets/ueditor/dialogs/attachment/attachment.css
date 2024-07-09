@@ -37,7 +37,7 @@
     display: block;
 }
 
-/* 上传附件 */
+/* 上傳附件 */
 .tabbody #upload.panel {
     width: 0;
     height: 0;
@@ -485,7 +485,7 @@
 
 
 
-/* 图片管理樣式 */
+/* 圖片管理樣式 */
 #online {
     width: 100%;
     height: 336px;
@@ -582,7 +582,7 @@
 }
 
 
-/* 線上文件的文件预览图标 */
+/* 線上文件的文件預覽圖标 */
 i.file-preview {
     display: block;
     margin: 10px auto;

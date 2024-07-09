@@ -12,9 +12,9 @@
 namespace think;
 
 // ThinkPHP 引导文件
-// 加载基础文件
+// 載入基础文件
 require __DIR__ . '/base.php';
 
-// 执行应用
+// 執行應用
 App::initCommon();
 Console::init();

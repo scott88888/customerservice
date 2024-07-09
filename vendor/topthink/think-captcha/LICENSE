@@ -1,11 +1,11 @@
 
-ThinkPHP遵循Apache2開源协议发布，并提供免费使用。
+ThinkPHP遵循Apache2開源协议发布，並提供免费使用。
 版权所有Copyright © 2006-2016 by ThinkPHP (http://thinkphp.cn)
 All rights reserved。
 ThinkPHP® 商标和著作权所有者為上海顶想訊息科技有限公司。
 
 Apache Licence是著名的非盈利開源组织Apache采用的协议。
-该协议和BSD类似，鼓励程式碼共享和尊重原作者的著作权，
+该协议和BSD類似，鼓励程式碼共享和尊重原作者的著作权，
 允许程式碼修改，再作為開源或商业软件发布。需要满足
 的條件：
 1． 需要给程式碼的使用者一份Apache Licence ；
@@ -13,7 +13,7 @@ Apache Licence是著名的非盈利開源组织Apache采用的协议。
 3． 在延伸的程式碼中（修改和有源程式碼衍生的程式碼中）需要
 带有原来程式碼中的协议，商标，专利声明和其他原来作者规
 定需要包含的说明；
-4． 如果再发布的产品中包含一个Notice文件，则在Notice文
+4． 如果再发布的产品中包含一个Notice文件，則在Notice文
 件中需要带有本协议内容。你可以在Notice中增加自己的
 许可，但不可以表现為對Apache Licence构成更改。
 具体的协议参考：http://www.apache.org/licenses/LICENSE-2.0

@@ -15,7 +15,7 @@ use PDO;
 use think\db\Connection;
 
 /**
- * Sqlsrv資料库驱動
+ * Sqlsrv資料庫驱動
  */
 class Sqlsrv extends Connection
 {

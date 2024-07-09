@@ -14,12 +14,12 @@ namespace think;
 class Exception extends \Exception
 {
     /**
-     * @var array 保存异常頁面显示的额外 Debug 資料
+     * @var array 保存异常頁面显示的額外 Debug 資料
      */
     protected $data = [];
 
     /**
-     * 設定异常额外的 Debug 資料
+     * 設定异常額外的 Debug 資料
      * 資料将会显示為下面的格式
      *
      * Exception Data
@@ -32,7 +32,7 @@ class Exception extends \Exception
      *   key2      value2
      *
      * @access protected
-     * @param  string $label 資料分类，用于异常頁面显示
+     * @param  string $label 資料分類，用于异常頁面显示
      * @param  array  $data  需要显示的資料，必须為关联數组
      * @return void
      */
@@ -42,7 +42,7 @@ class Exception extends \Exception
     }
 
     /**
-     * 取得异常额外 Debug 資料
+     * 取得异常額外 Debug 資料
      * 主要用于输出到异常頁面便于调试
      * @access public
      * @return array

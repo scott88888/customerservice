@@ -24,9 +24,9 @@ class View extends Response
     protected $contentType = 'text/html';
 
     /**
-     * 处理資料
+     * 處理資料
      * @access protected
-     * @param mixed $data 要处理的資料
+     * @param mixed $data 要處理的資料
      * @return mixed
      */
     protected function output($data)
@@ -37,7 +37,7 @@ class View extends Response
     }
 
     /**
-     * 取得视图变量
+     * 取得视圖变量
      * @access public
      * @param string $name 模板变量
      * @return mixed
@@ -70,9 +70,9 @@ class View extends Response
     }
 
     /**
-     * 视图内容替换
+     * 视圖内容替换
      * @access public
-     * @param string|array $content 被替换内容（支持批量替换）
+     * @param string|array $content 被替换内容（支援批量替换）
      * @param string  $replace    替换内容
      * @return $this
      */

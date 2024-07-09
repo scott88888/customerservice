@@ -36,7 +36,7 @@ class Database extends Job
     }
 
     /**
-     * 执行任务
+     * 執行任务
      * @return void
      */
     public function fire()
@@ -69,7 +69,7 @@ class Database extends Job
     }
 
     /**
-     * 取得当前任务尝试次數
+     * 取得當前任务尝试次數
      * @return int
      */
     public function attempts()

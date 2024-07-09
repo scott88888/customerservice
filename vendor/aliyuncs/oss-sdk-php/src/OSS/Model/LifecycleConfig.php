@@ -79,7 +79,7 @@ class LifecycleConfig implements XmlConfig
     }
 
     /**
-     *  将配置转换成字符串，便于使用者查看
+     *  将配置轉換成字符串，便于使用者查看
      *
      * @return string
      */
@@ -89,7 +89,7 @@ class LifecycleConfig implements XmlConfig
     }
 
     /**
-     * 得到所有的生命周期规则
+     * 得到所有的生命周期規則
      *
      * @return LifecycleRule[]
      */

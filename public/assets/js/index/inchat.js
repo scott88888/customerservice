@@ -171,7 +171,7 @@ function put() {
     }
 }
 
-// 文件上传
+// 文件上傳
 function putfile() {
 
     var value = $('input[name="folder"]').val();
@@ -473,7 +473,7 @@ function gettab(business_id){
 
 var types=function(){
     if($.cookie('type') == 1){
-        //快捷键
+        //快速键
         document.getElementById("text_in").onkeydown = function (e) {
             e = e || window.event;
 
@@ -596,7 +596,7 @@ var init = function () {
                 $("#img_head").attr("src",ROOT_URL+"/assets/images/index/workerman_logo.png");
                 $("#services").text("");
 
-                // 告知客服在排队
+                // 告知客服在排對
                 var msg='';
                 msg+='<li class="chatmsg_notice"><div style="position: absolute;left:3px;">';
                 msg+='<img  class="my-circle" src="'+ROOT_URL+'/assets/images/index/workerman_logo.png" width="40px" height="40px"></div>';
@@ -714,7 +714,7 @@ function getanswer(id,question){
         }
     });
 }
-// 取得排队的數量
+// 取得排對的數量
 function getnums(id){
     var value ="";
     $.ajax({
@@ -728,7 +728,7 @@ function getnums(id){
     });
     return value;
 }
-// 发送消息
+// 發送消息
 
 var send = function () {
 
@@ -860,7 +860,7 @@ $(document).on('click','.outer-left .service img,.outer-right .customer img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存資料
+    // 如果圖片被快取，則直接返回快取資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;

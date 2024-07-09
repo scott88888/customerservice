@@ -30,7 +30,7 @@ class HuaweiGateway extends Gateway
     const SUCCESS_CODE = '000000';
 
     /**
-     * 发送訊息.
+     * 發送訊息.
      *
      * @param PhoneNumberInterface $to
      * @param MessageInterface     $message

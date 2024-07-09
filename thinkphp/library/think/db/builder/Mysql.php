@@ -15,7 +15,7 @@ use think\db\Builder;
 use think\Exception;
 
 /**
- * mysql資料库驱動
+ * mysql資料庫驱動
  */
 class Mysql extends Builder
 {
@@ -53,7 +53,7 @@ class Mysql extends Builder
                 } elseif (is_scalar($val)) {
                     $data[$key] = $this->parseValue($val, $key);
                 } elseif (is_object($val) && method_exists($val, '__toString')) {
-                    // 對象資料写入
+                    // 對象資料寫入
                     $data[$key] = $val->__toString();
                 } else {
                     // 过滤掉非标量資料
@@ -80,7 +80,7 @@ class Mysql extends Builder
     }
 
     /**
-     * 字段和表名处理
+     * 字段和表名處理
      * @access protected
      * @param mixed  $key
      * @param array  $options
@@ -96,7 +96,7 @@ class Mysql extends Builder
 
         $key = trim($key);
         if (strpos($key, '$.') && false === strpos($key, '(')) {
-            // JSON字段支持
+            // JSON字段支援
             list($field, $name) = explode('$.', $key);
             return 'json_extract(' . $field . ', \'$.' . $name . '\')';
         } elseif (strpos($key, '.') && !preg_match('/[,\'\"\(\)`\s]/', $key)) {
@@ -125,7 +125,7 @@ class Mysql extends Builder
     }
 
     /**
-     * 随机排序
+     * 随機排序
      * @access protected
      * @return string
      */

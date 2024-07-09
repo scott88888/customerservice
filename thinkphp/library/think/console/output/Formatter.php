@@ -66,7 +66,7 @@ class Formatter
     /**
      * 新增一个新樣式
      * @param string $name  樣式名
-     * @param Style  $style 樣式实例
+     * @param Style  $style 樣式實例
      */
     public function setStyle($name, Style $style)
     {
@@ -152,7 +152,7 @@ class Formatter
     }
 
     /**
-     * 根據字符串建立新的樣式实例
+     * 根據字符串建立新的樣式實例
      * @param string $string
      * @return Style|bool
      */
@@ -187,7 +187,7 @@ class Formatter
     }
 
     /**
-     * 从堆栈应用樣式到文字
+     * 从堆栈應用樣式到文字
      * @param string $text 文字
      * @return string
      */

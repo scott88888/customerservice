@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 取得已上传的文件列表
+ * 取得已上傳的文件列表
  */
 include "Uploader.class.php";
 
-/* 判断类型 */
+/* 判断類型 */
 switch ($_GET['action']) {
     /* 列出文件 */
     case 'listvideo':
@@ -19,7 +19,7 @@ switch ($_GET['action']) {
         $listSize = $CONFIG['fileManagerListSize'];
 //        $path = $CONFIG['fileManagerListPath'];
         break;
-    /* 列出图片 */
+    /* 列出圖片 */
     case 'listimage':
     default:
         $allowFiles = $CONFIG['imageManagerAllowFiles'];

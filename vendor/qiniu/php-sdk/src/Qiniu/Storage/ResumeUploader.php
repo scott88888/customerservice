@@ -6,7 +6,7 @@ use Qiniu\Http\Client;
 use Qiniu\Http\Error;
 
 /**
- * 断點续上传类, 该类主要實現了断點续上传中的分块上传,
+ * 断點续上傳類, 该類主要實現了断點续上傳中的分块上傳,
  * 以及相应地建立块和建立文件过程.
  *
  * @link http://developer.qiniu.com/docs/v6/api/reference/up/mkblk.html
@@ -26,14 +26,14 @@ final class ResumeUploader
     private $config;
 
     /**
-     * 上传二进制流到七牛
+     * 上傳二进制流到七牛
      *
-     * @param $upToken    上传凭证
-     * @param $key        上传文件名
-     * @param $inputStream 上传二进制流
-     * @param $size       上传流的大小
+     * @param $upToken    上傳凭证
+     * @param $key        上傳文件名
+     * @param $inputStream 上傳二进制流
+     * @param $size       上傳流的大小
      * @param $params     自訂变量
-     * @param $mime       上传資料的mimeType
+     * @param $mime       上傳資料的mimeType
      *
      * @link http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html#xvar
      */
@@ -69,7 +69,7 @@ final class ResumeUploader
     }
 
     /**
-     * 上传操作
+     * 上傳操作
      */
     public function upload($fname)
     {

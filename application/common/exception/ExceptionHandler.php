@@ -15,7 +15,7 @@ use think\Request;
 use Exception;
 
 /*
- * 这里是重写Handle的render方法，實現自訂异常消息
+ * 这里是重寫Handle的render方法，實現自訂异常消息
  */
 
 class ExceptionHandler extends Handle
@@ -32,7 +32,7 @@ class ExceptionHandler extends Handle
             $this->errorCode = $e->errorCode;
         } else {
             if (config('app_debug')) {
-                // 调试狀態下需要显示TP默认的异常頁面，因為TP的默认頁面
+                // 调试狀態下需要显示TP默認的异常頁面，因為TP的默認頁面
                 // 很容易看出問題
                 return parent::render($e);
             }
@@ -54,7 +54,7 @@ class ExceptionHandler extends Handle
     }
 
     /*
-     * 将异常写入日志
+     * 将异常寫入日誌
      */
     private function recordErrorLog(Exception $e)
     {

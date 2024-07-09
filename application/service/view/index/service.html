@@ -108,7 +108,7 @@
              <span class="layim-msgbox-user">
                 <a>{$se.nick_name}</a>
             </span>
-            <button class="layui-btn layim-msgbox-btn layui-btn-disabled" id='se{$se.service_id}'>转接</button>
+            <button class="layui-btn layim-msgbox-btn layui-btn-disabled" id='se{$se.service_id}'>轉接</button>
             {else}
             <a>
                 <img src="{$se.avatar}" class="layui-circle layim-msgbox-avatar">
@@ -116,7 +116,7 @@
              <span class="layim-msgbox-user">
                 <a>{$se.nick_name}</a>
             </span>
-            <button class="layui-btn layim-msgbox-btn" id='se{$se.service_id}' onclick='changese({$se.service_id})'>转接</button>
+            <button class="layui-btn layim-msgbox-btn" id='se{$se.service_id}' onclick='changese({$se.service_id})'>轉接</button>
             {/if}
            
         </li>
@@ -149,7 +149,7 @@
           dataType:'json',
           success:function(res){
               if(res.code == 0){
-                  layer.msg('转接成功',{end:function(){
+                  layer.msg('轉接成功',{end:function(){
                       $("#se"+id).addClass('layui-btn-disabled');
                       parent.getchat();
                       layer.close();

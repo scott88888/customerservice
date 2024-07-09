@@ -51,7 +51,7 @@ return [
     'please_enter_contact' => '連絡先情報を入力してください',
     'close_wav' => 'プロンプトトーンを閉じる',
     'open_wav' => 'プロンプトトーンをオンにする',
-    'paste_images_tip' => 'カットした写真を入力ボックスに貼り付けます',
+    'paste_images_tip' => 'カットした寫真を入力ボックスに貼り付けます',
     'message_tip' => 'メッセージがあります',
     'how_to_send_screenshot' => 'スクリーンショットを送信する方法は？ ',
     'ctrl_enter' => 'Enterキーを押してメッセージを送信し,Ctrl + Enterキーを押して折り返します',

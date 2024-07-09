@@ -28,7 +28,7 @@
 #videoSearchTxt{margin-left:15px;background: #FFF;width:200px;height:21px;line-height:21px;border: 1px solid #d7d7d7;}
 #searchList{width: 570px;overflow: auto;zoom:1;height: 270px;}
 #searchList div{float: left;width: 120px;height: 135px;margin: 5px 15px;}
-#searchList img{margin: 2px 8px;cursor: pointer;border: 2px solid #fff} /*不用缩略图*/
+#searchList img{margin: 2px 8px;cursor: pointer;border: 2px solid #fff} /*不用缩略圖*/
 #searchList p{margin-left: 10px;}
 #videoType{
     width: 65px;
@@ -537,7 +537,7 @@ span.view{display: inline-block;width: 30px;float: right;cursor: pointer;color: 
 }
 
 
-/* 線上文件的文件预览图标 */
+/* 線上文件的文件預覽圖标 */
 i.file-preview {
     display: block;
     margin: 10px auto;

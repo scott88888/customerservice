@@ -89,7 +89,7 @@ class Work extends Command
     }
 
     /**
-     * 启動一个守护进程执行任务.
+     * 启動一个守护进程執行任务.
      *
      * @param  string $queue
      * @param  int    $delay
@@ -114,7 +114,7 @@ class Work extends Command
     }
 
     /**
-     * 以守护进程的方式执行下个任务.
+     * 以守护进程的方式執行下个任务.
      *
      * @param  string $queue
      * @param  int    $delay
@@ -167,7 +167,7 @@ class Work extends Command
     }
 
     /**
-     * 取得异常处理实例
+     * 取得异常處理實例
      *
      * @return \think\exception\Handle
      */
@@ -191,7 +191,7 @@ class Work extends Command
     }
 
     /**
-     * 停止执行任务的守护进程.
+     * 停止執行任务的守护进程.
      * @return void
      */
     public function stop()

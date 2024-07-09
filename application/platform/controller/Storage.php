@@ -66,7 +66,7 @@ class Storage extends Base
             $config = isset($post[$storage]) ? $post[$storage] : [];
             foreach ($config as $k => $item) {
                 if (!isset($item) || $item == '') {
-                    return ['code'=>1,'msg'=>'請填写'.$k];
+                    return ['code'=>1,'msg'=>'請填寫'.$k];
                 }
             }
             $model = \app\admin\model\Storage::get(['status'=>1,'admin_id'=>$this->auth->getUser()->id]);

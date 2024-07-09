@@ -15,19 +15,19 @@ class Angular
 
     public        $config      = [
         'debug'            => false, // 是否開啟调试
-        'tpl_path'         => './view/', // 模板根目录
-        'tpl_suffix'       => '.html', // 模板后缀
-        'tpl_cache_path'   => './cache/', // 模板缓存目录
-        'tpl_cache_suffix' => '.php', // 模板缓存后缀
+        'tpl_path'         => './view/', // 模板根目錄
+        'tpl_suffix'       => '.html', // 模板後缀
+        'tpl_cache_path'   => './cache/', // 模板快取目錄
+        'tpl_cache_suffix' => '.php', // 模板快取後缀
         'directive_prefix' => 'php-', // 指令前缀
         'directive_max'    => 10000, // 指令的最大解析次數
     ];
     public        $tpl_var     = []; // 模板变量列表
-    public        $tpl_file    = ''; // 当前要解析的模板文件
-    public        $tpl_block   = ''; // 模板继承缓存的block
+    public        $tpl_file    = ''; // 當前要解析的模板文件
+    public        $tpl_block   = ''; // 模板继承快取的block
     public        $tpl_literal = [];
     public        $cache_file  = '';
-    public static $extends     = []; // 扩展解析规则
+    public static $extends     = []; // 扩展解析規則
 
     public function __construct($config)
     {
@@ -65,13 +65,13 @@ class Angular
             return file_get_contents($tpl_file);
         }
 
-        // 如果有模板后缀, 直接当绝對地址
+        // 如果有模板後缀, 直接当绝對地址
         if (strpos($tpl_file, $this->config['tpl_suffix']) > 0) {
             $this->tpl_file = $tpl_file;
             return file_get_contents($tpl_file);
         }
 
-        // 根據模板目录定位文件
+        // 根據模板目錄定位文件
         $tpl_file_path = $this->config['tpl_path'] . $tpl_file . $this->config['tpl_suffix'];
         if (is_file($tpl_file_path)) {
             $this->tpl_file = $tpl_file_path;
@@ -90,16 +90,16 @@ class Angular
      */
     public function fetch($tpl_file, $tpl_var = [])
     {
-        // 缓存文件名文件路径連結上文件的修改時間, 然后计算md5值作為缓存文件名.
+        // 快取文件名文件路徑連結上文件的修改時間, 然後计算md5值作為快取文件名.
         $this->cache_file = $this->config['tpl_cache_path'] . md5($tpl_file) . $this->config['tpl_cache_suffix'];
         if (!file_exists($this->cache_file) || $this->config['debug']) {
-            // 调试模式或换成不存在时, 重新產生编译缓存
+            // 调试模式或换成不存在时, 重新產生编译快取
             $cache_dir = dirname($this->cache_file);
             if (!is_dir($cache_dir)) {
                 mkdir($cache_dir, 0777);
             }
 
-            // 编译產生缓存
+            // 编译產生快取
             $content = $this->compiler($tpl_file, $tpl_var);
             file_put_contents($this->cache_file, $content);
         }
@@ -108,17 +108,17 @@ class Angular
         if (!is_null($this->tpl_var)) {
             extract($this->tpl_var, EXTR_OVERWRITE);
         }
-        // 頁面缓存
+        // 頁面快取
         ob_start();
         ob_implicit_flush(0);
         require $this->cache_file;
-        // 取得并清空缓存
+        // 取得並清空快取
         $content = ob_get_clean();
         return $content;
     }
 
     /**
-     * 编译模板并输出执行结果
+     * 编译模板並输出執行结果
      * @param string $tpl_file 模板文件
      * @param array  $tpl_var  模板变量
      */
@@ -130,7 +130,7 @@ class Angular
     /**
      * 编译模板内容
      * @param string $tpl_file 模板内容
-     * @return string 编译后的php混编程式碼
+     * @return string 编译後的php混编程式碼
      */
     public function compiler($tpl_file, $tpl_var = [])
     {
@@ -146,7 +146,7 @@ class Angular
     /**
      * 解析模板标签属性
      * @param string $content 要模板程式碼
-     * @return string 解析后的模板程式碼
+     * @return string 解析後的模板程式碼
      */
     public function parse($content)
     {
@@ -156,15 +156,15 @@ class Angular
             if ($sub) {
                 $method = 'parse' . $sub['directive'];
                 if (method_exists($this, $method)) {
-                    // 系统解析规则
+                    // 系统解析規則
                     $content = $this->$method($content, $sub);
                 } elseif (isset(self::$extends[$sub['directive']])) {
-                    // 扩展解析规则
+                    // 扩展解析規則
                     $call    = self::$extends[$sub['directive']];
                     $content = $call($content, $sub, $this);
                 } else {
-                    // 未找到解析规则
-                    throw new Exception("模板属性" . $this->config['directive_prefix'] . $sub['directive'] . '没有對应的解析规则');
+                    // 未找到解析規則
+                    throw new Exception("模板属性" . $this->config['directive_prefix'] . $sub['directive'] . '没有對应的解析規則');
                 }
             } else {
                 break;
@@ -180,14 +180,14 @@ class Angular
     /**
      * 解析include属性
      * @param string $content 源模板内容
-     * @param array  $match   一个正则匹配结果集, 包含 html, value, directive
-     * @return string 解析后的模板内容
+     * @param array  $match   一个正則匹配结果集, 包含 html, value, directive
+     * @return string 解析後的模板内容
      */
     public function parseInclude($content, $match)
     {
         $tpl_name = $match['value'];
         if (substr($tpl_name, 0, 1) == '$') {
-            //支持加载变量文件名
+            //支援載入变量文件名
             $tpl_name = $this->tpl_var[substr($tpl_name, 1)];
         }
         $array     = explode(',', $tpl_name);
@@ -198,7 +198,7 @@ class Angular
             }
 
             if (false === strpos($tpl, $this->config['tpl_suffix'])) {
-                // 解析规则為 模块@主题/控制器/操作
+                // 解析規則為 模組@主题/控制器/操作
                 $tpl = $this->parseTemplateFile($tpl);
             }
             if (file_exists($tpl)) {
@@ -212,8 +212,8 @@ class Angular
     }
 
     /**
-     * 处理include的模板路径
-     * @param string $tpl 模板路径
+     * 處理include的模板路徑
+     * @param string $tpl 模板路徑
      * @return string 模板的真实地址
      */
     public function parseTemplateFile($tpl)
@@ -231,7 +231,7 @@ class Angular
 
     /**
      * 解析init属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseInit($content, $match)
     {
@@ -242,7 +242,7 @@ class Angular
 
     /**
      * 解析exec属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseExec($content, $match)
     {
@@ -253,7 +253,7 @@ class Angular
 
     /**
      * 解析if属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseIf($content, $match)
     {
@@ -265,7 +265,7 @@ class Angular
 
     /**
      * 解析elseif属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseElseif($content, $match)
     {
@@ -277,7 +277,7 @@ class Angular
 
     /**
      * 解析else属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseElse($content, $match)
     {
@@ -289,7 +289,7 @@ class Angular
 
     /**
      * 解析switch属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseSwitch($content, $match)
     {
@@ -303,7 +303,7 @@ class Angular
 
     /**
      * 解析case属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseCase($content, $match)
     {
@@ -315,7 +315,7 @@ class Angular
 
     /**
      * 解析defalut属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseDefault($content, $match)
     {
@@ -327,7 +327,7 @@ class Angular
 
     /**
      * 解析repeat属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseRepeat($content, $match)
     {
@@ -339,7 +339,7 @@ class Angular
 
     /**
      * 解析foreach属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseForeach($content, $match)
     {
@@ -351,7 +351,7 @@ class Angular
 
     /**
      * 解析for属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseFor($content, $match)
     {
@@ -363,7 +363,7 @@ class Angular
 
     /**
      * 解析show属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseShow($content, $match)
     {
@@ -375,7 +375,7 @@ class Angular
 
     /**
      * 解析hide属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseHide($content, $match)
     {
@@ -387,7 +387,7 @@ class Angular
 
     /**
      * 解析before属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseBefore($content, $match)
     {
@@ -398,7 +398,7 @@ class Angular
 
     /**
      * 解析after属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseAfter($content, $match)
     {
@@ -409,7 +409,7 @@ class Angular
 
     /**
      * 解析function属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseFunction($content, $match)
     {
@@ -421,7 +421,7 @@ class Angular
 
     /**
      * 解析调用function属性
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseCall($content, $match)
     {
@@ -431,7 +431,7 @@ class Angular
 
     /**
      * 解析模板继承
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseExtends($content, $match)
     {
@@ -495,7 +495,7 @@ class Angular
     /**
      * 解析普通变量和函數{$title}{:function_name($var)}
      * @param string $content 源模板内容
-     * @return string 解析后的模板内容
+     * @return string 解析後的模板内容
      */
     public function parseValue($content)
     {
@@ -511,10 +511,10 @@ class Angular
         $content = preg_replace('/\{(\$.*?)\}/', '<?php echo \1; ?>', $content);
         $content = preg_replace('/\{\:(.*?)\}/', '<?php echo \1; ?>', $content);
 
-        // 合并php程式碼结束符号和開始符号
+        // 合併php程式碼结束符号和開始符号
         $content = preg_replace('/\?>[\s\n]*<\?php/', '', $content);
 
-        // 处理原样输出
+        // 處理原样输出
         $content = $this->unparseLiteral($content);
 
         // 过滤<php></php>标签, 保留标签之间的内容
@@ -570,7 +570,7 @@ class Angular
     }
 
     /**
-     * 扩展解析规则
+     * 扩展解析規則
      * @param string|array $extends  属性名稱
      * @param mixed        $callback 回调方法
      * @return void
@@ -578,10 +578,10 @@ class Angular
     public static function extend($extends, $callback = null)
     {
         if (is_array($extends)) {
-            // 如果是數组, 就合并规则
+            // 如果是數组, 就合併規則
             self::$extends = array_merge(self::$extends, $extends);
         } else {
-            // 新增單个规则
+            // 新增單个規則
             self::$extends[$extends] = $callback;
         }
     }
@@ -590,8 +590,8 @@ class Angular
      * 从标签中移除指定属性表达式
      * @param string $tag   标签
      * @param string $exp   指令
-     * @param int    $limit 替换次數, 默认只替换一次
-     * @return string 替换后的标签
+     * @param int    $limit 替换次數, 默認只替换一次
+     * @return string 替换後的标签
      */
     public static function removeExp($tag, $exp, $limit = 1)
     {
@@ -603,8 +603,8 @@ class Angular
      * @param string $tag   标签
      * @param string $exp   指令
      * @param string $new   新的属性表达式
-     * @param int    $limit 替换次數, 默认只替换一次
-     * @return string 替换后的标签
+     * @param int    $limit 替换次數, 默認只替换一次
+     * @return string 替换後的标签
      */
     public static function replaceExp($tag, $exp, $new, $limit = 1)
     {

@@ -1,8 +1,8 @@
-# thinkphp5 常用的一些扩展类库
+# thinkphp5 常用的一些扩展類庫
 
 > 更新完善中
 
-> 以下类库都在`\\think\\helper`命名空間下
+> 以下類庫都在`\\think\\helper`命名空間下
 
 ## Str
 > 字符串操作
@@ -14,13 +14,13 @@ Str::contains($haystack, $needles)
 // 檢查字符串是否以某些字符串结尾
 Str::endsWith($haystack, $needles)
 
-// 取得指定長度的随机字母數字组合的字符串
+// 取得指定長度的随機字母數字组合的字符串
 Str::random($length = 16)
 
-// 字符串转小写
+// 字符串转小寫
 Str::lower($value)
 
-// 字符串转大写
+// 字符串转大寫
 Str::upper($value)
 
 // 取得字符串的長度
@@ -80,13 +80,13 @@ Time::dayToNow(7, true)
 // 取得7天前的時間戳
 Time::daysAgo(7)
 
-//  取得7天后的時間戳
+//  取得7天後的時間戳
 Time::daysAfter(7)
 
-// 天數转换成秒數
+// 天數轉換成秒數
 Time::daysToSecond(5)
 
-// 周數转换成秒數
+// 周數轉換成秒數
 Time::weekToSecond(5)
 
 ```

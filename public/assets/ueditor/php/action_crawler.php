@@ -1,13 +1,13 @@
 <?php
 
 /**
- * 抓取远程图片
+ * 抓取远程圖片
  */
 
 set_time_limit(0);
 include("Uploader.class.php");
 
-/* 上传配置 */
+/* 上傳配置 */
 $config = array(
     "pathFormat" => $CONFIG['catcherPathFormat'],
     "maxSize" => $CONFIG['catcherMaxSize'],
@@ -16,7 +16,7 @@ $config = array(
 );
 $fieldName = $CONFIG['catcherFieldName'];
 
-/* 抓取远程图片 */
+/* 抓取远程圖片 */
 $list = array();
 if (isset($_POST[$fieldName])) {
     $source = $_POST[$fieldName];

@@ -4,12 +4,12 @@ require_once __DIR__ . '/../autoload.php';
 use Qiniu\Auth;
 use Qiniu\Processing\PersistentFop;
 
-// 后台来取得AK, SK
+// 後台来取得AK, SK
 $accessKey = 'Access_Key';
 $secretKey = 'Secret_Key';
 
 //產生EncodedEntryURI的值
-$entry = '<bucket>:<Key>';//<Key>為產生缩略图的文件名
+$entry = '<bucket>:<Key>';//<Key>為產生缩略圖的文件名
 //產生的值
 $encodedEntryURI = \Qiniu\base64_urlSafeEncode($entry);
 

@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-// [ 应用入口文件 ]
+// [ 應用入口文件 ]
 
 ini_set('session.gc_maxlifetime', 432000);
 ini_set('session.cookie_lifetime', 432000);
@@ -19,17 +19,17 @@ ini_set('session.gc_divisor',1000);
 
 isset($_SESSION) or session_start();
 
-// 定义环境版本
+// 定義环境版本
 
-// 定义应用目录
+// 定義應用目錄
 define('APP_PATH', __DIR__ . '/../application/');
 define('VENDOR',__DIR__.'/../vendor/');
 
-// 定义配置文件目录
+// 定義配置文件目錄
 define('CONF_PATH', __DIR__ . '/../config/'); 
 
 
-// 定义pusher密匙
+// 定義pusher密匙
 define('app_key','b7tyzijdqy5hq9qt');
 define('app_secret','nnregp2pcxfun0j0lxdbv06tjz0bbcn5');
 define('app_id',232);
@@ -41,16 +41,16 @@ define('registToken','41851672');
 define('AIKF_SALT','5g3j7hcawccxgfq4k1');
 define('AKF_VERSION','AI_KF');
 
-// 自訂一个 入口 目录
+// 自訂一个 入口 目錄
 define('PUBLIC_PATH',__DIR__);
-// 定义 类的文件路径
+// 定義 類的文件路徑
 define('EXTEND_PATH','../extend/');
 
-// 定义微信配置
+// 定義微信配置
 define('appid','');
 define('appsecret','');
 define('token','');
 define('domain','http://43.198.210.117');
 
-// 加载框架引导文件
+// 載入框架引导文件
 require __DIR__ . '/../thinkphp/start.php';

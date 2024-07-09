@@ -8,7 +8,7 @@ class Common
 {
 
     /**
-     * url参數加密类.
+     * url参數加密類.
      * [encrypt description]
      * @param  [type] $string    [description]
      * @param  [type] $operation [description]
@@ -60,27 +60,27 @@ class Common
      */
     public function isMobile()
     {
-        // 如果有HTTP_X_WAP_PROFILE则一定是移動设备
+        // 如果有HTTP_X_WAP_PROFILE則一定是移動设备
         if (isset($_SERVER['HTTP_X_WAP_PROFILE'])) {
             return true;
         }
-        // 如果via訊息含有wap则一定是移動设备,部分服务商会屏蔽该訊息
+        // 如果via訊息含有wap則一定是移動设备,部分服务商会屏蔽该訊息
         if (isset($_SERVER['HTTP_VIA'])) {
-            // 找不到為flase,否则為true
+            // 找不到為flase,否則為true
             return stristr($_SERVER['HTTP_VIA'], "wap") ? true : false;
         }
-        // 脑残法，判断手机发送的客户端标志,兼容性有待提高。其中'MicroMessenger'是电脑微信
+        // 脑残法，判断手機發送的客户端标志,兼容性有待提高。其中'MicroMessenger'是电脑微信
         if (isset($_SERVER['HTTP_USER_AGENT'])) {
             $clientkeywords = array('nokia', 'sony', 'ericsson', 'mot', 'samsung', 'htc', 'sgh', 'lg', 'sharp', 'sie-', 'philips', 'panasonic', 'alcatel', 'lenovo', 'iphone', 'ipod', 'blackberry', 'meizu', 'android', 'netfront', 'symbian', 'ucweb', 'windowsce', 'palm', 'operamini', 'operamobi', 'openwave', 'nexusone', 'cldc', 'midp', 'wap', 'mobile', 'MicroMessenger');
-            // 从HTTP_USER_AGENT中查找手机浏览器的關鍵字
+            // 从HTTP_USER_AGENT中查找手機浏览器的關鍵字
             if (preg_match("/(" . implode('|', $clientkeywords) . ")/i", strtolower($_SERVER['HTTP_USER_AGENT']))) {
                 return true;
             }
         }
-        // 协议法，因為有可能不准确，放到最后判断
+        // 协议法，因為有可能不准确，放到最後判断
         if (isset ($_SERVER['HTTP_ACCEPT'])) {
-            // 如果只支持wml并且不支持html那一定是移動设备
-            // 如果支持wml和html但是wml在html之前则是移動设备
+            // 如果只支援wml並且不支援html那一定是移動设备
+            // 如果支援wml和html但是wml在html之前則是移動设备
             if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
                 return true;
             }
@@ -90,7 +90,7 @@ class Common
 
 
     /**
-     * 唯一随机數方法
+     * 唯一随機數方法
      * [rand description]
      * @param  [type] $len [description]
      * @return [type]      [description]
@@ -200,7 +200,7 @@ class Common
         }, $arr);
     }
 
-    //这里是加密函數支持url传输，可用cpDecode()函數解密，$data：待加密的字符串或數组；$key：密钥；$expire 过期時間
+    //这里是加密函數支援url傳输，可用cpDecode()函數解密，$data：待加密的字符串或數组；$key：密钥；$expire 过期時間
     public function cpEncode($data, $key = '', $expire = 0)
     {
         $string = serialize($data);
@@ -241,7 +241,7 @@ class Common
         return rawurlencode($keyc . str_replace('=', '', base64_encode($result)));
     }
 
-//cpEncode之后的解密函數，$string待解密的字符串，$key，密钥
+//cpEncode之後的解密函數，$string待解密的字符串，$key，密钥
     public function cpDecode($string, $key = '')
     {
         $string = rawurldecode($string);
@@ -299,7 +299,7 @@ class Common
             'nntp' => true,
             'news' => true,
             'tel' => true,
-//            重點在这里让它支持data開头协议
+//            重點在这里让它支援data開头协议
             'data' => true
         ));
         $purifier = new \HTMLPurifier($config);

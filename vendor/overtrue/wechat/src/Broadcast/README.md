@@ -1,2 +1,2 @@
 # broadcast
-微信 SDK 群发模块
+微信 SDK 群发模組

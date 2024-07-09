@@ -387,7 +387,7 @@ class Index extends Controller
     }
 
     /**
-     * 取得排队數量.
+     * 取得排對數量.
      *
      * @return mixed
      */

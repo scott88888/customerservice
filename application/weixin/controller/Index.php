@@ -26,7 +26,7 @@ class  Index extends Controller
             'token'  => $wechat['wx_token'],
             'log' => [
                 'level' => 'debug',
-                'file'  => PUBLIC_PATH.'/easywechat.log', // XXX: 绝對路径！！！！
+                'file'  => PUBLIC_PATH.'/easywechat.log', // XXX: 绝對路徑！！！！
             ],
        ];
        $url = domain;
@@ -36,7 +36,7 @@ class  Index extends Controller
        $server->setMessageHandler(function ($message) use($business_id) {
            Log::info($message);
            // $message->FromUserName // 使用者的 openid
-           // $message->MsgType // 消息类型：event, text....
+           // $message->MsgType // 消息類型：event, text....
 //           file_put_contents(PUBLIC_PATH.'/wxmessage.txt',var_export($message,true),FILE_APPEND);
 //           FromUserName
            switch ($message->MsgType) {
@@ -96,7 +96,7 @@ class  Index extends Controller
                            return '价格：￥4999';
                            break;
                        case '官網':
-                           return '請訪問:<a href="http://www.80zx.com/">八零線上</a>提供技术驱動';
+                           return '請訪問:<a href="http://www.80zx.com/">八零線上</a>提供技術驱動';
                            break;
                    }
                    break;
@@ -138,7 +138,7 @@ class  Index extends Controller
        $wxInfo=db('wolive_weixin')->field('subscribe')->where(['business_id'=>$business_id,'open_id'=>$openid])->find();
        if(isset($wxInfo['subscribe'])){
            if($wxInfo['subscribe']!=$subscribe){
-//                        不相等则更新
+//                        不相等則更新
                db('wolive_weixin')->where(['business_id'=>$business_id,'open_id'=>$openid])->update(['subscribe' => $subscribe,'subscribe_time'=>time()]);
            }
        }else{

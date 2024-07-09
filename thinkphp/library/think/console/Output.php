@@ -134,7 +134,7 @@ class Output
     }
 
     /**
-     * 输出訊息并换行
+     * 输出訊息並换行
      * @param string $messages
      * @param int    $type
      */

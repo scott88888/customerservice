@@ -33,8 +33,8 @@ use think\View;
 if (!function_exists('load_trait')) {
     /**
      * 快速匯入Traits PHP5.5以上無需调用
-     * @param string    $class trait库
-     * @param string    $ext 类库后缀
+     * @param string    $class trait庫
+     * @param string    $ext 類庫後缀
      * @return boolean
      */
     function load_trait($class, $ext = EXT)
@@ -45,11 +45,11 @@ if (!function_exists('load_trait')) {
 
 if (!function_exists('exception')) {
     /**
-     * 抛出异常处理
+     * 抛出异常處理
      *
      * @param string    $msg  异常消息
-     * @param integer   $code 异常程式碼 默认為0
-     * @param string    $exception 异常类
+     * @param integer   $code 异常程式碼 默認為0
+     * @param string    $exception 异常類
      *
      * @throws Exception
      */
@@ -112,9 +112,9 @@ if (!function_exists('config')) {
 
 if (!function_exists('input')) {
     /**
-     * 取得输入資料 支持默认值和过滤
+     * 取得输入資料 支援默認值和过滤
      * @param string    $key 取得的变量名
-     * @param mixed     $default 默认值
+     * @param mixed     $default 默認值
      * @param string    $filter 过滤方法
      * @return mixed
      */
@@ -132,7 +132,7 @@ if (!function_exists('input')) {
                 $method = 'param';
             }
         } else {
-            // 默认為自動判断
+            // 默認為自動判断
             $method = 'param';
         }
         if (isset($has)) {
@@ -147,7 +147,7 @@ if (!function_exists('widget')) {
     /**
      * 渲染输出Widget
      * @param string    $name Widget名稱
-     * @param array     $data 传入的参數
+     * @param array     $data 傳入的参數
      * @return mixed
      */
     function widget($name, $data = [])
@@ -158,10 +158,10 @@ if (!function_exists('widget')) {
 
 if (!function_exists('model')) {
     /**
-     * 实例化Model
+     * 實例化Model
      * @param string    $name Model名稱
-     * @param string    $layer 业务层名稱
-     * @param bool      $appendSuffix 是否新增类名后缀
+     * @param string    $layer 業務層名稱
+     * @param bool      $appendSuffix 是否新增類名後缀
      * @return \think\Model
      */
     function model($name = '', $layer = 'model', $appendSuffix = false)
@@ -172,10 +172,10 @@ if (!function_exists('model')) {
 
 if (!function_exists('validate')) {
     /**
-     * 实例化驗證器
+     * 實例化驗證器
      * @param string    $name 驗證器名稱
-     * @param string    $layer 业务层名稱
-     * @param bool      $appendSuffix 是否新增类名后缀
+     * @param string    $layer 業務層名稱
+     * @param bool      $appendSuffix 是否新增類名後缀
      * @return \think\Validate
      */
     function validate($name = '', $layer = 'validate', $appendSuffix = false)
@@ -186,9 +186,9 @@ if (!function_exists('validate')) {
 
 if (!function_exists('db')) {
     /**
-     * 实例化資料库类
+     * 實例化資料庫類
      * @param string        $name 操作的資料表名稱（不含前缀）
-     * @param array|string  $config 資料库配置参數
+     * @param array|string  $config 資料庫配置参數
      * @param bool          $force 是否强制重新連結
      * @return \think\db\Query
      */
@@ -200,10 +200,10 @@ if (!function_exists('db')) {
 
 if (!function_exists('controller')) {
     /**
-     * 实例化控制器 格式：[模块/]控制器
-     * @param string    $name 资源地址
-     * @param string    $layer 控制层名稱
-     * @param bool      $appendSuffix 是否新增类名后缀
+     * 實例化控制器 格式：[模組/]控制器
+     * @param string    $name 資源地址
+     * @param string    $layer 控制層名稱
+     * @param bool      $appendSuffix 是否新增類名後缀
      * @return \think\Controller
      */
     function controller($name, $layer = 'controller', $appendSuffix = false)
@@ -214,11 +214,11 @@ if (!function_exists('controller')) {
 
 if (!function_exists('action')) {
     /**
-     * 调用模块的操作方法 参數格式 [模块/控制器/]操作
+     * 调用模組的操作方法 参數格式 [模組/控制器/]操作
      * @param string        $url 调用地址
-     * @param string|array  $vars 调用参數 支持字符串和數组
-     * @param string        $layer 要调用的控制层名稱
-     * @param bool          $appendSuffix 是否新增类名后缀
+     * @param string|array  $vars 调用参數 支援字符串和數组
+     * @param string        $layer 要调用的控制層名稱
+     * @param bool          $appendSuffix 是否新增類名後缀
      * @return mixed
      */
     function action($url, $vars = [], $layer = 'controller', $appendSuffix = false)
@@ -229,9 +229,9 @@ if (!function_exists('action')) {
 
 if (!function_exists('import')) {
     /**
-     * 匯入所需的类库 同java的Import 本函數有缓存功能
-     * @param string    $class 类库命名空間字符串
-     * @param string    $baseUrl 起始路径
+     * 匯入所需的類庫 同java的Import 本函數有快取功能
+     * @param string    $class 類庫命名空間字符串
+     * @param string    $baseUrl 起始路徑
      * @param string    $ext 匯入的文件扩展名
      * @return boolean
      */
@@ -243,9 +243,9 @@ if (!function_exists('import')) {
 
 if (!function_exists('vendor')) {
     /**
-     * 快速匯入第三方框架类库 所有第三方框架的类库文件统一放到 系统的Vendor目录下面
-     * @param string    $class 类库
-     * @param string    $ext 类库后缀
+     * 快速匯入第三方框架類庫 所有第三方框架的類庫文件统一放到 系统的Vendor目錄下面
+     * @param string    $class 類庫
+     * @param string    $ext 類庫後缀
      * @return boolean
      */
     function vendor($class, $ext = EXT)
@@ -258,8 +258,8 @@ if (!function_exists('dump')) {
     /**
      * 浏览器友好的变量输出
      * @param mixed     $var 变量
-     * @param boolean   $echo 是否输出 默认為true 如果為false 则返回输出字符串
-     * @param string    $label 标签 默认為空
+     * @param boolean   $echo 是否输出 默認為true 如果為false 則返回输出字符串
+     * @param string    $label 标签 默認為空
      * @return void|string
      */
     function dump($var, $echo = true, $label = null)
@@ -273,7 +273,7 @@ if (!function_exists('url')) {
      * Url產生
      * @param string        $url 路由地址
      * @param string|array  $vars 变量
-     * @param bool|string   $suffix 產生的URL后缀
+     * @param bool|string   $suffix 產生的URL後缀
      * @param bool|string   $domain 域名
      * @return string
      */
@@ -343,20 +343,20 @@ if (!function_exists('cookie')) {
 
 if (!function_exists('cache')) {
     /**
-     * 缓存管理
-     * @param mixed     $name 缓存名稱，如果為數组表示进行缓存設定
-     * @param mixed     $value 缓存值
-     * @param mixed     $options 缓存参數
-     * @param string    $tag 缓存标签
+     * 快取管理
+     * @param mixed     $name 快取名稱，如果為數组表示进行快取設定
+     * @param mixed     $value 快取值
+     * @param mixed     $options 快取参數
+     * @param string    $tag 快取标签
      * @return mixed
      */
     function cache($name, $value = '', $options = null, $tag = null)
     {
         if (is_array($options)) {
-            // 缓存操作的同时初始化
+            // 快取操作的同时初始化
             $cache = Cache::connect($options);
         } elseif (is_array($name)) {
-            // 缓存初始化
+            // 快取初始化
             return Cache::connect($name);
         } else {
             $cache = Cache::init();
@@ -365,20 +365,20 @@ if (!function_exists('cache')) {
         if (is_null($name)) {
             return $cache->clear($value);
         } elseif ('' === $value) {
-            // 取得缓存
+            // 取得快取
             return 0 === strpos($name, '?') ? $cache->has(substr($name, 1)) : $cache->get($name);
         } elseif (is_null($value)) {
-            // 刪除缓存
+            // 刪除快取
             return $cache->rm($name);
         } elseif (0 === strpos($name, '?') && '' !== $value) {
             $expire = is_numeric($options) ? $options : null;
             return $cache->remember(substr($name, 1), $value, $expire);
         } else {
-            // 缓存資料
+            // 快取資料
             if (is_array($options)) {
-                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢缓存無法設定过期時間
+                $expire = isset($options['expire']) ? $options['expire'] : null; //修复查詢快取無法設定过期時間
             } else {
-                $expire = is_numeric($options) ? $options : null; //默认快捷缓存設定过期時間
+                $expire = is_numeric($options) ? $options : null; //默認快速快取設定过期時間
             }
             if (is_null($tag)) {
                 return $cache->set($name, $value, $expire);
@@ -391,9 +391,9 @@ if (!function_exists('cache')) {
 
 if (!function_exists('trace')) {
     /**
-     * 记录日志訊息
-     * @param mixed     $log log訊息 支持字符串和數组
-     * @param string    $level 日志级别
+     * 记录日誌訊息
+     * @param mixed     $log log訊息 支援字符串和數组
+     * @param string    $level 日誌级别
      * @return void|array
      */
     function trace($log = '[think]', $level = 'log')
@@ -408,7 +408,7 @@ if (!function_exists('trace')) {
 
 if (!function_exists('request')) {
     /**
-     * 取得当前Request對象实例
+     * 取得當前Request對象實例
      * @return Request
      */
     function request()
@@ -419,7 +419,7 @@ if (!function_exists('request')) {
 
 if (!function_exists('response')) {
     /**
-     * 建立普通 Response 對象实例
+     * 建立普通 Response 對象實例
      * @param mixed      $data   输出資料
      * @param int|string $code   狀態碼
      * @param array      $header 头訊息
@@ -449,7 +449,7 @@ if (!function_exists('view')) {
 
 if (!function_exists('json')) {
     /**
-     * 取得\think\response\Json對象实例
+     * 取得\think\response\Json對象實例
      * @param mixed   $data 返回的資料
      * @param integer $code 狀態碼
      * @param array   $header 头部
@@ -464,7 +464,7 @@ if (!function_exists('json')) {
 
 if (!function_exists('jsonp')) {
     /**
-     * 取得\think\response\Jsonp對象实例
+     * 取得\think\response\Jsonp對象實例
      * @param mixed   $data    返回的資料
      * @param integer $code    狀態碼
      * @param array   $header 头部
@@ -479,7 +479,7 @@ if (!function_exists('jsonp')) {
 
 if (!function_exists('xml')) {
     /**
-     * 取得\think\response\Xml對象实例
+     * 取得\think\response\Xml對象實例
      * @param mixed   $data    返回的資料
      * @param integer $code    狀態碼
      * @param array   $header  头部
@@ -494,11 +494,11 @@ if (!function_exists('xml')) {
 
 if (!function_exists('redirect')) {
     /**
-     * 取得\think\response\Redirect對象实例
-     * @param mixed         $url 重定向地址 支持Url::build方法的地址
-     * @param array|integer $params 额外参數
+     * 取得\think\response\Redirect對象實例
+     * @param mixed         $url 重定向地址 支援Url::build方法的地址
+     * @param array|integer $params 額外参數
      * @param integer       $code 狀態碼
-     * @param array         $with 隐式传参
+     * @param array         $with 隐式傳参
      * @return \think\response\Redirect
      */
     function redirect($url = [], $params = [], $code = 302, $with = [])
@@ -514,7 +514,7 @@ if (!function_exists('redirect')) {
 if (!function_exists('abort')) {
     /**
      * 抛出HTTP异常
-     * @param integer|Response      $code 狀態碼 或者 Response對象实例
+     * @param integer|Response      $code 狀態碼 或者 Response對象實例
      * @param string                $message 錯誤訊息
      * @param array                 $header 参數
      */
@@ -530,7 +530,7 @@ if (!function_exists('abort')) {
 
 if (!function_exists('halt')) {
     /**
-     * 调试变量并且中断输出
+     * 调试变量並且中斷输出
      * @param mixed      $var 调试变量或者訊息
      */
     function halt($var)
@@ -573,7 +573,7 @@ if (!function_exists('load_relation')) {
 
 if (!function_exists('collection')) {
     /**
-     * 數组转换為資料集對象
+     * 數组轉換為資料集對象
      * @param array $resultSet 資料集數组
      * @return \think\model\Collection|\think\Collection
      */

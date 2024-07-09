@@ -12,8 +12,8 @@
 namespace think\exception;
 
 /**
- * PDO异常处理类
- * 重新封装了系统的\PDOException类
+ * PDO异常處理類
+ * 重新封装了系统的\PDOException類
  */
 class PDOException extends DbException
 {

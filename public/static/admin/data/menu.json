@@ -6,7 +6,7 @@
 		"href": "",
 		"children": [{
 			"id": 10,
-			"title": "控制后台",
+			"title": "控制後台",
 			"icon": "layui-icon layui-icon-console",
 			"type": 1,
 			"openType": "_iframe",
@@ -27,7 +27,7 @@
 			"href": "http://www.baidu.com"
 		}, {
 			"id": 15,
-			"title": "主题预览",
+			"title": "主题預覽",
 			"icon": "layui-icon layui-icon-console",
 			"type": 1,
 			"openType": "_iframe",
@@ -62,7 +62,7 @@
 				"href": "view/document/form.html"
 			}, {
 				"id": 2010,
-				"title": "字体图标",
+				"title": "字体圖标",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -117,7 +117,7 @@
 				"href": "view/document/dtree.html"
 			}, {
 				"id": 2035,
-				"title": "文本編輯",
+				"title": "文字編輯",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -132,7 +132,7 @@
 			}]
 		}, {
 			"id": 202,
-			"title": "弹层组件",
+			"title": "弹層组件",
 			"icon": "layui-icon layui-icon-console",
 			"type": 0,
 			"children": [{
@@ -151,14 +151,14 @@
 				"href": "view/document/notice.html"
 			}, {
 				"id": 2024,
-				"title": "加载组件",
+				"title": "載入组件",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
 				"href": "view/document/loading.html"
 			}, {
 				"id": 2023,
-				"title": "弹层组件",
+				"title": "弹層组件",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -199,7 +199,7 @@
 				},
 				{
 					"id": 2042,
-					"title": "图标選擇",
+					"title": "圖标選擇",
 					"icon": "layui-icon layui-icon-face-cry",
 					"type": 1,
 					"openType": "_iframe",
@@ -223,7 +223,7 @@
 				},
 				{
 					"id": 2045,
-					"title": "顶部返回",
+					"title": "頂部返回",
 					"icon": "layui-icon layui-icon-face-cry",
 					"type": 1,
 					"openType": "_iframe",
@@ -332,7 +332,7 @@
 			},
 			{
 				"id": 605,
-				"title": "行為日志",
+				"title": "行為日誌",
 				"icon": "layui-icon layui-icon-face-cry",
 				"type": 1,
 				"openType": "_iframe",
@@ -371,20 +371,20 @@
 		}]
 	}, {
 		"id": "echarts",
-		"title": "資料图表",
+		"title": "資料圖表",
 		"icon": "layui-icon layui-icon-chart",
 		"type": 0,
 		"href": "",
 		"children": [{
 			"id": 12121,
-			"title": "折线图",
+			"title": "折线圖",
 			"icon": "layui-icon layui-icon-face-smile",
 			"type": 1,
 			"openType": "_iframe",
 			"href": "view/echarts/line.html"
 		}, {
 			"id": 121212,
-			"title": "柱状图",
+			"title": "柱状圖",
 			"icon": "layui-icon layui-icon-face-smile",
 			"type": 1,
 			"openType": "_iframe",

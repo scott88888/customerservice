@@ -84,7 +84,7 @@ $(function () {
             data: $form.serialize(),
             dataType: "json",
             beforeSend: function () {
-                $submit.attr("data-am-loading", "{spinner: 'circle-o-notch', loadingText: '加载中...'}").button("loading");
+                $submit.attr("data-am-loading", "{spinner: 'circle-o-notch', loadingText: '載入中...'}").button("loading");
                 $button.attr("disabled", true);
                 $.AMUI.progress.start()
             },

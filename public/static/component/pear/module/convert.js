@@ -2,7 +2,7 @@ layui.define(['jquery', 'element'], function(exports) {
 	"use strict";
 
 	/**
-	 * 类 型 转 换 工 具 类
+	 * 類 型 转 换 工 具 類
 	 * */
 	var MOD_NAME = 'convert',
 		$ = layui.jquery,

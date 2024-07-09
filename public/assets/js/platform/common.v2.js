@@ -161,7 +161,7 @@ $.loadingHide = function () {
 /*---- 對話框 end ----*/
 
 
-/*---- 文件上传 start ----*/
+/*---- 文件上傳 start ----*/
 var _pl_file_uploader = {
     id: $.randomString(),
     uploader: null,
@@ -181,7 +181,7 @@ $(document).ready(function () {
     function uploader_init() {
         _pl_file_uploader.uploader = new plupload.Uploader({
             browse_button: _pl_file_uploader.id, //触发文件選擇對話框的按钮，為那个元素id
-            url: _upload_url, //服务器端的上传頁面地址
+            url: _upload_url, //服务器端的上傳頁面地址
         });
         _pl_file_uploader.uploader.bind('Init', function (uploader) {
             _pl_file_uploader.input = $('#' + _pl_file_uploader.id + ' ~ .moxie-shim input[type=file]');
@@ -245,7 +245,7 @@ $.upload_file = function (args) {
     _pl_file_uploader.complete = args.complete || null;
     document.getElementById(_pl_file_uploader.id).click();
 };
-/*---- 文件上传 end ----*/
+/*---- 文件上傳 end ----*/
 
 /*---- 文件選擇 start ----*/
 var _file_select = {
@@ -388,7 +388,7 @@ $(document).ready(function () {
         });
     }
 
-    //图片库
+    //圖片庫
     file_app = new Vue({
         el: '#file',
         data: {
@@ -396,14 +396,14 @@ $(document).ready(function () {
             selected: 0,  //选中组
             edit_group: -1, //編輯组
             edit_setting: -1, //打開編輯组
-            file_list: [], //选中的图片
-            list: [], //当前组的所有图片
+            file_list: [], //选中的圖片
+            list: [], //當前组的所有圖片
         }
     });
 });
 /*---- 表單自動送出 end ----*/
 
-/*---- 快速上传组件 start ----*/
+/*---- 快速上傳组件 start ----*/
 $(document).on('click', '.upload-group .upload-file', function () {
     var btn = $(this);
     var group = btn.parents('.upload-group');
@@ -491,7 +491,7 @@ $(document).on('click', '.upload-group .file-item-delete', function () {
         preview.remove();
     }
 });
-/*---- 快速上传组件 end ----*/
+/*---- 快速上傳组件 end ----*/
 
 /*---- 地区選擇器 start ----*/
 var districtPicker = null;
@@ -572,7 +572,7 @@ $(document).ready(function () {
         onSuccess = args.success || null;
         onError = args.error || null;
         if (!district_list) {
-            $.loading({title: '加载地区資料'});
+            $.loading({title: '載入地区資料'});
             $.ajax({
                 url: _district_data_url,
                 dataType: 'json',

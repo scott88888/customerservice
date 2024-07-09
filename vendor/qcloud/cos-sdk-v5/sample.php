@@ -10,14 +10,14 @@ $cosClient = new Qcloud\Cos\Client(array(
     ),
 ));
 
-// 若初始化 Client 时未填写 appId，则 bucket 的命名规则為{name}-{appid} ，此处填写的存储桶名稱必须為此格式
+// 若初始化 Client 时未填寫 appId，則 bucket 的命名規則為{name}-{appid} ，此处填寫的存储桶名稱必须為此格式
 $bucket = 'test2-1252448703';
 $key = 'a.txt';
 $local_path = "E:/a.txt";
 
-# 上传文件
-## putObject(上传接口，最大支持上传5G文件)
-### 上传内存中的字符串
+# 上傳文件
+## putObject(上傳接口，最大支援上傳5G文件)
+### 上傳内存中的字符串
 try {
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -31,7 +31,7 @@ try {
     echo($e);
 }
 
-### 上传文件流
+### 上傳文件流
 try {
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -70,8 +70,8 @@ try {
     echo($e);
 }
 
-## Upload(高级上传接口，默认使用分块上传最大支持50T)
-### 上传内存中的字符串
+## Upload(高级上傳接口，默認使用分块上傳最大支援50T)
+### 上傳内存中的字符串
 try {
     $result = $cosClient->upload(
         $bucket = $bucket,
@@ -83,7 +83,7 @@ try {
     echo($e);
 }
 
-### 上传文件流
+### 上傳文件流
 try {
     $result = $cosClient->upload(
         $bucket = $bucket,
@@ -124,11 +124,11 @@ try {
     echo($e);
 }
 
-## 预签名上传createPresignedUrl
+## 预签名上傳createPresignedUrl
 ## 取得带有签名的url
-### 简單上传预签名
+### 简單上傳预签名
 try {
-    #此处可以替换為其他上传接口
+    #此处可以替换為其他上傳接口
     $command = $cosClient->getCommand('putObject', array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -140,9 +140,9 @@ try {
     echo($e);
 }
 
-### 分块上传预签名
+### 分块上傳预签名
 try {
-    #此处可以替换為其他上传接口
+    #此处可以替换為其他上傳接口
     $command = $cosClient->getCommand('uploadPart', array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -158,7 +158,7 @@ try {
 
 ### 取得签名
 try {
-    #此处可以替换為其他上传接口
+    #此处可以替换為其他上傳接口
     $command = $cosClient->getCommand('putObject', array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -195,7 +195,7 @@ try {
     echo($e);
 }
 
-### 指定下载范围
+### 指定下载範圍
 /*
  * Range 字段格式為 'bytes=a-b'
  */
@@ -329,7 +329,7 @@ try {
 ## listObjects
 ### 列出所有object
 /*
- * 该接口一次最多列出1000个，需要列出所有請参考其他服务中的清空并刪除bucket接口
+ * 该接口一次最多列出1000个，需要列出所有請参考其他服务中的清空並刪除bucket接口
  */
 try {
     $result = $cosClient->listObjects(array(
@@ -680,7 +680,7 @@ try {
     echo($e);
 }
 
-## Copy(分块并发複製)
+## Copy(分块並发複製)
 /*
  * 将{bucket},{region},{cos_path},{versionId}替换成複製源的真实訊息
  */
@@ -746,9 +746,9 @@ try {
     echo($e);
 }
 
-## 刪除所有因上传失敗而产生的分块
+## 刪除所有因上傳失敗而产生的分块
 /*
- * 可以清理掉因分块上传失敗
+ * 可以清理掉因分块上傳失敗
  */
 try {
     while (true) {
@@ -775,10 +775,10 @@ try {
     echo($e);
 }
 
-## 分块上传断點重传
+## 分块上傳断點重傳
 /*
- * 仅适用于分块上传失敗的情况
- * 需要填写上传失敗的uploadId
+ * 仅适用于分块上傳失敗的情况
+ * 需要填寫上傳失敗的uploadId
  */
 try {
     $result = $cosClient->resumeUpload(

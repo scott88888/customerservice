@@ -41,7 +41,7 @@ class Command
 
     /**
      * 构造方法
-     * @param string|null $name 命令名稱,如果没有設定则比如在 configure() 里設定
+     * @param string|null $name 命令名稱,如果没有設定則比如在 configure() 里設定
      * @throws \LogicException
      * @api
      */
@@ -104,7 +104,7 @@ class Command
     }
 
     /**
-     * 执行指令
+     * 執行指令
      * @param Input  $input
      * @param Output $output
      * @return null|int
@@ -135,7 +135,7 @@ class Command
     }
 
     /**
-     * 执行
+     * 執行
      * @param Input  $input
      * @param Output $output
      * @return int
@@ -179,7 +179,7 @@ class Command
     }
 
     /**
-     * 設定执行程式碼
+     * 設定執行程式碼
      * @param callable $code callable(InputInterface $input, OutputInterface $output)
      * @return Command
      * @throws \InvalidArgumentException
@@ -204,7 +204,7 @@ class Command
     }
 
     /**
-     * 合并参數定义
+     * 合併参數定義
      * @param bool $mergeArgs
      */
     public function mergeConsoleDefinition($mergeArgs = true)
@@ -231,7 +231,7 @@ class Command
     }
 
     /**
-     * 設定参數定义
+     * 設定参數定義
      * @param array|Definition $definition
      * @return Command
      * @api
@@ -250,7 +250,7 @@ class Command
     }
 
     /**
-     * 取得参數定义
+     * 取得参數定義
      * @return Definition
      * @api
      */
@@ -260,7 +260,7 @@ class Command
     }
 
     /**
-     * 取得当前指令的参數定义
+     * 取得當前指令的参數定義
      * @return Definition
      */
     public function getNativeDefinition()
@@ -271,9 +271,9 @@ class Command
     /**
      * 新增参數
      * @param string $name        名稱
-     * @param int    $mode        类型
+     * @param int    $mode        類型
      * @param string $description 描述
-     * @param mixed  $default     默认值
+     * @param mixed  $default     默認值
      * @return Command
      */
     public function addArgument($name, $mode = null, $description = '', $default = null)
@@ -287,9 +287,9 @@ class Command
      * 新增选项
      * @param string $name        选项名稱
      * @param string $shortcut    别名
-     * @param int    $mode        类型
+     * @param int    $mode        類型
      * @param string $description 描述
-     * @param mixed  $default     默认值
+     * @param mixed  $default     默認值
      * @return Command
      */
     public function addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)

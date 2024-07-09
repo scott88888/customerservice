@@ -5,13 +5,13 @@ namespace app\common\lib\token\driver;
 use app\common\lib\token\Driver;
 
 /**
- * Token操作类
+ * Token操作類
  */
 class Mysql extends Driver
 {
 
     /**
-     * 默认配置
+     * 默認配置
      * @var array
      */
     protected $options = [

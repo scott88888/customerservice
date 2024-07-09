@@ -15,7 +15,7 @@ use think\View;
 use think\Db;
 
 /**
- * 插件基类
+ * 插件基類
  * Class Addons
  * @author Byron Sampson <xiaobo.sun@qq.com>
  * @package think\addons
@@ -23,13 +23,13 @@ use think\Db;
 abstract class Addons
 {
     /**
-     * 视图实例對象
+     * 视圖實例對象
      * @var view
      * @access protected
      */
     protected $view = null;
 
-    // 当前錯誤訊息
+    // 當前錯誤訊息
     protected $error;
 
     /**
@@ -52,14 +52,14 @@ abstract class Addons
      */
     public function __construct()
     {
-        // 取得当前插件目录
+        // 取得當前插件目錄
         $this->addons_path = ADDON_PATH . $this->getName() . DS;
-        // 读取当前插件配置訊息
+        // 读取當前插件配置訊息
         if (is_file($this->addons_path . 'config.php')) {
             $this->config_file = $this->addons_path . 'config.php';
         }
 
-        // 初始化视图模型
+        // 初始化视圖模型
         $config = ['view_path' => $this->addons_path];
         $config = array_merge(Config::get('template'), $config);
         $this->view = new View($config, Config::get('view_replace_str'));
@@ -72,7 +72,7 @@ abstract class Addons
 
     /**
      * 取得插件的配置數组
-     * @param string $name 可选模块名
+     * @param string $name 可选模組名
      * @return array|mixed|null
      */
     final public function getConfig($name = '')
@@ -108,7 +108,7 @@ abstract class Addons
     }
 
     /**
-     * 取得当前模块名
+     * 取得當前模組名
      * @return string
      */
     final public function getName()
@@ -133,7 +133,7 @@ abstract class Addons
     }
 
     /**
-     * 加载模板和頁面输出 可以返回输出内容
+     * 載入模板和頁面输出 可以返回输出内容
      * @access public
      * @param string $template 模板文件名或者内容
      * @param array $vars 模板输出变量
@@ -198,7 +198,7 @@ abstract class Addons
     }
 
     /**
-     * 取得当前錯誤訊息
+     * 取得當前錯誤訊息
      * @return mixed
      */
     public function getError()

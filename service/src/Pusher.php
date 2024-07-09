@@ -9,7 +9,7 @@ use Workerman\Connection\AsyncTcpConnection;
 class Pusher extends Worker 
 {
     /**
-     * 应用訊息
+     * 應用訊息
      *
      * @var array
      */
@@ -91,7 +91,7 @@ class Pusher extends Worker
     protected $_globalData = array();
 
     /**
-     * 当前进程全局唯一订阅id
+     * 當前进程全局唯一订阅id
      *
      * @var string
      */
@@ -113,7 +113,7 @@ class Pusher extends Worker
     }
 
     /**
-     * 进程启動后初始化事件分发器客户端
+     * 进程启動後初始化事件分发器客户端
      *
      * @return void
      */
@@ -127,12 +127,12 @@ class Pusher extends Worker
     }
 
     /**
-     * 客户端連結后
+     * 客户端連結後
      *
      * @param $connection
      */
     public function onClientConnect($connection) {
-        // 客户端有多少次没在规定時間发送心跳
+        // 客户端有多少次没在规定時間發送心跳
         $connection->clientNotSendPingCount = 0;
         // 設定websocket握手事件回调
         $connection->onWebSocketConnect     = array($this, 'onWebSocketConnect');
@@ -162,7 +162,7 @@ class Pusher extends Worker
         $this->_allClients[$socket_id]                 = $connection;
 
         /*
-         * 向客户端发送連結成功的消息
+         * 向客户端發送連結成功的消息
          * {"event":"pusher:connection_established","data":"{\"socket_id\":\"208836.27464492\",\"activity_timeout\":120}"}
          */
         $data = array(
@@ -310,7 +310,7 @@ class Pusher extends Worker
                     // {"event":"pusher:error","data":{"code":null,"message":"Client event rejected - only supported on private and presence channels"}}
                     return $connection->send($this->error(null, 'Client event rejected - only supported on private and presence channels'));
                 }
-                // 当前連結没有订阅这个channel
+                // 當前連結没有订阅这个channel
                 if (!isset($connection->channels[$channel])) {
                     return $connection->send($this->error(null, 'Client event rejected - you didn\'t subscribe this channel'));
                 }
@@ -328,7 +328,7 @@ class Pusher extends Worker
 
 
     /**
-     * 获得channel类型
+     * 获得channel類型
      *
      * @param $channel
      * @return string
@@ -755,7 +755,7 @@ class Pusher extends Worker
         $user_events = $data['user_events'];
         $time_ms = microtime(true);
         foreach ($user_events as $app_key => $items) {
-            // 没設定user_event回调则忽略
+            // 没設定user_event回调則忽略
             if (empty($this->appInfo[$app_key]['user_event'])) {
                 continue;
             }
@@ -798,7 +798,7 @@ class Pusher extends Worker
         }
 
         foreach ($channel_events as $app_key => $item) {
-            // 没設定channel_event回调则忽略
+            // 没設定channel_event回调則忽略
             if (empty($this->appInfo[$app_key]['channel_hook'])) {
                 continue;
             }

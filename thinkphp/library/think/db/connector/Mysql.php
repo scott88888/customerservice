@@ -16,7 +16,7 @@ use think\db\Connection;
 use think\Log;
 
 /**
- * mysql資料库驱動
+ * mysql資料庫驱動
  */
 class Mysql extends Connection
 {
@@ -82,7 +82,7 @@ class Mysql extends Connection
     }
 
     /**
-     * 取得資料库的表訊息
+     * 取得資料庫的表訊息
      * @access public
      * @param string $dbName
      * @return array

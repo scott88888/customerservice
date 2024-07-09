@@ -25,7 +25,7 @@ function writable($var)
     }
     return $writeable;
 }
-//取得随机數
+//取得随機數
 function GetRandStr($length){
     //字符组合
     $str = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -101,11 +101,11 @@ foreach ($dirarray as $key => $dir) {
         <h3 class="text-muted">安装向导</h3>
     </div>
     <script>
-        layer.alert('使用AI智能客服产品期间，不得危害国家安全、泄露国家秘密，不得侵犯国家社会集体和公民的合法权益。<br><br><strong>AI智能客服产品禁止用于含有木马、病毒、色情、赌博、诈骗等违法违规业务。一经发现，AI智能客服有权立即停止服务，并协助相關行政执法机关进行清查。</strong><br><br>對因意外事故、滥用、錯誤使用、擅自修改所引起的软件使用問題，AI智能客服不承担任何责任，也不做任何保证。', {
+        layer.alert('使用AI智能客服产品期间，不得危害国家安全、泄露国家秘密，不得侵犯国家社会集体和公民的合法权益。<br><br><strong>AI智能客服产品禁止用于含有木马、病毒、色情、赌博、诈骗等违法违规業務。一经发现，AI智能客服有权立即停止服务，並协助相關行政执法機关进行清查。</strong><br><br>對因意外事故、滥用、錯誤使用、擅自修改所引起的软件使用問題，AI智能客服不承担任何责任，也不做任何保证。', {
             title: '提示條款',
             maxWidth: '500',
             btn: '同意',
-            skin: 'layui-layer-lan' //樣式类名
+            skin: 'layui-layer-lan' //樣式類名
             ,closeBtn: 0
         });
     </script>
@@ -236,7 +236,7 @@ foreach ($dirarray as $key => $dir) {
                 </tbody>
             </table>
             <table class="table table-hover">
-                <caption>文件可写检测</caption>
+                <caption>文件可寫检测</caption>
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -285,27 +285,27 @@ foreach ($dirarray as $key => $dir) {
             <div class="col-md-4">
                 <fieldset>
                     <legend>
-                        <small>填写資料库訊息</small>
+                        <small>填寫資料庫訊息</small>
                     </legend>
                     <div class="form-group">
-                        <label class="control-label" for="dbHost">資料库地址</label>
+                        <label class="control-label" for="dbHost">資料庫地址</label>
                         <input type="text" class="form-control" id="dbHost" name="dbHost"
                                value="<?php if (isset($_POST['dbHost'])) echo $_POST['dbHost']; else echo '127.0.0.1'; ?>">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbName">資料库名</label>
+                        <label class="control-label" for="dbName">資料庫名</label>
                         <input type="text" class="form-control" id="dbName" name="dbName"
                                value="<?php if (isset($_POST['dbName'])) echo $_POST['dbName']; ?>"
                                placeholder="Database Name">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbUser">資料库账号</label>
+                        <label class="control-label" for="dbUser">資料庫账号</label>
                         <input type="text" class="form-control" id="dbUser" name="dbUser"
                                value="<?php if (isset($_POST['dbUser'])) echo $_POST['dbUser']; ?>"
                                placeholder="Database Username">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="dbPass">資料库密碼</label>
+                        <label class="control-label" for="dbPass">資料庫密碼</label>
                         <input type="text" class="form-control" id="dbPass" name="dbPass"
                                value="<?php if (isset($_POST['dbPass'])) echo $_POST['dbPass']; ?>"
                                placeholder="Database Password">
@@ -318,7 +318,7 @@ foreach ($dirarray as $key => $dir) {
 
                 <fieldset>
                     <legend>
-                        <small>超级管理员注册</small>
+                        <small>超级管理员註冊</small>
                     </legend>
                     <div class="form-group">
                         <label class="control-label" for="adminUser">管理账号</label>
@@ -508,7 +508,7 @@ foreach ($dirarray as $key => $dir) {
             <?php sleep(2); ?>
 
             <center style="margin-bottom: 20px;">
-                <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/backend" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">登入总后台</a>  <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/service" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">商户后台</a>
+                <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/backend" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">登入总後台</a>  <a href="//<?php echo $_SERVER['HTTP_HOST']; ?>/service" style="display:inline-block;width: 90px;" class="btn btn-success" target="_blank">商户後台</a>
             </center>
             <?php
 
@@ -528,20 +528,20 @@ foreach ($dirarray as $key => $dir) {
 // +----------------------------------------------------------------------
 
 return [
-    // 資料库调试模式
+    // 資料庫调试模式
     'debug'          => false,
     // 是否严格檢查字段是否存在
     'fields_strict'  => true,
-    // 是否自動写入時間戳字段
+    // 是否自動寫入時間戳字段
     'auto_timestamp' => false,
     // 是否需要进行SQL性能分析
     'sql_explain'    => false,
 
-    // 資料库类型
+    // 資料庫類型
     'type'           => 'mysql',
     // 服务器地址
     'hostname'       => '{$dbHost}',
-    // 資料库名
+    // 資料庫名
     'database'       => '{$dbName}',
     // 使用者名稱
     'username'       => '{$dbUser}',
@@ -549,11 +549,11 @@ return [
     'password'       => '{$dbPass}',
     // 端口
     'hostport'       => '',
-    // 資料库表前缀
+    // 資料庫表前缀
     'prefix'         => '',
-    // 資料库编碼默认采用utf8
+    // 資料庫编碼默認采用utf8
     'charset'        => 'utf8',
-    // 資料库連結参數
+    // 資料庫連結参數
     'params'         => [],
 ];
 ");
@@ -570,7 +570,7 @@ $salt=GetRandStr(18);
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-// [ 应用入口文件 ]
+// [ 應用入口文件 ]
 
 ini_set('session.gc_maxlifetime', 432000);
 ini_set('session.cookie_lifetime', 432000);
@@ -580,17 +580,17 @@ ini_set('session.gc_divisor',1000);
 
 isset(\$_SESSION) or session_start();
 
-// 定义环境版本
+// 定義环境版本
 
-// 定义应用目录
+// 定義應用目錄
 define('APP_PATH', __DIR__ . '/../application/');
 define('VENDOR',__DIR__.'/../vendor/');
 
-// 定义配置文件目录
+// 定義配置文件目錄
 define('CONF_PATH', __DIR__ . '/../config/'); 
 
 
-// 定义pusher密匙
+// 定義pusher密匙
 define('app_key','{$app_key}');
 define('app_secret','{$secret}');
 define('app_id',{$app_id});
@@ -602,21 +602,21 @@ define('registToken','{$registToken}');
 define('AIKF_SALT','{$salt}');
 define('AKF_VERSION','AI_KF');
 
-// 自訂一个 入口 目录
+// 自訂一个 入口 目錄
 define('PUBLIC_PATH',__DIR__);
-// 定义 类的文件路径
+// 定義 類的文件路徑
 define('EXTEND_PATH','../extend/');
 
-// 定义微信配置
+// 定義微信配置
 define('appid','');
 define('appsecret','');
 define('token','');
 define('domain','{$domain}');
 
-// 加载框架引导文件
+// 載入框架引导文件
 require __DIR__ . '/../thinkphp/start.php';");
             file_put_contents(__DIR__.'/../service/config.php',"<?php
-// 这里填写客服系统域名，前面带http://，用于pusher系统通知客服平台客户或者客服上下线
+// 这里填寫客服系统域名，前面带http://，用于pusher系统通知客服平台客户或者客服上下线
 \$domain = '{$ahost}';
 
 // App_key，客服系统与pusher通讯的key
@@ -631,7 +631,7 @@ require __DIR__ . '/../thinkphp/start.php';");
 // websocket 端口，客服系统網頁会连这个端口
 \$websocket_port = {$wport};
 
-// Api 端口，用于后端与pusher通讯
+// Api 端口，用于後端与pusher通讯
 \$api_port = $aport;
 
 ");
@@ -653,7 +653,7 @@ require __DIR__ . '/../thinkphp/start.php';");
 </div>
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">©2021 AI線上客服系统 | 本产品禁止用于含木马、病毒、色情、赌博、诈骗等违法违规业务</p>
+        <p class="text-muted">©2021 AI線上客服系统 | 本产品禁止用于含木马、病毒、色情、赌博、诈骗等违法违规業務</p>
     </div>
 </footer>
 <!-- javascript -->

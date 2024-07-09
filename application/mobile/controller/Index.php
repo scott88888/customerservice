@@ -15,7 +15,7 @@ use think\config;
 
 /**
  *
- * 前台手机端控制器.
+ * 前台手機端控制器.
  * Class Index
  * @package app\mobile\controller
  */
@@ -30,7 +30,7 @@ class Index extends Controller
         $this->assign('basename',$basename);
     }
     /**
-     * 唯一随机數方法
+     * 唯一随機數方法
      * [rand description]
      * @param  [type] $len [description]
      * @return [type]      [description]
@@ -75,7 +75,7 @@ class Index extends Controller
 
     /**
      *
-     * 手机端首頁.
+     * 手機端首頁.
      *
      * @return mixed
      */

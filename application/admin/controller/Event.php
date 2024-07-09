@@ -65,7 +65,7 @@ class Event extends Controller
     }
 
     /**
-     * 離線，線上监控类.
+     * 離線，線上监控類.
      *
      * @returngetanswer void
      */
@@ -174,7 +174,7 @@ class Event extends Controller
 
 
     /**
-     *  注册接口
+     *  註冊接口
      *
      * @return string
      */
@@ -187,7 +187,7 @@ class Event extends Controller
 
         if ($time - $post['timestamp'] > 60) {
 
-            $data = ['code' => 1, 'msg' => '注册驗證超时！'];
+            $data = ['code' => 1, 'msg' => '註冊驗證超时！'];
             return json_encode($data);
         }
 
@@ -219,7 +219,7 @@ class Event extends Controller
 
         } else {
 
-            $data = ['code' => 1, 'msg' => '注册token驗證失敗！'];
+            $data = ['code' => 1, 'msg' => '註冊token驗證失敗！'];
 
             return json_encode($data);
         }
@@ -227,7 +227,7 @@ class Event extends Controller
 
 
     /**
-     *  微信前台對話pusher类.
+     *  微信前台對話pusher類.
      *
      * @return void
      */
@@ -489,7 +489,7 @@ class Event extends Controller
 
 
     /**
-     * 前台寻求客服對話类.
+     * 前台寻求客服對話類.
      *
      * @return mixed
      */
@@ -608,7 +608,7 @@ class Event extends Controller
 
                 // 替换成最新圖示
                 $newvisiter = Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->update(array_filter(['avatar' => $arr['avatar'],'visiter_name' => $arr['visiter_name']]));
-                // 最后一次服务的客服id
+                // 最後一次服务的客服id
                 $service_id = $service['service_id'];
 
 
@@ -701,7 +701,7 @@ class Event extends Controller
                 Admins::table('wolive_visiter')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->update(array_filter(['avatar' => $arr['avatar'],'login_times'=>Db::raw('login_times+1'),'visiter_name' => $arr['visiter_name']]));
                 // 老使用者
                 $service = Admins::table('wolive_queue')->where(['visiter_id' => $visiter_id, 'business_id' => $business_id])->find();
-                //最后服务id
+                //最後服务id
                 $service_id = $service['service_id'];
                 $service_data = Admins::table("wolive_service")->field('avatar,business_id,email,open_id,groupid,nick_name,service_id,state')->where('service_id', $service_id)->where('groupid', $arr['groupid'])->find();
 
@@ -868,7 +868,7 @@ class Event extends Controller
     }
 
     /**
-     * 图片上传.
+     * 圖片上傳.
      *
      * @return [type] [description]
      */
@@ -940,7 +940,7 @@ class Event extends Controller
     }
 
     /**
-     * 文件上传.
+     * 文件上傳.
      *
      * @return [type] [description]
      */

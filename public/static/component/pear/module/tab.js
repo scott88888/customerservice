@@ -13,7 +13,7 @@ layui.define(['jquery', 'element'], function(exports) {
 	var tabDataCurrent = 0;
 
 	pearTab.prototype.render = function(opt) {
-		//默认配置值
+		//默認配置值
 		var option = {
 			elem: opt.elem,
 			data: opt.data,
@@ -68,7 +68,7 @@ layui.define(['jquery', 'element'], function(exports) {
 
 		$("body .layui-tab[lay-filter='" + option.elem + "']").on("contextmenu", "li", function(e) {
 
-			// 取得当前元素位置
+			// 取得當前元素位置
 			var top = e.clientY;
 			var left = e.clientX;
 
@@ -169,7 +169,7 @@ layui.define(['jquery', 'element'], function(exports) {
 
 	var index = 0;
 
-	// 根據过滤 filter 標識, 刪除执行选项卡
+	// 根據过滤 filter 標識, 刪除執行选项卡
 	pearTab.prototype.delTabByElem = function(elem, id, callback) {
 		var currentTab = $(".layui-tab[lay-filter='" + elem + "'] .layui-tab-title [lay-id='" + id + "']");
 		if (currentTab.find("span").is(".able-close")) {
@@ -177,7 +177,7 @@ layui.define(['jquery', 'element'], function(exports) {
 		}
 	}
 
-	// 根據过滤 filter 標識, 刪除当前选项卡
+	// 根據过滤 filter 標識, 刪除當前选项卡
 	pearTab.prototype.delCurrentTabByElem = function(elem, callback) {
 		var currentTab = $(".layui-tab[lay-filter='" + elem + "'] .layui-tab-title .layui-this");
 		if (currentTab.find("span").is(".able-close")) {
@@ -302,7 +302,7 @@ layui.define(['jquery', 'element'], function(exports) {
 			sessionStorage.setItem(this.option.elem + "-pear-tab-data-current", opt.id);
 		} else {
 			var isData = false;
-			//查詢当前选项卡數量
+			//查詢當前选项卡數量
 			if ($(".layui-tab[lay-filter='" + this.option.elem + "'] .layui-tab-title li[lay-id]").length >= this.option.tabMax) {
 				layer.msg("最多打開" + this.option.tabMax + "个标签頁", {
 					icon: 2,
@@ -528,7 +528,7 @@ layui.define(['jquery', 'element'], function(exports) {
 				var currentId = currentTab.attr("lay-id");
 				tabDelete(option.elem, currentId, option.closeEvent, option);
 			} else {
-				layer.msg("当前頁面不允许關閉", {
+				layer.msg("當前頁面不允许關閉", {
 					icon: 3,
 					time: 800
 				})
@@ -570,7 +570,7 @@ layui.define(['jquery', 'element'], function(exports) {
 				var currentId = currentTab.attr("lay-id");
 				tabDelete(option.elem, currentId, option.closeEvent, option);
 			} else {
-				layer.msg("当前頁面不允许關閉", {
+				layer.msg("當前頁面不允许關閉", {
 					icon: 3,
 					time: 800
 				})

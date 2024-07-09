@@ -14,7 +14,7 @@ namespace think\sae;
 use think\Exception;
 
 /**
- * SAE Memcache缓存驱動
+ * SAE Memcache快取驱動
  * @author    liu21st <liu21st@gmail.com>
  */
 class Cache
@@ -31,7 +31,7 @@ class Cache
 
     /**
      * 架构函數
-     * @param array $options 缓存参數
+     * @param array $options 快取参數
      * @access public
      */
     public function __construct($options = [])
@@ -49,9 +49,9 @@ class Cache
     }
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return mixed
      */
     public function get($name)
@@ -60,9 +60,9 @@ class Cache
     }
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access public
-     * @param string    $name 缓存变量名
+     * @param string    $name 快取变量名
      * @param mixed     $value  存储資料
      * @param integer   $expire  有效時間（秒）
      * @return bool
@@ -80,8 +80,8 @@ class Cache
     }
 
     /**
-     * 刪除缓存
-     * @param    string  $name 缓存变量名
+     * 刪除快取
+     * @param    string  $name 快取变量名
      * @param bool|false $ttl
      * @return bool
      */
@@ -94,7 +94,7 @@ class Cache
     }
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access public
      * @return bool
      */

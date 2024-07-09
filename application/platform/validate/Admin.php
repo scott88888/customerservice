@@ -14,7 +14,7 @@ class Admin extends Validate
 {
 
     /**
-     * 驗證规则.
+     * 驗證規則.
      * [$rule description]
      * @var [type]
      */
@@ -40,18 +40,18 @@ class Admin extends Validate
      * @var array
      */
     protected $message = [
-        "username.require" => "請填写使用者名稱",
+        "username.require" => "請填寫使用者名稱",
         "username.alphaDash" => "使用者名稱只能是字母、數字和下划线_及破折号-",
         "username.length" => "使用者名稱長度為3~16个字符",
         "password.require" => "密碼不能為空",
         "password.length" => "密碼長度為6~16个字符",
-        "mobile.isMobile" => "手机格式不符合要求",
-        "mobile2.isMobile" => "手机格式不符合要求",
+        "mobile.isMobile" => "手機格式不符合要求",
+        "mobile2.isMobile" => "手機格式不符合要求",
         "mobile.unique" => "该手機號碼已存在",
         'expire_time.isDate' => '有效期格式不正确',
-        'expire_time.afterTime' => '無法建立一个过期的应用',
-        "app_max_count.require" => "請填写數量",
-        "app_max_count.number" => "应用數量只能是數字",
+        'expire_time.afterTime' => '無法建立一个过期的應用',
+        "app_max_count.require" => "請填寫數量",
+        "app_max_count.number" => "應用數量只能是數字",
     ];
 
 

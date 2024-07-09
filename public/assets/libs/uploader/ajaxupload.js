@@ -34,7 +34,7 @@ jQuery.extend({
 		jQuery(oldElement).attr('id', fileId);
 		jQuery(oldElement).before(newElement);
 		jQuery(oldElement).appendTo(form);
-		//新增参數支持
+		//新增参數支援
 		if(data){
 			$.each(data,function(key,value){
 				$("<input type='hidden' name='"+key+"' value='"+value+"'/>").appendTo(form);

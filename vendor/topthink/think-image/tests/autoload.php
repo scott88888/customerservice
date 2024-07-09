@@ -9,7 +9,7 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 define('TEST_PATH', __DIR__ . '/');
-// 加载框架基础文件
+// 載入框架基础文件
 require __DIR__ . '/../thinkphp/base.php';
 \think\Loader::addNamespace('tests', TEST_PATH);
 \think\Loader::addNamespace('think', __DIR__ . '/../src/');

@@ -39,7 +39,7 @@ class Passport extends Controller
         $this->auth->init($this->token);
         $auth = $this->auth;
 
-        //监听注册登入注销的事件
+        //监听註冊登入注销的事件
         Hook::add('user_login_successed', function ($user) use ($auth) {
             $expire = input('post.keeplogin') ? 30 * 86400 : 0;
             Cookie::set('uid', $user->id, $expire);
@@ -169,7 +169,7 @@ class Passport extends Controller
                 SmsService::clearSession();
                 return [
                     'code' => 1,
-                    'msg' => '驗證碼錯誤次數过多，請重新发送',
+                    'msg' => '驗證碼錯誤次數过多，請重新發送',
                 ];
             }
             if ($data['sms_code'] != $verify['code']) {
@@ -200,7 +200,7 @@ class Passport extends Controller
         return $this->fetch();
     }
 
-    //注册 資料驗證
+    //註冊 資料驗證
     public function registerValidate()
     {
         $post = $this->request->param();
@@ -239,7 +239,7 @@ class Passport extends Controller
             }
             return [
                 'code' => 0,
-                'msg' => '短信发送成功。',
+                'msg' => '短信發送成功。',
                 'data' => [
                     'admin_list' => $account,
                 ],

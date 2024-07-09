@@ -253,7 +253,7 @@
 
         var channel = pusher.subscribe("kefu" + config.service_id);
 
-        // 发送一个推送
+        // 發送一个推送
         channel.bind("callbackpusher",function(data){
             $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
 
@@ -296,7 +296,7 @@
             getchat();
         });
 
-        // 认领后取得訪客訊息
+        // 认领後取得訪客訊息
         var channelme = pusher.subscribe("ud" + config.service_id);
         channelme.bind("on_notice", function (data) {
             getwait();
@@ -332,7 +332,7 @@
     }
 
 
-    // 取得排队列表
+    // 取得排對列表
     function getwait() {
 
         $.ajax({

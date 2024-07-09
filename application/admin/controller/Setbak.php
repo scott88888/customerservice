@@ -26,7 +26,7 @@ use app\admin\iplocation\Ip;
 class Set extends Base
 {
     /**
-     * 對話pusher类.
+     * 對話pusher類.
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class Set extends Base
     }
 
     /**
-     * 刪除訪客类.
+     * 刪除訪客類.
      *
      * @return mixed
      */
@@ -181,7 +181,7 @@ class Set extends Base
     }
 
     /**
-     * 转接客服类.
+     * 轉接客服類.
      * @return [type] [description]
      */
     public function getswitch()
@@ -221,16 +221,16 @@ class Set extends Base
 
         $pusher->trigger("cu" . $channel, 'getswitch', array('message' => $admin));
 
-        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  转接訪客给你"));
+        $pusher->trigger('kefu' . $post['id'], 'getswitch', array('message' => $post['name'] . "  轉接訪客给你"));
 
         $result = Admins::table('wolive_queue')->where("visiter_id", $post['visiter_id'])->where('business_id', $login['business_id'])->where('state', 'normal')->update(['service_id' => $post['id']]);
 
 
         if ($result) {
-            $arr = ['code' => 0, 'msg' => '转接成功！'];
+            $arr = ['code' => 0, 'msg' => '轉接成功！'];
             return $arr;
         } else {
-            $arr = ['code' => 1, 'msg' => '转接失敗！'];
+            $arr = ['code' => 1, 'msg' => '轉接失敗！'];
             return $arr;
         }
 
@@ -238,7 +238,7 @@ class Set extends Base
 
 
     /**
-     * 认领訪客类.
+     * 认领訪客類.
      *
      * @return mixed
      */
@@ -289,7 +289,7 @@ class Set extends Base
             $resdata = Admins::table('wolive_chats')->where(['visiter_id' => $post['visiter_id'], 'business_id' => $login['business_id']])->update(['service_id' => $login['service_id']]);
 
 
-            // 取得默认的常用语
+            // 取得默認的常用語
             $words = Admins::table('wolive_sentence')->where('service_id', $login['service_id'])->where('state', 'using')->find();
             if ($words['content'] == "") {
                 $words['content'] = "你好!";
@@ -317,7 +317,7 @@ class Set extends Base
     }
 
     /**
-     * 排队列表类.
+     * 排對列表類.
      *
      * @return mixed
      */
@@ -360,7 +360,7 @@ class Set extends Base
     }
 
     /**
-     * 對話列表类.
+     * 對話列表類.
      *
      * @return mixed
      */
@@ -368,7 +368,7 @@ class Set extends Base
     {
 
         $login = $_SESSION['Msg'];
-//  business_id一个客服后台就是一个商户
+//  business_id一个客服後台就是一个商户
         $visiters = Admins::table('wolive_queue')->distinct(true)->field('visiter_id')->where(['service_id' => $login['service_id'], 'business_id' => $login['business_id']])->where('state', 'normal')->order('timestamp desc')->select();
         $visiters = array_column(collection($visiters)->toArray(),'visiter_id');
 
@@ -442,11 +442,11 @@ class Set extends Base
                                 if (strpos($src, "emo_")) {
                                     $newimg = "<img src={$src}>";
                                 } else {
-                                    $newimg = "[图片]";
+                                    $newimg = "[圖片]";
                                 }
                             }
                         } else {
-                            $newimg = '[图片]';
+                            $newimg = '[圖片]';
                         }
                         $chats .= $newimg;
                     }
@@ -529,7 +529,7 @@ class Set extends Base
 
 
     /**
-     * 取得当前聊天訊息类.
+     * 取得當前聊天訊息類.
      *
      * @return string
      */
@@ -656,7 +656,7 @@ class Set extends Base
 
 
     /**
-     * 取得ip地址类.
+     * 取得ip地址類.
      *
      * @return string
      */
@@ -686,7 +686,7 @@ class Set extends Base
     }
 
     /**
-     * 取得未看訊息條數类.
+     * 取得未看訊息條數類.
      *
      * @return mixed
      */
@@ -766,7 +766,7 @@ class Set extends Base
 
 
     /**
-     * 設定常用语默认值.
+     * 設定常用語默認值.
      *
      * @return mixed
      */
@@ -797,7 +797,7 @@ class Set extends Base
         return $arr;
     }
     /**
-     * 常用语刪除.
+     * 常用語刪除.
      *
      * @return bool
      */
@@ -813,7 +813,7 @@ class Set extends Base
     }
 
     /**
-     * 查看历史记录类.
+     * 查看历史记录類.
      *
      * @return mixed
      */
@@ -873,7 +873,7 @@ class Set extends Base
     }
 
     /**
-     * 自訂查看历史對話记录类.
+     * 自訂查看历史對話记录類.
      *
      * @return mixed
      */
@@ -942,7 +942,7 @@ class Set extends Base
     }
 
     /**
-     * 取得排队人數.
+     * 取得排對人數.
      *
      * @return mixed
      */
@@ -1061,7 +1061,7 @@ class Set extends Base
     }
 
     /**
-     * 拒绝视屏类方法
+     * 拒绝视屏類方法
      *
      */
     public function refuse()
@@ -1418,7 +1418,7 @@ class Set extends Base
 
 
     /**
-     * 图片上传.
+     * 圖片上傳.
      *
      * @return [type] [description]
      */
@@ -1442,7 +1442,7 @@ class Set extends Base
 
 
     /**
-     * 文件上传.
+     * 文件上傳.
      *
      * @return [type] [description]
      */
@@ -1675,7 +1675,7 @@ class Set extends Base
             $file = file_put_contents(ROOT_PATH . "/public/assets/layer/ymwl_" . $login['business_id'] . ".js", "
             /**
              *
-             * 浮层版 客服咨询js
+             * 浮層版 客服咨询js
              * @return {[type]} [description]
              */
                 var head = document.getElementsByTagName('head')[0];
@@ -2023,7 +2023,7 @@ class Set extends Base
             if ($type == 'visitor_tpl') {
                 TplService::send($login['business_id'],$open_id,url('weixin/login/callback',['business_id'=>$login['business_id'],'service_id'=>$service_id],true,true),$wechat['visitor_tpl'],[
                     "first"  => "您有新訪客！",
-                    "keyword1"   => "测试发送新訪客提醒模板消息",
+                    "keyword1"   => "测试發送新訪客提醒模板消息",
                     "keyword2"  => date('Y-m-d H:i:s',time()),
                     "remark" => $login['business']['business_name']."提示:有新客户啦,快去撩一把~",
                 ]);
@@ -2031,7 +2031,7 @@ class Set extends Base
                 TplService::send($login['business_id'],$open_id,url('weixin/login/callback',['business_id'=>$login['business_id'],'service_id'=>$service_id],true,true),$wechat['msg_tpl'],[
                     "first"  => "你有一條新的訊息!",
                     "keyword1"   => "测试",
-                    "keyword2"  => "测试发送新消息提醒模板消息",
+                    "keyword2"  => "测试發送新消息提醒模板消息",
                     "keyword3"  => "测试",
                     "remark" => $login['business']['business_name']."提示:客户等不及啦,快去回覆吧~",
                 ]);
@@ -2114,7 +2114,7 @@ class Set extends Base
         }
     }
 
-    //后台客服撤销内容
+    //後台客服撤销内容
     public function revokemsg(){
         $id = $this->request->post('id','','trim');
         $type = $this->request->post('type','','trim');

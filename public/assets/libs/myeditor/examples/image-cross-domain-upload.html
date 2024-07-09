@@ -2,7 +2,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>图片跨域上传示例 - Editor.md examples</title>
+        <title>圖片跨域上傳示例 - Editor.md examples</title>
         <link rel="stylesheet" href="css/style.css?v=__lkversion__" />
         <link rel="stylesheet" href="../css/editormd.css?v=__lkversion__" />
         <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
@@ -10,7 +10,7 @@
     <body>
         <div id="layout" style="height: 2000px;background: #f6f6f6;">
             <header>
-                <h1>图片跨域上传示例</h1>
+                <h1>圖片跨域上傳示例</h1>
                 <p>Image cross-domain upload example.</p>
             </header>
             <div id="test-editormd">
@@ -26,23 +26,23 @@
 }
 ```
 
-#### 跨域上传原理
+#### 跨域上傳原理
 
-利用 iframe 来實現，A 站 POST 到 B 站，B 站处理上传后再跳转回到 A 站的 callback 頁面，callback 頁面此时在 iframe 内（即同域下），再通過 window.parent 就可以操作父頁面的任意元素了。
+利用 iframe 来實現，A 站 POST 到 B 站，B 站處理上傳後再跳转回到 A 站的 callback 頁面，callback 頁面此时在 iframe 内（即同域下），再通過 window.parent 就可以操作父頁面的任意元素了。
 
-#### 跨域上传示例 PHP 版
+#### 跨域上傳示例 PHP 版
 
-当前域名：blog.xxx.com/post.php
+當前域名：blog.xxx.com/post.php
 
 ```html
 &lt;form method="post" target="upload-iframe" enctype="multipart/form-data" action="http://static.xxx.com/uploader.php?callback=http://blog.xxx.com/upload-callback.html"&gt;
     &lt;input type="file" name="file" accept="image/*" /&gt;
-    &lt;input type="submit" id="submit" value="開始上传" /&gt;
+    &lt;input type="submit" id="submit" value="開始上傳" /&gt;
 &lt;/form&gt;
 &lt;iframe name="upload-iframe" style="display:none;" frameborder="0"&gt;&lt;/iframe&gt;  
 ```     
 
-图片服务器：static.xxx.com/uploader.php
+圖片服务器：static.xxx.com/uploader.php
 
 ```php
 &lt;?php
@@ -59,7 +59,7 @@ exit;
 ?&gt;
 ```
 
-当前域名：blog.xxx.com/upload-callback.html
+當前域名：blog.xxx.com/upload-callback.html
 
 ```html
 &lt;script type="text/javascript"&gt; 
@@ -94,12 +94,12 @@ exit;
                     uploadCallbackURL : "http://localhost/editor.md/examples/php/upload_callback.html?test=dfdf"
                     
                     /*
-                     跨域时，上传的图片服务器后台只需要返回一个跳转 URL 并跳转到原頁面同域下的 callback 頁面，结构如下：
+                     跨域时，上傳的圖片服务器後台只需要返回一个跳转 URL 並跳转到原頁面同域下的 callback 頁面，结构如下：
                      {
-                        success   : 0 | 1,   // 0 表示上传失敗，1 表示上传成功
-                        message   : "提示的訊息，上传成功或上传失敗及錯誤訊息等。",
+                        success   : 0 | 1,   // 0 表示上傳失敗，1 表示上傳成功
+                        message   : "提示的訊息，上傳成功或上傳失敗及錯誤訊息等。",
                         dialog_id : $_GET['dialog_id'],
-                        url       : "远程图片地址"    // 上传成功时才返回
+                        url       : "远程圖片地址"    // 上傳成功时才返回
                      }
                      */
                 });

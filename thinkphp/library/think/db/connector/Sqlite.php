@@ -15,7 +15,7 @@ use PDO;
 use think\db\Connection;
 
 /**
- * Sqlite資料库驱動
+ * Sqlite資料庫驱動
  */
 class Sqlite extends Connection
 {
@@ -65,7 +65,7 @@ class Sqlite extends Connection
     }
 
     /**
-     * 取得資料库的表訊息
+     * 取得資料庫的表訊息
      * @access public
      * @param string $dbName
      * @return array

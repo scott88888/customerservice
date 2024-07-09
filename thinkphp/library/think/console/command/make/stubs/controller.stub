@@ -8,7 +8,7 @@ use think\Request;
 class {%className%} extends Controller
 {
     /**
-     * 显示资源列表
+     * 显示資源列表
      *
      * @return \think\Response
      */
@@ -18,7 +18,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 显示建立资源表單頁.
+     * 显示建立資源表單頁.
      *
      * @return \think\Response
      */
@@ -28,7 +28,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 保存新建的资源
+     * 保存新建的資源
      *
      * @param  \think\Request  $request
      * @return \think\Response
@@ -39,7 +39,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 显示指定的资源
+     * 显示指定的資源
      *
      * @param  int  $id
      * @return \think\Response
@@ -50,7 +50,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 显示編輯资源表單頁.
+     * 显示編輯資源表單頁.
      *
      * @param  int  $id
      * @return \think\Response
@@ -61,7 +61,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 保存更新的资源
+     * 保存更新的資源
      *
      * @param  \think\Request  $request
      * @param  int  $id
@@ -73,7 +73,7 @@ class {%className%} extends Controller
     }
 
     /**
-     * 刪除指定资源
+     * 刪除指定資源
      *
      * @param  int  $id
      * @return \think\Response

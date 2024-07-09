@@ -156,7 +156,7 @@ $(document).on('touchend', '.content', function() {
 
 var getaudio = function() {
 
-    //音訊先加载
+    //音訊先載入
     var audio_context;
     var recorder;
     var wavBlob;
@@ -170,7 +170,7 @@ var getaudio = function() {
         audio_context = new AudioContext;
 
         if (!navigator.getUserMedia) {
-            console.log('语音建立失敗');
+            console.log('語音建立失敗');
         };
     } catch (e) {
         console.log(e);
@@ -184,7 +184,7 @@ var getaudio = function() {
         if (falg == 'https:') {
             recorder && recorder.record();
 
-            //示范一个公告层
+            //示范一个公告層
             layui.use(['jquery', 'layer'], function() {
                 var layer = layui.layer;
 
@@ -192,9 +192,9 @@ var getaudio = function() {
                     icon: 16,
                     shade: 0.01,
                     skin: 'layui-layer-lan',
-                    time: 0 //20s后自動關閉
+                    time: 0 //20s後自動關閉
                     ,
-                    btn: ['发送', '取消'],
+                    btn: ['發送', '取消'],
                     yes: function(index, layero) {
                         //按钮【按钮一】的回调
                         recorder && recorder.stop();
@@ -294,11 +294,11 @@ var getaudio = function() {
             });
         } else {
 
-            layer.msg('音訊输入只支持https协议！');
+            layer.msg('音訊输入只支援https协议！');
         }
 
     }, function(e) {
-        layer.msg('音訊输入只支持https协议！');
+        layer.msg('音訊输入只支援https协议！');
     });
 }
 
@@ -608,7 +608,7 @@ var emoj = function(obj) {
 
 }
 
-// 图片上传
+// 圖片上傳
 function put() {
 
     var value = $('input[name="upload"]').val();
@@ -694,12 +694,12 @@ function put() {
 
     } else {
 
-        layer.msg("請選擇图片", { icon: 2 });
+        layer.msg("請選擇圖片", { icon: 2 });
     }
 }
 
 
-// 文件上传
+// 文件上傳
 function putfile() {
 
     var value = $('input[name="folder"]').val();
@@ -708,7 +708,7 @@ function putfile() {
     var arr = value.split(".");
 
     if (arr[1] == "js" || arr[1] == "css" || arr[1] == "html" || arr[1] == "php") {
-        layer.msg("不支持该格式的文件", { icon: 2 });
+        layer.msg("不支援该格式的文件", { icon: 2 });
 
     } else {
 
@@ -784,7 +784,7 @@ function randomChar(l){
     }
     return tmp;
 }
-//发送消息
+//發送消息
 var send = function() {
     //取得 遊客id
     var msg = $("#text_all").val();
@@ -932,13 +932,13 @@ text.onfocus = function() {
         $('html ,body').animate({scrollTop: height}, 0);
     },200)
 }
-// 失去焦點，拉到顶部
+// 失去焦點，拉到頂部
 text.onblur = function() {
     setTimeout(function() {
         $('html ,body').animate({ scrollTop: 0 }, 0);
     }, 0)
 }
-//图片放大预览
+//圖片放大預覽
 function getbig(obj) {
     var text = $(obj).attr('src');
     // alert(text);
@@ -982,7 +982,7 @@ $(document).on('click','.outer-left .customer img,.outer-right .service img',fun
     var that = this;
     var img = new Image();
     img.src = this.src
-    // 如果图片被缓存，则直接返回缓存資料
+    // 如果圖片被快取，則直接返回快取資料
     if (img.complete) {
         var nWidth = img.width;
         var nHeight = img.height;

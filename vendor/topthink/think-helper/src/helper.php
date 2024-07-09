@@ -11,7 +11,7 @@
 
 if (!function_exists('class_basename')) {
     /**
-     * 取得类名(不包含命名空間)
+     * 取得類名(不包含命名空間)
      *
      * @param  string|object $class
      * @return string
@@ -26,7 +26,7 @@ if (!function_exists('class_basename')) {
 
 if (!function_exists('class_uses_recursive')) {
     /**
-     *取得一个类里所有用到的trait，包括父类的
+     *取得一个類里所有用到的trait，包括父類的
      *
      * @param $class
      * @return array

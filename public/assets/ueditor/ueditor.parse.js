@@ -9,7 +9,7 @@
 (function(){
     UE = window.UE || {};
     var isIE = !!window.ActiveXObject;
-    //定义utils工具
+    //定義utils工具
     var utils = {
             removeLastbs : function(url){
                 return url.replace(/\/$/,'')
@@ -382,7 +382,7 @@ UE.parse.register('table', function (utils) {
         tables = root.getElementsByTagName('table');
     if (tables.length) {
         var selector = this.selector;
-        //追加默认的表格樣式
+        //追加默認的表格樣式
         utils.cssRule('table',
             selector + ' table.noBorderTable td,' +
                 selector + ' table.noBorderTable th,' +
@@ -527,7 +527,7 @@ UE.parse.register('table', function (utils) {
         }
         //更新表格
         function updateTable(table) {
-            //给第一行設定firstRow的樣式名稱,在排序图标的樣式上使用到
+            //给第一行設定firstRow的樣式名稱,在排序圖标的樣式上使用到
             if(!utils.hasClass(table.rows[0], "firstRow")) {
                 for(var i = 1; i< table.rows.length; i++) {
                     utils.removeClass(table.rows[i], "firstRow");
@@ -544,7 +544,7 @@ UE.parse.register('charts',function( utils ){
         containers = this.root,
         sources = null;
 
-    //不存在指定的根路径， 则直接退出
+    //不存在指定的根路徑， 則直接退出
     if ( !resourceRoot ) {
         return;
     }
@@ -628,7 +628,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //加载资源
+    //載入資源
     function loadResources () {
 
         loadJQuery();
@@ -637,7 +637,7 @@ UE.parse.register('charts',function( utils ){
 
     function loadJQuery () {
 
-        //不存在jquery， 则加载jquery
+        //不存在jquery， 則載入jquery
         if ( !window.jQuery ) {
 
             utils.loadFile(document,{
@@ -661,7 +661,7 @@ UE.parse.register('charts',function( utils ){
 
     function loadHighcharts () {
 
-        //不存在Highcharts， 则加载Highcharts
+        //不存在Highcharts， 則載入Highcharts
         if ( !window.Highcharts ) {
 
             utils.loadFile(document,{
@@ -683,7 +683,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //加载图表差异化配置文件
+    //載入圖表差异化配置文件
     function loadTypeConfig () {
 
         utils.loadFile(document,{
@@ -699,7 +699,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //渲染图表
+    //渲染圖表
     function render () {
 
         var config = null,
@@ -722,10 +722,10 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * 渲染图表
-     * @param container 图表容器节點對象
-     * @param typeConfig 图表类型配置
-     * @param config 图表通用配置
+     * 渲染圖表
+     * @param container 圖表容器节點對象
+     * @param typeConfig 圖表類型配置
+     * @param config 圖表通用配置
      * */
     function renderChart ( container, typeConfig, config ) {
 
@@ -779,7 +779,7 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * 建立图表的容器
+     * 建立圖表的容器
      * 新建立的容器会替换掉對应的table對象
      * */
     function createContainer ( tableNode ) {
@@ -793,11 +793,11 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //根據config解析出正确的类别和图表資料訊息
+    //根據config解析出正确的類别和圖表資料訊息
     function analysisConfig ( config ) {
 
         var series = [],
-        //資料类别
+        //資料類别
             categories = [],
             result = [],
             data = config.data,
@@ -826,7 +826,7 @@ UE.parse.register('charts',function( utils ){
 
         result = {};
 
-        //普通图表
+        //普通圖表
         if ( meta.chartType != typeConfig.length - 1 ) {
 
             categories = data[ 0 ].slice( 1 );
@@ -856,7 +856,7 @@ UE.parse.register('charts',function( utils ){
 
             }
 
-            //饼图
+            //饼圖
             series[ 0 ] = {
                 type: 'pie',
                 name: meta.tip,
@@ -887,7 +887,7 @@ UE.parse.register('background', function (utils) {
         }
     }
 
-    //追加默认的表格樣式
+    //追加默認的表格樣式
     styles && utils.cssRule('ueditor_background', me.selector + '{' + styles + '}', document);
 });
 UE.parse.register('list',function(utils){

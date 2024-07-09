@@ -31,7 +31,7 @@ Common::println("bucket $bucket liveChannel created:\n" .
 /**
     對建立好的频道，可以使用listBucketLiveChannels来进行列举已达到管理的目的。
     prefix可以按照前缀过滤list出来的频道。
-    max_keys表示迭代器内部一次list出来的频道的最大數量，这个值最大不能超过1000，不填写的話默认為100。
+    max_keys表示迭代器内部一次list出来的频道的最大數量，这个值最大不能超过1000，不填寫的話默認為100。
  */
 $list = $ossClient->listBucketLiveChannels($bucket);
 Common::println("bucket $bucket listLiveChannel:\n" . 
@@ -50,7 +50,7 @@ foreach($list->getChannelList()  as $list)
     "list live channel getNextMarker: ". $list->getLastModified() . "\n");
 }
 /**
-    建立直播频道之后拿到推流用的play_url（rtmp推流的url，如果Bucket不是公共读写权限那么还需要带上签名，见下文示例）和推流用的publish_url（推流产生的m3u8文件的url）
+    建立直播频道之後拿到推流用的play_url（rtmp推流的url，如果Bucket不是公共读寫权限那么还需要带上签名，见下文示例）和推流用的publish_url（推流产生的m3u8文件的url）
  */
 $play_url = $ossClient->signRtmpUrl($bucket, "test_rtmp_live", 3600, array('params' => array('playlistName' => 'playlist.m3u8')));
 Common::println("bucket $bucket rtmp url: \n" . $play_url);
@@ -63,7 +63,7 @@ Common::println("bucket $bucket rtmp url: \n" . $play_url);
 $resp = $ossClient->putLiveChannelStatus($bucket, "test_rtmp_live", "enabled");
 
 /**
-    建立好直播频道之后调用getLiveChannelInfo可以得到频道相關的訊息
+    建立好直播频道之後调用getLiveChannelInfo可以得到频道相關的訊息
  */
 $info = $ossClient->getLiveChannelInfo($bucket, 'test_rtmp_live');
 Common::println("bucket $bucket LiveChannelInfo:\n" . 
@@ -109,8 +109,8 @@ Common::println("bucket $bucket listLiveChannel:\n" .
 
 /**
  *  如果希望利用直播推流产生的ts文件產生一个點播列表，可以使用postVodPlaylist方法。
- *  指定起始時間為当前時間减去60秒，结束時間為当前時間，这意味着将產生一个長度為60秒的點播视频。
- *  播放列表指定為“vod_playlist.m3u8”，也就是说这个接口调用成功之后会在OSS上產生一个名叫“vod_playlist.m3u8”的播放列表文件。
+ *  指定起始時間為當前時間减去60秒，结束時間為當前時間，这意味着将產生一个長度為60秒的點播视频。
+ *  播放列表指定為“vod_playlist.m3u8”，也就是说这个接口调用成功之後会在OSS上產生一个名叫“vod_playlist.m3u8”的播放列表文件。
  */
 $current_time = time();
 $ossClient->postVodPlaylist($bucket,

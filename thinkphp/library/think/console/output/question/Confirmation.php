@@ -21,8 +21,8 @@ class Confirmation extends Question
     /**
      * 构造方法
      * @param string $question        問題
-     * @param bool   $default         默认答案
-     * @param string $trueAnswerRegex 驗證正则
+     * @param bool   $default         默認答案
+     * @param string $trueAnswerRegex 驗證正則
      */
     public function __construct($question, $default = true, $trueAnswerRegex = '/^y/i')
     {
@@ -33,7 +33,7 @@ class Confirmation extends Question
     }
 
     /**
-     * 取得默认的答案回调
+     * 取得默認的答案回调
      * @return callable
      */
     private function getDefaultNormalizer()

@@ -12,7 +12,7 @@
 namespace app\common\lib\token;
 
 /**
- * Token基础类
+ * Token基础類
  */
 abstract class Driver
 {
@@ -58,7 +58,7 @@ abstract class Driver
     abstract function clear($user_id);
 
     /**
-     * 返回句柄對象，可执行其它高级方法
+     * 返回句柄對象，可執行其它高级方法
      *
      * @access public
      * @return object
@@ -69,7 +69,7 @@ abstract class Driver
     }
 
     /**
-     * 取得加密后的Token
+     * 取得加密後的Token
      * @param string $token Token標識
      * @return string
      */

@@ -48,7 +48,7 @@ abstract class Pipes
     abstract public function readAndWrite($blocking, $close = false);
 
     /**
-     * 返回当前狀態如果有打開的文件句柄或管道。
+     * 返回當前狀態如果有打開的文件句柄或管道。
      * @return bool
      */
     abstract public function areOpen();
@@ -65,7 +65,7 @@ abstract class Pipes
     }
 
     /**
-     * 檢查系统调用已被中断
+     * 檢查系统调用已被中斷
      * @return bool
      */
     protected function hasSystemCallBeenInterrupted()

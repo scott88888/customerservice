@@ -15,7 +15,7 @@
         animation: [
             'am-animation-slide-right',     // 右側划入
             'am-animation-slide-bottom',    // 底部划入
-            'am-animation-slide-top'        // 顶部划入
+            'am-animation-slide-top'        // 頂部划入
         ],
         error: function(xhr){},
         success: function(response, replace){},
@@ -32,7 +32,7 @@
             pjax.request($(this).data('pjax') || $(this).attr('href'), false);
             return false;
         });
-        //F5刷新当前Tab & 操作快捷键
+        //F5刷新當前Tab & 操作快速键
         $(document).keydown(function(e){
             var key = e.keyCode || e.which;
             if( key == 116 ){

@@ -15,7 +15,7 @@ use think\Exception;
 class SmsService
 {
     /**
-     * 发送短信
+     * 發送短信
      */
     public static function send($mobile)
     {
@@ -25,12 +25,12 @@ class SmsService
             // HTTP 請求的超时時間（秒）
             'timeout' => 5.0,
 
-            // 默认发送配置
+            // 默認發送配置
             'default' => [
-                // 網关调用策略，默认：顺序调用
+                // 網关调用策略，默認：顺序调用
                 'strategy' => \Overtrue\EasySms\Strategies\OrderStrategy::class,
 
-                // 默认可用的发送網关
+                // 默認可用的發送網关
                 'gateways' => [
                     'yunpian', 'aliyun',
                 ],
@@ -64,10 +64,10 @@ class SmsService
     {
         $ind_sms = Option::getList('ind_sms', 0, 'admin')['ind_sms'];
         if (!$ind_sms) {
-            throw new Exception('发送失敗，短信尚未配置。');
+            throw new Exception('發送失敗，短信尚未配置。');
         }
         if (!$ind_sms['aliyun'] || !$ind_sms['aliyun']['access_key_id'] || !$ind_sms['aliyun']['access_key_secret'] || !$ind_sms['aliyun']['sign'] || !$ind_sms['aliyun']['tpl_id']) {
-            throw new Exception('发送失敗，短信尚未配置。');
+            throw new Exception('發送失敗，短信尚未配置。');
         }
 
         return $ind_sms;

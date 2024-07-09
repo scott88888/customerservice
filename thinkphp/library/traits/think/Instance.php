@@ -16,13 +16,13 @@ use think\Exception;
 trait Instance
 {
     /**
-     * @var null|static 实例對象
+     * @var null|static 實例對象
      */
     protected static $instance = null;
 
     /**
      * 取得示例
-     * @param array $options 实例配置
+     * @param array $options 實例配置
      * @return static
      */
     public static function instance($options = [])

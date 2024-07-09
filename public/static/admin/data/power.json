@@ -114,7 +114,7 @@
 		"checkArr": "0"
 	}, {
 		"powerId": "442651158935375872",
-		"powerName": "任务日志",
+		"powerName": "任务日誌",
 		"powerType": "1",
 		"powerCode": "qrt:log:main",
 		"powerUrl": "/qrt/log/main",

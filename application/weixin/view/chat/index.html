@@ -87,7 +87,7 @@
                 getchat();
             });
 
-            // 认领后取得訪客訊息
+            // 认领後取得訪客訊息
             var channelme = pusher.subscribe("ud" + value);
             channelme.bind("on_notice", function (data) {
                 getwait();
@@ -286,7 +286,7 @@
         }
     }
 
-    // 排队人數
+    // 排對人數
     var getwaitnum=function () {
         $.ajax({
             url:ROOT_URL+"/admin/set/getwaitnum",
@@ -347,7 +347,7 @@ function get(id) {
 }
 
 
-    // 取得排队列表
+    // 取得排對列表
     function getwait() {
 
     $.ajax({

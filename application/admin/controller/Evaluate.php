@@ -10,7 +10,7 @@ use think\Db;
 
 /**
  *
- * 管理控制器类
+ * 管理控制器類
  */
 class Evaluate extends Base
 {

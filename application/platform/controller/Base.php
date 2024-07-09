@@ -41,7 +41,7 @@ class Base extends Controller
         $route = $modulename.'/'.$controllername.'/'.$actionname;
         $token = $this->request->server('HTTP_TOKEN', $this->request->param('token', \think\Cookie::get('token')));
         $path = str_replace('.', '/', $controllername) . '/' . $actionname;
-        // 設定当前請求的URI
+        // 設定當前請求的URI
         $this->auth->setRequestUri($path);
 
         Hook::add('action_begin', 'app\\platform\\behavior\\Permission');
@@ -61,7 +61,7 @@ class Base extends Controller
             $this->assign('admin',$this->admin);
             $this->assign('menu',$menu);
         } else {
-            // 如果有传递token才驗證是否登入狀態
+            // 如果有傳递token才驗證是否登入狀態
             if ($token) {
                 $this->auth->init($token);
             }

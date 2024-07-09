@@ -19,7 +19,7 @@ class Worker
 {
 
     /**
-     * 执行下个任务
+     * 執行下个任务
      * @param  string $queue
      * @param  int    $delay
      * @param  int    $sleep

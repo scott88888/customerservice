@@ -8,7 +8,7 @@ use think\Db;
 use app\Common;
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Log extends Base
 {

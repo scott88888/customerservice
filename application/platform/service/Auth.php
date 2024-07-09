@@ -18,11 +18,11 @@ class Auth
     protected $_logined = FALSE;
     protected $_user = NULL;
     protected $_token = '';
-    //Token默认有效时長
+    //Token默認有效时長
     protected $keeptime = 604800;
     protected $requestUri = '';
     protected $rules = [];
-    //默认配置
+    //默認配置
     protected $config = [];
     protected $options = [];
     protected $allowFields = ['id', 'username', 'mobile','app_max_count','expire_time','permission'];
@@ -124,7 +124,7 @@ class Auth
     }
 
     /**
-     * 注册使用者
+     * 註冊使用者
      *
      * @param string $username  使用者名稱
      * @param string $password  密碼
@@ -159,7 +159,7 @@ class Auth
         $params = array_merge($params, $extend);
         $params['password'] = $this->getEncryptPassword($password, $data['username']);
 
-        //账号注册时需要開啟事务,避免出现垃圾資料
+        //账号註冊时需要開啟事务,避免出现垃圾資料
         Db::startTrans();
         try
         {
@@ -173,7 +173,7 @@ class Auth
            /* $this->_token = Random::uuid();
             Token::set($this->_token, $user->id, $this->keeptime);*/
 
-            //注册成功的事件
+            //註冊成功的事件
             Hook::listen("user_register_successed", $this->_user);
 
             return TRUE;
@@ -337,7 +337,7 @@ class Auth
     }
 
     /**
-     * 取得当前Token
+     * 取得當前Token
      * @return string
      */
     public function getToken()
@@ -358,7 +358,7 @@ class Auth
     }
 
     /**
-     * 取得当前請求的URI
+     * 取得當前請求的URI
      * @return string
      */
     public function getRequestUri()
@@ -367,7 +367,7 @@ class Auth
     }
 
     /**
-     * 設定当前請求的URI
+     * 設定當前請求的URI
      * @param string $uri
      */
     public function setRequestUri($uri)
@@ -422,7 +422,7 @@ class Auth
     }
 
     /**
-     * 取得密碼加密后的字符串
+     * 取得密碼加密後的字符串
      * @param string $password  密碼
      * @param string $salt      密碼盐
      * @return string
@@ -434,7 +434,7 @@ class Auth
     }
 
     /**
-     * 检测当前控制器和方法是否匹配传递的數组
+     * 检测當前控制器和方法是否匹配傳递的數组
      *
      * @param array $arr 需要驗證权限的數组
      * @return boolean
@@ -460,7 +460,7 @@ class Auth
 
     /**
      * 設定会話有效時間
-     * @param int $keeptime 默认為永久
+     * @param int $keeptime 默認為永久
      */
     public function keeptime($keeptime = 0)
     {
@@ -470,7 +470,7 @@ class Auth
     /**
      * 渲染使用者資料
      * @param array     $datalist   二维數组
-     * @param mixed     $fields     加载的字段列表
+     * @param mixed     $fields     載入的字段列表
      * @param string    $fieldkey   渲染的字段
      * @param string    $renderkey  结果字段
      * @return array

@@ -24,13 +24,13 @@ use think\View as ViewTemplate;
 trait Jump
 {
     /**
-     * 操作成功跳转的快捷方法
+     * 操作成功跳转的快速方法
      * @access protected
      * @param mixed  $msg    提示訊息
      * @param string $url    跳转的 URL 地址
      * @param mixed  $data   返回的資料
      * @param int    $wait   跳转等待時間
-     * @param array  $header 发送的 Header 訊息
+     * @param array  $header 發送的 Header 訊息
      * @return void
      * @throws HttpResponseException
      */
@@ -65,13 +65,13 @@ trait Jump
     }
 
     /**
-     * 操作錯誤跳转的快捷方法
+     * 操作錯誤跳转的快速方法
      * @access protected
      * @param mixed  $msg    提示訊息
      * @param string $url    跳转的 URL 地址
      * @param mixed  $data   返回的資料
      * @param int    $wait   跳转等待時間
-     * @param array  $header 发送的 Header 訊息
+     * @param array  $header 發送的 Header 訊息
      * @return void
      * @throws HttpResponseException
      */
@@ -106,13 +106,13 @@ trait Jump
     }
 
     /**
-     * 返回封装后的 API 資料到客户端
+     * 返回封装後的 API 資料到客户端
      * @access protected
      * @param mixed  $data   要返回的資料
      * @param int    $code   返回的 code
      * @param mixed  $msg    提示訊息
      * @param string $type   返回資料格式
-     * @param array  $header 发送的 Header 訊息
+     * @param array  $header 發送的 Header 訊息
      * @return void
      * @throws HttpResponseException
      */
@@ -136,7 +136,7 @@ trait Jump
      * @param string    $url    跳转的 URL 表达式
      * @param array|int $params 其它 URL 参數
      * @param int       $code   http code
-     * @param array     $with   隐式传参
+     * @param array     $with   隐式傳参
      * @return void
      * @throws HttpResponseException
      */
@@ -154,7 +154,7 @@ trait Jump
     }
 
     /**
-     * 取得当前的 response 输出类型
+     * 取得當前的 response 输出類型
      * @access protected
      * @return string
      */

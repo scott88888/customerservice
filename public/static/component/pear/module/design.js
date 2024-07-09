@@ -42,7 +42,7 @@ layui.define(['layer', 'form'], function(exports) {
 				return false
 				break;
 			default:
-				layer.msg('类型錯誤', {
+				layer.msg('類型錯誤', {
 					icon: 2
 				})
 		}
@@ -107,7 +107,7 @@ layui.define(['layer', 'form'], function(exports) {
 		var html = '  <div class="layui-form-item">\n' +
 			'    <label class="layui-form-label">复选框</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
-			'      <input type="checkbox" name="' + key + '[]" title="写作">\n' +
+			'      <input type="checkbox" name="' + key + '[]" title="寫作">\n' +
 			'      <input type="checkbox" name="' + key + '[]" title="阅读" checked>\n' +
 			'      <input type="checkbox" name="' + key + '[]" title="发呆">\n' +
 			'    </div>\n' +
@@ -138,7 +138,7 @@ layui.define(['layer', 'form'], function(exports) {
 
 	function textarea(size) {
 		var html = '  <div class="layui-form-item layui-form-text">\n' +
-			'    <label class="layui-form-label">文本域</label>\n' +
+			'    <label class="layui-form-label">文字域</label>\n' +
 			'    <div class="layui-input-' + size + '">\n' +
 			'      <textarea name="' + key + '" placeholder="請輸入内容" class="layui-textarea"></textarea>\n' +
 			'    </div>\n' +

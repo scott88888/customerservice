@@ -129,9 +129,9 @@
 }
 
 .icon_lists .svg-icon {
-  /* 通過設定 font-size 来改变图标大小 */
+  /* 通過設定 font-size 来改变圖标大小 */
   width: 1em;
-  /* 图标和文字相邻时，垂直對齐 */
+  /* 圖标和文字相邻时，垂直對齐 */
   vertical-align: -0.15em;
   /* 通過設定 color 来改变 SVG 的颜色/fill */
   fill: currentColor;

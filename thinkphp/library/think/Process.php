@@ -115,7 +115,7 @@ class Process
     /**
      * 构造方法
      * @param string         $commandline 指令
-     * @param string|null    $cwd         工作目录
+     * @param string|null    $cwd         工作目錄
      * @param array|null     $env         环境变量
      * @param string|null    $input       输入
      * @param int|float|null $timeout     超时時間
@@ -194,7 +194,7 @@ class Process
     }
 
     /**
-     * 启動进程并写到 STDIN 输入后返回。
+     * 启動进程並寫到 STDIN 输入後返回。
      * @param callable|null $callback
      * @throws \RuntimeException
      * @throws \RuntimeException
@@ -311,7 +311,7 @@ class Process
     }
 
     /**
-     * 将一个 POSIX 信号发送到进程中
+     * 将一个 POSIX 信号發送到进程中
      * @param int $signal
      * @return Process
      */
@@ -323,7 +323,7 @@ class Process
     }
 
     /**
-     * 禁用从底层过程取得输出和錯誤输出。
+     * 禁用从底層过程取得输出和錯誤输出。
      * @return Process
      */
     public function disableOutput()
@@ -341,7 +341,7 @@ class Process
     }
 
     /**
-     * 開啟从底层过程取得输出和錯誤输出。
+     * 開啟从底層过程取得输出和錯誤输出。
      * @return Process
      * @throws \RuntimeException
      */
@@ -366,7 +366,7 @@ class Process
     }
 
     /**
-     * 取得当前的输出管道
+     * 取得當前的输出管道
      * @return string
      * @throws \LogicException
      * @throws \LogicException
@@ -419,7 +419,7 @@ class Process
     }
 
     /**
-     * 返回当前的錯誤输出的过程 (STDERR)。
+     * 返回當前的錯誤输出的过程 (STDERR)。
      * @return string
      */
     public function getErrorOutput()
@@ -484,7 +484,7 @@ class Process
     }
 
     /**
-     * 取得退出文本
+     * 取得退出文字
      * @return null|string
      */
     public function getExitCodeText()
@@ -523,7 +523,7 @@ class Process
     }
 
     /**
-     * 返回导致子进程终止其执行的數。
+     * 返回导致子进程终止其執行的數。
      * @return int
      */
     public function getTermSignal()
@@ -553,7 +553,7 @@ class Process
     }
 
     /**
-     * 返回导致子进程停止其执行的數。
+     * 返回导致子进程停止其執行的數。
      * @return int
      */
     public function getStopSignal()
@@ -601,7 +601,7 @@ class Process
     }
 
     /**
-     * 取得当前的狀態
+     * 取得當前的狀態
      * @return string
      */
     public function getStatus()
@@ -661,7 +661,7 @@ class Process
     }
 
     /**
-     * 取得被执行的指令
+     * 取得被執行的指令
      * @return string
      */
     public function getCommandLine()
@@ -777,7 +777,7 @@ class Process
     }
 
     /**
-     * 取得工作目录
+     * 取得工作目錄
      * @return string|null
      */
     public function getWorkingDirectory()
@@ -790,7 +790,7 @@ class Process
     }
 
     /**
-     * 設定工作目录
+     * 設定工作目錄
      * @param string $cwd
      * @return self
      */
@@ -940,7 +940,7 @@ class Process
     }
 
     /**
-     * 是否支持pty
+     * 是否支援pty
      * @return bool
      */
     public static function isPtySupported()
@@ -1099,7 +1099,7 @@ class Process
     }
 
     /**
-     * 關閉资源
+     * 關閉資源
      * @return int 退出碼
      */
     private function close()
@@ -1145,7 +1145,7 @@ class Process
     }
 
     /**
-     * 将一个 POSIX 信号发送到进程中。
+     * 将一个 POSIX 信号發送到进程中。
      * @param int  $signal
      * @param bool $throwException
      * @return bool

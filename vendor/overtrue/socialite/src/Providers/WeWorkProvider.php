@@ -80,7 +80,7 @@ class WeWorkProvider extends AbstractProvider implements ProviderInterface
             return $this->getOAuthUrl($state);
         }
 
-        // 第三方網頁应用登入（扫碼登入）
+        // 第三方網頁應用登入（扫碼登入）
         return $this->getQrConnectUrl($state);
     }
 

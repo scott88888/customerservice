@@ -28,40 +28,40 @@ $(function() {
             return ["undo", "redo", "|", "bold", "hr", "|", "preview", "watch", "|", "fullscreen", "info", "testIcon", "testIcon2", "file", "faicon", "||", "watch", "fullscreen", "preview", "testIcon"]
         },
         toolbarIconsClass : {
-            testIcon : "fa-gears"  // 指定一个FontAawsome的图标类
+            testIcon : "fa-gears"  // 指定一个FontAawsome的圖标類
         },
         toolbarIconTexts : {
-            testIcon2 : "测试按钮"  // 如果没有图标，则可以这样直接插入内容，可以是字符串或HTML标签
+            testIcon2 : "测试按钮"  // 如果没有圖标，則可以这样直接插入内容，可以是字符串或HTML标签
         },
 
-        // 用于增加自訂工具栏的功能，可以直接插入HTML标签，不使用默认的元素建立图标
+        // 用于增加自訂工具栏的功能，可以直接插入HTML标签，不使用默認的元素建立圖标
         toolbarCustomIcons : {
             file   : "&lt;input type="file" accept=".md" /&gt;",
             faicon : "&lt;i class="fa fa-star" onclick="alert('faicon');"&gt;&lt;/i&gt;"
         },
 
-        // 自訂工具栏按钮的事件处理
+        // 自訂工具栏按钮的事件處理
         toolbarHandlers : {
             /**
              * @param {Object}      cm         CodeMirror對象
-             * @param {Object}      icon       图标按钮jQuery元素對象
+             * @param {Object}      icon       圖标按钮jQuery元素對象
              * @param {Object}      cursor     CodeMirror的光标對象，可取得光标所在行和位置
-             * @param {String}      selection  編輯器选中的文本
+             * @param {String}      selection  編輯器选中的文字
              */
             testIcon : function(cm, icon, cursor, selection) {
 
-                //var cursor    = cm.getCursor();     //取得当前光标對象，同cursor参數
-                //var selection = cm.getSelection();  //取得当前选中的文本，同selection参數
+                //var cursor    = cm.getCursor();     //取得當前光标對象，同cursor参數
+                //var selection = cm.getSelection();  //取得當前选中的文字，同selection参數
 
-                // 替换选中文本，如果没有选中文本，则直接插入
+                // 替换选中文字，如果没有选中文字，則直接插入
                 cm.replaceSelection("[" + selection + ":testIcon]");
 
-                // 如果当前没有选中的文本，将光标移到要输入的位置
+                // 如果當前没有选中的文字，将光标移到要输入的位置
                 if(selection === "") {
                     cm.setCursor(cursor.line, cursor.ch + 1);
                 }
 
-                // this == 当前editormd实例
+                // this == 當前editormd實例
                 console.log("testIcon =>", this, cm, icon, cursor, selection);
             },
 
@@ -73,8 +73,8 @@ $(function() {
 
         lang : {
             toolbar : {
-                file : "上传文件",
-                testIcon : "自訂按钮testIcon",  // 自訂按钮的提示文本，即title属性
+                file : "上傳文件",
+                testIcon : "自訂按钮testIcon",  // 自訂按钮的提示文字，即title属性
                 testIcon2 : "自訂按钮testIcon2",  
                 undo : "撤销 (Ctrl+Z)"
             }
@@ -112,40 +112,40 @@ $(function() {
                     },
                     // toolbarIcons : "full", // You can also use editormd.toolbarModes[name] default list, values: full, simple, mini.
                     toolbarIconsClass : {
-                        testIcon : "fa-gears"  // 指定一个FontAawsome的图标类
+                        testIcon : "fa-gears"  // 指定一个FontAawsome的圖标類
                     },
                     toolbarIconTexts : {
-                        testIcon2 : "测试按钮Test button"  // 如果没有图标，则可以这样直接插入内容，可以是字符串或HTML标签
+                        testIcon2 : "测试按钮Test button"  // 如果没有圖标，則可以这样直接插入内容，可以是字符串或HTML标签
                     },
                     
-                    // 用于增加自訂工具栏的功能，可以直接插入HTML标签，不使用默认的元素建立图标
+                    // 用于增加自訂工具栏的功能，可以直接插入HTML标签，不使用默認的元素建立圖标
                     toolbarCustomIcons : {
                         file   : "<input type=\"file\" accept=\".md\" />",
                         faicon : "<i class=\"fa fa-star\" onclick=\"alert('faicon');\"></i>"
                     },
 
-                    // 自訂工具栏按钮的事件处理
+                    // 自訂工具栏按钮的事件處理
                     toolbarHandlers : {
                         /**
                          * @param {Object}      cm         CodeMirror對象
-                         * @param {Object}      icon       图标按钮jQuery元素對象
+                         * @param {Object}      icon       圖标按钮jQuery元素對象
                          * @param {Object}      cursor     CodeMirror的光标對象，可取得光标所在行和位置
-                         * @param {String}      selection  編輯器选中的文本
+                         * @param {String}      selection  編輯器选中的文字
                          */
                         testIcon : function(cm, icon, cursor, selection) {
                             
-                            //var cursor    = cm.getCursor();     //取得当前光标對象，同cursor参數
-                            //var selection = cm.getSelection();  //取得当前选中的文本，同selection参數
+                            //var cursor    = cm.getCursor();     //取得當前光标對象，同cursor参數
+                            //var selection = cm.getSelection();  //取得當前选中的文字，同selection参數
                             
-                            // 替换选中文本，如果没有选中文本，则直接插入
+                            // 替换选中文字，如果没有选中文字，則直接插入
                             cm.replaceSelection("[" + selection + ":testIcon]");
                             
-                            // 如果当前没有选中的文本，将光标移到要输入的位置
+                            // 如果當前没有选中的文字，将光标移到要输入的位置
                             if(selection === "") {
                                 cm.setCursor(cursor.line, cursor.ch + 1);
                             }
                             
-                            // this == 当前editormd实例
+                            // this == 當前editormd實例
                             console.log("testIcon =>", this, cm, icon, cursor, selection);
                         },
                         
@@ -157,8 +157,8 @@ $(function() {
                     
                     lang : {
                         toolbar : {
-                            file : "上传文件",
-                            testIcon : "自訂按钮testIcon",  // 自訂按钮的提示文本，即title属性
+                            file : "上傳文件",
+                            testIcon : "自訂按钮testIcon",  // 自訂按钮的提示文字，即title属性
                             testIcon2 : "自訂按钮testIcon2",  
                             undo : "撤销 (Ctrl+Z)"
                         }

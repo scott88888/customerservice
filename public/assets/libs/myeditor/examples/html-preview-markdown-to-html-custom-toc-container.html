@@ -50,8 +50,8 @@
     <body>
         <div id="layout">
             <header>
-                <h1>Markdown转HTML的显示处理之自訂 ToC 容器</h1> 
-                <p>即：非編輯情况下的HTML预览</p>
+                <h1>Markdown转HTML的显示處理之自訂 ToC 容器</h1> 
+                <p>即：非編輯情况下的HTML預覽</p>
                 <p>HTML Preview (markdown to html and custom ToC container)</p>       
             </header>
             <div class="btns">
@@ -122,7 +122,7 @@ alert("script");
         </div>
         <!-- <script src="js/zepto.min.js?v=__lkversion__"></script>
 		<script>		
-			var jQuery = Zepto;  // 為了避免修改flowChart.js和sequence-diagram.js的源碼，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
+			var jQuery = Zepto;  // 為了避免修改flowChart.js和sequence-diagram.js的源碼，所以使用Zepto.js时想支援flowChart/sequenceDiagram就得加上这一句
 		</script> -->
         <script src="js/jquery.min.js?v=__lkversion__"></script>
         <script src="../lib/marked.min.js?v=__lkversion__"></script>
@@ -143,22 +143,22 @@ alert("script");
                     
 				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
                         markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
-                        //htmlDecode      : true,       // 開啟 HTML 标签解析，為了安全性，默认不開啟
+                        //htmlDecode      : true,       // 開啟 HTML 标签解析，為了安全性，默認不開啟
                         htmlDecode      : "style,script,iframe",  // you can filter tags decode
                         //toc             : false,
                         tocm            : true,    // Using [TOCM]
-                        tocContainer    : "#custom-toc-container", // 自訂 ToC 容器层
+                        tocContainer    : "#custom-toc-container", // 自訂 ToC 容器層
                         //gfm             : false,
                         //tocDropdown     : true,
                         // markdownSourceCode : true, // 是否保留 Markdown 源碼，即是否刪除保存源碼的 Textarea 标签
                         emoji           : true,
                         taskList        : true,
-                        tex             : true,  // 默认不解析
-                        flowChart       : true,  // 默认不解析
-                        sequenceDiagram : true,  // 默认不解析
+                        tex             : true,  // 默認不解析
+                        flowChart       : true,  // 默認不解析
+                        sequenceDiagram : true,  // 默認不解析
                     });
                     
-                    //console.log("返回一个 jQuery 实例 =>", testEditormdView);
+                    //console.log("返回一个 jQuery 實例 =>", testEditormdView);
                     
                     // 取得Markdown源碼
                     //console.log(testEditormdView.getMarkdown());
@@ -170,9 +170,9 @@ alert("script");
                     htmlDecode      : "style,script,iframe",  // you can filter tags decode
                     emoji           : true,
                     taskList        : true,
-                    tex             : true,  // 默认不解析
-                    flowChart       : true,  // 默认不解析
-                    sequenceDiagram : true,  // 默认不解析
+                    tex             : true,  // 默認不解析
+                    flowChart       : true,  // 默認不解析
+                    sequenceDiagram : true,  // 默認不解析
                 });
             });
         </script>

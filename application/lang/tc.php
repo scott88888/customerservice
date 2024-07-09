@@ -20,7 +20,7 @@ return [
     'save_file_error' => '請檢查存儲介質配置訊息',
     'offline' => '對方不在線',
     'question_delete' => '該問題已經被刪除',
-    'ext_error' => '不支持該文件格式',
+    'ext_error' => '不支援該文件格式',
     'illegal_img_error' => '非法圖片文件',
     'evaluate_error' => '評價失敗，請重試',
     'evaluate_thk' => '感謝您的評價',
@@ -63,7 +63,7 @@ return [
     'surprised' => '驚喜',
 
     'please_select_images' => '請選擇圖片',
-    'not_supported' => '不支持該格式的文件',
+    'not_supported' => '不支援該格式的文件',
     'no_data' => '已沒有數據',
     'tip_waiting' => '通知 ： 排隊等待中....',
     'tip' => '提示框',

@@ -14,11 +14,11 @@ namespace think;
 class Build
 {
     /**
-     * 根據传入的 build 资料建立目录和文件
+     * 根據傳入的 build 资料建立目錄和文件
      * @access public
      * @param  array  $build     build 列表
-     * @param  string $namespace 应用类库命名空間
-     * @param  bool   $suffix    类库后缀
+     * @param  string $namespace 應用類庫命名空間
+     * @param  bool   $suffix    類庫後缀
      * @return void
      * @throws Exception
      */
@@ -27,24 +27,24 @@ class Build
         // 锁定
         $lock = APP_PATH . 'build.lock';
 
-        // 如果锁定文件不可写(不存在)则进行处理，否则表示已经有程序在处理了
+        // 如果锁定文件不可寫(不存在)則进行處理，否則表示已经有程序在處理了
         if (!is_writable($lock)) {
             if (!touch($lock)) {
                 throw new Exception(
-                    '应用目录[' . APP_PATH . ']不可写，目录無法自動產生！<BR>請手動產生项目目录~',
+                    '應用目錄[' . APP_PATH . ']不可寫，目錄無法自動產生！<BR>請手動產生项目目錄~',
                     10006
                 );
             }
 
             foreach ($build as $module => $list) {
                 if ('__dir__' == $module) {
-                    // 建立目录列表
+                    // 建立目錄列表
                     self::buildDir($list);
                 } elseif ('__file__' == $module) {
                     // 建立文件列表
                     self::buildFile($list);
                 } else {
-                    // 建立模块
+                    // 建立模組
                     self::module($module, $list, $namespace, $suffix);
                 }
             }
@@ -55,15 +55,15 @@ class Build
     }
 
     /**
-     * 建立目录
+     * 建立目錄
      * @access protected
-     * @param  array $list 目录列表
+     * @param  array $list 目錄列表
      * @return void
      */
     protected static function buildDir($list)
     {
         foreach ($list as $dir) {
-            // 目录不存在则建立目录
+            // 目錄不存在則建立目錄
             !is_dir(APP_PATH . $dir) && mkdir(APP_PATH . $dir, 0755, true);
         }
     }
@@ -77,7 +77,7 @@ class Build
     protected static function buildFile($list)
     {
         foreach ($list as $file) {
-            // 先建立目录
+            // 先建立目錄
             if (!is_dir(APP_PATH . dirname($file))) {
                 mkdir(APP_PATH . dirname($file), 0755, true);
             }
@@ -93,28 +93,28 @@ class Build
     }
 
     /**
-     * 建立模块
+     * 建立模組
      * @access public
-     * @param  string $module    模块名
+     * @param  string $module    模組名
      * @param  array  $list      build 列表
-     * @param  string $namespace 应用类库命名空間
-     * @param  bool   $suffix    类库后缀
+     * @param  string $namespace 應用類庫命名空間
+     * @param  bool   $suffix    類庫後缀
      * @return void
      */
     public static function module($module = '', $list = [], $namespace = 'app', $suffix = false)
     {
         $module = $module ?: '';
 
-        // 建立模块目录
+        // 建立模組目錄
         !is_dir(APP_PATH . $module) && mkdir(APP_PATH . $module);
 
-        // 如果不是 runtime 目录则需要建立配置文件和公共文件、建立模块的默认頁面
+        // 如果不是 runtime 目錄則需要建立配置文件和公共文件、建立模組的默認頁面
         if (basename(RUNTIME_PATH) != $module) {
             self::buildCommon($module);
             self::buildHello($module, $namespace, $suffix);
         }
 
-        // 未指定文件和目录，则建立默认的模块目录和文件
+        // 未指定文件和目錄，則建立默認的模組目錄和文件
         if (empty($list)) {
             $list = [
                 '__file__' => ['config.php', 'common.php'],
@@ -122,12 +122,12 @@ class Build
             ];
         }
 
-        // 建立子目录和文件
+        // 建立子目錄和文件
         foreach ($list as $path => $file) {
             $modulePath = APP_PATH . $module . DS;
 
             if ('__dir__' == $path) {
-                // 產生子目录
+                // 產生子目錄
                 foreach ($file as $dir) {
                     self::checkDirBuild($modulePath . $dir);
                 }
@@ -156,7 +156,7 @@ class Build
                         case 'model': // 模型
                             $content = "<?php\nnamespace {$space};\n\nuse think\Model;\n\nclass {$class} extends Model\n{\n\n}";
                             break;
-                        case 'view': // 视图
+                        case 'view': // 视圖
                             $filename = $modulePath . $path . DS . $val . '.html';
                             self::checkDirBuild(dirname($filename));
                             $content = '';
@@ -175,11 +175,11 @@ class Build
     }
 
     /**
-     * 建立模块的欢迎頁面
+     * 建立模組的欢迎頁面
      * @access protected
-     * @param  string $module    模块名
-     * @param  string $namespace 应用类库命名空間
-     * @param  bool   $suffix    类库后缀
+     * @param  string $module    模組名
+     * @param  string $namespace 應用類庫命名空間
+     * @param  bool   $suffix    類庫後缀
      * @return void
      */
     protected static function buildHello($module, $namespace, $suffix = false)
@@ -203,9 +203,9 @@ class Build
     }
 
     /**
-     * 建立模块的公共文件
+     * 建立模組的公共文件
      * @access protected
-     * @param  string $module 模块名
+     * @param  string $module 模組名
      * @return void
      */
     protected static function buildCommon($module)
@@ -223,9 +223,9 @@ class Build
     }
 
     /**
-     * 建立目录
+     * 建立目錄
      * @access protected
-     * @param  string $dirname 目录名稱
+     * @param  string $dirname 目錄名稱
      * @return void
      */
     protected static function checkDirBuild($dirname)

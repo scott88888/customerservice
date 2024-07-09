@@ -6,7 +6,7 @@
 
 ## Pull Request要求
 
-- **[PSR-2 编碼风格标准](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** 。要通過项目中的code sniffer檢查。
+- **[PSR-2 编碼風格标准](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** 。要通過项目中的code sniffer檢查。
 
 - **程式碼格式** 送出前 請按 ./vendor/bin/phpcbf --standard=PSR2  进行格式化。
 
@@ -20,7 +20,7 @@
 
 - **一个feature送出一个pull請求** - 如果你的程式碼变更了多个操作，那就送出多个pull請求吧。
 
-- **清晰的commit历史** - 保证你的pull請求的每次commit操作都是有意义的。如果你開发中需要执行多次的即时commit操作，那么請把它们放到一起再送出pull請求。
+- **清晰的commit历史** - 保证你的pull請求的每次commit操作都是有意义的。如果你開发中需要執行多次的即时commit操作，那么請把它们放到一起再送出pull請求。
 
 ## 运行测试
 

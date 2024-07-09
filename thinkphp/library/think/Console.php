@@ -46,22 +46,22 @@ class Console
     private $catchExceptions = true;
 
     /**
-     * @var bool 是否自動退出执行
+     * @var bool 是否自動退出執行
      */
     private $autoExit = true;
 
     /**
-     * @var InputDefinition 输入定义
+     * @var InputDefinition 输入定義
      */
     private $definition;
 
     /**
-     * @var string 默认执行的命令
+     * @var string 默認執行的命令
      */
     private $defaultCommand;
 
     /**
-     * @var array 默认提供的命令
+     * @var array 默認提供的命令
      */
     private static $defaultCommands = [
         "think\\console\\command\\Help",
@@ -81,7 +81,7 @@ class Console
      * @access public
      * @param  string     $name    名稱
      * @param  string     $version 版本
-     * @param null|string $user    执行使用者
+     * @param null|string $user    執行使用者
      */
     public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN', $user = null)
     {
@@ -101,7 +101,7 @@ class Console
     }
 
     /**
-     * 設定执行使用者
+     * 設定執行使用者
      * @param $user
      */
     public function setUser($user)
@@ -125,7 +125,7 @@ class Console
 
         if (!$console) {
             $config = Config::get('console');
-            // 实例化 console
+            // 實例化 console
             $console = new self($config['name'], $config['version'], $config['user']);
 
             // 读取指令集
@@ -136,7 +136,7 @@ class Console
                     foreach ($commands as $command) {
                         class_exists($command) &&
                         is_subclass_of($command, "\\think\\console\\Command") &&
-                        $console->add(new $command());  // 注册指令
+                        $console->add(new $command());  // 註冊指令
                     }
                 }
             }
@@ -169,7 +169,7 @@ class Console
     }
 
     /**
-     * 执行当前的指令
+     * 執行當前的指令
      * @access public
      * @return int
      * @throws \Exception
@@ -207,7 +207,7 @@ class Console
     }
 
     /**
-     * 执行指令
+     * 執行指令
      * @access public
      * @param  Input  $input  输入
      * @param  Output $output 输出
@@ -243,9 +243,9 @@ class Console
     }
 
     /**
-     * 設定输入参數定义
+     * 設定输入参數定義
      * @access public
-     * @param  InputDefinition $definition 输入定义
+     * @param  InputDefinition $definition 输入定義
      * @return $this;
      */
     public function setDefinition(InputDefinition $definition)
@@ -256,7 +256,7 @@ class Console
     }
 
     /**
-     * 取得输入参數定义
+     * 取得输入参數定義
      * @access public
      * @return InputDefinition
      */
@@ -366,7 +366,7 @@ class Console
     }
 
     /**
-     * 注册一个指令
+     * 註冊一个指令
      * @access public
      * @param string $name 指令名稱
      * @return Command
@@ -379,7 +379,7 @@ class Console
     /**
      * 批量新增指令
      * @access public
-     * @param  Command[] $commands 指令实例
+     * @param  Command[] $commands 指令實例
      * @return $this
      */
     public function addCommands(array $commands)
@@ -392,7 +392,7 @@ class Console
     /**
      * 新增一个指令
      * @access public
-     * @param  Command $command 命令实例
+     * @param  Command $command 命令實例
      * @return Command|bool
      */
     public function add(Command $command)
@@ -485,7 +485,7 @@ class Console
     }
 
     /**
-     * 查找注册命名空間中的名稱或缩写
+     * 查找註冊命名空間中的名稱或缩寫
      * @access public
      * @param string $namespace
      * @return string
@@ -629,10 +629,10 @@ class Console
     }
 
     /**
-     * 配置基于使用者的参數和选项的输入和输出实例
+     * 配置基于使用者的参數和选项的输入和输出實例
      * @access protected
-     * @param  Input  $input  输入实例
-     * @param  Output $output 输出实例
+     * @param  Input  $input  输入實例
+     * @param  Output $output 输出實例
      * @return void
      */
     protected function configureIO(Input $input, Output $output)
@@ -661,11 +661,11 @@ class Console
     }
 
     /**
-     * 执行指令
+     * 執行指令
      * @access protected
-     * @param  Command $command 指令实例
-     * @param  Input   $input   输入实例
-     * @param  Output  $output  输出实例
+     * @param  Command $command 指令實例
+     * @param  Input   $input   输入實例
+     * @param  Output  $output  输出實例
      * @return int
      * @throws \Exception
      */
@@ -677,7 +677,7 @@ class Console
     /**
      * 取得指令的名稱
      * @access protected
-     * @param  Input $input 输入实例
+     * @param  Input $input 输入實例
      * @return string
      */
     protected function getCommandName(Input $input)
@@ -686,7 +686,7 @@ class Console
     }
 
     /**
-     * 取得默认输入定义
+     * 取得默認输入定義
      * @access protected
      * @return InputDefinition
      */
@@ -705,7 +705,7 @@ class Console
     }
 
     /**
-     * 取得默认命令
+     * 取得默認命令
      * @access protected
      * @return Command[]
      */
@@ -723,7 +723,7 @@ class Console
     }
 
     /**
-     * 新增默认指令
+     * 新增默認指令
      * @access public
      * @param  array $classes 指令
      * @return void
@@ -827,7 +827,7 @@ class Console
     }
 
     /**
-     * 設定默认的指令
+     * 設定默認的指令
      * @access public
      * @param string $commandName 指令名稱
      * @return $this

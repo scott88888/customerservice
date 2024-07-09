@@ -24,10 +24,10 @@ function chat2top(id,that){
     $.ajax({
         url:'/admin/visiter/chat2top/visiter_id/'+id+'/istop/'+istop,
         dataType:"json",   //返回格式為json
-        async:true,//請求是否异步，默认為异步，这也是ajax重要特性
+        async:true,//請求是否异步，默認為异步，这也是ajax重要特性
         type:"POST",   //請求方式
         beforeSend:function(){
-            //請求前的处理
+            //請求前的處理
             index = layer.load(2, {shade: false});
         },
         success:function(res){
@@ -39,14 +39,14 @@ function chat2top(id,that){
             }else{
                 layer.msg(res.msg,{icon:2});
             }
-            //請求成功时处理
+            //請求成功时處理
         },
         complete:function(){
-            //請求完成的处理
+            //請求完成的處理
             layer.close(index);
         },
         error:function(){
-            //請求出错处理
+            //請求出错處理
         }
     });
 }
@@ -67,10 +67,10 @@ if (jsAjaxBtn.length) {
         $.ajax({
             url:href,    //請求的url地址
             dataType:"json",   //返回格式為json
-            async:true,//請求是否异步，默认為异步，这也是ajax重要特性
+            async:true,//請求是否异步，默認為异步，这也是ajax重要特性
             type:"POST",   //請求方式
             beforeSend:function(){
-                //請求前的处理
+                //請求前的處理
                 index = layer.load(2, {shade: false});
             },
             success:function(res){
@@ -80,14 +80,14 @@ if (jsAjaxBtn.length) {
                 }else{
                     layer.msg(res.msg,{icon:2});
                 }
-                //請求成功时处理
+                //請求成功时處理
             },
             complete:function(){
-                //請求完成的处理
+                //請求完成的處理
                 layer.close(index);
             },
             error:function(){
-                //請求出错处理
+                //請求出错處理
             }
         });
         layer.open({

@@ -15,17 +15,17 @@ use think\Config;
 use think\Loader;
 
 /**
- * 插件基类控制器
+ * 插件基類控制器
  * Class Controller
  * @package think\addons
  */
 class Controller extends \think\Controller
 {
-    // 当前插件操作
+    // 當前插件操作
     protected $addon = null;
     protected $controller = null;
     protected $action = null;
-    // 当前template
+    // 當前template
     protected $template;
     // 模板配置訊息
     protected $config = [
@@ -51,10 +51,10 @@ class Controller extends \think\Controller
         $this->request = is_null($request) ? Request::instance() : $request;
         // 初始化配置訊息
         $this->config = Config::get('template') ?: $this->config;
-        // 处理路由参數
+        // 處理路由参數
         $route = $this->request->param('route', '');
         $param = explode('-', $route);
-        // 是否自動转换控制器和操作名
+        // 是否自動轉換控制器和操作名
         $convert = \think\Config::get('url_convert');
         // 格式化路由的插件位置
         $this->action = $convert ? strtolower(array_pop($param)) : array_pop($param);
@@ -71,7 +71,7 @@ class Controller extends \think\Controller
     }
 
     /**
-     * 加载模板输出
+     * 載入模板输出
      * @access protected
      * @param string $template 模板文件名
      * @param array $vars 模板输出变量
@@ -86,7 +86,7 @@ class Controller extends \think\Controller
             $depr = $this->config['view_depr'];
             $template = str_replace(['/', ':'], $depr, $template);
             if ('' == $template) {
-                // 如果模板文件名為空 按照默认规则定位
+                // 如果模板文件名為空 按照默認規則定位
                 $template = str_replace('.', DS, $controller) . $depr . $this->action;
             } elseif (false === strpos($template, $depr)) {
                 $template = str_replace('.', DS, $controller) . $depr . $template;

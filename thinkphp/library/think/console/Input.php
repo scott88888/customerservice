@@ -57,7 +57,7 @@ class Input
     }
 
     /**
-     * 绑定实例
+     * 绑定實例
      * @param Definition $definition A InputDefinition instance
      */
     public function bind(Definition $definition)
@@ -93,7 +93,7 @@ class Input
 
     /**
      * 解析短选项
-     * @param string $token 当前的指令.
+     * @param string $token 當前的指令.
      */
     private function parseShortOption($token)
     {
@@ -114,7 +114,7 @@ class Input
 
     /**
      * 解析短选项
-     * @param string $name 当前指令
+     * @param string $name 當前指令
      * @throws \RuntimeException
      */
     private function parseShortOptionSet($name)
@@ -138,7 +138,7 @@ class Input
 
     /**
      * 解析完整选项
-     * @param string $token 当前指令
+     * @param string $token 當前指令
      */
     private function parseLongOption($token)
     {
@@ -153,7 +153,7 @@ class Input
 
     /**
      * 解析参數
-     * @param string $token 当前指令
+     * @param string $token 當前指令
      * @throws \RuntimeException
      */
     private function parseArgument($token)
@@ -278,7 +278,7 @@ class Input
     /**
      * 取得原始选项的值
      * @param string|array $values  需要檢查的值
-     * @param mixed        $default 默认值
+     * @param mixed        $default 默認值
      * @return mixed The option value
      */
     public function getParameterOption($values, $default = false)
@@ -442,7 +442,7 @@ class Input
     }
 
     /**
-     * 返回传递给命令的参數的字符串
+     * 返回傳递给命令的参數的字符串
      * @return string
      */
     public function __toString()

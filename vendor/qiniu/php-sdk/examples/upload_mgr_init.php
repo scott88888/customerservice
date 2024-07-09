@@ -11,7 +11,7 @@ $auth = new Auth($accessKey, $secretKey);
 // 空間名  http://developer.qiniu.com/docs/v6/api/overview/concepts.html#bucket
 $bucket = 'Bucket_Name';
 
-// 產生上传Token
+// 產生上傳Token
 $token = $auth->uploadToken($bucket);
 
 // 构建 UploadManager 對象

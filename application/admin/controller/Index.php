@@ -11,13 +11,13 @@ use think\Paginator;
 use app\Common;
 /**
  *
- * 后台頁面控制器.
+ * 後台頁面控制器.
  */
 class Index extends Base
 {
 
     /**
-     * 后台首頁.
+     * 後台首頁.
      *
      * @return mixed
      */
@@ -27,7 +27,7 @@ class Index extends Base
     }
 
     /**
-     * 后台對話頁面.
+     * 後台對話頁面.
      *
      * @return mixed
      */
@@ -44,7 +44,7 @@ class Index extends Base
 
 
     /**
-     * 常用语頁面.
+     * 常用語頁面.
      *
      * @return mixed
      */
@@ -142,7 +142,7 @@ class Index extends Base
     }
 
     /**
-     * 转接客服頁面
+     * 轉接客服頁面
      * @return [type] [description]
      */
     public function service()

@@ -22,7 +22,7 @@ class Permission
         $actionname = strtolower(request()->action());
         $token = request()->server('HTTP_TOKEN', request()->request('token', \think\Cookie::get('token')));
         $path = str_replace('.', '/', $controllername) . '/' . $actionname;
-        // 設定当前請求的URI
+        // 設定當前請求的URI
         $this->auth->setRequestUri($path);
         //初始化
         $this->auth->init($token);

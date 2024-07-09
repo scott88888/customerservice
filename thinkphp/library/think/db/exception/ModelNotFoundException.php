@@ -31,7 +31,7 @@ class ModelNotFoundException extends DbException
     }
 
     /**
-     * 取得模型类名
+     * 取得模型類名
      * @access public
      * @return string
      */

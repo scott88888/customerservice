@@ -25,7 +25,7 @@ class Choice extends Question
      * 构造方法
      * @param string $question 問題
      * @param array  $choices  选项
-     * @param mixed  $default  默认答案
+     * @param mixed  $default  默認答案
      */
     public function __construct($question, array $choices, $default = null)
     {
@@ -98,7 +98,7 @@ class Choice extends Question
     }
 
     /**
-     * 取得默认的驗證方法
+     * 取得默認的驗證方法
      * @return callable
      */
     private function getDefaultValidator()

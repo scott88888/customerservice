@@ -486,7 +486,7 @@
 
             var value = "{$user['service_id']}";
             var channel = pusher.subscribe("kefu" + value);
-            // 发送一个推送
+            // 發送一个推送
             channel.bind("callbackpusher",function(data){
                 $.post("{:url('admin/set/callback','',true,true)}",data,function(res){
 
@@ -592,7 +592,7 @@
             <div class="foot_msg">
                 <div class="footer">
                     <input type="text" id="text_all" placeholder="发消息..." class="layui-input" />
-                    <button class="layui-btn layui-btn-normal send-btn" onclick="send()">发送
+                    <button class="layui-btn layui-btn-normal send-btn" onclick="send()">發送
                     </button>
                 </div>
                 <div class="msg-toolbar">
@@ -777,7 +777,7 @@
 
         var getaudio = function() {
 
-            //音訊先加载
+            //音訊先載入
             var audio_context;
             var recorder;
             var wavBlob;
@@ -791,7 +791,7 @@
                 audio_context = new AudioContext;
 
                 if (!navigator.getUserMedia) {
-                    console.log('语音建立失敗');
+                    console.log('語音建立失敗');
                 };
             } catch (e) {
                 console.log(e);
@@ -805,7 +805,7 @@
                 if (falg == 'https:') {
                     recorder && recorder.record();
 
-                    //示范一个公告层
+                    //示范一个公告層
                     layui.use(['jquery', 'layer'], function() {
                         var layer = layui.layer;
 
@@ -813,9 +813,9 @@
                             icon: 16,
                             shade: 0.01,
                             skin: 'layui-layer-lan',
-                            time: 0 //20s后自動關閉
+                            time: 0 //20s後自動關閉
                                 ,
-                            btn: ['发送', '取消'],
+                            btn: ['發送', '取消'],
                             yes: function(index, layero) {
                                 //按钮【按钮一】的回调
                                 recorder && recorder.stop();
@@ -915,11 +915,11 @@
                     });
                 } else {
 
-                    layer.msg('音訊输入只支持https协议！');
+                    layer.msg('音訊输入只支援https协议！');
                 }
 
             }, function(e) {
-                layer.msg('音訊输入只支持https协议！');
+                layer.msg('音訊输入只支援https协议！');
             });
         }
 
@@ -1281,7 +1281,7 @@
 
         }
 
-        // 图片上传
+        // 圖片上傳
         function put() {
 
             var value = $('input[name="upload"]').val();
@@ -1367,12 +1367,12 @@
 
             } else {
 
-                layer.msg("請選擇图片", { icon: 2 });
+                layer.msg("請選擇圖片", { icon: 2 });
             }
         }
 
 
-        // 文件上传
+        // 文件上傳
         function putfile() {
 
             var value = $('input[name="folder"]').val();
@@ -1381,7 +1381,7 @@
             var arr = value.split(".");
 
             if (arr[1] == "js" || arr[1] == "css" || arr[1] == "html" || arr[1] == "php") {
-                layer.msg("不支持该格式的文件", { icon: 2 });
+                layer.msg("不支援该格式的文件", { icon: 2 });
 
             } else {
 
@@ -1457,7 +1457,7 @@
             }
             return tmp;
         }
-        //发送消息
+        //發送消息
         var send = function() {
             //取得 遊客id
             var msg = $("#text_all").val();
@@ -1596,7 +1596,7 @@
                 $('html ,body').animate({scrollTop: height}, 0);
             },200)
         }
-        // 失去焦點，拉到顶部
+        // 失去焦點，拉到頂部
         text.onblur = function() {
             setTimeout(function() {
                 $('html ,body').animate({ scrollTop: 0 }, 0);

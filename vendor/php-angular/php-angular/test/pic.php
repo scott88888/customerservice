@@ -1,9 +1,9 @@
 <?php
 require './common.php';
 
-$view->assign('title', '图片');
+$view->assign('title', '圖片');
 
-// 分类
+// 分類
 $category = load('pic_category');
 $view->assign('category', $category);
 

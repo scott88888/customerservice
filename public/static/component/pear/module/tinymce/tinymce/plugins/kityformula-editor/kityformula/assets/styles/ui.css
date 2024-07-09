@@ -478,18 +478,18 @@
     height: 5px;
     background: url(../images/scrollbar/custom/down.png) 0 0 repeat-y white;
 }
-/*定义滚動條渐减按扭的樣式 */
+/*定義滚動條渐减按扭的樣式 */
 .kf-editor-ui-box::-webkit-scrollbar-button:start:decrement {
     height: 5px;
     background: url(../images/scrollbar/custom/up.png) 0 0 repeat-y white;
 }
 
-/* 垂直滚動條的第三层轨道的上段 */
+/* 垂直滚動條的第三層轨道的上段 */
 .kf-editor-ui-box::-webkit-scrollbar-track-piece:vertical:start {
     background-image: url(../images/scrollbar/custom/top.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
 }
-/* 垂直滚動條的第三层轨道的下段 */
+/* 垂直滚動條的第三層轨道的下段 */
 .kf-editor-ui-box::-webkit-scrollbar-track-piece:vertical:end {
     background-image: url(../images/scrollbar/custom/bottom.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
@@ -512,18 +512,18 @@
     height: 5px;
     background: url(../images/scrollbar/custom/down.png) 0 0 repeat-y white;
 }
-/*定义滚動條渐减按扭的樣式 */
+/*定義滚動條渐减按扭的樣式 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-button:start:decrement {
     height: 5px;
     background: url(../images/scrollbar/custom/up.png) 0 0 repeat-y white;
 }
 
-/* 垂直滚動條的第三层轨道的上段 */
+/* 垂直滚動條的第三層轨道的上段 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-track-piece:vertical:start {
     background-image: url(../images/scrollbar/custom/top.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;
 }
-/* 垂直滚動條的第三层轨道的下段 */
+/* 垂直滚動條的第三層轨道的下段 */
 .kf-editor-ui-wrap-group::-webkit-scrollbar-track-piece:vertical:end {
     background-image: url(../images/scrollbar/custom/bottom.png), url(../images/scrollbar/custom/bg.png);
     background-repeat: no-repeat, repeat-y;

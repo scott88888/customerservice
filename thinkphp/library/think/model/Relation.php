@@ -25,7 +25,7 @@ abstract class Relation
 {
     // 父模型對象
     protected $parent;
-    /** @var  Model 当前关联的模型类 */
+    /** @var  Model 當前关联的模型類 */
     protected $model;
     /** @var Query 关联模型查詢對象 */
     protected $query;
@@ -49,7 +49,7 @@ abstract class Relation
     }
 
     /**
-     * 取得当前的关联模型對象实例
+     * 取得當前的关联模型對象實例
      * @access public
      * @return Model
      */
@@ -69,7 +69,7 @@ abstract class Relation
     }
 
     /**
-     * 設定当前关联為自关联
+     * 設定當前关联為自关联
      * @access public
      * @param  bool $self 是否自关联
      * @return $this
@@ -81,7 +81,7 @@ abstract class Relation
     }
 
     /**
-     * 当前关联是否為自关联
+     * 當前关联是否為自关联
      * @access public
      * @return bool
      */
@@ -128,7 +128,7 @@ abstract class Relation
     }
 
     /**
-     * 执行基础查詢（仅执行一次）
+     * 執行基础查詢（仅執行一次）
      * @access protected
      * @return void
      */
@@ -138,7 +138,7 @@ abstract class Relation
     public function __call($method, $args)
     {
         if ($this->query) {
-            // 执行基础查詢
+            // 執行基础查詢
             $this->baseQuery();
 
             $result = call_user_func_array([$this->query, $method], $args);

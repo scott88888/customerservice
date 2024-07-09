@@ -9,9 +9,9 @@
 //清空上次查选的痕迹
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
-//给tab注册切换事件
+//给tab註冊切换事件
 /**
- * tab點擊处理事件
+ * tab點擊處理事件
  * @param tabHeads
  * @param tabBodys
  * @param obj
@@ -57,7 +57,7 @@ $G('searchtab').onmousedown = function(){
     $G('search-msg').innerHTML = '';
     $G('replace-msg').innerHTML = ''
 }
-//是否区分大小写
+//是否区分大小寫
 function getMatchCase(id) {
     return $G(id).checked ? true : false;
 }
@@ -157,7 +157,7 @@ $G("repalceAllBtn").onclick = function () {
         $G('replace-msg').innerHTML = lang.countMsg.replace("{#count}", num);
     }
 };
-//执行
+//執行
 var frCommond = function (obj) {
     return editor.execCommand("searchreplace", obj);
 };

@@ -8,7 +8,7 @@
 
 ## 概述
 
-阿里云對象存储（Object Storage Service，简称OSS），是阿里云對外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通過调用API，在任何应用、任何時間、任何地點上传和下载資料，也可以通過使用者Web控制台對資料进行简單的管理。OSS适合存放任意文件类型，适合各种網站、開发企业及開发者使用。
+阿里云對象存储（Object Storage Service，简称OSS），是阿里云對外提供的海量、安全、低成本、高可靠的云存储服务。使用者可以通過调用API，在任何應用、任何時間、任何地點上傳和下载資料，也可以通過使用者Web控制台對資料进行简單的管理。OSS适合存放任意文件類型，适合各种網站、開发企业及開发者使用。
 
 
 ## 运行环境
@@ -21,7 +21,7 @@
 
 ## 安装方法
 
-1. 如果您通過composer管理您的项目依赖，可以在你的项目根目录运行：
+1. 如果您通過composer管理您的项目依赖，可以在你的项目根目錄运行：
 
         $ composer require aliyuncs/oss-sdk-php
 
@@ -31,31 +31,31 @@
             "aliyuncs/oss-sdk-php": "~2.0"
         }
 
-   然后通過`composer install`安装依赖。composer安装完成后，在您的PHP程式碼中引入依赖即可：
+   然後通過`composer install`安装依赖。composer安装完成後，在您的PHP程式碼中引入依赖即可：
 
         require_once __DIR__ . '/vendor/autoload.php';
 
-2. 您也可以直接下载已经打包好的[phar文件][releases-page]，然后在你
+2. 您也可以直接下载已经打包好的[phar文件][releases-page]，然後在你
    的程式碼中引入这个文件即可：
 
         require_once '/path/to/oss-sdk-php.phar';
 
-3. 下载SDK源碼，在您的程式碼中引入SDK目录下的`autoload.php`文件：
+3. 下载SDK源碼，在您的程式碼中引入SDK目錄下的`autoload.php`文件：
 
         require_once '/path/to/oss-sdk/autoload.php';
 
 ## 快速使用
 
-### 常用类
+### 常用類
 
-| 类名 | 解釋 |
+| 類名 | 解釋 |
 |:------------------|:------------------------------------|
-|OSS\OssClient | OSS客户端类，使用者通過OssClient的实例调用接口 |
-|OSS\Core\OssException | OSS异常类，使用者在使用的过程中，只需要注意这个异常|
+|OSS\OssClient | OSS客户端類，使用者通過OssClient的實例调用接口 |
+|OSS\Core\OssException | OSS异常類，使用者在使用的过程中，只需要注意这个异常|
 
 ### OssClient初始化
 
-SDK的OSS操作通過OssClient类完成的，下面程式碼建立一个OssClient對象:
+SDK的OSS操作通過OssClient類完成的，下面程式碼建立一个OssClient對象:
 
 ```php
 <?php
@@ -71,13 +71,13 @@ try {
 
 ### 文件操作
 
-文件(又称對象,Object)是OSS中最基本的資料單元，您可以把它简單地理解為文件，用下面程式碼可以實現一个Object的上传：
+文件(又称對象,Object)是OSS中最基本的資料單元，您可以把它简單地理解為文件，用下面程式碼可以實現一个Object的上傳：
 
 ```php
 <?php
 $bucket = "<您使用的Bucket名字，注意命名规范>";
 $object = "<您使用的Object名字，注意命名规范>";
-$content = "Hello, OSS!"; // 上传的文件内容
+$content = "Hello, OSS!"; // 上傳的文件内容
 try {
     $ossClient->putObject($bucket, $object, $content);
 } catch (OssException $e) {
@@ -99,12 +99,12 @@ try {
 }
 ```
 
-### 返回结果处理
+### 返回结果處理
 
 OssClient提供的接口返回返回資料分為两种：
 
-* Put，Delete类接口，接口返回null，如果没有OssException，即可认為操作成功
-* Get，List类接口，接口返回對应的資料，如果没有OssException，即可认為操作成功，举个例子：
+* Put，Delete類接口，接口返回null，如果没有OssException，即可认為操作成功
+* Get，List類接口，接口返回對应的資料，如果没有OssException，即可认為操作成功，举个例子：
 
 ```php
 <?php
@@ -114,17 +114,17 @@ foreach($bucketList as $bucket) {
     print($bucket->getLocation() . "\t" . $bucket->getName() . "\t" . $bucket->getCreatedate() . "\n");
 }
 ```
-上面程式碼中的$bucketListInfo的資料类型是 `OSS\Model\BucketListInfo`
+上面程式碼中的$bucketListInfo的資料類型是 `OSS\Model\BucketListInfo`
 
 
 ### 运行Sample程序
 
 1. 修改 `samples/Config.php`， 补充配置訊息
-2. 执行 `cd samples/ && php RunAll.php`
+2. 執行 `cd samples/ && php RunAll.php`
 
 ### 运行單元测试
 
-1. 执行`composer install`下载依赖的库
+1. 執行`composer install`下载依赖的庫
 2. 設定环境变量
 
         export OSS_ACCESS_KEY_ID=access-key-id
@@ -132,7 +132,7 @@ foreach($bucketList as $bucket) {
         export OSS_ENDPOINT=endpoint
         export OSS_BUCKET=bucket-name
 
-3. 执行 `php vendor/bin/phpunit`
+3. 執行 `php vendor/bin/phpunit`
 
 ## License
 
@@ -143,7 +143,7 @@ foreach($bucketList as $bucket) {
 - [阿里云OSS官方網站](http://oss.aliyun.com)
 - [阿里云OSS官方论坛](http://bbs.aliyun.com)
 - [阿里云OSS官方文档中心](http://www.aliyun.com/product/oss#Docs)
-- 阿里云官方技术支持：[送出工單](https://workorder.console.aliyun.com/#/ticket/createIndex)
+- 阿里云官方技術支援：[送出工單](https://workorder.console.aliyun.com/#/ticket/createIndex)
 
 [releases-page]: https://github.com/aliyun/aliyun-oss-php-sdk/releases
 [phar-composer]: https://github.com/clue/phar-composer

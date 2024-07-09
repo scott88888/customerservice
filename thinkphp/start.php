@@ -12,8 +12,8 @@
 namespace think;
 
 // ThinkPHP 引导文件
-// 1. 加载基础文件
+// 1. 載入基础文件
 require __DIR__ . '/base.php';
 
-// 2. 执行应用
+// 2. 執行應用
 App::run()->send();

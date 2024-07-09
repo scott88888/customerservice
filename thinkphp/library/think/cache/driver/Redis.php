@@ -14,8 +14,8 @@ namespace think\cache\driver;
 use think\cache\Driver;
 
 /**
- * Redis缓存驱動，适合單机部署、有前端代理實現高可用的场景，性能最好
- * 有需要在业务层實現读写分离、或者使用RedisCluster的需求，請使用Redisd驱動
+ * Redis快取驱動，适合單機部署、有前端代理實現高可用的场景，性能最好
+ * 有需要在業務層實現读寫分离、或者使用RedisCluster的需求，請使用Redisd驱動
  *
  * 要求安装phpredis扩展：https://github.com/nicolasff/phpredis
  * @author    尘缘 <130775@qq.com>
@@ -35,7 +35,7 @@ class Redis extends Driver
 
     /**
      * 构造函數
-     * @param array $options 缓存参數
+     * @param array $options 快取参數
      * @access public
      */
     public function __construct($options = [])
@@ -63,9 +63,9 @@ class Redis extends Driver
     }
 
     /**
-     * 判断缓存
+     * 判断快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return bool
      */
     public function has($name)
@@ -74,10 +74,10 @@ class Redis extends Driver
     }
 
     /**
-     * 读取缓存
+     * 读取快取
      * @access public
-     * @param string $name 缓存变量名
-     * @param mixed  $default 默认值
+     * @param string $name 快取变量名
+     * @param mixed  $default 默認值
      * @return mixed
      */
     public function get($name, $default = false)
@@ -97,9 +97,9 @@ class Redis extends Driver
     }
 
     /**
-     * 写入缓存
+     * 寫入快取
      * @access public
-     * @param string            $name 缓存变量名
+     * @param string            $name 快取变量名
      * @param mixed             $value  存储資料
      * @param integer|\DateTime $expire  有效時間（秒）
      * @return boolean
@@ -127,9 +127,9 @@ class Redis extends Driver
     }
 
     /**
-     * 自增缓存（針對數值缓存）
+     * 自增快取（針對數值快取）
      * @access public
-     * @param  string    $name 缓存变量名
+     * @param  string    $name 快取变量名
      * @param  int       $step 步長
      * @return false|int
      */
@@ -141,9 +141,9 @@ class Redis extends Driver
     }
 
     /**
-     * 自减缓存（針對數值缓存）
+     * 自减快取（針對數值快取）
      * @access public
-     * @param  string    $name 缓存变量名
+     * @param  string    $name 快取变量名
      * @param  int       $step 步長
      * @return false|int
      */
@@ -155,9 +155,9 @@ class Redis extends Driver
     }
 
     /**
-     * 刪除缓存
+     * 刪除快取
      * @access public
-     * @param string $name 缓存变量名
+     * @param string $name 快取变量名
      * @return boolean
      */
     public function rm($name)
@@ -166,7 +166,7 @@ class Redis extends Driver
     }
 
     /**
-     * 清除缓存
+     * 清除快取
      * @access public
      * @param string $tag 标签名
      * @return boolean

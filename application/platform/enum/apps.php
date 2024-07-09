@@ -9,7 +9,7 @@ namespace app\platform\enum;
 
 class apps
 {
-    //当前客服系统標識
+    //當前客服系统標識
     const HJLIVE_APP_FLAG = 'HJLIVE_APP_FLAG';
     const RESET_PASSWORD_SMS_CODE_VALIDATE_COUNT = 'RESET_PASSWORD_SMS_CODE_VALIDATE_COUNT';
     const RESET_PASSWORD_SMS_CODE = 'RESET_PASSWORD_SMS_CODE';

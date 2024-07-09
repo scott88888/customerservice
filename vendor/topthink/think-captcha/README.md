@@ -1,5 +1,5 @@
 # think-captcha
-thinkphp5 驗證碼类库
+thinkphp5 驗證碼類庫
 
 ## 安装
 > composer require topthink/think-captcha

@@ -23,7 +23,7 @@ class Hook
      * @access public
      * @param  string $tag      标签名稱
      * @param  mixed  $behavior 行為名稱
-     * @param  bool   $first    是否放到開头执行
+     * @param  bool   $first    是否放到開头執行
      * @return void
      */
     public static function add($tag, $behavior, $first = false)
@@ -49,7 +49,7 @@ class Hook
      * 批量匯入插件
      * @access public
      * @param  array   $tags      插件訊息
-     * @param  boolean $recursive 是否递归合并
+     * @param  boolean $recursive 是否遞迴合併
      * @return void
      */
     public static function import(array $tags, $recursive = true)
@@ -82,8 +82,8 @@ class Hook
      * 监听标签的行為
      * @access public
      * @param  string $tag    标签名稱
-     * @param  mixed  $params 传入参數
-     * @param  mixed  $extra  额外参數
+     * @param  mixed  $params 傳入参數
+     * @param  mixed  $extra  額外参數
      * @param  bool   $once   只取得一个有效返回值
      * @return mixed
      */
@@ -94,7 +94,7 @@ class Hook
         foreach (static::get($tag) as $key => $name) {
             $results[$key] = self::exec($name, $tag, $params, $extra);
 
-            // 如果返回 false，或者仅取得一个有效返回则中断行為执行
+            // 如果返回 false，或者仅取得一个有效返回則中斷行為執行
             if (false === $results[$key] || (!is_null($results[$key]) && $once)) {
                 break;
             }
@@ -104,12 +104,12 @@ class Hook
     }
 
     /**
-     * 执行某个行為
+     * 執行某个行為
      * @access public
-     * @param  mixed  $class  要执行的行為
+     * @param  mixed  $class  要執行的行為
      * @param  string $tag    方法名（标签名）
-     * @param  mixed  $params 传人的参數
-     * @param  mixed  $extra  额外参數
+     * @param  mixed  $params 傳入的参數
+     * @param  mixed  $extra  額外参數
      * @return mixed
      */
     public static function exec($class, $tag = '', &$params = null, $extra = null)

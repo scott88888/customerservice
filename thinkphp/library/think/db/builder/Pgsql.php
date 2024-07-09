@@ -14,7 +14,7 @@ namespace think\db\builder;
 use think\db\Builder;
 
 /**
- * Pgsql資料库驱動
+ * Pgsql資料庫驱動
  */
 class Pgsql extends Builder
 {
@@ -42,7 +42,7 @@ class Pgsql extends Builder
     }
 
     /**
-     * 字段和表名处理
+     * 字段和表名處理
      * @access protected
      * @param mixed  $key
      * @param array  $options
@@ -58,7 +58,7 @@ class Pgsql extends Builder
 
         $key = trim($key);
         if (strpos($key, '$.') && false === strpos($key, '(')) {
-            // JSON字段支持
+            // JSON字段支援
             list($field, $name) = explode('$.', $key);
             $key                = $field . '->>\'' . $name . '\'';
         } elseif (strpos($key, '.')) {
@@ -77,7 +77,7 @@ class Pgsql extends Builder
     }
 
     /**
-     * 随机排序
+     * 随機排序
      * @access protected
      * @return string
      */

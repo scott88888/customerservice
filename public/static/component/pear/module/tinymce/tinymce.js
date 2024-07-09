@@ -9,13 +9,13 @@ layui.define(['jquery'],function (exports) {
 
     var response = setter.response || {}
 
-    var plugin_filename = 'tinymce.min.js'//插件路径，不包含base_url部分
+    var plugin_filename = 'tinymce.min.js'//插件路徑，不包含base_url部分
 
     var settings = {
         base_url: modPath
-        , images_upload_url: ''//图片上传接口，可在option传入，也可在这里修改，option的值優先
-        , language: 'zh_CN'//語言，可在option传入，也可在这里修改，option的值優先
-        , response: {//后台返回資料格式設定
+        , images_upload_url: ''//圖片上傳接口，可在option傳入，也可在这里修改，option的值優先
+        , language: 'zh_CN'//語言，可在option傳入，也可在这里修改，option的值優先
+        , response: {//後台返回資料格式設定
             statusName: response.statusName || 'code'//返回狀態字段
             , msgName: response.msgName || 'msg'//返回消息字段
             , dataName: response.dataName || 'data'//返回的資料
@@ -23,7 +23,7 @@ layui.define(['jquery'],function (exports) {
                 ok: 0//資料正常
             }
         }
-        , success: function (res, succFun, failFun) {//图片上传完成回调 根據自己需要修改
+        , success: function (res, succFun, failFun) {//圖片上傳完成回调 根據自己需要修改
             if (res[this.response.statusName] == this.response.statusCode.ok) {
                 succFun(res[this.response.dataName]);
             } else {
@@ -144,7 +144,7 @@ layui.define(['jquery'],function (exports) {
 
         option.images_upload_handler = isset(option.images_upload_handler) ? option.images_upload_handler : function(blobInfo, succFun, failFun) {
             if(isEmpty(option.images_upload_url)){
-                failFun("上传接口未配置");
+                failFun("上傳接口未配置");
                 return console.error('images_upload_url未配置');
             }
             var formData = new FormData();

@@ -10,7 +10,7 @@ return [
         'url'   => 'blog.php',
     ],
     [
-        'title' => '图片',
+        'title' => '圖片',
         'url'   => 'pic.php',
     ],
     [

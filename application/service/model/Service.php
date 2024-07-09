@@ -6,7 +6,7 @@ namespace app\service\model;
 use think\Model;
 
 /**
- * 資料模型类.
+ * 資料模型類.
  */
 class Service extends Model
 {

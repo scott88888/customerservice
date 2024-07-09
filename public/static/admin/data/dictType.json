@@ -26,9 +26,9 @@
 		"remark": null,
 		"params": null,
 		"id": "1317360314219495424",
-		"typeName": "登入类型",
+		"typeName": "登入類型",
 		"typeCode": "login",
-		"description": "登入类型",
+		"description": "登入類型",
 		"enable": "0"
 	}, {
 		"createTime": null,
@@ -40,9 +40,9 @@
 		"remark": null,
 		"params": null,
 		"id": "1317400519127334912",
-		"typeName": "使用者类型",
+		"typeName": "使用者類型",
 		"typeCode": "user_status",
-		"description": "使用者类型",
+		"description": "使用者類型",
 		"enable": "0"
 	}, {
 		"createTime": null,
@@ -54,9 +54,9 @@
 		"remark": null,
 		"params": null,
 		"id": "1317400823096934400",
-		"typeName": "配置类型",
+		"typeName": "配置類型",
 		"typeCode": "config_type",
-		"description": "配置类型",
+		"description": "配置類型",
 		"enable": "0"
 	}, {
 		"createTime": null,

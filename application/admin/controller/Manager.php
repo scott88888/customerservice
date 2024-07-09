@@ -13,7 +13,7 @@ use think\Paginator;
 
 /**
  *
- * 管理控制器类
+ * 管理控制器類
  */
 class Manager extends Base
 {
@@ -182,7 +182,7 @@ class Manager extends Base
   
    
     /**
-     * 上传圖示.
+     * 上傳圖示.
      *
      * @return mixed
      */
@@ -257,14 +257,14 @@ class Manager extends Base
 
 
     /**
-     * 客服注册驗證.
+     * 客服註冊驗證.
      *
      * @return [type] [description]
      */
     public function registForService()
     {
 
-        // 取得 注册訊息 資料
+        // 取得 註冊訊息 資料
         $post = $this->request->post();
         // 驗證 表單訊息
         $result = $this->validate($post, 'Services');
@@ -317,13 +317,13 @@ class Manager extends Base
         $debug = Admins::table('wolive_service')->insert($post);
 
         if ($debug) {
-            $data =['code'=>0,'msg'=>'注册成功'];
+            $data =['code'=>0,'msg'=>'註冊成功'];
             return $data;
         } 
     }
      
      /**
-      * 新增客服分类
+      * 新增客服分類
       * [addclass description]
       * @return [type] [description]
       */
@@ -341,7 +341,7 @@ class Manager extends Base
         return $sdata;
     }
     /**
-      * 編輯客服分类
+      * 編輯客服分類
       * [addclass description]
       * @return [type] [description]
       */
@@ -363,7 +363,7 @@ class Manager extends Base
     }
 
     /**
-     * 刪除客服分类
+     * 刪除客服分類
      * [delclass description]
      * @return [type] [description]
      */
@@ -446,11 +446,11 @@ class Manager extends Base
         } else {
 
             $newpath = ROOT_PATH . "/public/upload/images/{$_SESSION['Msg']['business_id']}/";
-            // 可以新增 驗證 规则
+            // 可以新增 驗證 規則
             $info = $file->validate(['ext' => 'jpg,png,gif,jpeg'])->move($newpath, time());
 
             if ($info ==false) {
-                $data =['code'=>1,'msg'=>'不支持上传该图片'];
+                $data =['code'=>1,'msg'=>'不支援上傳该圖片'];
                 return $data;
             }
 
@@ -545,7 +545,7 @@ class Manager extends Base
     }
 
     /**
-     * 新增常用语.
+     * 新增常用語.
      *
      * @return string
      */

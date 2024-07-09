@@ -166,7 +166,7 @@ class Handle
             }
         }
 
-        //保留一层
+        //保留一層
         while (ob_get_level() > 1) {
             ob_end_clean();
         }
@@ -176,7 +176,7 @@ class Handle
         ob_start();
         extract($data);
         include Config::get('exception_tmpl');
-        // 取得并清空缓存
+        // 取得並清空快取
         $content  = ob_get_clean();
         $response = new Response($content, 'html');
 
@@ -194,7 +194,7 @@ class Handle
 
     /**
      * 取得錯誤编碼
-     * ErrorException则使用錯誤级别作為錯誤编碼
+     * ErrorException則使用錯誤级别作為錯誤编碼
      * @param  \Exception $exception
      * @return integer                錯誤编碼
      */
@@ -209,7 +209,7 @@ class Handle
 
     /**
      * 取得錯誤訊息
-     * ErrorException则使用錯誤级别作為錯誤编碼
+     * ErrorException則使用錯誤级别作為錯誤编碼
      * @param  \Exception $exception
      * @return string                錯誤訊息
      */
@@ -234,13 +234,13 @@ class Handle
 
     /**
      * 取得出错文件内容
-     * 取得錯誤的前9行和后9行
+     * 取得錯誤的前9行和後9行
      * @param  \Exception $exception
      * @return array                 錯誤文件内容
      */
     protected function getSourceCode(Exception $exception)
     {
-        // 读取前9行和后9行
+        // 读取前9行和後9行
         $line  = $exception->getLine();
         $first = ($line - 9 > 0) ? $line - 9 : 1;
 
@@ -258,9 +258,9 @@ class Handle
 
     /**
      * 取得异常扩展訊息
-     * 用于非调试模式html返回类型显示
+     * 用于非调试模式html返回類型显示
      * @param  \Exception $exception
-     * @return array                 异常类定义的扩展資料
+     * @return array                 异常類定義的扩展資料
      */
     protected function getExtendData(Exception $exception)
     {

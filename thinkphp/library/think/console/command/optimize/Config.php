@@ -53,14 +53,14 @@ class Config extends Command
         $path    = realpath(APP_PATH . $module) . DS;
 
         if ($module) {
-            // 加载模块配置
+            // 載入模組配置
             $config = ThinkConfig::load(CONF_PATH . $module . 'config' . CONF_EXT);
 
-            // 读取資料库配置文件
+            // 读取資料庫配置文件
             $filename = CONF_PATH . $module . 'database' . CONF_EXT;
             ThinkConfig::load($filename, 'database');
 
-            // 加载应用狀態配置
+            // 載入應用狀態配置
             if ($config['app_status']) {
                 $config = ThinkConfig::load(CONF_PATH . $module . $config['app_status'] . CONF_EXT);
             }
@@ -77,12 +77,12 @@ class Config extends Command
             }
         }
 
-        // 加载行為扩展文件
+        // 載入行為扩展文件
         if (is_file(CONF_PATH . $module . 'tags' . EXT)) {
             $content .= '\think\Hook::import(' . (var_export(include CONF_PATH . $module . 'tags' . EXT, true)) . ');' . PHP_EOL;
         }
 
-        // 加载公共文件
+        // 載入公共文件
         if (is_file($path . 'common' . EXT)) {
             $content .= substr(php_strip_whitespace($path . 'common' . EXT), 5) . PHP_EOL;
         }

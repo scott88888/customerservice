@@ -16,8 +16,8 @@ use think\template\TagLib;
 
 /**
  * ThinkPHP分离出来的模板引擎
- * 支持XML标签和普通标签的模板解析
- * 编译型模板引擎 支持動态缓存
+ * 支援XML标签和普通标签的模板解析
+ * 编译型模板引擎 支援動态快取
  */
 class Template
 {
@@ -25,36 +25,36 @@ class Template
     protected $data = [];
     // 引擎配置
     protected $config = [
-        'view_path'          => '', // 模板路径
+        'view_path'          => '', // 模板路徑
         'view_base'          => '',
-        'view_suffix'        => 'html', // 默认模板文件后缀
+        'view_suffix'        => 'html', // 默認模板文件後缀
         'view_depr'          => DS,
-        'cache_suffix'       => 'php', // 默认模板缓存后缀
+        'cache_suffix'       => 'php', // 默認模板快取後缀
         'tpl_deny_func_list' => 'echo,exit', // 模板引擎禁用函數
-        'tpl_deny_php'       => false, // 默认模板引擎是否禁用PHP原生程式碼
+        'tpl_deny_php'       => false, // 默認模板引擎是否禁用PHP原生程式碼
         'tpl_begin'          => '{', // 模板引擎普通标签開始标记
         'tpl_end'            => '}', // 模板引擎普通标签结束标记
         'strip_space'        => false, // 是否去除模板文件里面的html空格与换行
-        'tpl_cache'          => true, // 是否開啟模板编译缓存,设為false则每次都会重新编译
-        'compile_type'       => 'file', // 模板编译类型
-        'cache_prefix'       => '', // 模板缓存前缀標識，可以動态改变
-        'cache_time'         => 0, // 模板缓存有效期 0 為永久，(以數字為值，單位:秒)
+        'tpl_cache'          => true, // 是否開啟模板编译快取,设為false則每次都会重新编译
+        'compile_type'       => 'file', // 模板编译類型
+        'cache_prefix'       => '', // 模板快取前缀標識，可以動态改变
+        'cache_time'         => 0, // 模板快取有效期 0 為永久，(以數字為值，單位:秒)
         'layout_on'          => false, // 布局模板開关
         'layout_name'        => 'layout', // 布局模板入口文件
         'layout_item'        => '{__CONTENT__}', // 布局模板的内容替换標識
-        'taglib_begin'       => '{', // 标签库标签開始标记
-        'taglib_end'         => '}', // 标签库标签结束标记
-        'taglib_load'        => true, // 是否使用内置标签库之外的其它标签库，默认自動检测
-        'taglib_build_in'    => 'cx', // 内置标签库名稱(标签使用不必指定标签库名稱),以逗号分隔 注意解析顺序
-        'taglib_pre_load'    => '', // 需要额外加载的标签库(须指定标签库名稱)，多个以逗号分隔
-        'display_cache'      => false, // 模板渲染缓存
-        'cache_id'           => '', // 模板缓存ID
+        'taglib_begin'       => '{', // 标签庫标签開始标记
+        'taglib_end'         => '}', // 标签庫标签结束标记
+        'taglib_load'        => true, // 是否使用内置标签庫之外的其它标签庫，默認自動检测
+        'taglib_build_in'    => 'cx', // 内置标签庫名稱(标签使用不必指定标签庫名稱),以逗号分隔 注意解析顺序
+        'taglib_pre_load'    => '', // 需要額外載入的标签庫(须指定标签庫名稱)，多个以逗号分隔
+        'display_cache'      => false, // 模板渲染快取
+        'cache_id'           => '', // 模板快取ID
         'tpl_replace_string' => [],
-        'tpl_var_identify'   => 'array', // .语法变量识别，array|object|'', 為空时自動识别
+        'tpl_var_identify'   => 'array', // .語法变量识别，array|object|'', 為空时自動识别
     ];
 
     private $literal     = [];
-    private $includeFile = []; // 记录所有模板包含的文件路径及更新時間
+    private $includeFile = []; // 记录所有模板包含的文件路徑及更新時間
     protected $storage;
 
     /**
@@ -166,7 +166,7 @@ class Template
             $this->config($config);
         }
         if (!empty($this->config['cache_id']) && $this->config['display_cache']) {
-            // 读取渲染缓存
+            // 读取渲染快取
             $cacheContent = Cache::get($this->config['cache_id']);
             if (false !== $cacheContent) {
                 echo $cacheContent;
@@ -177,19 +177,19 @@ class Template
         if ($template) {
             $cacheFile = $this->config['cache_path'] . $this->config['cache_prefix'] . md5($this->config['layout_name'] . $template) . '.' . ltrim($this->config['cache_suffix'], '.');
             if (!$this->checkCache($cacheFile)) {
-                // 缓存無效 重新模板编译
+                // 快取無效 重新模板编译
                 $content = file_get_contents($template);
                 $this->compiler($content, $cacheFile);
             }
-            // 頁面缓存
+            // 頁面快取
             ob_start();
             ob_implicit_flush(0);
             // 读取编译存储
             $this->storage->read($cacheFile, $this->data);
-            // 取得并清空缓存
+            // 取得並清空快取
             $content = ob_get_clean();
             if (!empty($this->config['cache_id']) && $this->config['display_cache']) {
-                // 缓存頁面输出
+                // 快取頁面输出
                 Cache::set($this->config['cache_id'], $content, $this->config['cache_time']);
             }
             echo $content;
@@ -214,7 +214,7 @@ class Template
         }
         $cacheFile = $this->config['cache_path'] . $this->config['cache_prefix'] . md5($content) . '.' . ltrim($this->config['cache_suffix'], '.');
         if (!$this->checkCache($cacheFile)) {
-            // 缓存無效 模板编译
+            // 快取無效 模板编译
             $this->compiler($content, $cacheFile);
         }
         // 读取编译存储
@@ -224,7 +224,7 @@ class Template
     /**
      * 設定布局
      * @access public
-     * @param mixed     $name 布局模板名稱 false 则關閉布局
+     * @param mixed     $name 布局模板名稱 false 則關閉布局
      * @param string    $replace 布局模板内容替换標識
      * @return Template
      */
@@ -248,23 +248,23 @@ class Template
     }
 
     /**
-     * 檢查编译缓存是否有效
-     * 如果無效则需要重新编译
+     * 檢查编译快取是否有效
+     * 如果無效則需要重新编译
      * @access private
-     * @param string $cacheFile 缓存文件名
+     * @param string $cacheFile 快取文件名
      * @return boolean
      */
     private function checkCache($cacheFile)
     {
-        // 未開啟缓存功能
+        // 未開啟快取功能
         if (!$this->config['tpl_cache']) {
             return false;
         }
-        // 缓存文件不存在
+        // 快取文件不存在
         if (!is_file($cacheFile)) {
             return false;
         }
-        // 读取缓存文件失敗
+        // 读取快取文件失敗
         if (!$handle = @fopen($cacheFile, "r")) {
             return false;
         }
@@ -280,7 +280,7 @@ class Template
         // 檢查模板文件是否有更新
         foreach ($includeFile as $path => $time) {
             if (is_file($path) && filemtime($path) > $time) {
-                // 模板文件如果有更新则缓存需要更新
+                // 模板文件如果有更新則快取需要更新
                 return false;
             }
         }
@@ -289,15 +289,15 @@ class Template
     }
 
     /**
-     * 檢查编译缓存是否存在
+     * 檢查编译快取是否存在
      * @access public
-     * @param string $cacheId 缓存的id
+     * @param string $cacheId 快取的id
      * @return boolean
      */
     public function isCache($cacheId)
     {
         if ($cacheId && $this->config['display_cache']) {
-            // 缓存頁面输出
+            // 快取頁面输出
             return Cache::has($cacheId);
         }
         return false;
@@ -307,7 +307,7 @@ class Template
      * 编译模板文件内容
      * @access private
      * @param string    $content 模板内容
-     * @param string    $cacheFile 缓存文件名
+     * @param string    $cacheFile 快取文件名
      * @return void
      */
     private function compiler(&$content, $cacheFile)
@@ -315,7 +315,7 @@ class Template
         // 判断是否启用布局
         if ($this->config['layout_on']) {
             if (false !== strpos($content, '{__NOLAYOUT__}')) {
-                // 可以單独定义不使用布局
+                // 可以單独定義不使用布局
                 $content = str_replace('{__NOLAYOUT__}', '', $content);
             } else {
                 // 读取布局模板
@@ -352,7 +352,7 @@ class Template
 
     /**
      * 模板解析入口
-     * 支持普通标签和TagLib解析 支持自訂标签库
+     * 支援普通标签和TagLib解析 支援自訂标签庫
      * @access public
      * @param string $content 要解析的模板内容
      * @return void
@@ -369,15 +369,15 @@ class Template
         $this->parseExtend($content);
         // 解析布局
         $this->parseLayout($content);
-        // 檢查include语法
+        // 檢查include語法
         $this->parseInclude($content);
         // 替换包含文件中literal标签内容
         $this->parseLiteral($content);
-        // 檢查PHP语法
+        // 檢查PHP語法
         $this->parsePhp($content);
 
-        // 取得需要引入的标签库列表
-        // 标签库只需要定义一次，允许引入多个一次
+        // 取得需要引入的标签庫列表
+        // 标签庫只需要定義一次，允许引入多个一次
         // 一般放在文件的最前面
         // 格式：<taglib name="html,mytag..." />
         // 当TAGLIB_LOAD配置為true时才会进行检测
@@ -390,14 +390,14 @@ class Template
                 }
             }
         }
-        // 预先加载的标签库 無需在每个模板中使用taglib标签加载 但必须使用标签库XML前缀
+        // 预先載入的标签庫 無需在每个模板中使用taglib标签載入 但必须使用标签庫XML前缀
         if ($this->config['taglib_pre_load']) {
             $tagLibs = explode(',', $this->config['taglib_pre_load']);
             foreach ($tagLibs as $tag) {
                 $this->parseTagLib($tag, $content);
             }
         }
-        // 内置标签库 無需使用taglib标签匯入就可以使用 并且不需使用标签库XML前缀
+        // 内置标签庫 無需使用taglib标签匯入就可以使用 並且不需使用标签庫XML前缀
         $tagLibs = explode(',', $this->config['taglib_build_in']);
         foreach ($tagLibs as $tag) {
             $this->parseTagLib($tag, $content, true);
@@ -411,7 +411,7 @@ class Template
     }
 
     /**
-     * 檢查PHP语法
+     * 檢查PHP語法
      * @access private
      * @param string $content 要解析的模板内容
      * @return void
@@ -419,9 +419,9 @@ class Template
      */
     private function parsePhp(&$content)
     {
-        // 短标签的情况要将<?标签用echo方式输出 否则無法正常输出xml標識
+        // 短标签的情况要将<?标签用echo方式输出 否則無法正常输出xml標識
         $content = preg_replace('/(<\?(?!php|=|$))/i', '<?php echo \'\\1\'; ?>' . "\n", $content);
-        // PHP语法檢查
+        // PHP語法檢查
         if ($this->config['tpl_deny_php'] && false !== strpos($content, '<?php')) {
             throw new Exception('not allow php tag', 11600);
         }
@@ -472,10 +472,10 @@ class Template
                     $array = $this->parseAttr($match[0]);
                     $file  = $array['file'];
                     unset($array['file']);
-                    // 分析模板文件名并读取内容
+                    // 分析模板文件名並读取内容
                     $parseStr = $this->parseTemplateName($file);
                     foreach ($array as $k => $v) {
-                        // 以$開头字符串转换成模板变量
+                        // 以$開头字符串轉換成模板变量
                         if (0 === strpos($v, '$')) {
                             $v = $this->get(substr($v, 1));
                         }
@@ -517,7 +517,7 @@ class Template
                     return;
                 }
             } else {
-                // 取得顶层模板block标签内容
+                // 取得顶層模板block标签内容
                 $baseBlocks = $this->parseBlock($template, true);
                 if (empty($extend)) {
                     // 無extend标签但有block标签的情况
@@ -539,10 +539,10 @@ class Template
                         }
                     }
                     if (isset($blocks[$name])) {
-                        // 带有{__block__}表示与所继承模板的相应标签合并，而不是覆盖
+                        // 带有{__block__}表示与所继承模板的相应标签合併，而不是覆盖
                         $replace = str_replace(['{__BLOCK__}', '{__block__}'], $replace, $blocks[$name]['content']);
                         if (!empty($val['parent'])) {
-                            // 如果不是最顶层的block标签
+                            // 如果不是最顶層的block标签
                             $parent = $val['parent'];
                             if (isset($blocks[$parent])) {
                                 $blocks[$parent]['content'] = str_replace($blocks[$name]['begin'] . $blocks[$name]['content'] . $blocks[$name]['end'], $replace, $blocks[$parent]['content']);
@@ -552,7 +552,7 @@ class Template
                             continue;
                         }
                     } elseif (!empty($val['parent'])) {
-                        // 如果子标签没有被继承则用原值
+                        // 如果子标签没有被继承則用原值
                         $children[$val['parent']][] = $name;
                         $blocks[$name]              = $val;
                     }
@@ -646,8 +646,8 @@ class Template
     }
 
     /**
-     * 搜索模板頁面中包含的TagLib库
-     * 并返回列表
+     * 搜索模板頁面中包含的TagLib庫
+     * 並返回列表
      * @access private
      * @param  string $content 模板内容
      * @return array|null
@@ -664,17 +664,17 @@ class Template
     }
 
     /**
-     * TagLib库解析
+     * TagLib庫解析
      * @access public
-     * @param  string   $tagLib 要解析的标签库
+     * @param  string   $tagLib 要解析的标签庫
      * @param  string   $content 要解析的模板内容
-     * @param  boolean  $hide 是否隐藏标签库前缀
+     * @param  boolean  $hide 是否隐藏标签庫前缀
      * @return void
      */
     public function parseTagLib($tagLib, &$content, $hide = false)
     {
         if (false !== strpos($tagLib, '\\')) {
-            // 支持指定标签库的命名空間
+            // 支援指定标签庫的命名空間
             $className = $tagLib;
             $tagLib    = substr($tagLib, strrpos($tagLib, '\\') + 1);
         } else {
@@ -763,7 +763,7 @@ class Template
                                 // $name為數组
                                 switch ($first) {
                                     case '?':
-                                        // {$varname??'xxx'} $varname有定义则输出$varname,否则输出xxx
+                                        // {$varname??'xxx'} $varname有定義則输出$varname,否則输出xxx
                                         $str = '<?php echo ' . ($express ?: 'isset(' . $name . ')') . '?' . $name . ':' . substr($str, 1) . '; ?>';
                                         break;
                                     case '=':
@@ -771,7 +771,7 @@ class Template
                                         $str = '<?php if(' . ($express ?: '!empty(' . $name . ')') . ') echo ' . substr($str, 1) . '; ?>';
                                         break;
                                     case ':':
-                                        // {$varname?:'xxx'} $varname為真时输出$varname,否则输出xxx
+                                        // {$varname?:'xxx'} $varname為真时输出$varname,否則输出xxx
                                         $str = '<?php echo ' . ($express ?: '!empty(' . $name . ')') . '?' . $name . $str . '; ?>';
                                         break;
                                     default:
@@ -791,7 +791,7 @@ class Template
                         $str = '<?php echo ' . $str . '; ?>';
                         break;
                     case '~':
-                        // 执行某个函數
+                        // 執行某个函數
                         $str = substr($str, 1);
                         $this->parseVar($str);
                         $str = '<?php ' . $str . '; ?>';
@@ -822,7 +822,7 @@ class Template
     }
 
     /**
-     * 模板变量解析,支持使用函數
+     * 模板变量解析,支援使用函數
      * 格式： {$varname|function1|function2=arg1,arg2}
      * @access public
      * @param  string $varStr 变量資料
@@ -835,7 +835,7 @@ class Template
             static $_varParseList = [];
             while ($matches[0]) {
                 $match = array_pop($matches[0]);
-                //如果已经解析过该变量字串，则直接返回变量值
+                //如果已经解析过该变量字串，則直接返回变量值
                 if (isset($_varParseList[$match[0]])) {
                     $parseStr = $_varParseList[$match[0]];
                 } else {
@@ -895,7 +895,7 @@ class Template
         }
         static $_varFunctionList = [];
         $_key                    = md5($varStr);
-        //如果已经解析过该变量字串，则直接返回变量值
+        //如果已经解析过该变量字串，則直接返回变量值
         if (isset($_varFunctionList[$_key])) {
             $varStr = $_varFunctionList[$_key];
         } else {
@@ -1014,7 +1014,7 @@ class Template
     }
 
     /**
-     * 分析加载的模板文件并读取内容 支持多个模板文件读取
+     * 分析載入的模板文件並读取内容 支援多个模板文件读取
      * @access private
      * @param  string $templateName 模板文件名
      * @return string
@@ -1028,7 +1028,7 @@ class Template
                 continue;
             }
             if (0 === strpos($templateName, '$')) {
-                //支持加载变量文件名
+                //支援載入变量文件名
                 $templateName = $this->get(substr($templateName, 1));
             }
             $template = $this->parseTemplateFile($templateName);
@@ -1077,7 +1077,7 @@ class Template
     }
 
     /**
-     * 按标签產生正则
+     * 按标签產生正則
      * @access private
      * @param  string $tagName 标签名
      * @return string

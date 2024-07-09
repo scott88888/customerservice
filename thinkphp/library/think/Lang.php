@@ -44,12 +44,12 @@ class Lang
     protected static $allowLangList = [];
 
     /**
-     * @var array Accept-Language 转义為對应語言包名稱 系统默认配置
+     * @var array Accept-Language 转义為對应語言包名稱 系统默認配置
      */
     protected static $acceptLanguage = ['zh-hans-cn' => 'zh-cn'];
 
     /**
-     * 设定当前的語言
+     * 设定當前的語言
      * @access public
      * @param  string $range 語言作用域
      * @return string
@@ -64,7 +64,7 @@ class Lang
     }
 
     /**
-     * 設定語言定义(不区分大小写)
+     * 設定語言定義(不区分大小寫)
      * @access public
      * @param  string|array  $name  語言变量
      * @param  string        $value 語言值
@@ -87,7 +87,7 @@ class Lang
     }
 
     /**
-     * 加载語言定义(不区分大小写)
+     * 載入語言定義(不区分大小寫)
      * @access public
      * @param  array|string $file 語言文件
      * @param  string $range      語言作用域
@@ -106,7 +106,7 @@ class Lang
 
         foreach ($file as $_file) {
             if (is_file($_file)) {
-                // 记录加载訊息
+                // 记录載入訊息
                 App::$debug && Log::record('[ LANG ] ' . $_file, 'info');
 
                 $_lang = include $_file;
@@ -125,7 +125,7 @@ class Lang
     }
 
     /**
-     * 取得語言定义(不区分大小写)
+     * 取得語言定義(不区分大小寫)
      * @access public
      * @param  string|null $name  語言变量
      * @param  string      $range 語言作用域
@@ -139,7 +139,7 @@ class Lang
     }
 
     /**
-     * 取得語言定义(不区分大小写)
+     * 取得語言定義(不区分大小寫)
      * @access public
      * @param  string|null $name  語言变量
      * @param  array       $vars  变量替换
@@ -150,7 +150,7 @@ class Lang
     {
         $range = $range ?: self::$range;
 
-        // 空参數返回所有定义
+        // 空参數返回所有定義
         if (empty($name)) {
             return self::$lang[$range];
         }

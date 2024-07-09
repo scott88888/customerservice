@@ -28,7 +28,7 @@ class Update extends Base
     }
 
     /**
-     * 执行更新操作
+     * 執行更新操作
      */
     public function update()
     {

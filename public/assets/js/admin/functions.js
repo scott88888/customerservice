@@ -12,7 +12,7 @@ var parse_html = function (data) {
     return data;
 };
 /**
- * 扩展函數库
+ * 扩展函數庫
  * Created by PhpStorm.
  * @version 2016-07-25 14:46:29
  * @author  cbwfree
@@ -72,7 +72,7 @@ function build_url(url, vars) {
 }
 
 function notify(title, options, callback) {
-    // 先檢查浏览器是否支持
+    // 先檢查浏览器是否支援
     if (!window.Notification || document.visibilityState != 'hidden') {
         return;
     }

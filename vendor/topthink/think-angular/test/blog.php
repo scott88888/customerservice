@@ -3,7 +3,7 @@ require './common.php';
 
 $view->assign('title', '博客');
 
-// 文章分类
+// 文章分類
 $category = load('blog_category');
 $view->assign('category', $category);
 

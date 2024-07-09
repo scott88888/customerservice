@@ -2,7 +2,7 @@
     var parent = window.parent;
     //dialog對象
     dialog = parent.$EDITORUI[window.frameElement.id.replace( /_iframe$/, '' )];
-    //当前打開dialog的編輯器实例
+    //當前打開dialog的編輯器實例
     editor = dialog.editor;
 
     UE = parent.UE;
@@ -41,7 +41,7 @@
         domUtils.on(window,'load',function () {
 
             var langImgPath = editor.options.langPath + editor.options.lang + "/images/";
-            //針對静态资源
+            //針對静态資源
             for ( var i in lang["static"] ) {
                 var dom = $G( i );
                 if(!dom) continue;

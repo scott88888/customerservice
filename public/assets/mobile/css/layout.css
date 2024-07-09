@@ -14,7 +14,7 @@
 .wc__borB:after{content: ''; border-bottom: 1px solid #d9d9d9; color: #d9d9d9; height: 1px; width: 100%; position: absolute; left: 0; bottom: 0; transform: scaleY(0.5); -webkit-transform: scaleY(0.5);}
 /* __ 箭头(arrow) */
 .wc__arr:after{content: ''; border-color: #d9d9d9; border-style: solid; border-width: .06rem .06rem 0 0; display: inline-block; vertical-align: middle; margin-right: -.07rem; height: .45rem; width: .45rem; position: relative; transform: rotate(45deg) scale(.5); -webkit-transform: rotate(45deg) scale(.5);}
-/* __ 顶部主题色 */
+/* __ 頂部主题色 */
 .wc__theme01{background-color: #dccda0!important;}
 
 
@@ -22,7 +22,7 @@
 .wechat__panel{-webkit-touch-callout:none; -webkit-user-select:none; -moz-user-select:none; user-select:none; -webkit-tap-highlight-color: transparent;}
 .wc__home-wrapper{height: calc(100vh); position: relative;}
 
-/* __ 顶部條 */
+/* __ 頂部條 */
 .wc__headerBar .inner{background:#1E9FFF; height:1rem; width:100%; z-index:999; position:relative;}
 .wc__headerBar.fixed{padding-bottom:1rem;}
 .wc__headerBar.fixed .inner{max-width:750px; width:100%; position:fixed; top:0;}
@@ -248,7 +248,7 @@
 .wc__popupTmpl.tmpl-recharge .item .ipt-txt{font-size: 40px; text-align: left; padding: 0;}
 .wc__popupTmpl.tmpl-recharge .item .unit{color: #333; font-size: 40px; margin-left: 0; margin-right: 15px;}
 #bankRecharge .popui__panel-btn:after{display: none;}
-/* __ 上传*/
+/* __ 上傳*/
 .wc__uploader-panel{background: #fff; border: 1px dashed #bbb; border-radius: 4px; height: 120px; width: 100%; position: relative;}
 .wc__uploader-panel .wc__uploader-input{opacity: 0; height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 1;}
 .wc__uploader-panel .wc__uploader-tips{color: #bbb; font-size: 14px; transform: translate(-50%, -50%); padding-top: 35px; position: absolute; top: 50%; left: 50%;}
@@ -285,7 +285,7 @@
 .wc__ucinfo-addFriends ul li .wc-num{color:#999;font-size:.28rem;padding:.2rem 0;line-height:.6rem;text-align:center;}
 .wc__ucinfo-addFriends ul li .wc-num img{display:inline-block;vertical-align:top;height:.5rem;width:.5rem;}
 
-/* __ 手机通讯录 */
+/* __ 手機通讯录 */
 .wc__ucinfo-phoneList ul li .capital{color:#999;font-size:.24rem;font-family:verdana;padding:.05rem .3rem;}
 .wc__ucinfo-phoneList ul li .item{background: #fff; font-family: 'Microsoft Yahei'; padding: .2rem .3rem; min-height: 1rem; position: relative;}
 .wc__ucinfo-phoneList ul li .item:after{content: ''; border-bottom: 1px solid #d9d9d9; color: #d9d9d9; height: 1px; width: auto; position: absolute; left: .3rem; right: .3rem; bottom: 0; transform: scaleY(0.5); -webkit-transform: scaleY(0.5);}
@@ -423,7 +423,7 @@
 /* }}} */
 
 
-/* …… 微聊顶部弹出選單 …… */
+/* …… 微聊頂部弹出選單 …… */
 .wc__popup-topbar{position:relative; display:none;}
 .wrap__topbar-mask{background:rgba(100,100,100,0); height: 100%; width: 100%; position:fixed; left:0; top: 0; z-index: 2008;}
 .wrap__topbar-menu{max-width:750px;width:100%;position: fixed; top: 1rem; z-index:2008;}
@@ -436,14 +436,14 @@
 .wrap__topbar-menu ul li .ico.i2{background: url(../img/topbar/icon__add-friend.png) no-repeat center; background-size: .48rem;}
 .wrap__topbar-menu ul li .ico.i3{background: url(../img/topbar/icon__help.png) no-repeat -.02rem center; background-size: .48rem;}
 
-/* …… 聊天頁面大图预览 …… */
+/* …… 聊天頁面大圖預覽 …… */
 .wc__popup-imgPreview{background: rgba(0,0,0,1); height: 100%; width: 100%; position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 2003;}
 .wc__popup-imgPreview .swiper-container{height: 100%; max-width: 750px;}
 .wc__popup-imgPreview .swiper-slide{display:-webkit-box; display:-webkit-flex; display:flex; align-items: center;}
 .wc__popup-imgPreview .swiper-slide img{max-height: 100%; max-width: 100%; width: 100%; transition: all .3s; transform:scale(.8);}
 .wc__popup-imgPreview .swiper-slide-active img{transform:scale(1);}
 
-/* …… 聊天頁面视频预览 …… */
+/* …… 聊天頁面视频預覽 …… */
 .wc__popup-videoPreview{background: rgba(0,0,0,1); height: 100%; width: 100%; position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 2003;}
 .wc__popup-videoPreview:after{content: ''; background-image: linear-gradient(-180deg,  rgba(0,0,0,.6), transparent); height: 1.2rem; width: 100%; position: absolute; top: 0; left: 0;}
 .wc__popup-videoPreview .wc__videoClose{margin-left: -.25rem; height: .5rem; width: .5rem; position: absolute; top: .3rem; left: 50%; z-index: 2003;}

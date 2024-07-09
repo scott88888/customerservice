@@ -14,7 +14,7 @@ namespace think\template;
 use think\Exception;
 
 /**
- * ThinkPHP标签库TagLib解析基类
+ * ThinkPHP标签庫TagLib解析基類
  * @category   Think
  * @package  Think
  * @subpackage  Template
@@ -24,42 +24,42 @@ class TagLib
 {
 
     /**
-     * 标签库定义XML文件
+     * 标签庫定義XML文件
      * @var string
      * @access protected
      */
     protected $xml  = '';
-    protected $tags = []; // 标签定义
+    protected $tags = []; // 标签定義
     /**
-     * 标签库名稱
+     * 标签庫名稱
      * @var string
      * @access protected
      */
     protected $tagLib = '';
 
     /**
-     * 标签库标签列表
+     * 标签庫标签列表
      * @var array
      * @access protected
      */
     protected $tagList = [];
 
     /**
-     * 标签库分析數组
+     * 标签庫分析數组
      * @var array
      * @access protected
      */
     protected $parse = [];
 
     /**
-     * 标签库是否有效
+     * 标签庫是否有效
      * @var bool
      * @access protected
      */
     protected $valid = false;
 
     /**
-     * 当前模板對象
+     * 當前模板對象
      * @var object
      * @access protected
      */
@@ -78,10 +78,10 @@ class TagLib
     }
 
     /**
-     * 按签标库替换頁面中的标签
+     * 按签标庫替换頁面中的标签
      * @access public
      * @param  string $content 模板内容
-     * @param  string $lib 标签库名
+     * @param  string $lib 标签庫名
      * @return void
      */
     public function parseTag(&$content, $lib = '')
@@ -109,7 +109,7 @@ class TagLib
                 foreach ($matches as $match) {
                     if ('' == $match[1][0]) {
                         $name = strtolower($match[2][0]);
-                        // 如果有没闭合的标签头则取出最后一个
+                        // 如果有没闭合的标签头則取出最後一个
                         if (!empty($right[$name])) {
                             // $match[0][1]為标签结束符在模板中的位置
                             $nodes[$match[0][1]] = [
@@ -124,14 +124,14 @@ class TagLib
                     }
                 }
                 unset($right, $matches);
-                // 按标签在模板中的位置从后向前排序
+                // 按标签在模板中的位置从後向前排序
                 krsort($nodes);
             }
 
             $break = '<!--###break###--!>';
             if ($nodes) {
                 $beginArray = [];
-                // 标签替换 从后向前
+                // 标签替换 从後向前
                 foreach ($nodes as $pos => $node) {
                     // 對应的标签名
                     $name  = $tags[1][$node['name']];
@@ -139,16 +139,16 @@ class TagLib
                     // 解析标签属性
                     $attrs  = $this->parseAttr($node['begin'][0], $name, $alias);
                     $method = 'tag' . $name;
-                    // 读取标签库中對应的标签内容 replace[0]用来替换标签头，replace[1]用来替换标签尾
+                    // 读取标签庫中對应的标签内容 replace[0]用来替换标签头，replace[1]用来替换标签尾
                     $replace = explode($break, $this->$method($attrs, $break));
                     if (count($replace) > 1) {
                         while ($beginArray) {
                             $begin = end($beginArray);
-                            // 判断当前标签尾的位置是否在栈中最后一个标签头的後面，是则為子标签
+                            // 判断當前标签尾的位置是否在栈中最後一个标签头的後面，是則為子标签
                             if ($node['end'][1] > $begin['pos']) {
                                 break;
                             } else {
-                                // 不為子标签时，取出栈中最后一个标签头
+                                // 不為子标签时，取出栈中最後一个标签头
                                 $begin = array_pop($beginArray);
                                 // 替换标签头部
                                 $content = substr_replace($content, $begin['str'], $begin['pos'], $begin['len']);
@@ -184,7 +184,7 @@ class TagLib
     }
 
     /**
-     * 按标签產生正则
+     * 按标签產生正則
      * @access private
      * @param  array|string     $tags 标签名
      * @param  boolean          $close 是否為闭合标签
@@ -215,7 +215,7 @@ class TagLib
     }
 
     /**
-     * 分析标签属性 正则方式
+     * 分析标签属性 正則方式
      * @access public
      * @param string $str 标签属性字符串
      * @param string $name 标签名
@@ -231,7 +231,7 @@ class TagLib
                 $result[$val] = $matches['value'][$key];
             }
             if (!isset($this->tags[$name])) {
-                // 检测是否存在别名定义
+                // 检测是否存在别名定義
                 foreach ($this->tags as $key => $val) {
                     if (isset($val['alias'])) {
                         $array = (array) $val['alias'];
@@ -308,12 +308,12 @@ class TagLib
             // 以:開头為函數调用，解析前去掉:
             $name = substr($name, 1);
         } elseif ('$' != $flag && preg_match('/[a-zA-Z_]/', $flag)) {
-            // XXX: 这句的写法可能还需要改进
+            // XXX: 这句的寫法可能还需要改进
             // 常量不需要解析
             if (defined($name)) {
                 return $name;
             }
-            // 不以$開头并且也不是常量，自動补上$前缀
+            // 不以$開头並且也不是常量，自動补上$前缀
             $name = '$' . $name;
         }
         $this->tpl->parseVar($name);
@@ -326,7 +326,7 @@ class TagLib
      * @access public
      * @return array
      */
-    // 取得标签定义
+    // 取得标签定義
     public function getTags()
     {
         return $this->tags;

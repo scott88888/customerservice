@@ -100,11 +100,12 @@
         <script src="/static/component/layui/layui.js"></script>
         <script src="/static/component/pear/pear.js"></script>
         <script>
-			layui.use(['table', 'form', 'jquery','common'], function() {
+			layui.use(['table', 'form', 'jquery','common','laypage'], function() {
 				let table = layui.table;
 				let form = layui.form;
 				let $ = layui.jquery;
 				let common = layui.common;
+                let laypage = layui.laypage;
 
 				let MODULE_PATH = "/service/";
 
@@ -163,7 +164,27 @@
 						title: '刷新',
 						layEvent: 'refresh',
 						icon: 'layui-icon-refresh',
-					}, 'filter', 'print', 'exports']
+					}, 'filter', 'print', 'exports'],
+                page: {
+                    layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
+                    prev: '上一頁',
+                    next: '下一頁',
+                    first: '首頁',
+                    last: '尾頁'
+                },                
+                text: {
+                    none: '無資料'
+                },
+                done: function (res, curr, count) {
+                    // 在表格渲染完成後修改其他文字
+                    $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
+                        return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
+                    });
+                    $('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
+                        var text = $(this).text();
+                        $(this).text(text.replace('条/页', '條/頁'));
+                    });
+                }          
 				});
 
 				table.on('toolbar(dataTable)', function(obj) {

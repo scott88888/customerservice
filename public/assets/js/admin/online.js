@@ -284,7 +284,18 @@ function getblacklist() {
 }
 
 
-
+function toTraditionalChinese(text) {
+    const replacements = {
+        '中国': '',
+        '台湾': '台灣',
+        '中国 、台湾': '台灣',
+        // 可以根據需要添加更多簡繁轉換
+    };
+    
+    return Object.entries(replacements).reduce((acc, [key, value]) => {
+        return acc.replace(new RegExp(key, 'g'), value);
+    }, text);
+}
 
 //取得ip的详细訊息
 var getip = function (cip) {
@@ -296,16 +307,16 @@ var getip = function (cip) {
         },
         dataType:'json',
         success: function (res) {
-
             if(res.code == 0){
                 var data = res.data;
                 var str = "";
-                str += data[0] + " 、";
-                str += data[1] + " 、";
-                str += data[2];
+                str += toTraditionalChinese(data[0]) + " ";
+                str += toTraditionalChinese(data[1]) + " 、";
+                str += toTraditionalChinese(data[2]);         
                 $(".iparea").text(str);
                 $(".iparea").text(res.data.ip);
             }
+           
 
         }
     })

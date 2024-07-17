@@ -115,14 +115,6 @@
                     updatePaginationText();
                 }
             });
-
-            table.on('toolbar(dataTable)', function (obj) {
-                if (obj.event === 'refresh') {
-                    window.refresh();
-                } else if (obj.event === 'batchRemove') {
-                    window.batchRemove(obj);
-                }
-            });
             table.on('pagebar(dataTable)', function (obj) {
                 setTimeout(updatePaginationText, 0);
             });
@@ -130,6 +122,14 @@
             $(document).on('click', '.layui-laypage-btn', function () {
                 $(this).text('確定');
             });
+            table.on('toolbar(dataTable)', function (obj) {
+                if (obj.event === 'refresh') {
+                    window.refresh();
+                } else if (obj.event === 'batchRemove') {
+                    window.batchRemove(obj);
+                }
+            });
+
             form.on('submit(query)', function (data) {
                 table.reload('dataTable', {
                     where: data.field,

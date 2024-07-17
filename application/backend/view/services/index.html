@@ -1,42 +1,43 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="/static/component/pear/css/pear.css" />
 </head>
-<body class="pear-container">
-		<div class="layui-card">
-			<div class="layui-card-body">
-				<form class="layui-form" action="">
-					<div class="layui-form-item">
-						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">使用者名稱</label>
-							<div class="layui-input-inline">
-								<input type="text" name="user_name" placeholder="請輸入客服使用者名稱" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item layui-inline">
-							<button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
-								<i class="layui-icon layui-icon-search"></i>
-								查詢
-							</button>
-							<button type="reset" class="pear-btn pear-btn-md">
-								<i class="layui-icon layui-icon-refresh"></i>
-								重置
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-		<div class="layui-card">
-			<div class="layui-card-body">
-				<table id="dataTable" lay-filter="dataTable"></table>
-			</div>
-		</div>
 
-		<script type="text/html" id="user-status">
+<body class="pear-container">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <div class="layui-form-item layui-inline">
+                        <label class="layui-form-label">使用者名稱</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="user_name" placeholder="請輸入客服使用者名稱" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
+                            <i class="layui-icon layui-icon-search"></i>
+                            查詢
+                        </button>
+                        <button type="reset" class="pear-btn pear-btn-md">
+                            <i class="layui-icon layui-icon-refresh"></i>
+                            重置
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="dataTable" lay-filter="dataTable"></table>
+        </div>
+    </div>
+
+    <script type="text/html" id="user-status">
 			{{#if (d.state == 'online') { }}
 			<span>線上</span>
 			{{# }else{ }}
@@ -44,202 +45,216 @@
 			{{# } }}
 		</script>
 
-		<script type="text/html" id="user-enable">
+    <script type="text/html" id="user-enable">
 			<input type="checkbox" name="enable" value="{{d.service_id}}" lay-skin="switch" lay-text="開啟|關閉" lay-filter="user-enable" {{ d.offline_first == 1 ? 'checked' : '' }}>
 		</script>
 
-		<script type="text/html" id="tool-bar">
+    <script type="text/html" id="tool-bar">
 			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>刪除</button>
 			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personal}}"><i class="layui-icon layui-icon-link"></i>複製</button>
 			<button class="pear-btn pear-btn-warming pear-btn-xs" lay-event="clear"><i class="layui-icon layui-icon-fonts-clear"></i>清空记录</button>
 		</script>
 
-        <script src="/static/component/layui/layui.js"></script>
-        <script src="/static/component/pear/pear.js"></script>
-		<script src="__script__/platform/clipboard.min.js?v=__lkversion__"></script>
-        <script>
-			layui.use(['table', 'form', 'jquery','common','laypage'], function() {
-				let table = layui.table;
-				let form = layui.form;
-				let $ = layui.jquery;
-				let common = layui.common;
-                let laypage = layui.laypage;
+    <script src="/static/component/layui/layui.js"></script>
+    <script src="/static/component/pear/pear.js"></script>
+    <script src="__script__/platform/clipboard.min.js?v=__lkversion__"></script>
+    <script>
+        layui.use(['table', 'form', 'jquery', 'common', 'laypage'], function () {
+            let table = layui.table;
+            let form = layui.form;
+            let $ = layui.jquery;
+            let common = layui.common;
+            let laypage = layui.laypage;
 
-				let MODULE_PATH = "/backend/";
+            let MODULE_PATH = "/backend/";
 
-                let cols = [
-                        [{
-                                field: 'service_id',
-                                title: 'ID',
-                                unresize: true,
-                                align: 'left',
-                                width: 80
-                            },{
-                                field: 'user_name',
-                                title: '使用者名稱',
-                                unresize: true,
-                                align: 'left'
-                            }, {
-                                field: 'nick_name',
-                                title: '暱稱',
-                                unresize: true,
-                                align: 'left',
-                            },  {
-                                field: 'business_name',
-                                title: '所属商户',
-                                unresize: true,
-                                align: 'left',
-                            },
-                            {
-                                field: 'state',
-                                title: '線上狀態',
-                                unresize: true,
-                                align: 'left',
-                                templet: '#user-status'
-                            },
-                            {
-                                title: '操作',
-                                toolbar: '#tool-bar',
-                                align: 'center',
-                                width: 300
-                            }
-                        ]
-                    ];
-
-				table.render({
-					elem: '#dataTable',
-					url: MODULE_PATH + 'services/index',
-					page: true,
-					cols: cols,
-                    cellMinWidth: 100,
-					skin: 'line',
-					toolbar: '#toolbar',
-					defaultToolbar: [{
-						title: '刷新',
-						layEvent: 'refresh',
-						icon: 'layui-icon-refresh',
-					}, 'filter', 'print', 'exports'],
+            let cols = [
+                [{
+                    field: 'service_id',
+                    title: 'ID',
+                    unresize: true,
+                    align: 'left',
+                    width: 80
+                }, {
+                    field: 'user_name',
+                    title: '使用者名稱',
+                    unresize: true,
+                    align: 'left'
+                }, {
+                    field: 'nick_name',
+                    title: '暱稱',
+                    unresize: true,
+                    align: 'left',
+                }, {
+                    field: 'business_name',
+                    title: '所属商户',
+                    unresize: true,
+                    align: 'left',
+                },
+                {
+                    field: 'state',
+                    title: '線上狀態',
+                    unresize: true,
+                    align: 'left',
+                    templet: '#user-status'
+                },
+                {
+                    title: '操作',
+                    toolbar: '#tool-bar',
+                    align: 'center',
+                    width: 300
+                }
+                ]
+            ];
+            function updatePaginationText() {
+                $('.layui-laypage-skip').contents().filter(function () {
+                    return this.nodeType === 3;
+                }).each(function () {
+                    this.textContent = this.textContent.replace('到第', '到第').replace('页', '頁');
+                });
+                $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
+                    return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
+                });
+                $('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
+                    var text = $(this).text();
+                    $(this).text(text.replace('条/页', '條/頁'));
+                });
+                $('.layui-laypage-btn').text('確定');
+            }
+            table.render({
+                elem: '#dataTable',
+                url: MODULE_PATH + 'services/index',
+                page: true,
+                cols: cols,
+                cellMinWidth: 100,
+                skin: 'line',
+                toolbar: '#toolbar',
+                defaultToolbar: [{
+                    title: '刷新',
+                    layEvent: 'refresh',
+                    icon: 'layui-icon-refresh',
+                }, 'filter', 'print', 'exports'],
                 page: {
                     layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
                     prev: '上一頁',
                     next: '下一頁',
                     first: '首頁',
                     last: '尾頁'
-                },                
+                },
                 text: {
                     none: '無資料'
                 },
                 done: function (res, curr, count) {
-                    // 在表格渲染完成後修改其他文字
-                    $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
-                        return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
-                    });
-                    $('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
-                        var text = $(this).text();
-                        $(this).text(text.replace('条/页', '條/頁'));
-                    });
-                }          
-				});
+                    updatePaginationText();
+                }
+            });
+            table.on('pagebar(dataTable)', function (obj) {
+                setTimeout(updatePaginationText, 0);
+            });
 
-				table.on('toolbar(dataTable)', function(obj) {
-					if (obj.event === 'refresh') {
-						window.refresh();
-					}
-				});
+            $(document).on('click', '.layui-laypage-btn', function () {
+                $(this).text('確定');
+            });
 
-                table.on('tool(dataTable)', function(obj) {
-					if (obj.event === 'copy') {
-                        window.copy(obj);
-                    }else if (obj.event === 'remove') {
-                        window.remove(obj);
-                    }else if (obj.event === 'clear') {
-                        window.clear(obj);
-                    }
+            table.on('toolbar(dataTable)', function (obj) {
+                if (obj.event === 'refresh') {
+                    window.refresh();
+                }
+            });
+            table.on('tool(dataTable)', function (obj) {
+                if (obj.event === 'copy') {
+                    window.copy(obj);
+                } else if (obj.event === 'remove') {
+                    window.remove(obj);
+                } else if (obj.event === 'clear') {
+                    window.clear(obj);
+                }
+            });
+
+            form.on('submit(query)', function (data) {
+                table.reload('dataTable', {
+                    where: data.field,
+                    page: { curr: 1 }
                 });
+                return false;
+            });
 
-                form.on('submit(query)', function(data) {
-                    table.reload('dataTable', {
-                        where: data.field,
-                        page:{curr: 1}
-                    });
-                    return false;
+            window.copy = function (obj) {
+                var clipboard = new ClipboardJS('.copy');
+                clipboard.on('success', function (e) {
+                    layer.msg('複製客服連結成功', { icon: 1 });
+                    e.clearSelection();
                 });
+                clipboard.on('error', function (e) {
+                    layer.msg('複製成功，請關閉相容模式或升級瀏覽器');
+                });
+            };
 
-                window.copy = function(obj) {
-                    var clipboard = new ClipboardJS('.copy');
-                    clipboard.on('success', function(e) {
-                        layer.msg('複製客服連結成功', {icon: 1});
-                        e.clearSelection();
-                    });
-                    clipboard.on('error', function(e) {
-                        layer.msg('複製成功，請關閉相容模式或升級瀏覽器');
-                    });
-				};
-
-                window.remove = function(obj) {
-                    layer.confirm('確定要刪除該用戶', {
-                        icon: 3,
-                        title: '提示'
-                    }, function(index) {
-                        layer.close(index);
-                        let loading = layer.load();
-                        $.ajax({
-                            url: MODULE_PATH + "services/remove?service_id="+obj.data.service_id,
-                            dataType: 'json',
-                            type: 'delete',
-                            success: function(result) {
-                                layer.close(loading);
-                                if (result.code === 1) {
-                                    layer.msg(result.msg, {
-                                        icon: 1,
-                                        time: 1000
-                                    }, function() {
-                                        obj.del();
-                                    });
-                                } else {
-                                    layer.msg(result.msg, {
-                                        icon: 2,
-                                        time: 1000
-                                    });
-                                }
+            window.remove = function (obj) {
+                layer.confirm('確定要刪除該用戶', {
+                    icon: 3,
+                    title: '提示'
+                }, function (index) {
+                    layer.close(index);
+                    let loading = layer.load();
+                    $.ajax({
+                        url: MODULE_PATH + "services/remove?service_id=" + obj.data.service_id,
+                        dataType: 'json',
+                        type: 'delete',
+                        success: function (result) {
+                            layer.close(loading);
+                            if (result.code === 1) {
+                                layer.msg(result.msg, {
+                                    icon: 1,
+                                    time: 1000
+                                }, function () {
+                                    obj.del();
+                                });
+                            } else {
+                                layer.msg(result.msg, {
+                                    icon: 2,
+                                    time: 1000
+                                });
                             }
-                        })
-                    });
-                };
+                        }
+                    })
+                });
+            };
 
-                window.clear = function(obj) {
-                    layer.confirm('確定要清空该客服的所有聊天记录吗？', {
-                        icon: 3,
-                        title: '提示'
-                    }, function(index) {
-                        layer.close(index);
-                        let loading = layer.load();
-                        $.ajax({
-                            url: MODULE_PATH + "services/clear?id="+obj.data.service_id,
-                            dataType: 'json',
-                            type: 'delete',
-                            success: function(result) {
-                                layer.close(loading);
-                                if (result.code === 1) {
-                                    layer.msg(result.msg, {
-                                        icon: 1,
-                                        time: 1000
-                                    });
-                                } else {
-                                    layer.msg(result.msg, {
-                                        icon: 2,
-                                        time: 1000
-                                    });
-                                }
+            window.clear = function (obj) {
+                layer.confirm('確定要清空该客服的所有聊天记录吗？', {
+                    icon: 3,
+                    title: '提示'
+                }, function (index) {
+                    layer.close(index);
+                    let loading = layer.load();
+                    $.ajax({
+                        url: MODULE_PATH + "services/clear?id=" + obj.data.service_id,
+                        dataType: 'json',
+                        type: 'delete',
+                        success: function (result) {
+                            layer.close(loading);
+                            if (result.code === 1) {
+                                layer.msg(result.msg, {
+                                    icon: 1,
+                                    time: 1000
+                                });
+                            } else {
+                                layer.msg(result.msg, {
+                                    icon: 2,
+                                    time: 1000
+                                });
                             }
-                        })
-                    });
-                };
-                
-				window.refresh = function(param) {
-					table.reload('dataTable');
-				}
-			})
-		</script>
+                        }
+                    })
+                });
+            };
+
+            window.refresh = function (param) {
+                table.reload('dataTable');
+            }
+        })
+    </script>
 </body>
+
 </html>

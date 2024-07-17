@@ -1,60 +1,61 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="/static/component/pear/css/pear.css" />
 </head>
-<body class="pear-container">
-		<div class="layui-card">
-			<div class="layui-card-body">
-				<form class="layui-form" action="">
-					<div class="layui-form-item">
-						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">關鍵字</label>
-							<div class="layui-input-inline">
-								<input type="text" name="keyword" placeholder="請輸入關鍵字" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">語言</label>
-							<div class="layui-input-inline">
-								<select name="lang">
-									<option value="">選擇語言</option>
-									{foreach name=":config('lang')" item="vo"}
-									<option value="{$key}">{$vo}</option>
-									{/foreach}
-								</select>
-							</div>
-						</div>
-						<div class="layui-form-item layui-inline">
-							<button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
-								<i class="layui-icon layui-icon-search"></i>
-								查詢
-							</button>
-							<button type="reset" class="pear-btn pear-btn-md">
-								<i class="layui-icon layui-icon-refresh"></i>
-								重置
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-		<div class="layui-card">
-			<div class="layui-card-body">
-				<table id="dataTable" lay-filter="dataTable"></table>
-			</div>
-		</div>
 
-		<script type="text/html" id="toolbar">
+<body class="pear-container">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <div class="layui-form-item layui-inline">
+                        <label class="layui-form-label">關鍵字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="keyword" placeholder="請輸入關鍵字" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <label class="layui-form-label">語言</label>
+                        <div class="layui-input-inline">
+                            <select name="lang">
+                                <option value="">選擇語言</option>
+                                {foreach name=":config('lang')" item="vo"}
+                                <option value="{$key}">{$vo}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
+                            <i class="layui-icon layui-icon-search"></i>
+                            查詢
+                        </button>
+                        <button type="reset" class="pear-btn pear-btn-md">
+                            <i class="layui-icon layui-icon-refresh"></i>
+                            重置
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="dataTable" lay-filter="dataTable"></table>
+        </div>
+    </div>
+
+    <script type="text/html" id="toolbar">
 		    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
 		        <i class="layui-icon layui-icon-addition"></i>
 		        新增機器人自動回覆
 			</button>
 		</script>
 
-		<script type="text/html" id="status">
+    <script type="text/html" id="status">
 			{{#if (d.status == 1) { }}
 			<span>全等</span>
 			{{# }else{ }}
@@ -62,181 +63,196 @@
 			{{# } }}
 		</script>
 
-		<script type="text/html" id="tool-bar">
+    <script type="text/html" id="tool-bar">
 			<button class="pear-btn pear-btn-primary pear-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>編輯</button>
 			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>刪除</button>
 		</script>
 
-        <script src="/static/component/layui/layui.js"></script>
-        <script src="/static/component/pear/pear.js"></script>
-        <script>
-			layui.use(['table', 'form', 'jquery','common','laypage'], function() {
-				let table = layui.table;
-				let form = layui.form;
-				let $ = layui.jquery;
-				let common = layui.common;
-                let laypage = layui.laypage;
+    <script src="/static/component/layui/layui.js"></script>
+    <script src="/static/component/pear/pear.js"></script>
+    <script>
+        layui.use(['table', 'form', 'jquery', 'common', 'laypage'], function () {
+            let table = layui.table;
+            let form = layui.form;
+            let $ = layui.jquery;
+            let common = layui.common;
+            let laypage = layui.laypage;
 
-				let MODULE_PATH = "/service/";
+            let MODULE_PATH = "/service/";
 
-                let cols = [
-                        [{
-                                field: 'id',
-                                title: 'ID',
-                                unresize: true,
-                                align: 'left'
-                            }, {
-                                field: 'keyword',
-                                title: '關鍵字',
-                                unresize: true,
-                                align: 'left',
-                            },  {
-                                field: 'reply',
-                                title: '回覆內容',
-                                unresize: true,
-                                align: 'left',
-								width: 300,
-                            },{
-								field: 'sort',
-								title: '排序',
-								unresize: true,
-								align: 'left',
-							},{
-								field: 'lang',
-								title: '語言',
-								unresize: true,
-								align: 'left',
-							},
-                            {
-                                field: 'status',
-                                title: '匹配方式',
-                                unresize: true,
-                                align: 'left',
-                            	templet: '#status'
-                            },
-                            {
-                                title: '操作',
-                                toolbar: '#tool-bar',
-                                align: 'center',
-                                width: 200
-                            }
-                        ]
-                    ];
-
-				table.render({
-					elem: '#dataTable',
-					url: MODULE_PATH + 'robots/index',
-					page: true,
-					cols: cols,
-                    cellMinWidth: 100,
-					skin: 'line',
-					toolbar: '#toolbar',
-					defaultToolbar: [{
-						title: '刷新',
-						layEvent: 'refresh',
-						icon: 'layui-icon-refresh',
-					}, 'filter', 'print', 'exports'],
+            let cols = [
+                [{
+                    field: 'id',
+                    title: 'ID',
+                    unresize: true,
+                    align: 'left'
+                }, {
+                    field: 'keyword',
+                    title: '關鍵字',
+                    unresize: true,
+                    align: 'left',
+                }, {
+                    field: 'reply',
+                    title: '回覆內容',
+                    unresize: true,
+                    align: 'left',
+                    width: 300,
+                }, {
+                    field: 'sort',
+                    title: '排序',
+                    unresize: true,
+                    align: 'left',
+                }, {
+                    field: 'lang',
+                    title: '語言',
+                    unresize: true,
+                    align: 'left',
+                },
+                {
+                    field: 'status',
+                    title: '匹配方式',
+                    unresize: true,
+                    align: 'left',
+                    templet: '#status'
+                },
+                {
+                    title: '操作',
+                    toolbar: '#tool-bar',
+                    align: 'center',
+                    width: 200
+                }
+                ]
+            ];
+            function updatePaginationText() {
+                $('.layui-laypage-skip').contents().filter(function () {
+                    return this.nodeType === 3;
+                }).each(function () {
+                    this.textContent = this.textContent.replace('到第', '到第').replace('页', '頁');
+                });
+                $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
+                    return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
+                });
+                $('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
+                    var text = $(this).text();
+                    $(this).text(text.replace('条/页', '條/頁'));
+                });
+                $('.layui-laypage-btn').text('確定');
+            }
+            table.render({
+                elem: '#dataTable',
+                url: MODULE_PATH + 'robots/index',
+                page: true,
+                cols: cols,
+                cellMinWidth: 100,
+                skin: 'line',
+                toolbar: '#toolbar',
+                defaultToolbar: [{
+                    title: '刷新',
+                    layEvent: 'refresh',
+                    icon: 'layui-icon-refresh',
+                }, 'filter', 'print', 'exports'],
                 page: {
                     layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
                     prev: '上一頁',
                     next: '下一頁',
                     first: '首頁',
                     last: '尾頁'
-                },                
+                },
                 text: {
                     none: '無資料'
                 },
                 done: function (res, curr, count) {
-                    // 在表格渲染完成後修改其他文字
-                    $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
-                        return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
-                    });
-                    $('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
-                        var text = $(this).text();
-                        $(this).text(text.replace('条/页', '條/頁'));
-                    });
-                }          
-				});
+                    updatePaginationText();
+                }
+            });
+            table.on('pagebar(dataTable)', function (obj) {
+                setTimeout(updatePaginationText, 0);
+            });
 
-				table.on('toolbar(dataTable)', function(obj) {
-					if (obj.event === 'refresh') {
-						window.refresh();
-					} else if (obj.event === 'add') {
-                        window.add(obj);
-                    }
-				});
+            $(document).on('click', '.layui-laypage-btn', function () {
+                $(this).text('確定');
+            });
 
-                table.on('tool(dataTable)', function(obj) {
-					if (obj.event === 'edit') {
-                        window.edit(obj);
-                    }else if (obj.event === 'remove') {
-                        window.remove(obj);
-                    }
+            table.on('toolbar(dataTable)', function (obj) {
+                if (obj.event === 'refresh') {
+                    window.refresh();
+                } else if (obj.event === 'add') {
+                    window.add(obj);
+                }
+            });
+
+            table.on('tool(dataTable)', function (obj) {
+                if (obj.event === 'edit') {
+                    window.edit(obj);
+                } else if (obj.event === 'remove') {
+                    window.remove(obj);
+                }
+            });
+
+            form.on('submit(query)', function (data) {
+                table.reload('dataTable', {
+                    where: data.field,
+                    page: { curr: 1 }
                 });
+                return false;
+            });
 
-                form.on('submit(query)', function(data) {
-                    table.reload('dataTable', {
-                        where: data.field,
-                        page:{curr: 1}
-                    });
-                    return false;
+            window.add = function (obj) {
+                layer.open({
+                    type: 2,
+                    title: '新增機器人自動回覆',
+                    shade: 0.1,
+                    area: ['700px', '500px'],
+                    content: MODULE_PATH + 'robots/add'
                 });
+            };
 
-				window.add = function(obj) {
-                    layer.open({
-                        type: 2,
-                        title: '新增機器人自動回覆',
-                        shade: 0.1,
-                        area: ['700px', '500px'],
-                        content: MODULE_PATH + 'robots/add'
-                    });
-                };
+            window.edit = function (obj) {
+                layer.open({
+                    type: 2,
+                    title: '編輯機器人自動回覆',
+                    shade: 0.1,
+                    area: ['700px', '500px'],
+                    content: MODULE_PATH + 'robots/edit?id=' + obj.data.id
+                });
+            };
 
-                window.edit = function(obj) {
-                    layer.open({
-                        type: 2,
-                        title: '編輯機器人自動回覆',
-                        shade: 0.1,
-                        area: ['700px', '500px'],
-                        content: MODULE_PATH + 'robots/edit?id='+obj.data.id
-                    });
-                };
-
-                window.remove = function(obj) {
-                    layer.confirm('確定要刪除该機器人自動回覆吗？', {
-                        icon: 3,
-                        title: '提示'
-                    }, function(index) {
-                        layer.close(index);
-                        let loading = layer.load();
-                        $.ajax({
-                            url: MODULE_PATH + "robots/remove?id="+obj.data.id,
-                            dataType: 'json',
-                            type: 'delete',
-                            success: function(result) {
-                                layer.close(loading);
-                                if (result.code === 1) {
-                                    layer.msg(result.msg, {
-                                        icon: 1,
-                                        time: 1000
-                                    }, function() {
-                                        obj.del();
-                                    });
-                                } else {
-                                    layer.msg(result.msg, {
-                                        icon: 2,
-                                        time: 1000
-                                    });
-                                }
+            window.remove = function (obj) {
+                layer.confirm('確定要刪除该機器人自動回覆吗？', {
+                    icon: 3,
+                    title: '提示'
+                }, function (index) {
+                    layer.close(index);
+                    let loading = layer.load();
+                    $.ajax({
+                        url: MODULE_PATH + "robots/remove?id=" + obj.data.id,
+                        dataType: 'json',
+                        type: 'delete',
+                        success: function (result) {
+                            layer.close(loading);
+                            if (result.code === 1) {
+                                layer.msg(result.msg, {
+                                    icon: 1,
+                                    time: 1000
+                                }, function () {
+                                    obj.del();
+                                });
+                            } else {
+                                layer.msg(result.msg, {
+                                    icon: 2,
+                                    time: 1000
+                                });
                             }
-                        })
-                    });
-                };
-                
-				window.refresh = function(param) {
-					table.reload('dataTable');
-				}
-			})
-		</script>
+                        }
+                    })
+                });
+            };
+
+            window.refresh = function (param) {
+                table.reload('dataTable');
+            }
+        })
+    </script>
 </body>
+
 </html>

@@ -1,14 +1,15 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="/static/component/pear/css/pear.css" />
+	<link rel="stylesheet" href="/static/component/pear/css/pear.css" />
 	<style>
-		.layui-table-cell{
-			height: auto!important;
+		.layui-table-cell {
+			height: auto !important;
 		}
-		.star-img{
+
+		.star-img {
 			display: inline-block;
 			margin-left: 1px;
 			margin-top: -5px;
@@ -17,71 +18,72 @@
 		}
 	</style>
 </head>
+
 <body class="pear-container">
-		<div class="layui-card">
-			<div class="layui-card-body">
-				<form class="layui-form" action="">
-					<div class="layui-form-item">
-						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">關鍵字</label>
-							<div class="layui-input-inline">
-								<input type="text" name="keyword" placeholder="請輸入客服" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">客服分組</label>
-							<div class="layui-input-inline">
-								<select name="group">
-									<option value="">請選擇客服分組</option>
-									{foreach $group as $v}
-									<option value="{$v.id}">{$v.groupname|default=''}</option>
-									{/foreach}
-								</select>
-							</div>
-						</div>
-						<div class="layui-form-item layui-inline">
-							<label class="layui-form-label">评分等级</label>
-							<div class="layui-input-inline">
-								<select name="star">
-									<option value="">請選擇評分等級</option>
-									<option value="1">一星</option>
-									<option value="2">二星</option>
-									<option value="3">三星</option>
-									<option value="4">四星</option>
-									<option value="5">五星</option>
-								</select>
-							</div>
-						</div>
-						<div class="layui-form-item layui-inline">
-							<button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
-								<i class="layui-icon layui-icon-search"></i>
-								查詢
-							</button>
-							<button type="reset" class="pear-btn pear-btn-md">
-								<i class="layui-icon layui-icon-refresh"></i>
-								重置
-							</button>
+	<div class="layui-card">
+		<div class="layui-card-body">
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<div class="layui-form-item layui-inline">
+						<label class="layui-form-label">關鍵字</label>
+						<div class="layui-input-inline">
+							<input type="text" name="keyword" placeholder="請輸入客服" class="layui-input">
 						</div>
 					</div>
-				</form>
-			</div>
+					<div class="layui-form-item layui-inline">
+						<label class="layui-form-label">客服分組</label>
+						<div class="layui-input-inline">
+							<select name="group">
+								<option value="">請選擇客服分組</option>
+								{foreach $group as $v}
+								<option value="{$v.id}">{$v.groupname|default=''}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item layui-inline">
+						<label class="layui-form-label">评分等级</label>
+						<div class="layui-input-inline">
+							<select name="star">
+								<option value="">請選擇評分等級</option>
+								<option value="1">一星</option>
+								<option value="2">二星</option>
+								<option value="3">三星</option>
+								<option value="4">四星</option>
+								<option value="5">五星</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item layui-inline">
+						<button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="query">
+							<i class="layui-icon layui-icon-search"></i>
+							查詢
+						</button>
+						<button type="reset" class="pear-btn pear-btn-md">
+							<i class="layui-icon layui-icon-refresh"></i>
+							重置
+						</button>
+					</div>
+				</div>
+			</form>
 		</div>
-		<div class="layui-card">
-			<div class="layui-card-body">
-				<table id="dataTable" lay-filter="dataTable"></table>
-			</div>
+	</div>
+	<div class="layui-card">
+		<div class="layui-card-body">
+			<table id="dataTable" lay-filter="dataTable"></table>
 		</div>
-		<script type="text/html" id="service-handle">
+	</div>
+	<script type="text/html" id="service-handle">
 			<span>{{d.service.user_name}}</span>
 		</script>
-		<script type="text/html" id="group-handle">
+	<script type="text/html" id="group-handle">
 			{{#if (d.group) { }}
 			<span>{{d.group.groupname}}</span>
 			{{# }else{ }}
 			<span>暫無分組</span>
 			{{# } }}
 		</script>
-		<script type="text/html" id="detail-handle">
+	<script type="text/html" id="detail-handle">
 			{{# layui.each(d.detail, function(index, item){ }}
 				{{item.title}}
 				{{# for(var i=1;i<=item.score;i++){ }}
@@ -90,121 +92,136 @@
 				<br>
 			{{# }); }}
 		</script>
-		<script type="text/html" id="word-handle">
+	<script type="text/html" id="word-handle">
 			{{#if (d.word_comment) { }}
 			<span>{{d.word_comment}}</span>
 			{{# }else{ }}
 			<span>—</span>
 			{{# } }}
 		</script>
-        <script src="/static/component/layui/layui.js"></script>
-        <script src="/static/component/pear/pear.js"></script>
-        <script>
-			layui.use(['table', 'form', 'jquery','common','laypage'], function() {
-				let table = layui.table;
-				let form = layui.form;
-				let $ = layui.jquery;
-				let common = layui.common;
-                let laypage = layui.laypage;
+	<script src="/static/component/layui/layui.js"></script>
+	<script src="/static/component/pear/pear.js"></script>
+	<script>
+		layui.use(['table', 'form', 'jquery', 'common', 'laypage'], function () {
+			let table = layui.table;
+			let form = layui.form;
+			let $ = layui.jquery;
+			let common = layui.common;
+			let laypage = layui.laypage;
 
-				let MODULE_PATH = "/service/";
+			let MODULE_PATH = "/service/";
 
-                let cols = [
-                        [{
-                                field: 'service',
-                                title: '客服',
-                                unresize: true,
-								width: 100,
-                                align: 'left',
-                            	templet: '#service-handle'
-                            },{
-                                field: 'group',
-                                title: '所屬分組',
-                                unresize: true,
-                            	width: 120,
-                                align: 'left',
-                            	templet: '#group-handle'
-                            }, {
-                                field: 'visiter_name',
-                                title: '客户',
-                                unresize: true,
-                                align: 'left',
-                            },  {
-                                field: 'add_time',
-                                title: '評價時間',
-                                unresize: true,
-                                align: 'left',
-                            },
-							{
-                                title: '評價情况',
-                                field: 'detail',
-                                align: 'left',
-                                templet: '#detail-handle',
-                                width: 250,
-							},
-                            {
-                                field: 'word_comment',
-                                title: '評價内容',
-                                unresize: true,
-                                align: 'left',
-                                templet: '#word-handle'
-                            }
-                        ]
-                    ];
-
-				table.render({
-					elem: '#dataTable',
-					url: MODULE_PATH + 'comments/index',
-					page: true,
-					cols: cols,
-                    cellMinWidth: 100,
-					skin: 'line',
-					toolbar: '#toolbar',
-					defaultToolbar: [{
-						title: '刷新',
-						layEvent: 'refresh',
-						icon: 'layui-icon-refresh',
-					}, 'filter', 'print', 'exports'],
-                page: {
-                    layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
-                    prev: '上一頁',
-                    next: '下一頁',
-                    first: '首頁',
-                    last: '尾頁'
-                },                
-                text: {
-                    none: '無資料'
-                },
-                done: function (res, curr, count) {
-                    // 在表格渲染完成後修改其他文字
-                    $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
-                        return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
-                    });
-                    $('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
-                        var text = $(this).text();
-                        $(this).text(text.replace('条/页', '條/頁'));
-                    });
-                }          
-				});
-
-				table.on('toolbar(dataTable)', function(obj) {
-					if (obj.event === 'refresh') {
-						window.refresh();
-					}
-				});
-
-                form.on('submit(query)', function(data) {
-                    table.reload('dataTable', {
-                        where: data.field,
-                        page:{curr: 1}
-                    });
-                    return false;
-                });
-                
-				window.refresh = function(param) {
-					table.reload('dataTable');
+			let cols = [
+				[{
+					field: 'service',
+					title: '客服',
+					unresize: true,
+					width: 100,
+					align: 'left',
+					templet: '#service-handle'
+				}, {
+					field: 'group',
+					title: '所屬分組',
+					unresize: true,
+					width: 120,
+					align: 'left',
+					templet: '#group-handle'
+				}, {
+					field: 'visiter_name',
+					title: '客户',
+					unresize: true,
+					align: 'left',
+				}, {
+					field: 'add_time',
+					title: '評價時間',
+					unresize: true,
+					align: 'left',
+				},
+				{
+					title: '評價情况',
+					field: 'detail',
+					align: 'left',
+					templet: '#detail-handle',
+					width: 250,
+				},
+				{
+					field: 'word_comment',
+					title: '評價内容',
+					unresize: true,
+					align: 'left',
+					templet: '#word-handle'
 				}
-			})
-		</script>
+				]
+			];
+			function updatePaginationText() {
+				$('.layui-laypage-skip').contents().filter(function () {
+					return this.nodeType === 3;
+				}).each(function () {
+					this.textContent = this.textContent.replace('到第', '到第').replace('页', '頁');
+				});
+				$('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
+					return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
+				});
+				$('.layui-table-page').find('.layui-laypage-limits').find('option').each(function () {
+					var text = $(this).text();
+					$(this).text(text.replace('条/页', '條/頁'));
+				});
+				$('.layui-laypage-btn').text('確定');
+			}
+			table.render({
+				elem: '#dataTable',
+				url: MODULE_PATH + 'comments/index',
+				page: true,
+				cols: cols,
+				cellMinWidth: 100,
+				skin: 'line',
+				toolbar: '#toolbar',
+				defaultToolbar: [{
+					title: '刷新',
+					layEvent: 'refresh',
+					icon: 'layui-icon-refresh',
+				}, 'filter', 'print', 'exports'],
+				page: {
+					layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
+					prev: '上一頁',
+					next: '下一頁',
+					first: '首頁',
+					last: '尾頁'
+				},
+				text: {
+					none: '無資料'
+				},
+				done: function (res, curr, count) {
+					updatePaginationText();
+				}
+			});
+			table.on('pagebar(dataTable)', function (obj) {
+				setTimeout(updatePaginationText, 0);
+			});
+
+			$(document).on('click', '.layui-laypage-btn', function () {
+				$(this).text('確定');
+			});
+
+			table.on('toolbar(dataTable)', function (obj) {
+				if (obj.event === 'refresh') {
+					window.refresh();
+				}
+			});
+
+			form.on('submit(query)', function (data) {
+				table.reload('dataTable', {
+					where: data.field,
+					page: { curr: 1 }
+				});
+				return false;
+			});
+
+			window.refresh = function (param) {
+				table.reload('dataTable');
+			}
+		})
+	</script>
 </body>
+
 </html>

@@ -22,78 +22,61 @@
         <script src="/static/component/layui/layui.js"></script>
         <script src="/static/component/pear/pear.js"></script>
         <script>
-			layui.use(['table', 'form', 'jquery','common','laypage'], function() {
-				let table = layui.table;
-				let form = layui.form;
-				let $ = layui.jquery;
-				let common = layui.common;
+            layui.use(['table', 'form', 'jquery', 'common', 'laypage'], function () {
+                let table = layui.table;
+                let form = layui.form;
+                let $ = layui.jquery;
+                let common = layui.common;
                 let laypage = layui.laypage;
-
-				let MODULE_PATH = "/backend/";
-
+    
+                let MODULE_PATH = "/backend/";
+    
                 let cols = [
-                        [{
-                                field: 'id',
-                                title: '序號',
-                                unresize: true,
-                                align: 'center',
-                                width: 80
-                            },{
-                                field: 'user_name',
-                                title: '客服帳號',
-                                unresize: true,
-                                align: 'center'
-                            }, {
-                                field: 'info',
-                                title: '登入结果',
-                                unresize: true,
-                                align: 'center',
-                            },  {
-                                field: 'ip',
-                                title: '操作IP',
-                                unresize: true,
-                                align: 'center',
-                            },
-                            {
-                                field: 'user_agent',
-                                title: 'User-Agent',
-                                unresize: true,
-                                align: 'center'
-                            }, 
-                            {
-                                field: 'create_time',
-                                title: '建立時間',
-                                align: 'center',
-                                unresize: true,
-                            }
-                        ]
+                    [{
+                        field: 'id',
+                        title: '序號',
+                        unresize: true,
+                        align: 'center',
+                        width: 80
+                    }, {
+                        field: 'user_name',
+                        title: '客服帳號',
+                        unresize: true,
+                        align: 'center'
+                    }, {
+                        field: 'info',
+                        title: '登入结果',
+                        unresize: true,
+                        align: 'center',
+                    }, {
+                        field: 'ip',
+                        title: '操作IP',
+                        unresize: true,
+                        align: 'center',
+                        templet: function (d) {
+                            return d.ip.split('【')[0]; // 只顯示 IP 地址部分
+                        }
+                    },
+                    {
+                        field: 'user_agent',
+                        title: 'User-Agent',
+                        unresize: true,
+                        align: 'center'
+                    },
+                    {
+                        field: 'create_time',
+                        title: '建立時間',
+                        align: 'center',
+                        unresize: true,
+                    }
                     ]
-
-				table.render({
-					elem: '#dataTable',
-					url: MODULE_PATH + 'log',
-					page: true,
-					cols: cols,
-                    cellMinWidth: 100,
-					skin: 'line',
-					toolbar: '#toolbar',
-					defaultToolbar: [{
-						title: '刷新',
-						layEvent: 'refresh',
-						icon: 'layui-icon-refresh',
-					}, 'filter', 'print', 'exports'],
-                page: {
-                    layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
-                    prev: '上一頁',
-                    next: '下一頁',
-                    first: '首頁',
-                    last: '尾頁'
-                },                
-                text: {
-                    none: '無資料'
-                },
-                done: function (res, curr, count) {
-                    // 在表格渲染完成後修改其他文字
+                ]
+                function updatePaginationText() {
+                    $('.layui-laypage-skip').contents().filter(function () {
+                        return this.nodeType === 3;
+                    }).each(function () {
+                        this.textContent = this.textContent.replace('到第', '到第').replace('页', '頁');
+                    });
                     $('.layui-table-page').find('.layui-laypage-count').html(function (index, oldHtml) {
                         return oldHtml.replace('共 ', '共 ').replace(' 条', ' 條');
                     });
@@ -101,43 +84,77 @@
                         var text = $(this).text();
                         $(this).text(text.replace('条/页', '條/頁'));
                     });
-                }          
-				});
-
-				table.on('toolbar(dataTable)', function(obj) {
-					if (obj.event === 'refresh') {
-						window.refresh();
-					} else if (obj.event === 'batchRemove') {
+                    $('.layui-laypage-btn').text('確定');
+                }
+                table.render({
+                    elem: '#dataTable',
+                    url: MODULE_PATH + 'log',
+                    page: true,
+                    cols: cols,
+                    cellMinWidth: 100,
+                    skin: 'line',
+                    toolbar: '#toolbar',
+                    defaultToolbar: [{
+                        title: '刷新',
+                        layEvent: 'refresh',
+                        icon: 'layui-icon-refresh',
+                    }, 'filter', 'print', 'exports'],
+                    page: {
+                        layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
+                        prev: '上一頁',
+                        next: '下一頁',
+                        first: '首頁',
+                        last: '尾頁'
+                    },
+                    text: {
+                        none: '無資料'
+                    },
+    
+                    done: function (res, curr, count) {
+                        updatePaginationText();
+                    }
+                });
+    
+                table.on('toolbar(dataTable)', function (obj) {
+                    if (obj.event === 'refresh') {
+                        window.refresh();
+                    } else if (obj.event === 'batchRemove') {
                         window.batchRemove(obj);
                     }
-				});
-
-                form.on('submit(query)', function(data) {
+                });
+                table.on('pagebar(dataTable)', function (obj) {
+                    setTimeout(updatePaginationText, 0);
+                });
+    
+                $(document).on('click', '.layui-laypage-btn', function () {
+                    $(this).text('確定');
+                });
+                form.on('submit(query)', function (data) {
                     table.reload('dataTable', {
                         where: data.field,
-                        page:{curr: 1}
+                        page: { curr: 1 }
                     })
                     return false;
                 });
-
-				window.batchRemove = function(obj) {
+    
+                window.batchRemove = function (obj) {
                     layer.confirm('確定要刪除日誌', {
                         icon: 3,
                         title: '提示'
-                    }, function(index) {
+                    }, function (index) {
                         layer.close(index);
                         let loading = layer.load();
                         $.ajax({
-                            url:MODULE_PATH + 'log/removeLog',
+                            url: MODULE_PATH + 'log/removeLog',
                             dataType: 'json',
                             type: 'POST',
-                            success: function(res) {
+                            success: function (res) {
                                 layer.close(loading);
-                                if (res.code==1) {
+                                if (res.code == 1) {
                                     layer.msg(res.msg, {
                                         icon: 1,
                                         time: 1000
-                                    }, function() {
+                                    }, function () {
                                         table.reload('dataTable');
                                     });
                                 } else {
@@ -150,11 +167,11 @@
                         })
                     });
                 }
-                
-				window.refresh = function(param) {
-					table.reload('dataTable');
-				}
-			})
-		</script>
+    
+                window.refresh = function (param) {
+                    table.reload('dataTable');
+                }
+            })
+        </script>
 </body>
 </html>

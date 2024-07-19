@@ -86,7 +86,11 @@ class Index extends Base
         $where = array('is_admin' => 0);
         if($login['level'] == 'super_manager') $where = "";
         $common = new Common();
-        $menu = AdminPermission::table('wolive_admin_permission')->where($where)->order('sort','asc')->select();
+        $menu = AdminPermission::table('wolive_admin_permission')
+                ->where($where)
+                ->whereNotIn('id', [18])
+                ->order('sort', 'asc')
+                ->select();
         return json($common->get_tree($menu));
     }
 

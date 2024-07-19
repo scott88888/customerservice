@@ -100,9 +100,12 @@
                     align: 'left',
                 }, {
                     field: 'ip',
-                    title: 'IP訊息',
+                    title: '操作IP',
                     unresize: true,
-                    align: 'left',
+                    align: 'center',
+                    templet: function (d) {
+                        return d.ip.split('【')[0]; // 只顯示 IP 地址部分
+                    }
                 }, {
                     field: 'lang',
                     title: '語言',
@@ -163,7 +166,19 @@
                     title: '刷新',
                     layEvent: 'refresh',
                     icon: 'layui-icon-refresh',
-                }, 'filter', 'print', 'exports'],
+                }, {
+                    title: '篩選',
+                    layEvent: 'LAYTABLE_COLS',
+                    icon: 'layui-icon-cols'
+                }, {
+                    title: '列印',  // 修改 "打印" 為 "列印"
+                    layEvent: 'LAYTABLE_PRINT',
+                    icon: 'layui-icon-print'
+                }, {
+                    title: '匯出',  // 修改 "导出" 為 "匯出"
+                    layEvent: 'LAYTABLE_EXPORT',
+                    icon: 'layui-icon-export'
+                }],
                 page: {
                     layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
                     prev: '上一頁',

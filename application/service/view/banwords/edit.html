@@ -1,85 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/component/pear/css/pear.css"/>
+    <link rel="stylesheet" href="/static/component/pear/css/pear.css" />
 </head>
-<body>
-<form class="layui-form" action="">
-    <div class="mainBox">
-        <div class="main-container">
-            <div class="layui-form-item">
-                <label class="layui-form-label">狀態</label>
-                <div class="layui-input-block">
-                    <select name="status" lay-verify="required">
-                        <option value="1" {if $banword.status == 1}selected{/if}>启用</option>
-                        <option value="0" {if $banword.status == 0}selected{/if}>禁用</option>
-                    </select>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">選擇語言</label>
-                <div class="layui-input-block">
-                    <select name="lang" lay-verify="required">
-                        {foreach name=":config('lang')" item="vo"}
-                        <option value="{$key}" {if $banword.lang == $key}selected{/if}>{$vo}</option>
-                        {/foreach}
-                    </select>
-                </div>
-            </div>
-            <input type="hidden" name="id" value="{$_GET['id']}" />
-            <div class="layui-form-item">
-                <label class="layui-form-label">過濾文字</label>
-                <div class="layui-input-block">
-                    <input type="text" name="keyword" value="{$banword.keyword}" lay-verify="required" placeholder="請輸入過濾文字" class="layui-input">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bottom">
-        <div class="button-container">
-            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="" lay-filter="save">
-                <i class="layui-icon layui-icon-ok"></i>
-                送出
-            </button>
-            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">
-                <i class="layui-icon layui-icon-refresh"></i>
-                重置
-            </button>
-        </div>
-    </div>
-</form>
-<script src="/static/component/layui/layui.js"></script>
-<script src="/static/component/pear/pear.js"></script>
-<script>
-    layui.use(['form', 'jquery'], function () {
-        let form = layui.form;
-        let $ = layui.jquery;
 
-        form.on('submit(save)', function (data) {
-            $.ajax({
-                data: JSON.stringify(data.field),
-                dataType: 'json',
-                contentType: 'application/json',
-                type: 'post',
-                success: function (res) {
-                    if (res.code === 1) {
-                        layer.msg(res.msg, {
-                            icon: 1
-                        });
-                        setTimeout(function () {
-                            var index = parent.layer.getFrameIndex(window.name); //取得視窗索引
-                            parent.layer.close(index);
-                            parent.layui.table.reload("dataTable");
-                        }, 2000)
-                    } else {
-                        layer.msg(res.msg, {icon: 2, time: 1500})
+<body>
+    <form class="layui-form" action="">
+        <div class="mainBox">
+            <div class="main-container">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">狀態</label>
+                    <div class="layui-input-block">
+                        <select name="status" lay-verify="required">
+                            <option value="1" {if $banword.status==1}selected{/if}>启用</option>
+                            <option value="0" {if $banword.status==0}selected{/if}>禁用</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">選擇語言</label>
+                    <div class="layui-input-block">
+                        <select name="lang" lay-verify="required">
+                            {foreach name=":config('lang')" item="vo"}
+                            <option value="{$key}" {if $banword.lang==$key}selected{/if}>{$vo}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" name="id" value="{$_GET['id']}" />
+                <div class="layui-form-item">
+                    <label class="layui-form-label">過濾文字</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="keyword" value="{$banword.keyword}" lay-verify="required"
+                            placeholder="請輸入過濾文字" class="layui-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="button-container">
+                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="" lay-filter="save">
+                    <i class="layui-icon layui-icon-ok"></i>
+                    送出
+                </button>
+                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">
+                    <i class="layui-icon layui-icon-refresh"></i>
+                    重置
+                </button>
+            </div>
+        </div>
+    </form>
+    <script src="/static/component/layui/layui.js"></script>
+    <script src="/static/component/pear/pear.js"></script>
+    <script>
+        layui.use(['form', 'jquery'], function () {
+            let form = layui.form;
+            let $ = layui.jquery;
+            function updateSelectText() {
+                $('.layui-select-title input').attr('placeholder', '請選擇');
+
+                $('dl.layui-anim-upbit dd').each(function () {
+                    var text = $(this).text();
+                    if (text === '启用') {
+                        $(this).text('啟用');
+                    } else if (text === '禁用') {
+                        $(this).text('禁用');
                     }
+                });
+
+                var currentValue = $('.layui-select-title input').val();
+                if (currentValue === '启用') {
+                    $('.layui-select-title input').val('啟用');
+                } else if (currentValue === '禁用') {
+                    $('.layui-select-title input').val('禁用');
                 }
+            }
+
+            $(document).ready(function () {
+                updateSelectText();
             });
-            return false;
-        });
-    })
-</script>
+
+            // 監聽選擇框打開事件
+            $(document).on('click', '.layui-form-select', function () {
+                setTimeout(updateSelectText, 0);
+            });
+            form.on('submit(save)', function (data) {
+                $.ajax({
+                    data: JSON.stringify(data.field),
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    type: 'post',
+                    success: function (res) {
+                        if (res.code === 1) {
+                            layer.msg(res.msg, {
+                                icon: 1
+                            });
+                            setTimeout(function () {
+                                var index = parent.layer.getFrameIndex(window.name); //取得視窗索引
+                                parent.layer.close(index);
+                                parent.layui.table.reload("dataTable");
+                            }, 2000)
+                        } else {
+                            layer.msg(res.msg, { icon: 2, time: 1500 })
+                        }
+                    }
+                });
+                return false;
+            });
+        })
+    </script>
 </body>
+
 </html>

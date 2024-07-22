@@ -33,7 +33,7 @@ class Admins extends Validate
      */
     protected $message = [
         "username.require" => "請填寫使用者名稱称",
-        "username.unique"  => "该使用者名稱存在",
+        "username.unique"  => "該使用者名稱存在",
         "username.alphaNum" => "使用者名稱只能是字母和數字",
         "username.length" => "使用者名稱長度為1~16个字符",
         "nickname.length" => "暱稱長度為2~20个字符",

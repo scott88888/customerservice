@@ -126,18 +126,18 @@
                     layEvent: 'refresh',
                     icon: 'layui-icon-refresh',
                 }, {
-        title: '篩選',
-        layEvent: 'LAYTABLE_COLS',
-        icon: 'layui-icon-cols'
-    }, {
-        title: '列印',  // 修改 "打印" 為 "列印"
-        layEvent: 'LAYTABLE_PRINT',
-        icon: 'layui-icon-print'
-    }, {
-        title: '匯出',  // 修改 "导出" 為 "匯出"
-        layEvent: 'LAYTABLE_EXPORT',
-        icon: 'layui-icon-export'
-    }],
+                    title: '篩選',
+                    layEvent: 'LAYTABLE_COLS',
+                    icon: 'layui-icon-cols'
+                }, {
+                    title: '列印',  // 修改 "打印" 為 "列印"
+                    layEvent: 'LAYTABLE_PRINT',
+                    icon: 'layui-icon-print'
+                }, {
+                    title: '匯出',  // 修改 "导出" 為 "匯出"
+                    layEvent: 'LAYTABLE_EXPORT',
+                    icon: 'layui-icon-export'
+                }],
                 page: {
                     layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
                     prev: '上一頁',
@@ -204,9 +204,10 @@
             };
 
             window.remove = function (obj) {
-                layer.confirm('確定要刪除该分組吗？', {
+                layer.confirm('確定要刪除該分組嗎？', {
                     icon: 3,
-                    title: '提示'
+                    title: '提示',
+                        btn: ['確定', '取消']
                 }, function (index) {
                     layer.close(index);
                     let loading = layer.load();

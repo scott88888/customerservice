@@ -230,9 +230,10 @@
             };
 
             window.remove = function (obj) {
-                layer.confirm('確定要刪除该機器人自動回覆吗？', {
+                layer.confirm('確定要刪除該機器人自動回覆嗎？', {
                     icon: 3,
-                    title: '提示'
+                    title: '提示',
+                        btn: ['確定', '取消']
                 }, function (index) {
                     layer.close(index);
                     let loading = layer.load();

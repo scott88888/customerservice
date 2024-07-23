@@ -462,8 +462,10 @@
         });
         layelem.on('nav(layui_nav_right)', function(elem) {
             if ($(elem).hasClass('logout')) {
-                layer.confirm('確定退出登入吗?', function(index) {
-                    layer.close(index);
+                layer.confirm('確定登出嗎?',{                    
+                    title: '提示',
+                    btn: ['確定', '取消']
+                },function(index) {
                     $.ajax({
                         url: "{:url('service/login/logout')}",
                         type:"POST",

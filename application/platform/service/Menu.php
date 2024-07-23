@@ -159,7 +159,7 @@ class Menu
                                 'is_admin' => false,
                             ],
                             [
-                                'name' => '應用禁用',
+                                'name' => '應用停用',
                                 'route' => 'platform/app/disabled',
                                 'is_admin' => false,
                             ],

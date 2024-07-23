@@ -35,7 +35,7 @@
                         </button>
                         <button type="reset" class="pear-btn pear-btn-md">
                             <i class="layui-icon layui-icon-refresh"></i>
-                            重置
+                            重新整理
                         </button>
                     </div>
                 </div>
@@ -160,18 +160,18 @@
                     layEvent: 'refresh',
                     icon: 'layui-icon-refresh',
                 }, {
-        title: '篩選',
-        layEvent: 'LAYTABLE_COLS',
-        icon: 'layui-icon-cols'
-    }, {
-        title: '列印',  // 修改 "打印" 為 "列印"
-        layEvent: 'LAYTABLE_PRINT',
-        icon: 'layui-icon-print'
-    }, {
-        title: '匯出',  // 修改 "导出" 為 "匯出"
-        layEvent: 'LAYTABLE_EXPORT',
-        icon: 'layui-icon-export'
-    }],
+                    title: '篩選',
+                    layEvent: 'LAYTABLE_COLS',
+                    icon: 'layui-icon-cols'
+                }, {
+                    title: '列印',  // 修改 "打印" 為 "列印"
+                    layEvent: 'LAYTABLE_PRINT',
+                    icon: 'layui-icon-print'
+                }, {
+                    title: '匯出',  // 修改 "导出" 為 "匯出"
+                    layEvent: 'LAYTABLE_EXPORT',
+                    icon: 'layui-icon-export'
+                }],
                 page: {
                     layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
                     prev: '上一頁',
@@ -200,7 +200,7 @@
                 } else if (obj.event === 'add') {
                     window.add(obj);
                 }
-            });          
+            });
             table.on('tool(dataTable)', function (obj) {
                 if (obj.event === 'edit') {
                     window.edit(obj);
@@ -282,7 +282,7 @@
                 layer.confirm('確定要刪除該用戶', {
                     icon: 3,
                     title: '提示',
-                        btn: ['確定', '取消']
+                    btn: ['確定', '取消']
                 }, function (index) {
                     layer.close(index);
                     let loading = layer.load();

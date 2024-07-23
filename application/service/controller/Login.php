@@ -117,7 +117,7 @@ class Login extends Controller
     }
 
     public function reg_check(){
-        if(!config('open_reg')) $this->error('禁止商户註冊');
+        if(!config('open_reg')) $this->error('禁止商家註冊');
         $post = $this->request->post();
         if (!isset($post['username']) || !isset($post['password'])) $this->error('参數不完整!', url("/service/login/reg"));
         $post['user_name'] = htmlspecialchars($post['username']);
@@ -126,7 +126,7 @@ class Login extends Controller
         $result = $this->validate($post, 'Login');
         if ($result !== true) $this->error($result);
         $business = Business::get(['business_name' => $post['user_name']]);
-        if ($business) $this->error('商户名稱已存在');
+        if ($business) $this->error('商家名稱已存在');
         $add = array(
             'business_name' => $post['user_name'],
             'max_count' => "3",
@@ -203,7 +203,7 @@ class Login extends Controller
 
     public function reg(){
         if(isset($_SESSION['Msg'])&&!empty($_SESSION['Msg'])) $this->redirect(url('/service/index'));
-        if(!config('open_reg')) $this->error('禁止商户註冊');
+        if(!config('open_reg')) $this->error('禁止商家註冊');
         return $this->fetch();
     }
 }

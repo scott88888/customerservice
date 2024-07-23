@@ -15,7 +15,7 @@
                     <div class="layui-input-block">
                         <select name="status" lay-verify="required">
                             <option value="1" {if $banword.status==1}selected{/if}>啟用</option>
-                            <option value="0" {if $banword.status==0}selected{/if}>禁用</option>
+                            <option value="0" {if $banword.status==0}selected{/if}>停用</option>
                         </select>
                     </div>
                 </div>
@@ -65,16 +65,16 @@
                     var text = $(this).text();
                     if (text === '启用') {
                         $(this).text('啟用');
-                    } else if (text === '禁用') {
-                        $(this).text('禁用');
+                    } else if (text === '停用') {
+                        $(this).text('停用');
                     }
                 });
 
                 var currentValue = $('.layui-select-title input').val();
                 if (currentValue === '启用') {
                     $('.layui-select-title input').val('啟用');
-                } else if (currentValue === '禁用') {
-                    $('.layui-select-title input').val('禁用');
+                } else if (currentValue === '停用') {
+                    $('.layui-select-title input').val('停用');
                 }
             }
 

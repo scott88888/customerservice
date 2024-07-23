@@ -274,7 +274,7 @@
             <a class="recycle-btn"
                href="{:url('app/setRecycle', ['id' => $vo['id'],'action'=>1])}"><img src="__image__/admin/A/delete.png" alt="放入回收站" title="放入回收站"></a>
             <a class="disabled-btn"
-               href="{:url('app/disabled', ['id' => $vo['id'],'action' => $vo['state']])}"><img src="__image__/admin/A/{$vo['state'] == 'close' ? 'unblock' : 'disable' }.png" alt="禁用" title="禁用"><span style="display: none">{$vo['state'] == 'close' ? '解除禁用' : '禁用' }</span></a>
+               href="{:url('app/disabled', ['id' => $vo['id'],'action' => $vo['state']])}"><img src="__image__/admin/A/{$vo['state'] == 'close' ? 'unblock' : 'disable' }.png" alt="停用" title="停用"><span style="display: none">{$vo['state'] == 'close' ? '解除停用' : '停用' }</span></a>
         </td>
     </tr>
     {/volist}

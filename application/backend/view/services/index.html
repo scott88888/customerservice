@@ -24,7 +24,7 @@
                         </button>
                         <button type="reset" class="pear-btn pear-btn-md">
                             <i class="layui-icon layui-icon-refresh"></i>
-                            重置
+                            重新整理
                         </button>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
     <script type="text/html" id="tool-bar">
 			<button class="pear-btn pear-btn-danger pear-btn-xs" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>刪除</button>
 			<button class="pear-btn pear-btn-xs copy" lay-event="copy" data-clipboard-text="{{d.personal}}"><i class="layui-icon layui-icon-link"></i>複製</button>
-			<button class="pear-btn pear-btn-warming pear-btn-xs" lay-event="clear"><i class="layui-icon layui-icon-fonts-clear"></i>清空记录</button>
+			<button class="pear-btn pear-btn-warming pear-btn-xs" lay-event="clear"><i class="layui-icon layui-icon-fonts-clear"></i>清空紀錄</button>
 		</script>
 
     <script src="/static/component/layui/layui.js"></script>
@@ -87,7 +87,7 @@
                     align: 'left',
                 }, {
                     field: 'business_name',
-                    title: '所属商户',
+                    title: '所属商家',
                     unresize: true,
                     align: 'left',
                 },
@@ -235,7 +235,7 @@
             };
 
             window.clear = function (obj) {
-                layer.confirm('確定要清空该客服的所有聊天记录嗎？', {
+                layer.confirm('確定所有要清空該客服的聊天記錄嗎？', {
                     icon: 3,
                     title: '提示',
                         btn: ['確定', '取消']

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title> 多商户客服後台管理系统 </title>
+  <title> 多商家客服後台管理系统 </title>
   <!-- 依 赖 脚 本 -->
   <script src="/static/component/layui/layui.js"></script>
   <script src="/static/component/pear/pear.js"></script>
@@ -102,7 +102,7 @@
         // 框 架 初 始 化
         admin.render({
             "logo": {
-                "title": "多商户後台管理",
+                "title": "多商家後台管理",
                 "image": "/static/admin/images/logo.png"
             },
             "menu": {
@@ -155,7 +155,10 @@
         });
         layelem.on('nav(layui_nav_right)', function(elem) {
             if ($(elem).hasClass('logout')) {
-                layer.confirm('確定退出登入吗?', function(index) {
+                layer.confirm('確定登出嗎?',{                    
+                    title: '提示',
+                    btn: ['確定', '取消']
+                },function(index) {
                     layer.close(index);
                     $.ajax({
                         url: "{:url('backend/login/logout')}",
